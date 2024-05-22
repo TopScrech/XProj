@@ -44,12 +44,20 @@ final class ProjectVM {
                 let attributes = try fm.attributesOfItem(atPath: "\(path)/\(project)")
                 
                 let typeAttribute = attributes[.type] as? String ?? "Other"
+                let fileType: FileType
                 
-                //                if hasXcodeproj("\(path)/\(project)") {
-                //                    type = .project
-                //                } else {
-                //                    type = .other
-                //                }
+                if hasXcodeproj("\(path)/\(project)") {
+                    fileType = .proj
+                } else {
+                    switch typeAttribute {
+                    case "NSFileTypeDirectory":
+                        fileType = .folder
+                        
+                    default:
+                        fileType = .unknown
+                    }
+                }
+                
                 
                 if let isHidden = attributes[.extensionHidden] as? Bool, isHidden {
                     continue
@@ -62,7 +70,7 @@ final class ProjectVM {
                 self.projects.append(
                     .init(
                         name: project,
-                        type: typeAttribute,
+                        type: fileType,
                         attributes: attributes
                     )
                 )

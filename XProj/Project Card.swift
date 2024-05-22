@@ -16,7 +16,7 @@ struct ProjectCard: View {
             VStack(alignment: .leading) {
                 Text(project.name)
                 
-                Text(project.type)
+                Text(project.type.rawValue)
                     .foregroundStyle(.tertiary)
             }
             
@@ -33,8 +33,8 @@ struct ProjectCard: View {
 #Preview {
     List {
         ProjectCard(.init(
-            name: "",
-            type: "",
+            name: "Preview",
+            type: .proj,
             attributes: [:]
         ))
     }
