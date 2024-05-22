@@ -36,8 +36,6 @@ final class ProjectVM {
             
             let path = url.path
             
-            print(#function + "\(path)")
-            
             let projects = try fm.contentsOfDirectory(atPath: path)
             
             for project in projects {
@@ -58,13 +56,8 @@ final class ProjectVM {
                     }
                 }
                 
-                
                 if let isHidden = attributes[.extensionHidden] as? Bool, isHidden {
                     continue
-                }
-                
-                if project.hasSuffix(".xcodeproj") {
-                    print("F")
                 }
                 
                 self.projects.append(
@@ -81,8 +74,6 @@ final class ProjectVM {
     }
     
     private func hasXcodeproj(_ path: String) -> Bool {
-        print(#function)
-        
         let fileManager = FileManager.default
         
         do {
@@ -98,8 +89,6 @@ final class ProjectVM {
     }
     
     func openFolderPicker() {
-        print(#function)
-        
         let panel = NSOpenPanel()
         panel.canChooseFiles = false
         panel.canCreateDirectories = true
@@ -114,8 +103,6 @@ final class ProjectVM {
     }
     
     private func saveBookmark(_ url: URL) {
-        print(#function + " save \(url)")
-        
         do {
             let bookmarkData = try url.bookmarkData(
                 options: .withSecurityScope,
@@ -132,8 +119,6 @@ final class ProjectVM {
     }
     
     func restoreAccessToFolder() {
-        print(#function)
-        
         guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
             return
         }
