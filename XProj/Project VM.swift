@@ -61,11 +61,16 @@ final class ProjectVM {
                     continue
                 }
                 
+                guard let lastOpened = lastAccessDate(projectPath) else {
+                    continue
+                }
+                
                 self.projects.append(
                     .init(
                         name: project,
                         path: projectPath,
                         type: fileType,
+                        lastOpened: lastOpened,
                         attributes: attributes
                     )
                 )
@@ -75,6 +80,20 @@ final class ProjectVM {
         }
     }
     
+    func lastAccessDate(_ path: String) -> Date? {
+        path.withCString {
+            var statStruct = Darwin.stat()
+            
+            guard  stat($0, &statStruct) == 0 else {
+                return nil
+            }
+            
+            return Date(
+                timeIntervalSince1970: TimeInterval(statStruct.st_atimespec.tv_sec)
+            )
+        }
+    }
+        
     private func hasXcodeproj(_ path: String) -> Bool {
         let fileManager = FileManager.default
         

@@ -5,6 +5,7 @@ struct Project: Identifiable {
     let name: String
     let path: String
     let type: FileType
+    let lastOpened: Date
     let attributes: [FileAttributeKey: Any]
     
     var icon: String {

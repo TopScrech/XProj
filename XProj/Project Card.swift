@@ -22,6 +22,8 @@ struct ProjectCard: View {
             
             Spacer()
             
+            Text(project.lastOpened, format: .dateTime)
+            
             //            Text(project.attributes[.size] as? String ?? "")
             //                .footnote()
             //                .foregroundStyle(.secondary)
@@ -83,6 +85,7 @@ struct ProjectCard: View {
             name: "Preview",
             path: "/",
             type: .proj,
+            lastOpened: Date(),
             attributes: [:]
         ))
     }
