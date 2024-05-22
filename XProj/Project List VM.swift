@@ -60,7 +60,7 @@ final class ProjectListVM {
             let path = url.path
             
             let startTime = CFAbsoluteTimeGetCurrent()
-
+            
             try processPath(path)
             
             let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
@@ -89,8 +89,7 @@ final class ProjectListVM {
             return
         }
         
-        if project == ".git" || project == ".build" || project == "Not Xcode"
-        {
+        if project == ".git" || project == ".build" || project == "Not Xcode" {
             return
         }
         
@@ -134,9 +133,7 @@ final class ProjectListVM {
                 return nil
             }
             
-            return Date(
-                timeIntervalSince1970: TimeInterval(statStruct.st_atimespec.tv_sec)
-            )
+            return Date(timeIntervalSince1970: TimeInterval(statStruct.st_atimespec.tv_sec))
         }
     }
     

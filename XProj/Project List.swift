@@ -26,12 +26,6 @@ struct ProjectList: View {
         .refreshableTask {
             vm.getFolders()
         }
-        .toolbar {
-            Button("Read contents") {
-                vm.getFolders()
-            }
-            .keyboardShortcut(.init("R"))
-        }
     }
 }
 

@@ -17,7 +17,8 @@ struct ProjectCard: View {
             VStack(alignment: .leading) {
                 Text(project.name)
                 
-                Text("\(project.type.rawValue) - \(project.lastOpened, format: .dateTime)")
+                Text(project.lastOpened, format: .dateTime)
+                    .caption2()
                     .foregroundStyle(.secondary)
                 
                 Text(project.path)
