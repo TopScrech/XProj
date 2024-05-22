@@ -28,6 +28,7 @@
 		F3341E352BDE358A00E85F27 /* XProj.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XProj.entitlements; sourceTree = "<group>"; };
 		F3341E3B2BDE3C8B00E85F27 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		F3341E402BDEB71F00E85F27 /* Project List VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project List VM.swift"; sourceTree = "<group>"; };
+		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
 		F38B5E512BFD6F6100CB9917 /* Project Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project Card.swift"; sourceTree = "<group>"; };
 		F38B5E532BFD76DF00CB9917 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		F3341E2B2BDE358900E85F27 /* XProj */ = {
 			isa = PBXGroup;
 			children = (
+				F37B90722BFE9E1600597624 /* Info.plist */,
 				F3341E2C2BDE358900E85F27 /* XProj App.swift */,
 				F38B5E532BFD76DF00CB9917 /* Container.swift */,
 				F38B5E552BFD76F300CB9917 /* HomeView.swift */,
@@ -327,6 +329,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XProj/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = XProj;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -357,6 +360,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XProj/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = XProj;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";

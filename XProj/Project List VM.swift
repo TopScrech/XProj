@@ -84,7 +84,8 @@ final class ProjectListVM {
             return
         }
         
-        if project == ".git" || project == ".build" || project == "Not Xcode" {
+        if project == ".git" || project == ".build" || project == "Not Xcode"
+        {
             return
         }
         
@@ -95,12 +96,13 @@ final class ProjectListVM {
         } else {
             switch typeAttribute {
             case "NSFileTypeDirectory":
-                fileType = .folder
-                //                try processPath(projectPath)
-                //                break
+                //                fileType = .folder
+                try processPath(projectPath)
+                return
                 
             default:
-                fileType = .unknown
+                //                fileType = .unknown
+                return
             }
         }
         
