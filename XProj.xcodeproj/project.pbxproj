@@ -15,6 +15,8 @@
 		F3341E412BDEB71F00E85F27 /* Project VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3341E402BDEB71F00E85F27 /* Project VM.swift */; };
 		F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Project Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Project Card.swift */; };
+		F38B5E542BFD76DF00CB9917 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E532BFD76DF00CB9917 /* Container.swift */; };
+		F38B5E562BFD76F300CB9917 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E552BFD76F300CB9917 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		F3341E402BDEB71F00E85F27 /* Project VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project VM.swift"; sourceTree = "<group>"; };
 		F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
 		F38B5E512BFD6F6100CB9917 /* Project Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project Card.swift"; sourceTree = "<group>"; };
+		F38B5E532BFD76DF00CB9917 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		F38B5E552BFD76F300CB9917 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				F3341E2C2BDE358900E85F27 /* XProj App.swift */,
+				F38B5E532BFD76DF00CB9917 /* Container.swift */,
+				F38B5E552BFD76F300CB9917 /* HomeView.swift */,
 				F3341E302BDE358A00E85F27 /* Assets.xcassets */,
 				F3341E352BDE358A00E85F27 /* XProj.entitlements */,
 				F3341E2E2BDE358900E85F27 /* Project List.swift */,
@@ -167,6 +173,8 @@
 				F3341E412BDEB71F00E85F27 /* Project VM.swift in Sources */,
 				F38B5E522BFD6F6100CB9917 /* Project Card.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,
+				F38B5E542BFD76DF00CB9917 /* Container.swift in Sources */,
+				F38B5E562BFD76F300CB9917 /* HomeView.swift in Sources */,
 				F3341E3C2BDE3C8B00E85F27 /* Project.swift in Sources */,
 				F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */,
 			);

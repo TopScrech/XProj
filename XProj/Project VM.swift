@@ -39,7 +39,8 @@ final class ProjectVM {
             let projects = try fm.contentsOfDirectory(atPath: path)
             
             for project in projects {
-                let attributes = try fm.attributesOfItem(atPath: "\(path)/\(project)")
+                let projectPath = "\(path)/\(project)"
+                let attributes = try fm.attributesOfItem(atPath: projectPath)
                 
                 let typeAttribute = attributes[.type] as? String ?? "Other"
                 let fileType: FileType
@@ -63,6 +64,7 @@ final class ProjectVM {
                 self.projects.append(
                     .init(
                         name: project,
+                        path: projectPath,
                         type: fileType,
                         attributes: attributes
                     )

@@ -3,6 +3,7 @@ import SwiftUI
 struct Project: Identifiable {
     let id = UUID()
     let name: String
+    let path: String
     let type: FileType
     let attributes: [FileAttributeKey: Any]
     
