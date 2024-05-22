@@ -16,15 +16,19 @@ struct HomeView: View {
                     HStack {
                         Image(systemName: project.icon)
                             .foregroundStyle(project.iconColor)
+                            .frame(width: 20)
                         
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text(project.name)
-                            Text(project.typ)
                             
-                            //                        Text(project.attributes[.size] as? String ?? "")
-                            //                            .footnote()
-                            //                            .foregroundStyle(.secondary)
+                            Text(project.type)
                         }
+                        
+                        Spacer()
+                        
+                        Text(project.attributes[.size] as? String ?? "")
+                            .footnote()
+                            .foregroundStyle(.secondary)
                     }
                 }
             }

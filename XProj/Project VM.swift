@@ -4,6 +4,8 @@ import SwiftUI
 final class ProjectVM {
     var projects: [Project] = []
     
+    private let udKey = "projects_folder_bookmark"
+    
     func getFolders() {
         restoreAccessToFolder()
         projects = []
@@ -11,7 +13,7 @@ final class ProjectVM {
         let fm = FileManager.default
         
         do {
-            guard let bookmarkData = UserDefaults.standard.data(forKey: "projects_folder_bookmark") else {
+            guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
                 return
             }
             
@@ -19,12 +21,12 @@ final class ProjectVM {
             let url = try URL(resolvingBookmarkData: bookmarkData, options: .withSecurityScope, bookmarkDataIsStale: &isStale)
             
             if isStale {
-                print("Bookmark data is stale. Need to reselect folder for a new bookmark.")
+                print("Bookmark data is stale. Need to reselect folder for a new bookmark")
                 return
             }
             
             guard url.startAccessingSecurityScopedResource() else {
-                print("Failed to start accessing security scoped resource.")
+                print("Failed to start accessing security scoped resource")
                 return
             }
             
@@ -42,14 +44,12 @@ final class ProjectVM {
                 let attributes = try fm.attributesOfItem(atPath: "\(path)/\(project)")
                 
                 let typeAttribute = attributes[.type] as? String ?? "Other"
-//                if typeAttribute == .
-                let type: ProjectType
                 
-                if hasXcodeproj("\(path)/\(project)") {
-                    type = .project
-                } else {
-                    type = .other
-                }
+                //                if hasXcodeproj("\(path)/\(project)") {
+                //                    type = .project
+                //                } else {
+                //                    type = .other
+                //                }
                 
                 if project.hasSuffix(".xcodeproj") {
                     print("F")
@@ -58,8 +58,7 @@ final class ProjectVM {
                 self.projects.append(
                     .init(
                         name: project,
-                        type: type,
-                        typ: typeAttribute, 
+                        type: typeAttribute,
                         attributes: attributes
                     )
                 )
@@ -112,7 +111,7 @@ final class ProjectVM {
                 relativeTo: nil
             )
             
-            UserDefaults.standard.set(bookmarkData, forKey: "projects_folder_bookmark")
+            UserDefaults.standard.set(bookmarkData, forKey: udKey)
             
             getFolders()
         } catch {
@@ -123,9 +122,7 @@ final class ProjectVM {
     func restoreAccessToFolder() {
         print(#function)
         
-        let bookmarkKey = "projects_folder_bookmark"
-        
-        guard let bookmarkData = UserDefaults.standard.data(forKey: bookmarkKey) else {
+        guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
             return
         }
         

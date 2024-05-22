@@ -3,29 +3,20 @@ import SwiftUI
 struct Project: Identifiable {
     let id = UUID()
     let name: String
-    let type: ProjectType
-    let typ: String
+    let type: String
     let attributes: [FileAttributeKey: Any]
     
     var icon: String {
         switch type {
-        case .project: "hammer.fill"
-        case .spm: "questionmark"
-        case .other: "questionmark"
+        case "NSFileTypeDirectory": "hammer.fill"
+        default: "questionmark"
         }
     }
     
     var iconColor: Color {
         switch type {
-        case .project: .blue
-        case .spm: .cyan
-        case .other: .yellow
+        case "NSFileTypeDirectory": .blue
+        default: .gray
         }
     }
-}
-
-enum ProjectType {
-    case project,
-         spm,
-         other
 }
