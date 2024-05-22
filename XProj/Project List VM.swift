@@ -1,7 +1,7 @@
 import SwiftUI
 
 @Observable
-final class ProjectVM {
+final class ProjectListVM {
     var projects: [Project] = []
     var searchPrompt = ""
     

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ProjectList: View {
-    @Environment(ProjectVM.self) private var vm
+    @Environment(ProjectListVM.self) private var vm
     
     var body: some View {
         @Bindable var vm = vm
@@ -37,5 +37,5 @@ struct ProjectList: View {
 
 #Preview {
     ProjectList()
-        .environment(ProjectVM())
+        .environment(ProjectListVM())
 }

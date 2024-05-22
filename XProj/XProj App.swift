@@ -2,7 +2,7 @@ import ScrechKit
 
 @main
 struct XProjApp: App {
-    private var vm = ProjectVM()
+    private var vm = ProjectListVM()
     
     var body: some Scene {
         WindowGroup {

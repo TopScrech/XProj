@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @Environment(ProjectVM.self) private var vm
+    @Environment(ProjectListVM.self) private var vm
     
     var body: some View {
         VStack {
@@ -15,5 +15,5 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
-        .environment(ProjectVM())
+        .environment(ProjectListVM())
 }

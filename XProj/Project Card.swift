@@ -10,19 +10,22 @@ struct ProjectCard: View {
     var body: some View {
         HStack {
             Image(systemName: project.icon)
+                .title2()
                 .foregroundStyle(project.iconColor)
                 .frame(width: 20)
             
             VStack(alignment: .leading) {
                 Text(project.name)
                 
-                Text(project.type.rawValue)
+                Text("\(project.type.rawValue) - \(project.lastOpened, format: .dateTime)")
+                    .foregroundStyle(.secondary)
+                
+                Text(project.path)
+                    .footnote()
                     .foregroundStyle(.tertiary)
             }
             
             Spacer()
-            
-            Text(project.lastOpened, format: .dateTime)
             
             //            Text(project.attributes[.size] as? String ?? "")
             //                .footnote()

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SearchSuggestions: View {
-    @Environment(ProjectVM.self) private var vm
+    @Environment(ProjectListVM.self) private var vm
     
     var body: some View {
         ForEach(vm.lastOpenedProjects) { proj in
@@ -22,5 +22,5 @@ struct SearchSuggestions: View {
 
 #Preview {
     SearchSuggestions()
-        .environment(ProjectVM())
+        .environment(ProjectListVM())
 }
