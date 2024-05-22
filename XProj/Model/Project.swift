@@ -10,8 +10,8 @@ struct Project: Identifiable {
     
     var icon: String {
         switch type {
-        case .folder: "folder"
-        case .proj: "hammer.fill"
+        case .folder:  "folder"
+        case .proj:    "hammer.fill"
         case .package: "shippingbox.fill"
         case .unknown: "questionmark"
         }
