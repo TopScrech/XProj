@@ -59,7 +59,12 @@ final class ProjectListVM {
             
             let path = url.path
             
+            let startTime = CFAbsoluteTimeGetCurrent()
+
             try processPath(path)
+            
+            let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+            print("Time elapsed for processing path: \(String(format: "%.3f", timeElapsed)) seconds")
         } catch {
             print(error.localizedDescription)
         }
@@ -211,7 +216,7 @@ final class ProjectListVM {
             
             if isStale {
                 // Bookmark data is stale, need to save a new bookmark
-                print("Bookmark data is stale. Need to reselect folder for a new bookmark.")
+                print("Bookmark data is stale. Need to reselect folder for a new bookmark")
             }
         } catch {
             print("Error restoring access: \(error)")
