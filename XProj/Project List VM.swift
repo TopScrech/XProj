@@ -6,6 +6,7 @@ final class ProjectListVM {
     var searchPrompt = ""
     
     private let udKey = "projects_folder_bookmark"
+    private let fm = FileManager.default
     
     var filteredProjects: [Project] {
         if searchPrompt.isEmpty {
@@ -30,15 +31,17 @@ final class ProjectListVM {
         restoreAccessToFolder()
         projects = []
         
-        let fm = FileManager.default
-        
         do {
             guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
                 return
             }
             
             var isStale = false
-            let url = try URL(resolvingBookmarkData: bookmarkData, options: .withSecurityScope, bookmarkDataIsStale: &isStale)
+            let url = try URL(
+                resolvingBookmarkData: bookmarkData,
+                options: .withSecurityScope,
+                bookmarkDataIsStale: &isStale
+            )
             
             if isStale {
                 print("Bookmark data is stale. Need to reselect folder for a new bookmark")
@@ -56,50 +59,58 @@ final class ProjectListVM {
             
             let path = url.path
             
-            let projects = try fm.contentsOfDirectory(atPath: path)
-            
-            for project in projects {
-                let projectPath = "\(path)/\(project)"
-                let attributes = try fm.attributesOfItem(atPath: projectPath)
-                
-                let typeAttribute = attributes[.type] as? String ?? "Other"
-                let fileType: FileType
-                
-                if hasXcodeproj("\(path)/\(project)") {
-                    fileType = .proj
-                } else {
-                    switch typeAttribute {
-                    case "NSFileTypeDirectory":
-                        fileType = .folder
-                        
-                    default:
-                        fileType = .unknown
-                    }
-                }
-                
-                if let isHidden = attributes[.extensionHidden] as? Bool, isHidden {
-                    continue
-                }
-                
-                guard let lastOpened = lastAccessDate(projectPath) else {
-                    continue
-                }
-                
-                self.projects.append(
-                    .init(
-                        name: project,
-                        path: projectPath,
-                        type: fileType,
-                        lastOpened: lastOpened,
-                        attributes: attributes
-                    )
-                )
-            }
+            try processPath(path)
         } catch {
             print(error.localizedDescription)
         }
     }
     
+    func processPath(_ path: String) throws {
+        let projects = try fm.contentsOfDirectory(atPath: path)
+        
+        for project in projects {
+            try processProject(atPath: path, project: project)
+        }
+    }
+    
+    func processProject(atPath path: String, project: String) throws {
+        let projectPath = "\(path)/\(project)"
+        let attributes = try fm.attributesOfItem(atPath: projectPath)
+        
+        let typeAttribute = attributes[.type] as? String ?? "Other"
+        let fileType: FileType
+        
+        if hasXcodeproj("\(path)/\(project)") {
+            fileType = .proj
+        } else {
+            switch typeAttribute {
+            case "NSFileTypeDirectory":
+                fileType = .folder
+                
+            default:
+                fileType = .unknown
+            }
+        }
+        
+        if let isHidden = attributes[.extensionHidden] as? Bool, isHidden {
+            return
+        }
+        
+        guard let lastOpened = lastAccessDate(projectPath) else {
+            return
+        }
+        
+        self.projects.append(
+            .init(
+                name: project,
+                path: projectPath,
+                type: fileType,
+                lastOpened: lastOpened,
+                attributes: attributes
+            )
+        )
+    }
+        
     func lastAccessDate(_ path: String) -> Date? {
         path.withCString {
             var statStruct = Darwin.stat()
