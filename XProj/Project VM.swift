@@ -51,6 +51,10 @@ final class ProjectVM {
                 //                    type = .other
                 //                }
                 
+                if let isHidden = attributes[.extensionHidden] as? Bool, isHidden {
+                    continue
+                }
+                
                 if project.hasSuffix(".xcodeproj") {
                     print("F")
                 }
