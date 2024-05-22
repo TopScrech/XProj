@@ -3,8 +3,6 @@ import SwiftUI
 struct ProjectList: View {
     @Environment(ProjectVM.self) private var vm
     
-    @AppStorage("projects_folder_path") var projectsFolderPath = ""
-    
     var body: some View {
         List {
             Section {
