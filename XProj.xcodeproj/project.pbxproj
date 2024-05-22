@@ -17,6 +17,7 @@
 		F38B5E522BFD6F6100CB9917 /* Project Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Project Card.swift */; };
 		F38B5E542BFD76DF00CB9917 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E532BFD76DF00CB9917 /* Container.swift */; };
 		F38B5E562BFD76F300CB9917 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E552BFD76F300CB9917 /* HomeView.swift */; };
+		F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* Search Suggestions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		F38B5E512BFD6F6100CB9917 /* Project Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project Card.swift"; sourceTree = "<group>"; };
 		F38B5E532BFD76DF00CB9917 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		F38B5E552BFD76F300CB9917 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F38B5E572BFE134400CB9917 /* Search Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				F3341E402BDEB71F00E85F27 /* Project VM.swift */,
 				F38B5E512BFD6F6100CB9917 /* Project Card.swift */,
 				F38B5E502BFD6F2700CB9917 /* Model */,
+				F38B5E592BFE141300CB9917 /* Elements */,
 				F38B5E4F2BFD6F1D00CB9917 /* Settings */,
 			);
 			path = XProj;
@@ -92,6 +95,14 @@
 				F3341E3B2BDE3C8B00E85F27 /* Project.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F38B5E592BFE141300CB9917 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				F38B5E572BFE134400CB9917 /* Search Suggestions.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +185,7 @@
 				F38B5E522BFD6F6100CB9917 /* Project Card.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,
 				F38B5E542BFD76DF00CB9917 /* Container.swift in Sources */,
+				F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */,
 				F38B5E562BFD76F300CB9917 /* HomeView.swift in Sources */,
 				F3341E3C2BDE3C8B00E85F27 /* Project.swift in Sources */,
 				F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */,

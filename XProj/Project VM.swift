@@ -3,8 +3,28 @@ import SwiftUI
 @Observable
 final class ProjectVM {
     var projects: [Project] = []
+    var searchPrompt = ""
     
     private let udKey = "projects_folder_bookmark"
+    
+    var filteredProjects: [Project] {
+        if searchPrompt.isEmpty {
+            projects
+        } else {
+            projects.filter {
+                $0.name.contains(searchPrompt)
+            }
+        }
+    }
+    
+    var lastOpenedProjects: [Project] {
+        projects.filter {
+            $0.type == .proj
+        }
+        .prefix(5).sorted {
+            $0.lastOpened > $1.lastOpened
+        }
+    }
     
     func getFolders() {
         restoreAccessToFolder()
