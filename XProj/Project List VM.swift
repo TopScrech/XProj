@@ -80,20 +80,28 @@ final class ProjectListVM {
         let typeAttribute = attributes[.type] as? String ?? "Other"
         let fileType: FileType
         
-        if hasXcodeproj("\(path)/\(project)") {
+        if let isHidden = attributes[.extensionHidden] as? Bool, isHidden {
+            return
+        }
+        
+        if project == ".git" || project == ".build" || project == "Not Xcode" {
+            return
+        }
+        
+        if hasXcodeproj(projectPath) {
             fileType = .proj
+        } else if hasSwiftPackage(projectPath) {
+            fileType = .package
         } else {
             switch typeAttribute {
             case "NSFileTypeDirectory":
                 fileType = .folder
+                //                try processPath(projectPath)
+                //                break
                 
             default:
                 fileType = .unknown
             }
-        }
-        
-        if let isHidden = attributes[.extensionHidden] as? Bool, isHidden {
-            return
         }
         
         guard let lastOpened = lastAccessDate(projectPath) else {
@@ -110,7 +118,7 @@ final class ProjectListVM {
             )
         )
     }
-        
+    
     func lastAccessDate(_ path: String) -> Date? {
         path.withCString {
             var statStruct = Darwin.stat()
@@ -124,16 +132,25 @@ final class ProjectListVM {
             )
         }
     }
-        
+    
     private func hasXcodeproj(_ path: String) -> Bool {
-        let fileManager = FileManager.default
-        
         do {
-            let contents = try fileManager.contentsOfDirectory(atPath: path)
+            let contents = try fm.contentsOfDirectory(atPath: path)
             
             return contents.contains {
                 $0.hasSuffix(".xcodeproj")
             }
+        } catch {
+            print("Failed to read directory contents: \(path)")
+            return false
+        }
+    }
+    
+    private func hasSwiftPackage(_ path: String) -> Bool {
+        do {
+            let contents = try fm.contentsOfDirectory(atPath: path)
+            
+            return contents.contains("Package.swift")
         } catch {
             print("Failed to read directory contents: \(path)")
             return false

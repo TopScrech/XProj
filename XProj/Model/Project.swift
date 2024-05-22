@@ -11,7 +11,8 @@ struct Project: Identifiable {
     var icon: String {
         switch type {
         case .folder: "folder"
-        case .proj: "hammer"
+        case .proj: "hammer.fill"
+        case .package: "shippingbox.fill"
         case .unknown: "questionmark"
         }
     }
@@ -20,6 +21,7 @@ struct Project: Identifiable {
         switch type {
         case .folder:  .yellow
         case .proj:    .blue
+        case .package: .package
         case .unknown: .gray
         }
     }
@@ -28,5 +30,6 @@ struct Project: Identifiable {
 enum FileType: String {
     case folder,
          proj,
+         package,
          unknown
 }

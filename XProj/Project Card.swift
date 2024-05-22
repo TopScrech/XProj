@@ -10,9 +10,9 @@ struct ProjectCard: View {
     var body: some View {
         HStack {
             Image(systemName: project.icon)
-                .title2()
+                .title()
                 .foregroundStyle(project.iconColor)
-                .frame(width: 20)
+                .frame(width: 30)
             
             VStack(alignment: .leading) {
                 Text(project.name)
