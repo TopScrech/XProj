@@ -13,6 +13,7 @@
 		F3341E3C2BDE3C8B00E85F27 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3341E3B2BDE3C8B00E85F27 /* Project.swift */; };
 		F3341E3F2BDEAB4D00E85F27 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3341E3E2BDEAB4D00E85F27 /* ScrechKit */; };
 		F3341E412BDEB71F00E85F27 /* Project List VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3341E402BDEB71F00E85F27 /* Project List VM.swift */; };
+		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
 		F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Project Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Project Card.swift */; };
 		F38B5E542BFD76DF00CB9917 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E532BFD76DF00CB9917 /* Container.swift */; };
@@ -29,6 +30,7 @@
 		F3341E3B2BDE3C8B00E85F27 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		F3341E402BDEB71F00E85F27 /* Project List VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project List VM.swift"; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
 		F38B5E512BFD6F6100CB9917 /* Project Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project Card.swift"; sourceTree = "<group>"; };
 		F38B5E532BFD76DF00CB9917 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				F3341E352BDE358A00E85F27 /* XProj.entitlements */,
 				F3341E2E2BDE358900E85F27 /* Project List.swift */,
 				F3341E402BDEB71F00E85F27 /* Project List VM.swift */,
+				F387AC312BFEC6C600EC1DC5 /* Analyser.swift */,
 				F38B5E512BFD6F6100CB9917 /* Project Card.swift */,
 				F38B5E502BFD6F2700CB9917 /* Model */,
 				F38B5E592BFE141300CB9917 /* Elements */,
@@ -190,6 +193,7 @@
 				F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */,
 				F38B5E562BFD76F300CB9917 /* Home View.swift in Sources */,
 				F3341E3C2BDE3C8B00E85F27 /* Project.swift in Sources */,
+				F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */,
 				F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
