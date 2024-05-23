@@ -145,7 +145,6 @@ final class ProjectListVM {
                 $0.hasSuffix(".xcodeproj")
             }
         } catch {
-            print("Failed to read directory contents: \(path)")
             return false
         }
     }
@@ -156,7 +155,6 @@ final class ProjectListVM {
             
             return contents.contains("Package.swift")
         } catch {
-            print("Failed to read directory contents: \(path)")
             return false
         }
     }

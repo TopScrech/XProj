@@ -65,9 +65,9 @@ struct ProjectCard: View {
     }
     
     private func launchProject(_ filePath: String) {
-        let fileManager = FileManager.default
+        let fm = FileManager.default
         
-        if fileManager.fileExists(atPath: filePath) {
+        if fm.fileExists(atPath: filePath) {
             let task = Process()
             task.launchPath = "/usr/bin/open"
             task.arguments = [filePath]
