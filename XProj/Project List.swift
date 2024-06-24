@@ -26,6 +26,29 @@ struct ProjectList: View {
         .refreshableTask {
             vm.getFolders()
         }
+        .toolbar {
+            ToolbarItemGroup {
+                Button("listFilesInFoldersSingleThread") {
+                    let test = vm.listFilesInFoldersSingleThread(folderPaths: vm.projects.map(\.path))
+                }
+                
+                Button("countFilesInFoldersMultiThread") {
+                    vm.countFilesInFoldersMultiThread(folderPaths: vm.projects.map(\.path)) { test in
+                        print(test)
+                    }
+                }
+                
+                Button("countFilesRecursively") {
+                    let test = vm.countFilesRecursively("/Users/topscrech/Projects")
+                    print(test)
+                }
+                
+                Button("listFilesRecursively") {
+                    let test = vm.listFilesRecursively("/Users/topscrech/Projects")
+                    print(test)
+                }
+            }
+        }
     }
 }
 
