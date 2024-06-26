@@ -2,7 +2,15 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        ProjectList()
+        VStack {
+            NavigationLink("Projects") {
+                ProjectList()
+            }
+            
+            NavigationLink("Derived Data") {
+                DerivedDataList()
+            }
+        }
     }
 }
 

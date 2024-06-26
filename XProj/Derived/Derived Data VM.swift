@@ -1,35 +1,26 @@
 import SwiftUI
 
 @Observable
-final class ProjectListVM {
-    var projects: [Project] = []
+final class DerivedDataVM {
+    var folders: [String] = []
     var searchPrompt = ""
     
-    private let udKey = "projects_folder_bookmark"
+    private let udKey = "derived_data_bookmark"
     private let fm = FileManager.default
     
-    var filteredProjects: [Project] {
-        if searchPrompt.isEmpty {
-            projects
-        } else {
-            projects.filter {
-                $0.name.contains(searchPrompt)
-            }
+    var filteredFolders: [String] {
+        guard !searchPrompt.isEmpty else {
+            return folders
         }
-    }
-    
-    var lastOpenedProjects: [Project] {
-        projects.filter {
-            $0.type == .proj
-        }
-        .prefix(5).sorted {
-            $0.lastOpened > $1.lastOpened
+        
+        return folders.filter {
+            $0.contains(searchPrompt)
         }
     }
     
     func getFolders() {
         restoreAccessToFolder()
-        projects = []
+        folders = []
         
         do {
             guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
@@ -37,11 +28,14 @@ final class ProjectListVM {
             }
             
             var isStale = false
+            
             let url = try URL(
                 resolvingBookmarkData: bookmarkData,
                 options: .withSecurityScope,
                 bookmarkDataIsStale: &isStale
             )
+            
+            let path = url.path
             
             if isStale {
                 print("Bookmark data is stale. Need to reselect folder for a new bookmark")
@@ -57,107 +51,63 @@ final class ProjectListVM {
                 url.stopAccessingSecurityScopedResource()
             }
             
-            let path = url.path
-            
-            let startTime = CFAbsoluteTimeGetCurrent()
-            
             try processPath(path)
-            
-            let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-            print("Time elapsed for processing path: \(String(format: "%.3f", timeElapsed)) seconds")
         } catch {
             print(error.localizedDescription)
         }
     }
     
     func processPath(_ path: String) throws {
+        let startTime = CFAbsoluteTimeGetCurrent()
+        
+        let group = DispatchGroup()
+        let queue = DispatchQueue.global(qos: .userInitiated)
+        
         let projects = try fm.contentsOfDirectory(atPath: path)
         
         for project in projects {
-            try processProject(atPath: path, project: project)
+            group.enter()
+            
+            queue.async {
+                defer {
+                    group.leave()
+                }
+                
+                self.processProject(project, path: path)
+            }
         }
+        
+        group.wait()
+        
+        let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+        folders.append(timeElapsed.description)
+        
+        print("Time elapsed for processing path: \(String(format: "%.3f", timeElapsed)) seconds")
     }
     
-    func processProject(atPath path: String, project: String) throws {
+    func processProject(_ project: String, path: String) {
         let projectPath = "\(path)/\(project)"
-        let attributes = try fm.attributesOfItem(atPath: projectPath)
-        
-        let typeAttribute = attributes[.type] as? String ?? "Other"
-        let fileType: FileType
-        
-        if let isHidden = attributes[.extensionHidden] as? Bool, isHidden {
-            return
-        }
         
         if project == ".git" || project == ".build" || project == "Not Xcode" {
             return
         }
         
-        if hasXcodeproj(projectPath) {
-            fileType = .proj
+        do {
+            let sizeAttribute = try fm.allocatedSizeOfDirectory(atUrl: URL(fileURLWithPath: projectPath))
             
-        } else if hasSwiftPackage(projectPath) {
-            fileType = .package
-            
-        } else {
-            switch typeAttribute {
-            case "NSFileTypeDirectory":
-                //                fileType = .folder
-                try processPath(projectPath)
-                return
+            if project.contains("-") {
+                let projectName = project.split(separator: "-").dropLast().joined(separator: "-")
                 
-            default:
-                //                fileType = .unknown
-                return
-            }
-        }
-        
-        guard let lastOpened = lastAccessDate(projectPath) else {
-            return
-        }
-        
-        self.projects.append(
-            .init(
-                name: project,
-                path: projectPath,
-                type: fileType,
-                lastOpened: lastOpened,
-                attributes: attributes
-            )
-        )
-    }
-    
-    func lastAccessDate(_ path: String) -> Date? {
-        path.withCString {
-            var statStruct = Darwin.stat()
-            
-            guard  stat($0, &statStruct) == 0 else {
-                return nil
-            }
-            
-            return Date(timeIntervalSince1970: TimeInterval(statStruct.st_atimespec.tv_sec))
-        }
-    }
-    
-    private func hasXcodeproj(_ path: String) -> Bool {
-        do {
-            let contents = try fm.contentsOfDirectory(atPath: path)
-            
-            return contents.contains {
-                $0.hasSuffix(".xcodeproj")
+                print("\(projectName) \(sizeAttribute.description)")
+                
+                self.folders.append(projectName)
+            } else {
+                print("\(project) \(sizeAttribute.description)")
+                
+                self.folders.append(project)
             }
         } catch {
-            return false
-        }
-    }
-    
-    private func hasSwiftPackage(_ path: String) -> Bool {
-        do {
-            let contents = try fm.contentsOfDirectory(atPath: path)
-            
-            return contents.contains("Package.swift")
-        } catch {
-            return false
+            print("error processing project at path: \(projectPath)")
         }
     }
     
