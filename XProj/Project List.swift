@@ -33,19 +33,32 @@ struct ProjectList: View {
                 }
                 
                 Button("countFilesInFoldersMultiThread") {
-                    vm.countFilesInFoldersMultiThread(folderPaths: vm.projects.map(\.path)) { test in
-                        print(test)
+                    vm.countFilesInFoldersMultiThread(folderPaths: vm.projects.map(\.path)) { _ in
+                        
                     }
                 }
                 
                 Button("countFilesRecursively") {
-                    let test = vm.countFilesRecursively("/Users/topscrech/Projects")
-                    print(test)
+                    DispatchQueue.global().async {
+                        let start = DispatchTime.now()
+                        
+                        let test = vm.countFilesRecursively("/Users/topscrech/Projects")
+                        print(test)
+                        
+                        DispatchQueue.main.async {
+                            let finish = DispatchTime.now()
+                            let timeElapsed = finish.uptimeNanoseconds - start.uptimeNanoseconds
+                            let timeElapsedInSeconds = Double(timeElapsed) / 1_000_000_000
+                            
+                            print("Time elapsed: \(timeElapsedInSeconds) seconds")
+                        }
+                    }
                 }
                 
-                Button("listFilesRecursively") {
-                    let test = vm.listFilesRecursively("/Users/topscrech/Projects")
-                    print(test)
+                Button("countFilesInFoldersMultiThread") {
+                    vm.countFilesInFoldersMultiThread(folderPaths: vm.projects.map(\.path)) { _ in
+                        
+                    }
                 }
             }
         }
