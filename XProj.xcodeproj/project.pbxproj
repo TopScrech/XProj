@@ -20,6 +20,7 @@
 		F371A5192C2D84BA006BDF0D /* Project Card VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A5182C2D84BA006BDF0D /* Project Card VM.swift */; };
 		F371A51B2C2D8D58006BDF0D /* MB Project List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A51A2C2D8D58006BDF0D /* MB Project List.swift */; };
 		F371A51D2C2D8D94006BDF0D /* MB Project Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A51C2C2D8D94006BDF0D /* MB Project Card.swift */; };
+		F371A5252C2D97AB006BDF0D /* XProj Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A5242C2D97AB006BDF0D /* XProj Tests.swift */; };
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
 		F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Project Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Project Card.swift */; };
@@ -43,6 +44,8 @@
 		F371A5182C2D84BA006BDF0D /* Project Card VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project Card VM.swift"; sourceTree = "<group>"; };
 		F371A51A2C2D8D58006BDF0D /* MB Project List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MB Project List.swift"; sourceTree = "<group>"; };
 		F371A51C2C2D8D94006BDF0D /* MB Project Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MB Project Card.swift"; sourceTree = "<group>"; };
+		F371A5222C2D97AB006BDF0D /* XProj Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XProj Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F371A5242C2D97AB006BDF0D /* XProj Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XProj Tests.swift"; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
@@ -61,6 +64,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F371A51F2C2D97AB006BDF0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -68,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				F3341E2B2BDE358900E85F27 /* XProj */,
+				F371A5232C2D97AB006BDF0D /* XProj Tests */,
 				F3341E2A2BDE358900E85F27 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				F3341E292BDE358900E85F27 /* XProj.app */,
+				F371A5222C2D97AB006BDF0D /* XProj Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,6 +125,14 @@
 				F3522DCC2C2AA32C00660101 /* File Manager.swift */,
 			);
 			path = Derived;
+			sourceTree = "<group>";
+		};
+		F371A5232C2D97AB006BDF0D /* XProj Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F371A5242C2D97AB006BDF0D /* XProj Tests.swift */,
+			);
+			path = "XProj Tests";
 			sourceTree = "<group>";
 		};
 		F38B5E4F2BFD6F1D00CB9917 /* Settings */ = {
@@ -170,6 +190,23 @@
 			productReference = F3341E292BDE358900E85F27 /* XProj.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F371A5212C2D97AB006BDF0D /* XProj Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F371A5262C2D97AB006BDF0D /* Build configuration list for PBXNativeTarget "XProj Tests" */;
+			buildPhases = (
+				F371A51E2C2D97AB006BDF0D /* Sources */,
+				F371A51F2C2D97AB006BDF0D /* Frameworks */,
+				F371A5202C2D97AB006BDF0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "XProj Tests";
+			productName = "XProj Tests";
+			productReference = F371A5222C2D97AB006BDF0D /* XProj Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -182,6 +219,9 @@
 				TargetAttributes = {
 					F3341E282BDE358900E85F27 = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					F371A5212C2D97AB006BDF0D = {
+						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
@@ -202,6 +242,7 @@
 			projectRoot = "";
 			targets = (
 				F3341E282BDE358900E85F27 /* XProj */,
+				F371A5212C2D97AB006BDF0D /* XProj Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -212,6 +253,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3341E312BDE358A00E85F27 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F371A5202C2D97AB006BDF0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +287,14 @@
 				F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */,
 				F3522DC62C2A29C000660101 /* Derived Data List.swift in Sources */,
 				F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F371A51E2C2D97AB006BDF0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F371A5252C2D97AB006BDF0D /* XProj Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +481,51 @@
 			};
 			name = Release;
 		};
+		F371A5272C2D97AB006BDF0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8FQUA2F388;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.XProj-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F371A5282C2D97AB006BDF0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8FQUA2F388;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.XProj-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -442,6 +543,15 @@
 			buildConfigurations = (
 				F3341E392BDE358A00E85F27 /* Debug */,
 				F3341E3A2BDE358A00E85F27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F371A5262C2D97AB006BDF0D /* Build configuration list for PBXNativeTarget "XProj Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F371A5272C2D97AB006BDF0D /* Debug */,
+				F371A5282C2D97AB006BDF0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

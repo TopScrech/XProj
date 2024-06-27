@@ -18,6 +18,27 @@ final class ProjectListVM {
         }
     }
     
+    func findDuplicates() -> [[Project]] {
+        var nameCountDict: [String: Int] = [:]
+        var duplicates: [[Project]] = []
+        
+        for project in projects {
+            if let count = nameCountDict[project.name] {
+                nameCountDict[project.name] = count + 1
+            } else {
+                nameCountDict[project.name] = 1
+            }
+            
+            if let count = nameCountDict[project.name], count > 1 {
+                if !duplicates.contains(where: { $0.first?.name == project.name }) {
+                    duplicates.append(projects.filter { $0.name == project.name })
+                }
+            }
+        }
+        
+        return duplicates
+    }
+    
     var lastOpenedProjects: [Project] {
         projects.filter {
             $0.type == .proj
