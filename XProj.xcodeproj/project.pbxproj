@@ -100,8 +100,7 @@
 				F37B90722BFE9E1600597624 /* Info.plist */,
 				F3341E302BDE358A00E85F27 /* Assets.xcassets */,
 				F3341E352BDE358A00E85F27 /* XProj.entitlements */,
-				F371A51A2C2D8D58006BDF0D /* MB Project List.swift */,
-				F371A51C2C2D8D94006BDF0D /* MB Project Card.swift */,
+				F371A5522C2DC08D006BDF0D /* Menu Bar */,
 				F38B5E552BFD76F300CB9917 /* Home View.swift */,
 				F3341E2E2BDE358900E85F27 /* Project List.swift */,
 				F3341E402BDEB71F00E85F27 /* Project List VM.swift */,
@@ -133,6 +132,15 @@
 				F371A5242C2D97AB006BDF0D /* XProj Tests.swift */,
 			);
 			path = "XProj Tests";
+			sourceTree = "<group>";
+		};
+		F371A5522C2DC08D006BDF0D /* Menu Bar */ = {
+			isa = PBXGroup;
+			children = (
+				F371A51A2C2D8D58006BDF0D /* MB Project List.swift */,
+				F371A51C2C2D8D94006BDF0D /* MB Project Card.swift */,
+			);
+			path = "Menu Bar";
 			sourceTree = "<group>";
 		};
 		F38B5E4F2BFD6F1D00CB9917 /* Settings */ = {

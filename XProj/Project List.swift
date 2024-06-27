@@ -33,9 +33,9 @@ struct ProjectList: View {
         .refreshableTask {
             vm.getFolders()
             
-            let duplicates: [()] = vm.findDuplicates().map { duplicates in
-                print(duplicates.map(\.name))
-            }
+            //            let duplicates: [()] = vm.findDuplicates().map { duplicates in
+            //                print(duplicates.map(\.name))
+            //            }
         }
 #if DEBUG
         .toolbar {
