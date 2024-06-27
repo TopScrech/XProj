@@ -18,6 +18,8 @@
 		F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCC2C2AA32C00660101 /* File Manager.swift */; };
 		F3522DCF2C2AA51800660101 /* Derived Data Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCE2C2AA51800660101 /* Derived Data Entry.swift */; };
 		F371A5192C2D84BA006BDF0D /* Project Card VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A5182C2D84BA006BDF0D /* Project Card VM.swift */; };
+		F371A51B2C2D8D58006BDF0D /* MB Project List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A51A2C2D8D58006BDF0D /* MB Project List.swift */; };
+		F371A51D2C2D8D94006BDF0D /* MB Project Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A51C2C2D8D94006BDF0D /* MB Project Card.swift */; };
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
 		F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Project Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Project Card.swift */; };
@@ -39,6 +41,8 @@
 		F3522DCC2C2AA32C00660101 /* File Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File Manager.swift"; sourceTree = "<group>"; };
 		F3522DCE2C2AA51800660101 /* Derived Data Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data Entry.swift"; sourceTree = "<group>"; };
 		F371A5182C2D84BA006BDF0D /* Project Card VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project Card VM.swift"; sourceTree = "<group>"; };
+		F371A51A2C2D8D58006BDF0D /* MB Project List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MB Project List.swift"; sourceTree = "<group>"; };
+		F371A51C2C2D8D94006BDF0D /* MB Project Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MB Project Card.swift"; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				F3341E302BDE358A00E85F27 /* Assets.xcassets */,
 				F3341E352BDE358A00E85F27 /* XProj.entitlements */,
 				F3341E2C2BDE358900E85F27 /* XProj App.swift */,
+				F371A51A2C2D8D58006BDF0D /* MB Project List.swift */,
+				F371A51C2C2D8D94006BDF0D /* MB Project Card.swift */,
 				F3DB25452C2C4E8B00A0C066 /* Nav */,
 				F38B5E552BFD76F300CB9917 /* Home View.swift */,
 				F3522DC92C2A29D200660101 /* Derived */,
@@ -218,9 +224,11 @@
 			files = (
 				F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */,
 				F3341E2F2BDE358900E85F27 /* Project List.swift in Sources */,
+				F371A51B2C2D8D58006BDF0D /* MB Project List.swift in Sources */,
 				F3341E412BDEB71F00E85F27 /* Project List VM.swift in Sources */,
 				F38B5E522BFD6F6100CB9917 /* Project Card.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,
+				F371A51D2C2D8D94006BDF0D /* MB Project Card.swift in Sources */,
 				F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */,
 				F38B5E542BFD76DF00CB9917 /* Container.swift in Sources */,
 				F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */,

@@ -14,5 +14,12 @@ struct XProjApp: App {
             SettingsView()
                 .environment(vm)
         }
+        
+#if DEBUG
+        MenuBarExtra("Project List", systemImage: "hammer") {
+            MBProjectList()
+                .environment(vm)
+        }
+#endif
     }
 }
