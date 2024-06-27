@@ -16,6 +16,13 @@ struct ProjectList: View {
                     Spacer()
                     
                     Text("\(vm.projects.count) Projects")
+                    
+                    let count = vm.findDuplicates().reduce(0) {
+                        $0 + $1.count
+                    }
+                    
+                    Text("(\(count) duplicates)")
+                        .foregroundStyle(.tertiary)
                 }
             }
         }
