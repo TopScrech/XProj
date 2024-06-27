@@ -26,6 +26,7 @@ struct ProjectList: View {
         .refreshableTask {
             vm.getFolders()
         }
+#if DEBUG
         .toolbar {
             ToolbarItemGroup {
                 Menu {
@@ -66,6 +67,7 @@ struct ProjectList: View {
                 }
             }
         }
+#endif
     }
 }
 

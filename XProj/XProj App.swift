@@ -15,11 +15,12 @@ struct XProjApp: App {
                 .environment(vm)
         }
         
-#if DEBUG
         MenuBarExtra("Project List", systemImage: "hammer") {
-            MBProjectList()
-                .environment(vm)
+            NavigationStack {
+                MBProjectList()
+            }
+            .environment(vm)
         }
-#endif
+        .menuBarExtraStyle(.window)
     }
 }

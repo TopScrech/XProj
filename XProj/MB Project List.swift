@@ -4,17 +4,23 @@ struct MBProjectList: View {
     @Environment(ProjectListVM.self) private var vm
     
     var body: some View {
+        @Bindable var vm = vm
+        
         VStack {
-            Text("\(vm.projects.count) Projects")
+            Text("\(vm.filteredProjects.count) Projects")
+            
+            TextField("Search", text: $vm.searchPrompt)
             
             ScrollView {
-                ForEach(vm.projects) { proj in
+                ForEach(vm.filteredProjects) { proj in
                     MBProjectCard(proj)
                 }
             }
-            .refreshableTask {
-                vm.getFolders()
-            }
+        }
+        .padding()
+        .scrollIndicators(.never)
+        .refreshableTask {
+            vm.getFolders()
         }
     }
 }

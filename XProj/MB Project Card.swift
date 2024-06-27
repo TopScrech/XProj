@@ -12,6 +12,7 @@ struct MBProjectCard: View {
     var body: some View {
         HStack {
             Image(systemName: proj.icon)
+                .foregroundStyle(proj.iconColor.gradient)
             
             Text(proj.name)
             
