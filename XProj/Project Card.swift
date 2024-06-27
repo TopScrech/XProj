@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 struct ProjectCard: View {
     private var vm = ProjectCardVM()
@@ -23,9 +23,14 @@ struct ProjectCard: View {
                     .caption2()
                     .foregroundStyle(.secondary)
                 
-                Text(project.path)
-                    .footnote()
-                    .foregroundStyle(.tertiary)
+                Button {
+                    openInFinder(rootedAt: project.path)
+                } label: {
+                    Text(project.path)
+                        .footnote()
+                        .foregroundStyle(.tertiary)
+                }
+                .buttonStyle(.plain)
             }
             
             Spacer()
@@ -34,9 +39,9 @@ struct ProjectCard: View {
             //                .footnote()
             //                .foregroundStyle(.secondary)
             
-            let (found, filePath) = vm.findXcodeprojFile(project.path)
-            
             Button {
+                let (found, filePath) = vm.findXcodeprojFile(project.path)
+                
                 if found, let filePath {
                     vm.launchProject(filePath)
                 } else {
