@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ProjectCard: View {
+    private var vm = ProjectCardVM()
+    
     private let project: Project
     
     init(_ project: Project) {
@@ -32,55 +34,20 @@ struct ProjectCard: View {
             //                .footnote()
             //                .foregroundStyle(.secondary)
             
-            let (found, filePath) = findXcodeprojFile(project.path)
+            let (found, filePath) = vm.findXcodeprojFile(project.path)
             
-            if found, let filePath = filePath {
-                Button {
-                    launchProject(filePath)
-                } label: {
-                    Image(systemName: "play")
+            Button {
+                if found, let filePath {
+                    vm.launchProject(filePath)
+                } else {
+                    vm.launchProject(project.path + "/Package.swift")
                 }
+            } label: {
+                Image(systemName: "play")
             }
         }
         .padding(.vertical, 5)
-    }
-    
-    private func findXcodeprojFile(_ folderPath: String) -> (found: Bool, filePath: String?) {
-        let fileManager = FileManager.default
-        
-        do {
-            let contents = try fileManager.contentsOfDirectory(atPath: folderPath)
-            
-            for item in contents {
-                if item.hasSuffix(".xcodeproj") {
-                    let filePath = (folderPath as NSString).appendingPathComponent(item)
-                    return (true, filePath)
-                }
-            }
-        } catch {
-            print("Failed to read directory contents: \(error.localizedDescription)")
-        }
-        
-        return (false, nil)
-    }
-    
-    private func launchProject(_ filePath: String) {
-        let fm = FileManager.default
-        
-        if fm.fileExists(atPath: filePath) {
-            let task = Process()
-            task.launchPath = "/usr/bin/open"
-            task.arguments = [filePath]
-            
-            do {
-                try task.run()
-            } catch {
-                print("Failed to launch Xcode: \(error.localizedDescription)")
-            }
-        } else {
-            print("File does not exist at path: \(filePath)")
-        }
-    }
+    }    
 }
 
 #Preview {
@@ -89,6 +56,14 @@ struct ProjectCard: View {
             name: "Preview",
             path: "/",
             type: .proj,
+            lastOpened: Date(),
+            attributes: [:]
+        ))
+        
+        ProjectCard(.init(
+            name: "Preview",
+            path: "/",
+            type: .package,
             lastOpened: Date(),
             attributes: [:]
         ))

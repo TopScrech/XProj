@@ -3,13 +3,13 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         VStack {
-            NavigationLink("Projects") {
+//            NavigationLink("Projects") {
                 ProjectList()
-            }
+//            }
             
-            NavigationLink("Derived Data") {
-                DerivedDataList()
-            }
+//            NavigationLink("Derived Data") {
+//                DerivedDataList()
+//            }
         }
     }
 }

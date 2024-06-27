@@ -17,6 +17,7 @@
 		F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCA2C2A2A5600660101 /* Derived Data VM.swift */; };
 		F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCC2C2AA32C00660101 /* File Manager.swift */; };
 		F3522DCF2C2AA51800660101 /* Derived Data Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCE2C2AA51800660101 /* Derived Data Entry.swift */; };
+		F371A5192C2D84BA006BDF0D /* Project Card VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A5182C2D84BA006BDF0D /* Project Card VM.swift */; };
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
 		F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Project Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Project Card.swift */; };
@@ -37,6 +38,7 @@
 		F3522DCA2C2A2A5600660101 /* Derived Data VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data VM.swift"; sourceTree = "<group>"; };
 		F3522DCC2C2AA32C00660101 /* File Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File Manager.swift"; sourceTree = "<group>"; };
 		F3522DCE2C2AA51800660101 /* Derived Data Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data Entry.swift"; sourceTree = "<group>"; };
+		F371A5182C2D84BA006BDF0D /* Project Card VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project Card VM.swift"; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
@@ -86,8 +88,9 @@
 				F3522DC92C2A29D200660101 /* Derived */,
 				F3341E2E2BDE358900E85F27 /* Project List.swift */,
 				F3341E402BDEB71F00E85F27 /* Project List VM.swift */,
-				F387AC312BFEC6C600EC1DC5 /* Analyser.swift */,
 				F38B5E512BFD6F6100CB9917 /* Project Card.swift */,
+				F371A5182C2D84BA006BDF0D /* Project Card VM.swift */,
+				F387AC312BFEC6C600EC1DC5 /* Analyser.swift */,
 				F38B5E502BFD6F2700CB9917 /* Model */,
 				F38B5E592BFE141300CB9917 /* Elements */,
 				F38B5E4F2BFD6F1D00CB9917 /* Settings */,
@@ -224,6 +227,7 @@
 				F3522DCF2C2AA51800660101 /* Derived Data Entry.swift in Sources */,
 				F38B5E562BFD76F300CB9917 /* Home View.swift in Sources */,
 				F3341E3C2BDE3C8B00E85F27 /* Project.swift in Sources */,
+				F371A5192C2D84BA006BDF0D /* Project Card VM.swift in Sources */,
 				F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */,
 				F3522DC62C2A29C000660101 /* Derived Data List.swift in Sources */,
 				F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */,
