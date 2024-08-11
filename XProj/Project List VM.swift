@@ -232,15 +232,11 @@ final class ProjectListVM {
             
             if url.startAccessingSecurityScopedResource() {
                 // You can now access the folder here
-#warning("Remember to call `stopAccessingSecurityScopedResource()` when access is no longer needed")
             }
             
             if isStale {
-                // Bookmark data is stale, need to save a new bookmark
                 print("Bookmark data is stale. Need to reselect folder for a new bookmark")
             }
-            
-            url.stopAccessingSecurityScopedResource()
         } catch {
             print("Error restoring access: \(error)")
         }
