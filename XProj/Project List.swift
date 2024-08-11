@@ -53,13 +53,11 @@ struct ProjectList: View {
             //                print(duplicates.map(\.name))
             //            }
         }
-#if DEBUG
         .toolbar {
             ToolbarItemGroup {
                 ProjectListToolbar()
             }
         }
-#endif
     }
 }
 

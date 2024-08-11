@@ -26,6 +26,7 @@ struct DuplicateProjects: View {
                                     .footnote()
                                     .foregroundStyle(.secondary)
                             }
+                            .buttonStyle(.plain)
                         }
                     }
                 }

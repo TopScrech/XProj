@@ -239,8 +239,11 @@ final class ProjectListVM {
                 // Bookmark data is stale, need to save a new bookmark
                 print("Bookmark data is stale. Need to reselect folder for a new bookmark")
             }
+            
+            url.stopAccessingSecurityScopedResource()
         } catch {
             print("Error restoring access: \(error)")
         }
+        
     }
 }
