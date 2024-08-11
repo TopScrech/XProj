@@ -28,6 +28,7 @@
 		F38B5E562BFD76F300CB9917 /* Home View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E552BFD76F300CB9917 /* Home View.swift */; };
 		F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* Search Suggestions.swift */; };
 		F3E7ECA02C687BAD008CD17B /* Project List Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* Project List Toolbar.swift */; };
+		F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		F38B5E552BFD76F300CB9917 /* Home View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home View.swift"; sourceTree = "<group>"; };
 		F38B5E572BFE134400CB9917 /* Search Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestions.swift"; sourceTree = "<group>"; };
 		F3E7EC9F2C687BAD008CD17B /* Project List Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project List Toolbar.swift"; sourceTree = "<group>"; };
+		F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Projects.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				F371A5522C2DC08D006BDF0D /* Menu Bar Extra */,
 				F38B5E552BFD76F300CB9917 /* Home View.swift */,
 				F3341E2E2BDE358900E85F27 /* Project List.swift */,
+				F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */,
 				F3E7EC9F2C687BAD008CD17B /* Project List Toolbar.swift */,
 				F3341E402BDEB71F00E85F27 /* Project List VM.swift */,
 				F38B5E512BFD6F6100CB9917 /* Project Card.swift */,
@@ -296,6 +299,7 @@
 				F3341E3C2BDE3C8B00E85F27 /* Project.swift in Sources */,
 				F371A5192C2D84BA006BDF0D /* Project Card VM.swift in Sources */,
 				F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */,
+				F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */,
 				F3522DC62C2A29C000660101 /* Derived Data List.swift in Sources */,
 				F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */,
 				F3E7ECA02C687BAD008CD17B /* Project List Toolbar.swift in Sources */,

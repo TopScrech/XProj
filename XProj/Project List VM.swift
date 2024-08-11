@@ -4,6 +4,7 @@ import SwiftUI
 final class ProjectListVM {
     var projects: [Project] = []
     var searchPrompt = ""
+    var projectsFolder = ""
     
     private let udKey = "projects_folder_bookmark"
     private let fm = FileManager.default
@@ -13,7 +14,7 @@ final class ProjectListVM {
             projects
         } else {
             projects.filter {
-                $0.name.contains(searchPrompt)
+                $0.name.lowercased().contains(searchPrompt.lowercased())
             }
         }
     }
@@ -226,6 +227,8 @@ final class ProjectListVM {
                 relativeTo: nil,
                 bookmarkDataIsStale: &isStale
             )
+            
+            projectsFolder = url.path
             
             if url.startAccessingSecurityScopedResource() {
                 // You can now access the folder here

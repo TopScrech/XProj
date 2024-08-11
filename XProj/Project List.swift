@@ -9,24 +9,40 @@ struct ProjectList: View {
         List {
             Section {
                 ForEach(vm.filteredProjects) { project in
-                    ProjectCard(project)
+                    ProjectCard(project, projectsFolder: vm.projectsFolder)
                 }
             } header: {
                 HStack {
-                    Spacer()
-                    
                     Text("\(vm.projects.count) Projects")
                     
-                    let count = vm.findDuplicates().reduce(0) {
+                    Spacer()
+                    
+                    let duplicates = vm.findDuplicates()
+                    let count = duplicates.reduce(0) {
                         $0 + $1.count
                     }
                     
-                    Text("(\(count) duplicates)")
-                        .foregroundStyle(.tertiary)
+                    Text("Smart Scan:")
+                    
+                    if count != 0 {
+                        NavigationLink {
+                            DuplicateProjects(duplicates)
+                        } label: {
+                            Text("\(count) duplicates")
+                                .underline()
+                                .foregroundStyle(.tertiary)
+                        }
+                        .buttonStyle(.plain)
+                    } else {
+                        Text("✅")
+                    }
                 }
             }
         }
         .searchable(text: $vm.searchPrompt)
+        .onSubmit {
+            print("test")
+        }
         .searchSuggestions {
             SearchSuggestions()
         }

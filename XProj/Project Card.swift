@@ -4,9 +4,11 @@ struct ProjectCard: View {
     private var vm = ProjectCardVM()
     
     private let project: Project
+    private let projectsFolder: String
     
-    init(_ project: Project) {
+    init(_ project: Project, projectsFolder: String = "") {
         self.project = project
+        self.projectsFolder = projectsFolder
     }
     
     var body: some View {
@@ -26,7 +28,9 @@ struct ProjectCard: View {
                 Button {
                     openInFinder(rootedAt: project.path)
                 } label: {
-                    Text(project.path)
+                    let path = project.path.replacingOccurrences(of: projectsFolder, with: "~")
+                    
+                    Text(path)
                         .footnote()
                         .foregroundStyle(.tertiary)
                 }
