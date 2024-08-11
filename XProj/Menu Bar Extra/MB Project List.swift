@@ -3,6 +3,8 @@ import SwiftUI
 struct MBProjectList: View {
     @Environment(ProjectListVM.self) private var vm
     
+    @FocusState private var focusState
+    
     var body: some View {
         @Bindable var vm = vm
         
@@ -19,15 +21,21 @@ struct MBProjectList: View {
             }
             
             TextField("Search", text: $vm.searchPrompt)
+                .focused($focusState)
+                .textFieldStyle(.plain)
             
             ScrollView {
                 ForEach(vm.filteredProjects) { proj in
                     MBProjectCard(proj)
                 }
+                .animation(.default, value: vm.filteredProjects)
             }
         }
         .padding()
         .scrollIndicators(.never)
+        .task {
+            focusState = true
+        }
         .refreshableTask {
             vm.getFolders()
         }

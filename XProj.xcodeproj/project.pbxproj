@@ -27,6 +27,7 @@
 		F38B5E542BFD76DF00CB9917 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E532BFD76DF00CB9917 /* Container.swift */; };
 		F38B5E562BFD76F300CB9917 /* Home View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E552BFD76F300CB9917 /* Home View.swift */; };
 		F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* Search Suggestions.swift */; };
+		F3E7ECA02C687BAD008CD17B /* Project List Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* Project List Toolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		F38B5E532BFD76DF00CB9917 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		F38B5E552BFD76F300CB9917 /* Home View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home View.swift"; sourceTree = "<group>"; };
 		F38B5E572BFE134400CB9917 /* Search Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestions.swift"; sourceTree = "<group>"; };
+		F3E7EC9F2C687BAD008CD17B /* Project List Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project List Toolbar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +102,10 @@
 				F37B90722BFE9E1600597624 /* Info.plist */,
 				F3341E302BDE358A00E85F27 /* Assets.xcassets */,
 				F3341E352BDE358A00E85F27 /* XProj.entitlements */,
-				F371A5522C2DC08D006BDF0D /* Menu Bar */,
+				F371A5522C2DC08D006BDF0D /* Menu Bar Extra */,
 				F38B5E552BFD76F300CB9917 /* Home View.swift */,
 				F3341E2E2BDE358900E85F27 /* Project List.swift */,
+				F3E7EC9F2C687BAD008CD17B /* Project List Toolbar.swift */,
 				F3341E402BDEB71F00E85F27 /* Project List VM.swift */,
 				F38B5E512BFD6F6100CB9917 /* Project Card.swift */,
 				F371A5182C2D84BA006BDF0D /* Project Card VM.swift */,
@@ -134,13 +137,13 @@
 			path = "XProj Tests";
 			sourceTree = "<group>";
 		};
-		F371A5522C2DC08D006BDF0D /* Menu Bar */ = {
+		F371A5522C2DC08D006BDF0D /* Menu Bar Extra */ = {
 			isa = PBXGroup;
 			children = (
 				F371A51A2C2D8D58006BDF0D /* MB Project List.swift */,
 				F371A51C2C2D8D94006BDF0D /* MB Project Card.swift */,
 			);
-			path = "Menu Bar";
+			path = "Menu Bar Extra";
 			sourceTree = "<group>";
 		};
 		F38B5E4F2BFD6F1D00CB9917 /* Settings */ = {
@@ -295,6 +298,7 @@
 				F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */,
 				F3522DC62C2A29C000660101 /* Derived Data List.swift in Sources */,
 				F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */,
+				F3E7ECA02C687BAD008CD17B /* Project List Toolbar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
