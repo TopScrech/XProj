@@ -4,13 +4,13 @@ struct ProjectListToolbar: View {
     @Environment(ProjectListVM.self) private var vm
     
     var body: some View {
+#if DEBUG
         NavigationLink {
             DerivedDataList()
         } label: {
             Text("Derived Data")
         }
         
-#if DEBUG
         Menu {
             Button("listFilesInFoldersSingleThread") {
                 let test = vm.listFilesInFoldersSingleThread(folderPaths: vm.projects.map(\.path))

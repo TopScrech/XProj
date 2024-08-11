@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 @Observable
 final class DerivedDataVM {
@@ -98,14 +98,12 @@ final class DerivedDataVM {
             if project.contains("-") {
                 let projectName = project.split(separator: "-").dropLast().joined(separator: "-")
                 
-                print("\(projectName) \(sizeAttribute.description)")
-                
                 self.folders.append(projectName)
             } else {
-                print("\(project) \(sizeAttribute.description)")
-                
                 self.folders.append(project)
             }
+            
+            print("\(project) \(formatBytes(sizeAttribute))")
         } catch {
             print("error processing project at path: \(projectPath)")
         }
