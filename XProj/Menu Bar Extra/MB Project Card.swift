@@ -34,11 +34,13 @@ struct MBProjectCard: View {
 }
 
 #Preview {
-    MBProjectCard(.init(
+    let proj = Project(
         name: "Preview",
         path: "/",
         type: .proj,
         lastOpened: Date(),
         attributes: [:]
-    ))
+    )
+    
+    MBProjectCard(proj)
 }
