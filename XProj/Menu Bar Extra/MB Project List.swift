@@ -23,6 +23,22 @@ struct MBProjectList: View {
             TextField("Search", text: $vm.searchPrompt)
                 .focused($focusState)
                 .textFieldStyle(.plain)
+                .onSubmit {
+                    guard let proj = vm.filteredProjects.first else {
+                        print("No project found")
+                        return
+                    }
+                    
+                    #warning("Used twice")
+                    
+                    let (found, filePath) = vm.findXcodeprojFile(proj.path)
+                    
+                    if found, let filePath {
+                        vm.launchProject(filePath)
+                    } else {
+                        vm.launchProject(proj.path + "/Package.swift")
+                    }
+                }
             
             ScrollView {
                 ForEach(vm.filteredProjects) { proj in

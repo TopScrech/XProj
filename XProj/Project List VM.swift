@@ -240,6 +240,5 @@ final class ProjectListVM {
         } catch {
             print("Error restoring access: \(error)")
         }
-        
     }
 }

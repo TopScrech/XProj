@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MBProjectCard: View {
-    private var vm = ProjectCardVM()
+    @Environment(ProjectListVM.self) private var vm
     
     private let proj: Project
     

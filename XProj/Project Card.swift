@@ -1,7 +1,7 @@
 import ScrechKit
 
 struct ProjectCard: View {
-    private var vm = ProjectCardVM()
+    @Environment(ProjectListVM.self) private var vm
     
     private let project: Project
     private let projectsFolder: String
@@ -56,7 +56,7 @@ struct ProjectCard: View {
             }
         }
         .padding(.vertical, 5)
-    }    
+    }
 }
 
 #Preview {
