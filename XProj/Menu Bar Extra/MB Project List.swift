@@ -29,7 +29,7 @@ struct MBProjectList: View {
                         return
                     }
                     
-                    #warning("Used twice")
+#warning("Used twice")
                     
                     let (found, filePath) = vm.findXcodeprojFile(proj.path)
                     
