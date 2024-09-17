@@ -168,13 +168,13 @@
 				F387AC312BFEC6C600EC1DC5 /* Analyser.swift */,
 				F38B5E592BFE141300CB9917 /* Elements */,
 				F38B5E502BFD6F2700CB9917 /* Model */,
-				F3522DC92C2A29D200660101 /* Derived */,
+				F3522DC92C2A29D200660101 /* Derived Data */,
 				F38B5E4F2BFD6F1D00CB9917 /* Settings */,
 			);
 			path = XProj;
 			sourceTree = "<group>";
 		};
-		F3522DC92C2A29D200660101 /* Derived */ = {
+		F3522DC92C2A29D200660101 /* Derived Data */ = {
 			isa = PBXGroup;
 			children = (
 				F3522DC52C2A29C000660101 /* Derived Data List.swift */,
@@ -182,7 +182,7 @@
 				F3522DCE2C2AA51800660101 /* Derived Data Entry.swift */,
 				F3522DCC2C2AA32C00660101 /* File Manager.swift */,
 			);
-			path = Derived;
+			path = "Derived Data";
 			sourceTree = "<group>";
 		};
 		F371A5232C2D97AB006BDF0D /* XProj Tests */ = {
