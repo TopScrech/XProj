@@ -35,6 +35,8 @@
 		F38B5E542BFD76DF00CB9917 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E532BFD76DF00CB9917 /* Container.swift */; };
 		F38B5E562BFD76F300CB9917 /* Home View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E552BFD76F300CB9917 /* Home View.swift */; };
 		F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* Search Suggestions.swift */; };
+		F3D1E75D2C9B3F0C000C81FF /* ImageDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75C2C9B3F0C000C81FF /* ImageDropView.swift */; };
+		F3D1E75F2C9B40B4000C81FF /* Main Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */; };
 		F3E7ECA02C687BAD008CD17B /* Project List Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* Project List Toolbar.swift */; };
 		F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,8 @@
 		F38B5E532BFD76DF00CB9917 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		F38B5E552BFD76F300CB9917 /* Home View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home View.swift"; sourceTree = "<group>"; };
 		F38B5E572BFE134400CB9917 /* Search Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestions.swift"; sourceTree = "<group>"; };
+		F3D1E75C2C9B3F0C000C81FF /* ImageDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDropView.swift; sourceTree = "<group>"; };
+		F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main Settings.swift"; sourceTree = "<group>"; };
 		F3E7EC9F2C687BAD008CD17B /* Project List Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project List Toolbar.swift"; sourceTree = "<group>"; };
 		F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Projects.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */,
+				F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */,
+				F3D1E75C2C9B3F0C000C81FF /* ImageDropView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3D1E75F2C9B40B4000C81FF /* Main Settings.swift in Sources */,
 				F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */,
 				F3341E2F2BDE358900E85F27 /* Project List.swift in Sources */,
 				F371A51B2C2D8D58006BDF0D /* MB Project List.swift in Sources */,
@@ -389,6 +396,7 @@
 				F371A51D2C2D8D94006BDF0D /* MB Project Card.swift in Sources */,
 				F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */,
 				F38B5E542BFD76DF00CB9917 /* Container.swift in Sources */,
+				F3D1E75D2C9B3F0C000C81FF /* ImageDropView.swift in Sources */,
 				F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */,
 				F3522DCF2C2AA51800660101 /* Derived Data Entry.swift in Sources */,
 				F38B5E562BFD76F300CB9917 /* Home View.swift in Sources */,
@@ -615,7 +623,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.topscrech.XProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -647,7 +655,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.topscrech.XProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -664,6 +672,7 @@
 				DEVELOPMENT_TEAM = 8FQUA2F388;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.XProj-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -686,6 +695,7 @@
 				DEVELOPMENT_TEAM = 8FQUA2F388;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.XProj-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
