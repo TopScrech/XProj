@@ -41,7 +41,7 @@
 
 /* Begin PBXFileReference section */
 		F313BE1C2C871E13005C8B60 /* Examples.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Examples.zip; sourceTree = "<group>"; };
-		F33081732C9057F700605E43 /* XProj WidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "XProj WidgetsExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F33081732C9057F700605E43 /* Widgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F33081752C9057F700605E43 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F33081772C9057F700605E43 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		F330817A2C9057F700605E43 /* XProj Widgets Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XProj Widgets Bundle.swift"; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		F371A5182C2D84BA006BDF0D /* Project Card VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project Card VM.swift"; sourceTree = "<group>"; };
 		F371A51A2C2D8D58006BDF0D /* MB Project List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MB Project List.swift"; sourceTree = "<group>"; };
 		F371A51C2C2D8D94006BDF0D /* MB Project Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MB Project Card.swift"; sourceTree = "<group>"; };
-		F371A5222C2D97AB006BDF0D /* XProj Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XProj Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F371A5222C2D97AB006BDF0D /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F371A5242C2D97AB006BDF0D /* XProj Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XProj Tests.swift"; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				F3341E292BDE358900E85F27 /* XProj.app */,
-				F371A5222C2D97AB006BDF0D /* XProj Tests.xctest */,
-				F33081732C9057F700605E43 /* XProj WidgetsExtension.appex */,
+				F371A5222C2D97AB006BDF0D /* Unit Tests.xctest */,
+				F33081732C9057F700605E43 /* Widgets.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,9 +237,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F33081722C9057F700605E43 /* XProj WidgetsExtension */ = {
+		F33081722C9057F700605E43 /* Widgets */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F33081882C9057F700605E43 /* Build configuration list for PBXNativeTarget "XProj WidgetsExtension" */;
+			buildConfigurationList = F33081882C9057F700605E43 /* Build configuration list for PBXNativeTarget "Widgets" */;
 			buildPhases = (
 				F330816F2C9057F700605E43 /* Sources */,
 				F33081702C9057F700605E43 /* Frameworks */,
@@ -249,11 +249,11 @@
 			);
 			dependencies = (
 			);
-			name = "XProj WidgetsExtension";
+			name = Widgets;
 			packageProductDependencies = (
 			);
 			productName = "XProj WidgetsExtension";
-			productReference = F33081732C9057F700605E43 /* XProj WidgetsExtension.appex */;
+			productReference = F33081732C9057F700605E43 /* Widgets.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		F3341E282BDE358900E85F27 /* XProj */ = {
@@ -276,9 +276,9 @@
 			productReference = F3341E292BDE358900E85F27 /* XProj.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F371A5212C2D97AB006BDF0D /* XProj Tests */ = {
+		F371A5212C2D97AB006BDF0D /* Unit Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F371A5262C2D97AB006BDF0D /* Build configuration list for PBXNativeTarget "XProj Tests" */;
+			buildConfigurationList = F371A5262C2D97AB006BDF0D /* Build configuration list for PBXNativeTarget "Unit Tests" */;
 			buildPhases = (
 				F371A51E2C2D97AB006BDF0D /* Sources */,
 				F371A51F2C2D97AB006BDF0D /* Frameworks */,
@@ -288,9 +288,9 @@
 			);
 			dependencies = (
 			);
-			name = "XProj Tests";
+			name = "Unit Tests";
 			productName = "XProj Tests";
-			productReference = F371A5222C2D97AB006BDF0D /* XProj Tests.xctest */;
+			productReference = F371A5222C2D97AB006BDF0D /* Unit Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -331,8 +331,8 @@
 			projectRoot = "";
 			targets = (
 				F3341E282BDE358900E85F27 /* XProj */,
-				F371A5212C2D97AB006BDF0D /* XProj Tests */,
-				F33081722C9057F700605E43 /* XProj WidgetsExtension */,
+				F33081722C9057F700605E43 /* Widgets */,
+				F371A5212C2D97AB006BDF0D /* Unit Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -704,7 +704,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F33081882C9057F700605E43 /* Build configuration list for PBXNativeTarget "XProj WidgetsExtension" */ = {
+		F33081882C9057F700605E43 /* Build configuration list for PBXNativeTarget "Widgets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F33081852C9057F700605E43 /* Debug */,
@@ -731,7 +731,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F371A5262C2D97AB006BDF0D /* Build configuration list for PBXNativeTarget "XProj Tests" */ = {
+		F371A5262C2D97AB006BDF0D /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F371A5272C2D97AB006BDF0D /* Debug */,

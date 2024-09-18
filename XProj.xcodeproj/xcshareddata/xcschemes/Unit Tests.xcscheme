@@ -20,8 +20,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F371A5212C2D97AB006BDF0D"
-               BuildableName = "XProj Tests.xctest"
-               BlueprintName = "XProj Tests"
+               BuildableName = "Unit Tests.xctest"
+               BlueprintName = "Unit Tests"
                ReferencedContainer = "container:XProj.xcodeproj">
             </BuildableReference>
          </TestableReference>

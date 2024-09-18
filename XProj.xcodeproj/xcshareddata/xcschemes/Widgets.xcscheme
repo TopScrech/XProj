@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F33081722C9057F700605E43"
-               BuildableName = "XProj WidgetsExtension.appex"
-               BlueprintName = "XProj WidgetsExtension"
+               BuildableName = "Widgets.appex"
+               BlueprintName = "Widgets"
                ReferencedContainer = "container:XProj.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -72,8 +72,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F33081722C9057F700605E43"
-            BuildableName = "XProj WidgetsExtension.appex"
-            BlueprintName = "XProj WidgetsExtension"
+            BuildableName = "Widgets.appex"
+            BlueprintName = "Widgets"
             ReferencedContainer = "container:XProj.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
