@@ -4,7 +4,7 @@ import ImageIO
 
 struct ImageDropView: View {
     @State private var droppedImage: NSImage? = nil
-    @State private var imageMetadata = "No metadata yet"
+    @State private var imageMetadata: [(key: String, value: String)] = []
     @State private var isTargeted = false
     
     var body: some View {
@@ -24,11 +24,16 @@ struct ImageDropView: View {
                     .padding()
             }
             
-            ScrollView {
-                Text("Metadata size: \(imageMetadata.count)")
+            List {
+                Text("Metadata count: \(imageMetadata.count)")
                 
-                Text(imageMetadata)
-                    .padding()
+                ForEach(imageMetadata, id: \.key) { item in
+                    VStack(alignment: .leading) {
+                        Text("Key: \(item.key)")
+                        Text("Value: \(item.value)")
+                    }
+                    .padding(.bottom, 4)
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: 200)
         }
@@ -56,17 +61,17 @@ struct ImageDropView: View {
         .padding()
     }
     
-    private func extractMetadata(from url: URL) -> String {
+    private func extractMetadata(from url: URL) -> [(key: String, value: String)] {
         guard
             let imageSource = CGImageSourceCreateWithURL(url as CFURL, nil),
             let imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil) as? [CFString: Any]
         else {
-            return "No metadata available."
+            return []
         }
         
-        return imageProperties.map {
-            "\($0.key): \($0.value)"
-        }.joined(separator: "\n")
+        return imageProperties.map { key, value in
+            (key as String, String(describing: value))
+        }
     }
 }
 
