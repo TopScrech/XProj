@@ -12,6 +12,20 @@ struct SettingsView: View {
             Button("Examples") {
                 downloadExamples()
             }
+            
+#if DEBUG
+            Button("Cause a fatal error") {
+                fatalError("Crash button pressed.")
+            }
+            
+            Button("Exit") {
+                exit(0)
+            }
+            
+            Button("Crash") {
+                let url = URL(string: "")!
+            }
+#endif
         }
         .frame(width: 200, height: 300)
     }

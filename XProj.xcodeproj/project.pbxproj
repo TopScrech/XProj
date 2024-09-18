@@ -157,7 +157,6 @@
 				F3341E302BDE358A00E85F27 /* Assets.xcassets */,
 				F3341E352BDE358A00E85F27 /* XProj.entitlements */,
 				F313BE1C2C871E13005C8B60 /* Examples.zip */,
-				F371A5522C2DC08D006BDF0D /* Menu Bar Extra */,
 				F38B5E552BFD76F300CB9917 /* Home View.swift */,
 				F3341E2E2BDE358900E85F27 /* Project List.swift */,
 				F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */,
@@ -170,6 +169,7 @@
 				F38B5E502BFD6F2700CB9917 /* Model */,
 				F3522DC92C2A29D200660101 /* Derived Data */,
 				F38B5E4F2BFD6F1D00CB9917 /* Settings */,
+				F371A5522C2DC08D006BDF0D /* Menu Bar Extra */,
 			);
 			path = XProj;
 			sourceTree = "<group>";
