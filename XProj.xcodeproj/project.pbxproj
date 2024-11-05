@@ -29,6 +29,9 @@
 		F371A51B2C2D8D58006BDF0D /* MB Project List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A51A2C2D8D58006BDF0D /* MB Project List.swift */; };
 		F371A51D2C2D8D94006BDF0D /* MB Project Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A51C2C2D8D94006BDF0D /* MB Project Card.swift */; };
 		F371A5252C2D97AB006BDF0D /* XProj Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A5242C2D97AB006BDF0D /* XProj Tests.swift */; };
+		F37D1BED2CDA231F00D8817D /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEC2CDA231F00D8817D /* Provider.swift */; };
+		F37D1BEF2CDA234700D8817D /* Simple Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEE2CDA234700D8817D /* Simple Entry.swift */; };
+		F37D1BF12CDA235D00D8817D /* Entry View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF02CDA235D00D8817D /* Entry View.swift */; };
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
 		F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Project Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Project Card.swift */; };
@@ -69,6 +72,9 @@
 		F371A5222C2D97AB006BDF0D /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F371A5242C2D97AB006BDF0D /* XProj Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XProj Tests.swift"; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F37D1BEC2CDA231F00D8817D /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		F37D1BEE2CDA234700D8817D /* Simple Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Simple Entry.swift"; sourceTree = "<group>"; };
+		F37D1BF02CDA235D00D8817D /* Entry View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry View.swift"; sourceTree = "<group>"; };
 		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
 		F38B5E512BFD6F6100CB9917 /* Project Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project Card.swift"; sourceTree = "<group>"; };
@@ -121,10 +127,13 @@
 		F33081892C90580500605E43 /* XProj Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				F33081802C9057F700605E43 /* App Intent.swift */,
+				F330817E2C9057F700605E43 /* XProj Widgets.swift */,
 				F33081822C9057F700605E43 /* Assets.xcassets */,
 				F33081842C9057F700605E43 /* Info.plist */,
-				F330817E2C9057F700605E43 /* XProj Widgets.swift */,
+				F37D1BEC2CDA231F00D8817D /* Provider.swift */,
+				F37D1BF02CDA235D00D8817D /* Entry View.swift */,
+				F37D1BEE2CDA234700D8817D /* Simple Entry.swift */,
+				F33081802C9057F700605E43 /* App Intent.swift */,
 				F330817A2C9057F700605E43 /* XProj Widgets Bundle.swift */,
 				F330817C2C9057F700605E43 /* XProj Widgets Control.swift */,
 			);
@@ -375,9 +384,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37D1BEF2CDA234700D8817D /* Simple Entry.swift in Sources */,
 				F330817F2C9057F700605E43 /* XProj Widgets.swift in Sources */,
 				F33081812C9057F700605E43 /* App Intent.swift in Sources */,
+				F37D1BF12CDA235D00D8817D /* Entry View.swift in Sources */,
 				F330817B2C9057F700605E43 /* XProj Widgets Bundle.swift in Sources */,
+				F37D1BED2CDA231F00D8817D /* Provider.swift in Sources */,
 				F330817D2C9057F700605E43 /* XProj Widgets Control.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
