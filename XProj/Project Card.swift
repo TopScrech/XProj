@@ -44,18 +44,22 @@ struct ProjectCard: View {
             //                .foregroundStyle(.secondary)
             
             Button {
-                let (found, filePath) = vm.findXcodeprojFile(project.path)
-                
-                if found, let filePath {
-                    vm.launchProject(filePath)
-                } else {
-                    vm.launchProject(project.path + "/Package.swift")
-                }
+                openProject()
             } label: {
                 Image(systemName: "play")
             }
         }
         .padding(.vertical, 5)
+    }
+    
+    private func openProject() {
+        let (found, filePath) = vm.findXcodeprojFile(project.path)
+        
+        if found, let filePath {
+            vm.launchProject(filePath)
+        } else {
+            vm.launchProject(project.path + "/Package.swift")
+        }
     }
 }
 

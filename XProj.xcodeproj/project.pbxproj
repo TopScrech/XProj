@@ -174,12 +174,11 @@
 				F313BE1C2C871E13005C8B60 /* Examples.zip */,
 				F38B5E552BFD76F300CB9917 /* Home View.swift */,
 				F3341E2E2BDE358900E85F27 /* Project List.swift */,
-				F37D1BF42CDA258B00D8817D /* Smart Scan */,
-				F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */,
-				F3E7EC9F2C687BAD008CD17B /* Project List Toolbar.swift */,
 				F3341E402BDEB71F00E85F27 /* Project List VM.swift */,
+				F3E7EC9F2C687BAD008CD17B /* Project List Toolbar.swift */,
 				F38B5E512BFD6F6100CB9917 /* Project Card.swift */,
 				F371A5182C2D84BA006BDF0D /* Project Card VM.swift */,
+				F37D1BF42CDA258B00D8817D /* Smart Scan */,
 				F387AC312BFEC6C600EC1DC5 /* Analyser.swift */,
 				F38B5E592BFE141300CB9917 /* Elements */,
 				F38B5E502BFD6F2700CB9917 /* Model */,
@@ -222,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				F37D1BF52CDA259E00D8817D /* Smart Scan.swift */,
+				F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */,
 			);
 			path = "Smart Scan";
 			sourceTree = "<group>";
