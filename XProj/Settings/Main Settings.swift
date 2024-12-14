@@ -13,7 +13,9 @@ struct MainSettings: View {
                 downloadExamples()
             }
         }
-        .frame(width: 200, height: 300)
+        .listStyle(.inset)
+        .padding()
+        .frame(width: 300, height: 300)
     }
     
     private func downloadExamples() {
