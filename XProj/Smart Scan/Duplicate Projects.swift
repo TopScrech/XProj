@@ -10,27 +10,8 @@ struct DuplicateProjects: View {
     }
     
     var body: some View {
-        List {
-            ForEach(duplicates, id: \.self) { duplicate in
-                Section(duplicate.first?.name ?? "Unknown") {
-                    ForEach(duplicate, id: \.self) { project in
-                        VStack(alignment: .leading) {
-                            Text("Last opened: \(project.lastOpened, style: .date)")
-                            
-                            Button {
-                                openInFinder(rootedAt: project.path)
-                            } label: {
-                                let path = project.path.replacingOccurrences(of: vm.projectsFolder, with: "~")
-                                
-                                Text(path)
-                                    .footnote()
-                                    .foregroundStyle(.secondary)
-                            }
-                            .buttonStyle(.plain)
-                        }
-                    }
-                }
-            }
+        List(duplicates, id: \.self) { duplicates in
+            DuplicateSection(duplicates)
         }
     }
 }
