@@ -12,7 +12,6 @@ struct MainSettings: View {
             Button("Examples") {
                 downloadExamples()
             }
-            
 #if DEBUG
             Button("Cause a fatal error") {
                 fatalError("Crash button pressed.")

@@ -8,7 +8,6 @@ struct SettingsView: View {
             Tab("Main Settings", systemImage: "gear") {
                 MainSettings()
             }
-            
 #if DEBUG
             Tab("Debug", systemImage: "house.fill") {
                 ImageDropView()
