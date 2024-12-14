@@ -65,7 +65,7 @@ final class DerivedDataVM {
         
         let projects = try fm.contentsOfDirectory(atPath: path)
         
-        for project in projects {
+        for proj in projects {
             group.enter()
             
             queue.async {
@@ -73,7 +73,7 @@ final class DerivedDataVM {
                     group.leave()
                 }
                 
-                self.processProject(project, path: path)
+                self.processProject(proj, path: path)
             }
         }
         

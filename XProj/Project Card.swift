@@ -42,12 +42,6 @@ struct ProjectCard: View {
             //            Text(proj.attributes[.size] as? String ?? "")
             //                .footnote()
             //                .foregroundStyle(.secondary)
-            
-            Button {
-                vm.openProjects([proj.path])
-            } label: {
-                Image(systemName: "play")
-            }
         }
         .padding(.vertical, 5)
     }

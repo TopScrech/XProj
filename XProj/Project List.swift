@@ -10,8 +10,8 @@ struct ProjectList: View {
         
         List(selection: $selectedProjects) {
             Section {
-                ForEach(vm.filteredProjects) { project in
-                    ProjectCard(project, projectsFolder: vm.projectsFolder)
+                ForEach(vm.filteredProjects) { proj in
+                    ProjectCard(proj, projectsFolder: vm.projectsFolder)
                 }
             } header: {
                 HStack {

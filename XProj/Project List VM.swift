@@ -36,16 +36,16 @@ final class ProjectListVM {
         var nameCountDict: [String: Int] = [:]
         var duplicates: [[Project]] = []
         
-        for project in projects {
-            if let count = nameCountDict[project.name] {
-                nameCountDict[project.name] = count + 1
+        for proj in projects {
+            if let count = nameCountDict[proj.name] {
+                nameCountDict[proj.name] = count + 1
             } else {
-                nameCountDict[project.name] = 1
+                nameCountDict[proj.name] = 1
             }
             
-            if let count = nameCountDict[project.name], count > 1 {
-                if !duplicates.contains(where: { $0.first?.name == project.name }) {
-                    duplicates.append(projects.filter { $0.name == project.name })
+            if let count = nameCountDict[proj.name], count > 1 {
+                if !duplicates.contains(where: { $0.first?.name == proj.name }) {
+                    duplicates.append(projects.filter { $0.name == proj.name })
                 }
             }
         }
@@ -108,8 +108,8 @@ final class ProjectListVM {
     func processPath(_ path: String) throws {
         let projects = try fm.contentsOfDirectory(atPath: path)
         
-        for project in projects {
-            try processProject(atPath: path, project: project)
+        for proj in projects {
+            try processProject(atPath: path, project: proj)
         }
     }
     
