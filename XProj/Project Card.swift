@@ -3,32 +3,32 @@ import ScrechKit
 struct ProjectCard: View {
     @Environment(ProjectListVM.self) private var vm
     
-    private let project: Project
+    private let proj: Project
     private let projectsFolder: String
     
-    init(_ project: Project, projectsFolder: String = "") {
-        self.project = project
+    init(_ proj: Project, projectsFolder: String = "") {
+        self.proj = proj
         self.projectsFolder = projectsFolder
     }
     
     var body: some View {
         HStack {
-            Image(systemName: project.icon)
+            Image(systemName: proj.icon)
                 .title()
-                .foregroundStyle(project.iconColor)
+                .foregroundStyle(proj.iconColor)
                 .frame(width: 30)
             
             VStack(alignment: .leading) {
-                Text(project.name)
+                Text(proj.name)
                 
-                Text(project.lastOpened, format: .dateTime)
+                Text(proj.lastOpened, format: .dateTime)
                     .caption2()
                     .foregroundStyle(.secondary)
                 
                 Button {
-                    openInFinder(rootedAt: project.path)
+                    openInFinder(rootedAt: proj.path)
                 } label: {
-                    let path = project.path.replacingOccurrences(of: projectsFolder, with: "~")
+                    let path = proj.path.replacingOccurrences(of: projectsFolder, with: "~")
                     
                     Text(path)
                         .footnote()
@@ -39,27 +39,17 @@ struct ProjectCard: View {
             
             Spacer()
             
-            //            Text(project.attributes[.size] as? String ?? "")
+            //            Text(proj.attributes[.size] as? String ?? "")
             //                .footnote()
             //                .foregroundStyle(.secondary)
             
             Button {
-                openProject()
+                vm.openProjects([proj.path])
             } label: {
                 Image(systemName: "play")
             }
         }
         .padding(.vertical, 5)
-    }
-    
-    private func openProject() {
-        let (found, filePath) = vm.findXcodeprojFile(project.path)
-        
-        if found, let filePath {
-            vm.launchProject(filePath)
-        } else {
-            vm.launchProject(project.path + "/Package.swift")
-        }
     }
 }
 

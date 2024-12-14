@@ -20,6 +20,18 @@ final class ProjectListVM {
         }
     }
     
+    func openProjects(_ paths: [String]) {
+        for path in paths {
+            let (found, filePath) = findXcodeprojFile(path)
+            
+            if found, let filePath {
+                launchProject(filePath)
+            } else {
+                launchProject(path + "/Package.swift")
+            }
+        }
+    }
+    
     func findDuplicates() -> [[Project]] {
         var nameCountDict: [String: Int] = [:]
         var duplicates: [[Project]] = []

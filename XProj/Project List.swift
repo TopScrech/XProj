@@ -3,10 +3,12 @@ import SwiftUI
 struct ProjectList: View {
     @Environment(ProjectListVM.self) private var vm
     
+    @State private var selectedProjects: Set<Project.ID> = []
+    
     var body: some View {
         @Bindable var vm = vm
         
-        List {
+        List(selection: $selectedProjects) {
             Section {
                 ForEach(vm.filteredProjects) { project in
                     ProjectCard(project, projectsFolder: vm.projectsFolder)
@@ -23,9 +25,6 @@ struct ProjectList: View {
             }
         }
         .searchable(text: $vm.searchPrompt)
-        .onSubmit {
-            print("test")
-        }
         .searchSuggestions {
             SearchSuggestions()
         }
@@ -37,9 +36,20 @@ struct ProjectList: View {
             //            }
         }
         .toolbar {
-            ToolbarItemGroup {
-                ProjectListToolbar()
+            Button("Open") {
+                let selected = vm.projects.filter {
+                    selectedProjects.contains($0.id)
+                }
+                
+                let paths = selected.map(\.path)
+                
+                vm.openProjects(paths)
             }
+            .opacity(0)
+            .keyboardShortcut(.defaultAction)
+            .disabled(selectedProjects.isEmpty)
+            
+            ProjectListToolbar()
         }
     }
 }
