@@ -11,7 +11,7 @@ struct ProjectList: View {
         List(selection: $selectedProjects) {
             Section {
                 ForEach(vm.filteredProjects) { proj in
-                    ProjectCard(proj, projectsFolder: vm.projectsFolder)
+                    ProjectCard(proj)
                 }
             } header: {
                 HStack {

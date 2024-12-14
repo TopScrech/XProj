@@ -4,11 +4,9 @@ struct ProjectCard: View {
     @Environment(ProjectListVM.self) private var vm
     
     private let proj: Project
-    private let projectsFolder: String
     
-    init(_ proj: Project, projectsFolder: String = "") {
+    init(_ proj: Project) {
         self.proj = proj
-        self.projectsFolder = projectsFolder
     }
     
     var body: some View {
@@ -28,7 +26,7 @@ struct ProjectCard: View {
                 Button {
                     openInFinder(rootedAt: proj.path)
                 } label: {
-                    let path = proj.path.replacingOccurrences(of: projectsFolder, with: "~")
+                    let path = proj.path.replacingOccurrences(of: vm.projectsFolder, with: "~")
                     
                     Text(path)
                         .footnote()
