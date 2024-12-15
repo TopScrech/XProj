@@ -2,8 +2,7 @@ import SwiftUI
 
 struct Project: Identifiable, Hashable {
     let id = UUID()
-    let name: String
-    let path: String
+    let name, path: String
     let type: FileType
     let lastOpened: Date
     let attributes: [FileAttributeKey: Any]
@@ -26,7 +25,7 @@ struct Project: Identifiable, Hashable {
         }
     }
     
-    // Implementing Hashable conformance
+    // Hashable conformance
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(name)
@@ -44,18 +43,18 @@ struct Project: Identifiable, Hashable {
             } else {
                 // If value is not hashable, convert it to something that is hashable
                 // or handle it based on your specific requirements
-                fatalError("Non-hashable value found in attributes.")
+                fatalError("Non-hashable value found in attributes")
             }
         }
     }
     
     static func == (lhs: Project, rhs: Project) -> Bool {
         return lhs.id == rhs.id &&
-               lhs.name == rhs.name &&
-               lhs.path == rhs.path &&
-               lhs.type == rhs.type &&
-               lhs.lastOpened == rhs.lastOpened &&
-               lhs.attributesAreEqual(to: rhs.attributes)
+        lhs.name == rhs.name &&
+        lhs.path == rhs.path &&
+        lhs.type == rhs.type &&
+        lhs.lastOpened == rhs.lastOpened &&
+        lhs.attributesAreEqual(to: rhs.attributes)
     }
     
     private func attributesAreEqual(to otherAttributes: [FileAttributeKey: Any]) -> Bool {
@@ -69,7 +68,7 @@ struct Project: Identifiable, Hashable {
                 return false
             }
             
-            // Compare values if possible (assuming FileAttributeKey is Equatable)
+            // Compare values if possible
             if let equatableValue = value as? AnyHashable,
                let otherEquatableValue = otherValue as? AnyHashable {
                 if equatableValue != otherEquatableValue {
@@ -77,7 +76,7 @@ struct Project: Identifiable, Hashable {
                 }
             } else {
                 // Handle non-comparable values based on your specific requirements
-                fatalError("Non-equatable value found in attributes.")
+                fatalError("Non-equatable value found in attributes")
             }
         }
         
@@ -88,10 +87,12 @@ struct Project: Identifiable, Hashable {
         let fileManager = FileManager.default
         let projectURL = URL(fileURLWithPath: path)
         
-        // Verify if the project path exists and is a directory
         var isDir: ObjCBool = false
         
-        guard fileManager.fileExists(atPath: projectURL.path, isDirectory: &isDir), isDir.boolValue else {
+        guard
+            fileManager.fileExists(atPath: projectURL.path, isDirectory: &isDir),
+            isDir.boolValue
+        else {
             print("Error: The path '\(projectURL.path)' does not exist or is not a directory.")
             return nil
         }
@@ -117,13 +118,13 @@ struct Project: Identifiable, Hashable {
                     if appIconURL.lastPathComponent == "AppIcon.appiconset",
                        (try? appIconURL.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true {
                         
-                        // Now list files in AppIcon.appiconset and apply the filter
+                        // List files in AppIcon.appiconset & apply filter
                         do {
                             let fileURLs = try fileManager.contentsOfDirectory(at: appIconURL, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles])
                             
-                            if let firstMatchingFile = fileURLs.first(where: { fileURL in
-                                let isNotJSON = fileURL.pathExtension.lowercased() != "json"
-                                let doesNotStartWithIcon = !fileURL.lastPathComponent.lowercased().hasPrefix("icon_")
+                            if let firstMatchingFile = fileURLs.first(where: {
+                                let isNotJSON = $0.pathExtension.lowercased() != "json"
+                                let doesNotStartWithIcon = !$0.lastPathComponent.lowercased().hasPrefix("icon_")
                                 return isNotJSON && doesNotStartWithIcon
                             }) {
                                 return firstMatchingFile.path
@@ -136,7 +137,6 @@ struct Project: Identifiable, Hashable {
             }
         }
         
-        print("No matching AppIcon.appiconset files found in the project.")
         return nil
     }
 }

@@ -14,10 +14,7 @@ struct ProjectCard: View {
             ProjectDetails(proj)
         } label: {
             HStack {
-                Image(systemName: proj.icon)
-                    .title()
-                    .foregroundStyle(proj.iconColor)
-                    .frame(width: 30)
+                ProjectCardImage(proj)
                 
                 VStack(alignment: .leading) {
                     Text(proj.name)
