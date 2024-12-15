@@ -202,7 +202,7 @@ struct Project: Identifiable, Hashable {
         guard fileManager.fileExists(atPath: xcodeProjURL.path) else {
             throw PackageParsingError.projectFileNotFound
         }
-
+        
         let projectPbxprojPath = "\(xcodeProjURL.path.replacingOccurrences(of: "file://", with: ""))/project.pbxproj"
         
         // Read the contents of the .xcodeproj file
@@ -215,85 +215,81 @@ struct Project: Identifiable, Hashable {
             throw PackageParsingError.failedToReadFile
         }
         
-        // MARK: - Parsing Logic
-        
-        // Define the regular expression pattern to match XCRemoteSwiftPackageReference blocks
-        let pattern = #"""
-        /\* XCRemoteSwiftPackageReference\s+"(?<name>[^"]+)" \*/\s*=\s*\{
-            \s*isa\s*=\s*XCRemoteSwiftPackageReference;
-            \s*repositoryURL\s*=\s*"(?<repositoryURL>[^"]+)";
-            \s*requirement\s*=\s*\{
-                \s*(?:branch\s*=\s*(?<branch>[^;]+);\s*)?
-                \s*(?:minimumVersion\s*=\s*(?<minimumVersion>[^;]+);\s*)?
-                \s*kind\s*=\s*(?<kind>[^;]+);
-            \s*\};
-        \s*\};
-        """#
-        
-        // Compile the regular expression with options to allow multiline matching
-        let regexOptions: NSRegularExpression.Options = [.dotMatchesLineSeparators, .caseInsensitive]
-        let regex: NSRegularExpression
-        
-        do {
-            regex = try NSRegularExpression(pattern: pattern, options: regexOptions)
-        } catch {
-            throw PackageParsingError.regexFailed
-        }
-        
-        // Define the range for the entire content
-        let nsrange = NSRange(xcodeProjContent.startIndex..<xcodeProjContent.endIndex, in: xcodeProjContent)
-        
-        // Find all matches in the xcodeproj content
-        let matches = regex.matches(in: xcodeProjContent, options: [], range: nsrange)
-        
-        if matches.isEmpty {
-            print("No matches found")
-        }
+        // MARK: - Parsing Logic (Line-by-Line)
         
         var packages: [PackageInfo] = []
+        var currentPackage: PackageInfo?
+        var currentProperty: String?
         
-        // Iterate over each match to extract package information
-        for match in matches {
-            // Extract the package name
-            guard let nameRange = Range(match.range(withName: "name"), in: xcodeProjContent) else {
-                throw PackageParsingError.missingData("Package name not found in a match.")
+        // Split the content into lines for easier processing
+        let lines = xcodeProjContent.components(separatedBy: .newlines)
+        
+        for line in lines {
+            let trimmedLine = line.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // Check for the start of a package reference
+            if trimmedLine.contains("/* XCRemoteSwiftPackageReference") && trimmedLine.contains("*/ = {") {
+                // Extract the package name using regex
+                let namePattern = #"/\* XCRemoteSwiftPackageReference\s+"([^"]+)" \*/ = \{"#
+                if let name = matchFirst(regex: namePattern, in: trimmedLine, group: 1) {
+                    currentPackage = PackageInfo(name: name, repositoryURL: "", requirementKind: "", requirementParam: "")
+                }
+                continue
             }
             
-            let name = String(xcodeProjContent[nameRange])
-            
-            // Extract the repository URL
-            guard let repositoryURLRange = Range(match.range(withName: "repositoryURL"), in: xcodeProjContent) else {
-                throw PackageParsingError.missingData("Repository URL not found for package '\(name)'.")
+            // If we're inside a package block, extract properties
+            if let package = currentPackage {
+                if trimmedLine.starts(with: "repositoryURL =") {
+                    // Extract repository URL
+                    let repoPattern = #"repositoryURL\s*=\s*"([^"]+)";"#
+                    if let repoURL = matchFirst(regex: repoPattern, in: trimmedLine, group: 1) {
+                        currentPackage = PackageInfo(name: package.name, repositoryURL: repoURL, requirementKind: package.requirementKind, requirementParam: package.requirementParam)
+                    }
+                } else if trimmedLine.starts(with: "requirement = {") {
+                    // Start of requirement block
+                    currentProperty = "requirement"
+                } else if currentProperty == "requirement" {
+                    if trimmedLine.starts(with: "branch =") {
+                        // Extract branch
+                        let branchPattern = #"branch\s*=\s*([^;]+);"#
+                        if let branch = matchFirst(regex: branchPattern, in: trimmedLine, group: 1) {
+                            currentPackage = PackageInfo(name: package.name, repositoryURL: package.repositoryURL, requirementKind: "branch", requirementParam: branch)
+                        }
+                    } else if trimmedLine.starts(with: "minimumVersion =") {
+                        // Extract minimum version
+                        let minVersionPattern = #"minimumVersion\s*=\s*([^;]+);"#
+                        if let minVersion = matchFirst(regex: minVersionPattern, in: trimmedLine, group: 1) {
+                            currentPackage = PackageInfo(name: package.name, repositoryURL: package.repositoryURL, requirementKind: "upToNextMajorVersion", requirementParam: minVersion)
+                        }
+                    } else if trimmedLine.starts(with: "kind =") {
+                        // Extract kind (in some cases, kind might come before branch/minimumVersion)
+                        let kindPattern = #"kind\s*=\s*([^;]+);"#
+                        if let kind = matchFirst(regex: kindPattern, in: trimmedLine, group: 1) {
+                            if kind == "branch" {
+                                currentPackage = PackageInfo(name: package.name, repositoryURL: package.repositoryURL, requirementKind: kind, requirementParam: "main")
+                            } else {
+                                currentPackage = PackageInfo(name: package.name, repositoryURL: package.repositoryURL, requirementKind: kind, requirementParam: "")
+                            }
+                        }
+                    } else if trimmedLine == "};" {
+                        // End of requirement block
+                        currentProperty = nil
+                    }
+                }
+                
+                // Check for end of package block
+                if trimmedLine == "};" {
+                    if let completedPackage = currentPackage {
+                        packages.append(completedPackage)
+                        currentPackage = nil
+                    }
+                }
             }
-            let repositoryURL = String(xcodeProjContent[repositoryURLRange])
-            
-            // Extract the requirement kind
-            guard let kindRange = Range(match.range(withName: "kind"), in: xcodeProjContent) else {
-                throw PackageParsingError.missingData("Requirement kind not found for package '\(name)'.")
-            }
-            
-            let kind = String(xcodeProjContent[kindRange]).trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            // Determine and extract the requirement parameter (branch or minimumVersion)
-            var param = ""
-            
-            if let branchRange = Range(match.range(withName: "branch"), in: xcodeProjContent) {
-                param = String(xcodeProjContent[branchRange]).trimmingCharacters(in: .whitespacesAndNewlines)
-            } else if let minimumVersionRange = Range(match.range(withName: "minimumVersion"), in: xcodeProjContent) {
-                param = String(xcodeProjContent[minimumVersionRange]).trimmingCharacters(in: .whitespacesAndNewlines)
-            } else {
-                throw PackageParsingError.missingData("Neither branch nor minimumVersion found for package '\(name)'.")
-            }
-            
-            // Create a PackageInfo instance and append it to the packages array
-            let package = PackageInfo(
-                name: name,
-                repositoryURL: repositoryURL,
-                requirementKind: kind,
-                requirementParam: param
-            )
-            
-            packages.append(package)
+        }
+        
+        // Validate that packages were found
+        if packages.isEmpty {
+            print("No packages found in the project.pbxproj file")
         }
         
         return packages
@@ -305,4 +301,23 @@ enum FileType: String {
          proj,
          package,
          unknown
+}
+
+func matchFirst(regex: String, in text: String, group: Int) -> String? {
+    do {
+        let regex = try NSRegularExpression(pattern: regex, options: [])
+        let nsrange = NSRange(text.startIndex..<text.endIndex, in: text)
+        
+        if
+            let match = regex.firstMatch(in: text, options: [], range: nsrange),
+            match.numberOfRanges > group,
+            let range = Range(match.range(at: group), in: text)
+        {
+            return String(text[range])
+        }
+    } catch {
+        print("Invalid regex: \(regex)")
+    }
+    
+    return nil
 }
