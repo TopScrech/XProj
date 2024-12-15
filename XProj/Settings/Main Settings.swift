@@ -4,18 +4,20 @@ struct MainSettings: View {
     @Environment(ProjectListVM.self) private var vm
     
     var body: some View {
-        List {
-            Button("Change projects folder") {
-                vm.openFolderPicker()
-            }
-            
-            Button("Examples") {
-                downloadExamples()
+        ScrollView {
+            GroupBox {
+                Button("Change projects folder") {
+                    vm.openFolderPicker()
+                }
+                
+                Button("Examples") {
+                    downloadExamples()
+                }
             }
         }
-        .listStyle(.inset)
+//        .listStyle(.plain)
         .padding()
-        .frame(width: 300, height: 300)
+//        .frame(width: 300, height: 300)
     }
     
     private func downloadExamples() {

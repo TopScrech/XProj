@@ -10,38 +10,42 @@ struct ProjectCard: View {
     }
     
     var body: some View {
-        HStack {
-            Image(systemName: proj.icon)
-                .title()
-                .foregroundStyle(proj.iconColor)
-                .frame(width: 30)
-            
-            VStack(alignment: .leading) {
-                Text(proj.name)
+        NavigationLink {
+            ProjectDetails(proj)
+        } label: {
+            HStack {
+                Image(systemName: proj.icon)
+                    .title()
+                    .foregroundStyle(proj.iconColor)
+                    .frame(width: 30)
                 
-                Text(proj.lastOpened, format: .dateTime)
-                    .caption2()
-                    .foregroundStyle(.secondary)
-                
-                Button {
-                    openInFinder(rootedAt: proj.path)
-                } label: {
-                    let path = proj.path.replacingOccurrences(of: vm.projectsFolder, with: "~")
+                VStack(alignment: .leading) {
+                    Text(proj.name)
                     
-                    Text(path)
-                        .footnote()
-                        .foregroundStyle(.tertiary)
+                    Text(proj.lastOpened, format: .dateTime)
+                        .caption2()
+                        .foregroundStyle(.secondary)
+                    
+                    Button {
+                        openInFinder(rootedAt: proj.path)
+                    } label: {
+                        let path = proj.path.replacingOccurrences(of: vm.projectsFolder, with: "~")
+                        
+                        Text(path)
+                            .footnote()
+                            .foregroundStyle(.tertiary)
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
+                
+                Spacer()
+                
+                //            Text(proj.attributes[.size] as? String ?? "")
+                //                .footnote()
+                //                .foregroundStyle(.secondary)
             }
-            
-            Spacer()
-            
-            //            Text(proj.attributes[.size] as? String ?? "")
-            //                .footnote()
-            //                .foregroundStyle(.secondary)
+            .padding(.vertical, 5)
         }
-        .padding(.vertical, 5)
     }
 }
 

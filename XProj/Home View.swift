@@ -2,15 +2,17 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack {
-//            NavigationLink("Projects") {
-                ProjectList()
-//            }
-            
-//            NavigationLink("Derived Data") {
-//                DerivedDataList()
-//            }
+        NavigationSplitView(columnVisibility: .constant(.all)) {
+            SidebarView()
+                .frame(minWidth: 250)
+        } content: {
+            ProjectList()
+        } detail: {
+            Text("Detail")
         }
+        //            NavigationLink("Derived Data") {
+        //                DerivedDataList()
+        //            }
     }
 }
 
