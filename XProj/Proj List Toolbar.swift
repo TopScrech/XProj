@@ -5,13 +5,11 @@ struct ProjListToolbar: View {
     
     var body: some View {
 #if DEBUG
-        NavigationLink {
+        NavigationLink("Derived Data") {
             DerivedDataList()
-        } label: {
-            Text("Derived Data")
         }
         
-        Menu {
+        Menu("Functions") {
             Button("listFilesInFoldersSingleThread") {
                 let test = vm.listFilesInFoldersSingleThread(folderPaths: vm.projects.map(\.path))
                 print(test)
@@ -45,8 +43,6 @@ struct ProjListToolbar: View {
                     
                 }
             }
-        } label: {
-            Text("Functions")
         }
 #endif
     }
