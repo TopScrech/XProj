@@ -18,6 +18,22 @@ struct ProjDetails: View {
                     .frame(width: 100, height: 100)
                     .clipShape(.rect(cornerRadius: 16))
             }
+                        
+            Button("Packages") {
+                do {
+                    let packages = try proj.parseSwiftPackages(proj.path)
+                    
+                    for package in packages {
+                        print("Package Name: \(package.name)")
+                        print("Repository URL: \(package.repositoryURL)")
+                        print("Requirement Kind: \(package.requirementKind)")
+                        print("Requirement Parameter: \(package.requirementParam)")
+                        print("---------------------------")
+                    }
+                } catch {
+                    print("Error: \(error)")
+                }
+            }
         }
     }
 }
