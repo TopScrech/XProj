@@ -28,7 +28,7 @@ extension Project {
                 
                 // Now search for AppIcon.appiconset within this Assets.xcassets
                 guard let appIconEnumerator = fileManager.enumerator(at: fileURL, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles, .skipsPackageDescendants]) else {
-                    print("Error: Unable to enumerate \(fileURL.path).")
+                    print("Error: Unable to enumerate \(fileURL.path)")
                     continue
                 }
                 
