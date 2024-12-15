@@ -229,16 +229,6 @@ struct Project: Identifiable, Hashable {
             \s*\};
         \s*\};
         """#
-//        let pattern = #"""
-//        /\* XCRemoteSwiftPackageReference\s+"(?<name>[^"]+)" \*/\s*=\s*\{
-//            \s*isa\s*=\s*XCRemoteSwiftPackageReference;
-//            \s*repositoryURL\s*=\s*"(?<repositoryURL>[^"]+)";
-//            \s*requirement\s*=\s*\{
-//                \s*(?:(?:branch\s*=\s*(?<branch>[^;]+);)|(?:minimumVersion\s*=\s*(?<minimumVersion>[^;]+);))
-//                \s*kind\s*=\s*(?<kind>[^;]+);
-//            \s*\};
-//        \s*\};
-//        """#
         
         // Compile the regular expression with options to allow multiline matching
         let regexOptions: NSRegularExpression.Options = [.dotMatchesLineSeparators, .caseInsensitive]
