@@ -254,11 +254,6 @@ struct Project: Identifiable, Hashable {
             }
         }
         
-        // Validate that packages were found
-        if packages.isEmpty {
-            print("No packages found in the project.pbxproj file")
-        }
-        
         return packages
     }
 }

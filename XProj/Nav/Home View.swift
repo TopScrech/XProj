@@ -7,9 +7,11 @@ struct HomeView: View {
                 .frame(minWidth: 250)
         } content: {
             ProjList()
+                .frame(minWidth: 500)
         } detail: {
             Text("Detail")
         }
+        
         //            NavigationLink("Derived Data") {
         //                DerivedDataList()
         //            }

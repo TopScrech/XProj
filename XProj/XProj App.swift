@@ -6,7 +6,7 @@ struct XProjApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Container()
+            HomeView()
                 .environment(vm)
         }
         
