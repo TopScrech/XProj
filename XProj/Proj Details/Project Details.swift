@@ -8,7 +8,17 @@ struct ProjectDetails: View {
     }
     
     var body: some View {
-        Text(proj.name)
+        VStack {
+            Text(proj.name)
+            
+            if let path = proj.projectIcon(),
+               let nsImage = NSImage(contentsOf: URL(fileURLWithPath: path)) {
+                Image(nsImage: nsImage)
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .clipShape(.rect(cornerRadius: 16))
+            }
+        }
     }
 }
 
