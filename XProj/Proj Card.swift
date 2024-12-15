@@ -1,7 +1,7 @@
 import ScrechKit
 
-struct ProjectCard: View {
-    @Environment(ProjectListVM.self) private var vm
+struct ProjCard: View {
+    @Environment(ProjListVM.self) private var vm
     
     private let proj: Project
     
@@ -11,10 +11,10 @@ struct ProjectCard: View {
     
     var body: some View {
         NavigationLink {
-            ProjectDetails(proj)
+            ProjDetails(proj)
         } label: {
             HStack {
-                ProjectCardImage(proj)
+                ProjCardImage(proj)
                 
                 VStack(alignment: .leading) {
                     Text(proj.name)
@@ -48,7 +48,7 @@ struct ProjectCard: View {
 
 #Preview {
     List {
-        ProjectCard(.init(
+        ProjCard(.init(
             name: "Preview",
             path: "/",
             type: .proj,
@@ -56,7 +56,7 @@ struct ProjectCard: View {
             attributes: [:]
         ))
         
-        ProjectCard(.init(
+        ProjCard(.init(
             name: "Preview",
             path: "/",
             type: .package,

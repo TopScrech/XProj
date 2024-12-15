@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct MBProjectCard: View {
-    @Environment(ProjectListVM.self) private var vm
+struct MBProjCard: View {
+    @Environment(ProjListVM.self) private var vm
     
     private let proj: Project
     
@@ -22,9 +22,9 @@ struct MBProjectCard: View {
                 let (found, filePath) = vm.findXcodeprojFile(proj.path)
                 
                 if found, let filePath {
-                    vm.launchProject(filePath)
+                    vm.launchProj(filePath)
                 } else {
-                    vm.launchProject(proj.path + "/Package.swift")
+                    vm.launchProj(proj.path + "/Package.swift")
                 }
             } label: {
                 Image(systemName: "play")
@@ -34,7 +34,7 @@ struct MBProjectCard: View {
 }
 
 #Preview {
-    MBProjectCard(
+    MBProjCard(
         Project(
             name: "Preview",
             path: "/",

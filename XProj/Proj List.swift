@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct ProjectList: View {
-    @Environment(ProjectListVM.self) private var vm
+struct ProjList: View {
+    @Environment(ProjListVM.self) private var vm
     
     @State private var selectedProjects: Set<Project.ID> = []
     
@@ -11,7 +11,7 @@ struct ProjectList: View {
         List(selection: $selectedProjects) {
             Section {
                 ForEach(vm.filteredProjects) { proj in
-                    ProjectCard(proj)
+                    ProjCard(proj)
                 }
             } header: {
                 HStack {
@@ -49,12 +49,12 @@ struct ProjectList: View {
             .keyboardShortcut(.defaultAction)
             .disabled(selectedProjects.isEmpty)
             
-            ProjectListToolbar()
+            ProjListToolbar()
         }
     }
 }
 
 #Preview {
-    ProjectList()
-        .environment(ProjectListVM())
+    ProjList()
+        .environment(ProjListVM())
 }

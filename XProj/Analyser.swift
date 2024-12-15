@@ -1,6 +1,6 @@
 import Foundation
 
-extension ProjectListVM {
+extension ProjListVM {
     func listFilesInFoldersSingleThread(folderPaths: [String]) -> [String: [String]?] {
         let startTime = CFAbsoluteTimeGetCurrent()
         
@@ -76,7 +76,7 @@ extension ProjectListVM {
     }
 }
 
-extension ProjectListVM {
+extension ProjListVM {
     func listFilesRecursively(_ folder: String) -> [String]? {
         var allFiles = [String]()
         

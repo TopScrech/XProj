@@ -1,7 +1,7 @@
 import ScrechKit
 
 struct SettingsView: View {
-    @Environment(ProjectListVM.self) private var vm
+    @Environment(ProjListVM.self) private var vm
     
     var body: some View {
         TabView {
@@ -20,5 +20,5 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
-        .environment(ProjectListVM())
+        .environment(ProjListVM())
 }

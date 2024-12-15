@@ -1,7 +1,7 @@
 import SwiftUI
 
 @Observable
-final class ProjectListVM {
+final class ProjListVM {
 #warning("Make private")
     var projects: [Project] = []
     var searchPrompt = ""
@@ -25,9 +25,9 @@ final class ProjectListVM {
             let (found, filePath) = findXcodeprojFile(path)
             
             if found, let filePath {
-                launchProject(filePath)
+                launchProj(filePath)
             } else {
-                launchProject(path + "/Package.swift")
+                launchProj(path + "/Package.swift")
             }
         }
     }
@@ -109,13 +109,13 @@ final class ProjectListVM {
         let projects = try fm.contentsOfDirectory(atPath: path)
         
         for proj in projects {
-            try processProject(atPath: path, project: proj)
+            try processProj(atPath: path, proj: proj)
         }
     }
     
-    func processProject(atPath path: String, project: String) throws {
-        let projectPath = "\(path)/\(project)"
-        let attributes = try fm.attributesOfItem(atPath: projectPath)
+    func processProj(atPath path: String, proj: String) throws {
+        let projPath = "\(path)/\(proj)"
+        let attributes = try fm.attributesOfItem(atPath: projPath)
         
         let typeAttribute = attributes[.type] as? String ?? "Other"
         let fileType: FileType
@@ -124,21 +124,21 @@ final class ProjectListVM {
             return
         }
         
-        if project == ".git" || project == ".build" || project == "Not Xcode" {
+        if proj == ".git" || proj == ".build" || proj == "Not Xcode" {
             return
         }
         
-        if hasXcodeproj(projectPath) {
+        if hasXcodeProj(projPath) {
             fileType = .proj
             
-        } else if hasSwiftPackage(projectPath) {
+        } else if hasSwiftPackage(projPath) {
             fileType = .package
             
         } else {
             switch typeAttribute {
             case "NSFileTypeDirectory":
                 //                fileType = .folder
-                try processPath(projectPath)
+                try processPath(projPath)
                 return
                 
             default:
@@ -147,14 +147,14 @@ final class ProjectListVM {
             }
         }
         
-        guard let lastOpened = lastAccessDate(projectPath) else {
+        guard let lastOpened = lastAccessDate(projPath) else {
             return
         }
         
         self.projects.append(
             .init(
-                name: project,
-                path: projectPath,
+                name: proj,
+                path: projPath,
                 type: fileType,
                 lastOpened: lastOpened,
                 attributes: attributes
@@ -174,7 +174,7 @@ final class ProjectListVM {
         }
     }
     
-    private func hasXcodeproj(_ path: String) -> Bool {
+    private func hasXcodeProj(_ path: String) -> Bool {
         do {
             let contents = try fm.contentsOfDirectory(atPath: path)
             

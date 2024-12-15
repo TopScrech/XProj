@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProjectCardImage: View {
+struct ProjCardImage: View {
     private let proj: Project
     
     init(_ proj: Project) {
@@ -8,7 +8,7 @@ struct ProjectCardImage: View {
     }
     
     var body: some View {
-        if let path = proj.projectIcon(),
+        if let path = proj.projIcon(),
            let nsImage = NSImage(contentsOf: URL(fileURLWithPath: path)) {
             Image(nsImage: nsImage)
                 .resizable()
@@ -29,5 +29,5 @@ struct ProjectCardImage: View {
 }
 
 //#Preview {
-//    ProjectCardImage()
+//    ProjCardImage()
 //}

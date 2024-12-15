@@ -1,7 +1,7 @@
 import ScrechKit
 
 struct MainSettings: View {
-    @Environment(ProjectListVM.self) private var vm
+    @Environment(ProjListVM.self) private var vm
     
     var body: some View {
         ScrollView {
@@ -44,5 +44,5 @@ struct MainSettings: View {
 
 #Preview {
     SettingsView()
-        .environment(ProjectListVM())
+        .environment(ProjListVM())
 }

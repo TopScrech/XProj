@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct ProjectListToolbar: View {
-    @Environment(ProjectListVM.self) private var vm
+struct ProjListToolbar: View {
+    @Environment(ProjListVM.self) private var vm
     
     var body: some View {
 #if DEBUG

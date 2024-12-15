@@ -1,7 +1,7 @@
 import ScrechKit
 
 struct DuplicateProjects: View {
-    @Environment(ProjectListVM.self) private var vm
+    @Environment(ProjListVM.self) private var vm
     
     private let duplicates: [[Project]]
     
@@ -18,5 +18,5 @@ struct DuplicateProjects: View {
 
 #Preview {
     DuplicateProjects()
-        .environment(ProjectListVM())
+        .environment(ProjListVM())
 }

@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct MBProjectList: View {
-    @Environment(ProjectListVM.self) private var vm
+struct MBProjList: View {
+    @Environment(ProjListVM.self) private var vm
     
     @FocusState private var focusState
     
@@ -34,15 +34,15 @@ struct MBProjectList: View {
                     let (found, filePath) = vm.findXcodeprojFile(proj.path)
                     
                     if found, let filePath {
-                        vm.launchProject(filePath)
+                        vm.launchProj(filePath)
                     } else {
-                        vm.launchProject(proj.path + "/Package.swift")
+                        vm.launchProj(proj.path + "/Package.swift")
                     }
                 }
             
             ScrollView {
                 ForEach(vm.filteredProjects) { proj in
-                    MBProjectCard(proj)
+                    MBProjCard(proj)
                 }
                 .animation(.default, value: vm.filteredProjects)
             }
@@ -59,5 +59,5 @@ struct MBProjectList: View {
 }
 
 #Preview {
-    MBProjectList()
+    MBProjList()
 }

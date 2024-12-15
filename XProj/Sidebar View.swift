@@ -4,18 +4,18 @@ struct SidebarView: View {
     var body: some View {
         List {
             NavigationLink("All") {
-                ProjectList()
+                ProjList()
             }
             .padding(.vertical)
             
             NavigationLink {
-                ProjectList()
+                ProjList()
             } label: {
                 Label("Projects", systemImage: "hammer")
             }
             
             NavigationLink {
-                ProjectList()
+                ProjList()
             } label: {
                 Label("Swift Packages", systemImage: "shippingbox")
             }

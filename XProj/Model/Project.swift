@@ -83,7 +83,7 @@ struct Project: Identifiable, Hashable {
         return true
     }
     
-    func projectIcon() -> String? {
+    func projIcon() -> String? {
         let fileManager = FileManager.default
         let projectURL = URL(fileURLWithPath: path)
         

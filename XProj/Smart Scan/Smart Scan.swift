@@ -1,11 +1,12 @@
 import SwiftUI
 
 struct SmartScan: View {
-    @Environment(ProjectListVM.self) private var vm
+    @Environment(ProjListVM.self) private var vm
     
     var body: some View {
         HStack {
             let duplicates = vm.findDuplicates()
+            
             let count = duplicates.reduce(0) {
                 $0 + $1.count
             }
@@ -30,5 +31,5 @@ struct SmartScan: View {
 
 #Preview {
     SmartScan()
-        .environment(ProjectListVM())
+        .environment(ProjListVM())
 }

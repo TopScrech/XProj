@@ -2,7 +2,7 @@ import ScrechKit
 
 @main
 struct XProjApp: App {
-    private var vm = ProjectListVM()
+    private var vm = ProjListVM()
     
     var body: some Scene {
         WindowGroup {
@@ -17,7 +17,7 @@ struct XProjApp: App {
         
         MenuBarExtra("Project List", systemImage: "hammer") {
             NavigationStack {
-                MBProjectList()
+                MBProjList()
             }
             .environment(vm)
         }

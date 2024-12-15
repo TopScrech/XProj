@@ -73,7 +73,7 @@ final class DerivedDataVM {
                     group.leave()
                 }
                 
-                self.processProject(proj, path: path)
+                self.processProj(proj, path: path)
             }
         }
         
@@ -85,25 +85,25 @@ final class DerivedDataVM {
         print("Time elapsed for processing path: \(String(format: "%.3f", timeElapsed)) seconds")
     }
     
-    func processProject(_ project: String, path: String) {
-        let projectPath = "\(path)/\(project)"
+    func processProj(_ proj: String, path: String) {
+        let projectPath = "\(path)/\(proj)"
         
-        if project == ".git" || project == ".build" || project == "Not Xcode" {
+        if proj == ".git" || proj == ".build" || proj == "Not Xcode" {
             return
         }
         
         do {
             let sizeAttribute = try fm.allocatedSizeOfDirectory(atUrl: URL(fileURLWithPath: projectPath))
             
-            if project.contains("-") {
-                let projectName = project.split(separator: "-").dropLast().joined(separator: "-")
+            if proj.contains("-") {
+                let projectName = proj.split(separator: "-").dropLast().joined(separator: "-")
                 
                 self.folders.append(projectName)
             } else {
-                self.folders.append(project)
+                self.folders.append(proj)
             }
             
-            print("\(project) \(formatBytes(sizeAttribute))")
+            print("\(proj) \(formatBytes(sizeAttribute))")
         } catch {
             print("error processing project at path: \(projectPath)")
         }

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProjectDetails: View {
+struct ProjDetails: View {
     private let proj: Project
     
     init(_ proj: Project) {
@@ -11,7 +11,7 @@ struct ProjectDetails: View {
         VStack {
             Text(proj.name)
             
-            if let path = proj.projectIcon(),
+            if let path = proj.projIcon(),
                let nsImage = NSImage(contentsOf: URL(fileURLWithPath: path)) {
                 Image(nsImage: nsImage)
                     .resizable()
@@ -23,5 +23,5 @@ struct ProjectDetails: View {
 }
 
 //#Preview {
-//    ProjectDetails()
+//    ProjDetails()
 //}

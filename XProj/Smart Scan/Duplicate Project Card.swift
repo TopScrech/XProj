@@ -1,7 +1,7 @@
 import ScrechKit
 
-struct DuplicateProjectCard: View {
-    @Environment(ProjectListVM.self) private var vm
+struct DuplicateProjCard: View {
+    @Environment(ProjListVM.self) private var vm
     
     private let project: Project
     

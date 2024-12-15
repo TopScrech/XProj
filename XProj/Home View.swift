@@ -6,7 +6,7 @@ struct HomeView: View {
             SidebarView()
                 .frame(minWidth: 250)
         } content: {
-            ProjectList()
+            ProjList()
         } detail: {
             Text("Detail")
         }

@@ -1,8 +1,8 @@
 import Foundation
 
 //@Observable
-//final class ProjectCardVM {
-extension ProjectListVM {
+//final class ProjCardVM {
+extension ProjListVM {
     func findXcodeprojFile(_ folderPath: String) -> (found: Bool, filePath: String?) {
         let fileManager = FileManager.default
         
@@ -22,7 +22,7 @@ extension ProjectListVM {
         return (false, nil)
     }
     
-    func launchProject(_ filePath: String) {
+    func launchProj(_ filePath: String) {
         let fm = FileManager.default
         
         if fm.fileExists(atPath: filePath) {
