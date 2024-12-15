@@ -10,6 +10,7 @@ struct HomeView: View {
                 .frame(minWidth: 500)
         } detail: {
             Text("Detail")
+                .frame(minWidth: 200, maxWidth: 500)
         }
         
         //            NavigationLink("Derived Data") {
