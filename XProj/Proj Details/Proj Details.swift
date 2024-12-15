@@ -7,8 +7,6 @@ struct ProjDetails: View {
         self.proj = proj
     }
     
-    @State private var packages: [Package] = []
-    
     var body: some View {
         VStack(alignment: .leading) {
             Text(proj.name)
@@ -25,7 +23,7 @@ struct ProjDetails: View {
                     .clipShape(.rect(cornerRadius: 16))
             }
             
-            ForEach(packages) { package in
+            ForEach(proj.packages) { package in
                 VStack(alignment: .leading) {
                     Text(package.name)
                     
@@ -37,19 +35,6 @@ struct ProjDetails: View {
                 }
                 .padding(.vertical, 2)
             }
-                        
-            Button("Packages") {
-                loadPackages()
-            }
-        }
-    }
-    
-    private func loadPackages() {
-        do {
-            let packages = try proj.parseSwiftPackages(proj.path)
-            self.packages = packages
-        } catch {
-            print("Whoops")
         }
     }
 }

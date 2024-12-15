@@ -8,6 +8,7 @@ struct Project: Identifiable, Hashable {
     let attributes: [FileAttributeKey: Any]
     
     var swiftToolsVersion: String? = nil
+    var packages: [Package] = []
     
     init(name: String, path: String, type: ProjType, lastOpened: Date, attributes: [FileAttributeKey : Any]) {
         self.name = name
@@ -15,7 +16,9 @@ struct Project: Identifiable, Hashable {
         self.type = type
         self.lastOpened = lastOpened
         self.attributes = attributes
+        
         self.swiftToolsVersion = fetchSwiftToolsVersion()
+        self.packages = parseSwiftPackages()
     }
     
     var icon: String {
@@ -140,7 +143,7 @@ struct Project: Identifiable, Hashable {
     /// - Parameter path: The file system path to the `.xcodeproj` file.
     /// - Returns: An array of `PackageInfo` structs containing details about each Swift package.
     /// - Throws: `PackageParsingError` if any step of the parsing process fails.
-    func parseSwiftPackages(_ path: String) throws -> [Package] {
+    func parseSwiftPackages() -> [Package] {
         guard type == .proj else {
             return []
         }
@@ -150,12 +153,14 @@ struct Project: Identifiable, Hashable {
         
         // Find the .xcodeproj file in the folder
         guard let xcodeProjURL = try? fileManager.contentsOfDirectory(at: folderURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles).first(where: { $0.pathExtension == "xcodeproj" }) else {
-            throw PackageParsingError.projectFileNotFound
+            print("projectFileNotFound")
+            return []
         }
         
         // Check if the .xcodeproj file exists
         guard fileManager.fileExists(atPath: xcodeProjURL.path) else {
-            throw PackageParsingError.projectFileNotFound
+            print("projectFileNotFound")
+            return []
         }
         
         let projectPbxprojPath = "\(xcodeProjURL.path.replacingOccurrences(of: "file://", with: ""))/project.pbxproj"
@@ -167,7 +172,8 @@ struct Project: Identifiable, Hashable {
             xcodeProjContent = try String(contentsOfFile: projectPbxprojPath, encoding: .utf8)
         } catch {
             print(projectPbxprojPath)
-            throw PackageParsingError.failedToReadFile
+            print("failedToReadFile")
+            return []
         }
         
         // MARK: - Parsing Logic (Line-by-Line)
