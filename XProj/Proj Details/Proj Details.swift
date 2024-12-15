@@ -7,8 +7,10 @@ struct ProjDetails: View {
         self.proj = proj
     }
     
+    @State private var packages: [Package] = []
+    
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text(proj.name)
             
             if let path = proj.projIcon(),
@@ -18,22 +20,32 @@ struct ProjDetails: View {
                     .frame(width: 100, height: 100)
                     .clipShape(.rect(cornerRadius: 16))
             }
-                        
-            Button("Packages") {
-                do {
-                    let packages = try proj.parseSwiftPackages(proj.path)
+            
+            ForEach(packages) { package in
+                VStack(alignment: .leading) {
+                    Text(package.name)
                     
-                    for package in packages {
-                        print("Package Name: \(package.name)")
-                        print("Repository URL: \(package.repositoryURL)")
-                        print("Requirement Kind: \(package.requirementKind)")
-                        print("Requirement Parameter: \(package.requirementParam)")
-                        print("---------------------------")
-                    }
-                } catch {
-                    print("Error: \(error)")
+                    Text(package.repositoryURL)
+                    
+                    Text("\(package.requirementKind): \(package.requirementParam)")
+                        .footnote()
+                        .secondary()
                 }
+                .padding(.vertical, 2)
             }
+            
+            Button("Packages") {
+                loadPackages()
+            }
+        }
+    }
+    
+    private func loadPackages() {
+        do {
+            let packages = try proj.parseSwiftPackages(proj.path)
+            self.packages = packages
+        } catch {
+            print("Whoops")
         }
     }
 }

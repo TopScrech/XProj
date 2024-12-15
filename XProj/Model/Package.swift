@@ -1,4 +1,8 @@
-struct Package {
+import Foundation
+
+struct Package: Identifiable {
+    let id = UUID()
+    
     /// The name of the Swift package.
     let name: String
     

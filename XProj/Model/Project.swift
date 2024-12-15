@@ -146,12 +146,16 @@ struct Project: Identifiable, Hashable {
     enum PackageParsingError: Error, LocalizedError {
         /// Indicates that the `.xcodeproj` file was not found at the specified path.
         case projectFileNotFound
+        
         /// Indicates a failure to read the contents of the `.xcodeproj` file.
         case failedToReadFile
+        
         /// Indicates a failure to compile the regular expression used for parsing.
         case regexFailed
+        
         /// Indicates that essential data was missing during parsing, with an associated detail message.
         case missingData(String)
+        
         /// Indicates that the provided path does not point to a valid `.xcodeproj` file.
         case invalidXcodeProjPath
         
