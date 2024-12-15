@@ -7,6 +7,17 @@ struct Project: Identifiable, Hashable {
     let lastOpened: Date
     let attributes: [FileAttributeKey: Any]
     
+    var swiftToolsVersion: String? = nil
+    
+    init(name: String, path: String, type: ProjType, lastOpened: Date, attributes: [FileAttributeKey : Any]) {
+        self.name = name
+        self.path = path
+        self.type = type
+        self.lastOpened = lastOpened
+        self.attributes = attributes
+        self.swiftToolsVersion = fetchSwiftToolsVersion()
+    }
+    
     var icon: String {
         switch type {
         case .folder:  "folder"

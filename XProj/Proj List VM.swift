@@ -10,6 +10,10 @@ final class ProjListVM {
     private let udKey = "projects_folder_bookmark"
     private let fm = FileManager.default
     
+//    var swiftToolsVersions: [String] {
+//        projects.map(\.)
+//    }
+    
     var filteredProjects: [Project] {
         if searchPrompt.isEmpty {
             projects

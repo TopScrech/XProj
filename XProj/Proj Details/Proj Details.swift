@@ -13,8 +13,8 @@ struct ProjDetails: View {
         VStack(alignment: .leading) {
             Text(proj.name)
             
-            if let swiftToolsVersion = proj.fetchSwiftToolsVersion() {
-                Text("Swift tools: \(swiftToolsVersion)")
+            if let version = proj.swiftToolsVersion {
+                Text("Swift tools: \(version)")
             }
             
             if let path = proj.projIcon(),
