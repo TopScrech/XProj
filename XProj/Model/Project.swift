@@ -34,9 +34,13 @@ struct Project: Identifiable, Hashable {
         hasher.combine(lastOpened)
         
         // Convert attributes to a hashable form
-        let attributeArray = attributes.map { ($0.key, $0.value) }
+        let attributeArray = attributes.map {
+            ($0.key, $0.value)
+        }
+        
         for (key, value) in attributeArray {
             hasher.combine(key)
+            
             // Use `AnyHashable` to hash the value
             if let hashableValue = value as? AnyHashable {
                 hasher.combine(hashableValue)
@@ -49,7 +53,7 @@ struct Project: Identifiable, Hashable {
     }
     
     static func == (lhs: Project, rhs: Project) -> Bool {
-        return lhs.id == rhs.id &&
+        lhs.id == rhs.id &&
         lhs.name == rhs.name &&
         lhs.path == rhs.path &&
         lhs.type == rhs.type &&
@@ -126,6 +130,10 @@ struct Project: Identifiable, Hashable {
     /// - Returns: An array of `PackageInfo` structs containing details about each Swift package.
     /// - Throws: `PackageParsingError` if any step of the parsing process fails.
     func parseSwiftPackages(_ path: String) throws -> [Package] {
+        guard type == .proj else {
+            return []
+        }
+        
         let fileManager = FileManager.default
         let folderURL = URL(fileURLWithPath: path)
         
