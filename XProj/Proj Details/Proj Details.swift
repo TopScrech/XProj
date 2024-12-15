@@ -13,6 +13,10 @@ struct ProjDetails: View {
         VStack(alignment: .leading) {
             Text(proj.name)
             
+            if let swiftToolsVersion = proj.fetchSwiftToolsVersion() {
+                Text("Swift tools: \(swiftToolsVersion)")
+            }
+            
             if let path = proj.projIcon(),
                let nsImage = NSImage(contentsOf: URL(fileURLWithPath: path)) {
                 Image(nsImage: nsImage)
@@ -33,7 +37,7 @@ struct ProjDetails: View {
                 }
                 .padding(.vertical, 2)
             }
-            
+                        
             Button("Packages") {
                 loadPackages()
             }
