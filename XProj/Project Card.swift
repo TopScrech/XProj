@@ -19,10 +19,6 @@ struct ProjectCard: View {
                 VStack(alignment: .leading) {
                     Text(proj.name)
                     
-                    Text(proj.lastOpened, format: .dateTime)
-                        .caption2()
-                        .foregroundStyle(.secondary)
-                    
                     Button {
                         openInFinder(rootedAt: proj.path)
                     } label: {
@@ -36,6 +32,10 @@ struct ProjectCard: View {
                 }
                 
                 Spacer()
+                
+                Text(proj.lastOpened, format: .dateTime)
+                    .caption2()
+                    .foregroundStyle(.secondary)
                 
                 //            Text(proj.attributes[.size] as? String ?? "")
                 //                .footnote()
