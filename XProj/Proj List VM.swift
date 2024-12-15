@@ -118,7 +118,7 @@ final class ProjListVM {
         let attributes = try fm.attributesOfItem(atPath: projPath)
         
         let typeAttribute = attributes[.type] as? String ?? "Other"
-        let fileType: FileType
+        let fileType: ProjType
         
         if let isHidden = attributes[.extensionHidden] as? Bool, isHidden {
             return

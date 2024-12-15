@@ -3,7 +3,7 @@ import SwiftUI
 struct Project: Identifiable, Hashable {
     let id = UUID()
     let name, path: String
-    let type: FileType
+    let type: ProjType
     let lastOpened: Date
     let attributes: [FileAttributeKey: Any]
     
@@ -169,15 +169,15 @@ struct Project: Identifiable, Hashable {
         var errorDescription: String? {
             switch self {
             case .projectFileNotFound:
-                return "The specified `.xcodeproj` file was not found at the given path."
+                "The specified `.xcodeproj` file was not found at the given path."
             case .failedToReadFile:
-                return "Failed to read the contents of the `.xcodeproj` file."
+                "Failed to read the contents of the `.xcodeproj` file."
             case .regexFailed:
-                return "Failed to compile the regular expression for parsing."
+                "Failed to compile the regular expression for parsing."
             case .missingData(let detail):
-                return "Missing data during parsing: \(detail)"
+                "Missing data during parsing: \(detail)"
             case .invalidXcodeProjPath:
-                return "The provided path does not point to a valid `.xcodeproj` file."
+                "The provided path does not point to a valid `.xcodeproj` file."
             }
         }
     }
@@ -231,9 +231,11 @@ struct Project: Identifiable, Hashable {
             if trimmedLine.contains("/* XCRemoteSwiftPackageReference") && trimmedLine.contains("*/ = {") {
                 // Extract the package name using regex
                 let namePattern = #"/\* XCRemoteSwiftPackageReference\s+"([^"]+)" \*/ = \{"#
+                
                 if let name = matchFirst(regex: namePattern, in: trimmedLine, group: 1) {
                     currentPackage = PackageInfo(name: name, repositoryURL: "", requirementKind: "", requirementParam: "")
                 }
+                
                 continue
             }
             
@@ -242,6 +244,7 @@ struct Project: Identifiable, Hashable {
                 if trimmedLine.starts(with: "repositoryURL =") {
                     // Extract repository URL
                     let repoPattern = #"repositoryURL\s*=\s*"([^"]+)";"#
+                    
                     if let repoURL = matchFirst(regex: repoPattern, in: trimmedLine, group: 1) {
                         currentPackage = PackageInfo(name: package.name, repositoryURL: repoURL, requirementKind: package.requirementKind, requirementParam: package.requirementParam)
                     }
@@ -252,18 +255,21 @@ struct Project: Identifiable, Hashable {
                     if trimmedLine.starts(with: "branch =") {
                         // Extract branch
                         let branchPattern = #"branch\s*=\s*([^;]+);"#
+                        
                         if let branch = matchFirst(regex: branchPattern, in: trimmedLine, group: 1) {
                             currentPackage = PackageInfo(name: package.name, repositoryURL: package.repositoryURL, requirementKind: "branch", requirementParam: branch)
                         }
                     } else if trimmedLine.starts(with: "minimumVersion =") {
                         // Extract minimum version
                         let minVersionPattern = #"minimumVersion\s*=\s*([^;]+);"#
+                        
                         if let minVersion = matchFirst(regex: minVersionPattern, in: trimmedLine, group: 1) {
                             currentPackage = PackageInfo(name: package.name, repositoryURL: package.repositoryURL, requirementKind: "upToNextMajorVersion", requirementParam: minVersion)
                         }
                     } else if trimmedLine.starts(with: "kind =") {
                         // Extract kind (in some cases, kind might come before branch/minimumVersion)
                         let kindPattern = #"kind\s*=\s*([^;]+);"#
+                        
                         if let kind = matchFirst(regex: kindPattern, in: trimmedLine, group: 1) {
                             if kind == "branch" {
                                 currentPackage = PackageInfo(name: package.name, repositoryURL: package.repositoryURL, requirementKind: kind, requirementParam: "main")
@@ -294,13 +300,6 @@ struct Project: Identifiable, Hashable {
         
         return packages
     }
-}
-
-enum FileType: String {
-    case folder,
-         proj,
-         package,
-         unknown
 }
 
 func matchFirst(regex: String, in text: String, group: Int) -> String? {

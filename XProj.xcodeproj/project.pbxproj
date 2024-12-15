@@ -44,6 +44,7 @@
 		F3B389BA2D0EC9810082C2F3 /* Sidebar View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389B92D0EC9810082C2F3 /* Sidebar View.swift */; };
 		F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */; };
 		F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */; };
+		F3B389C12D0F92500082C2F3 /* File Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C02D0F92500082C2F3 /* File Type.swift */; };
 		F3D1E75D2C9B3F0C000C81FF /* Image Drop View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75C2C9B3F0C000C81FF /* Image Drop View.swift */; };
 		F3D1E75F2C9B40B4000C81FF /* Main Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */; };
 		F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */; };
@@ -93,6 +94,7 @@
 		F3B389B92D0EC9810082C2F3 /* Sidebar View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sidebar View.swift"; sourceTree = "<group>"; };
 		F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details.swift"; sourceTree = "<group>"; };
 		F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card Image.swift"; sourceTree = "<group>"; };
+		F3B389C02D0F92500082C2F3 /* File Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File Type.swift"; sourceTree = "<group>"; };
 		F3D1E75C2C9B3F0C000C81FF /* Image Drop View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image Drop View.swift"; sourceTree = "<group>"; };
 		F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main Settings.swift"; sourceTree = "<group>"; };
 		F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List Toolbar.swift"; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				F3341E3B2BDE3C8B00E85F27 /* Project.swift */,
+				F3B389C02D0F92500082C2F3 /* File Type.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */,
 				F37D1BF82CDA267D00D8817D /* Duplicate Project Card.swift in Sources */,
 				F3341E412BDEB71F00E85F27 /* Proj List VM.swift in Sources */,
+				F3B389C12D0F92500082C2F3 /* File Type.swift in Sources */,
 				F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,
 				F37D1BFA2CDA272600D8817D /* Duplicate Section.swift in Sources */,
