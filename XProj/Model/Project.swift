@@ -140,17 +140,6 @@ struct Project: Identifiable, Hashable {
         return nil
     }
     
-    struct PackageInfo {
-        /// The name of the Swift package.
-        let name: String
-        /// The repository URL of the Swift package.
-        let repositoryURL: String
-        /// The kind of version requirement (e.g., branch, upToNextMajorVersion).
-        let requirementKind: String
-        /// The parameter associated with the requirement kind (e.g., branch name or minimum version).
-        let requirementParam: String
-    }
-    
     // MARK: - Enum for Parsing Errors
     
     /// An enumeration of possible errors that can occur during the parsing of Swift packages from an Xcode project.
@@ -189,7 +178,7 @@ struct Project: Identifiable, Hashable {
     /// - Parameter path: The file system path to the `.xcodeproj` file.
     /// - Returns: An array of `PackageInfo` structs containing details about each Swift package.
     /// - Throws: `PackageParsingError` if any step of the parsing process fails.
-    func parseSwiftPackages(_ path: String) throws -> [PackageInfo] {
+    func parseSwiftPackages(_ path: String) throws -> [Package] {
         let fileManager = FileManager.default
         let folderURL = URL(fileURLWithPath: path)
         
@@ -217,8 +206,8 @@ struct Project: Identifiable, Hashable {
         
         // MARK: - Parsing Logic (Line-by-Line)
         
-        var packages: [PackageInfo] = []
-        var currentPackage: PackageInfo?
+        var packages: [Package] = []
+        var currentPackage: Package?
         var currentProperty: String?
         
         // Split the content into lines for easier processing
@@ -233,7 +222,7 @@ struct Project: Identifiable, Hashable {
                 let namePattern = #"/\* XCRemoteSwiftPackageReference\s+"([^"]+)" \*/ = \{"#
                 
                 if let name = matchFirst(regex: namePattern, in: trimmedLine, group: 1) {
-                    currentPackage = PackageInfo(name: name, repositoryURL: "", requirementKind: "", requirementParam: "")
+                    currentPackage = Package(name: name, repositoryURL: "", requirementKind: "", requirementParam: "")
                 }
                 
                 continue
@@ -246,7 +235,7 @@ struct Project: Identifiable, Hashable {
                     let repoPattern = #"repositoryURL\s*=\s*"([^"]+)";"#
                     
                     if let repoURL = matchFirst(regex: repoPattern, in: trimmedLine, group: 1) {
-                        currentPackage = PackageInfo(name: package.name, repositoryURL: repoURL, requirementKind: package.requirementKind, requirementParam: package.requirementParam)
+                        currentPackage = Package(name: package.name, repositoryURL: repoURL, requirementKind: package.requirementKind, requirementParam: package.requirementParam)
                     }
                 } else if trimmedLine.starts(with: "requirement = {") {
                     // Start of requirement block
@@ -257,14 +246,14 @@ struct Project: Identifiable, Hashable {
                         let branchPattern = #"branch\s*=\s*([^;]+);"#
                         
                         if let branch = matchFirst(regex: branchPattern, in: trimmedLine, group: 1) {
-                            currentPackage = PackageInfo(name: package.name, repositoryURL: package.repositoryURL, requirementKind: "branch", requirementParam: branch)
+                            currentPackage = Package(name: package.name, repositoryURL: package.repositoryURL, requirementKind: "branch", requirementParam: branch)
                         }
                     } else if trimmedLine.starts(with: "minimumVersion =") {
                         // Extract minimum version
                         let minVersionPattern = #"minimumVersion\s*=\s*([^;]+);"#
                         
                         if let minVersion = matchFirst(regex: minVersionPattern, in: trimmedLine, group: 1) {
-                            currentPackage = PackageInfo(name: package.name, repositoryURL: package.repositoryURL, requirementKind: "upToNextMajorVersion", requirementParam: minVersion)
+                            currentPackage = Package(name: package.name, repositoryURL: package.repositoryURL, requirementKind: "upToNextMajorVersion", requirementParam: minVersion)
                         }
                     } else if trimmedLine.starts(with: "kind =") {
                         // Extract kind (in some cases, kind might come before branch/minimumVersion)
@@ -272,9 +261,9 @@ struct Project: Identifiable, Hashable {
                         
                         if let kind = matchFirst(regex: kindPattern, in: trimmedLine, group: 1) {
                             if kind == "branch" {
-                                currentPackage = PackageInfo(name: package.name, repositoryURL: package.repositoryURL, requirementKind: kind, requirementParam: "main")
+                                currentPackage = Package(name: package.name, repositoryURL: package.repositoryURL, requirementKind: kind, requirementParam: "main")
                             } else {
-                                currentPackage = PackageInfo(name: package.name, repositoryURL: package.repositoryURL, requirementKind: kind, requirementParam: "")
+                                currentPackage = Package(name: package.name, repositoryURL: package.repositoryURL, requirementKind: kind, requirementParam: "")
                             }
                         }
                     } else if trimmedLine == "};" {
