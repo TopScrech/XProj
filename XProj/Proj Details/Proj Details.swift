@@ -10,7 +10,7 @@ struct ProjDetails: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
+        List {
             Text(proj.name)
             
             if let version = proj.swiftToolsVersion {
