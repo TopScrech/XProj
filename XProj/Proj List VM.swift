@@ -30,6 +30,24 @@ final class ProjListVM {
         getFolders()
     }
     
+    var projectCount: Int {
+        projects.filter {
+            $0.type == .proj
+        }.count
+    }
+    
+    var packageCount: Int {
+        projects.filter {
+            $0.type == .package
+        }.count
+    }
+    
+    var playgroundCount: Int {
+        projects.filter {
+            $0.type == .playground
+        }.count
+    }
+    
     var filteredProjects: [Project] {
         if searchPrompt.isEmpty {
             projects

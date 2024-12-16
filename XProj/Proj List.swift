@@ -15,15 +15,20 @@ struct ProjList: View {
         @Bindable var vm = vm
         
         List(selection: $selectedProjects) {
-            Section {
-                ForEach(projects) { proj in
-                    ProjCard(proj)
-                }
-            } header: {
-                Text("Projects: \(projects.count)")
+            ForEach(projects) { proj in
+                ProjCard(proj)
             }
         }
         .searchable(text: $vm.searchPrompt)
+        .safeAreaInset(edge: .bottom) {
+            Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Playgrounds: \(vm.playgroundCount)")
+                .footnote()
+                .secondary()
+                .padding(.vertical, 5)
+                .padding(.horizontal)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(.ultraThinMaterial)
+        }
         .searchSuggestions {
             SearchSuggestions()
         }
