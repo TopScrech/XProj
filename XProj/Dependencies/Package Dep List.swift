@@ -30,7 +30,7 @@ struct PackageDepList: View {
     private var dependenciesGroupedByAuthor: [(author: String, dependencies: [PackageDependency], totalUsage: Int)] {
         // Group by author
         let grouped = dependencies.reduce(into: [String: [PackageDependency]]()) { dict, dependency in
-            let author = dependency.package.author ?? "Unknown Author"
+            let author = dependency.author ?? "Unknown Author"
             dict[author, default: []].append(dependency)
         }
         
@@ -39,7 +39,12 @@ struct PackageDepList: View {
             let totalUsage = dependencies.reduce(0) {
                 $0 + $1.useCount
             }
-            return (author: author, dependencies: dependencies, totalUsage: totalUsage)
+            
+            return (
+                author: author,
+                dependencies: dependencies,
+                totalUsage: totalUsage
+            )
         }
         
         // Sort based on totalUsage

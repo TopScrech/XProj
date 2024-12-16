@@ -13,4 +13,8 @@ struct PackageDependency: Identifiable {
     var useCount: Int {
         projects.count
     }
+    
+    var author: String? {
+        package.author
+    }
 }

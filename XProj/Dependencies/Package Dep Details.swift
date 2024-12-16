@@ -1,19 +1,19 @@
 import SwiftUI
 
 struct PackageDepDetails: View {
-    private let package: PackageDependency
+    private let dependency: PackageDependency
     
-    init(_ package: PackageDependency) {
-        self.package = package
+    init(_ dependency: PackageDependency) {
+        self.dependency = dependency
     }
     
     var body: some View {
         List {
             Section {
                 HStack {
-                    Text(package.name)
+                    Text(dependency.name)
                     
-                    if let author = package.package.author {
+                    if let author = dependency.author {
                         Text(author)
                             .secondary()
                     }
@@ -21,12 +21,12 @@ struct PackageDepDetails: View {
             }
             .title()
             
-            if let url = URL(string: package.package.repositoryURL) {
-                Link(package.package.repositoryURL, destination: url)
+            if let url = URL(string: dependency.package.repositoryURL) {
+                Link(dependency.package.repositoryURL, destination: url)
             }
             
-            Section("Projects using \(package.name)") {
-                ForEach(package.projects) { proj in
+            Section("Projects using \(dependency.name)") {
+                ForEach(dependency.projects) { proj in
                     ProjCard(proj)
                 }
             }
