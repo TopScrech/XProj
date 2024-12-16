@@ -16,6 +16,7 @@ struct DerivedDataList: View {
                     Spacer()
                     
                     Text(folder.size)
+                        .bold(folder.size.contains("GB"))
                 }
             }
         }
