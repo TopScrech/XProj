@@ -51,9 +51,15 @@ final class ProjListVM {
     var filteredProjects: [Project] {
         if searchPrompt.isEmpty {
             projects
+                .sorted {
+                    $0.openedAt > $1.openedAt
+                }
         } else {
             projects.filter {
                 $0.name.lowercased().contains(searchPrompt.lowercased())
+            }
+            .sorted {
+                $0.openedAt < $1.openedAt
             }
         }
     }

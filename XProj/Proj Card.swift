@@ -28,9 +28,8 @@ struct ProjCard: View {
                 
                 Spacer()
                 
-                Text(proj.openedAt, format: .dateTime)
-                    .caption2()
-                    .foregroundStyle(.secondary)
+                Text(formattedDate(proj.openedAt))
+                    .secondary()
                 
                 //            Text(proj.attributes[.size] as? String ?? "")
                 //                .footnote()
@@ -52,6 +51,29 @@ struct ProjCard: View {
             }
         }
     }
+    
+    private func formattedDate(_ date: Date) -> String {
+        let calendar = Calendar.current
+        let formatter = DateFormatter()
+        let now = Date()
+        
+        if calendar.isDateInToday(date) {
+            return "Today"
+        } else if calendar.isDateInYesterday(date) {
+            return "Yesterday"
+        } else {
+            let currentYear = calendar.component(.year, from: now)
+            let dateYear = calendar.component(.year, from: date)
+            
+            if currentYear == dateYear {
+                formatter.dateFormat = "MMM d"
+            } else {
+                formatter.dateFormat = "MMM d, yyyy"
+            }
+            
+            return formatter.string(from: date)
+        }
+    }
 }
 
 //#Preview {
@@ -63,7 +85,7 @@ struct ProjCard: View {
 //            lastOpened: Date(),
 //            attributes: [:]
 //        ))
-//        
+//
 //        ProjCard(.init(
 //            name: "Preview",
 //            path: "/",
