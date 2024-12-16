@@ -33,6 +33,10 @@ struct SidebarView: View {
             NavigationLink("Derived data") {
                 DerivedDataList()
             }
+            
+            Spacer()
+            
+            SmartScan()
         }
         .padding(.top)
         //        .toolbar(removing: .sidebarToggle)

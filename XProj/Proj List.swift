@@ -15,18 +15,9 @@ struct ProjList: View {
         @Bindable var vm = vm
         
         List(selection: $selectedProjects) {
-            Section {
+            Section("\(projects.count) Projects") {
                 ForEach(projects) { proj in
                     ProjCard(proj)
-                }
-            } header: {
-                HStack {
-                    Text("\(projects.count) Projects")
-                    
-                    Spacer()
-                    
-                    SmartScan()
-                        .environment(vm)
                 }
             }
         }

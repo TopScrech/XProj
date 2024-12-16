@@ -10,7 +10,7 @@ struct DuplicateSection: View {
     var body: some View {
         Section(duplicates.first?.name ?? "Unknown") {
             ForEach(duplicates) { proj in
-                DuplicateProjCard(proj)
+                ProjCard(proj)
             }
         }
     }
