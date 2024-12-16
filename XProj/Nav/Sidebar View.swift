@@ -31,7 +31,7 @@ struct SidebarView: View {
             Spacer()
             
             NavigationLink {
-                PackageDependenciesList()
+                PackageDepList()
             } label: {
                 Label("Package dependencies", systemImage: "shippingbox")
             }

@@ -4,13 +4,13 @@ struct PackageDependency: Identifiable {
     let id = UUID()
     
     let package: Package
-    let proj: [Project]
+    let projects: [Project]
     
     var name: String {
         package.name
     }
     
     var useCount: Int {
-        proj.count
+        projects.count
     }
 }
