@@ -1,6 +1,6 @@
 import Foundation
 
-struct Package: Identifiable {
+struct Package: Identifiable, Hashable {
     let id = UUID()
     
     /// The name of the Swift package.
