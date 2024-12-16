@@ -12,8 +12,8 @@ struct Project: Identifiable, Hashable {
     
     var swiftToolsVersion: String? = nil
     var packages: [Package] = []
-    var targets: [(target: PBXNativeTarget, bundleID: String?)] = []
-    
+    var targets: [Target] = []
+    // 156
     init(
         name: String,
         path: String,

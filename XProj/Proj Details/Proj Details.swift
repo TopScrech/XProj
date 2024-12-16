@@ -59,13 +59,15 @@ struct ProjDetails: View {
             }
             
             Section("Targets") {
-                ForEach(proj.targets, id: \.target.id) { item in
+                ForEach(proj.targets) { target in
                     VStack(alignment: .leading) {
-                        Text(item.target.name)
+                        Text(target.name)
                         
-                        Text(item.bundleID ?? "Not Found")
-                            .footnote()
-                            .secondary()
+                        if let bundle = target.bundleId {
+                            Text(bundle)
+                                .footnote()
+                                .secondary()
+                        }
                     }
                 }
             }

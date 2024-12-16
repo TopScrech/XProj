@@ -1,8 +1,15 @@
 import Foundation
 import XcodeProjKit
 
+struct Target: Identifiable {
+    let id = UUID()
+    
+    let name: String
+    let bundleId: String?
+}
+
 extension Project {
-    func fetchTargets() -> [(target: PBXNativeTarget, bundleID: String?)] {
+    func fetchTargets() -> [Target] {
         guard
             type == .proj,
             let url = fetchProjectFilePath(path)
@@ -12,17 +19,16 @@ extension Project {
         
         do {
             let xcodeProj = try XcodeProj(url: url)
-            
             let project = xcodeProj.project
             let targets = project.targets
             
-            // Fetch the bundle ID for each target
-            let targetsWithBundleIDs = targets.map { target in
+            // Map targets to `Target` objects
+            let targetObjects: [Target] = targets.map { target in
                 let bundleID = target.buildConfigurationList?.buildConfigurations.first?.buildSettings?["PRODUCT_BUNDLE_IDENTIFIER"] as? String
-                return (target, bundleID)
+                return Target(name: target.name, bundleId: bundleID)
             }
             
-            return targetsWithBundleIDs
+            return targetObjects
         } catch {
             print(error)
             return []
