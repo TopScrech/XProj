@@ -34,6 +34,7 @@
 		F37831B02D109282007F7858 /* Targets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831AF2D109282007F7858 /* Targets.swift */; };
 		F37831B72D1095EC007F7858 /* XcodeProjKit in Frameworks */ = {isa = PBXBuildFile; productRef = F37831B62D1095EC007F7858 /* XcodeProjKit */; };
 		F37831B92D10A19E007F7858 /* Fetch project file path.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831B82D10A19E007F7858 /* Fetch project file path.swift */; };
+		F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BA2D10CE9A007F7858 /* Formatters.swift */; };
 		F37D1BED2CDA231F00D8817D /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEC2CDA231F00D8817D /* Provider.swift */; };
 		F37D1BEF2CDA234700D8817D /* Simple Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEE2CDA234700D8817D /* Simple Entry.swift */; };
 		F37D1BF12CDA235D00D8817D /* Entry View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF02CDA235D00D8817D /* Entry View.swift */; };
@@ -95,6 +96,7 @@
 		F371A5242C2D97AB006BDF0D /* XProj Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XProj Tests.swift"; sourceTree = "<group>"; };
 		F37831AF2D109282007F7858 /* Targets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Targets.swift; sourceTree = "<group>"; };
 		F37831B82D10A19E007F7858 /* Fetch project file path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fetch project file path.swift"; sourceTree = "<group>"; };
+		F37831BA2D10CE9A007F7858 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F37D1BEC2CDA231F00D8817D /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		F37D1BEE2CDA234700D8817D /* Simple Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Simple Entry.swift"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				F3341E2C2BDE358900E85F27 /* XProj App.swift */,
+				F37831BA2D10CE9A007F7858 /* Formatters.swift */,
 				F3DB25452C2C4E8B00A0C066 /* Nav */,
 				F37B90722BFE9E1600597624 /* Info.plist */,
 				F3341E302BDE358A00E85F27 /* Assets.xcassets */,
@@ -493,6 +496,7 @@
 				F3341E412BDEB71F00E85F27 /* Proj List VM.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
 				F3B389C12D0F92500082C2F3 /* Proj Type.swift in Sources */,
+				F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */,
 				F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,
 				F3B389D12D102D610082C2F3 /* Only Playgrounds List.swift in Sources */,
