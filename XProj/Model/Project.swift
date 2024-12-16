@@ -89,10 +89,10 @@ struct Project: Identifiable, Hashable {
         lhs.path == rhs.path &&
         lhs.type == rhs.type &&
         lhs.openedAt == rhs.openedAt &&
-        lhs.attributesAreEqual(to: rhs.attributes)
+        lhs.attributesAreEqual(rhs.attributes)
     }
     
-    private func attributesAreEqual(to otherAttributes: [FileAttributeKey: Any]) -> Bool {
+    private func attributesAreEqual(_ otherAttributes: [FileAttributeKey: Any]) -> Bool {
         // Ensure attributes dictionaries are equal
         guard attributes.count == otherAttributes.count else {
             return false
