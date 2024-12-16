@@ -21,6 +21,12 @@ struct SidebarView: View {
             } label: {
                 Label("Swift Packages", systemImage: "shippingbox")
             }
+            
+            Spacer()
+            
+            NavigationLink("Derived data") {
+                DerivedDataList()
+            }
         }
         .padding(.top)
         //        .toolbar(removing: .sidebarToggle)
