@@ -12,7 +12,7 @@ final class DerivedDataVM {
         guard searchPrompt.isEmpty else {
             return folders
                 .sorted {
-                    $0.size < $1.size
+                    $0.size > $1.size
                 }
                 .filter {
                     $0.name.contains(searchPrompt)
@@ -21,7 +21,7 @@ final class DerivedDataVM {
         
         return folders
             .sorted {
-                $0.size < $1.size
+                $0.size > $1.size
             }
     }
     
