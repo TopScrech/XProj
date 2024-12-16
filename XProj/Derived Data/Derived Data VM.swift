@@ -2,19 +2,19 @@ import ScrechKit
 
 @Observable
 final class DerivedDataVM {
-    var folders: [String] = []
+    var folders: [DerivedDataFolder] = []
     var searchPrompt = ""
     
     private let udKey = "derived_data_bookmark"
     private let fm = FileManager.default
     
-    var filteredFolders: [String] {
+    var filteredFolders: [DerivedDataFolder] {
         guard !searchPrompt.isEmpty else {
             return folders
         }
         
         return folders.filter {
-            $0.contains(searchPrompt)
+            $0.name.contains(searchPrompt)
         }
     }
     
@@ -80,7 +80,6 @@ final class DerivedDataVM {
         group.wait()
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        folders.append(timeElapsed.description)
         
         print("Time elapsed for processing path: \(String(format: "%.3f", timeElapsed)) seconds")
     }
@@ -95,15 +94,22 @@ final class DerivedDataVM {
         do {
             let sizeAttribute = try fm.allocatedSizeOfDirectory(atUrl: URL(fileURLWithPath: projectPath))
             
+            let name: String
+            
             if proj.contains("-") {
-                let projectName = proj.split(separator: "-").dropLast().joined(separator: "-")
-                
-                self.folders.append(projectName)
+                name = proj.split(separator: "-").dropLast().joined(separator: "-")
             } else {
-                self.folders.append(proj)
+                name = proj
             }
             
-            print("\(proj) \(formatBytes(sizeAttribute))")
+            let size = formatBytes(sizeAttribute)
+            
+            let folder = DerivedDataFolder(
+                name: name,
+                size: size
+            )
+            
+            folders.append(folder)
         } catch {
             print("error processing project at path: \(projectPath)")
         }

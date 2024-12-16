@@ -9,13 +9,13 @@ struct DerivedDataList: View {
                 vm.openFolderPicker()
             }
             
-            ForEach(vm.filteredFolders, id: \.self) { folder in
+            ForEach(vm.filteredFolders) { folder in
                 HStack {
-                    Text(folder)
+                    Text(folder.name)
                     
                     Spacer()
                     
-//                    Text("\(folder.size)")
+                    Text(folder.size)
                 }
             }
         }
