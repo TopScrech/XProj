@@ -3,27 +3,15 @@ import XcodeProjKit
 
 extension Project {
     func fetchTargets() -> [(target: PBXNativeTarget, bundleID: String?)] {
-        guard type == .proj else {
+        guard
+            type == .proj,
+            let url = fetchProjectFilePath(path)
+        else {
             return []
         }
         
         do {
-            let fileManager = FileManager.default
-            let folderURL = URL(fileURLWithPath: path)
-            
-            // Find the .xcodeproj file in the folder
-            guard let xcodeProjURL = try? fileManager.contentsOfDirectory(at: folderURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles).first(where: { $0.pathExtension == "xcodeproj" }) else {
-                print("projectFileNotFound")
-                return []
-            }
-            
-            // Check if the .xcodeproj file exists
-            guard fileManager.fileExists(atPath: xcodeProjURL.path) else {
-                print("projectFileNotFound")
-                return []
-            }
-            
-            let xcodeProj = try XcodeProj(url: xcodeProjURL)
+            let xcodeProj = try XcodeProj(url: url)
             
             let project = xcodeProj.project
             let targets = project.targets
@@ -40,7 +28,6 @@ extension Project {
             return []
         }
     }
-
 }
 
 extension PBXNativeTarget: @retroactive Identifiable {}

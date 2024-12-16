@@ -161,26 +161,14 @@ struct Project: Identifiable, Hashable {
     /// - Returns: An array of `PackageInfo` structs containing details about each Swift package.
     /// - Throws: `PackageParsingError` if any step of the parsing process fails.
     func parseSwiftPackages() -> [Package] {
-        guard type == .proj else {
+        guard
+            type == .proj,
+            let url = fetchProjectFilePath(path)
+        else {
             return []
         }
         
-        let fileManager = FileManager.default
-        let folderURL = URL(fileURLWithPath: path)
-        
-        // Find the .xcodeproj file in the folder
-        guard let xcodeProjURL = try? fileManager.contentsOfDirectory(at: folderURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles).first(where: { $0.pathExtension == "xcodeproj" }) else {
-            print("projectFileNotFound")
-            return []
-        }
-        
-        // Check if the .xcodeproj file exists
-        guard fileManager.fileExists(atPath: xcodeProjURL.path) else {
-            print("projectFileNotFound")
-            return []
-        }
-        
-        let projectPbxprojPath = "\(xcodeProjURL.path.replacingOccurrences(of: "file://", with: ""))/project.pbxproj"
+        let projectPbxprojPath = "\(url.path.replacingOccurrences(of: "file://", with: ""))/project.pbxproj"
         
         // Read the contents of the .xcodeproj file
         let xcodeProjContent: String
