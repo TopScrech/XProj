@@ -27,7 +27,6 @@ struct PackageDepDetails: View {
             
             Section("Projects using \(package.name)") {
                 ForEach(package.projects) { proj in
-//                    Text(proj.name)
                     ProjCard(proj)
                 }
             }
