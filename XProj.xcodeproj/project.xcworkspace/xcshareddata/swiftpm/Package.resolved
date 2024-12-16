@@ -1,5 +1,5 @@
 {
-  "originHash" : "fe0e4f745e80a39791f1b8ef36548292381488f2cde2c7d12cd93483d64241da",
+  "originHash" : "4bf5b1ddef8bf7ee2e6418feb42eb72d79a8c2f3d6e4e54c638e438d1b04f04c",
   "pins" : [
     {
       "identity" : "screchkit",
@@ -8,6 +8,15 @@
       "state" : {
         "branch" : "main",
         "revision" : "0ef7decabddc8b5bb0f8bb7fe494b4b07b2f807a"
+      }
+    },
+    {
+      "identity" : "xcodeprojkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TopScrech/XcodeProjKit",
+      "state" : {
+        "branch" : "master",
+        "revision" : "53d93dc46fa95ca25f34b56d7de20a4cd82ccbe2"
       }
     }
   ],

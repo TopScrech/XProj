@@ -58,21 +58,35 @@ struct ProjDetails: View {
                 }
             }
             
-            ForEach(proj.packages) { package in
-                VStack(alignment: .leading) {
-                    Text(package.name)
-                    
-                    if let author = package.author {
-                        Text(author)
+            Section("Targets") {
+                ForEach(proj.targets, id: \.target.id) { item in
+                    VStack(alignment: .leading) {
+                        Text(item.target.name)
+                        
+                        Text(item.bundleID ?? "Not Found")
                             .footnote()
                             .secondary()
                     }
-                    
-                    Text("\(package.requirementKind): \(package.requirementParam)")
-                        .footnote()
-                        .foregroundStyle(.tertiary)
                 }
-                .padding(.vertical, 2)
+            }
+            
+            Section("Package dependencies") {
+                ForEach(proj.packages) { package in
+                    VStack(alignment: .leading) {
+                        Text(package.name)
+                        
+                        if let author = package.author {
+                            Text(author)
+                                .footnote()
+                                .secondary()
+                        }
+                        
+                        Text("\(package.requirementKind): \(package.requirementParam)")
+                            .footnote()
+                            .foregroundStyle(.tertiary)
+                    }
+                    .padding(.vertical, 2)
+                }
             }
         }
     }

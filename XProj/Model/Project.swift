@@ -1,4 +1,5 @@
 import SwiftUI
+import XcodeProjKit
 
 struct Project: Identifiable, Hashable {
     let id = UUID()
@@ -11,6 +12,7 @@ struct Project: Identifiable, Hashable {
     
     var swiftToolsVersion: String? = nil
     var packages: [Package] = []
+    var targets: [(target: PBXNativeTarget, bundleID: String?)] = []
     
     init(
         name: String,
@@ -31,6 +33,7 @@ struct Project: Identifiable, Hashable {
         
         self.swiftToolsVersion = fetchSwiftToolsVersion()
         self.packages = parseSwiftPackages()
+        self.targets = fetchTargets()
     }
     
     var icon: String {
