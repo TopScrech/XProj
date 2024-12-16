@@ -4,17 +4,29 @@ struct Project: Identifiable, Hashable {
     let id = UUID()
     let name, path: String
     let type: ProjType
-    let lastOpened: Date
+    let openedAt: Date
+    let modifiedAt: Date?
+    let createdAt: Date?
     let attributes: [FileAttributeKey: Any]
     
     var swiftToolsVersion: String? = nil
     var packages: [Package] = []
     
-    init(name: String, path: String, type: ProjType, lastOpened: Date, attributes: [FileAttributeKey : Any]) {
+    init(
+        name: String,
+        path: String,
+        type: ProjType,
+        openedAt: Date,
+        modifiedAt: Date?,
+        createdAt: Date?,
+        attributes: [FileAttributeKey : Any]
+    ) {
         self.name = name
         self.path = path
         self.type = type
-        self.lastOpened = lastOpened
+        self.openedAt = openedAt
+        self.modifiedAt = modifiedAt
+        self.createdAt = createdAt
         self.attributes = attributes
         
         self.swiftToolsVersion = fetchSwiftToolsVersion()
@@ -47,7 +59,7 @@ struct Project: Identifiable, Hashable {
         hasher.combine(name)
         hasher.combine(path)
         hasher.combine(type)
-        hasher.combine(lastOpened)
+        hasher.combine(openedAt)
         
         // Convert attributes to a hashable form
         let attributeArray = attributes.map {
@@ -73,7 +85,7 @@ struct Project: Identifiable, Hashable {
         lhs.name == rhs.name &&
         lhs.path == rhs.path &&
         lhs.type == rhs.type &&
-        lhs.lastOpened == rhs.lastOpened &&
+        lhs.openedAt == rhs.openedAt &&
         lhs.attributesAreEqual(to: rhs.attributes)
     }
     

@@ -14,6 +14,28 @@ struct ProjDetails: View {
             Text(proj.name)
                 .title()
             
+            VStack(alignment: .leading, spacing: 5) {
+                Text("Last opened: ")
+                    .foregroundStyle(.secondary) +
+                
+                Text("\(proj.openedAt)")
+                
+                if let modifiedAt = proj.modifiedAt {
+                    Text("Modified: ")
+                        .foregroundStyle(.secondary) +
+                    
+                    Text("\(modifiedAt)")
+                }
+                
+                if let createdAt = proj.createdAt {
+                    Text("Created: ")
+                        .foregroundStyle(.secondary) +
+                    
+                    Text("\(createdAt)")
+                }
+            }
+            .footnote()
+            
             if let version = proj.swiftToolsVersion {
                 Text("Swift tools: \(version)")
             }

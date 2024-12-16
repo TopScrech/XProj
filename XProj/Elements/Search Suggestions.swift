@@ -23,7 +23,7 @@ struct SearchSuggestions: View {
                     
                     Spacer()
                     
-                    Text(proj.lastOpened, format: .dateTime)
+                    Text(proj.openedAt, format: .dateTime)
                 }
             }
         }

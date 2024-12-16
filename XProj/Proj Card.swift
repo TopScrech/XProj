@@ -28,7 +28,7 @@ struct ProjCard: View {
                 
                 Spacer()
                 
-                Text(proj.lastOpened, format: .dateTime)
+                Text(proj.openedAt, format: .dateTime)
                     .caption2()
                     .foregroundStyle(.secondary)
                 
@@ -54,22 +54,22 @@ struct ProjCard: View {
     }
 }
 
-#Preview {
-    List {
-        ProjCard(.init(
-            name: "Preview",
-            path: "/",
-            type: .proj,
-            lastOpened: Date(),
-            attributes: [:]
-        ))
-        
-        ProjCard(.init(
-            name: "Preview",
-            path: "/",
-            type: .package,
-            lastOpened: Date(),
-            attributes: [:]
-        ))
-    }
-}
+//#Preview {
+//    List {
+//        ProjCard(.init(
+//            name: "Preview",
+//            path: "/",
+//            type: .proj,
+//            lastOpened: Date(),
+//            attributes: [:]
+//        ))
+//        
+//        ProjCard(.init(
+//            name: "Preview",
+//            path: "/",
+//            type: .package,
+//            lastOpened: Date(),
+//            attributes: [:]
+//        ))
+//    }
+//}

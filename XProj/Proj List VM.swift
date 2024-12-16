@@ -96,7 +96,7 @@ final class ProjListVM {
             $0.type == .proj
         }
         .prefix(5).sorted {
-            $0.lastOpened > $1.lastOpened
+            $0.openedAt > $1.openedAt
         }
     }
     
@@ -189,16 +189,21 @@ final class ProjListVM {
             }
         }
         
-        guard let lastOpened = lastAccessDate(projPath) else {
+        guard let openedAt = lastAccessDate(projPath) else {
             return
         }
+        
+        let modifiedAt = attributes[.modificationDate] as? Date
+        let createdAt = attributes[.creationDate] as? Date
         
         self.projects.append(
             .init(
                 name: proj,
                 path: projPath,
                 type: fileType,
-                lastOpened: lastOpened,
+                openedAt: openedAt,
+                modifiedAt: modifiedAt,
+                createdAt: createdAt,
                 attributes: attributes
             )
         )
