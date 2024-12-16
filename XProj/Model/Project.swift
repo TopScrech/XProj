@@ -199,10 +199,10 @@ struct Project: Identifiable, Hashable {
                 continue
             }
             
-            // If we're inside a package block, extract properties
+            // Extract properties when inside a package block
             if let package = currentPackage {
                 if trimmedLine.starts(with: "repositoryURL =") {
-                    // Extract repository URL
+                    // Extract rep url
                     let repoPattern = #"repositoryURL\s*=\s*"([^"]+)";"#
                     
                     if let repoURL = matchFirst(regex: repoPattern, in: trimmedLine, group: 1) {
@@ -211,6 +211,7 @@ struct Project: Identifiable, Hashable {
                 } else if trimmedLine.starts(with: "requirement = {") {
                     // Start of requirement block
                     currentProperty = "requirement"
+                    
                 } else if currentProperty == "requirement" {
                     if trimmedLine.starts(with: "branch =") {
                         // Extract branch
@@ -220,7 +221,7 @@ struct Project: Identifiable, Hashable {
                             currentPackage = Package(name: package.name, repositoryURL: package.repositoryURL, requirementKind: "branch", requirementParam: branch)
                         }
                     } else if trimmedLine.starts(with: "minimumVersion =") {
-                        // Extract minimum version
+                        // Extract min version
                         let minVersionPattern = #"minimumVersion\s*=\s*([^;]+);"#
                         
                         if let minVersion = matchFirst(regex: minVersionPattern, in: trimmedLine, group: 1) {
