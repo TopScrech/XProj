@@ -118,9 +118,6 @@ struct Project: Identifiable, Hashable {
         return true
     }
     
-    // MARK: - Enum for Parsing Errors
-    
-    /// An enumeration of possible errors that can occur during the parsing of Swift packages from an Xcode project.
     enum PackageParsingError: Error, LocalizedError {
         /// Indicates that the `.xcodeproj` file was not found at the specified path.
         case projectFileNotFound
@@ -141,25 +138,22 @@ struct Project: Identifiable, Hashable {
             switch self {
             case .projectFileNotFound:
                 "The specified `.xcodeproj` file was not found at the given path."
+                
             case .failedToReadFile:
                 "Failed to read the contents of the `.xcodeproj` file."
+                
             case .regexFailed:
                 "Failed to compile the regular expression for parsing."
+                
             case .missingData(let detail):
                 "Missing data during parsing: \(detail)"
+                
             case .invalidXcodeProjPath:
                 "The provided path does not point to a valid `.xcodeproj` file."
             }
         }
     }
     
-    // MARK: - Function to Parse Swift Packages
-    
-    /// Parses Swift package references from an Xcode project.
-    ///
-    /// - Parameter path: The file system path to the `.xcodeproj` file.
-    /// - Returns: An array of `PackageInfo` structs containing details about each Swift package.
-    /// - Throws: `PackageParsingError` if any step of the parsing process fails.
     func parseSwiftPackages() -> [Package] {
         guard
             type == .proj,
