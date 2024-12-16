@@ -55,7 +55,6 @@ struct PackageDepList: View {
         return sortedGrouped
     }
     
-    
     @AppStorage("sort_package_dependencies_by_author") private var sortByAuthor = false
     
     var body: some View {
