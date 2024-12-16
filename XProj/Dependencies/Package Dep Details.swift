@@ -10,12 +10,26 @@ struct PackageDepDetails: View {
     var body: some View {
         List {
             Section {
-                Text(package.name)
-                    .title()
+                HStack {
+                    Text(package.name)
+                    
+                    if let author = package.package.author {
+                        Text(author)
+                            .secondary()
+                    }
+                }
+            }
+            .title()
+            
+            if let url = URL(string: package.package.repositoryURL) {
+                Link(package.package.repositoryURL, destination: url)
             }
             
-            ForEach(package.projects) { proj in
-                Text(proj.name)
+            Section("Projects using \(package.name)") {
+                ForEach(package.projects) { proj in
+//                    Text(proj.name)
+                    ProjCard(proj)
+                }
             }
         }
     }

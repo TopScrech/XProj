@@ -5,6 +5,7 @@ struct SmartScan: View {
     
     var body: some View {
         Text("Smart Scan")
+            .secondary()
         
         let duplicates = vm.findDuplicates()
         
@@ -13,15 +14,11 @@ struct SmartScan: View {
         }
         
         if count != 0 {
-            NavigationLink {
+            NavigationLink("\(count) duplicates") {
                 DuplicateProjects(duplicates)
-            } label: {
-                Text("\(count) duplicates")
-                    .foregroundStyle(.tertiary)
             }
             .buttonStyle(.plain)
-        } else {
-            Text("✅")
+            .foregroundStyle(.yellow)
         }
     }
 }

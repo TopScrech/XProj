@@ -14,6 +14,14 @@ struct ProjDetails: View {
             Text(proj.name)
                 .title()
             
+            if let path = proj.projIcon(),
+               let nsImage = NSImage(contentsOf: URL(fileURLWithPath: path)) {
+                Image(nsImage: nsImage)
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .clipShape(.rect(cornerRadius: 16))
+            }
+            
             VStack(alignment: .leading, spacing: 5) {
                 Text("Last opened: ")
                     .foregroundStyle(.secondary) +
@@ -40,24 +48,14 @@ struct ProjDetails: View {
                 Text("Swift tools: \(version)")
             }
             
-            if let path = proj.projIcon(),
-               let nsImage = NSImage(contentsOf: URL(fileURLWithPath: path)) {
-                Image(nsImage: nsImage)
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .clipShape(.rect(cornerRadius: 16))
-            }
-            
-            Button {
-                vm.openProjects([proj.path])
-            } label: {
-                Text("Open in Xcode")
-            }
-            
-            Button {
-                openInFinder(rootedAt: proj.path)
-            } label: {
-                Text("Open in Finder")
+            HStack {
+                Button("Xcode") {
+                    vm.openProjects([proj.path])
+                }
+                
+                Button("Finder") {
+                    openInFinder(rootedAt: proj.path)
+                }
             }
             
             ForEach(proj.packages) { package in
