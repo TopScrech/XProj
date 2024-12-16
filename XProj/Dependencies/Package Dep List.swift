@@ -85,14 +85,7 @@ struct PackageDepList: View {
                 }
             } else {
                 ForEach(dependencies) { package in
-                    HStack {
-                        Text(package.name)
-                        
-                        Spacer()
-                        
-                        Text(package.useCount)
-                            .secondary()
-                    }
+                    PackageDepCard(package)
                 }
             }
         }

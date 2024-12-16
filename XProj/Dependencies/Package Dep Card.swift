@@ -7,6 +7,8 @@ struct PackageDepCard: View {
         self.package = package
     }
     
+    @State private var isHovered = false
+    
     var body: some View {
         NavigationLink {
             PackageDepDetails(package)
@@ -18,12 +20,22 @@ struct PackageDepCard: View {
                     
                     Spacer()
                     
+                    if isHovered, let url = URL(string: package.package.repositoryURL) {
+                        Link(destination: url) {
+                            Image(systemName: "link")
+                                .frame(height: 15)
+                        }
+                    }
+                    
                     Text(package.useCount)
                         .footnote()
                         .secondary()
                 }
             }
             .padding(.vertical, 4)
+        }
+        .onHover { hover in
+            isHovered = hover
         }
     }
 }
