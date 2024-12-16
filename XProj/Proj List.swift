@@ -3,6 +3,12 @@ import SwiftUI
 struct ProjList: View {
     @Environment(ProjListVM.self) private var vm
     
+    private let projects: [Project]
+    
+    init(_ projects: [Project]) {
+        self.projects = projects
+    }
+    
     @State private var selectedProjects: Set<Project.ID> = []
     
     var body: some View {
@@ -10,12 +16,12 @@ struct ProjList: View {
         
         List(selection: $selectedProjects) {
             Section {
-                ForEach(vm.filteredProjects) { proj in
+                ForEach(projects) { proj in
                     ProjCard(proj)
                 }
             } header: {
                 HStack {
-                    Text("\(vm.projects.count) Projects")
+                    Text("\(projects.count) Projects")
                     
                     Spacer()
                     
@@ -28,13 +34,13 @@ struct ProjList: View {
         .searchSuggestions {
             SearchSuggestions()
         }
-        .refreshableTask {
-            vm.getFolders()
-            
+//        .refreshableTask {
+//            vm.getFolders()
+//            
             //            let duplicates: [()] = vm.findDuplicates().map { duplicates in
             //                print(duplicates.map(\.name))
             //            }
-        }
+//        }
         .toolbar {
             Button("Open") {
                 let selected = vm.projects.filter {
@@ -54,7 +60,7 @@ struct ProjList: View {
     }
 }
 
-#Preview {
-    ProjList()
-        .environment(ProjListVM())
-}
+//#Preview {
+//    ProjList()
+//        .environment(ProjListVM())
+//}

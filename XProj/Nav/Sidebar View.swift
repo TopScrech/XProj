@@ -1,21 +1,23 @@
 import SwiftUI
 
 struct SidebarView: View {
+    @Environment(ProjListVM.self) private var vm
+    
     var body: some View {
         List {
             NavigationLink("All") {
-                ProjList()
+                ProjList(vm.filteredProjects)
             }
             .padding(.vertical)
             
             NavigationLink {
-                ProjList()
+                OnlyProjList()
             } label: {
                 Label("Projects", systemImage: "hammer")
             }
             
             NavigationLink {
-                ProjList()
+                OnlyPackageList()
             } label: {
                 Label("Swift Packages", systemImage: "shippingbox")
             }

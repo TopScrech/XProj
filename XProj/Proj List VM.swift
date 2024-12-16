@@ -10,17 +10,27 @@ final class ProjListVM {
     private let udKey = "projects_folder_bookmark"
     private let fm = FileManager.default
     
-    //    var swiftToolsVersions: [String] {
-    //        var versions = Set<String>()
-    //
-    //        for proj in projects {
-    //            if let version = proj.swiftToolsVersion {
-    //                versions.insert(version)
-    //            }
-    //        }
-    //
-    //        return versions.sorted()
-    //    }
+    var swiftToolsVersions: String {
+        var versions = Set<String>()
+        
+        for proj in projects {
+            if let version = proj.swiftToolsVersion {
+                versions.insert(version)
+            }
+        }
+        
+        let sortedArray = versions.sorted()
+        
+        // Join the elements with ", " as separator
+        let joinedString = sortedArray.joined(separator: ", ")
+
+        // Append a trailing comma
+        return joinedString + ","
+    }
+    
+    init() {
+        getFolders()
+    }
     
     var filteredProjects: [Project] {
         if searchPrompt.isEmpty {
