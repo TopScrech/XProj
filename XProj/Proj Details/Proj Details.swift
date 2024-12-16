@@ -41,7 +41,7 @@ struct ProjDetails: View {
                 VStack(alignment: .leading) {
                     Text(package.name)
                     
-                    if let author = extractAuthor(package.repositoryURL) {
+                    if let author = package.author {
                         Text(author)
                             .footnote()
                             .secondary()
@@ -54,34 +54,6 @@ struct ProjDetails: View {
                 .padding(.vertical, 2)
             }
         }
-    }
-    
-    private func extractAuthor(_ urlString: String) -> String? {
-        // Attempt to create a URL object from the input string
-        guard let url = URL(string: urlString) else {
-            print("Invalid URL string")
-            return nil
-        }
-        
-        // Ensure the host is "github.com"
-        guard url.host?.lowercased().contains("github.com") == true else {
-            print("URL is not a GitHub repository")
-            return nil
-        }
-        
-        // Split the path into components
-        let pathComponents = url.pathComponents.filter { $0 != "/" }
-        
-        // GitHub repository URLs typically have the format: /author/repo
-        guard pathComponents.count >= 2 else {
-            print("URL does not contain enough path components")
-            return nil
-        }
-        
-        // The first component is the author
-        let author = pathComponents[0]
-        
-        return author
     }
 }
 
