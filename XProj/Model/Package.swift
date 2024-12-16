@@ -10,10 +10,10 @@ struct Package: Identifiable, Hashable {
     let repositoryURL: String
     
     /// The kind of version requirement (e.g., branch, upToNextMajorVersion).
-    let requirementKind: String
+    let requirementKind: String?
     
     /// The parameter associated with the requirement kind (e.g., branch name or minimum version).
-    let requirementParam: String
+    let requirementParam: String?
     
     var author: String? {
         // Attempt to create a URL object from the input string

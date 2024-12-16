@@ -155,6 +155,21 @@ struct Project: Identifiable, Hashable {
     }
     
     func parseSwiftPackages() -> [Package] {
+        switch type {
+        case .proj:
+            parsePackagesInProj()
+            
+        case .package:
+            parsePackagesInPackage()
+            
+            //        case .playground:
+            
+        default:
+            []
+        }
+    }
+    
+    func parsePackagesInProj() -> [Package] {
         guard
             type == .proj,
             let url = fetchProjectFilePath(path)

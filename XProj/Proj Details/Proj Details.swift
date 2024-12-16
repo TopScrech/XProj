@@ -105,9 +105,11 @@ struct ProjDetails: View {
                                     .secondary()
                             }
                             
-                            Text("\(package.requirementKind): \(package.requirementParam)")
-                                .footnote()
-                                .foregroundStyle(.tertiary)
+                            if let requirement = package.requirementKind, let param = package.requirementParam {
+                                Text("\(requirement): \(param)")
+                                    .footnote()
+                                    .foregroundStyle(.tertiary)
+                            }
                         }
                         .padding(.vertical, 2)
                         .contextMenu {

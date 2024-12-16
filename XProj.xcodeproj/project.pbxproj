@@ -35,6 +35,7 @@
 		F37831B72D1095EC007F7858 /* XcodeProjKit in Frameworks */ = {isa = PBXBuildFile; productRef = F37831B62D1095EC007F7858 /* XcodeProjKit */; };
 		F37831B92D10A19E007F7858 /* Fetch project file path.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831B82D10A19E007F7858 /* Fetch project file path.swift */; };
 		F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BA2D10CE9A007F7858 /* Formatters.swift */; };
+		F37831BF2D10D8DE007F7858 /* Packages in Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BE2D10D8DE007F7858 /* Packages in Package.swift */; };
 		F37D1BED2CDA231F00D8817D /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEC2CDA231F00D8817D /* Provider.swift */; };
 		F37D1BEF2CDA234700D8817D /* Simple Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEE2CDA234700D8817D /* Simple Entry.swift */; };
 		F37D1BF12CDA235D00D8817D /* Entry View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF02CDA235D00D8817D /* Entry View.swift */; };
@@ -97,6 +98,7 @@
 		F37831AF2D109282007F7858 /* Targets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Targets.swift; sourceTree = "<group>"; };
 		F37831B82D10A19E007F7858 /* Fetch project file path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fetch project file path.swift"; sourceTree = "<group>"; };
 		F37831BA2D10CE9A007F7858 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		F37831BE2D10D8DE007F7858 /* Packages in Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Packages in Package.swift"; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F37D1BEC2CDA231F00D8817D /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		F37D1BEE2CDA234700D8817D /* Simple Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Simple Entry.swift"; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */,
 				F3B389C02D0F92500082C2F3 /* Proj Type.swift */,
 				F3B389C22D0F93500082C2F3 /* Package.swift */,
+				F37831BE2D10D8DE007F7858 /* Packages in Package.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37831BF2D10D8DE007F7858 /* Packages in Package.swift in Sources */,
 				F3D1E75F2C9B40B4000C81FF /* Main Settings.swift in Sources */,
 				F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */,
 				F3B389CD2D0FAC770082C2F3 /* Derived Data Folder.swift in Sources */,
