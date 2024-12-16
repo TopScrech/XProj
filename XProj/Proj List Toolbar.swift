@@ -4,7 +4,7 @@ struct ProjListToolbar: View {
     @Environment(ProjListVM.self) private var vm
     
     var body: some View {
-#if DEBUG        
+#if DEBUG
         Menu("Functions") {
             Button("listFilesInFoldersSingleThread") {
                 let test = vm.listFilesInFoldersSingleThread(folderPaths: vm.projects.map(\.path))

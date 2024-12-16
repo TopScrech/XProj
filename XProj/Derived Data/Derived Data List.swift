@@ -10,7 +10,13 @@ struct DerivedDataList: View {
             }
             
             ForEach(vm.filteredFolders, id: \.self) { folder in
-                Text(folder)
+                HStack {
+                    Text(folder)
+                    
+                    Spacer()
+                    
+//                    Text("\(folder.size)")
+                }
             }
         }
         .searchable(text: $vm.searchPrompt)
