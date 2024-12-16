@@ -9,13 +9,20 @@ final class DerivedDataVM {
     private let fm = FileManager.default
     
     var filteredFolders: [DerivedDataFolder] {
-        guard !searchPrompt.isEmpty else {
+        guard searchPrompt.isEmpty else {
             return folders
+                .sorted {
+                    $0.size < $1.size
+                }
+                .filter {
+                    $0.name.contains(searchPrompt)
+                }
         }
         
-        return folders.filter {
-            $0.name.contains(searchPrompt)
-        }
+        return folders
+            .sorted {
+                $0.size < $1.size
+            }
     }
     
     func getFolders() {
@@ -102,11 +109,9 @@ final class DerivedDataVM {
                 name = proj
             }
             
-            let size = formatBytes(sizeAttribute)
-            
             let folder = DerivedDataFolder(
                 name: name,
-                size: size
+                size: sizeAttribute
             )
             
             folders.append(folder)
