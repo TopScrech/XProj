@@ -21,10 +21,8 @@ final class ProjListVM {
         
         let sortedArray = versions.sorted()
         
-        // Join the elements with ", " as separator
         let joinedString = sortedArray.joined(separator: ", ")
 
-        // Append a trailing comma
         return joinedString + ","
     }
     
