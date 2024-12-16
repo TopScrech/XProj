@@ -15,23 +15,25 @@ struct ProjList: View {
         @Bindable var vm = vm
         
         List(selection: $selectedProjects) {
-            Section("\(projects.count) Projects") {
+            Section {
                 ForEach(projects) { proj in
                     ProjCard(proj)
                 }
+            } header: {
+                Text("Projects: \(projects.count)")
             }
         }
         .searchable(text: $vm.searchPrompt)
         .searchSuggestions {
             SearchSuggestions()
         }
-//        .refreshableTask {
-//            vm.getFolders()
-//            
-            //            let duplicates: [()] = vm.findDuplicates().map { duplicates in
-            //                print(duplicates.map(\.name))
-            //            }
-//        }
+        //        .refreshableTask {
+        //            vm.getFolders()
+        //
+        //            let duplicates: [()] = vm.findDuplicates().map { duplicates in
+        //                print(duplicates.map(\.name))
+        //            }
+        //        }
         .toolbar {
             Button("Open") {
                 let selected = vm.projects.filter {

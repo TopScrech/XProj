@@ -12,6 +12,7 @@ struct ProjDetails: View {
     var body: some View {
         List {
             Text(proj.name)
+                .title()
             
             if let version = proj.swiftToolsVersion {
                 Text("Swift tools: \(version)")

@@ -11,7 +11,7 @@ struct HomeView: View {
             ProjList(vm.filteredProjects)
                 .frame(minWidth: 500)
         } detail: {
-            Text("Detail")
+            Text("Details")
                 .frame(minWidth: 200, maxWidth: 500)
         }
         
