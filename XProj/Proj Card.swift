@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 struct ProjCard: View {
     @Environment(ProjListVM.self) private var vm
@@ -37,6 +37,19 @@ struct ProjCard: View {
                 //                .foregroundStyle(.secondary)
             }
             .padding(.vertical, 5)
+        }
+        .contextMenu {
+            Button {
+                vm.openProjects([proj.path])
+            } label: {
+                Text("Open in Xcode")
+            }
+            
+            Button {
+                openInFinder(rootedAt: proj.path)
+            } label: {
+                Text("Open in Finder")
+            }
         }
     }
 }

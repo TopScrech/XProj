@@ -8,7 +8,8 @@ struct SidebarView: View {
             NavigationLink("All") {
                 ProjList(vm.filteredProjects)
             }
-            .padding(.vertical)
+            
+            Spacer()
             
             NavigationLink {
                 OnlyProjList()
