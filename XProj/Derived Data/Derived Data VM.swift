@@ -27,7 +27,6 @@ final class DerivedDataVM {
     
     func getFolders() {
         restoreAccessToFolder()
-        folders = []
         
         do {
             guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
@@ -70,9 +69,11 @@ final class DerivedDataVM {
         let group = DispatchGroup()
         let queue = DispatchQueue.global(qos: .userInitiated)
         
-        let projects = try fm.contentsOfDirectory(atPath: path)
+        let foundFolders = try fm.contentsOfDirectory(atPath: path)
         
-        for proj in projects {
+        var fetchedFolders: [DerivedDataFolder] = []
+        
+        for folder in foundFolders {
             group.enter()
             
             queue.async {
@@ -80,22 +81,25 @@ final class DerivedDataVM {
                     group.leave()
                 }
                 
-                self.processFolder(proj, path: path)
+                if let processedFolder = self.processFolder(folder, path: path) {
+                    fetchedFolders.append(processedFolder)
+                }
             }
         }
         
         group.wait()
         
-        let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+        folders = fetchedFolders
         
+        let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
         print("Time elapsed for processing path: \(String(format: "%.3f", timeElapsed)) seconds")
     }
     
-    func processFolder(_ proj: String, path: String) {
+    func processFolder(_ proj: String, path: String) -> DerivedDataFolder? {
         let path = "\(path)/\(proj)"
         
         if proj == ".git" || proj == ".build" || proj == "Not Xcode" {
-            return
+            return nil
         }
         
         do {
@@ -109,15 +113,15 @@ final class DerivedDataVM {
                 name = proj
             }
             
-            let folder = DerivedDataFolder(
+            return DerivedDataFolder(
                 name: name,
                 size: sizeAttribute
             )
-            
-            folders.append(folder)
         } catch {
             print("error processing project at path: \(path)")
         }
+        
+        return nil
     }
     
     func openFolderPicker() {
