@@ -61,19 +61,21 @@ struct PackageDepList: View {
             
             if sortByAuthor {
                 ForEach(dependenciesGroupedByAuthor, id: \.author) { group in
-                    Section(header: HStack {
-                        Text(group.author)
-                            .headline()
-                        
-                        Spacer()
-                        
-                        Text(group.totalUsage)
-                            .subheadline(.bold)
-                            .secondary()
-                    }) {
-                        // Iterate over each package dependency under the current author
+                    Section {
+                        // Author's packages
                         ForEach(group.dependencies) { package in
                             PackageDepCard(package)
+                        }
+                    } header: {
+                        HStack {
+                            Text(group.author)
+                                .headline()
+                            
+                            Spacer()
+                            
+                            Text(group.totalUsage)
+                                .subheadline(.bold)
+                                .secondary()
                         }
                     }
                 }
