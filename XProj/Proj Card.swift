@@ -1,4 +1,4 @@
-import ScrechKit
+import SwiftUI
 
 struct ProjCard: View {
     @Environment(ProjListVM.self) private var vm
@@ -19,16 +19,11 @@ struct ProjCard: View {
                 VStack(alignment: .leading) {
                     Text(proj.name)
                     
-//                    Button {
-//                        openInFinder(rootedAt: proj.path)
-//                    } label: {
-                        let path = proj.path.replacingOccurrences(of: vm.projectsFolder, with: "~")
-                        
-                        Text(path)
-                            .footnote()
-                            .foregroundStyle(.tertiary)
-//                    }
-//                    .buttonStyle(.plain)
+                    let path = proj.path.replacingOccurrences(of: vm.projectsFolder, with: "~")
+                    
+                    Text(path)
+                        .footnote()
+                        .foregroundStyle(.tertiary)
                 }
                 
                 Spacer()

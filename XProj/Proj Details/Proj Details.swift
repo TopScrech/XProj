@@ -1,6 +1,8 @@
-import SwiftUI
+import ScrechKit
 
 struct ProjDetails: View {
+    @Environment(ProjListVM.self) private var vm
+    
     private let proj: Project
     
     init(_ proj: Project) {
@@ -21,6 +23,18 @@ struct ProjDetails: View {
                     .resizable()
                     .frame(width: 100, height: 100)
                     .clipShape(.rect(cornerRadius: 16))
+            }
+            
+            Button {
+                vm.openProjects([proj.path])
+            } label: {
+                Text("Open in Xcode")
+            }
+            
+            Button {
+                openInFinder(rootedAt: proj.path)
+            } label: {
+                Text("Open in Finder")
             }
             
             ForEach(proj.packages) { package in
