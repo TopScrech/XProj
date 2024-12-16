@@ -24,6 +24,13 @@ struct ProjList: View {
             Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Playgrounds: \(vm.playgroundCount)")
                 .footnote()
                 .secondary()
+                .padding(.vertical, 1)
+                .opacity(0)
+        }
+        .overlay(alignment: .bottom) {
+            Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Playgrounds: \(vm.playgroundCount)")
+                .footnote()
+                .secondary()
                 .padding(.vertical, 5)
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, alignment: .leading)
