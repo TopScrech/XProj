@@ -21,7 +21,6 @@ struct SidebarView: View {
             }
         }
         .padding(.top)
-        .frame(width: 215)
         //        .toolbar(removing: .sidebarToggle)
     }
 }
