@@ -117,6 +117,7 @@ final class DerivedDataVM {
     
     func openFolderPicker() {
         let panel = NSOpenPanel()
+        
         panel.canChooseFiles = false
         panel.canCreateDirectories = true
         panel.canChooseDirectories = true
