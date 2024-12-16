@@ -53,15 +53,15 @@ struct ProjDetails: View {
             }
             .padding(.vertical, 5)
             
-            VStack {
-                if let version = proj.swiftToolsVersion {
+            if let version = proj.swiftToolsVersion {
+                VStack {
                     Text("Swift tools: ")
                         .foregroundStyle(.secondary) +
                     
                     Text(version)
                 }
+                .padding(.vertical, 5)
             }
-            .padding(.vertical, 5)
             
             HStack {
                 Button("Xcode") {
