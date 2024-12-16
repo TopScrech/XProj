@@ -51,6 +51,7 @@
 		F3B389CB2D0FA5880082C2F3 /* Only Package List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CA2D0FA5880082C2F3 /* Only Package List.swift */; };
 		F3B389CD2D0FAC770082C2F3 /* Derived Data Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CC2D0FAC770082C2F3 /* Derived Data Folder.swift */; };
 		F3B389CF2D1027890082C2F3 /* Derived Data Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CE2D1027890082C2F3 /* Derived Data Card.swift */; };
+		F3B389D12D102D610082C2F3 /* Only Playgrounds List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D02D102D610082C2F3 /* Only Playgrounds List.swift */; };
 		F3D1E75D2C9B3F0C000C81FF /* Image Drop View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75C2C9B3F0C000C81FF /* Image Drop View.swift */; };
 		F3D1E75F2C9B40B4000C81FF /* Main Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */; };
 		F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */; };
@@ -107,6 +108,7 @@
 		F3B389CA2D0FA5880082C2F3 /* Only Package List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Only Package List.swift"; sourceTree = "<group>"; };
 		F3B389CC2D0FAC770082C2F3 /* Derived Data Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data Folder.swift"; sourceTree = "<group>"; };
 		F3B389CE2D1027890082C2F3 /* Derived Data Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data Card.swift"; sourceTree = "<group>"; };
+		F3B389D02D102D610082C2F3 /* Only Playgrounds List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Only Playgrounds List.swift"; sourceTree = "<group>"; };
 		F3D1E75C2C9B3F0C000C81FF /* Image Drop View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image Drop View.swift"; sourceTree = "<group>"; };
 		F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main Settings.swift"; sourceTree = "<group>"; };
 		F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List Toolbar.swift"; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				F3B389B92D0EC9810082C2F3 /* Sidebar View.swift */,
 				F3B389C82D0FA57E0082C2F3 /* Only Proj List.swift */,
 				F3B389CA2D0FA5880082C2F3 /* Only Package List.swift */,
+				F3B389D02D102D610082C2F3 /* Only Playgrounds List.swift */,
 			);
 			path = Nav;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				F3B389C12D0F92500082C2F3 /* Proj Type.swift in Sources */,
 				F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,
+				F3B389D12D102D610082C2F3 /* Only Playgrounds List.swift in Sources */,
 				F37D1BFA2CDA272600D8817D /* Duplicate Section.swift in Sources */,
 				F371A51D2C2D8D94006BDF0D /* MB Proj Card.swift in Sources */,
 				F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */,

@@ -129,16 +129,15 @@ final class ProjListVM {
         let projects = try fm.contentsOfDirectory(atPath: path)
         
         for proj in projects {
-            try processProj(atPath: path, proj: proj)
+            try processProj(path: path, proj: proj)
         }
     }
     
-    func processProj(atPath path: String, proj: String) throws {
+    func processProj(path: String, proj: String) throws {
         let projPath = "\(path)/\(proj)"
         let attributes = try fm.attributesOfItem(atPath: projPath)
         
         let typeAttribute = attributes[.type] as? String ?? "Other"
-        let fileType: ProjType
         
         if let isHidden = attributes[.extensionHidden] as? Bool, isHidden {
             return
@@ -148,11 +147,16 @@ final class ProjListVM {
             return
         }
         
+        let fileType: ProjType
+        
         if hasXcodeProj(projPath) {
             fileType = .proj
             
         } else if hasSwiftPackage(projPath) {
             fileType = .package
+            
+        } else if proj.contains(".playground") {
+            fileType = .playground
             
         } else {
             switch typeAttribute {

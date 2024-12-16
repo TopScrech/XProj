@@ -22,6 +22,12 @@ struct SidebarView: View {
                 Label("Swift Packages", systemImage: "shippingbox")
             }
             
+            NavigationLink {
+                OnlyPlaygroundsList()
+            } label: {
+                Label("Playgrounds", systemImage: "swift")
+            }
+            
             Spacer()
             
             NavigationLink("Derived data") {

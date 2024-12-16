@@ -26,16 +26,18 @@ struct Project: Identifiable, Hashable {
         case .folder:  "folder"
         case .proj:    "hammer.fill"
         case .package: "shippingbox.fill"
+        case .playground: "swift"
         case .unknown: "questionmark"
         }
     }
     
     var iconColor: Color {
         switch type {
-        case .folder:  .yellow
-        case .proj:    .blue
-        case .package: .package
-        case .unknown: .gray
+        case .folder:     .yellow
+        case .proj:       .blue
+        case .package:    .package
+        case .playground: .blue
+        case .unknown:    .gray
         }
     }
     
