@@ -6,6 +6,12 @@ struct PackageDependency: Identifiable {
     let package: Package
     let projects: [Project]
     
+    var sortedProjects: [Project] {
+        projects.sorted {
+            $0.openedAt > $1.openedAt
+        }
+    }
+    
     var name: String {
         package.name
     }

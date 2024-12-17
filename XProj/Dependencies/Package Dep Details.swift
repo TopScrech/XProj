@@ -26,7 +26,7 @@ struct PackageDepDetails: View {
             }
             
             Section("Projects using \(dependency.name)") {
-                ForEach(dependency.projects) { proj in
+                ForEach(dependency.sortedProjects) { proj in
                     ProjCard(proj)
                 }
             }
