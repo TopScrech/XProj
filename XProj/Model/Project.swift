@@ -128,42 +128,6 @@ struct Project: Identifiable, Hashable {
         return true
     }
     
-    enum PackageParsingError: Error, LocalizedError {
-        /// Indicates that the `.xcodeproj` file was not found at the specified path.
-        case projectFileNotFound
-        
-        /// Indicates a failure to read the contents of the `.xcodeproj` file.
-        case failedToReadFile
-        
-        /// Indicates a failure to compile the regular expression used for parsing.
-        case regexFailed
-        
-        /// Indicates that essential data was missing during parsing, with an associated detail message.
-        case missingData(String)
-        
-        /// Indicates that the provided path does not point to a valid `.xcodeproj` file.
-        case invalidXcodeProjPath
-        
-        var errorDescription: String? {
-            switch self {
-            case .projectFileNotFound:
-                "The specified `.xcodeproj` file was not found at the given path"
-                
-            case .failedToReadFile:
-                "Failed to read the contents of the `.xcodeproj` file"
-                
-            case .regexFailed:
-                "Failed to compile the regular expression for parsing"
-                
-            case .missingData(let detail):
-                "Missing data during parsing: \(detail)"
-                
-            case .invalidXcodeProjPath:
-                "The provided path does not point to a valid `.xcodeproj` file"
-            }
-        }
-    }
-    
     func parseSwiftPackages() -> [Package] {
         switch type {
         case .proj:
@@ -205,7 +169,6 @@ struct Project: Identifiable, Hashable {
             
             return result
         } catch {
-            print(error)
             return []
         }
     }

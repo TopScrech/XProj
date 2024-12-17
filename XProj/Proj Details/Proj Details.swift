@@ -64,6 +64,10 @@ struct ProjDetails: View {
                     Text("Targets: \(proj.targets.count)")
                         .title2()
                 }
+            } else {
+#if DEBUG
+                Text("No targets found")
+#endif
             }
             
             if !proj.packages.isEmpty {
@@ -75,6 +79,10 @@ struct ProjDetails: View {
                     Text("Package dependencies: \(proj.packages.count)")
                         .title2()
                 }
+            } else {
+#if DEBUG
+                Text("No packages found")
+#endif
             }
         }
     }

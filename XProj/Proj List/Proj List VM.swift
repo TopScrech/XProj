@@ -239,7 +239,6 @@ final class ProjListVM {
             
             return containsVapor
         } catch {
-            print("Error reading Package.resolved: \(error)")
             return false
         }
     }
