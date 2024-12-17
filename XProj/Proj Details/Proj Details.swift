@@ -2,7 +2,6 @@ import ScrechKit
 
 struct ProjDetails: View {
     @Environment(ProjListVM.self) private var vm
-    @Environment(\.openURL) private var openUrl
     
     private let proj: Project
     
@@ -16,17 +15,7 @@ struct ProjDetails: View {
                 Text(proj.name)
                     .largeTitle()
                 
-                if let path = proj.projIcon(),
-                   let nsImage = NSImage(contentsOf: URL(fileURLWithPath: path)) {
-                    Image(nsImage: nsImage)
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                        .clipShape(.rect(cornerRadius: 16))
-                        .onDrag {
-                            let fileURL = URL(fileURLWithPath: path)
-                            return NSItemProvider(object: fileURL as NSURL)
-                        }
-                }
+                ProjDetailsImage(proj)
             }
             .padding(.bottom, 10)
             
@@ -42,52 +31,11 @@ struct ProjDetails: View {
                 .padding(.vertical, 5)
             }
             
-            HStack {
-                if let url = proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url {
-                    Button("App Store") {
-                        openUrl(url)
-                    }
-                }
-                
-                Button("Xcode") {
-                    vm.openProjects([proj.path])
-                }
-                
-                Button("Finder") {
-                    openInFinder(rootedAt: proj.path)
-                }
-            }
-            .padding(.vertical, 5)
+            ProjDetailsActions(proj)
             
-            if !proj.targets.isEmpty {
-                Section {
-                    ForEach(proj.targets) { target in
-                        ProjDetailsTarget(target)
-                    }
-                } header: {
-                    Text("Targets: \(proj.targets.count)")
-                        .title2()
-                }
-            } else {
-#if DEBUG
-                Text("No targets found")
-#endif
-            }
+            ProjDetailsTargets(proj.targets)
             
-            if !proj.packages.isEmpty {
-                Section {
-                    ForEach(proj.packages) { package in
-                        ProjDetailsPackage(package)
-                    }
-                } header: {
-                    Text("Package dependencies: \(proj.packages.count)")
-                        .title2()
-                }
-            } else {
-#if DEBUG
-                Text("No packages found")
-#endif
-            }
+            ProjDetailsDependencies(proj.packages)
         }
     }
 }
