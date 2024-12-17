@@ -22,6 +22,10 @@ struct ProjDetails: View {
                         .resizable()
                         .frame(width: 100, height: 100)
                         .clipShape(.rect(cornerRadius: 16))
+                        .onDrag {
+                            let fileURL = URL(fileURLWithPath: path)
+                            return NSItemProvider(object: fileURL as NSURL)
+                        }
                 }
             }
             .padding(.bottom, 10)
