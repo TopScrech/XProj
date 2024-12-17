@@ -2,6 +2,7 @@ import ScrechKit
 
 struct ProjDetails: View {
     @Environment(ProjListVM.self) private var vm
+    @Environment(\.openURL) private var openUrl
     
     private let proj: Project
     
@@ -38,6 +39,12 @@ struct ProjDetails: View {
             }
             
             HStack {
+                if let url = proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url {
+                    Button("App Store") {
+                        openUrl(url)
+                    }
+                }
+                
                 Button("Xcode") {
                     vm.openProjects([proj.path])
                 }
