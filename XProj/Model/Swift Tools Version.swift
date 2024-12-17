@@ -6,7 +6,7 @@ extension Project {
     /// - Parameter folderPath: The path to the folder containing `Package.swift`.
     /// - Returns: A `String` representing the Swift tools version (e.g., "5.9") if found, otherwise `nil`.
     func fetchSwiftToolsVersion() -> String? {
-        guard type == .package else {
+        guard type == .package || type == .vapor else {
             return nil
         }
         

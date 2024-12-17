@@ -40,7 +40,7 @@ struct PackageDepList: View {
                 $0 + $1.useCount
             }
             
-            return (
+            return(
                 author: author,
                 dependencies: dependencies,
                 totalUsage: totalUsage

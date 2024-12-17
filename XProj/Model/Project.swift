@@ -136,6 +136,9 @@ struct Project: Identifiable, Hashable {
         case .package:
             parsePackagesInPackage()
             
+        case .vapor:
+            parsePackagesInPackage()
+            
             //        case .playground:
             
         default:
