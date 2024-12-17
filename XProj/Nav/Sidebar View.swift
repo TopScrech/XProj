@@ -31,6 +31,40 @@ struct SidebarView: View {
             
             Spacer()
             
+            DisclosureGroup("Platforms") {
+                NavigationLink("iOS") {
+                    ProjList(vm.projects.filter {
+                        $0.uniquePlatforms.contains("iOS")
+                    })
+                }
+                
+                NavigationLink("macOS") {
+                    ProjList(vm.projects.filter {
+                        $0.uniquePlatforms.contains("macOS")
+                    })
+                }
+                
+                NavigationLink("watchOS") {
+                    ProjList(vm.projects.filter {
+                        $0.uniquePlatforms.contains("watchOS")
+                    })
+                }
+                
+                NavigationLink("tvOS") {
+                    ProjList(vm.projects.filter {
+                        $0.uniquePlatforms.contains("tvOS")
+                    })
+                }
+                
+                NavigationLink("visionOS") {
+                    ProjList(vm.projects.filter {
+                        $0.uniquePlatforms.contains("visionOS")
+                    })
+                }
+            }
+            
+            Spacer()
+            
             PublichesProjectsList()
             
             NavigationLink {
