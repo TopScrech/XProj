@@ -36,7 +36,7 @@
 		F37831B92D10A19E007F7858 /* Fetch project file path.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831B82D10A19E007F7858 /* Fetch project file path.swift */; };
 		F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BA2D10CE9A007F7858 /* Formatters.swift */; };
 		F37831BF2D10D8DE007F7858 /* Packages in Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BE2D10D8DE007F7858 /* Packages in Package.swift */; };
-		F37831C12D10E1CF007F7858 /* AppStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C02D10E1CF007F7858 /* AppStoreApp.swift */; };
+		F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C02D10E1CF007F7858 /* App Store App.swift */; };
 		F37831C32D10F99A007F7858 /* Publiches Projects List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C22D10F99A007F7858 /* Publiches Projects List.swift */; };
 		F37D1BED2CDA231F00D8817D /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEC2CDA231F00D8817D /* Provider.swift */; };
 		F37D1BEF2CDA234700D8817D /* Simple Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEE2CDA234700D8817D /* Simple Entry.swift */; };
@@ -101,7 +101,7 @@
 		F37831B82D10A19E007F7858 /* Fetch project file path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fetch project file path.swift"; sourceTree = "<group>"; };
 		F37831BA2D10CE9A007F7858 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		F37831BE2D10D8DE007F7858 /* Packages in Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Packages in Package.swift"; sourceTree = "<group>"; };
-		F37831C02D10E1CF007F7858 /* AppStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreApp.swift; sourceTree = "<group>"; };
+		F37831C02D10E1CF007F7858 /* App Store App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Store App.swift"; sourceTree = "<group>"; };
 		F37831C22D10F99A007F7858 /* Publiches Projects List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publiches Projects List.swift"; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F37D1BEC2CDA231F00D8817D /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				F3341E3B2BDE3C8B00E85F27 /* Project.swift */,
-				F37831C02D10E1CF007F7858 /* AppStoreApp.swift */,
+				F37831C02D10E1CF007F7858 /* App Store App.swift */,
 				F37831AF2D109282007F7858 /* Targets.swift */,
 				F37831B82D10A19E007F7858 /* Fetch project file path.swift */,
 				F3B389C62D0F9B340082C2F3 /* Proj Icon.swift */,
@@ -503,7 +503,7 @@
 				F371A51B2C2D8D58006BDF0D /* MB Proj List.swift in Sources */,
 				F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */,
 				F3B389C32D0F93500082C2F3 /* Package.swift in Sources */,
-				F37831C12D10E1CF007F7858 /* AppStoreApp.swift in Sources */,
+				F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */,
 				F3341E412BDEB71F00E85F27 /* Proj List VM.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
 				F3B389C12D0F92500082C2F3 /* Proj Type.swift in Sources */,
