@@ -4,16 +4,13 @@ extension Project {
     /// Fetches and returns Swift package dependencies as an array of `Package` structs.
     ///
     /// - Returns: An array of `Package` structs with the name and repository URL.
-    func parsePackagesInPackage() -> [Package] {
-        guard type == .package else {
-            return []
-        }
-        
+    func parsePackagesInPackage() -> [Package] {        
         // URL for Package.resolved
         let folderURL = URL(fileURLWithPath: path, isDirectory: true)
         let packageResolvedURL = folderURL.appendingPathComponent("Package.resolved")
         
         let fileManager = FileManager.default
+        
         guard fileManager.fileExists(atPath: packageResolvedURL.path) else {
             print("Error: 'Package.resolved' not found in folder '\(path)'.")
             return []

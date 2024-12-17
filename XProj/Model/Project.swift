@@ -170,10 +170,7 @@ struct Project: Identifiable, Hashable {
     }
     
     func parsePackagesInProj() -> [Package] {
-        guard
-            type == .proj,
-            let url = fetchProjectFilePath(path)
-        else {
+        guard let url = fetchProjectFilePath(path) else {
             return []
         }
         
