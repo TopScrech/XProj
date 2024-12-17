@@ -301,6 +301,20 @@
 			path = "Proj Card";
 			sourceTree = "<group>";
 		};
+		F37831D62D11D3B4007F7858 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */,
+				F37831D22D11D221007F7858 /* Proj Details Targets.swift */,
+				F37831CE2D11D11B007F7858 /* Proj Details Image.swift */,
+				F37831D02D11D177007F7858 /* Proj Details Actions.swift */,
+				F37831C82D11A69B007F7858 /* Proj Details Dates.swift */,
+				F37831C62D11A590007F7858 /* Proj Details Package.swift */,
+				F37831C42D11A4F4007F7858 /* Proj Details Target.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		F37D1BF42CDA258B00D8817D /* Smart Scan */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,13 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */,
-				F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */,
-				F37831D22D11D221007F7858 /* Proj Details Targets.swift */,
-				F37831CE2D11D11B007F7858 /* Proj Details Image.swift */,
-				F37831D02D11D177007F7858 /* Proj Details Actions.swift */,
-				F37831C82D11A69B007F7858 /* Proj Details Dates.swift */,
-				F37831C62D11A590007F7858 /* Proj Details Package.swift */,
-				F37831C42D11A4F4007F7858 /* Proj Details Target.swift */,
+				F37831D62D11D3B4007F7858 /* Components */,
 			);
 			path = "Proj Details";
 			sourceTree = "<group>";
