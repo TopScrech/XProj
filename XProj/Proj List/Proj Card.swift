@@ -2,13 +2,14 @@ import ScrechKit
 
 struct ProjCard: View {
     @Environment(ProjListVM.self) private var vm
+    @Environment(\.openURL) private var openUrl
     
     private let proj: Project
     
     init(_ proj: Project) {
         self.proj = proj
     }
-        
+    
     var body: some View {
         NavigationLink {
             ProjDetails(proj)
@@ -45,6 +46,14 @@ struct ProjCard: View {
             .padding(.vertical, 5)
         }
         .contextMenu {
+            if let url = proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url {
+                Section {
+                    Button("App Store") {
+                        openUrl(url)
+                    }
+                }
+            }
+            
             Button {
                 vm.openProjects([proj.path])
             } label: {
