@@ -13,6 +13,7 @@ struct Project: Identifiable, Hashable {
     var swiftToolsVersion: String? = nil
     var packages: [Package] = []
     var targets: [Target] = []
+    var platforms: [String] = []
     
     init(
         name: String,
@@ -34,6 +35,7 @@ struct Project: Identifiable, Hashable {
         self.swiftToolsVersion = fetchSwiftToolsVersion()
         self.packages = parseSwiftPackages()
         self.targets = fetchTargets()
+        self.platforms = fetchUniquePlatforms()
     }
     
     var icon: String {
@@ -56,7 +58,7 @@ struct Project: Identifiable, Hashable {
         }
     }
     
-    var uniquePlatforms: [String] {
+    func fetchUniquePlatforms() -> [String] {
         let allPlatforms = targets.flatMap {
             $0.deploymentTargets.keys
         }

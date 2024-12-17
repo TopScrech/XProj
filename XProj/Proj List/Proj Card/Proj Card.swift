@@ -21,7 +21,7 @@ struct ProjCard: View {
                     HStack {
                         Text(proj.name)
                         
-                        ForEach(proj.uniquePlatforms, id: \.self) { platform in
+                        ForEach(proj.platforms, id: \.self) { platform in
                             Image(systemName: icon(platform))
                                 .footnote()
                         }
