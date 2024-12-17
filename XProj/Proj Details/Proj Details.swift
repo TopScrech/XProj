@@ -85,6 +85,10 @@ struct ProjDetails: View {
                                 Text(bundle)
                                     .secondary()
                             }
+                            
+                            if let url = target.appStoreApp?.url {
+                                Link("App Store", destination: url)
+                            }
                         }
                     }
                 } header: {
