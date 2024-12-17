@@ -20,7 +20,7 @@ struct ProjCard: View {
                     HStack {
                         Text(proj.name)
                         
-                        ForEach(proj.uniquePlatforms(), id: \.self) { platform in
+                        ForEach(proj.uniquePlatforms, id: \.self) { platform in
                             Text(platform)
                                 .padding(2)
                                 .padding(.horizontal, 2)

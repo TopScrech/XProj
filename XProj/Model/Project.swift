@@ -56,15 +56,13 @@ struct Project: Identifiable, Hashable {
         }
     }
     
-    func uniquePlatforms() -> [String] {
+    var uniquePlatforms: [String] {
         let allPlatforms = targets.flatMap {
             $0.deploymentTargets.keys
         }
         
         let uniquePlatforms = Array(Set(allPlatforms))
-        if uniquePlatforms.contains("tvOS") {
-            print(name)
-        }
+        
         return uniquePlatforms
     }
     
