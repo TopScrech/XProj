@@ -9,17 +9,17 @@ struct ProjDetailsTarget: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading) {
-                HStack {
-                    Text(target.name)
-                        .title3()
-                    
-                    ForEach(target.deploymentTargets.sorted(by: <), id: \.key) { key, value in
-                        Text("\(key) \(value)")
-                            .footnote()
-                            .foregroundStyle(.tertiary)
-                    }
+            if let url = target.appStoreApp?.url {
+                Link(destination: url) {
+                    Image(.appStore)
+                        .resizable()
+                        .frame(width: 32, height: 32)
                 }
+            }
+            
+            VStack(alignment: .leading) {
+                Text(target.name)
+                    .title3()
                 
                 if let bundle = target.bundleId {
                     Text(bundle)
@@ -29,8 +29,16 @@ struct ProjDetailsTarget: View {
             
             Spacer()
             
-            if let url = target.appStoreApp?.url {
-                Link("App Store", destination: url)
+            HStack {
+                ForEach(target.deploymentTargets.sorted(by: <), id: \.key) { key, value in
+                    HStack(spacing: 0) {
+                        Image(systemName: icon(key))
+                        
+                        Text(value)
+                            .footnote()
+                            .foregroundStyle(.tertiary)
+                    }
+                }
             }
         }
     }

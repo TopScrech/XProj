@@ -8,18 +8,7 @@ struct ProjCard: View {
     init(_ proj: Project) {
         self.proj = proj
     }
-    
-    private func icon(_ platform: String) -> String {
-        switch platform {
-        case "iOS": "iphone"
-        case "macOS": "macbook"
-        case "watchOS": "tv"
-        case "tvOS": "tv"
-        case "visionOS": "vision.pro"
-        default: ""
-        }
-    }
-    
+        
     var body: some View {
         NavigationLink {
             ProjDetails(proj)
