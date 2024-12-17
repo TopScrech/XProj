@@ -31,6 +31,8 @@ struct SidebarView: View {
             
             Spacer()
             
+            PublichesProjectsList()
+            
             NavigationLink {
                 PackageDepList()
             } label: {
