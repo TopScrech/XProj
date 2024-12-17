@@ -31,34 +31,44 @@ struct SidebarView: View {
             
             Spacer()
             
-            NavigationLink("iOS") {
+            NavigationLink {
                 ProjList(vm.projects.filter {
                     $0.uniquePlatforms.contains("iOS")
                 })
+            } label: {
+                Label("iOS", systemImage: "iphone")
             }
             
-            NavigationLink("macOS") {
+            NavigationLink {
                 ProjList(vm.projects.filter {
                     $0.uniquePlatforms.contains("macOS")
                 })
+            } label: {
+                Label("macOS", systemImage: "macbook")
             }
             
-            NavigationLink("watchOS") {
+            NavigationLink {
                 ProjList(vm.projects.filter {
                     $0.uniquePlatforms.contains("watchOS")
                 })
+            } label: {
+                Label("tvOS", systemImage: "tv")
             }
             
-            NavigationLink("tvOS") {
+            NavigationLink {
                 ProjList(vm.projects.filter {
                     $0.uniquePlatforms.contains("tvOS")
                 })
+            } label: {
+                Label("tvOS", systemImage: "tv")
             }
             
-            NavigationLink("visionOS") {
+            NavigationLink {
                 ProjList(vm.projects.filter {
                     $0.uniquePlatforms.contains("visionOS")
                 })
+            } label: {
+                Label("visionOS", systemImage: "vision.pro")
             }
             
             Spacer()
