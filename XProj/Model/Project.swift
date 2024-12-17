@@ -137,19 +137,19 @@ struct Project: Identifiable, Hashable {
         var errorDescription: String? {
             switch self {
             case .projectFileNotFound:
-                "The specified `.xcodeproj` file was not found at the given path."
+                "The specified `.xcodeproj` file was not found at the given path"
                 
             case .failedToReadFile:
-                "Failed to read the contents of the `.xcodeproj` file."
+                "Failed to read the contents of the `.xcodeproj` file"
                 
             case .regexFailed:
-                "Failed to compile the regular expression for parsing."
+                "Failed to compile the regular expression for parsing"
                 
             case .missingData(let detail):
                 "Missing data during parsing: \(detail)"
                 
             case .invalidXcodeProjPath:
-                "The provided path does not point to a valid `.xcodeproj` file."
+                "The provided path does not point to a valid `.xcodeproj` file"
             }
         }
     }
