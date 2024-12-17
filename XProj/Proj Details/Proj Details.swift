@@ -25,33 +25,7 @@ struct ProjDetails: View {
             }
             .padding(.bottom, 10)
             
-            VStack(alignment: .leading, spacing: 5) {
-                HStack(spacing: 0) {
-                    Text("Last opened: ")
-                        .secondary()
-                    
-                    Text(formattedDateAndTime(proj.openedAt))
-                }
-                
-                if let modifiedAt = proj.modifiedAt {
-                    HStack(spacing: 0) {
-                        Text("Modified: ")
-                            .secondary()
-                        
-                        Text(formattedDateAndTime(modifiedAt))
-                    }
-                }
-                
-                if let createdAt = proj.createdAt {
-                    HStack(spacing: 0) {
-                        Text("Created: ")
-                            .secondary()
-                        
-                        Text(formattedDateAndTime(createdAt))
-                    }
-                }
-            }
-            .padding(.vertical, 5)
+            ProjDetailsDates(proj)
             
             if let version = proj.swiftToolsVersion {
                 VStack {
@@ -77,31 +51,7 @@ struct ProjDetails: View {
             if !proj.targets.isEmpty {
                 Section {
                     ForEach(proj.targets) { target in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    Text(target.name)
-                                        .title3()
-                                    
-                                    ForEach(target.deploymentTargets.sorted(by: <), id: \.key) { key, value in
-                                        Text("\(key) \(value)")
-                                            .footnote()
-                                            .foregroundStyle(.tertiary)
-                                    }
-                                }
-                                
-                                if let bundle = target.bundleId {
-                                    Text(bundle)
-                                        .secondary()
-                                }
-                            }
-                            
-                            Spacer()
-                            
-                            if let url = target.appStoreApp?.url {
-                                Link("App Store", destination: url)
-                            }
-                        }
+                        ProjDetailsTarget(target)
                     }
                 } header: {
                     Text("Targets: \(proj.targets.count)")
@@ -112,27 +62,7 @@ struct ProjDetails: View {
             if !proj.packages.isEmpty {
                 Section {
                     ForEach(proj.packages) { package in
-                        VStack(alignment: .leading) {
-                            Text(package.name)
-                            
-                            if let author = package.author {
-                                Text(author)
-                                    .footnote()
-                                    .secondary()
-                            }
-                            
-                            if let requirement = package.requirementKind, let param = package.requirementParam {
-                                Text("\(requirement): \(param)")
-                                    .footnote()
-                                    .foregroundStyle(.tertiary)
-                            }
-                        }
-                        .padding(.vertical, 2)
-                        .contextMenu {
-                            if let url = URL(string: package.repositoryURL) {
-                                Link("Open in browser", destination: url)
-                            }
-                        }
+                        ProjDetailsPackage(package)
                     }
                 } header: {
                     Text("Package dependencies: \(proj.packages.count)")

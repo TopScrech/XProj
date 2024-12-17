@@ -71,7 +71,7 @@ extension ProjListVM {
         } catch {
             return nil
         }
-                
+        
         return fileCount
     }
 }
