@@ -8,25 +8,25 @@ extension FileManager {
     /// that would become available on the volume if the directory would be deleted.
     ///
     /// - note: There are a couple of oddities that are not taken into account (like symbolic links, meta data of
-    /// directories, hard links, ...).
+    /// directories, hard links, ...)
     public func allocatedSizeOfDirectory(atUrl url: URL) throws -> Int64 {
         var accumulatedSize: Int64 = 0
         
-        // prefetching some properties during traversal will speed up things a bit.
+        // prefetching some properties during traversal will speed up things a bit
         let prefetchedProperties: [URLResourceKey] = [
             .isRegularFileKey,
             .fileAllocatedSizeKey,
             .totalFileAllocatedSizeKey
         ]
         
-        // The error handler simply signals errors to outside code.
+        // The error handler simply signals errors to outside code
         var errorDidOccur: Error?
         let errorHandler: (URL, Error) -> Bool = { _, error in
             errorDidOccur = error
             return false
         }
         
-        // We have to enumerate all directory contents, including subdirectories.
+        // We have to enumerate all directory contents, including subdirectories
         let enumerator = self.enumerator(
             at: url,
             includingPropertiesForKeys: prefetchedProperties,
