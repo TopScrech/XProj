@@ -60,7 +60,7 @@ struct SidebarView: View {
                     $0.uniquePlatforms.contains("watchOS")
                 })
             } label: {
-                Label("tvOS", systemImage: "tv")
+                Label("watchOS", systemImage: "applewatch")
             }
             
             NavigationLink {

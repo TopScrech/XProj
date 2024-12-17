@@ -20,6 +20,21 @@ struct ProjList: View {
             }
         }
         .searchable(text: $vm.searchPrompt)
+        .searchSuggestions {
+            SearchSuggestions()
+        }
+        .task {
+            if let firstProject = projects.first {
+                selectedProjects = [firstProject.id]
+            }
+        }
+        //        .refreshableTask {
+        //            vm.getFolders()
+        //
+        //            let duplicates: [()] = vm.findDuplicates().map { duplicates in
+        //                print(duplicates.map(\.name))
+        //            }
+        //        }
         .safeAreaInset(edge: .bottom) {
             Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount)")
                 .footnote()
@@ -36,16 +51,6 @@ struct ProjList: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(.ultraThinMaterial)
         }
-        .searchSuggestions {
-            SearchSuggestions()
-        }
-        //        .refreshableTask {
-        //            vm.getFolders()
-        //
-        //            let duplicates: [()] = vm.findDuplicates().map { duplicates in
-        //                print(duplicates.map(\.name))
-        //            }
-        //        }
         .toolbar {
             Button("Open") {
                 let selected = vm.projects.filter {
