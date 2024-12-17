@@ -17,7 +17,16 @@ struct ProjCard: View {
                 ProjCardImage(proj)
                 
                 VStack(alignment: .leading) {
-                    Text(proj.name)
+                    HStack {
+                        Text(proj.name)
+                        
+                        ForEach(proj.uniquePlatforms(), id: \.self) { platform in
+                            Text(platform)
+                                .padding(2)
+                                .padding(.horizontal, 2)
+                                .background(.ultraThinMaterial, in: .rect(cornerRadius: 5))
+                        }
+                    }
                     
                     let path = proj.path.replacingOccurrences(of: vm.projectsFolder, with: "~")
                     
@@ -50,7 +59,7 @@ struct ProjCard: View {
                 Text("Open in Finder")
             }
         }
-    }    
+    }
 }
 
 //#Preview {

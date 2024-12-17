@@ -56,6 +56,18 @@ struct Project: Identifiable, Hashable {
         }
     }
     
+    func uniquePlatforms() -> [String] {
+        let allPlatforms = targets.flatMap {
+            $0.deploymentTargets.keys
+        }
+        
+        let uniquePlatforms = Array(Set(allPlatforms))
+        if uniquePlatforms.contains("tvOS") {
+            print(name)
+        }
+        return uniquePlatforms
+    }
+    
     // Hashable conformance
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
