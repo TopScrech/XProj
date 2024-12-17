@@ -22,7 +22,7 @@ final class ProjListVM {
         let sortedArray = versions.sorted()
         
         let joinedString = sortedArray.joined(separator: ", ")
-
+        
         return joinedString + ","
     }
     
@@ -45,6 +45,12 @@ final class ProjListVM {
     var playgroundCount: Int {
         projects.filter {
             $0.type == .playground
+        }.count
+    }
+    
+    var vaporCount: Int {
+        projects.filter {
+            $0.type == .vapor
         }.count
     }
     
@@ -177,7 +183,11 @@ final class ProjListVM {
             fileType = .proj
             
         } else if hasSwiftPackage(projPath) {
-            fileType = .package
+            if isVapor(proj, path) {
+                fileType = .vapor
+            } else {
+                fileType = .package
+            }
             
         } else if proj.contains(".playground") {
             fileType = .playground
@@ -185,12 +195,10 @@ final class ProjListVM {
         } else {
             switch typeAttribute {
             case "NSFileTypeDirectory":
-                //                fileType = .folder
                 try processPath(projPath)
                 return
                 
             default:
-                //                fileType = .unknown
                 return
             }
         }
@@ -213,6 +221,27 @@ final class ProjListVM {
                 attributes: attributes
             )
         )
+    }
+    
+    func isVapor(_ name: String, _ path: String) -> Bool {
+        let fm = FileManager.default
+        
+        guard fm.fileExists(atPath: path) else {
+            return false
+        }
+        
+        do {
+            let fileContents = try String(contentsOfFile: path + "/\(name)" + "/Package.resolved", encoding: .utf8)
+            
+            let vaporURL = "https://github.com/vapor/vapor.git"
+            
+            let containsVapor = fileContents.contains(vaporURL)
+            
+            return containsVapor
+        } catch {
+            print("Error reading Package.resolved: \(error)")
+            return false
+        }
     }
     
     func lastAccessDate(_ path: String) -> Date? {

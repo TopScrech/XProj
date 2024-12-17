@@ -42,7 +42,7 @@ struct Project: Identifiable, Hashable {
         case .proj:       "hammer.fill"
         case .package:    "shippingbox.fill"
         case .playground: "swift"
-        case .unknown:    "questionmark"
+        default:          "questionmark"
         }
     }
     
@@ -52,7 +52,7 @@ struct Project: Identifiable, Hashable {
         case .proj:       .blue
         case .package:    .package
         case .playground: .blue
-        case .unknown:    .gray
+        default:          .gray
         }
     }
     

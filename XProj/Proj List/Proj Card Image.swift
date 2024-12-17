@@ -14,11 +14,17 @@ struct ProjCardImage: View {
                 .resizable()
                 .frame(width: 32, height: 32)
                 .clipShape(.rect(cornerRadius: 5))
+            
         } else if proj.type == .proj {
             Image(.projIcon)
                 .resizable()
                 .frame(width: 32, height: 32)
-                .scaledToFit()
+            
+        } else if proj.type == .vapor {
+            Image(.vapor)
+                .resizable()
+                .frame(width: 32, height: 32)
+            
         } else {
             Image(systemName: proj.icon)
                 .title()

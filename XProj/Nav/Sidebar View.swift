@@ -24,6 +24,14 @@ struct SidebarView: View {
             }
             
             NavigationLink {
+                ProjList(vm.projects.filter {
+                    $0.type == .vapor
+                })
+            } label: {
+                Label("Vapor", systemImage: "network")
+            }
+            
+            NavigationLink {
                 OnlyPlaygroundsList()
             } label: {
                 Label("Playgrounds", systemImage: "swift")

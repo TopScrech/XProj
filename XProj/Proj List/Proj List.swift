@@ -21,14 +21,14 @@ struct ProjList: View {
         }
         .searchable(text: $vm.searchPrompt)
         .safeAreaInset(edge: .bottom) {
-            Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Playgrounds: \(vm.playgroundCount)")
+            Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Playgrounds: \(vm.playgroundCount) • Vapor: \(vm.vaporCount)")
                 .footnote()
                 .secondary()
                 .padding(.vertical, 1)
                 .opacity(0)
         }
         .overlay(alignment: .bottom) {
-            Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Playgrounds: \(vm.playgroundCount)")
+            Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Playgrounds: \(vm.playgroundCount) • Vapor: \(vm.vaporCount)")
                 .footnote()
                 .secondary()
                 .padding(.vertical, 5)
