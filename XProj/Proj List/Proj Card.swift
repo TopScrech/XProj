@@ -9,6 +9,17 @@ struct ProjCard: View {
         self.proj = proj
     }
     
+    private func icon(_ platform: String) -> String {
+        switch platform {
+        case "iOS": "iphone"
+        case "macOS": "macbook"
+        case "watchOS": "tv"
+        case "tvOS": "tv"
+        case "visionOS": "vision.pro"
+        default: ""
+        }
+    }
+    
     var body: some View {
         NavigationLink {
             ProjDetails(proj)
@@ -21,10 +32,8 @@ struct ProjCard: View {
                         Text(proj.name)
                         
                         ForEach(proj.uniquePlatforms, id: \.self) { platform in
-                            Text(platform)
-                                .padding(2)
-                                .padding(.horizontal, 2)
-                                .background(.ultraThinMaterial, in: .rect(cornerRadius: 5))
+                            Image(systemName: icon(platform))
+                                .footnote()
                         }
                     }
                     
