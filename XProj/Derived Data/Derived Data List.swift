@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 struct DerivedDataList: View {
     @State private var vm = DerivedDataVM()
@@ -7,6 +7,17 @@ struct DerivedDataList: View {
         List {
             Button("Picker") {
                 vm.openFolderPicker()
+            }
+            
+            Section {
+                HStack {
+                    Text("Total:")
+                    
+                    Spacer()
+                    
+                    Text(formatBytes(vm.folders.map(\.size).reduce(Int64(0), +)))
+                        .bold()
+                }
             }
             
             ForEach(vm.filteredFolders) { folder in
