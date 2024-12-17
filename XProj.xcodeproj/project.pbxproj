@@ -278,11 +278,19 @@
 				F3341E2E2BDE358900E85F27 /* Proj List.swift */,
 				F3341E402BDEB71F00E85F27 /* Proj List VM.swift */,
 				F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */,
+				F37831CD2D11C649007F7858 /* Proj Card */,
+			);
+			path = "Proj List";
+			sourceTree = "<group>";
+		};
+		F37831CD2D11C649007F7858 /* Proj Card */ = {
+			isa = PBXGroup;
+			children = (
 				F38B5E512BFD6F6100CB9917 /* Proj Card.swift */,
 				F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */,
 				F371A5182C2D84BA006BDF0D /* Proj Card VM.swift */,
 			);
-			path = "Proj List";
+			path = "Proj Card";
 			sourceTree = "<group>";
 		};
 		F37D1BF42CDA258B00D8817D /* Smart Scan */ = {
