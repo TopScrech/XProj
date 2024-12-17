@@ -30,7 +30,9 @@ struct ProjDetailsTarget: View {
             Spacer()
             
             HStack {
-                ForEach(target.deploymentTargets.sorted(by: <), id: \.key) { key, value in
+                let platforms = target.deploymentTargets.sorted(by: <)
+                
+                ForEach(platforms, id: \.key) { key, value in
                     HStack(spacing: 0) {
                         Image(systemName: icon(key))
                         
