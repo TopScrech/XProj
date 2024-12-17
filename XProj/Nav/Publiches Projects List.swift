@@ -6,7 +6,7 @@ struct PublichesProjectsList: View {
     private var projects: [Project] {
         vm.filteredProjects.filter {
             for target in $0.targets {
-                if let app = target.appStoreApp {
+                if target.appStoreApp != nil {
                     return true
                 }
             }
