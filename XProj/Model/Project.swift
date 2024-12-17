@@ -174,116 +174,29 @@ struct Project: Identifiable, Hashable {
             return []
         }
         
-        let projectPbxprojPath = "\(url.path.replacingOccurrences(of: "file://", with: ""))/project.pbxproj"
-        
-        // Read the contents of the .xcodeproj file
-        let xcodeProjContent: String
-        
         do {
-            xcodeProjContent = try String(contentsOfFile: projectPbxprojPath, encoding: .utf8)
+            let xcodeProj = try XcodeProj(url: url)
+            let project = xcodeProj.project
+            let packages = project.packageReferences
+            
+            let result = packages.compactMap { package in
+                if let rep = package.repositoryURL,
+                   let name = URL(string: rep)?.lastPathComponent {
+                    return Package(
+                        name: name,
+                        repositoryURL: rep,
+                        requirementKind: package.requirement?.keys.first ?? "",
+                        requirementParam: package.requirement?.values.first as? String ?? ""
+                    )
+                }
+                
+                return nil
+            }
+            
+            return result
         } catch {
-            print("failedToReadFile \(projectPbxprojPath)")
+            print(error)
             return []
         }
-        
-        // MARK: - Parsing Logic (Line-by-Line)
-        
-        var packages: [Package] = []
-        var currentPackage: Package?
-        var currentProperty: String?
-        
-        // Split the content into lines for easier processing
-        let lines = xcodeProjContent.components(separatedBy: .newlines)
-        
-        for line in lines {
-            let trimmedLine = line.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            // Check for the start of a package reference
-            if trimmedLine.contains("/* XCRemoteSwiftPackageReference") && trimmedLine.contains("*/ = {") {
-                // Extract the package name using regex
-                let namePattern = #"/\* XCRemoteSwiftPackageReference\s+"([^"]+)" \*/ = \{"#
-                
-                if let name = matchFirst(regex: namePattern, in: trimmedLine, group: 1) {
-                    currentPackage = Package(name: name, repositoryURL: "", requirementKind: "", requirementParam: "")
-                }
-                
-                continue
-            }
-            
-            // Extract properties when inside a package block
-            if let package = currentPackage {
-                if trimmedLine.starts(with: "repositoryURL =") {
-                    // Extract rep url
-                    let repoPattern = #"repositoryURL\s*=\s*"([^"]+)";"#
-                    
-                    if let repoURL = matchFirst(regex: repoPattern, in: trimmedLine, group: 1) {
-                        currentPackage = Package(name: package.name, repositoryURL: repoURL, requirementKind: package.requirementKind, requirementParam: package.requirementParam)
-                    }
-                } else if trimmedLine.starts(with: "requirement = {") {
-                    // Start of requirement block
-                    currentProperty = "requirement"
-                    
-                } else if currentProperty == "requirement" {
-                    if trimmedLine.starts(with: "branch =") {
-                        // Extract branch
-                        let branchPattern = #"branch\s*=\s*([^;]+);"#
-                        
-                        if let branch = matchFirst(regex: branchPattern, in: trimmedLine, group: 1) {
-                            currentPackage = Package(name: package.name, repositoryURL: package.repositoryURL, requirementKind: "branch", requirementParam: branch)
-                        }
-                    } else if trimmedLine.starts(with: "minimumVersion =") {
-                        // Extract min version
-                        let minVersionPattern = #"minimumVersion\s*=\s*([^;]+);"#
-                        
-                        if let minVersion = matchFirst(regex: minVersionPattern, in: trimmedLine, group: 1) {
-                            currentPackage = Package(name: package.name, repositoryURL: package.repositoryURL, requirementKind: "upToNextMajorVersion", requirementParam: minVersion)
-                        }
-                    } else if trimmedLine.starts(with: "kind =") {
-                        // Extract kind (in some cases, kind might come before branch/minimumVersion)
-                        let kindPattern = #"kind\s*=\s*([^;]+);"#
-                        
-                        if let kind = matchFirst(regex: kindPattern, in: trimmedLine, group: 1) {
-                            if kind == "branch" {
-                                currentPackage = Package(name: package.name, repositoryURL: package.repositoryURL, requirementKind: kind, requirementParam: "main")
-                            } else {
-                                currentPackage = Package(name: package.name, repositoryURL: package.repositoryURL, requirementKind: kind, requirementParam: "")
-                            }
-                        }
-                    } else if trimmedLine == "};" {
-                        // End of requirement block
-                        currentProperty = nil
-                    }
-                }
-                
-                // Check for end of package block
-                if trimmedLine == "};" {
-                    if let completedPackage = currentPackage {
-                        packages.append(completedPackage)
-                        currentPackage = nil
-                    }
-                }
-            }
-        }
-        
-        return packages
     }
-}
-
-func matchFirst(regex: String, in text: String, group: Int) -> String? {
-    do {
-        let regex = try NSRegularExpression(pattern: regex, options: [])
-        let nsrange = NSRange(text.startIndex..<text.endIndex, in: text)
-        
-        if
-            let match = regex.firstMatch(in: text, options: [], range: nsrange),
-            match.numberOfRanges > group,
-            let range = Range(match.range(at: group), in: text)
-        {
-            return String(text[range])
-        }
-    } catch {
-        print("Invalid regex: \(regex)")
-    }
-    
-    return nil
 }

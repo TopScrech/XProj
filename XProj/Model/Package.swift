@@ -15,6 +15,18 @@ struct Package: Identifiable, Hashable {
     /// The parameter associated with the requirement kind (e.g., branch name or minimum version).
     let requirementParam: String?
     
+    init(
+        name: String,
+        repositoryURL: String,
+        requirementKind: String? = nil,
+        requirementParam: String? = nil
+    ) {
+        self.name = name
+        self.repositoryURL = repositoryURL
+        self.requirementKind = requirementKind
+        self.requirementParam = requirementParam
+    }
+    
     var author: String? {
         // Attempt to create a URL object from the input string
         guard let url = URL(string: repositoryURL) else {
