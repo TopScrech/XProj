@@ -182,8 +182,7 @@ struct Project: Identifiable, Hashable {
         do {
             xcodeProjContent = try String(contentsOfFile: projectPbxprojPath, encoding: .utf8)
         } catch {
-            print(projectPbxprojPath)
-            print("failedToReadFile")
+            print("failedToReadFile \(projectPbxprojPath)")
             return []
         }
         
