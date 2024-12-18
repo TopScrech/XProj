@@ -9,15 +9,11 @@ struct HomeView: View {
                 .frame(minWidth: 250)
         } content: {
             ProjList(vm.filteredProjects)
-                .frame(minWidth: 500)
+                .frame(minWidth: 600)
         } detail: {
             Text("Details")
                 .frame(minWidth: 200, maxWidth: 500)
         }
-        
-        //            NavigationLink("Derived Data") {
-        //                DerivedDataList()
-        //            }
     }
 }
 
