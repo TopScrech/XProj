@@ -25,6 +25,18 @@ final class DerivedDataVM {
             }
     }
     
+    func showPicker() {
+        openFolderPicker { url in
+            guard let url else {
+                return
+            }
+            
+            saveSecurityScopedBookmark(url: url, forKey: self.udKey) {
+                self.getFolders()
+            }
+        }
+    }
+    
     func getFolders() {
         guard let url = restoreAccessToFolder(udKey) else {
             print("Unable to restore access to the folder. Please select a folder.")
@@ -42,7 +54,7 @@ final class DerivedDataVM {
         }
     }
     
-    func processPath(_ path: String) throws {
+    private func processPath(_ path: String) throws {
         let startTime = CFAbsoluteTimeGetCurrent()
         
         let group = DispatchGroup()
@@ -60,7 +72,7 @@ final class DerivedDataVM {
                     group.leave()
                 }
                 
-                if let processedFolder = self.processFolder(folder, path: path) {
+                if let processedFolder = self.processFolder(folder, at: path) {
                     fetchedFolders.append(processedFolder)
                 }
             }
@@ -74,7 +86,7 @@ final class DerivedDataVM {
         print("Time elapsed for processing path: \(String(format: "%.3f", timeElapsed)) seconds")
     }
     
-    func processFolder(_ proj: String, path: String) -> DerivedDataFolder? {
+    private func processFolder(_ proj: String, at path: String) -> DerivedDataFolder? {
         let path = "\(path)/\(proj)"
         
         if proj == ".git" || proj == ".build" || proj == "Not Xcode" {
@@ -101,17 +113,5 @@ final class DerivedDataVM {
         }
         
         return nil
-    }
-    
-    func showPicker() {
-        openFolderPicker { url in
-            guard let url else {
-                return
-            }
-            
-            saveSecurityScopedBookmark(url: url, forKey: self.udKey) {
-                self.getFolders()
-            }
-        }
     }
 }

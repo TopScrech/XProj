@@ -113,6 +113,18 @@ final class ProjListVM {
         }
     }
     
+    func showPicker() {
+        openFolderPicker { url in
+            guard let url else {
+                return
+            }
+            
+            saveSecurityScopedBookmark(url: url, forKey: self.udKey) {
+                self.getFolders()
+            }
+        }
+    }
+    
     func getFolders() {
         let startTime = CFAbsoluteTimeGetCurrent()
         
@@ -137,15 +149,15 @@ final class ProjListVM {
         print("Time elapsed for processing path: \(String(format: "%.3f", timeElapsed)) seconds")
     }
     
-    func processPath(_ path: String) throws {
+    private func processPath(_ path: String) throws {
         let projects = try fm.contentsOfDirectory(atPath: path)
         
         for proj in projects {
-            try processProj(path: path, proj: proj)
+            try processProj(proj, at: path)
         }
     }
     
-    func processProj(path: String, proj: String) throws {
+    private func processProj(_ proj: String, at path: String) throws {
         let projPath = "\(path)/\(proj)"
         let attributes = try fm.attributesOfItem(atPath: projPath)
         
@@ -205,7 +217,7 @@ final class ProjListVM {
         )
     }
     
-    func isVapor(_ name: String, _ path: String) -> Bool {
+    private func isVapor(_ name: String, _ path: String) -> Bool {
         let fm = FileManager.default
         
         guard fm.fileExists(atPath: path) else {
@@ -225,7 +237,7 @@ final class ProjListVM {
         }
     }
     
-    func lastAccessDate(_ path: String) -> Date? {
+    private func lastAccessDate(_ path: String) -> Date? {
         path.withCString {
             var statStruct = Darwin.stat()
             
@@ -256,18 +268,6 @@ final class ProjListVM {
             return contents.contains("Package.swift")
         } catch {
             return false
-        }
-    }
-    
-    func showPicker() {
-        openFolderPicker { url in
-            guard let url else {
-                return
-            }
-            
-            saveSecurityScopedBookmark(url: url, forKey: self.udKey) {
-                self.getFolders()
-            }
         }
     }
 }
