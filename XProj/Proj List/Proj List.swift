@@ -43,6 +43,13 @@ struct ProjList: View {
                 .opacity(0)
         }
         .overlay(alignment: .bottom) {
+            //            if vm.isProcessing {
+            //                HStack {
+            //                    Text("Processing...")
+            //
+            //                    ProgressView()
+            //                }
+            //            } else {
             Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount)")
                 .footnote()
                 .secondary()
@@ -50,8 +57,13 @@ struct ProjList: View {
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(.ultraThinMaterial)
+            //            }
         }
         .toolbar {
+            Button("Refresh") {
+                vm.getFolders()
+            }
+            
             Button("Open") {
                 let selected = vm.projects.filter {
                     selectedProjects.contains($0.id)

@@ -6,6 +6,7 @@ final class ProjListVM {
     var projects: [Project] = []
     var searchPrompt = ""
     var projectsFolder = ""
+    //    var isProcessing = false
     
     private let udKey = "projects_folder_bookmark"
     private let fm = FileManager.default
@@ -113,6 +114,10 @@ final class ProjListVM {
     }
     
     func getFolders() {
+        //        DispatchQueue.main.async {
+        //            self.isProcessing = true
+        //        }
+        
         restoreAccessToFolder()
         projects = []
         
@@ -150,6 +155,10 @@ final class ProjListVM {
             
             let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
             print("Time elapsed for processing path: \(String(format: "%.3f", timeElapsed)) seconds")
+            
+            //            DispatchQueue.main.async {
+            //                self.isProcessing = false
+            //            }
         } catch {
             print(error.localizedDescription)
         }
