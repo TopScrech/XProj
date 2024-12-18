@@ -277,6 +277,7 @@ final class ProjListVM {
         }
     }
     
+#warning("Used twice")
     func openFolderPicker() {
         let panel = NSOpenPanel()
         panel.canChooseFiles = false
