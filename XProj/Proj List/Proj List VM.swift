@@ -149,12 +149,41 @@ final class ProjListVM {
         }
     }
     
+    func restoreAccessToFolderOld() {
+        guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
+            return
+        }
+        
+        var isStale = false
+        
+        do {
+            let url = try URL(
+                resolvingBookmarkData: bookmarkData,
+                options: .withSecurityScope,
+                relativeTo: nil,
+                bookmarkDataIsStale: &isStale
+            )
+            
+            projectsFolder = url.path
+            
+            if url.startAccessingSecurityScopedResource() {
+                // You can now access the folder here
+            }
+            
+            if isStale {
+                print("Bookmark data is stale. Need to reselect folder for a new bookmark")
+            }
+        } catch {
+            print("Error restoring access: \(error)")
+        }
+    }
+    
     func getFolders() {
         let startTime = CFAbsoluteTimeGetCurrent()
-        
+        restoreAccessToFolderOld()
         projects = []
         
-        guard let url = restoreAccessToFolder(udKey) else {
+        guard let url = FolderAccessManager.shared.restoreAccessToFolder(udKey) else {
             print("Unable to restore access to the folder. Please select a new folder")
             return
         }
