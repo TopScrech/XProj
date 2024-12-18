@@ -114,54 +114,27 @@ final class ProjListVM {
     }
     
     func getFolders() {
-        //        DispatchQueue.main.async {
-        //            self.isProcessing = true
-        //        }
+        let startTime = CFAbsoluteTimeGetCurrent()
         
-        restoreAccessToFolder()
         projects = []
         
-        do {
-            guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
-                return
-            }
-            
-            var isStale = false
-            let url = try URL(
-                resolvingBookmarkData: bookmarkData,
-                options: .withSecurityScope,
-                bookmarkDataIsStale: &isStale
-            )
-            
-            if isStale {
-                print("Bookmark data is stale. Need to reselect folder for a new bookmark")
-                return
-            }
-            
-            guard url.startAccessingSecurityScopedResource() else {
-                print("Failed to start accessing security scoped resource")
-                return
-            }
-            
-            defer {
-                url.stopAccessingSecurityScopedResource()
-            }
-            
-            let path = url.path
-            
-            let startTime = CFAbsoluteTimeGetCurrent()
-            
-            try processPath(path)
-            
-            let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-            print("Time elapsed for processing path: \(String(format: "%.3f", timeElapsed)) seconds")
-            
-            //            DispatchQueue.main.async {
-            //                self.isProcessing = false
-            //            }
-        } catch {
-            print(error.localizedDescription)
+        guard let url = restoreAccessToFolder(udKey) else {
+            print("Unable to restore access to the folder. Please select a folder.")
+            return
         }
+        
+        defer {
+            url.stopAccessingSecurityScopedResource()
+        }
+        
+        do {
+            try processPath(url.path)
+        } catch {
+            print("Error processing path: \(error.localizedDescription)")
+        }
+        
+        let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+        print("Time elapsed for processing path: \(String(format: "%.3f", timeElapsed)) seconds")
     }
     
     func processPath(_ path: String) throws {
@@ -295,35 +268,6 @@ final class ProjListVM {
             saveSecurityScopedBookmark(url: url, forKey: self.udKey) {
                 self.getFolders()
             }
-        }
-    }
-    
-    func restoreAccessToFolder() {
-        guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
-            return
-        }
-        
-        var isStale = false
-        
-        do {
-            let url = try URL(
-                resolvingBookmarkData: bookmarkData,
-                options: .withSecurityScope,
-                relativeTo: nil,
-                bookmarkDataIsStale: &isStale
-            )
-            
-            projectsFolder = url.path
-            
-            if url.startAccessingSecurityScopedResource() {
-                // You can now access the folder here
-            }
-            
-            if isStale {
-                print("Bookmark data is stale. Need to reselect folder for a new bookmark")
-            }
-        } catch {
-            print("Error restoring access: \(error)")
         }
     }
 }

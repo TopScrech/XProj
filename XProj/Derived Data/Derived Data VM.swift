@@ -26,40 +26,19 @@ final class DerivedDataVM {
     }
     
     func getFolders() {
-        restoreAccessToFolder()
+        guard let url = restoreAccessToFolder(udKey) else {
+            print("Unable to restore access to the folder. Please select a folder.")
+            return
+        }
+        
+        defer {
+            url.stopAccessingSecurityScopedResource()
+        }
         
         do {
-            guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
-                return
-            }
-            
-            var isStale = false
-            
-            let url = try URL(
-                resolvingBookmarkData: bookmarkData,
-                options: .withSecurityScope,
-                bookmarkDataIsStale: &isStale
-            )
-            
-            let path = url.path
-            
-            if isStale {
-                print("Bookmark data is stale. Need to reselect folder for a new bookmark")
-                return
-            }
-            
-            guard url.startAccessingSecurityScopedResource() else {
-                print("Failed to start accessing security scoped resource")
-                return
-            }
-            
-            defer {
-                url.stopAccessingSecurityScopedResource()
-            }
-            
-            try processPath(path)
+            try processPath(url.path)
         } catch {
-            print(error.localizedDescription)
+            print("Error processing path: \(error.localizedDescription)")
         }
     }
     
@@ -133,35 +112,6 @@ final class DerivedDataVM {
             saveSecurityScopedBookmark(url: url, forKey: self.udKey) {
                 self.getFolders()
             }
-        }
-    }
-    
-    func restoreAccessToFolder() {
-        guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
-            return
-        }
-        
-        var isStale = false
-        
-        do {
-            let url = try URL(
-                resolvingBookmarkData: bookmarkData,
-                options: .withSecurityScope,
-                relativeTo: nil,
-                bookmarkDataIsStale: &isStale
-            )
-            
-            if url.startAccessingSecurityScopedResource() {
-                // You can now access the folder here
-#warning("Remember to call `stopAccessingSecurityScopedResource()` when access is no longer needed")
-            }
-            
-            if isStale {
-                // Bookmark data is stale, need to save a new bookmark
-                print("Bookmark data is stale. Need to reselect folder for a new bookmark")
-            }
-        } catch {
-            print("Error restoring access: \(error)")
         }
     }
 }

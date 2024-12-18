@@ -48,6 +48,7 @@
 		F37831D52D11D292007F7858 /* Proj Details Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */; };
 		F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D72D12DF0E007F7858 /* Open folder picker.swift */; };
 		F37831DB2D12E0E6007F7858 /* Save bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DA2D12E0E6007F7858 /* Save bookmark.swift */; };
+		F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DC2D12E57D007F7858 /* Restore access to folder.swift */; };
 		F37D1BED2CDA231F00D8817D /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEC2CDA231F00D8817D /* Provider.swift */; };
 		F37D1BEF2CDA234700D8817D /* Simple Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEE2CDA234700D8817D /* Simple Entry.swift */; };
 		F37D1BF12CDA235D00D8817D /* Entry View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF02CDA235D00D8817D /* Entry View.swift */; };
@@ -123,6 +124,7 @@
 		F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Dependencies.swift"; sourceTree = "<group>"; };
 		F37831D72D12DF0E007F7858 /* Open folder picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open folder picker.swift"; sourceTree = "<group>"; };
 		F37831DA2D12E0E6007F7858 /* Save bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Save bookmark.swift"; sourceTree = "<group>"; };
+		F37831DC2D12E57D007F7858 /* Restore access to folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restore access to folder.swift"; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F37D1BEC2CDA231F00D8817D /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		F37D1BEE2CDA234700D8817D /* Simple Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Simple Entry.swift"; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			children = (
 				F37831DA2D12E0E6007F7858 /* Save bookmark.swift */,
 				F37831CB2D11AF86007F7858 /* icon.swift */,
+				F37831DC2D12E57D007F7858 /* Restore access to folder.swift */,
 				F37831D72D12DF0E007F7858 /* Open folder picker.swift */,
 			);
 			path = funcs;
@@ -577,6 +580,7 @@
 				F37D1BFA2CDA272600D8817D /* Duplicate Section.swift in Sources */,
 				F371A51D2C2D8D94006BDF0D /* MB Proj Card.swift in Sources */,
 				F31EF9492D1038CE000F95A7 /* Package Dep Details.swift in Sources */,
+				F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */,
 				F37831D32D11D221007F7858 /* Proj Details Targets.swift in Sources */,
 				F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */,
 				F3B389BA2D0EC9810082C2F3 /* Sidebar View.swift in Sources */,
