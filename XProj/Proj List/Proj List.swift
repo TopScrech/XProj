@@ -28,13 +28,6 @@ struct ProjList: View {
                 selectedProjects = [firstProject.id]
             }
         }
-        //        .refreshableTask {
-        //            vm.getFolders()
-        //
-        //            let duplicates: [()] = vm.findDuplicates().map { duplicates in
-        //                print(duplicates.map(\.name))
-        //            }
-        //        }
         .safeAreaInset(edge: .bottom) {
             Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount) • Workspaces: \(vm.workspaceCount)")
                 .footnote()
@@ -43,13 +36,6 @@ struct ProjList: View {
                 .opacity(0)
         }
         .overlay(alignment: .bottom) {
-            //            if vm.isProcessing {
-            //                HStack {
-            //                    Text("Processing...")
-            //
-            //                    ProgressView()
-            //                }
-            //            } else {
             Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount) • Workspaces: \(vm.workspaceCount)")
                 .footnote()
                 .secondary()
@@ -57,7 +43,6 @@ struct ProjList: View {
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(.ultraThinMaterial)
-            //            }
         }
         .toolbar {
             Button("Open") {
