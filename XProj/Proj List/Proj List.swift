@@ -30,14 +30,12 @@ struct ProjList: View {
         }
         .safeAreaInset(edge: .bottom) {
             Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount) • Workspaces: \(vm.workspaceCount)")
-//                .footnote()
                 .secondary()
                 .padding(.vertical, 1)
                 .opacity(0)
         }
         .overlay(alignment: .bottom) {
             Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount) • Workspaces: \(vm.workspaceCount)")
-//                .footnote()
                 .secondary()
                 .padding(.vertical, 5)
                 .padding(.horizontal)
@@ -46,13 +44,7 @@ struct ProjList: View {
         }
         .toolbar {
             Button("Open") {
-                let selected = vm.projects.filter {
-                    selectedProjects.contains($0.id)
-                }
-                
-                let paths = selected.map(\.path)
-                
-                vm.openProjects(paths)
+                vm.openProjects(selectedProjects)
             }
             .opacity(0)
             .keyboardShortcut(.defaultAction)

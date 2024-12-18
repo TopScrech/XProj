@@ -6,10 +6,18 @@ final class ProjListVM {
     var projects: [Project] = []
     var searchPrompt = ""
     var projectsFolder = ""
-    //    var isProcessing = false
     
     private let udKey = "projects_folder_bookmark"
     private let fm = FileManager.default
+    
+    var lastOpenedProjects: [Project] {
+        projects.filter {
+            $0.type == .proj
+        }
+        .prefix(5).sorted {
+            $0.openedAt > $1.openedAt
+        }
+    }
     
     var swiftToolsVersions: String {
         var versions = Set<String>()
@@ -75,15 +83,30 @@ final class ProjListVM {
         }
     }
     
-    func openProjects(_ paths: [String]) {
+    func openProject(_ proj: Project) {
+        let path = proj.path
+        findProj(path)
+    }
+    
+    func openProjects(_ selectedProjects: Set<Project.ID>) {
+        let selected = projects.filter {
+            selectedProjects.contains($0.id)
+        }
+        
+        let paths = selected.map(\.path)
+        
         for path in paths {
-            let (found, filePath) = findXcodeprojFile(path)
-            
-            if found, let filePath {
-                launchProj(filePath)
-            } else {
-                launchProj(path + "/Package.swift")
-            }
+            findProj(path)
+        }
+    }
+    
+    private func findProj(_ path: String) {
+        let (found, filePath) = findXcodeprojFile(path)
+        
+        if found, let filePath {
+            launchProj(filePath)
+        } else {
+            launchProj(path + "/Package.swift")
         }
     }
     
@@ -112,15 +135,6 @@ final class ProjListVM {
         }
         
         return duplicates
-    }
-    
-    var lastOpenedProjects: [Project] {
-        projects.filter {
-            $0.type == .proj
-        }
-        .prefix(5).sorted {
-            $0.openedAt > $1.openedAt
-        }
     }
     
     func showPicker() {
@@ -168,7 +182,7 @@ final class ProjListVM {
     }
     
     private func processProj(_ proj: String, at path: String) throws {
-        let projPath = "\(path)/\(proj)"
+        let projPath = path + "/" + proj
         let attributes = try fm.attributesOfItem(atPath: projPath)
         
         let typeAttribute = attributes[.type] as? String ?? "Other"
@@ -255,7 +269,7 @@ final class ProjListVM {
         path.withCString {
             var statStruct = Darwin.stat()
             
-            guard  stat($0, &statStruct) == 0 else {
+            guard stat($0, &statStruct) == 0 else {
                 return nil
             }
             

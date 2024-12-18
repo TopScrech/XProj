@@ -55,7 +55,7 @@ struct ProjCard: View {
             }
             
             Button {
-                vm.openProjects([proj.path])
+                vm.openProject(proj)
             } label: {
                 Text("Open in Xcode")
             }
