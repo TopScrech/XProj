@@ -60,10 +60,6 @@ struct ProjList: View {
             //            }
         }
         .toolbar {
-            Button("Refresh") {
-                vm.getFolders()
-            }
-            
             Button("Open") {
                 let selected = vm.projects.filter {
                     selectedProjects.contains($0.id)
@@ -76,6 +72,10 @@ struct ProjList: View {
             .opacity(0)
             .keyboardShortcut(.defaultAction)
             .disabled(selectedProjects.isEmpty)
+            
+            Button("Refresh") {
+                vm.getFolders()
+            }
             
             ProjListToolbar()
         }
