@@ -277,13 +277,14 @@ final class ProjListVM {
     
     private func isVapor(_ name: String, _ path: String) -> Bool {
         let fm = FileManager.default
+        let filePath = path + "/\(name)" + "/Package.resolved"
         
         guard fm.fileExists(atPath: path) else {
             return false
         }
         
         do {
-            let fileContents = try String(contentsOfFile: path + "/\(name)" + "/Package.resolved", encoding: .utf8)
+            let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
             
             let vaporURL = "https://github.com/vapor/vapor.git"
             
@@ -303,7 +304,9 @@ final class ProjListVM {
                 return nil
             }
             
-            return Date(timeIntervalSince1970: TimeInterval(statStruct.st_atimespec.tv_sec))
+            let interval = TimeInterval(statStruct.st_atimespec.tv_sec)
+            
+            return Date(timeIntervalSince1970: interval)
         }
     }
     
