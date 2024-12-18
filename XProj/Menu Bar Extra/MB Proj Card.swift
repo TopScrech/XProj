@@ -19,13 +19,7 @@ struct MBProjCard: View {
             Spacer()
             
             Button {
-                let (found, filePath) = vm.findXcodeprojFile(proj.path)
-                
-                if found, let filePath {
-                    vm.launchProj(filePath)
-                } else {
-                    vm.launchProj(proj.path + "/Package.swift")
-                }
+                vm.openProj(proj)
             } label: {
                 Image(systemName: "play")
             }

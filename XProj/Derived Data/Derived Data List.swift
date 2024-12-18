@@ -10,13 +10,15 @@ struct DerivedDataList: View {
             }
             
             Section {
-                HStack {
-                    Text("Total:")
-                    
-                    Spacer()
-                    
-                    Text(formatBytes(vm.folders.map(\.size).reduce(Int64(0), +)))
-                        .bold()
+                if !vm.filteredFolders.isEmpty {
+                    HStack {
+                        Text("Total:")
+                        
+                        Spacer()
+                        
+                        Text(formatBytes(vm.folders.map(\.size).reduce(Int64(0), +)))
+                            .bold()
+                    }
                 }
             }
             

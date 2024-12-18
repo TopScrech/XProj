@@ -29,15 +29,7 @@ struct MBProjList: View {
                         return
                     }
                     
-#warning("Used twice")
-                    
-                    let (found, filePath) = vm.findXcodeprojFile(proj.path)
-                    
-                    if found, let filePath {
-                        vm.launchProj(filePath)
-                    } else {
-                        vm.launchProj(proj.path + "/Package.swift")
-                    }
+                    vm.openProj(proj)
                 }
             
             ScrollView {

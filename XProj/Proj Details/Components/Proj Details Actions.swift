@@ -19,7 +19,7 @@ struct ProjDetailsActions: View {
             }
             
             Button("Xcode") {
-                vm.openProject(proj)
+                vm.openProj(proj)
             }
             
             Button("Finder") {

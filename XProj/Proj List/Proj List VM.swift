@@ -83,7 +83,7 @@ final class ProjListVM {
         }
     }
     
-    func openProject(_ proj: Project) {
+    func openProj(_ proj: Project) {
         let path = proj.path
         findProj(path)
     }
