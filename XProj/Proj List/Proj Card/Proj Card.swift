@@ -20,17 +20,23 @@ struct ProjCard: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Text(proj.name)
+                            .title3()
                         
                         ForEach(proj.platforms, id: \.self) { platform in
                             Image(systemName: icon(platform))
-                                .footnote()
+                        }
+                        
+                        if proj.type == .vapor, proj.packages.contains(where: {
+                            $0.name == "webauthn-swift"
+                        }) {
+                            Image(systemName: "person.badge.key")
                         }
                     }
                     
                     let path = proj.path.replacingOccurrences(of: vm.projectsFolder, with: "~")
                     
                     Text(path)
-                        .footnote()
+                        .subheadline()
                         .foregroundStyle(.tertiary)
                 }
                 

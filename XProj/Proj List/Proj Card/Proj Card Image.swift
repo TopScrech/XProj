@@ -33,7 +33,7 @@ struct ProjCardImage: View {
                     .foregroundStyle(proj.iconColor.gradient)
             }
         }
-        .frame(width: 32, height: 32)
+        .frame(width: 45, height: 45)
     }
 }
 
