@@ -84,14 +84,15 @@ final class DerivedDataVM {
     }
     
     private func processFolder(_ proj: String, at path: String) -> DerivedDataFolder? {
-        let path = "\(path)/\(proj)"
+        let path = path + "/" + proj
+        let url = URL(fileURLWithPath: path)
         
         if proj == ".git" || proj == ".build" || proj == "Not Xcode" {
             return nil
         }
         
         do {
-            let sizeAttribute = try fm.allocatedSizeOfDirectory(atUrl: URL(fileURLWithPath: path))
+            let sizeAttribute = try fm.allocatedSizeOfDirectory(url)
             
             let name: String
             

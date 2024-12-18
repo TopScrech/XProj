@@ -9,7 +9,7 @@ extension FileManager {
     ///
     /// - note: There are a couple of oddities that are not taken into account (like symbolic links, meta data of
     /// directories, hard links, ...)
-    public func allocatedSizeOfDirectory(atUrl url: URL) throws -> Int64 {
+    public func allocatedSizeOfDirectory(_ url: URL) throws -> Int64 {
         var accumulatedSize: Int64 = 0
         
         // prefetching some properties during traversal will speed up things a bit
@@ -69,19 +69,19 @@ extension FileManager {
     }
     
     //    public func allocatedSizeOfFile(at url: URL) throws -> Int64 {
-    //        // Get the type of this item, making sure we only sum up sizes of regular files.
+    //        // Get the type of this item, making sure we only sum up sizes of regular files
     //        let resourceValues = try url.resourceValues(forKeys: [.isRegularFileKey, .totalFileAllocatedSizeKey, .fileAllocatedSizeKey])
     //
     //        guard resourceValues.isRegularFile ?? false else {
     //            return 0
     //        }
     //
-    //        // To get the file's size we first try the most comprehensive value in terms of what the file may use on disk.
-    //        // This includes metadata, compression (on file system level) and block size.
+    //        // To get the file's size we first try the most comprehensive value in terms of what the file may use on disk
+    //        // This includes metadata, compression (on file system level) and block size
     //        var fileSize = resourceValues.totalFileAllocatedSize
     //
     //        // In case the value is unavailable we use the fallback value (excluding meta data and compression)
-    //        // This value should always be available.
+    //        // This value should always be available
     //        fileSize = fileSize ?? resourceValues.fileAllocatedSize
     //
     //        return Int64(fileSize ?? 0)
