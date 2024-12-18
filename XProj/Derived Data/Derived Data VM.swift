@@ -126,25 +126,13 @@ final class DerivedDataVM {
     
     func showPicker() {
         openFolderPicker { url in
-            if let url {
-                self.saveBookmark(url)
+            guard let url else {
+                return
             }
-        }
-    }
-    
-    private func saveBookmark(_ url: URL) {
-        do {
-            let bookmarkData = try url.bookmarkData(
-                options: .withSecurityScope,
-                includingResourceValuesForKeys: nil,
-                relativeTo: nil
-            )
             
-            UserDefaults.standard.set(bookmarkData, forKey: udKey)
-            
-            getFolders()
-        } catch {
-            print("Error saving bookmark: \(error)")
+            saveSecurityScopedBookmark(url: url, forKey: self.udKey) {
+                self.getFolders()
+            }
         }
     }
     
