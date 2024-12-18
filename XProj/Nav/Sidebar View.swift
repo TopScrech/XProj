@@ -79,6 +79,36 @@ struct SidebarView: View {
                 Label("visionOS", systemImage: "vision.pro")
             }
             
+            NavigationLink {
+                ProjList(vm.projects.filter {
+                    $0.targets.contains {
+                        $0.type == .widgets
+                    }
+                })
+            } label: {
+                Label("Widgets", systemImage: "widget.large")
+            }
+            
+            NavigationLink {
+                ProjList(vm.projects.filter {
+                    $0.targets.contains {
+                        $0.type == .iMessage
+                    }
+                })
+            } label: {
+                Label("iMessage", systemImage: "message.badge")
+            }
+            
+            NavigationLink {
+                ProjList(vm.projects.filter {
+                    $0.targets.contains {
+                        $0.type == .unitTests || $0.type == .uiTests
+                    }
+                })
+            } label: {
+                Label("Tests", systemImage: "testtube.2")
+            }
+            
             Spacer()
             
             PublichesProjectsList()
