@@ -93,8 +93,14 @@ final class ProjListVM {
             }
             
             if let count = nameCountDict[proj.name], count > 1 {
-                if !duplicates.contains(where: { $0.first?.name == proj.name }) {
-                    duplicates.append(projects.filter { $0.name == proj.name })
+                let hasDuplicates = duplicates.contains(where: {
+                    $0.first?.name == proj.name
+                })
+                
+                if !hasDuplicates {
+                    duplicates.append(projects.filter {
+                        $0.name == proj.name
+                    })
                 }
             }
         }
@@ -203,7 +209,7 @@ final class ProjListVM {
         let createdAt = attributes[.creationDate] as? Date
         
         self.projects.append(
-            .init(
+            Project(
                 name: proj,
                 path: projPath,
                 type: fileType,
