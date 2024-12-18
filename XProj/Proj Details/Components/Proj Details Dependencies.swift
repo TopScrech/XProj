@@ -17,10 +17,6 @@ struct ProjDetailsDependencies: View {
                 Text("Package dependencies: \(packages.count)")
                     .title2()
             }
-        } else {
-#if DEBUG
-            Text("No packages found")
-#endif
         }
     }
 }

@@ -235,11 +235,13 @@ final class ProjListVM {
             }
             
         } else if hasSwiftPackage(projPath) {
-            if isVapor(proj, path) {
-                fileType = .vapor
-            } else {
-                fileType = .package
-            }
+            fileType = hasVapor(projPath) ? .vapor : .package
+            
+//            if isVapor(proj, path) {
+//                fileType = .vapor
+//            } else {
+//                fileType = .package
+//            }
             
         } else if proj.contains(".playground") {
             fileType = .playground
@@ -275,9 +277,9 @@ final class ProjListVM {
         )
     }
     
-    private func isVapor(_ name: String, _ path: String) -> Bool {
+    private func hasVapor( _ path: String) -> Bool {
         let fm = FileManager.default
-        let filePath = path + "/\(name)" + "/Package.resolved"
+        let filePath = path + "/Package.resolved"
         
         guard fm.fileExists(atPath: path) else {
             return false

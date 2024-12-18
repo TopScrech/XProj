@@ -17,10 +17,6 @@ struct ProjDetailsTargets: View {
                 Text("Targets: \(targets.count)")
                     .title2()
             }
-        } else {
-#if DEBUG
-            Text("No targets found")
-#endif
         }
     }
 }
