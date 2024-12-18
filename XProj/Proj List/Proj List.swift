@@ -24,8 +24,8 @@ struct ProjList: View {
             SearchSuggestions()
         }
         .task {
-            if let firstProject = projects.first {
-                selectedProjects = [firstProject.id]
+            if let firstProj = projects.first {
+                selectedProjects = [firstProj.id]
             }
         }
         .safeAreaInset(edge: .bottom) {
