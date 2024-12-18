@@ -24,13 +24,13 @@ struct ProjList: View {
         .safeAreaInset(edge: .bottom) {
             Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount) • Workspaces: \(vm.workspaceCount)")
                 .secondary()
-                .padding(.vertical, 1)
+                .padding(.vertical, 8)
                 .opacity(0)
         }
         .overlay(alignment: .bottom) {
             Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount) • Workspaces: \(vm.workspaceCount)")
                 .secondary()
-                .padding(.vertical, 5)
+                .padding(.vertical, 8)
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(.ultraThinMaterial)
