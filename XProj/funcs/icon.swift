@@ -7,6 +7,8 @@ func icon(_ platform: String) -> String {
     case "watchOS": "applewatch"
     case "tvOS": "tv"
     case "visionOS": "vision.pro"
+    case "widgets": "widget.large"
+    case "iMessage": "message.badge"
     default: ""
     }
 }

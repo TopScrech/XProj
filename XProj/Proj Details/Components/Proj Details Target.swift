@@ -33,12 +33,14 @@ struct ProjDetailsTarget: View {
                 let platforms = target.deploymentTargets.sorted(by: <)
                 
                 ForEach(platforms, id: \.key) { key, value in
-                    HStack(spacing: 0) {
-                        Image(systemName: icon(key))
-                        
-                        Text(value)
-                            .footnote()
-                            .foregroundStyle(.tertiary)
+                    if !value.isEmpty {
+                        HStack(spacing: 0) {
+                            Image(systemName: icon(key))
+                            
+                            Text(value)
+                                .footnote()
+                                .foregroundStyle(.tertiary)
+                        }
                     }
                 }
             }

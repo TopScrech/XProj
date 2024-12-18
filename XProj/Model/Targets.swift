@@ -72,9 +72,11 @@ func determineType(_ name: String, _ buildSettings: [String: Any]?) -> (type: Ta
     
     switch name {
     case "Widgets Extension":
+        configs["widgets"] = ""
         type = .widgets
         
     case "iMessage Extension":
+        configs["iMessage"] = ""
         type = .iMessage
         
     case "Unit Tests":
