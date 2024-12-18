@@ -237,11 +237,11 @@ final class ProjListVM {
         } else if hasSwiftPackage(projPath) {
             fileType = hasVapor(projPath) ? .vapor : .package
             
-//            if isVapor(proj, path) {
-//                fileType = .vapor
-//            } else {
-//                fileType = .package
-//            }
+            //            if isVapor(proj, path) {
+            //                fileType = .vapor
+            //            } else {
+            //                fileType = .package
+            //            }
             
         } else if proj.contains(".playground") {
             fileType = .playground
@@ -279,7 +279,9 @@ final class ProjListVM {
     
     private func hasVapor( _ path: String) -> Bool {
         let fm = FileManager.default
+        
         let filePath = path + "/Package.resolved"
+        let vaporUrl = "https://github.com/vapor/vapor.git"
         
         guard fm.fileExists(atPath: path) else {
             return false
@@ -288,9 +290,7 @@ final class ProjListVM {
         do {
             let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
             
-            let vaporURL = "https://github.com/vapor/vapor.git"
-            
-            let containsVapor = fileContents.contains(vaporURL)
+            let containsVapor = fileContents.contains(vaporUrl)
             
             return containsVapor
         } catch {
