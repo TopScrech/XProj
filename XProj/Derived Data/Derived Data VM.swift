@@ -9,20 +9,17 @@ final class DerivedDataVM {
     private let fm = FileManager.default
     
     var filteredFolders: [DerivedDataFolder] {
-        guard searchPrompt.isEmpty else {
-            return folders
-                .sorted {
-                    $0.size > $1.size
-                }
-                .filter {
-                    $0.name.contains(searchPrompt)
-                }
+        let sortedFolders = folders.sorted {
+            $0.size > $1.size
         }
         
-        return folders
-            .sorted {
-                $0.size > $1.size
+        guard searchPrompt.isEmpty else {
+            return sortedFolders.filter {
+                $0.name.contains(searchPrompt)
             }
+        }
+        
+        return sortedFolders
     }
     
     func showPicker() {
