@@ -42,14 +42,18 @@ extension FileManager {
             }
             
             // Get the type of this item, making sure we only sum up sizes of regular files
-            let isRegularFileResourceValues = try contentURL.resourceValues(forKeys: [.isRegularFileKey])
+            let isRegularFileResourceValues = try contentURL.resourceValues(
+                forKeys: [.isRegularFileKey]
+            )
             
             guard isRegularFileResourceValues.isRegularFile ?? false else {
                 continue
             }
             
             // Get size values only if we're sure we calculating file size
-            let resourceValues = try contentURL.resourceValues(forKeys: [.fileAllocatedSizeKey, .totalFileAllocatedSizeKey])
+            let resourceValues = try contentURL.resourceValues(
+                forKeys: [.fileAllocatedSizeKey, .totalFileAllocatedSizeKey]
+            )
             
             // To get the file's size we first try the most comprehensive value in terms of what the file may use on disk
             // This includes metadata, compression (on file system level) and block size
@@ -59,11 +63,12 @@ extension FileManager {
             // This value should always be available
             fileSize = fileSize ?? resourceValues.fileAllocatedSize
             
-            // We're good, add up the value
             accumulatedSize += Int64(fileSize ?? 0)
         }
         
-        if let error = errorDidOccur { throw error }
+        if let error = errorDidOccur {
+            throw error
+        }
         
         return accumulatedSize
     }
