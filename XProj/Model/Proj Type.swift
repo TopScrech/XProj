@@ -1,6 +1,6 @@
 enum ProjType: String {
-    case folder,
-         proj,
+    case proj,
+         workspace,
          package,
          vapor,
          playground,

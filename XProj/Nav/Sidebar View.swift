@@ -37,6 +37,14 @@ struct SidebarView: View {
                 Label("Playgrounds", systemImage: "swift")
             }
             
+            NavigationLink {
+                ProjList(vm.projects.filter {
+                    $0.type == .workspace
+                })
+            } label: {
+                Label("Wordkspaces", systemImage: "folder.badge.person.crop")
+            }
+            
             Spacer()
             
             NavigationLink {

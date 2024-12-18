@@ -40,7 +40,6 @@ struct Project: Identifiable, Hashable {
     
     var icon: String {
         switch type {
-        case .folder:     "folder"
         case .proj:       "hammer.fill"
         case .package:    "shippingbox.fill"
         case .playground: "swift"
@@ -50,7 +49,6 @@ struct Project: Identifiable, Hashable {
     
     var iconColor: Color {
         switch type {
-        case .folder:     .yellow
         case .proj:       .blue
         case .package:    .package
         case .playground: .blue

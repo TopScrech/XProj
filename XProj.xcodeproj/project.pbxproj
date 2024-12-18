@@ -303,8 +303,8 @@
 			isa = PBXGroup;
 			children = (
 				F38B5E512BFD6F6100CB9917 /* Proj Card.swift */,
-				F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */,
 				F371A5182C2D84BA006BDF0D /* Proj Card VM.swift */,
+				F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */,
 			);
 			path = "Proj Card";
 			sourceTree = "<group>";

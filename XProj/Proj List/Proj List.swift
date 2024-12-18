@@ -36,7 +36,7 @@ struct ProjList: View {
         //            }
         //        }
         .safeAreaInset(edge: .bottom) {
-            Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount)")
+            Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount) • Workspaces: \(vm.workspaceCount)")
                 .footnote()
                 .secondary()
                 .padding(.vertical, 1)
@@ -50,7 +50,7 @@ struct ProjList: View {
             //                    ProgressView()
             //                }
             //            } else {
-            Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount)")
+            Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount) • Workspaces: \(vm.workspaceCount)")
                 .footnote()
                 .secondary()
                 .padding(.vertical, 5)

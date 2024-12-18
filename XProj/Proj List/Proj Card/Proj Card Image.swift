@@ -19,6 +19,10 @@ struct ProjCardImage: View {
                 Image(.projIcon)
                     .resizable()
                 
+            } else if proj.type == .workspace {
+                Image(.xcodeWorkspace)
+                    .resizable()
+                
             } else if proj.type == .vapor {
                 Image(.vapor)
                     .resizable()

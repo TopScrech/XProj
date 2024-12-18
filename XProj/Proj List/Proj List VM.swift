@@ -49,6 +49,12 @@ final class ProjListVM {
         }.count
     }
     
+    var workspaceCount: Int {
+        projects.filter {
+            $0.type == .workspace
+        }.count
+    }
+    
     var vaporCount: Int {
         projects.filter {
             $0.type == .vapor
@@ -177,8 +183,12 @@ final class ProjListVM {
         
         let fileType: ProjType
         
-        if hasXcodeProj(projPath) {
-            fileType = .proj
+        if hasFile(ofType: "xcodeproj", at: projPath) {
+            if hasFile(ofType: "xcworkspace", at: projPath) {
+                fileType = .workspace
+            } else {
+                fileType = .proj
+            }
             
         } else if hasSwiftPackage(projPath) {
             if isVapor(proj, path) {
@@ -253,12 +263,12 @@ final class ProjListVM {
         }
     }
     
-    private func hasXcodeProj(_ path: String) -> Bool {
+    private func hasFile(ofType type: String, at path: String) -> Bool {
         do {
             let contents = try fm.contentsOfDirectory(atPath: path)
             
             return contents.contains {
-                $0.hasSuffix(".xcodeproj")
+                $0.hasSuffix(".\(type)")
             }
         } catch {
             return false
