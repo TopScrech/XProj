@@ -155,7 +155,7 @@ final class ProjListVM {
         projects = []
         
         guard let url = restoreAccessToFolder(udKey) else {
-            print("Unable to restore access to the folder. Please select a folder.")
+            print("Unable to restore access to the folder. Please select a new folder")
             return
         }
         
