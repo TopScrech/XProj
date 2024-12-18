@@ -14,19 +14,12 @@ struct ProjList: View {
     var body: some View {
         @Bindable var vm = vm
         
-        List(selection: $selectedProjects) {
-            ForEach(projects) { proj in
-                ProjCard(proj)
-            }
+        List(projects, selection: $selectedProjects) { proj in
+            ProjCard(proj)
         }
         .searchable(text: $vm.searchPrompt)
         .searchSuggestions {
             SearchSuggestions()
-        }
-        .task {
-            if let firstProj = projects.first {
-                selectedProjects = [firstProj.id]
-            }
         }
         .safeAreaInset(edge: .bottom) {
             Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount) • Workspaces: \(vm.workspaceCount)")
@@ -49,10 +42,6 @@ struct ProjList: View {
             .opacity(0)
             .keyboardShortcut(.defaultAction)
             .disabled(selectedProjects.isEmpty)
-            
-            Button("Refresh") {
-                vm.getFolders()
-            }
             
             ProjListToolbar()
         }
