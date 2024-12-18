@@ -29,3 +29,8 @@ struct ProjDetailsActions: View {
         .padding(.vertical, 5)
     }
 }
+
+#Preview {
+    ProjDetailsActions(previewProj1)
+        .environment(ProjListVM())
+}

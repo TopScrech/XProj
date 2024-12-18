@@ -136,4 +136,5 @@ struct SidebarView: View {
 
 #Preview {
     SidebarView()
+        .environment(ProjListVM())
 }

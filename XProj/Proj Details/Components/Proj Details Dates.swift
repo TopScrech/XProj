@@ -38,6 +38,6 @@ struct ProjDetailsDates: View {
     }
 }
 
-//#Preview {
-//    ProjDetailsDates()
-//}
+#Preview {
+    ProjDetailsDates(previewProj1)
+}

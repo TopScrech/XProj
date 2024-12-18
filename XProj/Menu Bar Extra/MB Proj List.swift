@@ -60,4 +60,5 @@ struct MBProjList: View {
 
 #Preview {
     MBProjList()
+        .environment(ProjListVM())
 }

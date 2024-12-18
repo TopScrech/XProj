@@ -25,6 +25,6 @@ struct ProjDetailsTargets: View {
     }
 }
 
-//#Preview {
-//    ProjDetailsTargets()
-//}
+#Preview {
+    ProjDetailsTargets([])
+}

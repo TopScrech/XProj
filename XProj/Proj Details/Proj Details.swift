@@ -40,6 +40,7 @@ struct ProjDetails: View {
     }
 }
 
-//#Preview {
-//    ProjDetails()
-//}
+#Preview {
+    ProjDetails(previewProj1)
+        .environment(ProjListVM())
+}

@@ -15,3 +15,7 @@ struct DuplicateSection: View {
         }
     }
 }
+
+#Preview {
+    DuplicateSection([])
+}

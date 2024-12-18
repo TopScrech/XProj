@@ -33,14 +33,7 @@ struct MBProjCard: View {
     }
 }
 
-//#Preview {
-//    MBProjCard(
-//        Project(
-//            name: "Preview",
-//            path: "/",
-//            type: .proj,
-//            lastOpened: Date(),
-//            attributes: [:]
-//        )
-//    )
-//}
+#Preview {
+    MBProjCard(previewProj1)
+        .environment(ProjListVM())
+}

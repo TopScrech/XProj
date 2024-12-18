@@ -3,6 +3,42 @@ import SwiftUI
 struct PackageDepList: View {
     @Environment(ProjListVM.self) private var vm
     
+    @AppStorage("sort_package_dependencies_by_author") private var sortByAuthor = true
+    
+    var body: some View {
+        List {
+            Section {
+                Toggle("Sort by Author", isOn: $sortByAuthor)
+            }
+            
+            if sortByAuthor {
+                ForEach(dependenciesGroupedByAuthor, id: \.author) { group in
+                    Section {
+                        // Author's packages
+                        ForEach(group.dependencies) { package in
+                            PackageDepCard(package)
+                        }
+                    } header: {
+                        HStack {
+                            Text(group.author)
+                                .headline()
+                            
+                            Spacer()
+                            
+                            Text(group.totalUsage)
+                                .subheadline(.bold)
+                                .secondary()
+                        }
+                    }
+                }
+            } else {
+                ForEach(dependencies) { package in
+                    PackageDepCard(package)
+                }
+            }
+        }
+    }
+    
     private var dependencies: [PackageDependency] {
         let packageProjectPairs = vm.projects.flatMap { proj in
             proj.packages.map { package in
@@ -47,51 +83,16 @@ struct PackageDepList: View {
             )
         }
         
-        // Sort based on totalUsage
+        // Sort by totalUsage
         let sortedGrouped = groupedWithUsage.sorted {
             $0.totalUsage > $1.totalUsage
         }
         
         return sortedGrouped
     }
-    
-    @AppStorage("sort_package_dependencies_by_author") private var sortByAuthor = false
-    
-    var body: some View {
-        List {
-            Section {
-                Toggle("Sort by Author", isOn: $sortByAuthor)
-            }
-            
-            if sortByAuthor {
-                ForEach(dependenciesGroupedByAuthor, id: \.author) { group in
-                    Section {
-                        // Author's packages
-                        ForEach(group.dependencies) { package in
-                            PackageDepCard(package)
-                        }
-                    } header: {
-                        HStack {
-                            Text(group.author)
-                                .headline()
-                            
-                            Spacer()
-                            
-                            Text(group.totalUsage)
-                                .subheadline(.bold)
-                                .secondary()
-                        }
-                    }
-                }
-            } else {
-                ForEach(dependencies) { package in
-                    PackageDepCard(package)
-                }
-            }
-        }
-    }
 }
 
 #Preview {
     PackageDepList()
+        .environment(ProjListVM())
 }

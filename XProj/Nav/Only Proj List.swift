@@ -12,4 +12,5 @@ struct OnlyProjList: View {
 
 #Preview {
     OnlyProjList()
+        .environment(ProjListVM())
 }

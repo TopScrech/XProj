@@ -33,6 +33,6 @@ struct ProjCardImage: View {
     }
 }
 
-//#Preview {
-//    ProjCardImage()
-//}
+#Preview {
+    ProjCardImage(previewProj1)
+}

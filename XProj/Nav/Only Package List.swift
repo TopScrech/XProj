@@ -16,4 +16,5 @@ struct OnlyPackageList: View {
 
 #Preview {
     OnlyPackageList()
+        .environment(ProjListVM())
 }

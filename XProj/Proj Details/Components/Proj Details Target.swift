@@ -45,3 +45,7 @@ struct ProjDetailsTarget: View {
         }
     }
 }
+
+//#Preview {
+//    ProjDetailsTarget()
+//}

@@ -82,7 +82,7 @@ struct ProjList: View {
     }
 }
 
-//#Preview {
-//    ProjList()
-//        .environment(ProjListVM())
-//}
+#Preview {
+    ProjList([previewProj1, previewProj2])
+        .environment(ProjListVM())
+}

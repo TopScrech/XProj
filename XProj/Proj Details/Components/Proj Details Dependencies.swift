@@ -25,6 +25,6 @@ struct ProjDetailsDependencies: View {
     }
 }
 
-//#Preview {
-//    ProjDetailsDependencies()
-//}
+#Preview {
+    ProjDetailsDependencies([])
+}
