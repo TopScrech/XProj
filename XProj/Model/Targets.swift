@@ -105,23 +105,25 @@ extension Project {
             let project = xcodeProj.project
             let targets = project.targets
             
-            // Map targets to `Target` objects
             let targetObjects: [Target] = targets.flatMap { target in
                 let buildConfigs = target.buildConfigurationList?.buildConfigurations ?? []
                 
                 return buildConfigs.compactMap { buildConfig in
-                    let bundleID = buildConfig.buildSettings?["PRODUCT_BUNDLE_IDENTIFIER"] as? String
+                    let targetName = target.name
+                    let buildSettings = buildConfig.buildSettings
                     
-                    if let test = determineType(target.name, buildConfig.buildSettings) {
+                    let bundleID = buildSettings?["PRODUCT_BUNDLE_IDENTIFIER"] as? String
+                    
+                    if let test = determineType(targetName, buildSettings) {
                         return Target(
-                            name: target.name,
+                            name: targetName,
                             bundleId: bundleID,
                             type: test.type,
                             deploymentTargets: test.versions
                         )
                     } else {
                         return Target(
-                            name: target.name,
+                            name: targetName,
                             bundleId: bundleID
                         )
                     }
