@@ -6,7 +6,7 @@ struct DerivedDataList: View {
     var body: some View {
         List {
             Button("Picker") {
-                vm.openFolderPicker()
+                vm.showPicker()
             }
             
             Section {

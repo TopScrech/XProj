@@ -286,16 +286,9 @@ final class ProjListVM {
         }
     }
     
-#warning("Used twice")
-    func openFolderPicker() {
-        let panel = NSOpenPanel()
-        panel.canChooseFiles = false
-        panel.canCreateDirectories = true
-        panel.canChooseDirectories = true
-        panel.allowsMultipleSelection = false
-        
-        panel.begin { response in
-            if response == .OK, let url = panel.url {
+    func showPicker() {
+        openFolderPicker { url in
+            if let url {
                 self.saveBookmark(url)
             }
         }

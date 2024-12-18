@@ -7,7 +7,7 @@ struct MainSettings: View {
         ScrollView {
             GroupBox {
                 Button("Change projects folder") {
-                    vm.openFolderPicker()
+                    vm.showPicker()
                 }
                 
                 Button("Examples") {
@@ -15,9 +15,9 @@ struct MainSettings: View {
                 }
             }
         }
-//        .listStyle(.plain)
+        //        .listStyle(.plain)
         .padding()
-//        .frame(width: 300, height: 300)
+        //        .frame(width: 300, height: 300)
     }
     
     private func downloadExamples() {

@@ -46,6 +46,7 @@
 		F37831D12D11D177007F7858 /* Proj Details Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D02D11D177007F7858 /* Proj Details Actions.swift */; };
 		F37831D32D11D221007F7858 /* Proj Details Targets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D22D11D221007F7858 /* Proj Details Targets.swift */; };
 		F37831D52D11D292007F7858 /* Proj Details Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */; };
+		F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D72D12DF0E007F7858 /* Open folder picker.swift */; };
 		F37D1BED2CDA231F00D8817D /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEC2CDA231F00D8817D /* Provider.swift */; };
 		F37D1BEF2CDA234700D8817D /* Simple Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEE2CDA234700D8817D /* Simple Entry.swift */; };
 		F37D1BF12CDA235D00D8817D /* Entry View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF02CDA235D00D8817D /* Entry View.swift */; };
@@ -119,6 +120,7 @@
 		F37831D02D11D177007F7858 /* Proj Details Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Actions.swift"; sourceTree = "<group>"; };
 		F37831D22D11D221007F7858 /* Proj Details Targets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Targets.swift"; sourceTree = "<group>"; };
 		F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Dependencies.swift"; sourceTree = "<group>"; };
+		F37831D72D12DF0E007F7858 /* Open folder picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open folder picker.swift"; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F37D1BEC2CDA231F00D8817D /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		F37D1BEE2CDA234700D8817D /* Simple Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Simple Entry.swift"; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				F313BE1C2C871E13005C8B60 /* Examples.zip */,
 				F387AC312BFEC6C600EC1DC5 /* Analyser.swift */,
 				F37831CB2D11AF86007F7858 /* icon.swift */,
+				F37831D72D12DF0E007F7858 /* Open folder picker.swift */,
 				F37831CA2D11A75F007F7858 /* Proj List */,
 				F3B389BD2D0ECB090082C2F3 /* Proj Details */,
 				F37D1BF42CDA258B00D8817D /* Smart Scan */,
@@ -593,6 +596,7 @@
 				F3522DC62C2A29C000660101 /* Derived Data List.swift in Sources */,
 				F37831C92D11A69B007F7858 /* Proj Details Dates.swift in Sources */,
 				F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */,
+				F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */,
 				F37831B92D10A19E007F7858 /* Fetch project file path.swift in Sources */,
 				F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */,
 			);
