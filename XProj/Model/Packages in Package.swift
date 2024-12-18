@@ -1,10 +1,10 @@
 import Foundation
 
 extension Project {
-    /// Fetches and returns Swift package dependencies as an array of `Package` structs.
+    /// Fetches and returns Swift package dependencies as an array of `Package` structs
     ///
-    /// - Returns: An array of `Package` structs with the name and repository URL.
-    func parsePackagesInPackage() -> [Package] {        
+    /// - Returns: An array of `Package` structs with the name and repository URL
+    func parsePackagesInPackage() -> [Package] {
         // URL for Package.resolved
         let folderURL = URL(fileURLWithPath: path, isDirectory: true)
         let packageResolvedURL = folderURL.appendingPathComponent("Package.resolved")
@@ -12,7 +12,6 @@ extension Project {
         let fileManager = FileManager.default
         
         guard fileManager.fileExists(atPath: packageResolvedURL.path) else {
-            print("Error: 'Package.resolved' not found in folder '\(path)'.")
             return []
         }
         
@@ -35,7 +34,7 @@ extension Project {
                 
                 return packages
             } else {
-                print("Error: Unable to parse 'Package.resolved'.")
+                print("Error: Unable to parse 'Package.resolved' at \(packageResolvedURL)")
                 return []
             }
         } catch {
