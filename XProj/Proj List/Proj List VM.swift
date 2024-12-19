@@ -2,7 +2,6 @@ import SwiftUI
 
 @Observable
 final class ProjListVM {
-#warning("Make private")
     var projects: [Project] = []
     var searchPrompt = ""
     var projectsFolder = ""

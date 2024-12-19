@@ -11,12 +11,17 @@ struct ProjListToolbar: View {
 #if DEBUG
         Menu("Functions") {
             Button("listFilesInFoldersSingleThread") {
-                let test = vm.listFilesInFoldersSingleThread(folderPaths: vm.projects.map(\.path))
+                let test = vm.listFilesInFoldersSingleThread(
+                    folderPaths: vm.projects.map(\.path)
+                )
+                
                 print(test)
             }
             
             Button("countFilesInFoldersMultiThread") {
-                vm.countFilesInFoldersMultiThread(folderPaths: vm.projects.map(\.path)) { _ in
+                vm.countFilesInFoldersMultiThread(
+                    folderPaths: vm.projects.map(\.path)
+                ) { _ in
                     
                 }
             }

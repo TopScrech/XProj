@@ -24,7 +24,7 @@ struct SidebarView: View {
             }
             
             NavigationLink {
-                ProjList(vm.projects.filter {
+                ProjList(vm.filteredProjects.filter {
                     $0.type == .vapor
                 })
             } label: {
@@ -38,7 +38,7 @@ struct SidebarView: View {
             }
             
             NavigationLink {
-                ProjList(vm.projects.filter {
+                ProjList(vm.filteredProjects.filter {
                     $0.type == .workspace
                 })
             } label: {
@@ -48,7 +48,7 @@ struct SidebarView: View {
             Spacer()
             
             NavigationLink {
-                ProjList(vm.projects.filter {
+                ProjList(vm.filteredProjects.filter {
                     $0.platforms.contains("iOS")
                 })
             } label: {
@@ -56,7 +56,7 @@ struct SidebarView: View {
             }
             
             NavigationLink {
-                ProjList(vm.projects.filter {
+                ProjList(vm.filteredProjects.filter {
                     $0.platforms.contains("macOS")
                 })
             } label: {
@@ -64,7 +64,7 @@ struct SidebarView: View {
             }
             
             NavigationLink {
-                ProjList(vm.projects.filter {
+                ProjList(vm.filteredProjects.filter {
                     $0.platforms.contains("watchOS")
                 })
             } label: {
@@ -72,7 +72,7 @@ struct SidebarView: View {
             }
             
             NavigationLink {
-                ProjList(vm.projects.filter {
+                ProjList(vm.filteredProjects.filter {
                     $0.platforms.contains("tvOS")
                 })
             } label: {
@@ -80,7 +80,7 @@ struct SidebarView: View {
             }
             
             NavigationLink {
-                ProjList(vm.projects.filter {
+                ProjList(vm.filteredProjects.filter {
                     $0.platforms.contains("visionOS")
                 })
             } label: {
@@ -88,7 +88,7 @@ struct SidebarView: View {
             }
             
             NavigationLink {
-                ProjList(vm.projects.filter {
+                ProjList(vm.filteredProjects.filter {
                     $0.targets.contains {
                         $0.type == .widgets
                     }
@@ -98,7 +98,7 @@ struct SidebarView: View {
             }
             
             NavigationLink {
-                ProjList(vm.projects.filter {
+                ProjList(vm.filteredProjects.filter {
                     $0.targets.contains {
                         $0.type == .iMessage
                     }
@@ -108,7 +108,7 @@ struct SidebarView: View {
             }
             
             NavigationLink {
-                ProjList(vm.projects.filter {
+                ProjList(vm.filteredProjects.filter {
                     $0.targets.contains {
                         $0.type == .unitTests || $0.type == .uiTests
                     }
