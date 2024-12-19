@@ -317,7 +317,7 @@ final class ProjListVM {
             let contents = try fm.contentsOfDirectory(atPath: path)
             
             return contents.contains {
-                $0.hasSuffix(".\(type)")
+                $0.hasSuffix("." + type)
             }
         } catch {
             return false
