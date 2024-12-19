@@ -11,17 +11,20 @@ struct SidebarView: View {
             
             Spacer()
             
+#warning(".disabled doesn't work in sidebar")
             NavigationLink {
                 OnlyProjList()
             } label: {
                 Label("Projects", systemImage: "hammer")
             }
+            .disabled(vm.projectCount == 0)
             
             NavigationLink {
                 OnlyPackageList()
             } label: {
                 Label("Swift Packages", systemImage: "shippingbox")
             }
+            .disabled(vm.packageCount == 0)
             
             NavigationLink {
                 ProjList(vm.filteredProjects.filter {
@@ -30,12 +33,14 @@ struct SidebarView: View {
             } label: {
                 Label("Vapor", systemImage: "network")
             }
+            .disabled(vm.vaporCount == 0)
             
             NavigationLink {
                 OnlyPlaygroundsList()
             } label: {
                 Label("Playgrounds", systemImage: "swift")
             }
+            .disabled(vm.playgroundCount == 0)
             
             NavigationLink {
                 ProjList(vm.filteredProjects.filter {
@@ -44,6 +49,7 @@ struct SidebarView: View {
             } label: {
                 Label("Wordkspaces", systemImage: "folder.badge.person.crop")
             }
+            .disabled(vm.workspaceCount == 0)
             
             Spacer()
             
