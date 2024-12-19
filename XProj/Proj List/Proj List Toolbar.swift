@@ -30,8 +30,9 @@ struct ProjListToolbar: View {
                 DispatchQueue.global().async {
                     let start = DispatchTime.now()
                     
-                    let test = vm.countFilesRecursively("/Users/topscrech/Projects")
-                    print(test)
+                    if let test = vm.countFilesRecursively("/Users/topscrech/Projects") {
+                        print(test)
+                    }
                     
                     DispatchQueue.main.async {
                         let finish = DispatchTime.now()
