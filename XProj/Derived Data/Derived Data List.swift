@@ -17,7 +17,7 @@ struct DerivedDataList: View {
                         
                         Spacer()
                         
-                        Text(formatBytes(vm.folders.map(\.size).reduce(Int64(0), +)))
+                        Text(vm.totalSize)
                             .bold()
                     }
                 }

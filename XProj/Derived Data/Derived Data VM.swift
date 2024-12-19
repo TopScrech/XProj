@@ -8,6 +8,10 @@ final class DerivedDataVM {
     private let udKey = "derived_data_bookmark"
     private let fm = FileManager.default
     
+    var totalSize: String {
+        formatBytes(folders.map(\.size).reduce(Int64(0), +))
+    }
+    
     var filteredFolders: [DerivedDataFolder] {
         let sortedFolders = folders.sorted {
             $0.size > $1.size
