@@ -4,6 +4,7 @@ struct DerivedDataList: View {
     @State private var vm = DerivedDataVM()
     
     var body: some View {
+#warning("Show Derived Data of not existing projects")
         List {
             Button("Picker") {
                 vm.showPicker()

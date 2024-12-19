@@ -11,6 +11,7 @@ struct OnlyPackageList: View {
     
     var body: some View {
         VStack {
+#warning("Implement a filter")
             Text(vm.swiftToolsVersions)
             
             ProjList(packages)
