@@ -29,7 +29,7 @@ struct ProjCardImage: View {
                 
             } else {
                 Image(systemName: proj.icon)
-                    .title()
+                    .fontSize(32)
                     .foregroundStyle(proj.iconColor.gradient)
             }
         }
