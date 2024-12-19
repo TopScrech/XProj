@@ -9,7 +9,11 @@ final class DerivedDataVM {
     private let fm = FileManager.default
     
     var totalSize: String {
-        formatBytes(folders.map(\.size).reduce(Int64(0), +))
+        let sizes = folders
+            .map(\.size)
+            .reduce(Int64(0), +)
+        
+        return formatBytes(sizes)
     }
     
     var filteredFolders: [DerivedDataFolder] {
