@@ -32,7 +32,7 @@ final class DerivedDataVM {
                 return
             }
             
-            saveSecurityScopedBookmark(url: url, forKey: self.udKey) {
+            saveSecurityScopedBookmark(url, forKey: self.udKey) {
                 self.getFolders()
             }
         }

@@ -1,6 +1,6 @@
 import Foundation
 
-func saveSecurityScopedBookmark(url: URL, forKey key: String, result: () -> ()) {
+func saveSecurityScopedBookmark(_ url: URL, forKey key: String, result: () -> ()) {
     do {
         let bookmarkData = try url.bookmarkData(
             options: .withSecurityScope,
