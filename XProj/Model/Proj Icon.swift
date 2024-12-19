@@ -36,16 +36,30 @@ extension Project {
                     if appIconURL.lastPathComponent == "AppIcon.appiconset",
                        (try? appIconURL.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true {
                         
-                        // List files in AppIcon.appiconset & apply filter
                         do {
                             let fileURLs = try fileManager.contentsOfDirectory(at: appIconURL, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles])
                             
-                            if let firstMatchingFile = fileURLs.first(where: {
+                            let firstMatchingFile = fileURLs.first(where: {
                                 let isNotJSON = $0.pathExtension.lowercased() != "json"
                                 let doesNotStartWithIcon = !$0.lastPathComponent.lowercased().hasPrefix("icon_")
                                 return isNotJSON && doesNotStartWithIcon
-                            }) {
+                            })
+                            
+                            if let firstMatchingFile {
                                 return firstMatchingFile.path
+                            } else {
+                                let nonJSONFiles = fileURLs.filter { $0.pathExtension.lowercased() != "json" }
+                                
+                                let largestFile = nonJSONFiles.max { url1, url2 in
+                                    let size1 = (try? url1.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0
+                                    let size2 = (try? url2.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0
+                                    
+                                    return size1 < size2
+                                }
+                                
+                                if let largestFile {
+                                    return largestFile.path
+                                }
                             }
                         } catch {
                             print("Error accessing files in \(appIconURL.path): \(error.localizedDescription)")
