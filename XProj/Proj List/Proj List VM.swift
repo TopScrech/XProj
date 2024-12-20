@@ -110,24 +110,30 @@ final class ProjListVM {
     }
     
     func findDuplicates() -> [[Project]] {
-        var nameCountDict: [String: Int] = [:]
+        var nameTypeCountDict: [String: Int] = [:]
         var duplicates: [[Project]] = []
         
         for proj in projects {
-            if let count = nameCountDict[proj.name] {
-                nameCountDict[proj.name] = count + 1
+            let key = proj.name + "-" + proj.type.rawValue
+            
+            if let count = nameTypeCountDict[key] {
+                nameTypeCountDict[key] = count + 1
             } else {
-                nameCountDict[proj.name] = 1
+                nameTypeCountDict[key] = 1
             }
             
-            if let count = nameCountDict[proj.name], count > 1 {
+            if let count = nameTypeCountDict[key], count > 1 {
                 let hasDuplicates = duplicates.contains(where: {
-                    $0.first?.name == proj.name
+                    if let test = $0.first, test.name == proj.name && test.type == proj.type {
+                        return true
+                    }
+                    
+                    return false
                 })
                 
                 if !hasDuplicates {
                     duplicates.append(projects.filter {
-                        $0.name == proj.name
+                        $0.name == proj.name && $0.type == proj.type
                     })
                 }
             }
