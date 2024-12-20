@@ -14,8 +14,8 @@ struct ProjList: View {
     var body: some View {
         @Bindable var vm = vm
         
-        List(projects, selection: $selectedProjects) {
-            ProjCard($0)
+        List(projects, selection: $selectedProjects) { proj in
+            ProjCard(proj)
         }
         .searchable(text: $vm.searchPrompt)
         .searchSuggestions {
