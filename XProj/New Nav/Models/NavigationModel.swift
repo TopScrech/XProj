@@ -17,7 +17,6 @@ final class NavigationModel: Codable {
     var showExperiencePicker = false
     
     private static let decoder = JSONDecoder()
-    
     private static let encoder = JSONEncoder()
     
     /// The URL for the JSON file that stores the recipe data
@@ -28,9 +27,9 @@ final class NavigationModel: Codable {
     /// The shared singleton navigation model object
     static let shared = {
         if let model = try? NavigationModel(contentsOf: dataURL) {
-            model
+            return model
         } else {
-            NavigationModel()
+            return NavigationModel()
         }
     }()
     
@@ -61,6 +60,14 @@ final class NavigationModel: Codable {
         )
     }
     
+    func prochistitZalupu() {
+        do {
+            try FileManager.default.removeItem(at: Self.dataURL)
+        } catch {
+            print(error)
+        }
+    }
+    
     /// Loads the navigation data for the navigation model from a previously saved state
     func load() throws {
         let model = try NavigationModel(contentsOf: Self.dataURL)
@@ -68,11 +75,15 @@ final class NavigationModel: Codable {
         selectedCategory = model.selectedCategory
         recipePath = model.recipePath
         columnVisibility = model.columnVisibility
+        
+        print("Loaded")
     }
     
     /// Saves the JSON data for the navigation model at its current state
     func save() throws {
         try jsonData?.write(to: Self.dataURL)
+        
+        print("Saved")
     }
     
     /// The selected recipe; otherwise returns `nil`

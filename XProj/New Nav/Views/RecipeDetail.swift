@@ -90,6 +90,7 @@ private struct Content<Link: View>: View {
     @ViewBuilder
     private var ingredients: some View {
         let padding = EdgeInsets(top: 16, leading: 0, bottom: 8, trailing: 0)
+        
         VStack(alignment: .leading) {
             Text("Ingredients")
                 .title2()
@@ -97,9 +98,9 @@ private struct Content<Link: View>: View {
                 .padding(padding)
             
             VStack(alignment: .leading) {
-                ForEach(recipe.ingredients) { ingredient in
-                    Text(ingredient.description)
-                }
+//                ForEach(recipe.ingredients) { ingredient in
+//                    Text(ingredient.description)
+//                }
             }
         }
         .frame(minWidth: 300, alignment: .leading)

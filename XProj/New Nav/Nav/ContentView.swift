@@ -46,12 +46,20 @@ struct ContentView: View {
         }
         .onChange(of: scenePhase) { _, newScenePhase in
             if newScenePhase == .background {
-                try? nav.save()
+                do {
+                    try nav.save()
+                } catch {
+                    print(error)
+                }
             }
         }
         .onChange(of: appearsActive) { _, appearsActive in
             if !appearsActive {
-                try? nav.save()
+                do {
+                    try nav.save()
+                } catch {
+                    print(error)
+                }
             }
         }
     }

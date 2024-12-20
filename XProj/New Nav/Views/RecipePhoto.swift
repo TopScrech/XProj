@@ -6,20 +6,20 @@ struct RecipePhoto: View {
     var recipe: Recipe
     
     var body: some View {
-        if let imageName = recipe.imageName {
-            Image(imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        } else {
-            ZStack {
+//        if let imageName = recipe.imageName {
+//            Image(imageName)
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//        } else {
+//            ZStack {
                 Rectangle()
                     .fill(.tertiary)
                 
-                Image(systemName: "camera")
-                    .fontSize(64)
-                    .secondary()
-            }
-        }
+//                Image(systemName: "camera")
+//                    .fontSize(64)
+//                    .secondary()
+//            }
+//        }
     }
 }
 

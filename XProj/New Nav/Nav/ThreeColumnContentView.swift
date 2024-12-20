@@ -36,6 +36,10 @@ struct ThreeColumnContentView: View {
                     .navigationTitle("")
             }
         } detail: {
+            Button("Clear nav") {
+                nav.prochistitZalupu()
+            }
+            
             if let selectedRecipe = nav.selectedRecipe.first {
                 Text("Seleted \(nav.selectedRecipe.count)")
                 
