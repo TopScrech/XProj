@@ -6,45 +6,68 @@ extension Project {
     /// - Returns: An array of `Package` structs with the name and repository URL
     func parsePackagesInPackage() -> [Package] {
         // URL for Package.resolved
-        let folderURL = URL(fileURLWithPath: path, isDirectory: true)
-        let packageResolvedURL = folderURL.appendingPathComponent("Package.resolved")
+        let folderUrl = URL(fileURLWithPath: path, isDirectory: true)
+        let packageResolvedUrl = folderUrl.appendingPathComponent("Package.resolved")
         
         let fileManager = FileManager.default
         
-        guard fileManager.fileExists(atPath: packageResolvedURL.path) else {
+        guard fileManager.fileExists(atPath: packageResolvedUrl.path) else {
             return []
         }
         
         do {
-            // Read Package.resolved
-            let data = try Data(contentsOf: packageResolvedURL)
+            let data = try Data(contentsOf: packageResolvedUrl)
+            let decoded = try JSONDecoder().decode(Root.self, from: data)
             
-            // Parse JSON
-            if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-               let pins = json["pins"] as? [[String: Any]] {
-                
-                var packages: [Package] = []
-                
-                for pin in pins {
-                    if let name = pin["identity"] as? String,
-                       let repositoryUrl = pin["location"] as? String {
-                        packages.append(Package(
-                            name: name,
-                            repositoryUrl: repositoryUrl,
-                            requirementKind: nil,
-                            requirementParam: nil
-                        ))
-                    }
-                }
-                
-                return packages
-            } else {
-                print("Error: Unable to parse 'Package.resolved' at \(packageResolvedURL)")
-                return []
+            return decoded.pins.map {
+                Package(
+                    name: $0.identity,
+                    repositoryUrl: $0.location,
+                    requirementKind: nil,
+                    requirementParam: nil
+                )
             }
         } catch {
-            print("Error reading 'Package.resolved': \(error.localizedDescription)")
+            print("Error reading 'Package.resolved' at \(packageResolvedUrl): \(error.localizedDescription)")
             return []
         }
     }
+}
+
+struct Root: Decodable {
+    let version: Int
+    let pins: [Pin]
+    
+    struct ObjectContainer: Decodable {
+        let pins: [PinV1]
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case version, object, pins
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        version = try container.decode(Int.self, forKey: .version)
+        
+        if version == 2 || version == 3 {
+            pins = try container.decode([Pin].self, forKey: .pins)
+        } else {
+            let objectContainer = try container.decode(ObjectContainer.self, forKey: .object)
+            
+            pins = objectContainer.pins.map {
+                Pin(identity: $0.package, location: $0.repositoryURL)
+            }
+        }
+    }
+}
+
+struct Pin: Decodable {
+    let identity: String
+    let location: String
+}
+
+struct PinV1: Decodable {
+    let package: String
+    let repositoryURL: String
 }
