@@ -7,7 +7,7 @@ struct Package: Identifiable, Hashable {
     let name: String
     
     /// The repository URL of the Swift package.
-    let repositoryURL: String
+    let repositoryUrl: String
     
     /// The kind of version requirement (e.g., branch, upToNextMajorVersion).
     let requirementKind: String?
@@ -17,19 +17,19 @@ struct Package: Identifiable, Hashable {
     
     init(
         name: String,
-        repositoryURL: String,
+        repositoryUrl: String,
         requirementKind: String? = nil,
         requirementParam: String? = nil
     ) {
         self.name = name
-        self.repositoryURL = repositoryURL
+        self.repositoryUrl = repositoryUrl
         self.requirementKind = requirementKind
         self.requirementParam = requirementParam
     }
     
     var author: String? {
         // Attempt to create a URL object from the input string
-        guard let url = URL(string: repositoryURL) else {
+        guard let url = URL(string: repositoryUrl) else {
             print("Invalid URL string")
             return nil
         }

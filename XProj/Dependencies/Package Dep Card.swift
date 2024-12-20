@@ -26,7 +26,7 @@ struct PackageDepCard: View {
             .padding(.vertical, 4)
         }
         .contextMenu {
-            if let url = URL(string: package.package.repositoryURL) {
+            if let url = URL(string: package.package.repositoryUrl) {
                 Link(destination: url) {
                     Label("Open in Browser", systemImage: "link")
                 }

@@ -25,7 +25,7 @@ struct ProjDetailsPackage: View {
         }
         .padding(.vertical, 2)
         .contextMenu {
-            if let url = URL(string: package.repositoryURL) {
+            if let url = URL(string: package.repositoryUrl) {
                 Link("Open in browser", destination: url)
             }
         }

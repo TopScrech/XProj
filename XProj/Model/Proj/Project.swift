@@ -163,7 +163,7 @@ struct Project: Identifiable, Hashable {
                    let name = URL(string: rep)?.lastPathComponent {
                     return Package(
                         name: name,
-                        repositoryURL: rep,
+                        repositoryUrl: rep,
                         requirementKind: package.requirement?.keys.first ?? "",
                         requirementParam: package.requirement?.values.first as? String ?? ""
                     )

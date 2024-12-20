@@ -27,8 +27,13 @@ extension Project {
                 
                 for pin in pins {
                     if let name = pin["identity"] as? String,
-                       let repositoryURL = pin["location"] as? String {
-                        packages.append(Package(name: name, repositoryURL: repositoryURL, requirementKind: nil, requirementParam: nil))
+                       let repositoryUrl = pin["location"] as? String {
+                        packages.append(Package(
+                            name: name,
+                            repositoryUrl: repositoryUrl,
+                            requirementKind: nil,
+                            requirementParam: nil
+                        ))
                     }
                 }
                 

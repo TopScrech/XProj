@@ -21,8 +21,8 @@ struct PackageDepDetails: View {
             }
             .title()
             
-            if let url = URL(string: dependency.package.repositoryURL) {
-                Link(dependency.package.repositoryURL, destination: url)
+            if let url = URL(string: dependency.package.repositoryUrl) {
+                Link(dependency.package.repositoryUrl, destination: url)
             }
             
             Section("Projects using \(dependency.name)") {
