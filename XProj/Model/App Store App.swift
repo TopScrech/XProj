@@ -1,7 +1,7 @@
 import Foundation
 
-struct AppStoreApp: Identifiable {
-    let id = UUID()
+struct AppStoreApp: Identifiable, Decodable, Hashable {
+    var id = UUID()
     
     let name: String
     let url: URL

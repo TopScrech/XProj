@@ -1,8 +1,47 @@
 import SwiftUI
 import XcodeProjKit
 
+struct Project2: Identifiable, Hashable, Decodable {
+    var id = UUID()
+    
+    let name, path: String
+    let type: ProjType
+    let openedAt: Date
+    let modifiedAt, createdAt: Date?
+//    let attributes: [FileAttributeKey: Any]
+    
+    var swiftToolsVersion: String? = nil
+//    var packages: [Package] = []
+//    var targets: [Target] = []
+    var platforms: [String] = []
+    
+    init(
+        name: String,
+        path: String,
+        type: ProjType,
+        openedAt: Date,
+        modifiedAt: Date?,
+        createdAt: Date?
+//        attributes: [FileAttributeKey : Any]
+    ) {
+        self.name = name
+        self.path = path
+        self.type = type
+        self.openedAt = openedAt
+        self.modifiedAt = modifiedAt
+        self.createdAt = createdAt
+//        self.attributes = attributes
+        
+//        self.swiftToolsVersion = fetchSwiftToolsVersion()
+//        self.packages = parseSwiftPackages()
+//        self.targets = fetchTargets()
+//        self.platforms = fetchUniquePlatforms()
+    }
+}
+
 struct Project: Identifiable {
-    let id = UUID()
+    var id = UUID()
+    
     let name, path: String
     let type: ProjType
     let openedAt: Date

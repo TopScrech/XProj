@@ -76,6 +76,26 @@
 		F3B389D32D102F5E0082C2F3 /* Package Dep List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */; };
 		F3B389D62D1032A40082C2F3 /* Package Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D52D1032A40082C2F3 /* Package Dependency.swift */; };
 		F3D1E75F2C9B40B4000C81FF /* Main Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */; };
+		F3DAD6732D161EAA0012BA9D /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = F3DAD66A2D161EAA0012BA9D /* Recipes.json */; };
+		F3DAD6752D161EAA0012BA9D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6712D161EAA0012BA9D /* Recipe.swift */; };
+		F3DAD6762D161EAA0012BA9D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66E2D161EAA0012BA9D /* Category.swift */; };
+		F3DAD6772D161EAA0012BA9D /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66F2D161EAA0012BA9D /* Experience.swift */; };
+		F3DAD6782D161EAA0012BA9D /* TwoColumnContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6652D161EAA0012BA9D /* TwoColumnContentView.swift */; };
+		F3DAD6792D161EAA0012BA9D /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6702D161EAA0012BA9D /* Ingredient.swift */; };
+		F3DAD67A2D161EAA0012BA9D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66C2D161EAA0012BA9D /* DataModel.swift */; };
+		F3DAD67B2D161EAA0012BA9D /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66D2D161EAA0012BA9D /* NavigationModel.swift */; };
+		F3DAD67C2D161EAA0012BA9D /* ThreeColumnContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6662D161EAA0012BA9D /* ThreeColumnContentView.swift */; };
+		F3DAD67E2D161EAA0012BA9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6632D161EAA0012BA9D /* ContentView.swift */; };
+		F3DAD67F2D161EAA0012BA9D /* StackContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6642D161EAA0012BA9D /* StackContentView.swift */; };
+		F3DAD68A2D161ECC0012BA9D /* RecipeGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6862D161ECC0012BA9D /* RecipeGrid.swift */; };
+		F3DAD68B2D161ECC0012BA9D /* ExperienceToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6842D161ECC0012BA9D /* ExperienceToolbar.swift */; };
+		F3DAD68C2D161ECC0012BA9D /* ExperienceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6812D161ECC0012BA9D /* ExperienceButton.swift */; };
+		F3DAD68D2D161ECC0012BA9D /* ExperiencePickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6832D161ECC0012BA9D /* ExperiencePickerRow.swift */; };
+		F3DAD68E2D161ECC0012BA9D /* ExperiencePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6822D161ECC0012BA9D /* ExperiencePicker.swift */; };
+		F3DAD68F2D161ECC0012BA9D /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6802D161ECC0012BA9D /* ContinueButton.swift */; };
+		F3DAD6902D161ECC0012BA9D /* RecipePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6872D161ECC0012BA9D /* RecipePhoto.swift */; };
+		F3DAD6912D161ECC0012BA9D /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */; };
+		F3DAD6922D161ECC0012BA9D /* RecipeTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6882D161ECC0012BA9D /* RecipeTile.swift */; };
 		F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */; };
 		F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */; };
 /* End PBXBuildFile section */
@@ -154,6 +174,26 @@
 		F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep List.swift"; sourceTree = "<group>"; };
 		F3B389D52D1032A40082C2F3 /* Package Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dependency.swift"; sourceTree = "<group>"; };
 		F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main Settings.swift"; sourceTree = "<group>"; };
+		F3DAD6632D161EAA0012BA9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F3DAD6642D161EAA0012BA9D /* StackContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackContentView.swift; sourceTree = "<group>"; };
+		F3DAD6652D161EAA0012BA9D /* TwoColumnContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoColumnContentView.swift; sourceTree = "<group>"; };
+		F3DAD6662D161EAA0012BA9D /* ThreeColumnContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeColumnContentView.swift; sourceTree = "<group>"; };
+		F3DAD66A2D161EAA0012BA9D /* Recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
+		F3DAD66C2D161EAA0012BA9D /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		F3DAD66D2D161EAA0012BA9D /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
+		F3DAD66E2D161EAA0012BA9D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		F3DAD66F2D161EAA0012BA9D /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
+		F3DAD6702D161EAA0012BA9D /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		F3DAD6712D161EAA0012BA9D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		F3DAD6802D161ECC0012BA9D /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
+		F3DAD6812D161ECC0012BA9D /* ExperienceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceButton.swift; sourceTree = "<group>"; };
+		F3DAD6822D161ECC0012BA9D /* ExperiencePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencePicker.swift; sourceTree = "<group>"; };
+		F3DAD6832D161ECC0012BA9D /* ExperiencePickerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencePickerRow.swift; sourceTree = "<group>"; };
+		F3DAD6842D161ECC0012BA9D /* ExperienceToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceToolbar.swift; sourceTree = "<group>"; };
+		F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
+		F3DAD6862D161ECC0012BA9D /* RecipeGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeGrid.swift; sourceTree = "<group>"; };
+		F3DAD6872D161ECC0012BA9D /* RecipePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePhoto.swift; sourceTree = "<group>"; };
+		F3DAD6882D161ECC0012BA9D /* RecipeTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTile.swift; sourceTree = "<group>"; };
 		F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List Toolbar.swift"; sourceTree = "<group>"; };
 		F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Projects.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +283,7 @@
 				F3341E352BDE358A00E85F27 /* XProj.entitlements */,
 				F313BE1C2C871E13005C8B60 /* Examples.zip */,
 				F37831DE2D12EA34007F7858 /* Preview Projects.swift */,
+				F3DAD65B2D161E600012BA9D /* New Nav */,
 				F37831D92D12E028007F7858 /* funcs */,
 				F37831CA2D11A75F007F7858 /* Proj List */,
 				F3B389BD2D0ECB090082C2F3 /* Proj Details */,
@@ -407,6 +448,57 @@
 			path = Dependencies;
 			sourceTree = "<group>";
 		};
+		F3DAD65B2D161E600012BA9D /* New Nav */ = {
+			isa = PBXGroup;
+			children = (
+				F3DAD66A2D161EAA0012BA9D /* Recipes.json */,
+				F3DAD6672D161EAA0012BA9D /* Nav */,
+				F3DAD6722D161EAA0012BA9D /* Models */,
+				F3DAD6892D161ECC0012BA9D /* Views */,
+			);
+			path = "New Nav";
+			sourceTree = "<group>";
+		};
+		F3DAD6672D161EAA0012BA9D /* Nav */ = {
+			isa = PBXGroup;
+			children = (
+				F3DAD6632D161EAA0012BA9D /* ContentView.swift */,
+				F3DAD6642D161EAA0012BA9D /* StackContentView.swift */,
+				F3DAD6652D161EAA0012BA9D /* TwoColumnContentView.swift */,
+				F3DAD6662D161EAA0012BA9D /* ThreeColumnContentView.swift */,
+			);
+			path = Nav;
+			sourceTree = "<group>";
+		};
+		F3DAD6722D161EAA0012BA9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3DAD66C2D161EAA0012BA9D /* DataModel.swift */,
+				F3DAD66D2D161EAA0012BA9D /* NavigationModel.swift */,
+				F3DAD66E2D161EAA0012BA9D /* Category.swift */,
+				F3DAD66F2D161EAA0012BA9D /* Experience.swift */,
+				F3DAD6702D161EAA0012BA9D /* Ingredient.swift */,
+				F3DAD6712D161EAA0012BA9D /* Recipe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F3DAD6892D161ECC0012BA9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3DAD6802D161ECC0012BA9D /* ContinueButton.swift */,
+				F3DAD6812D161ECC0012BA9D /* ExperienceButton.swift */,
+				F3DAD6822D161ECC0012BA9D /* ExperiencePicker.swift */,
+				F3DAD6832D161ECC0012BA9D /* ExperiencePickerRow.swift */,
+				F3DAD6842D161ECC0012BA9D /* ExperienceToolbar.swift */,
+				F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */,
+				F3DAD6862D161ECC0012BA9D /* RecipeGrid.swift */,
+				F3DAD6872D161ECC0012BA9D /* RecipePhoto.swift */,
+				F3DAD6882D161ECC0012BA9D /* RecipeTile.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F3DB25452C2C4E8B00A0C066 /* Nav */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,6 +630,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3DAD6732D161EAA0012BA9D /* Recipes.json in Resources */,
 				F313BE1D2C871E13005C8B60 /* Examples.zip in Resources */,
 				F3341E312BDE358A00E85F27 /* Assets.xcassets in Resources */,
 			);
@@ -576,6 +669,25 @@
 				F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */,
 				F3B389CD2D0FAC770082C2F3 /* Derived Data Folder.swift in Sources */,
 				F3341E2F2BDE358900E85F27 /* Proj List.swift in Sources */,
+				F3DAD6752D161EAA0012BA9D /* Recipe.swift in Sources */,
+				F3DAD6762D161EAA0012BA9D /* Category.swift in Sources */,
+				F3DAD6772D161EAA0012BA9D /* Experience.swift in Sources */,
+				F3DAD6782D161EAA0012BA9D /* TwoColumnContentView.swift in Sources */,
+				F3DAD6792D161EAA0012BA9D /* Ingredient.swift in Sources */,
+				F3DAD67A2D161EAA0012BA9D /* DataModel.swift in Sources */,
+				F3DAD68A2D161ECC0012BA9D /* RecipeGrid.swift in Sources */,
+				F3DAD68B2D161ECC0012BA9D /* ExperienceToolbar.swift in Sources */,
+				F3DAD68C2D161ECC0012BA9D /* ExperienceButton.swift in Sources */,
+				F3DAD68D2D161ECC0012BA9D /* ExperiencePickerRow.swift in Sources */,
+				F3DAD68E2D161ECC0012BA9D /* ExperiencePicker.swift in Sources */,
+				F3DAD68F2D161ECC0012BA9D /* ContinueButton.swift in Sources */,
+				F3DAD6902D161ECC0012BA9D /* RecipePhoto.swift in Sources */,
+				F3DAD6912D161ECC0012BA9D /* RecipeDetail.swift in Sources */,
+				F3DAD6922D161ECC0012BA9D /* RecipeTile.swift in Sources */,
+				F3DAD67B2D161EAA0012BA9D /* NavigationModel.swift in Sources */,
+				F3DAD67C2D161EAA0012BA9D /* ThreeColumnContentView.swift in Sources */,
+				F3DAD67E2D161EAA0012BA9D /* ContentView.swift in Sources */,
+				F3DAD67F2D161EAA0012BA9D /* StackContentView.swift in Sources */,
 				F371A51B2C2D8D58006BDF0D /* MB Proj List.swift in Sources */,
 				F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */,
 				F3B389C32D0F93500082C2F3 /* Package.swift in Sources */,

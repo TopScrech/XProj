@@ -1,4 +1,4 @@
-enum ProjType: String {
+enum ProjType: String, Decodable {
     case proj,
          workspace,
          package,

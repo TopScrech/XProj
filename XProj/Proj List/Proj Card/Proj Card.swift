@@ -47,7 +47,7 @@ struct ProjCard: View {
                 
                 //            Text(proj.attributes[.size] as? String ?? "")
                 //                .footnote()
-                //                .foregroundStyle(.secondary)
+                //                .secondary()
             }
             .padding(.vertical, 5)
         }

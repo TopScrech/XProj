@@ -6,8 +6,12 @@ struct XProjApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            ContentView()
                 .environment(vm)
+                .frame(minWidth: 800, minHeight: 600)
+        }
+        .commands {
+            SidebarCommands()
         }
         
         Settings {

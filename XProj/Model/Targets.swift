@@ -1,8 +1,8 @@
 import Foundation
 import XcodeProjKit
 
-class Target: Identifiable {
-    let id = UUID()
+class Target: Identifiable, Decodable {
+    var id = UUID()
     
     let name: String
     let bundleId: String?
@@ -27,7 +27,7 @@ class Target: Identifiable {
     }
 }
 
-enum TargetType: String {
+enum TargetType: String, Decodable, Hashable {
     //    case iOS, tvOS, watchOS, macOS, visionOS, widgets, iMessage
     case app,
          widgets,
