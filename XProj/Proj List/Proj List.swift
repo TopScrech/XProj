@@ -9,13 +9,13 @@ struct ProjList: View {
         self.projects = projects
     }
     
-    @State private var selectedProjects: Set<Project.ID> = []
+    @State private var selectedProjects: Set<Project> = []
     
     var body: some View {
         @Bindable var vm = vm
         
-        List(projects, selection: $selectedProjects) { proj in
-            ProjCard(proj)
+        List(projects, selection: $selectedProjects) {
+            ProjCard($0)
         }
         .searchable(text: $vm.searchPrompt)
         .searchSuggestions {

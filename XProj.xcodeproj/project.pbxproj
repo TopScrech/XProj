@@ -23,6 +23,7 @@
 		F3341E3C2BDE3C8B00E85F27 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3341E3B2BDE3C8B00E85F27 /* Project.swift */; };
 		F3341E3F2BDEAB4D00E85F27 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3341E3E2BDEAB4D00E85F27 /* ScrechKit */; };
 		F3341E412BDEB71F00E85F27 /* Proj List VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3341E402BDEB71F00E85F27 /* Proj List VM.swift */; };
+		F350D4262D156BAE000EEA57 /* Project Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F350D4252D156BAE000EEA57 /* Project Hashable.swift */; };
 		F3522DC62C2A29C000660101 /* Derived Data List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DC52C2A29C000660101 /* Derived Data List.swift */; };
 		F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCA2C2A2A5600660101 /* Derived Data VM.swift */; };
 		F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCC2C2AA32C00660101 /* File Manager.swift */; };
@@ -99,6 +100,7 @@
 		F3341E352BDE358A00E85F27 /* XProj.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XProj.entitlements; sourceTree = "<group>"; };
 		F3341E3B2BDE3C8B00E85F27 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		F3341E402BDEB71F00E85F27 /* Proj List VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List VM.swift"; sourceTree = "<group>"; };
+		F350D4252D156BAE000EEA57 /* Project Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project Hashable.swift"; sourceTree = "<group>"; };
 		F3522DC52C2A29C000660101 /* Derived Data List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data List.swift"; sourceTree = "<group>"; };
 		F3522DCA2C2A2A5600660101 /* Derived Data VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data VM.swift"; sourceTree = "<group>"; };
 		F3522DCC2C2AA32C00660101 /* File Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File Manager.swift"; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				F3341E3B2BDE3C8B00E85F27 /* Project.swift */,
+				F350D4252D156BAE000EEA57 /* Project Hashable.swift */,
 				F3B389C62D0F9B340082C2F3 /* Proj Icon.swift */,
 				F3B389C02D0F92500082C2F3 /* Proj Type.swift */,
 				F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */,
@@ -605,6 +608,7 @@
 				F31EF9472D103896000F95A7 /* Package Dep Card.swift in Sources */,
 				F3341E3C2BDE3C8B00E85F27 /* Project.swift in Sources */,
 				F371A5192C2D84BA006BDF0D /* Proj Card VM.swift in Sources */,
+				F350D4262D156BAE000EEA57 /* Project Hashable.swift in Sources */,
 				F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */,
 				F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */,
 				F3B389CB2D0FA5880082C2F3 /* Only Package List.swift in Sources */,

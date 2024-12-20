@@ -1,7 +1,7 @@
 import SwiftUI
 import XcodeProjKit
 
-struct Project: Identifiable, Hashable {
+struct Project: Identifiable {
     let id = UUID()
     let name, path: String
     let type: ProjType
@@ -66,68 +66,6 @@ struct Project: Identifiable, Hashable {
         let uniquePlatforms = Array(Set(allPlatforms))
         
         return uniquePlatforms
-    }
-    
-    // Hashable conformance
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-        hasher.combine(name)
-        hasher.combine(path)
-        hasher.combine(type)
-        hasher.combine(openedAt)
-        
-        // Convert attributes to a hashable form
-        let attributeArray = attributes.map {
-            ($0.key, $0.value)
-        }
-        
-        for (key, value) in attributeArray {
-            hasher.combine(key)
-            
-            // Use `AnyHashable` to hash the value
-            if let hashableValue = value as? AnyHashable {
-                hasher.combine(hashableValue)
-            } else {
-                // If value is not hashable, convert it to something that is hashable
-                // or handle it based on your specific requirements
-                fatalError("Non-hashable value found in attributes")
-            }
-        }
-    }
-    
-    static func == (lhs: Project, rhs: Project) -> Bool {
-        lhs.id == rhs.id &&
-        lhs.name == rhs.name &&
-        lhs.path == rhs.path &&
-        lhs.type == rhs.type &&
-        lhs.openedAt == rhs.openedAt &&
-        lhs.attributesAreEqual(rhs.attributes)
-    }
-    
-    private func attributesAreEqual(_ otherAttributes: [FileAttributeKey: Any]) -> Bool {
-        // Ensure attributes dictionaries are equal
-        guard attributes.count == otherAttributes.count else {
-            return false
-        }
-        
-        for (key, value) in attributes {
-            guard let otherValue = otherAttributes[key] else {
-                return false
-            }
-            
-            // Compare values if possible
-            if let equatableValue = value as? AnyHashable,
-               let otherEquatableValue = otherValue as? AnyHashable {
-                if equatableValue != otherEquatableValue {
-                    return false
-                }
-            } else {
-                // Handle non-comparable values based on your specific requirements
-                fatalError("Non-equatable value found in attributes")
-            }
-        }
-        
-        return true
     }
     
     func parseSwiftPackages() -> [Package] {

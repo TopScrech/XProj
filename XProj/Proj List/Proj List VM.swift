@@ -87,11 +87,7 @@ final class ProjListVM {
         findProj(path)
     }
     
-    func openProjects(_ selectedProjects: Set<Project.ID>) {
-        let selected = projects.filter {
-            selectedProjects.contains($0.id)
-        }
-        
+    func openProjects(_ selected: Set<Project>) {
         let paths = selected.map(\.path)
         
         for path in paths {
