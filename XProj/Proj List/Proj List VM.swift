@@ -210,7 +210,9 @@ final class ProjListVM {
     }
     
     private func processProj(_ proj: String, at path: String) throws {
-        let projPath = path + "/" + proj
+        var name = proj
+        
+        let projPath = path + "/" + name
         let attributes = try fm.attributesOfItem(atPath: projPath)
         
         let typeAttribute = attributes[.type] as? String ?? "Other"
@@ -219,7 +221,7 @@ final class ProjListVM {
             return
         }
         
-        if proj == ".git" || proj == ".build" || proj == "Not Xcode" {
+        if name == ".git" || name == ".build" {
             return
         }
         
@@ -242,8 +244,9 @@ final class ProjListVM {
             //                fileType = .package
             //            }
             
-        } else if proj.contains(".playground") {
+        } else if name.contains(".playground") {
             fileType = .playground
+            name = name.replacingOccurrences(of: ".playground", with: "")
             
         } else {
             switch typeAttribute {
@@ -265,7 +268,7 @@ final class ProjListVM {
         
         self.projects.append(
             Project(
-                name: proj,
+                name: name,
                 path: projPath,
                 type: fileType,
                 openedAt: openedAt,
