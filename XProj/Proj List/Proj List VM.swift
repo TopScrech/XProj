@@ -280,17 +280,16 @@ final class ProjListVM {
     }
     
     private func hasVapor( _ path: String) -> Bool {
-        let fm = FileManager.default
+        let resolvedPath = path + "/Package.resolved"
         
-        let filePath = path + "/Package.resolved"
-        let vaporUrl = "https://github.com/vapor/vapor.git"
-        
-        guard fm.fileExists(atPath: path) else {
+        guard fm.fileExists(atPath: resolvedPath) else {
             return false
         }
         
+        let vaporUrl = "https://github.com/vapor/vapor.git"
+        
         do {
-            let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
+            let fileContents = try String(contentsOfFile: resolvedPath, encoding: .utf8)
             
             let containsVapor = fileContents.contains(vaporUrl)
             
