@@ -17,9 +17,6 @@ struct ThreeColumnContainer: View {
             .navigationTitle("Categories")
         } content: {
             if let category = nav.selectedCategory {
-                //                if category == .allItems {
-                //                    ProjList(vm.projects)
-                //                } else {
                 List(selection: $nav.selectedRecipe) {
                     ForEach(dataModel.recipes(in: category)) { recipe in
                         NavigationLink(recipe.name, value: recipe)
@@ -30,7 +27,6 @@ struct ThreeColumnContainer: View {
                     nav.selectedCategory = nil
                 }
                 .experienceToolbar()
-                //                }
             } else {
                 Text("Choose a category")
                     .navigationTitle("")

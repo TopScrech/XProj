@@ -99,8 +99,7 @@ private func processPath(_ path: String) throws -> [Recipe] {
     
     var found: [Recipe] = []
     
-#warning("10")
-    for proj in projects.prefix(upTo: 10) {
+    for proj in projects {
         if let projj = try processProj(proj, at: path) {
             found.append(projj)
         }
