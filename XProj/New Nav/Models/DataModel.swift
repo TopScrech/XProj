@@ -4,9 +4,9 @@ import SwiftUI
 
 @Observable
 final class DataModel {
-    private(set) var projects: [Recipe]
+    private(set) var projects: [Proj]
     
-    private var recipesById: [Recipe.ID: Recipe] = [:]
+    private var recipesById: [Proj.ID: Proj] = [:]
     
     // The shared singleton data model object
     static let shared = {
@@ -39,7 +39,7 @@ final class DataModel {
 //    }
     
     /// The recipes for a given category, sorted by name
-    func recipes(in type: ProjType?) -> [Recipe] {
+    func recipes(in type: ProjType?) -> [Proj] {
         projects
             .filter {
                 $0.type == type
@@ -55,7 +55,7 @@ final class DataModel {
     
     /// Accesses the recipe associated with the given unique identifier
     /// if the identifier is tracked by the data model; otherwise, returns `nil`
-    subscript(recipeId: Recipe.ID) -> Recipe? {
+    subscript(recipeId: Proj.ID) -> Proj? {
         recipesById[recipeId]
     }
 }
@@ -66,9 +66,9 @@ final class ProjListVMNew {
     var projectsFolder = ""
     private let udKey = "projects_folder_bookmark"
     
-    var projects: [Recipe] = []
+    var projects: [Proj] = []
     
-    func getFolders() -> [Recipe] {
+    func getFolders() -> [Proj] {
         let startTime = CFAbsoluteTimeGetCurrent()
         restoreAccessToFolderOld()
         projects = []
@@ -155,7 +155,7 @@ final class ProjListVMNew {
         let createdAt = attributes[.creationDate] as? Date
         
         projects.append(
-            Recipe(
+            Proj(
                 id: projPath,
                 name: name,
                 path: projPath,

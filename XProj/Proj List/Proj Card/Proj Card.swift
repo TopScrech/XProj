@@ -12,7 +12,7 @@ struct ProjCard: View {
     
     var body: some View {
         NavigationLink {
-            ProjDetails(proj)
+//            ProjDetails(proj)
         } label: {
             HStack {
                 ProjCardImage(proj)

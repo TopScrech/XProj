@@ -4,7 +4,8 @@ import XcodeProjKit
 struct Project: Identifiable {
     var id = UUID()
     
-    let name, path: String
+    let name: String
+    let path: String
     let type: ProjType
     let openedAt: Date
     let modifiedAt: Date?

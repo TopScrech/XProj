@@ -3,7 +3,7 @@
 import SwiftUI
 import XcodeProjKit
 
-struct Recipe: Identifiable, Hashable, Decodable {
+struct Proj: Identifiable, Hashable, Decodable {
     var id: String
     var name: String
     var path: String
@@ -129,8 +129,8 @@ struct Recipe: Identifiable, Hashable, Decodable {
     }
 }
 
-extension Recipe {
-    static var mock: Recipe {
+extension Proj {
+    static var mock: Proj {
         DataModel.shared.projects[0]
     }
 }

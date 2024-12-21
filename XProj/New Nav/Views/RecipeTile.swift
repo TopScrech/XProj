@@ -3,9 +3,9 @@
 import SwiftUI
 
 struct RecipeTile: View {
-    private var recipe: Recipe
+    private var recipe: Proj
     
-    init(_ recipe: Recipe) {
+    init(_ recipe: Proj) {
         self.recipe = recipe
     }
     

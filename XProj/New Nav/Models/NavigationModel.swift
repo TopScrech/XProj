@@ -8,7 +8,7 @@ final class NavigationModel: Codable {
     var selectedCategory: ProjType?
     
     /// The homogenous navigation state used by the app's navigation stacks
-    var recipePath: [Recipe]
+    var recipePath: [Proj]
     
     /// The leading columns' visibility state used by the app's navigation split views
     var columnVisibility: NavigationSplitViewVisibility
@@ -38,7 +38,7 @@ final class NavigationModel: Codable {
     init(
         columnVisibility: NavigationSplitViewVisibility = .automatic,
         selectedCategory: ProjType? = nil,
-        recipePath: [Recipe] = []
+        recipePath: [Proj] = []
     ) {
         self.columnVisibility = columnVisibility
         self.selectedCategory = selectedCategory
@@ -83,7 +83,7 @@ final class NavigationModel: Codable {
     }
     
     /// The selected recipe; otherwise returns `nil`
-    var selectedProj: Set<Recipe> {
+    var selectedProj: Set<Proj> {
         get {
             Set(recipePath)
         } set {
@@ -118,7 +118,7 @@ final class NavigationModel: Codable {
         )
         
         let recipePathIds = try container.decode(
-            [Recipe.ID].self,
+            [Proj.ID].self,
             forKey: .recipePathIds
         )
         

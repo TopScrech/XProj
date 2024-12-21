@@ -34,7 +34,7 @@ extension Project {
     }
 }
 
-extension Recipe {
+extension Proj {
     /// Fetches and returns Swift package dependencies as an array of `Package` structs
     ///
     /// - Returns: An array of `Package` structs with the name and repository URL

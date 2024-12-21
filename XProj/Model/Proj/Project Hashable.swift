@@ -8,7 +8,10 @@ extension Project: Hashable {
         hasher.combine(type)
         hasher.combine(openedAt)
         
-        let sortedAttributes = attributes.sorted { $0.key.rawValue < $1.key.rawValue }
+        let sortedAttributes = attributes.sorted {
+            $0.key.rawValue < $1.key.rawValue
+        }
+        
         for (key, value) in sortedAttributes {
             hasher.combine(key.rawValue)
             if let hashableValue = value as? AnyHashable {

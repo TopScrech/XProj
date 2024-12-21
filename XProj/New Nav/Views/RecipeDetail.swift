@@ -3,10 +3,10 @@
 import SwiftUI
 
 struct RecipeDetail<Link: View>: View {
-    var recipe: Recipe?
-    var relatedLink: (Recipe) -> Link
+    var recipe: Proj?
+    var relatedLink: (Proj) -> Link
     
-    init(_ recipe: Recipe?, relatedLink: @escaping (Recipe) -> Link) {
+    init(_ recipe: Proj?, relatedLink: @escaping (Proj) -> Link) {
         self.recipe = recipe
         self.relatedLink = relatedLink
     }
@@ -25,8 +25,8 @@ struct RecipeDetail<Link: View>: View {
 private struct Content<Link: View>: View {
     @Environment(DataModel.self) private var dataModel
     
-    var recipe: Recipe
-    var relatedLink: (Recipe) -> Link
+    var recipe: Proj
+    var relatedLink: (Proj) -> Link
     
     var body: some View {
         ScrollView {

@@ -76,7 +76,7 @@
 		F3B389D32D102F5E0082C2F3 /* Package Dep List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */; };
 		F3B389D62D1032A40082C2F3 /* Package Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D52D1032A40082C2F3 /* Package Dependency.swift */; };
 		F3D1E75F2C9B40B4000C81FF /* Main Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */; };
-		F3DAD6752D161EAA0012BA9D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6712D161EAA0012BA9D /* Recipe.swift */; };
+		F3DAD6752D161EAA0012BA9D /* Proj.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6712D161EAA0012BA9D /* Proj.swift */; };
 		F3DAD6772D161EAA0012BA9D /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66F2D161EAA0012BA9D /* Experience.swift */; };
 		F3DAD6782D161EAA0012BA9D /* Two Column Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6652D161EAA0012BA9D /* Two Column Container.swift */; };
 		F3DAD6792D161EAA0012BA9D /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6702D161EAA0012BA9D /* Ingredient.swift */; };
@@ -180,7 +180,7 @@
 		F3DAD66D2D161EAA0012BA9D /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		F3DAD66F2D161EAA0012BA9D /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		F3DAD6702D161EAA0012BA9D /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
-		F3DAD6712D161EAA0012BA9D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		F3DAD6712D161EAA0012BA9D /* Proj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proj.swift; sourceTree = "<group>"; };
 		F3DAD6802D161ECC0012BA9D /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
 		F3DAD6812D161ECC0012BA9D /* ExperienceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceButton.swift; sourceTree = "<group>"; };
 		F3DAD6822D161ECC0012BA9D /* ExperiencePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencePicker.swift; sourceTree = "<group>"; };
@@ -472,7 +472,7 @@
 				F3DAD66D2D161EAA0012BA9D /* NavigationModel.swift */,
 				F3DAD66F2D161EAA0012BA9D /* Experience.swift */,
 				F3DAD6702D161EAA0012BA9D /* Ingredient.swift */,
-				F3DAD6712D161EAA0012BA9D /* Recipe.swift */,
+				F3DAD6712D161EAA0012BA9D /* Proj.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -662,7 +662,7 @@
 				F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */,
 				F3B389CD2D0FAC770082C2F3 /* Derived Data Folder.swift in Sources */,
 				F3341E2F2BDE358900E85F27 /* Proj List.swift in Sources */,
-				F3DAD6752D161EAA0012BA9D /* Recipe.swift in Sources */,
+				F3DAD6752D161EAA0012BA9D /* Proj.swift in Sources */,
 				F3DAD6772D161EAA0012BA9D /* Experience.swift in Sources */,
 				F3DAD6782D161EAA0012BA9D /* Two Column Container.swift in Sources */,
 				F3DAD6792D161EAA0012BA9D /* Ingredient.swift in Sources */,

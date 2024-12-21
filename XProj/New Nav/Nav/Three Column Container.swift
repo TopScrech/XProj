@@ -31,18 +31,20 @@ struct ThreeColumnContainer: View {
                     .navigationTitle("")
             }
         } detail: {
-            if let selectedRecipe = nav.selectedProj.first {
+            if let selectedProj = nav.selectedProj.first {
                 Text("Seleted \(nav.selectedProj.count)")
                 
-                RecipeDetail(selectedRecipe) { relatedRecipe in
-                    Button {
-                        nav.selectedCategory = relatedRecipe.type
-                        nav.selectedProj = Set([relatedRecipe])
-                    } label: {
-                        RecipeTile(relatedRecipe)
-                    }
-                    .buttonStyle(.plain)
-                }
+                ProjDetails(selectedProj)
+                
+//                RecipeDetail(selectedProj) { relatedRecipe in
+//                    Button {
+//                        nav.selectedCategory = relatedRecipe.type
+//                        nav.selectedProj = Set([relatedRecipe])
+//                    } label: {
+//                        RecipeTile(relatedRecipe)
+//                    }
+//                    .buttonStyle(.plain)
+//                }
             }
         }
     }

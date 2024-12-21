@@ -1,11 +1,9 @@
 import ScrechKit
 
 struct ProjDetails: View {
-    @Environment(ProjListVM.self) private var vm
+    private let proj: Proj
     
-    private let proj: Project
-    
-    init(_ proj: Project) {
+    init(_ proj: Proj) {
         self.proj = proj
     }
     
@@ -40,7 +38,7 @@ struct ProjDetails: View {
     }
 }
 
-#Preview {
-    ProjDetails(previewProj1)
-        .environment(ProjListVM())
-}
+//#Preview {
+//    ProjDetails(previewProj1)
+//        .environment(ProjListVM())
+//}

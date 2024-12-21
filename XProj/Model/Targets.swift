@@ -141,7 +141,7 @@ extension Project {
     }
 }
 
-extension Recipe {
+extension Proj {
     func fetchTargets() -> [Target] {
         guard
             type == .proj,

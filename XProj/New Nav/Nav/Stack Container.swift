@@ -23,7 +23,7 @@ struct StackContainer: View {
             }
             .navigationTitle("Categories")
             .experienceToolbar()
-            .navigationDestination(for: Recipe.self) { proj in
+            .navigationDestination(for: Proj.self) { proj in
                 RecipeDetail(proj) { relatedProj in
                     Button {
                         nav.recipePath.append(relatedProj)
