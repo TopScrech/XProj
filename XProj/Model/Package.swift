@@ -3,16 +3,16 @@ import Foundation
 struct Package: Identifiable, Hashable, Decodable {
     var id = UUID()
     
-    /// The name of the Swift package.
+    /// The name of the Swift package
     let name: String
     
-    /// The repository URL of the Swift package.
+    /// The repository URL of the Swift package
     let repositoryUrl: String
     
-    /// The kind of version requirement (e.g., branch, upToNextMajorVersion).
+    /// The kind of version requirement (e.g., branch, upToNextMajorVersion)
     let requirementKind: String?
     
-    /// The parameter associated with the requirement kind (e.g., branch name or minimum version).
+    /// The parameter associated with the requirement kind (e.g., branch name or minimum version)
     let requirementParam: String?
     
     init(
