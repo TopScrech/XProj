@@ -4,10 +4,15 @@ import ScrechKit
 struct XProjApp: App {
     @State private var vm = ProjListVM()
     
+    private var nav: NavigationModel = .shared
+    private var dataModel: DataModel = .shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(vm)
+                .environment(nav)
+                .environment(dataModel)
                 .frame(minWidth: 800, minHeight: 600)
         }
         .commands {
@@ -17,6 +22,8 @@ struct XProjApp: App {
         Settings {
             SettingsView()
                 .environment(vm)
+                .environment(nav)
+                .environment(dataModel)
         }
         
         MenuBarExtra("Project List", systemImage: "hammer") {
@@ -24,6 +31,8 @@ struct XProjApp: App {
                 MBProjList()
             }
             .environment(vm)
+            .environment(nav)
+            .environment(dataModel)
         }
         .menuBarExtraStyle(.window)
     }

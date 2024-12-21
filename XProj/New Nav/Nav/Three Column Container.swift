@@ -17,32 +17,28 @@ struct ThreeColumnContainer: View {
             .navigationTitle("Categories")
         } content: {
             if let category = nav.selectedCategory {
-                List(selection: $nav.selectedRecipe) {
+                List(selection: $nav.selectedProj) {
                     ForEach(dataModel.recipes(in: category)) { recipe in
                         NavigationLink(recipe.name, value: recipe)
                     }
                 }
                 .navigationTitle(category.localizedName)
+                .experienceToolbar()
                 .onDisappear {
                     nav.selectedCategory = nil
                 }
-                .experienceToolbar()
             } else {
                 Text("Choose a category")
                     .navigationTitle("")
             }
         } detail: {
-            Button("Clear nav") {
-                nav.prochistitZalupu()
-            }
-            
-            if let selectedRecipe = nav.selectedRecipe.first {
-                Text("Seleted \(nav.selectedRecipe.count)")
+            if let selectedRecipe = nav.selectedProj.first {
+                Text("Seleted \(nav.selectedProj.count)")
                 
                 RecipeDetail(selectedRecipe) { relatedRecipe in
                     Button {
                         nav.selectedCategory = relatedRecipe.type
-                        nav.selectedRecipe = Set([relatedRecipe])
+                        nav.selectedProj = Set([relatedRecipe])
                     } label: {
                         RecipeTile(relatedRecipe)
                     }

@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(NavigationModel.self) private var nav
+    @Environment(DataModel.self) private var dataModel
+    
     @Environment(\.appearsActive) private var appearsActive
     @Environment(\.scenePhase) private var scenePhase
-    
-    private var nav: NavigationModel = .shared
-    private var dataModel: DataModel = .shared
     
     @AppStorage("experience") private var experience: Experience?
     
@@ -36,8 +36,6 @@ struct ContentView: View {
                 }
             }
         }
-        .environment(nav)
-        .environment(dataModel)
         .sheet($nav.showExperiencePicker) {
             ExperiencePicker($experience)
         }
@@ -51,7 +49,7 @@ struct ContentView: View {
                 print(error)
             }
         }
-        .onChange(of: nav.selectedRecipe) { _, newExperience in
+        .onChange(of: nav.selectedProj) { _, newExperience in
             do {
                 try nav.save()
             } catch {

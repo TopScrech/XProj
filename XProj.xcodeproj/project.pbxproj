@@ -76,7 +76,6 @@
 		F3B389D32D102F5E0082C2F3 /* Package Dep List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */; };
 		F3B389D62D1032A40082C2F3 /* Package Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D52D1032A40082C2F3 /* Package Dependency.swift */; };
 		F3D1E75F2C9B40B4000C81FF /* Main Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */; };
-		F3DAD6732D161EAA0012BA9D /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = F3DAD66A2D161EAA0012BA9D /* Recipes.json */; };
 		F3DAD6752D161EAA0012BA9D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6712D161EAA0012BA9D /* Recipe.swift */; };
 		F3DAD6772D161EAA0012BA9D /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66F2D161EAA0012BA9D /* Experience.swift */; };
 		F3DAD6782D161EAA0012BA9D /* Two Column Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6652D161EAA0012BA9D /* Two Column Container.swift */; };
@@ -177,7 +176,6 @@
 		F3DAD6642D161EAA0012BA9D /* Stack Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stack Container.swift"; sourceTree = "<group>"; };
 		F3DAD6652D161EAA0012BA9D /* Two Column Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Two Column Container.swift"; sourceTree = "<group>"; };
 		F3DAD6662D161EAA0012BA9D /* Three Column Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Three Column Container.swift"; sourceTree = "<group>"; };
-		F3DAD66A2D161EAA0012BA9D /* Recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
 		F3DAD66C2D161EAA0012BA9D /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		F3DAD66D2D161EAA0012BA9D /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		F3DAD66F2D161EAA0012BA9D /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
@@ -449,7 +447,6 @@
 		F3DAD65B2D161E600012BA9D /* New Nav */ = {
 			isa = PBXGroup;
 			children = (
-				F3DAD66A2D161EAA0012BA9D /* Recipes.json */,
 				F3DAD6672D161EAA0012BA9D /* Nav */,
 				F3DAD6722D161EAA0012BA9D /* Models */,
 				F3DAD6892D161ECC0012BA9D /* Views */,
@@ -627,7 +624,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3DAD6732D161EAA0012BA9D /* Recipes.json in Resources */,
 				F313BE1D2C871E13005C8B60 /* Examples.zip in Resources */,
 				F3341E312BDE358A00E85F27 /* Assets.xcassets in Resources */,
 			);

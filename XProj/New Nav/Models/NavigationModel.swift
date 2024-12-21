@@ -87,7 +87,7 @@ final class NavigationModel: Codable {
     }
     
     /// The selected recipe; otherwise returns `nil`
-    var selectedRecipe: Set<Recipe> {
+    var selectedProj: Set<Recipe> {
         get {
             Set(recipePath)
         } set {

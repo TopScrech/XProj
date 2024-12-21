@@ -23,12 +23,12 @@ struct StackContainer: View {
             }
             .navigationTitle("Categories")
             .experienceToolbar()
-            .navigationDestination(for: Recipe.self) { recipe in
-                RecipeDetail(recipe) { relatedRecipe in
+            .navigationDestination(for: Recipe.self) { proj in
+                RecipeDetail(proj) { relatedProj in
                     Button {
-                        nav.recipePath.append(relatedRecipe)
+                        nav.recipePath.append(relatedProj)
                     } label: {
-                        RecipeTile(relatedRecipe)
+                        RecipeTile(relatedProj)
                     }
                     .buttonStyle(.plain)
                 }

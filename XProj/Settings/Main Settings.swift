@@ -2,10 +2,16 @@ import ScrechKit
 
 struct MainSettings: View {
     @Environment(ProjListVM.self) private var vm
+    @Environment(NavigationModel.self) private var nav
+    @Environment(DataModel.self) private var dataModel
     
     var body: some View {
         ScrollView {
             GroupBox {
+                Button("Clear nav") {
+                    nav.prochistitZalupu()
+                }
+                
                 Button("Change projects folder") {
                     vm.showPicker()
                 }
