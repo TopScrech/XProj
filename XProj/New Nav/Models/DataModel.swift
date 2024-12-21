@@ -8,13 +8,12 @@ final class DataModel {
     
     private var recipesById: [Recipe.ID: Recipe] = [:]
     
-    /// The shared singleton data model object
-    static let shared: DataModel = {
-        try! DataModel(contentsOf: dataURL, options: .mappedIfSafe)
+    // The shared singleton data model object
+    static let shared = {
+        DataModel()
     }()
-    
-    /// Initialize a `DataModel` with the contents of a `URL`
-    private init(contentsOf url: URL, options: Data.ReadingOptions) throws {
+        
+    init() {
         let recipes = ProjListVMNew().getFolders()
         
         recipesById = Dictionary(uniqueKeysWithValues: recipes.map { recipe in
@@ -25,20 +24,19 @@ final class DataModel {
             $0.name < $1.name
         }
     }
-    
-    private static var dataURL: URL {
-        get throws {
-            let bundle = Bundle.main
-            
-            guard
-                let path = bundle.path(forResource: "Recipes", ofType: "json")
-            else {
-                throw CocoaError(.fileReadNoSuchFile)
-            }
-            
-            return URL(fileURLWithPath: path)
-        }
-    }
+//    private static var dataURL: URL {
+//        get throws {
+//            let bundle = Bundle.main
+//            
+//            guard
+//                let path = bundle.path(forResource: "Recipes", ofType: "json")
+//            else {
+//                throw CocoaError(.fileReadNoSuchFile)
+//            }
+//            
+//            return URL(fileURLWithPath: path)
+//        }
+//    }
     
     /// The recipes for a given category, sorted by name
     func recipes(in type: ProjType?) -> [Recipe] {

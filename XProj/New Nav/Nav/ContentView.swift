@@ -3,7 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @Environment(NavigationModel.self) private var nav
     @Environment(DataModel.self) private var dataModel
-        
+    
     @AppStorage("experience") private var experience: Experience?
     
     var body: some View {

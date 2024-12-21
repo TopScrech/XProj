@@ -3,7 +3,7 @@ import ScrechKit
 @main
 struct XProjApp: App {
     private var nav: NavigationModel = .shared
-    private var dataModel: DataModel = .shared
+    private var dataModel = DataModel()
     
     var body: some Scene {
         WindowGroup {
@@ -22,13 +22,14 @@ struct XProjApp: App {
                 .environment(dataModel)
         }
         
-//        MenuBarExtra("Project List", systemImage: "hammer") {
-//            NavigationStack {
-//                MBProjList()
-//            }
-//            .environment(nav)
-//            .environment(dataModel)
-//        }
-//        .menuBarExtraStyle(.window)
+#warning("MenuBarExtra")
+        //        MenuBarExtra("Project List", systemImage: "hammer") {
+        //            NavigationStack {
+        //                MBProjList()
+        //            }
+        //            .environment(nav)
+        //            .environment(dataModel)
+        //        }
+        //        .menuBarExtraStyle(.window)
     }
 }
