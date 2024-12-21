@@ -1,7 +1,7 @@
 import ScrechKit
 
 struct ProjCard: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     @Environment(\.openURL) private var openUrl
     
     private let proj: Proj
@@ -11,46 +11,45 @@ struct ProjCard: View {
     }
     
     var body: some View {
-        NavigationLink {
-//            ProjDetails(proj)
-        } label: {
-            HStack {
-                ProjCardImage(proj)
-                
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(proj.name)
-                            .title3()
-                        
-                        ForEach(proj.platforms, id: \.self) { platform in
-                            Image(systemName: icon(platform))
-                        }
-                        
-                        if proj.type == .vapor, proj.packages.contains(where: {
-                            $0.name == "webauthn-swift"
-                        }) {
-                            Image(systemName: "person.badge.key")
-                        }
+        HStack {
+            ProjCardImage(proj)
+            
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(proj.name)
+                        .title3()
+                        .lineLimit(2)
+                    
+                    ForEach(proj.platforms, id: \.self) { platform in
+                        Image(systemName: icon(platform))
                     }
                     
-                    let path = proj.path.replacingOccurrences(of: vm.projectsFolder, with: "~")
-                    
-                    Text(path)
-                        .subheadline()
-                        .foregroundStyle(.tertiary)
+                    if proj.type == .vapor, proj.packages.contains(where: {
+                        $0.name == "webauthn-swift"
+                    }) {
+                        Image(systemName: "person.badge.key")
+                    }
                 }
                 
-                Spacer()
+                #warning("projectsFolder")
+                let path = proj.path.replacingOccurrences(of: vm.projectsFolder, with: "~")
                 
-                Text(formattedDate(proj.openedAt))
-                    .secondary()
-                
-                //            Text(proj.attributes[.size] as? String ?? "")
-                //                .footnote()
-                //                .secondary()
+                Text(path)
+                    .subheadline()
+                    .foregroundStyle(.tertiary)
+                    .lineLimit(2)
             }
-            .padding(.vertical, 5)
+            
+            Spacer()
+            
+            Text(formattedDate(proj.openedAt))
+                .secondary()
+            
+            //            Text(proj.attributes[.size] as? String ?? "")
+            //                .footnote()
+            //                .secondary()
         }
+        .padding(.vertical, 5)
         .contextMenu {
             if let url = proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url {
                 Section {
@@ -60,16 +59,12 @@ struct ProjCard: View {
                 }
             }
             
-            Button {
+            Button("Open in Xcode") {
                 vm.openProj(proj)
-            } label: {
-                Text("Open in Xcode")
             }
             
-            Button {
+            Button("Open in Finder") {
                 openInFinder(rootedAt: proj.path)
-            } label: {
-                Text("Open in Finder")
             }
         }
     }

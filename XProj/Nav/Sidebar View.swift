@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SidebarView: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
     var body: some View {
         List {

@@ -8,22 +8,43 @@ final class DataModel {
     
     private var recipesById: [Proj.ID: Proj] = [:]
     
+    var searchPrompt = ""
+    var projectsFolder = ""
+    
+    var filteredProjects: [Proj] {
+        let sortedProjects = projects.sorted {
+            $0.openedAt > $1.openedAt
+        }
+        
+        guard !searchPrompt.isEmpty else {
+            return sortedProjects
+        }
+        
+        return sortedProjects.filter {
+            $0.name.lowercased().contains(searchPrompt.lowercased())
+        }
+    }
+    
     // The shared singleton data model object
     static let shared = {
         DataModel()
     }()
         
     init() {
-        let recipes = ProjListVMNew().getFolders()
+        let vm = ProjListVMNew()
+        
+        let recipes = vm.getFolders()
+        projectsFolder = vm.projectsFolder
         
         recipesById = Dictionary(uniqueKeysWithValues: recipes.map { recipe in
             (recipe.id, recipe)
         })
         
-        self.projects = recipes.sorted {
-//            $0.name < $1.name
-            $0.openedAt > $1.openedAt
-        }
+        self.projects = recipes
+//            .sorted {
+////            $0.name < $1.name
+//            $0.openedAt > $1.openedAt
+//        }
     }
     
     /// The recipes for a given category, sorted by name
@@ -46,6 +67,108 @@ final class DataModel {
     subscript(recipeId: Proj.ID) -> Proj? {
         recipesById[recipeId]
     }
+    
+    var swiftToolsVersions: String {
+        var versions = Set<String>()
+        
+        for proj in projects {
+            if let version = proj.swiftToolsVersion {
+                versions.insert(version)
+            }
+        }
+        
+        let sortedArray = versions.sorted()
+        
+        let joinedString = sortedArray.joined(separator: ", ")
+        
+        return joinedString + ","
+    }
+    
+    var projectCount: Int {
+        projects.filter {
+            $0.type == .proj
+        }.count
+    }
+    
+    var packageCount: Int {
+        projects.filter {
+            $0.type == .package
+        }.count
+    }
+    
+    var playgroundCount: Int {
+        projects.filter {
+            $0.type == .playground
+        }.count
+    }
+    
+    var workspaceCount: Int {
+        projects.filter {
+            $0.type == .workspace
+        }.count
+    }
+    
+    var vaporCount: Int {
+        projects.filter {
+            $0.type == .vapor
+        }.count
+    }
+    
+    func findDuplicates() -> [[Proj]] {
+        var nameTypeCountDict: [String: Int] = [:]
+        var duplicates: [[Proj]] = []
+        
+        for proj in projects {
+            let key = proj.name + "-" + proj.type.rawValue
+            
+            if let count = nameTypeCountDict[key] {
+                nameTypeCountDict[key] = count + 1
+            } else {
+                nameTypeCountDict[key] = 1
+            }
+            
+            if let count = nameTypeCountDict[key], count > 1 {
+                let hasDuplicates = duplicates.contains(where: {
+                    if let test = $0.first, test.name == proj.name && test.type == proj.type {
+                        return true
+                    }
+                    
+                    return false
+                })
+                
+                if !hasDuplicates {
+                    duplicates.append(projects.filter {
+                        $0.name == proj.name && $0.type == proj.type
+                    })
+                }
+            }
+        }
+        
+        return duplicates
+    }
+    
+    func openProj(_ proj: Proj) {
+        let path = proj.path
+        findProj(path)
+    }
+    
+    func openProjects(_ selected: Set<Proj>) {
+        let paths = selected.map(\.path)
+        
+        for path in paths {
+            findProj(path)
+        }
+    }
+    
+    private func findProj(_ path: String) {
+        let (found, filePath) = findXcodeprojFile(path)
+        
+        if found, let filePath {
+            launchProj(filePath)
+        } else {
+            launchProj(path + "/Package.swift")
+        }
+    }
 }
 
 final class ProjListVMNew {
@@ -58,8 +181,8 @@ final class ProjListVMNew {
     
     func getFolders() -> [Proj] {
         let startTime = CFAbsoluteTimeGetCurrent()
-        restoreAccessToFolderOld()
-        projects = []
+//        restoreAccessToFolderOld()
+//        projects = []
         
         guard let url = FolderAccessManager.shared.restoreAccessToFolder(udKey) else {
             print("Unable to restore access to the folder. Please select a new folder")
@@ -199,34 +322,34 @@ final class ProjListVMNew {
         }
     }
     
-    private func restoreAccessToFolderOld() {
-        guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
-            return
-        }
-        
-        var isStale = false
-        
-        do {
-            let url = try URL(
-                resolvingBookmarkData: bookmarkData,
-                options: .withSecurityScope,
-                relativeTo: nil,
-                bookmarkDataIsStale: &isStale
-            )
-            
-            projectsFolder = url.path
-            
-            if url.startAccessingSecurityScopedResource() {
-                // You can now access the folder here
-            }
-            
-            if isStale {
-                print("Bookmark data is stale. Need to reselect folder for a new bookmark")
-            }
-        } catch {
-            print("Error restoring access: \(error)")
-        }
-    }
+//    private func restoreAccessToFolderOld() {
+//        guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
+//            return
+//        }
+//        
+//        var isStale = false
+//        
+//        do {
+//            let url = try URL(
+//                resolvingBookmarkData: bookmarkData,
+//                options: .withSecurityScope,
+//                relativeTo: nil,
+//                bookmarkDataIsStale: &isStale
+//            )
+//            
+//            projectsFolder = url.path
+//            
+//            if url.startAccessingSecurityScopedResource() {
+//                // You can now access the folder here
+//            }
+//            
+//            if isStale {
+//                print("Bookmark data is stale. Need to reselect folder for a new bookmark")
+//            }
+//        } catch {
+//            print("Error restoring access: \(error)")
+//        }
+//    }
     
     private func lastAccessDate(_ path: String) -> Date? {
         path.withCString {

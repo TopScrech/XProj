@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
     var body: some View {
         NavigationSplitView(columnVisibility: .constant(.all)) {

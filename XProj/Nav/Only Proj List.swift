@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct OnlyProjList: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
     private var projects: [Proj] {
         vm.filteredProjects.filter {

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ProjList: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
     private let projects: [Proj]
     

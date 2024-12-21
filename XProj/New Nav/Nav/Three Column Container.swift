@@ -17,8 +17,10 @@ struct ThreeColumnContainer: View {
         } content: {
             if let category = nav.selectedCategory {
                 List(selection: $nav.selectedProj) {
-                    ForEach(dataModel.recipes(in: category)) { recipe in
-                        NavigationLink(recipe.name, value: recipe)
+                    ForEach(dataModel.recipes(in: category)) { proj in
+                        NavigationLink(value: proj) {
+                            ProjCard(proj)
+                        }
                     }
                 }
                 .navigationTitle(category.localizedName)

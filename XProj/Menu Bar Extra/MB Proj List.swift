@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MBProjList: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
     @FocusState private var focusState
     

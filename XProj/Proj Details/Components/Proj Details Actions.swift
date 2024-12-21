@@ -1,7 +1,7 @@
 import ScrechKit
 
 struct ProjDetailsActions: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     @Environment(\.openURL) private var openUrl
     
     private let proj: Proj
