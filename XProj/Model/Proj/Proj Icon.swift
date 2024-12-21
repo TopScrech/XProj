@@ -42,6 +42,7 @@ extension Proj {
                             let firstMatchingFile = fileURLs.first(where: {
                                 let isNotJSON = $0.pathExtension.lowercased() != "json"
                                 let doesNotStartWithIcon = !$0.lastPathComponent.lowercased().hasPrefix("icon_")
+                                
                                 return isNotJSON && doesNotStartWithIcon
                             })
                             
