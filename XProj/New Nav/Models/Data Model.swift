@@ -10,6 +10,7 @@ final class DataModel {
     
     var searchPrompt = ""
     var projectsFolder = ""
+    private let udKey = "projects_folder_bookmark"
     
     var filteredProjects: [Proj] {
         let sortedProjects = projects.sorted {
@@ -22,6 +23,28 @@ final class DataModel {
         
         return sortedProjects.filter {
             $0.name.lowercased().contains(searchPrompt.lowercased())
+        }
+    }
+    
+    var lastOpenedProjects: [Proj] {
+        projects.filter {
+            $0.type == .proj
+        }
+        .prefix(5).sorted {
+            $0.openedAt > $1.openedAt
+        }
+    }
+    
+    func showPicker() {
+        openFolderPicker { url in
+            guard let url else {
+                return
+            }
+            
+            saveSecurityScopedBookmark(url, forKey: self.udKey) {
+#warning("Refresh")
+                //                self.getFolders()
+            }
         }
     }
     

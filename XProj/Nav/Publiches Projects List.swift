@@ -27,5 +27,5 @@ struct PublichesProjectsList: View {
 
 #Preview {
     PublichesProjectsList()
-        .environment(ProjListVM())
+        .environment(DataModel())
 }

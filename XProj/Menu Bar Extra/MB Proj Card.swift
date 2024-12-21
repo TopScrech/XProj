@@ -29,5 +29,5 @@ struct MBProjCard: View {
 
 #Preview {
     MBProjCard(previewProj1)
-        .environment(ProjListVM())
+        .environment(DataModel())
 }

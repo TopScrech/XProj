@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PackageDepList: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
     @AppStorage("sort_package_dependencies_by_author") private var sortByAuthor = true
     
@@ -94,5 +94,5 @@ struct PackageDepList: View {
 
 #Preview {
     PackageDepList()
-        .environment(ProjListVM())
+        .environment(DataModel())
 }

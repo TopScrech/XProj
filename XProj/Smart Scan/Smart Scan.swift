@@ -25,5 +25,5 @@ struct SmartScan: View {
 
 #Preview {
     SmartScan()
-        .environment(ProjListVM())
+        .environment(DataModel())
 }

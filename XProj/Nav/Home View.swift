@@ -19,5 +19,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
-        .environment(ProjListVM())
+        .environment(DataModel())
 }

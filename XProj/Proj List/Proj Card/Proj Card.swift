@@ -76,5 +76,5 @@ struct ProjCard: View {
         
         ProjCard(previewProj2)
     }
-    .environment(ProjListVM())
+    .environment(DataModel())
 }

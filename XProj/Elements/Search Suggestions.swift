@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SearchSuggestions: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
     private var suggestedProjects: [Proj] {
         guard !vm.searchPrompt.isEmpty else {
@@ -32,5 +32,5 @@ struct SearchSuggestions: View {
 
 #Preview {
     SearchSuggestions()
-        .environment(ProjListVM())
+        .environment(DataModel())
 }

@@ -50,5 +50,5 @@ struct MainSettings: View {
 
 #Preview {
     SettingsView()
-        .environment(ProjListVM())
+        .environment(DataModel())
 }

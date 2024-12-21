@@ -32,5 +32,5 @@ struct ProjDetailsActions: View {
 
 //#Preview {
 //    ProjDetailsActions(previewProj1)
-//        .environment(ProjListVM())
+//        .environment(DataModel())
 //}

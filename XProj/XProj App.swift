@@ -4,12 +4,10 @@ import ScrechKit
 struct XProjApp: App {
     private var nav: NavModel = .shared
     private var dataModel = DataModel()
-    @State private var vm = ProjListVM()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(vm)
                 .environment(nav)
                 .environment(dataModel)
                 .frame(minWidth: 800, minHeight: 600)
