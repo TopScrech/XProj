@@ -462,8 +462,8 @@
 			children = (
 				F3DAD66C2D161EAA0012BA9D /* Data Model.swift */,
 				F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */,
-				F3DAD66F2D161EAA0012BA9D /* Experience.swift */,
 				F3DAD6712D161EAA0012BA9D /* Proj.swift */,
+				F3DAD66F2D161EAA0012BA9D /* Experience.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

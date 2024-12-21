@@ -64,10 +64,6 @@ final class DataModel {
         })
         
         self.projects = recipes
-//            .sorted {
-////            $0.name < $1.name
-//            $0.openedAt > $1.openedAt
-//        }
     }
     
     /// The recipes for a given category, sorted by name
