@@ -24,16 +24,11 @@ struct ContentView: View {
                 ThreeColumnContainer()
                 
             case nil:
-                VStack {
-                    Text("🧑🏼‍🍳 Bon appétit!")
-                        .largeTitle()
-                    
-                    ExperienceButton()
-                }
-                .padding()
-                .onAppear {
-                    nav.showExperiencePicker = true
-                }
+                ExperienceButton()
+                    .padding()
+                    .onAppear {
+                        nav.showExperiencePicker = true
+                    }
             }
         }
         .sheet($nav.showExperiencePicker) {
