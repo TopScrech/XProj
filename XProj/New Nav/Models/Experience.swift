@@ -1,4 +1,4 @@
-// An enumeration of navigation experiences used to define the app architecture
+// An enumeration of nav experiences used to define the app architecture
 
 import SwiftUI
 

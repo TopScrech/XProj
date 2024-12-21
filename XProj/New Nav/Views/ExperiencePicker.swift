@@ -1,4 +1,4 @@
-// A navigation experience picker used to select the navigation architecture for the app
+// Nav experience picker used to select the nav architecture for the app
 
 import SwiftUI
 

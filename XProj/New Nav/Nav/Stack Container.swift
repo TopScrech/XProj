@@ -1,8 +1,8 @@
-// The content view for the navigation stack view experience
+// The content view for the nav stack view experience
 
 import SwiftUI
 
-struct StackContentView: View {
+struct StackContainer: View {
     @Environment(NavigationModel.self) private var nav
     @Environment(DataModel.self) private var dataModel
     
@@ -24,7 +24,7 @@ struct StackContentView: View {
             .navigationTitle("Categories")
             .experienceToolbar()
             .navigationDestination(for: Recipe.self) { recipe in
-                RecipeDetail(recipe: recipe) { relatedRecipe in
+                RecipeDetail(recipe) { relatedRecipe in
                     Button {
                         nav.recipePath.append(relatedRecipe)
                     } label: {
@@ -39,7 +39,7 @@ struct StackContentView: View {
 }
 
 #Preview() {
-    StackContentView()
+    StackContainer()
         .environment(DataModel.shared)
         .environment(NavigationModel.shared)
 }

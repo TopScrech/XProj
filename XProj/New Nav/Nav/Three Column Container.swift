@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ThreeColumnContentView: View {
+struct ThreeColumnContainer: View {
     @Environment(ProjListVM.self) private var vm
     @Environment(NavigationModel.self) private var nav
     @Environment(DataModel.self) private var dataModel
@@ -17,20 +17,20 @@ struct ThreeColumnContentView: View {
             .navigationTitle("Categories")
         } content: {
             if let category = nav.selectedCategory {
-//                if category == .allItems {
-//                    ProjList(vm.projects)
-//                } else {
-                    List(selection: $nav.selectedRecipe) {
-                        ForEach(dataModel.recipes(in: category)) { recipe in
-                            NavigationLink(recipe.name, value: recipe)
-                        }
+                //                if category == .allItems {
+                //                    ProjList(vm.projects)
+                //                } else {
+                List(selection: $nav.selectedRecipe) {
+                    ForEach(dataModel.recipes(in: category)) { recipe in
+                        NavigationLink(recipe.name, value: recipe)
                     }
-                    .navigationTitle(category.localizedName)
-                    .onDisappear {
-                        nav.selectedCategory = nil
-                    }
-                    .experienceToolbar()
-//                }
+                }
+                .navigationTitle(category.localizedName)
+                .onDisappear {
+                    nav.selectedCategory = nil
+                }
+                .experienceToolbar()
+                //                }
             } else {
                 Text("Choose a category")
                     .navigationTitle("")
@@ -43,10 +43,10 @@ struct ThreeColumnContentView: View {
             if let selectedRecipe = nav.selectedRecipe.first {
                 Text("Seleted \(nav.selectedRecipe.count)")
                 
-                RecipeDetail(recipe: selectedRecipe) { relatedRecipe in
+                RecipeDetail(selectedRecipe) { relatedRecipe in
                     Button {
                         nav.selectedCategory = relatedRecipe.category
-//                        nav.selectedRecipe = relatedRecipe
+                        nav.selectedRecipe = Set([relatedRecipe])
                     } label: {
                         RecipeTile(relatedRecipe)
                     }
@@ -58,7 +58,7 @@ struct ThreeColumnContentView: View {
 }
 
 #Preview() {
-    ThreeColumnContentView()
+    ThreeColumnContainer()
         .environment(NavigationModel(columnVisibility: .all))
         .environment(DataModel.shared)
         .environment(ProjListVM())

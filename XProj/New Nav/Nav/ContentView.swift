@@ -15,13 +15,13 @@ struct ContentView: View {
         Group {
             switch experience {
             case .stack?:
-                StackContentView()
+                StackContainer()
                 
             case .twoColumn?:
-                TwoColumnContentView()
+                TwoColumnContainer()
                 
             case .threeColumn?:
-                ThreeColumnContentView()
+                ThreeColumnContainer()
                 
             case nil:
                 VStack {

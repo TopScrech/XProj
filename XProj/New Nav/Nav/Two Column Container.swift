@@ -1,8 +1,8 @@
-// The content view for the two-column navigation split view experience
+// The content view for the two-column nav split view experience
 
 import SwiftUI
 
-struct TwoColumnContentView: View {
+struct TwoColumnContainer: View {
     @Environment(NavigationModel.self) private var nav
     @Environment(DataModel.self) private var dataModel
     
@@ -26,7 +26,7 @@ struct TwoColumnContentView: View {
 }
 
 #Preview() {
-    TwoColumnContentView()
+    TwoColumnContainer()
         .environment(DataModel.shared)
         .environment(NavigationModel.shared)
 }

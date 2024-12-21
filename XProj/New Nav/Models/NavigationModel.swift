@@ -1,4 +1,4 @@
-// A navigation model used to persist and restore the navigation state
+// Nav model used to persist and restore the nav state
 
 import SwiftUI
 

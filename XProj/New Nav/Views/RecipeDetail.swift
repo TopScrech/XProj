@@ -6,6 +6,11 @@ struct RecipeDetail<Link: View>: View {
     var recipe: Recipe?
     var relatedLink: (Recipe) -> Link
     
+    init(_ recipe: Recipe?, relatedLink: @escaping (Recipe) -> Link) {
+        self.recipe = recipe
+        self.relatedLink = relatedLink
+    }
+    
     var body: some View {
         if let recipe {
             Content(recipe: recipe, relatedLink: relatedLink)
@@ -130,7 +135,7 @@ private struct Content<Link: View>: View {
 }
 
 #Preview() {
-    RecipeDetail(recipe: .mock) { _ in
+    RecipeDetail(.mock) { _ in
         EmptyView()
     }
     .environment(DataModel.shared)

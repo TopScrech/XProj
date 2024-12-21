@@ -20,8 +20,8 @@ struct RecipeGrid: View {
                 .padding()
             }
             .navigationTitle(category.localizedName)
-            .navigationDestination(for: Recipe.self) { recipe in
-                RecipeDetail(recipe: recipe) { relatedRecipe in
+            .navigationDestination(for: Recipe.self) { proj in
+                RecipeDetail(proj) { relatedRecipe in
                     Button {
                         navigationModel.recipePath.append(relatedRecipe)
                     } label: {
