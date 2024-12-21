@@ -3,11 +3,11 @@
 import SwiftUI
 
 struct RecipeGrid: View {
-    @Environment(NavigationModel.self) private var navigationModel
+    @Environment(NavModel.self) private var navModel
     @Environment(DataModel.self) private var dataModel
     
     var body: some View {
-        if let category = navigationModel.selectedCategory {
+        if let category = navModel.selectedCategory {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(dataModel.recipes(in: category)) { recipe in
@@ -23,7 +23,7 @@ struct RecipeGrid: View {
             .navigationDestination(for: Proj.self) { proj in
                 RecipeDetail(proj) { relatedRecipe in
                     Button {
-                        navigationModel.recipePath.append(relatedRecipe)
+                        navModel.projPath.append(relatedRecipe)
                     } label: {
                         RecipeTile(relatedRecipe)
                     }
@@ -37,19 +37,19 @@ struct RecipeGrid: View {
         }
     }
     
-    var columns: [GridItem] {
-        [ GridItem(.adaptive(minimum: 240)) ]
-    }
+    var columns: [GridItem] {[
+        GridItem(.adaptive(minimum: 240))
+    ]}
 }
 
 #Preview() {
     RecipeGrid()
         .environment(DataModel.shared)
-        .environment(NavigationModel(selectedCategory: .proj))
+        .environment(NavModel(selectedCategory: .proj))
 }
 
 #Preview() {
     RecipeGrid()
         .environment(DataModel.shared)
-        .environment(NavigationModel(selectedCategory: nil))
+        .environment(NavModel(selectedCategory: nil))
 }

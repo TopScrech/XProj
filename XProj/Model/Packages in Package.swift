@@ -1,39 +1,5 @@
 import Foundation
 
-extension Project {
-    /// Fetches and returns Swift package dependencies as an array of `Package` structs
-    ///
-    /// - Returns: An array of `Package` structs with the name and repository URL
-    func parsePackagesInPackage() -> [Package] {
-        // URL for Package.resolved
-        let folderUrl = URL(fileURLWithPath: path, isDirectory: true)
-        let packageResolvedUrl = folderUrl.appendingPathComponent("Package.resolved")
-        
-        let fileManager = FileManager.default
-        
-        guard fileManager.fileExists(atPath: packageResolvedUrl.path) else {
-            return []
-        }
-        
-        do {
-            let data = try Data(contentsOf: packageResolvedUrl)
-            let decoded = try JSONDecoder().decode(Root.self, from: data)
-            
-            return decoded.pins.map {
-                Package(
-                    name: $0.identity,
-                    repositoryUrl: $0.location,
-                    requirementKind: nil,
-                    requirementParam: nil
-                )
-            }
-        } catch {
-            print("Error reading 'Package.resolved' at \(packageResolvedUrl): \(error.localizedDescription)")
-            return []
-        }
-    }
-}
-
 extension Proj {
     /// Fetches and returns Swift package dependencies as an array of `Package` structs
     ///

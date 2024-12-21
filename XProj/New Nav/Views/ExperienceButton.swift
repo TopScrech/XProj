@@ -3,11 +3,11 @@
 import SwiftUI
 
 struct ExperienceButton: View {
-    @Environment(NavigationModel.self) private var navigationModel
+    @Environment(NavModel.self) private var navModel
     
     var body: some View {
         Button {
-            navigationModel.showExperiencePicker = true
+            navModel.showExperiencePicker = true
         } label: {
             Label("Experience", systemImage: "wand.and.stars")
                 .help("Choose your navigation experience")
@@ -17,5 +17,5 @@ struct ExperienceButton: View {
 
 #Preview() {
     ExperienceButton()
-        .environment(NavigationModel.shared)
+        .environment(NavModel.shared)
 }

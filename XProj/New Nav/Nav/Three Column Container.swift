@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ThreeColumnContainer: View {
-    @Environment(NavigationModel.self) private var nav
+    @Environment(NavModel.self) private var nav
     @Environment(DataModel.self) private var dataModel
     
     private let categories = ProjType.allCases
@@ -52,6 +52,6 @@ struct ThreeColumnContainer: View {
 
 #Preview() {
     ThreeColumnContainer()
-        .environment(NavigationModel(columnVisibility: .all))
+        .environment(NavModel(columnVisibility: .all))
         .environment(DataModel.shared)
 }

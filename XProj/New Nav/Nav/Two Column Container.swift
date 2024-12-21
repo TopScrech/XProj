@@ -3,7 +3,7 @@
 import SwiftUI
 
 struct TwoColumnContainer: View {
-    @Environment(NavigationModel.self) private var nav
+    @Environment(NavModel.self) private var nav
     @Environment(DataModel.self) private var dataModel
     
     private let categories = ProjType.allCases
@@ -17,7 +17,7 @@ struct TwoColumnContainer: View {
             }
             .navigationTitle("Categories")
         } detail: {
-            NavigationStack(path: $nav.recipePath) {
+            NavigationStack(path: $nav.projPath) {
                 RecipeGrid()
             }
             .experienceToolbar()
@@ -28,5 +28,5 @@ struct TwoColumnContainer: View {
 #Preview() {
     TwoColumnContainer()
         .environment(DataModel.shared)
-        .environment(NavigationModel.shared)
+        .environment(NavModel.shared)
 }

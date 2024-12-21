@@ -3,7 +3,7 @@ import SwiftUI
 struct PublichesProjectsList: View {
     @Environment(ProjListVM.self) private var vm
     
-    private var projects: [Project] {
+    private var projects: [Proj] {
         vm.filteredProjects.filter {
             for target in $0.targets {
                 if target.appStoreApp != nil {

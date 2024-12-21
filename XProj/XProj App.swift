@@ -2,7 +2,7 @@ import ScrechKit
 
 @main
 struct XProjApp: App {
-    private var nav: NavigationModel = .shared
+    private var nav: NavModel = .shared
     private var dataModel = DataModel()
     @State private var vm = ProjListVM()
     

@@ -3,7 +3,7 @@ import SwiftUI
 struct SearchSuggestions: View {
     @Environment(ProjListVM.self) private var vm
     
-    private var suggestedProjects: [Project] {
+    private var suggestedProjects: [Proj] {
         guard !vm.searchPrompt.isEmpty else {
             return vm.lastOpenedProjects
         }

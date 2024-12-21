@@ -3,7 +3,7 @@
 import SwiftUI
 
 struct StackContainer: View {
-    @Environment(NavigationModel.self) private var nav
+    @Environment(NavModel.self) private var nav
     @Environment(DataModel.self) private var dataModel
     
     private let categories = ProjType.allCases
@@ -11,7 +11,7 @@ struct StackContainer: View {
     var body: some View {
         @Bindable var nav = nav
         
-        NavigationStack(path: $nav.recipePath) {
+        NavigationStack(path: $nav.projPath) {
             List(categories) { category in
                 Section {
                     ForEach(dataModel.recipes(in: category)) { recipe in
@@ -26,7 +26,7 @@ struct StackContainer: View {
             .navigationDestination(for: Proj.self) { proj in
                 RecipeDetail(proj) { relatedProj in
                     Button {
-                        nav.recipePath.append(relatedProj)
+                        nav.projPath.append(relatedProj)
                     } label: {
                         RecipeTile(relatedProj)
                     }
@@ -41,5 +41,5 @@ struct StackContainer: View {
 #Preview() {
     StackContainer()
         .environment(DataModel.shared)
-        .environment(NavigationModel.shared)
+        .environment(NavModel.shared)
 }

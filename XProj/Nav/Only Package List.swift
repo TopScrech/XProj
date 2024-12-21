@@ -3,7 +3,7 @@ import SwiftUI
 struct OnlyPackageList: View {
     @Environment(ProjListVM.self) private var vm
     
-    private var packages: [Project] {
+    private var packages: [Proj] {
         vm.filteredProjects.filter {
             $0.type == .package
         }

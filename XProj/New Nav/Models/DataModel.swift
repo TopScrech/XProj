@@ -21,22 +21,10 @@ final class DataModel {
         })
         
         self.projects = recipes.sorted {
-            $0.name < $1.name
+//            $0.name < $1.name
+            $0.openedAt > $1.openedAt
         }
     }
-//    private static var dataURL: URL {
-//        get throws {
-//            let bundle = Bundle.main
-//            
-//            guard
-//                let path = bundle.path(forResource: "Recipes", ofType: "json")
-//            else {
-//                throw CocoaError(.fileReadNoSuchFile)
-//            }
-//            
-//            return URL(fileURLWithPath: path)
-//        }
-//    }
     
     /// The recipes for a given category, sorted by name
     func recipes(in type: ProjType?) -> [Proj] {
@@ -137,6 +125,7 @@ final class ProjListVMNew {
             
         } else {
             fileType = .unknown
+            
             switch typeAttribute {
             case "NSFileTypeDirectory":
                 try processPath(projPath)

@@ -3,12 +3,12 @@
 import SwiftUI
 
 @Observable
-final class NavigationModel: Codable {
+final class NavModel: Codable {
     /// The selected recipe category; otherwise returns `nil`
     var selectedCategory: ProjType?
     
     /// The homogenous navigation state used by the app's navigation stacks
-    var recipePath: [Proj]
+    var projPath: [Proj]
     
     /// The leading columns' visibility state used by the app's navigation split views
     var columnVisibility: NavigationSplitViewVisibility
@@ -26,14 +26,14 @@ final class NavigationModel: Codable {
     
     /// The shared singleton navigation model object
     static let shared = {
-        if let model = try? NavigationModel(contentsOf: dataURL) {
+        if let model = try? NavModel(contentsOf: dataURL) {
             return model
         } else {
-            return NavigationModel()
+            return NavModel()
         }
     }()
     
-    /// Initialize a `NavigationModel` that enables programmatic control of leading columns’
+    /// Initialize a `NavModel` that enables programmatic control of leading columns’
     /// visibility, selected recipe category, and navigation state based on recipe data
     init(
         columnVisibility: NavigationSplitViewVisibility = .automatic,
@@ -42,7 +42,7 @@ final class NavigationModel: Codable {
     ) {
         self.columnVisibility = columnVisibility
         self.selectedCategory = selectedCategory
-        self.recipePath = recipePath
+        self.projPath = recipePath
     }
     
     /// Initialize a `DataModel` with the contents of a `URL`
@@ -56,7 +56,7 @@ final class NavigationModel: Codable {
         self.init(
             columnVisibility: model.columnVisibility,
             selectedCategory: model.selectedCategory,
-            recipePath: model.recipePath
+            recipePath: model.projPath
         )
     }
     
@@ -70,10 +70,10 @@ final class NavigationModel: Codable {
     
     /// Loads the navigation data for the navigation model from a previously saved state
     func load() throws {
-        let model = try NavigationModel(contentsOf: Self.dataURL)
+        let model = try NavModel(contentsOf: Self.dataURL)
         
         selectedCategory = model.selectedCategory
-        recipePath = model.recipePath
+        projPath = model.projPath
         columnVisibility = model.columnVisibility
     }
     
@@ -85,9 +85,9 @@ final class NavigationModel: Codable {
     /// The selected recipe; otherwise returns `nil`
     var selectedProj: Set<Proj> {
         get {
-            Set(recipePath)
+            Set(projPath)
         } set {
-            recipePath = Array(newValue)
+            projPath = Array(newValue)
         }
     }
     
@@ -104,7 +104,7 @@ final class NavigationModel: Codable {
             }
             
             selectedCategory = model.selectedCategory
-            recipePath = model.recipePath
+            projPath = model.projPath
             columnVisibility = model.columnVisibility
         }
     }
@@ -122,7 +122,7 @@ final class NavigationModel: Codable {
             forKey: .recipePathIds
         )
         
-        self.recipePath = recipePathIds.compactMap {
+        self.projPath = recipePathIds.compactMap {
             DataModel.shared[$0]
         }
         
@@ -135,7 +135,7 @@ final class NavigationModel: Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(selectedCategory, forKey: .selectedCategory)
-        try container.encode(recipePath.map(\.id), forKey: .recipePathIds)
+        try container.encode(projPath.map(\.id), forKey: .recipePathIds)
         try container.encode(columnVisibility, forKey: .columnVisibility)
     }
     

@@ -1,7 +1,7 @@
 import ScrechKit
 
 struct MainSettings: View {
-    @Environment(NavigationModel.self) private var nav
+    @Environment(NavModel.self) private var nav
     @Environment(DataModel.self) private var dataModel
     
     var body: some View {

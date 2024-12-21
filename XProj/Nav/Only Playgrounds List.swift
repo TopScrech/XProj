@@ -3,7 +3,7 @@ import SwiftUI
 struct OnlyPlaygroundsList: View {
     @Environment(ProjListVM.self) private var vm
     
-    private var playgrounds: [Project] {
+    private var playgrounds: [Proj] {
         vm.filteredProjects.filter {
             $0.type == .playground
         }

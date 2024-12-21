@@ -44,9 +44,9 @@ struct MBProjList: View {
         .task {
             focusState = true
         }
-        .refreshableTask {
-            vm.getFolders()
-        }
+//        .refreshableTask {
+//            vm.getFolders()
+//        }
     }
 }
 

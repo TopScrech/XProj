@@ -3,9 +3,9 @@ import ScrechKit
 struct DuplicateProjects: View {
     @Environment(ProjListVM.self) private var vm
     
-    private let duplicates: [[Project]]
+    private let duplicates: [[Proj]]
     
-    init(_ duplicates: [[Project]] = []) {
+    init(_ duplicates: [[Proj]] = []) {
         self.duplicates = duplicates
     }
     
