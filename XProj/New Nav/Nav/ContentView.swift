@@ -44,22 +44,18 @@ struct ContentView: View {
         .task {
             try? nav.load()
         }
-        .onChange(of: scenePhase) { _, newScenePhase in
-            if newScenePhase == .background {
-                do {
-                    try nav.save()
-                } catch {
-                    print(error)
-                }
+        .onChange(of: nav.selectedCategory) { _, newExperience in
+            do {
+                try nav.save()
+            } catch {
+                print(error)
             }
         }
-        .onChange(of: appearsActive) { _, appearsActive in
-            if !appearsActive {
-                do {
-                    try nav.save()
-                } catch {
-                    print(error)
-                }
+        .onChange(of: nav.selectedRecipe) { _, newExperience in
+            do {
+                try nav.save()
+            } catch {
+                print(error)
             }
         }
     }
