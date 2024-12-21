@@ -2,7 +2,7 @@
 
 import SwiftUI
 
-struct Ingredient: CustomStringConvertible, Decodable, Hashable, Identifiable {
+struct Ingredient: Decodable, Hashable, Identifiable {
     private(set) var id = UUID()
     private(set) var description: String
     

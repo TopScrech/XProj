@@ -1,14 +1,17 @@
 // A data model for a recipe and its metadata, including its related recipes
 
 import SwiftUI
+import XcodeProjKit
 
 struct Recipe: Decodable, Hashable, Identifiable {
     var id: String
     var name: String
+    var path: String
     let type: ProjType
     let openedAt: Date
     let modifiedAt: Date?
     let createdAt: Date?
+    var packages: [Package] = []
     
     //    var ingredients: [Ingredient] = []
     //    var related: [Recipe.ID] = []
@@ -17,6 +20,7 @@ struct Recipe: Decodable, Hashable, Identifiable {
     init(
         id: String,
         name: String,
+        path: String,
         type: ProjType,
         openedAt: Date,
         modifiedAt: Date?,
@@ -24,10 +28,13 @@ struct Recipe: Decodable, Hashable, Identifiable {
     ) {
         self.id = id
         self.name = name
+        self.path = path
         self.type = type
         self.openedAt = openedAt
         self.modifiedAt = modifiedAt
         self.createdAt = createdAt
+        
+        self.packages = parseSwiftPackages()
     }
     
     init(from decoder: Decoder) throws {
@@ -35,6 +42,7 @@ struct Recipe: Decodable, Hashable, Identifiable {
         
         id = try container.decode(String.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
+        path = try container.decode(String.self, forKey: .path)
         type = try container.decode(ProjType.self, forKey: .type)
                 
         openedAt = try container.decode(Date.self, forKey: .openedAt)
@@ -52,10 +60,59 @@ struct Recipe: Decodable, Hashable, Identifiable {
     private enum CodingKeys: String, CodingKey {
         case id,
              name,
+             path,
              type,
              openedAt,
              modifiedAt,
              createdAt
+    }
+    
+    private func parseSwiftPackages() -> [Package] {
+        switch type {
+        case .proj:
+            parsePackagesInProj()
+            
+        case .package:
+            parsePackagesInPackage()
+            
+        case .vapor:
+            parsePackagesInPackage()
+            
+            //        case .playground:
+            
+        default:
+            []
+        }
+    }
+    
+    private func parsePackagesInProj() -> [Package] {
+        guard let url = fetchProjectFilePath(path) else {
+            return []
+        }
+        
+        do {
+            let xcodeProj = try XcodeProj(url: url)
+            let project = xcodeProj.project
+            let packages = project.packageReferences
+            
+            let result = packages.compactMap { package in
+                if let rep = package.repositoryURL,
+                   let name = URL(string: rep)?.lastPathComponent {
+                    return Package(
+                        name: name,
+                        repositoryUrl: rep,
+                        requirementKind: package.requirement?.keys.first ?? "",
+                        requirementParam: package.requirement?.values.first as? String ?? ""
+                    )
+                }
+                
+                return nil
+            }
+            
+            return result
+        } catch {
+            return []
+        }
     }
 }
 

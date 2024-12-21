@@ -158,9 +158,8 @@ final class ProjListVMNew {
             Recipe(
                 id: projPath,
                 name: name,
+                path: projPath,
                 type: fileType,
-                //                path: projPath,
-                //                type: fileType,
                 openedAt: openedAt,
                 modifiedAt: modifiedAt,
                 createdAt: createdAt
