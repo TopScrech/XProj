@@ -1,7 +1,7 @@
 import Foundation
 import XcodeProjKit
 
-class Target: Identifiable, Decodable {
+struct Target: Identifiable, Hashable, Decodable {
     var id = UUID()
     
     let name: String
@@ -21,9 +21,10 @@ class Target: Identifiable, Decodable {
         self.type = type
         self.deploymentTargets = deploymentTargets
         
-        Task {
-            self.appStoreApp = await fetchAppStoreApp()
-        }
+        #warning("appStoreApp")
+//        Task {
+//            self.appStoreApp = await fetchAppStoreApp()
+//        }
     }
 }
 
@@ -94,6 +95,53 @@ func determineType(_ name: String, _ buildSettings: [String: Any]?) -> (type: Ta
 }
 
 extension Project {
+    func fetchTargets() -> [Target] {
+        guard
+            type == .proj,
+            let url = fetchProjectFilePath(path)
+        else {
+            return []
+        }
+        
+        do {
+            let xcodeProj = try XcodeProj(url: url)
+            let project = xcodeProj.project
+            let targets = project.targets
+            
+            let targetObjects: [Target] = targets.flatMap { target in
+                let buildConfigs = target.buildConfigurationList?.buildConfigurations ?? []
+                
+                return buildConfigs.compactMap { buildConfig in
+                    let targetName = target.name
+                    let buildSettings = buildConfig.buildSettings
+                    
+                    let bundleID = buildSettings?["PRODUCT_BUNDLE_IDENTIFIER"] as? String
+                    
+                    if let test = determineType(targetName, buildSettings) {
+                        return Target(
+                            name: targetName,
+                            bundleId: bundleID,
+                            type: test.type,
+                            deploymentTargets: test.versions
+                        )
+                    } else {
+                        return Target(
+                            name: targetName,
+                            bundleId: bundleID
+                        )
+                    }
+                }
+            }
+            
+            return targetObjects
+        } catch {
+            print(error)
+            return []
+        }
+    }
+}
+
+extension Recipe {
     func fetchTargets() -> [Target] {
         guard
             type == .proj,

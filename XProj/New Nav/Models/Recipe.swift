@@ -3,7 +3,7 @@
 import SwiftUI
 import XcodeProjKit
 
-struct Recipe: Decodable, Hashable, Identifiable {
+struct Recipe: Identifiable, Hashable, Decodable {
     var id: String
     var name: String
     var path: String
@@ -11,11 +11,11 @@ struct Recipe: Decodable, Hashable, Identifiable {
     let openedAt: Date
     let modifiedAt: Date?
     let createdAt: Date?
-    var packages: [Package] = []
     
-    //    var ingredients: [Ingredient] = []
-    //    var related: [Recipe.ID] = []
-    //    var imageName: String? = nil
+    var swiftToolsVersion: String? = nil
+    var packages: [Package] = []
+    var targets: [Target] = []
+    var platforms: [String] = []
     
     init(
         id: String,
@@ -34,7 +34,10 @@ struct Recipe: Decodable, Hashable, Identifiable {
         self.modifiedAt = modifiedAt
         self.createdAt = createdAt
         
+        self.swiftToolsVersion = fetchSwiftToolsVersion()
         self.packages = parseSwiftPackages()
+        self.targets = fetchTargets()
+        self.platforms = fetchUniquePlatforms()
     }
     
     init(from decoder: Decoder) throws {
@@ -65,6 +68,16 @@ struct Recipe: Decodable, Hashable, Identifiable {
              openedAt,
              modifiedAt,
              createdAt
+    }
+    
+    private func fetchUniquePlatforms() -> [String] {
+        let allPlatforms = targets.flatMap {
+            $0.deploymentTargets.keys
+        }
+        
+        let uniquePlatforms = Array(Set(allPlatforms))
+        
+        return uniquePlatforms
     }
     
     private func parseSwiftPackages() -> [Package] {
