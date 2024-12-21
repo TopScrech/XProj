@@ -38,8 +38,8 @@ struct ContentView: View {
         }
         .environment(nav)
         .environment(dataModel)
-        .sheet(isPresented: $nav.showExperiencePicker) {
-            ExperiencePicker(experience: $experience)
+        .sheet($nav.showExperiencePicker) {
+            ExperiencePicker($experience)
         }
         .task {
             try? nav.load()

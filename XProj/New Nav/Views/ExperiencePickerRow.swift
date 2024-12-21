@@ -1,11 +1,16 @@
-// A navigation experience picker row that displays the icon, name, and description for each experience
+// A nav experience picker row that displays all experiences
 
 import SwiftUI
 
 struct ExperiencePickerItem: View {
-    @Binding var selection: Experience?
+    @Binding private var selection: Experience?
     
-    var experience: Experience
+    private var experience: Experience
+    
+    init(_ selection: Binding<Experience?>, for experience: Experience) {
+        _selection = selection
+        self.experience = experience
+    }
     
     var body: some View {
         Button {
@@ -70,10 +75,13 @@ private struct Label: View {
 }
 
 #Preview() {
+    @Previewable @State
+    var selection: Experience?
+    
     ForEach(Experience.allCases) {
         ExperiencePickerItem(
-            selection: .constant($0),
-            experience: $0
+            $selection,
+            for: $0
         )
     }
 }

@@ -5,7 +5,11 @@ import SwiftUI
 struct ExperiencePicker: View {
     @Environment(\.dismiss) private var dismiss
     
-    @Binding var experience: Experience?
+    @Binding private var experience: Experience?
+    
+    init(_ experience: Binding<Experience?>) {
+        _experience = experience
+    }
     
     @State private var selection: Experience?
     
@@ -26,9 +30,7 @@ struct ExperiencePicker: View {
                 
                 LazyVGrid(columns: columns) {
                     ForEach(Experience.allCases) { experience in
-                        ExperiencePickerItem(
-                            selection: $selection,
-                            experience: experience)
+                        ExperiencePickerItem($selection, for: experience)
                     }
                 }
                 
@@ -64,5 +66,8 @@ struct ExperiencePicker: View {
 }
 
 #Preview() {
-    ExperiencePicker(experience: .constant(.stack))
+    @Previewable @State
+    var experience: Experience? = .stack
+    
+    ExperiencePicker($experience)
 }

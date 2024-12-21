@@ -1,4 +1,4 @@
-// An button that presents the navigation experience picker when its action is invoked
+// An button that presents the nav experience picker
 
 import SwiftUI
 
