@@ -88,7 +88,7 @@ final class DerivedDataVM {
         folders = fetchedFolders
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        print("Time elapsed for processing path: \(String(format: "%.3f", timeElapsed)) seconds")
+        print("Time elapsed for processing Derived Data: \(String(format: "%.3f", timeElapsed)) seconds")
     }
     
     private func processFolder(_ proj: String, at path: String) -> DerivedDataFolder? {

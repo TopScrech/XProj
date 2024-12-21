@@ -13,6 +13,7 @@ struct ThreeColumnContainer: View {
             List(categories, selection: $nav.selectedCategory) { type in
                 NavigationLink(type.localizedName, value: type)
             }
+            .frame(minWidth: 250)
             .navigationTitle("Categories")
         } content: {
             if let category = nav.selectedCategory {
@@ -23,6 +24,7 @@ struct ThreeColumnContainer: View {
                         }
                     }
                 }
+                .frame(minWidth: 600)
                 .navigationTitle(category.localizedName)
                 .experienceToolbar()
                 .onDisappear {
@@ -34,10 +36,8 @@ struct ThreeColumnContainer: View {
             }
         } detail: {
             if let selectedProj = nav.selectedProj.first {
-                Text("Seleted \(nav.selectedProj.count)")
-                
                 ProjDetails(selectedProj)
-                
+                    .frame(minWidth: 200)
                 //                RecipeDetail(selectedProj) { relatedRecipe in
                 //                    Button {
                 //                        nav.selectedCategory = relatedRecipe.type
