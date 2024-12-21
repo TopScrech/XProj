@@ -8,7 +8,6 @@ var projectsFolder = ""
 private let udKey = "projects_folder_bookmark"
 @Observable
 final class DataModel {
-    
     private(set) var projects: [Recipe]
     
     private var recipesById: [Recipe.ID: Recipe] = [:]
