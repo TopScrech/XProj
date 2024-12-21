@@ -156,22 +156,22 @@ final class ProjListVMNew {
         let modifiedAt = attributes[.modificationDate] as? Date
         let createdAt = attributes[.creationDate] as? Date
         
-                projects.append(
-        Recipe(
-            id: projPath,
-            name: name,
-            type: fileType,
-            //                path: projPath,
-            //                type: fileType,
-            openedAt: openedAt,
-            modifiedAt: modifiedAt,
-            createdAt: createdAt
-            //                attributes: attributes
+        projects.append(
+            Recipe(
+                id: projPath,
+                name: name,
+                type: fileType,
+                //                path: projPath,
+                //                type: fileType,
+                openedAt: openedAt,
+                modifiedAt: modifiedAt,
+                createdAt: createdAt
+                //                attributes: attributes
+            )
         )
-                )
     }
     
-    /*private */func hasFile(ofType type: String, at path: String) -> Bool {
+    private func hasFile(ofType type: String, at path: String) -> Bool {
         do {
             let contents = try fm.contentsOfDirectory(atPath: path)
             
@@ -183,7 +183,7 @@ final class ProjListVMNew {
         }
     }
     
-    /*private */func hasSwiftPackage(_ path: String) -> Bool {
+    private func hasSwiftPackage(_ path: String) -> Bool {
         do {
             let contents = try fm.contentsOfDirectory(atPath: path)
             
@@ -192,7 +192,8 @@ final class ProjListVMNew {
             return false
         }
     }
-    /*private*/ func hasVapor( _ path: String) -> Bool {
+    
+    private func hasVapor( _ path: String) -> Bool {
         let resolvedPath = path + "/Package.resolved"
         
         guard fm.fileExists(atPath: resolvedPath) else {
@@ -212,7 +213,7 @@ final class ProjListVMNew {
         }
     }
     
-    func restoreAccessToFolderOld() {
+    private func restoreAccessToFolderOld() {
         guard let bookmarkData = UserDefaults.standard.data(forKey: udKey) else {
             return
         }
@@ -240,9 +241,8 @@ final class ProjListVMNew {
             print("Error restoring access: \(error)")
         }
     }
-    //}
     
-    /*private*/ func lastAccessDate(_ path: String) -> Date? {
+    private func lastAccessDate(_ path: String) -> Date? {
         path.withCString {
             var statStruct = Darwin.stat()
             
