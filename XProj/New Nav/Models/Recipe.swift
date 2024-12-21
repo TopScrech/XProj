@@ -6,7 +6,6 @@ struct Recipe: Decodable, Hashable, Identifiable {
     var id: String
     var name: String
     let type: ProjType
-    var category: Category
     let openedAt: Date
     let modifiedAt: Date?
     let createdAt: Date?
@@ -19,7 +18,6 @@ struct Recipe: Decodable, Hashable, Identifiable {
         id: String,
         name: String,
         type: ProjType,
-        category: Category,
         openedAt: Date,
         modifiedAt: Date?,
         createdAt: Date?
@@ -27,7 +25,6 @@ struct Recipe: Decodable, Hashable, Identifiable {
         self.id = id
         self.name = name
         self.type = type
-        self.category = category
         self.openedAt = openedAt
         self.modifiedAt = modifiedAt
         self.createdAt = createdAt
@@ -39,9 +36,7 @@ struct Recipe: Decodable, Hashable, Identifiable {
         id = try container.decode(String.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         type = try container.decode(ProjType.self, forKey: .type)
-        
-        category = try container.decode(Category.self, forKey: .category)
-        
+                
         openedAt = try container.decode(Date.self, forKey: .openedAt)
         modifiedAt = try container.decodeIfPresent(Date.self, forKey: .modifiedAt)
         createdAt = try container.decodeIfPresent(Date.self, forKey: .createdAt)
@@ -58,7 +53,6 @@ struct Recipe: Decodable, Hashable, Identifiable {
         case id,
              name,
              type,
-             category,
              openedAt,
              modifiedAt,
              createdAt

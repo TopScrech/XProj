@@ -20,9 +20,7 @@ final class DataModel {
     
     /// Initialize a `DataModel` with the contents of a `URL`
     private init(contentsOf url: URL, options: Data.ReadingOptions) throws {
-        let data = try Data(contentsOf: url, options: options)
         let recipes = getFolders()
-        //        let recipes = try JSONDecoder().decode([Recipe].self, from: data)
         
         recipesById = Dictionary(uniqueKeysWithValues: recipes.map { recipe in
             (recipe.id, recipe)
@@ -48,10 +46,11 @@ final class DataModel {
     }
     
     /// The recipes for a given category, sorted by name
-    func recipes(in category: Category?) -> [Recipe] {
-        projects.filter {
-            $0.category == category
-        }
+    func recipes(in type: ProjType?) -> [Recipe] {
+        projects
+            .filter {
+                $0.type == type
+            }
     }
     
     //    /// The related recipes for a given recipe, sorted by name
@@ -168,7 +167,6 @@ private func processProj(_ proj: String, at path: String) throws -> Recipe? {
         id: name,
         name: name,
         type: fileType,
-        category: .allItems,
         //                path: projPath,
         //                type: fileType,
         openedAt: openedAt,

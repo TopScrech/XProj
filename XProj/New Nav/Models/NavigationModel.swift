@@ -5,7 +5,7 @@ import SwiftUI
 @Observable
 final class NavigationModel: Codable {
     /// The selected recipe category; otherwise returns `nil`
-    var selectedCategory: Category?
+    var selectedCategory: ProjType?
     
     /// The homogenous navigation state used by the app's navigation stacks
     var recipePath: [Recipe]
@@ -37,7 +37,7 @@ final class NavigationModel: Codable {
     /// visibility, selected recipe category, and navigation state based on recipe data
     init(
         columnVisibility: NavigationSplitViewVisibility = .automatic,
-        selectedCategory: Category? = nil,
+        selectedCategory: ProjType? = nil,
         recipePath: [Recipe] = []
     ) {
         self.columnVisibility = columnVisibility
@@ -117,7 +117,7 @@ final class NavigationModel: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         self.selectedCategory = try container.decodeIfPresent(
-            Category.self,
+            ProjType.self,
             forKey: .selectedCategory
         )
         

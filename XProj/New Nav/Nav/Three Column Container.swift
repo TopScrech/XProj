@@ -5,14 +5,14 @@ struct ThreeColumnContainer: View {
     @Environment(NavigationModel.self) private var nav
     @Environment(DataModel.self) private var dataModel
     
-    private let categories = Category.allCases
+    private let categories = ProjType.allCases
     
     var body: some View {
         @Bindable var nav = nav
         
         NavigationSplitView(columnVisibility: $nav.columnVisibility) {
-            List(categories, selection: $nav.selectedCategory) { category in
-                NavigationLink(category.localizedName, value: category)
+            List(categories, selection: $nav.selectedCategory) { type in
+                NavigationLink(type.localizedName, value: type)
             }
             .navigationTitle("Categories")
         } content: {
@@ -45,7 +45,7 @@ struct ThreeColumnContainer: View {
                 
                 RecipeDetail(selectedRecipe) { relatedRecipe in
                     Button {
-                        nav.selectedCategory = relatedRecipe.category
+                        nav.selectedCategory = relatedRecipe.type
                         nav.selectedRecipe = Set([relatedRecipe])
                     } label: {
                         RecipeTile(relatedRecipe)
