@@ -1,7 +1,6 @@
 import ScrechKit
 
 struct MainSettings: View {
-    @Environment(ProjListVM.self) private var vm
     @Environment(NavigationModel.self) private var nav
     @Environment(DataModel.self) private var dataModel
     
@@ -12,9 +11,10 @@ struct MainSettings: View {
                     nav.prochistitZalupu()
                 }
                 
-                Button("Change projects folder") {
-                    vm.showPicker()
-                }
+#warning("Change projects folder")
+                //                Button("Change projects folder") {
+                //                    dataModel.showPicker()
+                //                }
                 
                 Button("Examples") {
                     downloadExamples()
