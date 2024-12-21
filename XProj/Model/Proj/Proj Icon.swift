@@ -22,13 +22,13 @@ extension Proj {
         }
         
         // Traverse through the enumerator to find Assets.xcassets directories
-        for case let fileURL as URL in enumerator {
-            if fileURL.lastPathComponent == "Assets.xcassets",
-               (try? fileURL.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true {
+        for case let fileUrl as URL in enumerator {
+            if fileUrl.lastPathComponent == "Assets.xcassets",
+               (try? fileUrl.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true {
                 
                 // Now search for AppIcon.appiconset within this Assets.xcassets
-                guard let appIconEnumerator = fileManager.enumerator(at: fileURL, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles, .skipsPackageDescendants]) else {
-                    print("Error: Unable to enumerate \(fileURL.path)")
+                guard let appIconEnumerator = fileManager.enumerator(at: fileUrl, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles, .skipsPackageDescendants]) else {
+                    print("Error: Unable to enumerate \(fileUrl.path)")
                     continue
                 }
                 
