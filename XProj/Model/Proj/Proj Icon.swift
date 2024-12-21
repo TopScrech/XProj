@@ -3,20 +3,20 @@ import Foundation
 extension Proj {
     func projIcon() -> String? {
         let fileManager = FileManager.default
-        let projectURL = URL(fileURLWithPath: path)
+        let projectUrl = URL(fileURLWithPath: path)
         
         var isDir: ObjCBool = false
         
         guard
-            fileManager.fileExists(atPath: projectURL.path, isDirectory: &isDir),
+            fileManager.fileExists(atPath: projectUrl.path, isDirectory: &isDir),
             isDir.boolValue
         else {
-            print("Error: The path '\(projectURL.path)' does not exist or is not a directory")
+            print("Error: The path '\(projectUrl.path)' does not exist or is not a directory")
             return nil
         }
         
         // Use FileManager's enumerator to traverse the directory recursively
-        guard let enumerator = fileManager.enumerator(at: projectURL, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles, .skipsPackageDescendants]) else {
+        guard let enumerator = fileManager.enumerator(at: projectUrl, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles, .skipsPackageDescendants]) else {
             print("Error: Unable to enumerate the project directory")
             return nil
         }
