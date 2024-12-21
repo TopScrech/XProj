@@ -78,7 +78,7 @@
 		F3DAD6752D161EAA0012BA9D /* Proj.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6712D161EAA0012BA9D /* Proj.swift */; };
 		F3DAD6772D161EAA0012BA9D /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66F2D161EAA0012BA9D /* Experience.swift */; };
 		F3DAD6782D161EAA0012BA9D /* Two Column Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6652D161EAA0012BA9D /* Two Column Container.swift */; };
-		F3DAD67A2D161EAA0012BA9D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66C2D161EAA0012BA9D /* DataModel.swift */; };
+		F3DAD67A2D161EAA0012BA9D /* Data Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66C2D161EAA0012BA9D /* Data Model.swift */; };
 		F3DAD67B2D161EAA0012BA9D /* Nav Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */; };
 		F3DAD67C2D161EAA0012BA9D /* Three Column Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6662D161EAA0012BA9D /* Three Column Container.swift */; };
 		F3DAD67E2D161EAA0012BA9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6632D161EAA0012BA9D /* ContentView.swift */; };
@@ -173,7 +173,7 @@
 		F3DAD6642D161EAA0012BA9D /* Stack Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stack Container.swift"; sourceTree = "<group>"; };
 		F3DAD6652D161EAA0012BA9D /* Two Column Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Two Column Container.swift"; sourceTree = "<group>"; };
 		F3DAD6662D161EAA0012BA9D /* Three Column Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Three Column Container.swift"; sourceTree = "<group>"; };
-		F3DAD66C2D161EAA0012BA9D /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		F3DAD66C2D161EAA0012BA9D /* Data Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Model.swift"; sourceTree = "<group>"; };
 		F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Model.swift"; sourceTree = "<group>"; };
 		F3DAD66F2D161EAA0012BA9D /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		F3DAD6712D161EAA0012BA9D /* Proj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proj.swift; sourceTree = "<group>"; };
@@ -463,7 +463,7 @@
 		F3DAD6722D161EAA0012BA9D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F3DAD66C2D161EAA0012BA9D /* DataModel.swift */,
+				F3DAD66C2D161EAA0012BA9D /* Data Model.swift */,
 				F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */,
 				F3DAD66F2D161EAA0012BA9D /* Experience.swift */,
 				F3DAD6712D161EAA0012BA9D /* Proj.swift */,
@@ -659,7 +659,7 @@
 				F3DAD6752D161EAA0012BA9D /* Proj.swift in Sources */,
 				F3DAD6772D161EAA0012BA9D /* Experience.swift in Sources */,
 				F3DAD6782D161EAA0012BA9D /* Two Column Container.swift in Sources */,
-				F3DAD67A2D161EAA0012BA9D /* DataModel.swift in Sources */,
+				F3DAD67A2D161EAA0012BA9D /* Data Model.swift in Sources */,
 				F3DAD68A2D161ECC0012BA9D /* RecipeGrid.swift in Sources */,
 				F3DAD68B2D161ECC0012BA9D /* ExperienceToolbar.swift in Sources */,
 				F3DAD68C2D161ECC0012BA9D /* ExperienceButton.swift in Sources */,

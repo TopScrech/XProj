@@ -36,15 +36,15 @@ struct ThreeColumnContainer: View {
                 
                 ProjDetails(selectedProj)
                 
-//                RecipeDetail(selectedProj) { relatedRecipe in
-//                    Button {
-//                        nav.selectedCategory = relatedRecipe.type
-//                        nav.selectedProj = Set([relatedRecipe])
-//                    } label: {
-//                        RecipeTile(relatedRecipe)
-//                    }
-//                    .buttonStyle(.plain)
-//                }
+                //                RecipeDetail(selectedProj) { relatedRecipe in
+                //                    Button {
+                //                        nav.selectedCategory = relatedRecipe.type
+                //                        nav.selectedProj = Set([relatedRecipe])
+                //                    } label: {
+                //                        RecipeTile(relatedRecipe)
+                //                    }
+                //                    .buttonStyle(.plain)
+                //                }
             }
         }
     }

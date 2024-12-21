@@ -7,7 +7,6 @@ final class ProjListVM {
     var projectsFolder = ""
     
     private let udKey = "projects_folder_bookmark"
-    private let fm = FileManager.default
     
     var lastOpenedProjects: [Proj] {
         projects.filter {
