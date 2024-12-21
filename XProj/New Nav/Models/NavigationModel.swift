@@ -75,15 +75,11 @@ final class NavigationModel: Codable {
         selectedCategory = model.selectedCategory
         recipePath = model.recipePath
         columnVisibility = model.columnVisibility
-        
-        print("Loaded")
     }
     
     /// Saves the JSON data for the navigation model at its current state
     func save() throws {
         try jsonData?.write(to: Self.dataURL)
-        
-        print("Saved")
     }
     
     /// The selected recipe; otherwise returns `nil`
