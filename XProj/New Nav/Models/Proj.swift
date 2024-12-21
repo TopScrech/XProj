@@ -5,6 +5,7 @@ import XcodeProjKit
 
 struct Proj: Identifiable, Hashable, Decodable {
     var id: String
+    
     var name: String
     var path: String
     let type: ProjType
@@ -68,6 +69,26 @@ struct Proj: Identifiable, Hashable, Decodable {
              openedAt,
              modifiedAt,
              createdAt
+    }
+    
+    var icon: String {
+        switch type {
+        case .proj:       "hammer.fill"
+        case .workspace:  "hammer.fill"
+        case .package:    "shippingbox.fill"
+        case .playground: "swift"
+        default:          "questionmark"
+        }
+    }
+    
+    var iconColor: Color {
+        switch type {
+        case .proj:       .blue
+        case .workspace:  .white
+        case .package:    .package
+        case .playground: .blue
+        default:          .gray
+        }
     }
     
     private func fetchUniquePlatforms() -> [String] {
