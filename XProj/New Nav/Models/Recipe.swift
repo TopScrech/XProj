@@ -6,9 +6,9 @@ struct Recipe: Decodable, Hashable, Identifiable {
     var id: String
     var name: String
     var category: Category
-//    var ingredients: [Ingredient] = []
-//    var related: [Recipe.ID] = []
-//    var imageName: String? = nil
+    //    var ingredients: [Ingredient] = []
+    //    var related: [Recipe.ID] = []
+    //    var imageName: String? = nil
     
     init(
         id: String,
@@ -23,30 +23,26 @@ struct Recipe: Decodable, Hashable, Identifiable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
-        print("id \(id)")
-        //        id = UUID(uuidString: idString)!
         
         name = try container.decode(String.self, forKey: .name)
-        print("name \(name)")
         
         category = try container.decode(Category.self, forKey: .category)
-        print("category \(category)")
-//        ingredients = try container.decode([Ingredient].self, forKey: .ingredients)
+        //        ingredients = try container.decode([Ingredient].self, forKey: .ingredients)
         
-//        let relatedIdStrings = try container.decode([String].self, forKey: .related)
+        //        let relatedIdStrings = try container.decode([String].self, forKey: .related)
         
-//        related = relatedIdStrings.compactMap(UUID.init(uuidString:))
-//        imageName = try container.decodeIfPresent(String.self, forKey: .imageName)
+        //        related = relatedIdStrings.compactMap(UUID.init(uuidString:))
+        //        imageName = try container.decodeIfPresent(String.self, forKey: .imageName)
     }
     
     private enum CodingKeys: String, CodingKey {
         case id,
              name,
              category
-//             ingredients,
-//             related,
-//             imageName
-    }    
+        //             ingredients,
+        //             related,
+        //             imageName
+    }
 }
 
 extension Recipe {
