@@ -21,14 +21,16 @@ struct RecipeGrid: View {
             }
             .navigationTitle(category.localizedName)
             .navigationDestination(for: Proj.self) { proj in
-                RecipeDetail(proj) { relatedRecipe in
-                    Button {
-                        navModel.projPath.append(relatedRecipe)
-                    } label: {
-                        RecipeTile(relatedRecipe)
-                    }
-                    .buttonStyle(.plain)
-                }
+                ProjDetails(proj)
+                
+//                RecipeDetail(proj) { relatedRecipe in
+//                    Button {
+//                        navModel.projPath.append(relatedRecipe)
+//                    } label: {
+//                        RecipeTile(relatedRecipe)
+//                    }
+//                    .buttonStyle(.plain)
+//                }
                 .experienceToolbar()
             }
         } else {

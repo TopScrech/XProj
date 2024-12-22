@@ -273,6 +273,7 @@
 				F3341E352BDE358A00E85F27 /* XProj.entitlements */,
 				F313BE1C2C871E13005C8B60 /* Examples.zip */,
 				F37831DE2D12EA34007F7858 /* Preview Projects.swift */,
+				F3ED77702D179211000977AC /* Delete */,
 				F3DAD65B2D161E600012BA9D /* New Nav */,
 				F37831D92D12E028007F7858 /* funcs */,
 				F37831CA2D11A75F007F7858 /* Proj List */,
@@ -476,7 +477,6 @@
 				F3DAD6822D161ECC0012BA9D /* ExperiencePicker.swift */,
 				F3DAD6832D161ECC0012BA9D /* ExperiencePickerRow.swift */,
 				F3DAD6842D161ECC0012BA9D /* ExperienceToolbar.swift */,
-				F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */,
 				F3DAD6862D161ECC0012BA9D /* RecipeGrid.swift */,
 				F3DAD6872D161ECC0012BA9D /* RecipePhoto.swift */,
 				F3DAD6882D161ECC0012BA9D /* RecipeTile.swift */,
@@ -495,6 +495,14 @@
 				F3B389D02D102D610082C2F3 /* Only Playgrounds List.swift */,
 			);
 			path = Nav;
+			sourceTree = "<group>";
+		};
+		F3ED77702D179211000977AC /* Delete */ = {
+			isa = PBXGroup;
+			children = (
+				F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */,
+			);
+			path = Delete;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
