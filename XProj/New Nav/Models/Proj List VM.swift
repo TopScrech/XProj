@@ -17,7 +17,7 @@ final class ProjListVM {
         }
         
         projectsFolder = url.path
-                
+        
         do {
             try processPath(url.path)
         } catch {
@@ -146,7 +146,7 @@ final class ProjListVM {
             return false
         }
     }
-        
+    
     private func lastAccessDate(_ path: String) -> Date? {
         path.withCString {
             var statStruct = Darwin.stat()
