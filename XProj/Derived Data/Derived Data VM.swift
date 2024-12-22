@@ -43,15 +43,11 @@ final class DerivedDataVM {
     }
     
     func getFolders() {
-        guard let url = FolderAccessManager.shared.restoreAccessToFolder(udKey) else {
+        guard let url = restoreAccessToFolder(udKey) else {
             print("Unable to restore access to the folder. Please select a folder.")
             return
         }
-        
-        defer {
-            url.stopAccessingSecurityScopedResource()
-        }
-        
+                
         do {
             try processPath(url.path)
         } catch {
