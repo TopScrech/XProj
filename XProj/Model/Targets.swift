@@ -145,21 +145,21 @@ extension Proj {
                     
                     seenRefs.insert(target.ref)
                     
-//                    if let test = determineType(targetName, buildSettings) {
-//                        return Target(
-//                            id: id,
-//                            name: targetName,
-//                            bundleId: bundleID,
-//                            type: test.type,
-//                            deploymentTargets: [:]//test.versions
-//                        )
-//                    } else {
+                    if let test = determineType(targetName, buildSettings) {
+                        return Target(
+                            id: id,
+                            name: targetName,
+                            bundleId: bundleID,
+                            type: test.type,
+                            deploymentTargets: test.versions
+                        )
+                    } else {
                         return Target(
                             id: id,
                             name: targetName,
                             bundleId: bundleID
                         )
-//                    }
+                    }
                 }
             }
             
