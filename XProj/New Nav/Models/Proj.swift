@@ -36,8 +36,8 @@ struct Proj: Identifiable, Hashable, Decodable {
         self.createdAt = createdAt
         
         self.swiftToolsVersion = fetchSwiftToolsVersion()
-        self.packages = parseSwiftPackages()
-        self.targets = fetchTargets()
+//        self.packages = parseSwiftPackages()
+//        self.targets = fetchTargets()
         self.platforms = fetchUniquePlatforms()
     }
     
@@ -58,7 +58,6 @@ struct Proj: Identifiable, Hashable, Decodable {
         //        let relatedIdStrings = try container.decode([String].self, forKey: .related)
         
         //        related = relatedIdStrings.compactMap(UUID.init(uuidString:))
-        //        imageName = try container.decodeIfPresent(String.self, forKey: .imageName)
     }
     
     private enum CodingKeys: String, CodingKey {

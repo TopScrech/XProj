@@ -27,9 +27,9 @@ final class NavModel: Codable {
     /// The shared singleton navigation model object
     static let shared = {
         if let model = try? NavModel(contentsOf: dataURL) {
-            return model
+            model
         } else {
-            return NavModel()
+            NavModel()
         }
     }()
     

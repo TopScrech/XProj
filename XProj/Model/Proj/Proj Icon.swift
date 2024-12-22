@@ -4,7 +4,7 @@ extension Proj {
     func projIcon() -> String? {
         let fileManager = FileManager.default
         let projectUrl = URL(fileURLWithPath: path)
-        print(projectUrl)
+        
         var isDir: ObjCBool = false
         
         guard
@@ -24,6 +24,7 @@ extension Proj {
         // Traverse through the enumerator to find Assets.xcassets directories
         for case let fileUrl as URL in enumerator {
             print("Goida \(fileUrl)")
+            
             if fileUrl.lastPathComponent == "Assets.xcassets",
                (try? fileUrl.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true {
                 
