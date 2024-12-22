@@ -5,8 +5,6 @@ class FolderAccessManager {
     
     private init() {}
     
-    private var projectsFolderURL: URL?
-    
     func restoreAccessToFolder(_ key: String) -> URL? {
         guard let bookmarkData = UserDefaults.standard.data(forKey: key) else {
             print("No bookmark data found for key: \(key)")
@@ -30,7 +28,6 @@ class FolderAccessManager {
             let accessStarted = url.startAccessingSecurityScopedResource()
             
             if accessStarted {
-                self.projectsFolderURL = url
                 return url
             } else {
                 print("Failed to start accessing security scoped resource for URL: \(url)")
