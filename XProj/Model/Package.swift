@@ -31,23 +31,23 @@ struct Package: Identifiable, Hashable, Decodable {
     
 #warning("Requirement kind and param are disabled to fix navigation issues")
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        id = try container.decode(String.self, forKey: .id)
-        name = try container.decode(String.self, forKey: .name)
-        repositoryUrl = try container.decode(String.self, forKey: .repositoryUrl)
-        requirementKind = try container.decodeIfPresent(String.self, forKey: .requirementKind)
-        requirementParam = try container.decodeIfPresent(String.self, forKey: .requirementParam)
-    }
-    
-    private enum CodingKeys: String, CodingKey {
-        case id,
-             name,
-             repositoryUrl,
-             requirementKind,
-             requirementParam
-    }
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        
+//        id = try container.decode(String.self, forKey: .id)
+//        name = try container.decode(String.self, forKey: .name)
+//        repositoryUrl = try container.decode(String.self, forKey: .repositoryUrl)
+//        requirementKind = try container.decodeIfPresent(String.self, forKey: .requirementKind)
+//        requirementParam = try container.decodeIfPresent(String.self, forKey: .requirementParam)
+//    }
+//    
+//    private enum CodingKeys: String, CodingKey {
+//        case id,
+//             name,
+//             repositoryUrl,
+//             requirementKind,
+//             requirementParam
+//    }
     
     var author: String? {
         // Attempt to create a URL object from the input string

@@ -41,36 +41,36 @@ struct Proj: Identifiable, Hashable, Decodable {
         self.platforms = fetchUniquePlatforms()
     }
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        id = try container.decode(String.self, forKey: .id)
-        name = try container.decode(String.self, forKey: .name)
-        path = try container.decode(String.self, forKey: .path)
-        type = try container.decode(ProjType.self, forKey: .type)
-        
-        openedAt = try container.decode(Date.self, forKey: .openedAt)
-        modifiedAt = try container.decodeIfPresent(Date.self, forKey: .modifiedAt)
-        createdAt = try container.decodeIfPresent(Date.self, forKey: .createdAt)
-        packages = try container.decode([Package].self, forKey: .packages)
-        
-        //        ingredients = try container.decode([Ingredient].self, forKey: .ingredients)
-        
-        //        let relatedIdStrings = try container.decode([String].self, forKey: .related)
-        
-        //        related = relatedIdStrings.compactMap(UUID.init(uuidString:))
-    }
-    
-    private enum CodingKeys: String, CodingKey {
-        case id,
-             name,
-             path,
-             type,
-             openedAt,
-             modifiedAt,
-             createdAt,
-             packages
-    }
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        
+//        id = try container.decode(String.self, forKey: .id)
+//        name = try container.decode(String.self, forKey: .name)
+//        path = try container.decode(String.self, forKey: .path)
+//        type = try container.decode(ProjType.self, forKey: .type)
+//        
+//        openedAt = try container.decode(Date.self, forKey: .openedAt)
+//        modifiedAt = try container.decodeIfPresent(Date.self, forKey: .modifiedAt)
+//        createdAt = try container.decodeIfPresent(Date.self, forKey: .createdAt)
+//        packages = try container.decode([Package].self, forKey: .packages)
+//        
+//        //        ingredients = try container.decode([Ingredient].self, forKey: .ingredients)
+//        
+//        //        let relatedIdStrings = try container.decode([String].self, forKey: .related)
+//        
+//        //        related = relatedIdStrings.compactMap(UUID.init(uuidString:))
+//    }
+//    
+//    private enum CodingKeys: String, CodingKey {
+//        case id,
+//             name,
+//             path,
+//             type,
+//             openedAt,
+//             modifiedAt,
+//             createdAt,
+//             packages
+//    }
     
     var icon: String {
         switch type {
