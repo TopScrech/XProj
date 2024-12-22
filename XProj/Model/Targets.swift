@@ -2,7 +2,7 @@ import Foundation
 import XcodeProjKit
 
 struct Target: Identifiable, Hashable, Decodable {
-    var id = UUID()
+    var id: String
     
     let name: String
     let bundleId: String?
@@ -11,25 +11,31 @@ struct Target: Identifiable, Hashable, Decodable {
     var appStoreApp: AppStoreApp? = nil
     
     init(
+        id: String,
         name: String,
         bundleId: String?,
         type: TargetType? = nil,
         deploymentTargets: [String: String] = [:]
     ) {
+        self.id = id
         self.name = name
         self.bundleId = bundleId
         self.type = type
         self.deploymentTargets = deploymentTargets
         
-        #warning("appStoreApp")
-//        Task {
-//            self.appStoreApp = await fetchAppStoreApp()
-//        }
+#warning("appStoreApp")
+        //        Task {
+        //            self.appStoreApp = await fetchAppStoreApp()
+        //        }
     }
 }
 
-enum TargetType: String, Decodable, Hashable {
+enum TargetType: String, Identifiable, Codable, Hashable, CaseIterable {
     //    case iOS, tvOS, watchOS, macOS, visionOS, widgets, iMessage
+    var id: String {
+        rawValue
+    }
+    
     case app,
          widgets,
          iMessage,
@@ -95,6 +101,18 @@ func determineType(_ name: String, _ buildSettings: [String: Any]?) -> (type: Ta
 }
 
 extension Proj {
+//    func isDebugConfiguration(_ buildSettings: [String: Any]?) -> Bool {
+//        guard let buildSettings else {
+//            return false
+//        }
+//        
+//        if let activeConditions = buildSettings["SWIFT_ACTIVE_COMPILATION_CONDITIONS"] as? String {
+//            return activeConditions.contains("DEBUG")
+//        }
+//        
+//        return false
+//    }
+    
     func fetchTargets() -> [Target] {
         guard
             type == .proj,
@@ -107,29 +125,41 @@ extension Proj {
             let xcodeProj = try XcodeProj(url: url)
             let project = xcodeProj.project
             let targets = project.targets
-            
+                        
             let targetObjects: [Target] = targets.flatMap { target in
                 let buildConfigs = target.buildConfigurationList?.buildConfigurations ?? []
                 
-                return buildConfigs.compactMap { buildConfig in
+                var seenRefs = Set<String>()
+                
+                return buildConfigs.compactMap { buildConfig -> Target? in
                     let targetName = target.name
                     let buildSettings = buildConfig.buildSettings
-                    
                     let bundleID = buildSettings?["PRODUCT_BUNDLE_IDENTIFIER"] as? String
+                    let id = target.ref
+//                    guard isDebugConfiguration(buildSettings) else {
+//                        return nil
+//                    }
+                    guard !seenRefs.contains(target.ref) else {
+                        return nil
+                    }
                     
-                    if let test = determineType(targetName, buildSettings) {
+                    seenRefs.insert(target.ref)
+                    
+//                    if let test = determineType(targetName, buildSettings) {
+//                        return Target(
+//                            id: id,
+//                            name: targetName,
+//                            bundleId: bundleID,
+//                            type: test.type,
+//                            deploymentTargets: [:]//test.versions
+//                        )
+//                    } else {
                         return Target(
-                            name: targetName,
-                            bundleId: bundleID,
-                            type: test.type,
-                            deploymentTargets: test.versions
-                        )
-                    } else {
-                        return Target(
+                            id: id,
                             name: targetName,
                             bundleId: bundleID
                         )
-                    }
+//                    }
                 }
             }
             

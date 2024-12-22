@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum ProjType: String, Codable, Hashable, CaseIterable, Identifiable {
+enum ProjType: String, Identifiable, Codable, Hashable, CaseIterable {
     case proj,
          workspace,
          package,

@@ -37,7 +37,7 @@ struct Proj: Identifiable, Hashable, Decodable {
         
         self.swiftToolsVersion = fetchSwiftToolsVersion()
         self.packages = parseSwiftPackages()
-        //        self.targets = fetchTargets()
+        self.targets = fetchTargets()
         self.platforms = fetchUniquePlatforms()
     }
     
