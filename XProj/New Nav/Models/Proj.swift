@@ -36,8 +36,8 @@ struct Proj: Identifiable, Hashable, Decodable {
         self.createdAt = createdAt
         
         self.swiftToolsVersion = fetchSwiftToolsVersion()
-//        self.packages = parseSwiftPackages()
-//        self.targets = fetchTargets()
+        self.packages = parseSwiftPackages()
+        //        self.targets = fetchTargets()
         self.platforms = fetchUniquePlatforms()
     }
     
@@ -48,10 +48,11 @@ struct Proj: Identifiable, Hashable, Decodable {
         name = try container.decode(String.self, forKey: .name)
         path = try container.decode(String.self, forKey: .path)
         type = try container.decode(ProjType.self, forKey: .type)
-                
+        
         openedAt = try container.decode(Date.self, forKey: .openedAt)
         modifiedAt = try container.decodeIfPresent(Date.self, forKey: .modifiedAt)
         createdAt = try container.decodeIfPresent(Date.self, forKey: .createdAt)
+        packages = try container.decode([Package].self, forKey: .packages)
         
         //        ingredients = try container.decode([Ingredient].self, forKey: .ingredients)
         
@@ -67,7 +68,8 @@ struct Proj: Identifiable, Hashable, Decodable {
              type,
              openedAt,
              modifiedAt,
-             createdAt
+             createdAt,
+             packages
     }
     
     var icon: String {
@@ -132,10 +134,13 @@ struct Proj: Identifiable, Hashable, Decodable {
                 if let rep = package.repositoryURL,
                    let name = URL(string: rep)?.lastPathComponent {
                     return Package(
+                        id: rep,
                         name: name,
                         repositoryUrl: rep,
-                        requirementKind: package.requirement?.keys.first ?? "",
-                        requirementParam: package.requirement?.values.first as? String ?? ""
+                        requirementKind: nil,
+                        //                        requirementKind: package.requirement?.keys.first,
+                        requirementParam: nil
+                        //                        requirementParam: package.requirement?.values.first as? String
                     )
                 }
                 

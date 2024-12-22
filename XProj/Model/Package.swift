@@ -1,7 +1,7 @@
 import Foundation
 
 struct Package: Identifiable, Hashable, Decodable {
-    var id = UUID()
+    var id: String
     
     /// The name of the Swift package
     let name: String
@@ -16,15 +16,37 @@ struct Package: Identifiable, Hashable, Decodable {
     let requirementParam: String?
     
     init(
+        id: String,
         name: String,
         repositoryUrl: String,
         requirementKind: String? = nil,
         requirementParam: String? = nil
     ) {
+        self.id = id
         self.name = name
         self.repositoryUrl = repositoryUrl
         self.requirementKind = requirementKind
         self.requirementParam = requirementParam
+    }
+    
+#warning("Requirement kind and param are disabled to fix navigation issues")
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        id = try container.decode(String.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        repositoryUrl = try container.decode(String.self, forKey: .repositoryUrl)
+        requirementKind = try container.decodeIfPresent(String.self, forKey: .requirementKind)
+        requirementParam = try container.decodeIfPresent(String.self, forKey: .requirementParam)
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case id,
+             name,
+             repositoryUrl,
+             requirementKind,
+             requirementParam
     }
     
     var author: String? {
@@ -41,7 +63,9 @@ struct Package: Identifiable, Hashable, Decodable {
         }
         
         // Split the path into components
-        let pathComponents = url.pathComponents.filter { $0 != "/" }
+        let pathComponents = url.pathComponents.filter {
+            $0 != "/"
+        }
         
         // GitHub repository URLs typically have the format: /author/repo
         guard pathComponents.count >= 2 else {
