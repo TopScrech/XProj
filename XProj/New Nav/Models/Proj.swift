@@ -1,4 +1,4 @@
-// A data model for a recipe and its metadata, including its related recipes
+// A data model for a recipe and its metadata, including its related projects
 
 import SwiftUI
 import XcodeProjKit

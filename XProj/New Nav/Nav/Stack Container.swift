@@ -14,7 +14,7 @@ struct StackContainer: View {
         NavigationStack(path: $nav.projPath) {
             List(categories) { category in
                 Section {
-                    ForEach(dataModel.recipes(in: category)) { proj in
+                    ForEach(dataModel.projects(in: category)) { proj in
                         NavigationLink(value: proj) {
                             ProjCard(proj)
                         }

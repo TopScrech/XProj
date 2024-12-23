@@ -1,4 +1,4 @@
-// An observable data model of recipes and miscellaneous groupings
+// An observable data model of projects and miscellaneous groupings
 
 import SwiftUI
 
@@ -6,7 +6,7 @@ import SwiftUI
 final class DataModel {
     private(set) var projects: [Proj]
     
-    private var recipesById: [Proj.ID: Proj] = [:]
+    private var projectsById: [Proj.ID: Proj] = [:]
     
     var searchPrompt = ""
     var projectsFolder = ""
@@ -20,20 +20,20 @@ final class DataModel {
     init() {
         let vm = ProjListVM()
         
-        let recipes = vm.getFolders()
+        let projects = vm.getFolders()
         projectsFolder = vm.projectsFolder
         
-        recipesById = Dictionary(uniqueKeysWithValues: recipes.map { recipe in
-            (recipe.id, recipe)
+        projectsById = Dictionary(uniqueKeysWithValues: projects.map { proj in
+            (proj.id, proj)
         })
         
-        self.projects = recipes
+        self.projects = projects
     }
     
-    /// Accesses the recipe associated with the given unique identifier
+    /// Accesses the project associated with the given unique identifier
     /// if the identifier is tracked by the data model; otherwise, returns `nil`
-    subscript(recipeId: Proj.ID) -> Proj? {
-        recipesById[recipeId]
+    subscript(projId: Proj.ID) -> Proj? {
+        projectsById[projId]
     }
     
     var filteredProjects: [Proj] {
@@ -72,8 +72,8 @@ final class DataModel {
         }
     }
     
-    /// The recipes for a given category, sorted by name
-    func recipes(in type: ProjType?) -> [Proj] {
+    /// The projects for a given category, sorted by name
+    func projects(in type: ProjType?) -> [Proj] {
         projects.filter {
             $0.type == type
         }

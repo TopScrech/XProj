@@ -1,4 +1,4 @@
-// A grid of recipe tiles, based on a given recipe category
+// A grid of proj tiles, based on a given category
 
 import SwiftUI
 
@@ -10,9 +10,9 @@ struct ProjGrid: View {
         if let category = navModel.selectedCategory {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(dataModel.recipes(in: category)) { recipe in
-                        NavigationLink(value: recipe) {
-                            ProjGridItem(recipe)
+                    ForEach(dataModel.projects(in: category)) { proj in
+                        NavigationLink(value: proj) {
+                            ProjGridItem(proj)
                         }
                         .buttonStyle(.plain)
                     }
@@ -22,16 +22,16 @@ struct ProjGrid: View {
             .navigationTitle(category.localizedName)
             .navigationDestination(for: Proj.self) { proj in
                 ProjDetails(proj)
+                    .experienceToolbar()
                 
-//                RecipeDetail(proj) { relatedRecipe in
-//                    Button {
-//                        navModel.projPath.append(relatedRecipe)
-//                    } label: {
-//                        RecipeTile(relatedRecipe)
-//                    }
-//                    .buttonStyle(.plain)
-//                }
-                .experienceToolbar()
+                //                RecipeDetail(proj) { relatedProj in
+                //                    Button {
+                //                        navModel.projPath.append(relatedProj)
+                //                    } label: {
+                //                        RecipeTile(relatedProj)
+                //                    }
+                //                    .buttonStyle(.plain)
+                //                }
             }
         } else {
             Text("Choose a category")

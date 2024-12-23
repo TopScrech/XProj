@@ -117,12 +117,12 @@ final class NavModel: Codable {
             forKey: .selectedCategory
         )
         
-        let recipePathIds = try container.decode(
+        let projPathIds = try container.decode(
             [Proj.ID].self,
             forKey: .recipePathIds
         )
         
-        self.projPath = recipePathIds.compactMap {
+        self.projPath = projPathIds.compactMap {
             DataModel.shared[$0]
         }
         

@@ -1,4 +1,4 @@
-//// A detail view the app uses to display the metadata for a given recipe, as well as its related recipes
+//// A detail view the app uses to display the metadata for a given recipe, as well as its related projects
 //
 //import SwiftUI
 //

@@ -5,8 +5,8 @@ import SwiftUI
 struct ProjGridItem: View {
     private var proj: Proj
     
-    init(_ recipe: Proj) {
-        self.proj = recipe
+    init(_ proj: Proj) {
+        self.proj = proj
     }
     
     @State private var isHovering = false
