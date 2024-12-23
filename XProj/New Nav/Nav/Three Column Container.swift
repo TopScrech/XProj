@@ -35,19 +35,44 @@ struct ThreeColumnContainer: View {
                     .navigationTitle("")
             }
         } detail: {
-            if let selectedProj = nav.selectedProj.first {
-                ProjDetails(selectedProj)
+            if nav.selectedProj.count == 1, let proj = nav.selectedProj.first {
+                ProjDetails(proj)
                     .frame(minWidth: 200)
-                //                RecipeDetail(selectedProj) { relatedRecipe in
-                //                    Button {
-                //                        nav.selectedCategory = relatedRecipe.type
-                //                        nav.selectedProj = Set([relatedRecipe])
-                //                    } label: {
-                //                        RecipeTile(relatedRecipe)
-                //                    }
-                //                    .buttonStyle(.plain)
-                //                }
+            } else {
+                
             }
+            //                RecipeDetail(selectedProj) { relatedRecipe in
+            //                    Button {
+            //                        nav.selectedCategory = relatedRecipe.type
+            //                        nav.selectedProj = Set([relatedRecipe])
+            //                    } label: {
+            //                        RecipeTile(relatedRecipe)
+            //                    }
+            //                    .buttonStyle(.plain)
+            //                }
+        }
+        .toolbar {
+            Button("Open") {
+                if let proj = nav.selectedProj.first {
+                    dataModel.openProj(proj)
+                } else {
+                    dataModel.openProjects(nav.selectedProj)
+                }
+            }
+            .keyboardShortcut(.init("O", modifiers: .command))
+            .opacity(0)
+            .disabled(nav.selectedProj.count == 0)
+            
+            Button("Open") {
+                if let proj = nav.selectedProj.first {
+                    dataModel.openProj(proj)
+                } else {
+                    dataModel.openProjects(nav.selectedProj)
+                }
+            }
+            .keyboardShortcut(.defaultAction)
+            .opacity(0)
+            .disabled(nav.selectedProj.count == 0)
         }
     }
 }

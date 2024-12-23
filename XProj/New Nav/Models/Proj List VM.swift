@@ -72,8 +72,6 @@ final class ProjListVM {
             name = name.replacingOccurrences(of: ".playground", with: "")
             
         } else {
-            fileType = .unknown
-            
             switch typeAttribute {
             case "NSFileTypeDirectory":
                 try processPath(projPath)
