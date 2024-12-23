@@ -14,8 +14,10 @@ struct StackContainer: View {
         NavigationStack(path: $nav.projPath) {
             List(categories) { category in
                 Section {
-                    ForEach(dataModel.recipes(in: category)) { recipe in
-                        NavigationLink(recipe.name, value: recipe)
+                    ForEach(dataModel.recipes(in: category)) { proj in
+                        NavigationLink(value: proj) {
+                            ProjCard(proj)
+                        }
                     }
                 } header: {
                     Text(category.localizedName)
@@ -25,15 +27,16 @@ struct StackContainer: View {
             .experienceToolbar()
             .navigationDestination(for: Proj.self) { proj in
                 ProjDetails(proj)
-//                RecipeDetail(proj) { relatedProj in
-//                    Button {
-//                        nav.projPath.append(relatedProj)
-//                    } label: {
-//                        RecipeTile(relatedProj)
-//                    }
-//                    .buttonStyle(.plain)
-//                }
-                .experienceToolbar()
+                    .experienceToolbar()
+                
+                //                RecipeDetail(proj) { relatedProj in
+                //                    Button {
+                //                        nav.projPath.append(relatedProj)
+                //                    } label: {
+                //                        RecipeTile(relatedProj)
+                //                    }
+                //                    .buttonStyle(.plain)
+                //                }
             }
         }
     }

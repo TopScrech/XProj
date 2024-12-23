@@ -81,15 +81,14 @@
 		F3DAD67C2D161EAA0012BA9D /* Three Column Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6662D161EAA0012BA9D /* Three Column Container.swift */; };
 		F3DAD67E2D161EAA0012BA9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6632D161EAA0012BA9D /* ContentView.swift */; };
 		F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6642D161EAA0012BA9D /* Stack Container.swift */; };
-		F3DAD68A2D161ECC0012BA9D /* RecipeGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6862D161ECC0012BA9D /* RecipeGrid.swift */; };
+		F3DAD68A2D161ECC0012BA9D /* Proj Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */; };
 		F3DAD68B2D161ECC0012BA9D /* ExperienceToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6842D161ECC0012BA9D /* ExperienceToolbar.swift */; };
 		F3DAD68C2D161ECC0012BA9D /* ExperienceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6812D161ECC0012BA9D /* ExperienceButton.swift */; };
 		F3DAD68D2D161ECC0012BA9D /* ExperiencePickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6832D161ECC0012BA9D /* ExperiencePickerRow.swift */; };
 		F3DAD68E2D161ECC0012BA9D /* ExperiencePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6822D161ECC0012BA9D /* ExperiencePicker.swift */; };
 		F3DAD68F2D161ECC0012BA9D /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6802D161ECC0012BA9D /* ContinueButton.swift */; };
-		F3DAD6902D161ECC0012BA9D /* RecipePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6872D161ECC0012BA9D /* RecipePhoto.swift */; };
 		F3DAD6912D161ECC0012BA9D /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */; };
-		F3DAD6922D161ECC0012BA9D /* RecipeTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6882D161ECC0012BA9D /* RecipeTile.swift */; };
+		F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */; };
 		F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */; };
 		F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */; };
 		F3ED776F2D1772F8000977AC /* Proj List VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED776E2D1772F8000977AC /* Proj List VM.swift */; };
@@ -180,9 +179,8 @@
 		F3DAD6832D161ECC0012BA9D /* ExperiencePickerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencePickerRow.swift; sourceTree = "<group>"; };
 		F3DAD6842D161ECC0012BA9D /* ExperienceToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceToolbar.swift; sourceTree = "<group>"; };
 		F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
-		F3DAD6862D161ECC0012BA9D /* RecipeGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeGrid.swift; sourceTree = "<group>"; };
-		F3DAD6872D161ECC0012BA9D /* RecipePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePhoto.swift; sourceTree = "<group>"; };
-		F3DAD6882D161ECC0012BA9D /* RecipeTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTile.swift; sourceTree = "<group>"; };
+		F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Grid.swift"; sourceTree = "<group>"; };
+		F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Grid Item.swift"; sourceTree = "<group>"; };
 		F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List Toolbar.swift"; sourceTree = "<group>"; };
 		F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Projects.swift"; sourceTree = "<group>"; };
 		F3ED776E2D1772F8000977AC /* Proj List VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List VM.swift"; sourceTree = "<group>"; };
@@ -477,9 +475,8 @@
 				F3DAD6822D161ECC0012BA9D /* ExperiencePicker.swift */,
 				F3DAD6832D161ECC0012BA9D /* ExperiencePickerRow.swift */,
 				F3DAD6842D161ECC0012BA9D /* ExperienceToolbar.swift */,
-				F3DAD6862D161ECC0012BA9D /* RecipeGrid.swift */,
-				F3DAD6872D161ECC0012BA9D /* RecipePhoto.swift */,
-				F3DAD6882D161ECC0012BA9D /* RecipeTile.swift */,
+				F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */,
+				F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -665,15 +662,14 @@
 				F3DAD6772D161EAA0012BA9D /* Experience.swift in Sources */,
 				F3DAD6782D161EAA0012BA9D /* Two Column Container.swift in Sources */,
 				F3DAD67A2D161EAA0012BA9D /* Data Model.swift in Sources */,
-				F3DAD68A2D161ECC0012BA9D /* RecipeGrid.swift in Sources */,
+				F3DAD68A2D161ECC0012BA9D /* Proj Grid.swift in Sources */,
 				F3DAD68B2D161ECC0012BA9D /* ExperienceToolbar.swift in Sources */,
 				F3DAD68C2D161ECC0012BA9D /* ExperienceButton.swift in Sources */,
 				F3DAD68D2D161ECC0012BA9D /* ExperiencePickerRow.swift in Sources */,
 				F3DAD68E2D161ECC0012BA9D /* ExperiencePicker.swift in Sources */,
 				F3DAD68F2D161ECC0012BA9D /* ContinueButton.swift in Sources */,
-				F3DAD6902D161ECC0012BA9D /* RecipePhoto.swift in Sources */,
 				F3DAD6912D161ECC0012BA9D /* RecipeDetail.swift in Sources */,
-				F3DAD6922D161ECC0012BA9D /* RecipeTile.swift in Sources */,
+				F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */,
 				F3DAD67B2D161EAA0012BA9D /* Nav Model.swift in Sources */,
 				F3DAD67C2D161EAA0012BA9D /* Three Column Container.swift in Sources */,
 				F3DAD67E2D161EAA0012BA9D /* ContentView.swift in Sources */,

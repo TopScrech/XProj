@@ -2,7 +2,7 @@
 
 import SwiftUI
 
-struct RecipeGrid: View {
+struct ProjGrid: View {
     @Environment(NavModel.self) private var navModel
     @Environment(DataModel.self) private var dataModel
     
@@ -12,7 +12,7 @@ struct RecipeGrid: View {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(dataModel.recipes(in: category)) { recipe in
                         NavigationLink(value: recipe) {
-                            RecipeTile(recipe)
+                            ProjGridItem(recipe)
                         }
                         .buttonStyle(.plain)
                     }
@@ -45,13 +45,13 @@ struct RecipeGrid: View {
 }
 
 #Preview() {
-    RecipeGrid()
+    ProjGrid()
         .environment(DataModel.shared)
         .environment(NavModel(selectedCategory: .proj))
 }
 
 #Preview() {
-    RecipeGrid()
+    ProjGrid()
         .environment(DataModel.shared)
         .environment(NavModel(selectedCategory: nil))
 }
