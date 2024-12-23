@@ -86,7 +86,6 @@
 		F3DAD68C2D161ECC0012BA9D /* ExperienceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6812D161ECC0012BA9D /* ExperienceButton.swift */; };
 		F3DAD68D2D161ECC0012BA9D /* ExperiencePickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6832D161ECC0012BA9D /* ExperiencePickerRow.swift */; };
 		F3DAD68E2D161ECC0012BA9D /* ExperiencePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6822D161ECC0012BA9D /* ExperiencePicker.swift */; };
-		F3DAD68F2D161ECC0012BA9D /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6802D161ECC0012BA9D /* ContinueButton.swift */; };
 		F3DAD6912D161ECC0012BA9D /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */; };
 		F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */; };
 		F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */; };
@@ -173,7 +172,6 @@
 		F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Model.swift"; sourceTree = "<group>"; };
 		F3DAD66F2D161EAA0012BA9D /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		F3DAD6712D161EAA0012BA9D /* Proj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proj.swift; sourceTree = "<group>"; };
-		F3DAD6802D161ECC0012BA9D /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
 		F3DAD6812D161ECC0012BA9D /* ExperienceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceButton.swift; sourceTree = "<group>"; };
 		F3DAD6822D161ECC0012BA9D /* ExperiencePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencePicker.swift; sourceTree = "<group>"; };
 		F3DAD6832D161ECC0012BA9D /* ExperiencePickerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencePickerRow.swift; sourceTree = "<group>"; };
@@ -470,7 +468,6 @@
 		F3DAD6892D161ECC0012BA9D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F3DAD6802D161ECC0012BA9D /* ContinueButton.swift */,
 				F3DAD6812D161ECC0012BA9D /* ExperienceButton.swift */,
 				F3DAD6822D161ECC0012BA9D /* ExperiencePicker.swift */,
 				F3DAD6832D161ECC0012BA9D /* ExperiencePickerRow.swift */,
@@ -667,7 +664,6 @@
 				F3DAD68C2D161ECC0012BA9D /* ExperienceButton.swift in Sources */,
 				F3DAD68D2D161ECC0012BA9D /* ExperiencePickerRow.swift in Sources */,
 				F3DAD68E2D161ECC0012BA9D /* ExperiencePicker.swift in Sources */,
-				F3DAD68F2D161ECC0012BA9D /* ContinueButton.swift in Sources */,
 				F3DAD6912D161ECC0012BA9D /* RecipeDetail.swift in Sources */,
 				F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */,
 				F3DAD67B2D161EAA0012BA9D /* Nav Model.swift in Sources */,

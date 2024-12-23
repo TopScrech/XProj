@@ -42,15 +42,9 @@ struct ExperiencePicker: View {
         }
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") {
+                Button("Dismiss") {
                     dismiss()
                 }
-            }
-            ToolbarItem(placement: .confirmationAction) {
-                ContinueButton {
-                    dismiss()
-                }
-                .disabled(experience == nil)
             }
         }
         .frame(width: 600, height: 350)

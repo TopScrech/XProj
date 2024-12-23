@@ -3,6 +3,8 @@
 import SwiftUI
 
 struct ExperiencePickerItem: View {
+    @Environment(\.dismiss) private var dismiss
+    
     @Binding private var selection: Experience?
     
     private var experience: Experience
@@ -15,6 +17,7 @@ struct ExperiencePickerItem: View {
     var body: some View {
         Button {
             selection = experience
+            dismiss()
         } label: {
             Label(selection: $selection, experience: experience)
         }

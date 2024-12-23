@@ -41,6 +41,7 @@ struct ThreeColumnContainer: View {
             } else {
                 
             }
+            
             //                RecipeDetail(selectedProj) { relatedRecipe in
             //                    Button {
             //                        nav.selectedCategory = relatedRecipe.type
