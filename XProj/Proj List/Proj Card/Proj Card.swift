@@ -20,7 +20,7 @@ struct ProjCard: View {
                         .title3()
                         .lineLimit(2)
                     
-                    ForEach(proj.uniquePlatforms, id: \.self) { platform in
+                    ForEach(proj.platforms, id: \.self) { platform in
                         Image(systemName: icon(platform))
                     }
                     
