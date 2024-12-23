@@ -68,10 +68,9 @@ final class DataModel {
     
     /// The recipes for a given category, sorted by name
     func recipes(in type: ProjType?) -> [Proj] {
-        projects
-            .filter {
-                $0.type == type
-            }
+        projects.filter {
+            $0.type == type
+        }
     }
     
     //    /// The related recipes for a given recipe, sorted by name
