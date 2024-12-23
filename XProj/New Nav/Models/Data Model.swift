@@ -12,6 +12,30 @@ final class DataModel {
     var projectsFolder = ""
     private let udKey = "projects_folder_bookmark"
     
+    // The shared singleton data model object
+    static let shared = {
+        DataModel()
+    }()
+    
+    init() {
+        let vm = ProjListVM()
+        
+        let recipes = vm.getFolders()
+        projectsFolder = vm.projectsFolder
+        
+        recipesById = Dictionary(uniqueKeysWithValues: recipes.map { recipe in
+            (recipe.id, recipe)
+        })
+        
+        self.projects = recipes
+    }
+    
+    /// Accesses the recipe associated with the given unique identifier
+    /// if the identifier is tracked by the data model; otherwise, returns `nil`
+    subscript(recipeId: Proj.ID) -> Proj? {
+        recipesById[recipeId]
+    }
+    
     var filteredProjects: [Proj] {
         let sortedProjects = projects.sorted {
             $0.openedAt > $1.openedAt
@@ -48,24 +72,6 @@ final class DataModel {
         }
     }
     
-    // The shared singleton data model object
-    static let shared = {
-        DataModel()
-    }()
-    
-    init() {
-        let vm = ProjListVM()
-        
-        let recipes = vm.getFolders()
-        projectsFolder = vm.projectsFolder
-        
-        recipesById = Dictionary(uniqueKeysWithValues: recipes.map { recipe in
-            (recipe.id, recipe)
-        })
-        
-        self.projects = recipes
-    }
-    
     /// The recipes for a given category, sorted by name
     func recipes(in type: ProjType?) -> [Proj] {
         projects.filter {
@@ -79,12 +85,6 @@ final class DataModel {
     //            recipe.related.contains($0.id)
     //        }
     //    }
-    
-    /// Accesses the recipe associated with the given unique identifier
-    /// if the identifier is tracked by the data model; otherwise, returns `nil`
-    subscript(recipeId: Proj.ID) -> Proj? {
-        recipesById[recipeId]
-    }
     
     var swiftToolsVersions: String {
         var versions = Set<String>()
