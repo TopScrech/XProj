@@ -11,13 +11,13 @@ struct ContentView: View {
         
         Group {
             switch experience {
-            case .stack?:
+            case .stack:
                 StackContainer()
                 
-            case .twoColumn?:
+            case .twoColumn:
                 TwoColumnContainer()
                 
-            case .threeColumn?:
+            case .threeColumn:
                 ThreeColumnContainer()
                 
             case nil:
@@ -34,19 +34,19 @@ struct ContentView: View {
         .task {
             try? nav.load()
         }
-        .onChange(of: nav.selectedCategory) { _, newExperience in
-            do {
-                try nav.save()
-            } catch {
-                print(error)
-            }
+        .onChange(of: nav.selectedCategory) {
+            save()
         }
-        .onChange(of: nav.selectedProj) { _, newExperience in
-            do {
-                try nav.save()
-            } catch {
-                print(error)
-            }
+        .onChange(of: nav.selectedProj) {
+            save()
+        }
+    }
+    
+    private func save() {
+        do {
+            try nav.save()
+        } catch {
+            print(error)
         }
     }
 }
