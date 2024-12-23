@@ -23,7 +23,7 @@ struct ProjDetailsTarget: View {
                 
                 if let bundle = target.bundleId {
                     Text(bundle)
-                        .secondary()
+                        .foregroundStyle(.tertiary)
                 }
             }
             
