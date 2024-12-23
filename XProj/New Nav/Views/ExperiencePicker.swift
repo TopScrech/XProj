@@ -11,7 +11,9 @@ struct ExperiencePicker: View {
         _experience = experience
     }
     
-    @State private var selection: Experience?
+    private var columns: [GridItem] {[
+        GridItem(.adaptive(minimum: 250))
+    ]}
     
     var body: some View {
         NavigationStack {
@@ -30,7 +32,7 @@ struct ExperiencePicker: View {
                 
                 LazyVGrid(columns: columns) {
                     ForEach(Experience.allCases) { experience in
-                        ExperiencePickerItem($selection, for: experience)
+                        ExperiencePickerItem($experience, for: experience)
                     }
                 }
                 
@@ -46,22 +48,13 @@ struct ExperiencePicker: View {
             }
             ToolbarItem(placement: .confirmationAction) {
                 ContinueButton {
-                    continueAction()
+                    dismiss()
                 }
-                .disabled(selection == nil)
+                .disabled(experience == nil)
             }
         }
         .frame(width: 600, height: 350)
-        .interactiveDismissDisabled(selection == nil)
-    }
-    
-    private var columns: [GridItem] {[
-        GridItem(.adaptive(minimum: 250))
-    ]}
-    
-    private func continueAction() {
-        experience = selection
-        dismiss()
+        .interactiveDismissDisabled(experience == nil)
     }
 }
 
