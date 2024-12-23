@@ -16,7 +16,6 @@ struct Proj: Identifiable, Hashable, Decodable {
     var swiftToolsVersion: String? = nil
     var packages: [Package] = []
     var targets: [Target] = []
-    var platforms: [String] = []
     
     init(
         id: String,
@@ -38,7 +37,6 @@ struct Proj: Identifiable, Hashable, Decodable {
         self.swiftToolsVersion = fetchSwiftToolsVersion()
         self.packages = parseSwiftPackages()
         self.targets = fetchTargets()
-        self.platforms = fetchUniquePlatforms()
     }
     
     //    init(from decoder: Decoder) throws {
@@ -92,14 +90,33 @@ struct Proj: Identifiable, Hashable, Decodable {
         }
     }
     
-    private func fetchUniquePlatforms() -> [String] {
-        let allPlatforms = targets.flatMap {
-            $0.deploymentTargets
+    var uniquePlatforms: [String] {
+        targets
+            .flatMap(\.deploymentTargets)
+            .map { $0.components(separatedBy: " ").first ?? $0 }
+            .reduce(into: []) { result, platform in
+                if !result.contains(platform) {
+                    result.append(platform)
+                }
+            }
+    }
+    
+    var hasImessage: Bool {
+        targets.contains {
+            $0.type == .iMessage
         }
-        
-        let uniquePlatforms = Array(Set(allPlatforms))
-        
-        return uniquePlatforms
+    }
+    
+    var hasWidgets: Bool {
+        targets.contains {
+            $0.type == .widgets
+        }
+    }
+    
+    var hasTests: Bool {
+        targets.contains {
+            $0.type == .uiTests || $0.type == .unitTests
+        }
     }
     
     private func parseSwiftPackages() -> [Package] {

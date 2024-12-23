@@ -38,14 +38,18 @@ struct ProjDetailsTarget: View {
                             .footnote()
                             .foregroundStyle(.tertiary)
                     }
-                    
-                    if target.type == .iMessage {
-                        Image(systemName: "widget.large")
-                    }
-                    
-                    if target.type == .unitTests || target.type == .uiTests {
-                        Image(systemName: "message.badge")
-                    }
+                }
+                
+                if target.type == .widgets {
+                    Image(systemName: "widget.large")
+                }
+                
+                if target.type == .unitTests || target.type == .uiTests {
+                    Image(systemName: "testtube.2")
+                }
+                
+                if target.type == .iMessage {
+                    Image(systemName: "message.badge")
                 }
             }
         }

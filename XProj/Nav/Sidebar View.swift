@@ -55,7 +55,7 @@ struct SidebarView: View {
             
             NavigationLink {
                 ProjList(vm.filteredProjects.filter {
-                    $0.platforms.contains("iOS")
+                    $0.uniquePlatforms.contains("iOS")
                 })
             } label: {
                 Label("iOS", systemImage: "iphone")
@@ -63,7 +63,7 @@ struct SidebarView: View {
             
             NavigationLink {
                 ProjList(vm.filteredProjects.filter {
-                    $0.platforms.contains("macOS")
+                    $0.uniquePlatforms.contains("macOS")
                 })
             } label: {
                 Label("macOS", systemImage: "macbook")
@@ -71,7 +71,7 @@ struct SidebarView: View {
             
             NavigationLink {
                 ProjList(vm.filteredProjects.filter {
-                    $0.platforms.contains("watchOS")
+                    $0.uniquePlatforms.contains("watchOS")
                 })
             } label: {
                 Label("watchOS", systemImage: "applewatch")
@@ -79,7 +79,7 @@ struct SidebarView: View {
             
             NavigationLink {
                 ProjList(vm.filteredProjects.filter {
-                    $0.platforms.contains("tvOS")
+                    $0.uniquePlatforms.contains("tvOS")
                 })
             } label: {
                 Label("tvOS", systemImage: "tv")
@@ -87,7 +87,7 @@ struct SidebarView: View {
             
             NavigationLink {
                 ProjList(vm.filteredProjects.filter {
-                    $0.platforms.contains("visionOS")
+                    $0.uniquePlatforms.contains("visionOS")
                 })
             } label: {
                 Label("visionOS", systemImage: "vision.pro")
