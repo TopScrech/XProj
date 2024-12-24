@@ -122,10 +122,6 @@ final class DerivedDataVM {
         let path = path + "/" + proj
         let url = URL(fileURLWithPath: path)
         
-        if proj == ".git" || proj == ".build" || proj == "Not Xcode" {
-            return nil
-        }
-        
         do {
             let sizeAttribute = try fm.allocatedSizeOfDirectory(url)
             
