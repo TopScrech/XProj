@@ -123,7 +123,7 @@ final class DerivedDataVM {
         let url = URL(fileURLWithPath: path)
         
         do {
-            let sizeAttribute = try fm.allocatedSizeOfDirectory(url)
+            let size = try fm.allocatedSizeOfDirectory(url)
             
             let name: String
             
@@ -135,7 +135,7 @@ final class DerivedDataVM {
             
             return DerivedDataFolder(
                 name: name,
-                size: sizeAttribute
+                size: size
             )
         } catch {
             print("error processing project at path: \(path)")
