@@ -2,7 +2,7 @@ import ScrechKit
 
 @Observable
 final class DerivedDataVM {
-    var folders: [DerivedDataFolder] = []
+    private(set) var folders: [DerivedDataFolder] = []
     var searchPrompt = ""
     
     private let udKey = "derived_data_bookmark"
