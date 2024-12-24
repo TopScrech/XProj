@@ -36,8 +36,8 @@ struct ExperiencePicker: View {
                 Spacer()
                 
                 LazyVGrid(columns: columns) {
-                    ForEach(Experience.allCases) { experience in
-                        ExperiencePickerItem($experience, for: experience)
+                    ForEach(Experience.allCases) { exp in
+                        ExperiencePickerItem($experience, for: exp)
                     }
                 }
                 
