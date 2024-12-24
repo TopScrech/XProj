@@ -35,7 +35,6 @@
 		F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BA2D10CE9A007F7858 /* Formatters.swift */; };
 		F37831BF2D10D8DE007F7858 /* Packages in Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BE2D10D8DE007F7858 /* Packages in Package.swift */; };
 		F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C02D10E1CF007F7858 /* App Store App.swift */; };
-		F37831C32D10F99A007F7858 /* Publiches Projects List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C22D10F99A007F7858 /* Publiches Projects List.swift */; };
 		F37831C52D11A4F4007F7858 /* Proj Details Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C42D11A4F4007F7858 /* Proj Details Target.swift */; };
 		F37831C72D11A590007F7858 /* Proj Details Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C62D11A590007F7858 /* Proj Details Package.swift */; };
 		F37831C92D11A69B007F7858 /* Proj Details Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C82D11A69B007F7858 /* Proj Details Dates.swift */; };
@@ -57,18 +56,14 @@
 		F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Proj Card.swift */; };
 		F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* Search Suggestions.swift */; };
-		F3B389BA2D0EC9810082C2F3 /* Sidebar View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389B92D0EC9810082C2F3 /* Sidebar View.swift */; };
 		F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */; };
 		F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */; };
 		F3B389C12D0F92500082C2F3 /* Proj Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C02D0F92500082C2F3 /* Proj Type.swift */; };
 		F3B389C32D0F93500082C2F3 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C22D0F93500082C2F3 /* Package.swift */; };
 		F3B389C52D0F9AE80082C2F3 /* Swift Tools Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */; };
 		F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C62D0F9B340082C2F3 /* Proj Icon.swift */; };
-		F3B389C92D0FA57E0082C2F3 /* Only Proj List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C82D0FA57E0082C2F3 /* Only Proj List.swift */; };
-		F3B389CB2D0FA5880082C2F3 /* Only Package List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CA2D0FA5880082C2F3 /* Only Package List.swift */; };
 		F3B389CD2D0FAC770082C2F3 /* Derived Data Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CC2D0FAC770082C2F3 /* Derived Data Folder.swift */; };
 		F3B389CF2D1027890082C2F3 /* Derived Data Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CE2D1027890082C2F3 /* Derived Data Card.swift */; };
-		F3B389D12D102D610082C2F3 /* Only Playgrounds List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D02D102D610082C2F3 /* Only Playgrounds List.swift */; };
 		F3B389D32D102F5E0082C2F3 /* Package Dep List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */; };
 		F3B389D62D1032A40082C2F3 /* Package Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D52D1032A40082C2F3 /* Package Dependency.swift */; };
 		F3D1E75F2C9B40B4000C81FF /* Main Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */; };
@@ -124,7 +119,6 @@
 		F37831BA2D10CE9A007F7858 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		F37831BE2D10D8DE007F7858 /* Packages in Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Packages in Package.swift"; sourceTree = "<group>"; };
 		F37831C02D10E1CF007F7858 /* App Store App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Store App.swift"; sourceTree = "<group>"; };
-		F37831C22D10F99A007F7858 /* Publiches Projects List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publiches Projects List.swift"; sourceTree = "<group>"; };
 		F37831C42D11A4F4007F7858 /* Proj Details Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Target.swift"; sourceTree = "<group>"; };
 		F37831C62D11A590007F7858 /* Proj Details Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Package.swift"; sourceTree = "<group>"; };
 		F37831C82D11A69B007F7858 /* Proj Details Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Dates.swift"; sourceTree = "<group>"; };
@@ -147,18 +141,14 @@
 		F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
 		F38B5E512BFD6F6100CB9917 /* Proj Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card.swift"; sourceTree = "<group>"; };
 		F38B5E572BFE134400CB9917 /* Search Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestions.swift"; sourceTree = "<group>"; };
-		F3B389B92D0EC9810082C2F3 /* Sidebar View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sidebar View.swift"; sourceTree = "<group>"; };
 		F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details.swift"; sourceTree = "<group>"; };
 		F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card Image.swift"; sourceTree = "<group>"; };
 		F3B389C02D0F92500082C2F3 /* Proj Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Type.swift"; sourceTree = "<group>"; };
 		F3B389C22D0F93500082C2F3 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift Tools Version.swift"; sourceTree = "<group>"; };
 		F3B389C62D0F9B340082C2F3 /* Proj Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Icon.swift"; sourceTree = "<group>"; };
-		F3B389C82D0FA57E0082C2F3 /* Only Proj List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Only Proj List.swift"; sourceTree = "<group>"; };
-		F3B389CA2D0FA5880082C2F3 /* Only Package List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Only Package List.swift"; sourceTree = "<group>"; };
 		F3B389CC2D0FAC770082C2F3 /* Derived Data Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data Folder.swift"; sourceTree = "<group>"; };
 		F3B389CE2D1027890082C2F3 /* Derived Data Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data Card.swift"; sourceTree = "<group>"; };
-		F3B389D02D102D610082C2F3 /* Only Playgrounds List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Only Playgrounds List.swift"; sourceTree = "<group>"; };
 		F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep List.swift"; sourceTree = "<group>"; };
 		F3B389D52D1032A40082C2F3 /* Package Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dependency.swift"; sourceTree = "<group>"; };
 		F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main Settings.swift"; sourceTree = "<group>"; };
@@ -433,23 +423,10 @@
 		F3DAD65B2D161E600012BA9D /* New Nav */ = {
 			isa = PBXGroup;
 			children = (
-				F3DAD6672D161EAA0012BA9D /* Nav */,
 				F3DAD6722D161EAA0012BA9D /* Models */,
 				F3DAD6892D161ECC0012BA9D /* Experience */,
 			);
 			path = "New Nav";
-			sourceTree = "<group>";
-		};
-		F3DAD6672D161EAA0012BA9D /* Nav */ = {
-			isa = PBXGroup;
-			children = (
-				F3DAD6642D161EAA0012BA9D /* Stack Container.swift */,
-				F3DAD6652D161EAA0012BA9D /* Two Column Container.swift */,
-				F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */,
-				F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */,
-				F3DAD6662D161EAA0012BA9D /* Three Column Container.swift */,
-			);
-			path = Nav;
 			sourceTree = "<group>";
 		};
 		F3DAD6722D161EAA0012BA9D /* Models */ = {
@@ -479,11 +456,11 @@
 			isa = PBXGroup;
 			children = (
 				F3DAD6632D161EAA0012BA9D /* ContentView.swift */,
-				F3B389B92D0EC9810082C2F3 /* Sidebar View.swift */,
-				F3B389C82D0FA57E0082C2F3 /* Only Proj List.swift */,
-				F37831C22D10F99A007F7858 /* Publiches Projects List.swift */,
-				F3B389CA2D0FA5880082C2F3 /* Only Package List.swift */,
-				F3B389D02D102D610082C2F3 /* Only Playgrounds List.swift */,
+				F3DAD6642D161EAA0012BA9D /* Stack Container.swift */,
+				F3DAD6652D161EAA0012BA9D /* Two Column Container.swift */,
+				F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */,
+				F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */,
+				F3DAD6662D161EAA0012BA9D /* Three Column Container.swift */,
 			);
 			path = Nav;
 			sourceTree = "<group>";
@@ -677,29 +654,24 @@
 				F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */,
 				F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,
-				F3B389D12D102D610082C2F3 /* Only Playgrounds List.swift in Sources */,
 				F37D1BFA2CDA272600D8817D /* Duplicate Section.swift in Sources */,
 				F371A51D2C2D8D94006BDF0D /* MB Proj Card.swift in Sources */,
 				F31EF9492D1038CE000F95A7 /* Package Dep Details.swift in Sources */,
 				F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */,
 				F37831D32D11D221007F7858 /* Proj Details Targets.swift in Sources */,
 				F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */,
-				F3B389BA2D0EC9810082C2F3 /* Sidebar View.swift in Sources */,
 				F37831D52D11D292007F7858 /* Proj Details Dependencies.swift in Sources */,
 				F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */,
 				F3ED776F2D1772F8000977AC /* Proj List VM.swift in Sources */,
 				F3522DCF2C2AA51800660101 /* Derived Data Entry.swift in Sources */,
 				F37831D12D11D177007F7858 /* Proj Details Actions.swift in Sources */,
-				F3B389C92D0FA57E0082C2F3 /* Only Proj List.swift in Sources */,
 				F37831C52D11A4F4007F7858 /* Proj Details Target.swift in Sources */,
 				F3B389D62D1032A40082C2F3 /* Package Dependency.swift in Sources */,
 				F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */,
-				F37831C32D10F99A007F7858 /* Publiches Projects List.swift in Sources */,
 				F31EF9472D103896000F95A7 /* Package Dep Card.swift in Sources */,
 				F371A5192C2D84BA006BDF0D /* Proj Card VM.swift in Sources */,
 				F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */,
 				F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */,
-				F3B389CB2D0FA5880082C2F3 /* Only Package List.swift in Sources */,
 				F37831CF2D11D11B007F7858 /* Proj Details Image.swift in Sources */,
 				F37831CC2D11AF86007F7858 /* icon.swift in Sources */,
 				F3B389C52D0F9AE80082C2F3 /* Swift Tools Version.swift in Sources */,

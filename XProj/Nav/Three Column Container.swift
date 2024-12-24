@@ -12,6 +12,9 @@ struct ThreeColumnContainer: View {
         NavigationSplitView(
             columnVisibility: $nav.columnVisibility
         ) {
+#warning("Categories with platforms")
+#warning("Category with PublishedProjectsList")
+#warning("Category with all projects")
             List(selection: $nav.selectedCategory) {
                 ForEach(categories) { type in
                     NavigationLink(type.localizedName, value: type)
