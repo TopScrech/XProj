@@ -2,7 +2,7 @@ import ScrechKit
 
 struct MainSettings: View {
     @Environment(NavModel.self) private var nav
-    @Environment(DataModel.self) private var dataModel
+    @Environment(DataModel.self) private var vm
     
     var body: some View {
         ScrollView {
@@ -11,10 +11,9 @@ struct MainSettings: View {
                     nav.clearNavCache()
                 }
                 
-#warning("Change projects folder")
-                //                Button("Change projects folder") {
-                //                    dataModel.showPicker()
-                //                }
+                Button("Change projects folder") {
+                    vm.showPicker()
+                }
                 
                 Button("Examples") {
                     downloadExamples()
@@ -50,5 +49,6 @@ struct MainSettings: View {
 
 #Preview {
     SettingsView()
+        .environment(NavModel.shared)
         .environment(DataModel.shared)
 }
