@@ -8,7 +8,7 @@ struct Proj: Identifiable, Hashable, Decodable {
     
     var name: String
     var path: String
-    let type: ProjType
+    let type: NavCategory
     let openedAt: Date
     let modifiedAt: Date?
     let createdAt: Date?
@@ -22,7 +22,7 @@ struct Proj: Identifiable, Hashable, Decodable {
         id: String,
         name: String,
         path: String,
-        type: ProjType,
+        type: NavCategory,
         openedAt: Date,
         modifiedAt: Date?,
         createdAt: Date?

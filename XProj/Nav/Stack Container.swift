@@ -6,7 +6,7 @@ struct StackContainer: View {
     @Environment(NavModel.self) private var nav
     @Environment(DataModel.self) private var dataModel
     
-    private let categories = ProjType.allCases
+    private let categories = NavCategory.allCases
     
     var body: some View {
         @Bindable var nav = nav

@@ -8,7 +8,7 @@ import SwiftUI
 //                Label("iMessage", systemImage: "message.badge")
 //                Label("Tests", systemImage: "testtube.2")
 
-enum ProjType: String, Identifiable, Codable, Hashable, CaseIterable {
+enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
     case proj,
          package,
          vapor,
@@ -18,7 +18,7 @@ enum ProjType: String, Identifiable, Codable, Hashable, CaseIterable {
          packageDependencies,
          allItems
     
-    static var projTypes: [ProjType] {[
+    static var projTypes: [NavCategory] {[
         .proj,
         .package,
         .vapor,
@@ -32,27 +32,27 @@ enum ProjType: String, Identifiable, Codable, Hashable, CaseIterable {
     
     var icon: String {
         switch self {
-        case .proj: "hammer.fill"
-        case .workspace: "hammer.fill"
-        case .package: "shippingbox.fill"
+        case .proj:                "hammer.fill"
+        case .workspace:           "hammer.fill"
+        case .package:             "shippingbox.fill"
         case .packageDependencies: "shippingbox.fill"
-        case .vapor: "drop.fill"
-        case .playground: "swift"
-        case .derivedData: "folder.badge.gearshape"
+        case .vapor:               "drop.fill"
+        case .playground:          "swift"
+        case .derivedData:         "folder.badge.gearshape"
         default: ""
         }
     }
     
     var localizedName: LocalizedStringKey {
         switch self {
-        case .package: "Packages"
-        case .playground: "Playgrounds"
-        case .proj: "Projects"
-        case .vapor: "Vapor"
-        case .workspace: "Workspaces"
-        case .derivedData: "Derived Data"
+        case .package:             "Packages"
+        case .playground:          "Playgrounds"
+        case .proj:                "Projects"
+        case .vapor:               "Vapor"
+        case .workspace:           "Workspaces"
+        case .derivedData:         "Derived Data"
         case .packageDependencies: "Package Dependencies"
-        case .allItems: "All Items"
+        case .allItems:            "All Items"
         }
     }
 }

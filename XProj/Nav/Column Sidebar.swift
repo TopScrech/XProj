@@ -3,7 +3,7 @@ import SwiftUI
 struct ColumnSidebar: View {
     @Environment(NavModel.self) private var nav
     
-    private let categories = ProjType.projTypes
+    private let categories = NavCategory.projTypes
     
     var body: some View {
         @Bindable var nav = nav
@@ -12,7 +12,7 @@ struct ColumnSidebar: View {
 #warning("Category with PublishedProjectsList")
         List(selection: $nav.selectedCategory) {
             Section {
-                let type = ProjType.allItems
+                let type = NavCategory.allItems
                 
                 NavigationLink(value: type) {
                     Label(type.localizedName, systemImage: type.icon)
@@ -29,7 +29,7 @@ struct ColumnSidebar: View {
             }
             
             Section {
-                let type = ProjType.packageDependencies
+                let type = NavCategory.packageDependencies
                 
                 NavigationLink(value: type) {
                     Label(type.localizedName, systemImage: type.icon)
@@ -37,7 +37,7 @@ struct ColumnSidebar: View {
             }
             
             Section {
-                let type = ProjType.derivedData
+                let type = NavCategory.derivedData
                 
                 NavigationLink(value: type) {
                     Label(type.localizedName, systemImage: type.icon)
