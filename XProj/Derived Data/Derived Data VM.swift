@@ -43,6 +43,8 @@ final class DerivedDataVM {
     }
     
     func getFolders() {
+        folders = []
+        
         guard let url = restoreAccessToFolder(udKey) else {
             print("Unable to restore access to the folder. Please select a folder.")
             return
