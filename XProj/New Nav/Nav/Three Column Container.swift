@@ -18,6 +18,10 @@ struct ThreeColumnContainer: View {
                 }
                 
                 Section {
+                    NavigationLink("Package Dependencies", value: ProjType.packageDependencies)
+                }
+                
+                Section {
                     NavigationLink("Derived Data", value: ProjType.derivedData)
                 }
             }
@@ -25,9 +29,14 @@ struct ThreeColumnContainer: View {
             .navigationTitle("Categories")
         } content: {
             if let category = nav.selectedCategory {
-                if category == .derivedData {
+                switch category {
+                case .derivedData:
                     DerivedDataList()
-                } else {
+                    
+                case .packageDependencies:
+                    PackageDepList()
+                    
+                default:
                     List(selection: $nav.selectedProj) {
                         ForEach(dataModel.projects(in: category)) { proj in
                             NavigationLink(value: proj) {

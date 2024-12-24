@@ -6,7 +6,8 @@ enum ProjType: String, Identifiable, Codable, Hashable, CaseIterable {
          package,
          vapor,
          playground,
-         derivedData
+         derivedData,
+         packageDependencies
     
     static var projTypes: [ProjType] {
         [.proj, .workspace, .package, .vapor, .playground]
@@ -24,6 +25,7 @@ enum ProjType: String, Identifiable, Codable, Hashable, CaseIterable {
         case .vapor: "Vapor"
         case .workspace: "Workspaces"
         case .derivedData: "Derived Data"
+        case .packageDependencies: "Package Dependencies"
         }
     }
 }

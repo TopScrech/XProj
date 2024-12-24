@@ -56,7 +56,6 @@
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
 		F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Proj Card.swift */; };
-		F38B5E562BFD76F300CB9917 /* Home View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E552BFD76F300CB9917 /* Home View.swift */; };
 		F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* Search Suggestions.swift */; };
 		F3B389BA2D0EC9810082C2F3 /* Sidebar View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389B92D0EC9810082C2F3 /* Sidebar View.swift */; };
 		F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */; };
@@ -147,7 +146,6 @@
 		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
 		F38B5E512BFD6F6100CB9917 /* Proj Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card.swift"; sourceTree = "<group>"; };
-		F38B5E552BFD76F300CB9917 /* Home View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home View.swift"; sourceTree = "<group>"; };
 		F38B5E572BFE134400CB9917 /* Search Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestions.swift"; sourceTree = "<group>"; };
 		F3B389B92D0EC9810082C2F3 /* Sidebar View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sidebar View.swift"; sourceTree = "<group>"; };
 		F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details.swift"; sourceTree = "<group>"; };
@@ -445,7 +443,6 @@
 		F3DAD6672D161EAA0012BA9D /* Nav */ = {
 			isa = PBXGroup;
 			children = (
-				F3DAD6632D161EAA0012BA9D /* ContentView.swift */,
 				F3DAD6642D161EAA0012BA9D /* Stack Container.swift */,
 				F3DAD6652D161EAA0012BA9D /* Two Column Container.swift */,
 				F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */,
@@ -481,7 +478,7 @@
 		F3DB25452C2C4E8B00A0C066 /* Nav */ = {
 			isa = PBXGroup;
 			children = (
-				F38B5E552BFD76F300CB9917 /* Home View.swift */,
+				F3DAD6632D161EAA0012BA9D /* ContentView.swift */,
 				F3B389B92D0EC9810082C2F3 /* Sidebar View.swift */,
 				F3B389C82D0FA57E0082C2F3 /* Only Proj List.swift */,
 				F37831C22D10F99A007F7858 /* Publiches Projects List.swift */,
@@ -696,7 +693,6 @@
 				F3B389C92D0FA57E0082C2F3 /* Only Proj List.swift in Sources */,
 				F37831C52D11A4F4007F7858 /* Proj Details Target.swift in Sources */,
 				F3B389D62D1032A40082C2F3 /* Package Dependency.swift in Sources */,
-				F38B5E562BFD76F300CB9917 /* Home View.swift in Sources */,
 				F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */,
 				F37831C32D10F99A007F7858 /* Publiches Projects List.swift in Sources */,
 				F31EF9472D103896000F95A7 /* Package Dep Card.swift in Sources */,
