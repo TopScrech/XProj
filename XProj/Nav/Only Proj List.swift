@@ -16,5 +16,5 @@ struct OnlyProjList: View {
 
 #Preview {
     OnlyProjList()
-        .environment(DataModel())
+        .environment(DataModel.shared)
 }

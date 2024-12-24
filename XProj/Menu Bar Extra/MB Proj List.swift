@@ -52,5 +52,5 @@ struct MBProjList: View {
 
 #Preview {
     MBProjList()
-        .environment(DataModel())
+        .environment(DataModel.shared)
 }

@@ -94,5 +94,5 @@ struct PackageDepList: View {
 
 #Preview {
     PackageDepList()
-        .environment(DataModel())
+        .environment(DataModel.shared)
 }

@@ -40,5 +40,5 @@ struct ProjDetails: View {
 
 //#Preview {
 //    ProjDetails(previewProj1)
-//        .environment(DataModel())
+//        .environment(DataModel.shared)
 //}

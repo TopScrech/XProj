@@ -150,5 +150,5 @@ struct SidebarView: View {
 
 #Preview {
     SidebarView()
-        .environment(DataModel())
+        .environment(DataModel.shared)
 }

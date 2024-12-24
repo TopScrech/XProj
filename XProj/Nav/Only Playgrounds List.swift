@@ -18,5 +18,5 @@ struct OnlyPlaygroundsList: View {
 
 #Preview {
     OnlyPlaygroundsList()
-        .environment(DataModel())
+        .environment(DataModel.shared)
 }

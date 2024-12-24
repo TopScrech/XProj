@@ -18,5 +18,5 @@ struct DuplicateProjects: View {
 
 #Preview {
     DuplicateProjects()
-        .environment(DataModel())
+        .environment(DataModel.shared)
 }

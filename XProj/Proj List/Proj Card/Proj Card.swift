@@ -88,5 +88,5 @@ struct ProjCard: View {
         
         ProjCard(previewProj2)
     }
-    .environment(DataModel())
+    .environment(DataModel.shared)
 }

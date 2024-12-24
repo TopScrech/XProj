@@ -32,5 +32,5 @@ struct SearchSuggestions: View {
 
 #Preview {
     SearchSuggestions()
-        .environment(DataModel())
+        .environment(DataModel.shared)
 }

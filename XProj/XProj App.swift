@@ -3,7 +3,7 @@ import ScrechKit
 @main
 struct XProjApp: App {
     private var nav: NavModel = .shared
-    private var dataModel = DataModel()
+    private var dataModel: DataModel = .shared
     
     var body: some Scene {
         WindowGroup {

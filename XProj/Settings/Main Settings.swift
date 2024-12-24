@@ -50,5 +50,5 @@ struct MainSettings: View {
 
 #Preview {
     SettingsView()
-        .environment(DataModel())
+        .environment(DataModel.shared)
 }

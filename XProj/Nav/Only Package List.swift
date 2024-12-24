@@ -21,5 +21,5 @@ struct OnlyPackageList: View {
 
 #Preview {
     OnlyPackageList()
-        .environment(DataModel())
+        .environment(DataModel.shared)
 }

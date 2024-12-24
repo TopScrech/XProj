@@ -50,5 +50,5 @@ struct ProjList: View {
 
 #Preview {
     ProjList([previewProj1, previewProj2])
-        .environment(DataModel())
+        .environment(DataModel.shared)
 }

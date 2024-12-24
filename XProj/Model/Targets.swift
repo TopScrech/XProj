@@ -78,7 +78,7 @@ extension Proj {
                 return buildConfigs.compactMap { buildConfig -> Target? in
                     let targetName = target.name
                     let buildSettings = buildConfig.buildSettings
-                    let bundleID = buildSettings?["PRODUCT_BUNDLE_IDENTIFIER"] as? String
+                    let bundleId = buildSettings?["PRODUCT_BUNDLE_IDENTIFIER"] as? String
                     let id = target.ref
                     
                     guard !seenRefs.contains(target.ref) else {
@@ -92,7 +92,7 @@ extension Proj {
                     return Target(
                         id: id,
                         name: targetName,
-                        bundleId: bundleID,
+                        bundleId: bundleId,
                         type: test.type,
                         deploymentTargets: test.versions
                     )
