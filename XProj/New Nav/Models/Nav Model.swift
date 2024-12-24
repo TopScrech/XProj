@@ -38,11 +38,11 @@ final class NavModel: Codable {
     init(
         columnVisibility: NavigationSplitViewVisibility = .automatic,
         selectedCategory: ProjType? = nil,
-        recipePath: [Proj] = []
+        projPath: [Proj] = []
     ) {
         self.columnVisibility = columnVisibility
         self.selectedCategory = selectedCategory
-        self.projPath = recipePath
+        self.projPath = projPath
     }
     
     /// Initialize a `DataModel` with the contents of a `URL`
@@ -56,7 +56,7 @@ final class NavModel: Codable {
         self.init(
             columnVisibility: model.columnVisibility,
             selectedCategory: model.selectedCategory,
-            recipePath: model.projPath
+            projPath: model.projPath
         )
     }
     
