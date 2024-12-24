@@ -17,21 +17,35 @@ struct ThreeColumnContainer: View {
 #warning("Category with all projects")
             List(selection: $nav.selectedCategory) {
                 Section {
-                    NavigationLink("All items", value: ProjType.allItems)
-                }
-                
-                Section {
-                    ForEach(categories) { type in
-                        NavigationLink(type.localizedName, value: type)
+                    let type = ProjType.allItems
+                    
+                    NavigationLink(value: type) {
+                        Label(type.localizedName, systemImage: type.icon)
                     }
                 }
                 
                 Section {
-                    NavigationLink("Package Dependencies", value: ProjType.packageDependencies)
+                    ForEach(categories) { type in
+                        NavigationLink(value: type) {
+                            Label(type.localizedName, systemImage: type.icon)
+                        }
+                    }
                 }
                 
                 Section {
-                    NavigationLink("Derived Data", value: ProjType.derivedData)
+                    let type = ProjType.packageDependencies
+                    
+                    NavigationLink(value: type) {
+                        Label(type.localizedName, systemImage: type.icon)
+                    }
+                }
+                
+                Section {
+                    let type = ProjType.derivedData
+                    
+                    NavigationLink(value: type) {
+                        Label(type.localizedName, systemImage: type.icon)
+                    }
                 }
             }
             .frame(minWidth: 250)
