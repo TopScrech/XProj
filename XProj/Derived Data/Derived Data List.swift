@@ -19,6 +19,9 @@ struct DerivedDataList: View {
                         
                         Text(vm.totalSize)
                             .bold()
+                            .numericTransition()
+                            .monospacedDigit()
+                            .animation(.default, value: vm.totalSize)
                     }
                 }
             }
