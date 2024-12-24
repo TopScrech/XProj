@@ -38,9 +38,6 @@ struct ThreeColumnContainer: View {
                     .frame(minWidth: 600)
                     .navigationTitle(category.localizedName)
                     .experienceToolbar()
-                    .onDisappear {
-                        nav.selectedCategory = nil
-                    }
                 }
             } else {
                 Text("Choose a category")
