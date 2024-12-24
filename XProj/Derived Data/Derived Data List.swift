@@ -10,6 +10,10 @@ struct DerivedDataList: View {
                 vm.showPicker()
             }
             
+            Button("Clear") {
+                vm.deleteAllFiles()
+            }
+            
             if !vm.filteredFolders.isEmpty {
                 Section {
                     HStack {

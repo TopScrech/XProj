@@ -8,6 +8,8 @@ final class DerivedDataVM {
     private let udKey = "derived_data_bookmark"
     private let fm = FileManager.default
     
+    private var derivedDataUrl: URL?
+    
     var totalSize: String {
         let sizes = folders
             .map(\.size)
@@ -42,6 +44,35 @@ final class DerivedDataVM {
         }
     }
     
+    func deleteAllFiles() {
+        guard let url = derivedDataUrl else {
+            return
+        }
+        
+        let fileManager = FileManager.default
+        
+        guard fileManager.fileExists(atPath: url.path()) else {
+            print("Folder does not exist: \(url)")
+            return
+        }
+        
+        do {
+            let contents = try fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: [])
+            
+            for fileURL in contents {
+                do {
+                    try fileManager.removeItem(at: fileURL)
+                } catch {
+                    print("Failed to delete file: \(fileURL.path), error: \(error.localizedDescription)")
+                }
+            }
+        } catch {
+            print("Failed to fetch contents of directory: \(url), error: \(error.localizedDescription)")
+        }
+        
+        getFolders()
+    }
+    
     func getFolders() {
         folders = []
         
@@ -49,6 +80,8 @@ final class DerivedDataVM {
             print("Unable to restore access to the folder. Please select a folder.")
             return
         }
+        
+        derivedDataUrl = url
         
         do {
             try processPath(url.path)
