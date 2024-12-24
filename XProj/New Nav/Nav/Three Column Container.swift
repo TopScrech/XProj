@@ -4,31 +4,41 @@ struct ThreeColumnContainer: View {
     @Environment(NavModel.self) private var nav
     @Environment(DataModel.self) private var dataModel
     
-    private let categories = ProjType.allCases
+    private let categories = ProjType.projTypes
     
     var body: some View {
         @Bindable var nav = nav
         
         NavigationSplitView(columnVisibility: $nav.columnVisibility) {
-            List(categories, selection: $nav.selectedCategory) { type in
-                NavigationLink(type.localizedName, value: type)
+            List(selection: $nav.selectedCategory) {
+                ForEach(categories) { type in
+                    NavigationLink(type.localizedName, value: type)
+                }
+                
+                Section {
+                    NavigationLink("Derived Data", value: ProjType.derivedData)
+                }
             }
             .frame(minWidth: 250)
             .navigationTitle("Categories")
         } content: {
             if let category = nav.selectedCategory {
-                List(selection: $nav.selectedProj) {
-                    ForEach(dataModel.projects(in: category)) { proj in
-                        NavigationLink(value: proj) {
-                            ProjCard(proj)
+                if category == .derivedData {
+                    DerivedDataList()
+                } else {
+                    List(selection: $nav.selectedProj) {
+                        ForEach(dataModel.projects(in: category)) { proj in
+                            NavigationLink(value: proj) {
+                                ProjCard(proj)
+                            }
                         }
                     }
-                }
-                .frame(minWidth: 600)
-                .navigationTitle(category.localizedName)
-                .experienceToolbar()
-                .onDisappear {
-                    nav.selectedCategory = nil
+                    .frame(minWidth: 600)
+                    .navigationTitle(category.localizedName)
+                    .experienceToolbar()
+                    .onDisappear {
+                        nav.selectedCategory = nil
+                    }
                 }
             } else {
                 Text("Choose a category")

@@ -5,7 +5,12 @@ enum ProjType: String, Identifiable, Codable, Hashable, CaseIterable {
          workspace,
          package,
          vapor,
-         playground
+         playground,
+         derivedData
+    
+    static var projTypes: [ProjType] {
+        [.proj, .workspace, .package, .vapor, .playground]
+    }
     
     var id: String {
         rawValue
@@ -18,6 +23,7 @@ enum ProjType: String, Identifiable, Codable, Hashable, CaseIterable {
         case .proj: "Projects"
         case .vapor: "Vapor"
         case .workspace: "Workspaces"
+        case .derivedData: "Derived Data"
         }
     }
 }
