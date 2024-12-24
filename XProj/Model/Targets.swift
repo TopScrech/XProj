@@ -89,10 +89,6 @@ extension Proj {
                     
                     let test = determineType(targetName, buildSettings)
                     
-                    if name == "DiaBLE" {
-                        print(targetName)
-                    }
-                    
                     return Target(
                         id: id,
                         name: targetName,
