@@ -8,7 +8,7 @@ struct ThreeColumnContainer: View {
         @Bindable var nav = nav
         
         NavigationSplitView(columnVisibility: $nav.columnVisibility) {
-            ThreeColumnSidebar()
+            ColumnSidebar()
         } content: {
             ThreeColumnContent()
         } detail: {

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ThreeColumnSidebar: View {
+struct ColumnSidebar: View {
     @Environment(NavModel.self) private var nav
     
     private let categories = ProjType.projTypes
@@ -49,6 +49,6 @@ struct ThreeColumnSidebar: View {
 }
 
 #Preview {
-    ThreeColumnSidebar()
+    ColumnSidebar()
         .environment(NavModel.shared)
 }

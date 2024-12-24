@@ -11,7 +11,7 @@ struct TwoColumnContainer: View {
         NavigationSplitView(
             columnVisibility: $nav.columnVisibility
         ) {
-            TwoColumnSidebar()
+            ColumnSidebar()
         } detail: {
             TwoColumnDetail()
         }
