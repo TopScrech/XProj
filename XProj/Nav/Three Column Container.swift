@@ -16,8 +16,14 @@ struct ThreeColumnContainer: View {
 #warning("Category with PublishedProjectsList")
 #warning("Category with all projects")
             List(selection: $nav.selectedCategory) {
-                ForEach(categories) { type in
-                    NavigationLink(type.localizedName, value: type)
+                Section {
+                    NavigationLink("All items", value: ProjType.allItems)
+                }
+                
+                Section {
+                    ForEach(categories) { type in
+                        NavigationLink(type.localizedName, value: type)
+                    }
                 }
                 
                 Section {
@@ -33,6 +39,18 @@ struct ThreeColumnContainer: View {
         } content: {
             if let category = nav.selectedCategory {
                 switch category {
+                case .allItems:
+                    List(selection: $nav.selectedProj) {
+                        ForEach(dataModel.projects) { proj in
+                            NavigationLink(value: proj) {
+                                ProjCard(proj)
+                            }
+                        }
+                    }
+                    .frame(minWidth: 600)
+                    .navigationTitle(category.localizedName)
+                    .experienceToolbar()
+                    
                 case .derivedData:
                     DerivedDataList()
                     
