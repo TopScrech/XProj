@@ -95,7 +95,9 @@ struct Proj: Identifiable, Hashable, Decodable {
     private func fetchUniquePlatforms() -> [String] {
         targets
             .flatMap(\.deploymentTargets)
-            .map { $0.components(separatedBy: " ").first ?? $0 }
+            .map {
+                $0.components(separatedBy: " ").first ?? $0
+            }
             .reduce(into: []) { result, platform in
                 if !result.contains(platform) {
                     result.append(platform)

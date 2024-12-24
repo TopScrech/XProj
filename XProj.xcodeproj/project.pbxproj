@@ -268,14 +268,13 @@
 				F3DAD66C2D161EAA0012BA9D /* Data Model.swift */,
 				F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */,
 				F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */,
-				F3DAD6892D161ECC0012BA9D /* Experience */,
 				F37831D92D12E028007F7858 /* funcs */,
 				F37831CA2D11A75F007F7858 /* Proj List */,
 				F3B389BD2D0ECB090082C2F3 /* Proj Details */,
 				F37D1BF42CDA258B00D8817D /* Smart Scan */,
 				F3B389D42D102F620082C2F3 /* Dependencies */,
 				F38B5E592BFE141300CB9917 /* Elements */,
-				F38B5E502BFD6F2700CB9917 /* Model */,
+				F38B5E502BFD6F2700CB9917 /* Models */,
 				F3522DC92C2A29D200660101 /* Derived Data */,
 				F38B5E4F2BFD6F1D00CB9917 /* Settings */,
 				F371A5522C2DC08D006BDF0D /* Menu Bar Extra */,
@@ -390,7 +389,7 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		F38B5E502BFD6F2700CB9917 /* Model */ = {
+		F38B5E502BFD6F2700CB9917 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				F350D40A2D1551ED000EEA57 /* Proj */,
@@ -400,7 +399,7 @@
 				F3B389C22D0F93500082C2F3 /* Package.swift */,
 				F37831BE2D10D8DE007F7858 /* Packages in Package.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F38B5E592BFE141300CB9917 /* Elements */ = {
@@ -452,6 +451,7 @@
 				F3B389C02D0F92500082C2F3 /* Nav Category.swift */,
 				F3FC8A562D1AFD0F00A7CCBC /* 2 Column */,
 				F3FC8A552D1AFD0300A7CCBC /* 3 Column */,
+				F3DAD6892D161ECC0012BA9D /* Experience */,
 			);
 			path = Nav;
 			sourceTree = "<group>";
