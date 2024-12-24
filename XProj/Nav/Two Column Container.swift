@@ -10,7 +10,7 @@ struct TwoColumnContainer: View {
     
     var body: some View {
         @Bindable var nav = nav
-        #warning("Finish, compare to 3 ColumnView")
+#warning("Finish, compare to 3 ColumnView")
         NavigationSplitView(
             columnVisibility: $nav.columnVisibility
         ) {
