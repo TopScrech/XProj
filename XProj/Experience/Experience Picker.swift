@@ -20,13 +20,18 @@ struct ExperiencePicker: View {
             VStack {
                 Spacer()
                 
-                Text("Choose your navigation experience")
-                    .largeTitle()
-                    .bold()
-                    .lineLimit(2, reservesSpace: true)
-                    .multilineTextAlignment(.center)
-                    .minimumScaleFactor(0.8)
-                    .padding()
+                VStack(spacing: 0) {
+                    Text("Choose your navigation experience")
+                        .bold()
+                        .largeTitle()
+                        .lineLimit(2, reservesSpace: true)
+                        .multilineTextAlignment(.center)
+                        .minimumScaleFactor(0.8)
+                    
+                    Text("You might need to restart the app")
+                        .secondary()
+                }
+                .padding()
                 
                 Spacer()
                 
