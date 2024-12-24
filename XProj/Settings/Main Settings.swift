@@ -8,7 +8,7 @@ struct MainSettings: View {
         ScrollView {
             GroupBox {
                 Button("Clear nav") {
-                    nav.prochistitZalupu()
+                    nav.clearNavCache()
                 }
                 
 #warning("Change projects folder")

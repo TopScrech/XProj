@@ -60,7 +60,7 @@ final class NavModel: Codable {
         )
     }
     
-    func prochistitZalupu() {
+    func clearNavCache() {
         do {
             try FileManager.default.removeItem(at: Self.dataURL)
         } catch {
