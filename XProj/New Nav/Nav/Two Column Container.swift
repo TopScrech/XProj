@@ -11,7 +11,9 @@ struct TwoColumnContainer: View {
     var body: some View {
         @Bindable var nav = nav
         
-        NavigationSplitView(columnVisibility: $nav.columnVisibility) {
+        NavigationSplitView(
+            columnVisibility: $nav.columnVisibility
+        ) {
             List(selection: $nav.selectedCategory) {
                 ForEach(categories) { type in
                     NavigationLink(type.localizedName, value: type)
