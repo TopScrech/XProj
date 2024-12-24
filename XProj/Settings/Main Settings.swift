@@ -7,10 +7,6 @@ struct MainSettings: View {
     var body: some View {
         ScrollView {
             GroupBox {
-                Button("Clear nav") {
-                    nav.clearNavCache()
-                }
-                
                 Button("Change projects folder") {
                     vm.showPicker()
                 }
@@ -19,6 +15,11 @@ struct MainSettings: View {
                     downloadExamples()
                 }
             }
+#if DEBUG
+            Button("Clear nav") {
+                nav.clearNavCache()
+            }
+#endif
         }
         //        .listStyle(.plain)
         .padding()
