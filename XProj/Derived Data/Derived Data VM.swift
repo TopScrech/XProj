@@ -47,7 +47,7 @@ final class DerivedDataVM {
             print("Unable to restore access to the folder. Please select a folder.")
             return
         }
-                
+        
         do {
             try processPath(url.path)
         } catch {
@@ -63,8 +63,6 @@ final class DerivedDataVM {
         
         let foundFolders = try fm.contentsOfDirectory(atPath: path)
         
-        var fetchedFolders: [DerivedDataFolder] = []
-        
         for folder in foundFolders {
             group.enter()
             
@@ -74,14 +72,12 @@ final class DerivedDataVM {
                 }
                 
                 if let processedFolder = self.processFolder(folder, at: path) {
-                    fetchedFolders.append(processedFolder)
+                    self.folders.append(processedFolder)
                 }
             }
         }
         
         group.wait()
-        
-        folders = fetchedFolders
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
         print("Time elapsed for processing Derived Data: \(String(format: "%.3f", timeElapsed)) seconds")
