@@ -16,6 +16,7 @@ struct ColumnSidebar: View {
                 
                 NavigationLink(value: type) {
                     Label(type.localizedName, systemImage: type.icon)
+                        .bold()
                 }
             }
             
