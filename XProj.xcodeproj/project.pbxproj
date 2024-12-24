@@ -257,8 +257,10 @@
 				F3341E352BDE358A00E85F27 /* XProj.entitlements */,
 				F313BE1C2C871E13005C8B60 /* Examples.zip */,
 				F37831DE2D12EA34007F7858 /* Preview Projects.swift */,
-				F3ED77702D179211000977AC /* Delete */,
-				F3DAD65B2D161E600012BA9D /* New Nav */,
+				F3DAD66C2D161EAA0012BA9D /* Data Model.swift */,
+				F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */,
+				F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */,
+				F3DAD6892D161ECC0012BA9D /* Experience */,
 				F37831D92D12E028007F7858 /* funcs */,
 				F37831CA2D11A75F007F7858 /* Proj List */,
 				F3B389BD2D0ECB090082C2F3 /* Proj Details */,
@@ -276,6 +278,7 @@
 		F350D40A2D1551ED000EEA57 /* Proj */ = {
 			isa = PBXGroup;
 			children = (
+				F3DAD6712D161EAA0012BA9D /* Proj.swift */,
 				F3B389C62D0F9B340082C2F3 /* Proj Icon.swift */,
 				F3B389C02D0F92500082C2F3 /* Proj Type.swift */,
 				F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */,
@@ -317,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				F3341E2E2BDE358900E85F27 /* Proj List.swift */,
+				F3ED776E2D1772F8000977AC /* Proj List VM.swift */,
 				F387AC312BFEC6C600EC1DC5 /* Analyser.swift */,
 				F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */,
 				F37831CD2D11C649007F7858 /* Proj Card */,
@@ -420,27 +424,6 @@
 			path = Dependencies;
 			sourceTree = "<group>";
 		};
-		F3DAD65B2D161E600012BA9D /* New Nav */ = {
-			isa = PBXGroup;
-			children = (
-				F3DAD6722D161EAA0012BA9D /* Models */,
-				F3DAD6892D161ECC0012BA9D /* Experience */,
-			);
-			path = "New Nav";
-			sourceTree = "<group>";
-		};
-		F3DAD6722D161EAA0012BA9D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F3DAD66C2D161EAA0012BA9D /* Data Model.swift */,
-				F3ED776E2D1772F8000977AC /* Proj List VM.swift */,
-				F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */,
-				F3DAD6712D161EAA0012BA9D /* Proj.swift */,
-				F3DAD66F2D161EAA0012BA9D /* Experience.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		F3DAD6892D161ECC0012BA9D /* Experience */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +431,7 @@
 				F3DAD6822D161ECC0012BA9D /* Experience Picker.swift */,
 				F3DAD6832D161ECC0012BA9D /* Experience Picker Row.swift */,
 				F3DAD6842D161ECC0012BA9D /* Experience Toolbar.swift */,
+				F3DAD66F2D161EAA0012BA9D /* Experience.swift */,
 			);
 			path = Experience;
 			sourceTree = "<group>";
@@ -463,14 +447,6 @@
 				F3DAD6662D161EAA0012BA9D /* Three Column Container.swift */,
 			);
 			path = Nav;
-			sourceTree = "<group>";
-		};
-		F3ED77702D179211000977AC /* Delete */ = {
-			isa = PBXGroup;
-			children = (
-				F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */,
-			);
-			path = Delete;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
