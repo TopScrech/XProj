@@ -1,7 +1,9 @@
 import ScrechKit
 
 struct DerivedDataFolder: Identifiable, Equatable {
-    let id = UUID()
+    var id: String {
+        name
+    }
     
     let name: String
     let size: Int64

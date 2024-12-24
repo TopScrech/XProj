@@ -10,19 +10,19 @@ struct DerivedDataList: View {
                 vm.showPicker()
             }
             
-            Section {
-                if !vm.filteredFolders.isEmpty {
+            if !vm.filteredFolders.isEmpty {
+                Section {
                     HStack {
                         Text("Total:")
                         
                         Spacer()
                         
                         Text(vm.totalSize)
-                            .bold()
                             .numericTransition()
                             .monospacedDigit()
                             .animation(.default, value: vm.totalSize)
                     }
+                    .bold()
                 }
             }
             
