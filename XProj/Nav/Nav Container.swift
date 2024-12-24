@@ -1,8 +1,7 @@
 import SwiftUI
 
-struct ContentView: View {
+struct NavContainer: View {
     @Environment(NavModel.self) private var nav
-    @Environment(DataModel.self) private var dataModel
     
     @AppStorage("experience") private var experience: Experience?
     
@@ -11,13 +10,13 @@ struct ContentView: View {
         
         Group {
             switch experience {
-            case .stack:
+            case .stack?:
                 StackContainer()
                 
-            case .twoColumn:
+            case .twoColumn?:
                 TwoColumnContainer()
                 
-            case .threeColumn:
+            case .threeColumn?:
                 ThreeColumnContainer()
                 
             case nil:
@@ -52,5 +51,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    NavContainer()
+        .environment(NavModel.shared)
 }

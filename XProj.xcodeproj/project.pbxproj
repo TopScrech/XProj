@@ -58,7 +58,7 @@
 		F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* Search Suggestions.swift */; };
 		F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */; };
 		F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */; };
-		F3B389C12D0F92500082C2F3 /* Proj Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C02D0F92500082C2F3 /* Proj Type.swift */; };
+		F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C02D0F92500082C2F3 /* Nav Category.swift */; };
 		F3B389C32D0F93500082C2F3 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C22D0F93500082C2F3 /* Package.swift */; };
 		F3B389C52D0F9AE80082C2F3 /* Swift Tools Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */; };
 		F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C62D0F9B340082C2F3 /* Proj Icon.swift */; };
@@ -73,7 +73,7 @@
 		F3DAD67A2D161EAA0012BA9D /* Data Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66C2D161EAA0012BA9D /* Data Model.swift */; };
 		F3DAD67B2D161EAA0012BA9D /* Nav Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */; };
 		F3DAD67C2D161EAA0012BA9D /* 3 Column Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6662D161EAA0012BA9D /* 3 Column Container.swift */; };
-		F3DAD67E2D161EAA0012BA9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6632D161EAA0012BA9D /* ContentView.swift */; };
+		F3DAD67E2D161EAA0012BA9D /* Nav Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6632D161EAA0012BA9D /* Nav Container.swift */; };
 		F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6642D161EAA0012BA9D /* Stack Container.swift */; };
 		F3DAD68A2D161ECC0012BA9D /* Proj Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */; };
 		F3DAD68B2D161ECC0012BA9D /* Experience Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6842D161ECC0012BA9D /* Experience Toolbar.swift */; };
@@ -147,7 +147,7 @@
 		F38B5E572BFE134400CB9917 /* Search Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestions.swift"; sourceTree = "<group>"; };
 		F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details.swift"; sourceTree = "<group>"; };
 		F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card Image.swift"; sourceTree = "<group>"; };
-		F3B389C02D0F92500082C2F3 /* Proj Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Type.swift"; sourceTree = "<group>"; };
+		F3B389C02D0F92500082C2F3 /* Nav Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Category.swift"; sourceTree = "<group>"; };
 		F3B389C22D0F93500082C2F3 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift Tools Version.swift"; sourceTree = "<group>"; };
 		F3B389C62D0F9B340082C2F3 /* Proj Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Icon.swift"; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 		F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep List.swift"; sourceTree = "<group>"; };
 		F3B389D52D1032A40082C2F3 /* Package Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dependency.swift"; sourceTree = "<group>"; };
 		F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main Settings.swift"; sourceTree = "<group>"; };
-		F3DAD6632D161EAA0012BA9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F3DAD6632D161EAA0012BA9D /* Nav Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Container.swift"; sourceTree = "<group>"; };
 		F3DAD6642D161EAA0012BA9D /* Stack Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stack Container.swift"; sourceTree = "<group>"; };
 		F3DAD6652D161EAA0012BA9D /* 2 Column Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2 Column Container.swift"; sourceTree = "<group>"; };
 		F3DAD6662D161EAA0012BA9D /* 3 Column Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3 Column Container.swift"; sourceTree = "<group>"; };
@@ -288,7 +288,6 @@
 			children = (
 				F3DAD6712D161EAA0012BA9D /* Proj.swift */,
 				F3B389C62D0F9B340082C2F3 /* Proj Icon.swift */,
-				F3B389C02D0F92500082C2F3 /* Proj Type.swift */,
 				F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */,
 			);
 			path = Proj;
@@ -447,9 +446,10 @@
 		F3DB25452C2C4E8B00A0C066 /* Nav */ = {
 			isa = PBXGroup;
 			children = (
-				F3DAD6632D161EAA0012BA9D /* ContentView.swift */,
+				F3DAD6632D161EAA0012BA9D /* Nav Container.swift */,
 				F3DAD6642D161EAA0012BA9D /* Stack Container.swift */,
 				F3FC8A5D2D1AFFD500A7CCBC /* Column Sidebar.swift */,
+				F3B389C02D0F92500082C2F3 /* Nav Category.swift */,
 				F3FC8A562D1AFD0F00A7CCBC /* 2 Column */,
 				F3FC8A552D1AFD0300A7CCBC /* 3 Column */,
 			);
@@ -648,7 +648,7 @@
 				F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */,
 				F3DAD67B2D161EAA0012BA9D /* Nav Model.swift in Sources */,
 				F3DAD67C2D161EAA0012BA9D /* 3 Column Container.swift in Sources */,
-				F3DAD67E2D161EAA0012BA9D /* ContentView.swift in Sources */,
+				F3DAD67E2D161EAA0012BA9D /* Nav Container.swift in Sources */,
 				F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */,
 				F371A51B2C2D8D58006BDF0D /* MB Proj List.swift in Sources */,
 				F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */,
@@ -656,7 +656,7 @@
 				F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */,
 				F37831C72D11A590007F7858 /* Proj Details Package.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
-				F3B389C12D0F92500082C2F3 /* Proj Type.swift in Sources */,
+				F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */,
 				F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */,
 				F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,

@@ -7,7 +7,7 @@ struct XProjApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavContainer()
                 .environment(nav)
                 .environment(dataModel)
                 .frame(minWidth: 800, minHeight: 600)
