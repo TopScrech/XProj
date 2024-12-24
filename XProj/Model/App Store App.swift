@@ -12,8 +12,8 @@ struct AppStoreApp: Identifiable, Decodable, Hashable {
     }
 }
 
-extension Target {
-    func fetchAppStoreApp() async -> AppStoreApp? {
+extension Proj {
+    func fetchAppStoreApp(_ bundleId: String?) async -> AppStoreApp? {
         guard let bundleId else {
             return nil
         }
@@ -32,14 +32,14 @@ extension Target {
                 $0.bundleId == bundleId
             }
             
-            if
+            guard
                 let matchingResult,
                 let trackViewUrl = URL(string: matchingResult.trackViewUrl)
-            {
-                return AppStoreApp(matchingResult.trackName, url: trackViewUrl)
+            else {
+                return nil
             }
             
-            return nil
+            return AppStoreApp(matchingResult.trackName, url: trackViewUrl)
         } catch {
             print("Error: \(error.localizedDescription)")
             return nil
@@ -47,11 +47,11 @@ extension Target {
     }
 }
 
-struct AppStoreAppResponse: Codable {
+fileprivate struct AppStoreAppResponse: Codable {
     let results: [AppStoreAppResponseResult]
 }
 
-struct AppStoreAppResponseResult: Codable {
+fileprivate struct AppStoreAppResponseResult: Codable {
     let trackName: String
     let trackViewUrl: String
     let bundleId: String

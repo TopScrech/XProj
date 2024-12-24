@@ -8,25 +8,22 @@ struct Target: Identifiable, Hashable, Decodable {
     let bundleId: String?
     let deploymentTargets: [String]
     let type: TargetType?
-    var appStoreApp: AppStoreApp? = nil
+    var appStoreApp: AppStoreApp?
     
     init(
         id: String,
         name: String,
         bundleId: String?,
         type: TargetType? = nil,
-        deploymentTargets: [String]
+        deploymentTargets: [String],
+        appStoreApp: AppStoreApp?
     ) {
         self.id = id
         self.name = name
         self.bundleId = bundleId
         self.type = type
         self.deploymentTargets = deploymentTargets
-        
-#warning("appStoreApp")
-        //        Task {
-        //            self.appStoreApp = await fetchAppStoreApp()
-        //        }
+        self.appStoreApp = appStoreApp
     }
 }
 
@@ -89,12 +86,23 @@ extension Proj {
                     
                     let test = determineType(targetName, buildSettings)
                     
+                    var testt: AppStoreApp?
+                    let semaphore = DispatchSemaphore(value: 0)
+                    
+                    Task {
+                        testt = await fetchAppStoreApp(bundleId)
+                        semaphore.signal()
+                    }
+                    
+                    semaphore.wait()
+                    
                     return Target(
                         id: id,
                         name: targetName,
                         bundleId: bundleId,
                         type: test.type,
-                        deploymentTargets: test.versions
+                        deploymentTargets: test.versions,
+                        appStoreApp: testt
                     )
                 }
             }
