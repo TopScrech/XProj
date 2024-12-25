@@ -16,7 +16,11 @@ extension Proj {
         }
         
         // Use FileManager's enumerator to traverse the directory recursively
-        guard let enumerator = fileManager.enumerator(at: projectUrl, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles, .skipsPackageDescendants]) else {
+        guard let enumerator = fileManager.enumerator(
+            at: projectUrl,
+            includingPropertiesForKeys: [.isDirectoryKey],
+            options: [.skipsHiddenFiles, .skipsPackageDescendants]
+        ) else {
             print("Error: Unable to enumerate the project directory")
             return nil
         }
@@ -27,17 +31,25 @@ extension Proj {
                (try? fileUrl.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true {
                 
                 // Now search for AppIcon.appiconset within this Assets.xcassets
-                guard let appIconEnumerator = fileManager.enumerator(at: fileUrl, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles, .skipsPackageDescendants]) else {
+                guard let appIconEnumerator = fileManager.enumerator(
+                    at: fileUrl,
+                    includingPropertiesForKeys: [.isDirectoryKey],
+                    options: [.skipsHiddenFiles, .skipsPackageDescendants]
+                ) else {
                     print("Error: Unable to enumerate \(fileUrl.path)")
                     continue
                 }
                 
-                for case let appIconURL as URL in appIconEnumerator {
-                    if appIconURL.lastPathComponent == "AppIcon.appiconset",
-                       (try? appIconURL.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true {
+                for case let appIconUrl as URL in appIconEnumerator {
+                    if appIconUrl.lastPathComponent == "AppIcon.appiconset",
+                       (try? appIconUrl.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true {
                         
                         do {
-                            let fileURLs = try fileManager.contentsOfDirectory(at: appIconURL, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles])
+                            let fileURLs = try fileManager.contentsOfDirectory(
+                                at: appIconUrl,
+                                includingPropertiesForKeys: nil,
+                                options: [.skipsHiddenFiles]
+                            )
                             
                             let firstMatchingFile = fileURLs.first(where: {
                                 let isNotJSON = $0.pathExtension.lowercased() != "json"
@@ -49,10 +61,12 @@ extension Proj {
                             if let firstMatchingFile {
                                 return firstMatchingFile.path
                             } else {
-                                let nonJSONFiles = fileURLs.filter { $0.pathExtension.lowercased() != "json" }
+                                let nonJSONFiles = fileURLs.filter {
+                                    $0.pathExtension.lowercased() != "json"
+                                }
                                 
-                                let largestFile = nonJSONFiles.max { url1, url2 in
-                                    let size1 = (try? url1.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0
+                                let largestFile = nonJSONFiles.max { url, url2 in
+                                    let size1 = (try? url.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0
                                     let size2 = (try? url2.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0
                                     
                                     return size1 < size2
@@ -63,7 +77,7 @@ extension Proj {
                                 }
                             }
                         } catch {
-                            print("Error accessing files in \(appIconURL.path): \(error.localizedDescription)")
+                            print("Error accessing files in \(appIconUrl.path): \(error.localizedDescription)")
                         }
                     }
                 }
