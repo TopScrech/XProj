@@ -159,8 +159,8 @@ struct Proj: Identifiable, Hashable, Decodable {
                         name: name,
                         repositoryUrl: rep,
                         requirementKind: nil,
-                        //                        requirementKind: package.requirement?.keys.first,
                         requirementParam: nil
+                        //                        requirementKind: package.requirement?.keys.first,
                         //                        requirementParam: package.requirement?.values.first as? String
                     )
                 }
