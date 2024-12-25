@@ -35,6 +35,7 @@ struct ProjDetails: View {
             
             ProjDetailsDependencies(proj.packages)
         }
+        .scrollIndicators(.never)
     }
 }
 

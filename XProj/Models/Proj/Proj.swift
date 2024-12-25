@@ -36,9 +36,9 @@ struct Proj: Identifiable, Hashable, Decodable {
         self.createdAt = createdAt
         
         self.swiftToolsVersion = fetchSwiftToolsVersion()
-        self.packages = parseSwiftPackages()
-        self.targets = fetchTargets()
-        self.platforms = fetchUniquePlatforms()
+        self.packages          = parseSwiftPackages()
+        self.targets           = fetchTargets()
+        self.platforms         = fetchUniquePlatforms()
     }
         
     var icon: String {
@@ -120,7 +120,7 @@ struct Proj: Identifiable, Hashable, Decodable {
             let project = xcodeProj.project
             let packages = project.packageReferences
             
-            let result = packages.compactMap { package in
+            return packages.compactMap { package in
                 if let rep = package.repositoryURL,
                    let name = URL(string: rep)?.lastPathComponent {
                     return Package(
@@ -133,8 +133,6 @@ struct Proj: Identifiable, Hashable, Decodable {
                 
                 return nil
             }
-            
-            return result
         } catch {
             return []
         }

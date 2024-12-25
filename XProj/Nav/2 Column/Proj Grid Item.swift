@@ -3,7 +3,7 @@
 import SwiftUI
 
 struct ProjGridItem: View {
-    private var proj: Proj
+    private let proj: Proj
     
     init(_ proj: Proj) {
         self.proj = proj

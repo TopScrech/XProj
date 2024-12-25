@@ -7,13 +7,13 @@ final class NavModel: Codable {
     /// The selected recipe category; otherwise returns `nil`
     var selectedCategory: NavCategory?
     
-    /// The homogenous navigation state used by the app's navigation stacks
+    /// The homogenous navigation state
     var projPath: [Proj]
     
-    /// The leading columns' visibility state used by the app's navigation split views
+    /// The leading columns' visibility state
     var columnVisibility: NavigationSplitViewVisibility
     
-    /// The leading columns' visibility state used by the app's navigation split views
+    /// The leading columns' visibility state
     var showExperiencePicker = false
     
     private static let decoder = JSONDecoder()
@@ -24,7 +24,7 @@ final class NavModel: Codable {
         .cachesDirectory.appending(path: "NavigationData.json")
     }
     
-    /// The shared singleton navigation model object
+    /// Singleton object
     static let shared = {
         if let model = try? NavModel(contentsOf: dataURL) {
             model
@@ -92,7 +92,7 @@ final class NavModel: Codable {
     }
     
     /// The JSON data used to encode and decode the navigation model at its current state
-    var jsonData: Data? {
+    private var jsonData: Data? {
         get {
             try? Self.encoder.encode(self)
         } set {

@@ -64,8 +64,7 @@ extension Proj {
         
         do {
             let xcodeProj = try XcodeProj(url: url)
-            let project = xcodeProj.project
-            let targets = project.targets
+            let targets = xcodeProj.project.targets
             
             let targetObjects: [Target] = targets.flatMap { target in
                 let buildConfigs = target.buildConfigurationList?.buildConfigurations ?? []
@@ -84,13 +83,13 @@ extension Proj {
                     
                     seenRefs.insert(target.ref)
                     
-                    let test = determineType(targetName, buildSettings)
+                    let type = determineType(targetName, buildSettings)
                     
-                    var testt: AppStoreApp?
+                    var appStoreApp: AppStoreApp?
                     let semaphore = DispatchSemaphore(value: 0)
                     
                     Task {
-                        testt = await fetchAppStoreApp(bundleId)
+                        appStoreApp = await fetchAppStoreApp(bundleId)
                         semaphore.signal()
                     }
                     
@@ -100,9 +99,9 @@ extension Proj {
                         id: id,
                         name: targetName,
                         bundleId: bundleId,
-                        type: test.type,
-                        deploymentTargets: test.versions,
-                        appStoreApp: testt
+                        type: type.type,
+                        deploymentTargets: type.versions,
+                        appStoreApp: appStoreApp
                     )
                 }
             }
