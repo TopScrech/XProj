@@ -5,16 +5,9 @@ struct Package: Identifiable, Hashable, Decodable {
         repositoryUrl
     }
     
-    /// The name of the Swift package
     let name: String
-    
-    /// The repository URL of the Swift package
     let repositoryUrl: String
-    
-    /// The kind of version requirement (e.g., branch, upToNextMajorVersion)
     let requirementKind: String?
-    
-    /// The parameter associated with the requirement kind (e.g., branch name or minimum version)
     let requirementParam: String?
     
     init(
@@ -30,7 +23,7 @@ struct Package: Identifiable, Hashable, Decodable {
     }
     
 #warning("Requirement kind and param are disabled to fix navigation issues")
-        
+    
     var author: String? {
         // Attempt to create a URL object from the input string
         guard let url = URL(string: repositoryUrl) else {
@@ -38,13 +31,12 @@ struct Package: Identifiable, Hashable, Decodable {
             return nil
         }
         
-        // Ensure the host is "github.com"
+        // Ensure the host is Github
         guard url.host?.lowercased().contains("github.com") == true else {
             print("URL is not a GitHub repository")
             return nil
         }
         
-        // Split the path into components
         let pathComponents = url.pathComponents.filter {
             $0 != "/"
         }
@@ -55,7 +47,6 @@ struct Package: Identifiable, Hashable, Decodable {
             return nil
         }
         
-        // The first component is the author
         let author = pathComponents[0]
         
         return author
