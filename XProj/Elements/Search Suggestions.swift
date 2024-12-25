@@ -15,17 +15,7 @@ struct SearchSuggestions: View {
     
     var body: some View {
         ForEach(suggestedProjects) { proj in
-            Button {
-                vm.searchPrompt = proj.name
-            } label: {
-                HStack {
-                    Text(proj.name)
-                    
-                    Spacer()
-                    
-                    Text(proj.openedAt, format: .dateTime)
-                }
-            }
+            SearchSuggestion(proj)
         }
     }
 }
