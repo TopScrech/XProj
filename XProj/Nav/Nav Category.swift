@@ -10,6 +10,10 @@ import SwiftUI
 //Label("Tests", systemImage: "testtube.2")
 
 enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
+    var id: String {
+        rawValue
+    }
+    
     case proj,
          package,
          vapor,
@@ -27,10 +31,6 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
         .workspace,
         .playground
     ]}
-    
-    var id: String {
-        rawValue
-    }
     
     var icon: String {
         switch self {
