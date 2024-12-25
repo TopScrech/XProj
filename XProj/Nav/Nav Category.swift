@@ -1,12 +1,13 @@
 import SwiftUI
-//                Label("iOS", systemImage: "iphone")
-//                Label("macOS", systemImage: "macbook")
-//                Label("watchOS", systemImage: "applewatch")
-//                Label("tvOS", systemImage: "tv")
-//                Label("visionOS", systemImage: "vision.pro")
-//                Label("Widgets", systemImage: "widget.large")
-//                Label("iMessage", systemImage: "message.badge")
-//                Label("Tests", systemImage: "testtube.2")
+
+//Label("iOS", systemImage: "iphone")
+//Label("macOS", systemImage: "macbook")
+//Label("watchOS", systemImage: "applewatch")
+//Label("tvOS", systemImage: "tv")
+//Label("visionOS", systemImage: "vision.pro")
+//Label("Widgets", systemImage: "widget.large")
+//Label("iMessage", systemImage: "message.badge")
+//Label("Tests", systemImage: "testtube.2")
 
 enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
     case proj,
