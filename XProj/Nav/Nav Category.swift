@@ -14,9 +14,10 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
          vapor,
          workspace,
          playground,
+         
+         allItems,
          derivedData,
-         packageDependencies,
-         allItems
+         packageDependencies
     
     static var projTypes: [NavCategory] {[
         .proj,
