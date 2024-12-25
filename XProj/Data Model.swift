@@ -79,10 +79,9 @@ final class DataModel {
         }
     }
     
-    //    /// The related recipes for a given recipe, sorted by name
-    //    func recipes(relatedTo recipe: Recipe) -> [Recipe] {
-    //        recipes.filter {
-    //            recipe.related.contains($0.id)
+    //    func projects(relatedTo proj: Proj) -> [Proj] {
+    //        projects.filter {
+    //            proj.related.contains($0.id)
     //        }
     //    }
     

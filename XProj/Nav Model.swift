@@ -4,29 +4,27 @@ import SwiftUI
 
 @Observable
 final class NavModel: Codable {
-    /// The selected recipe category; otherwise returns `nil`
+    /// Selected nav category
     var selectedCategory: NavCategory?
     
-    /// The homogenous navigation state
+    /// Homogenous nav state
     var projPath: [Proj]
     
-    /// The leading columns' visibility state
+    /// Leading columns' visibility states
     var columnVisibility: NavigationSplitViewVisibility
-    
-    /// The leading columns' visibility state
     var showExperiencePicker = false
     
     private static let decoder = JSONDecoder()
     private static let encoder = JSONEncoder()
     
-    /// The URL for the JSON file that stores the recipe data
-    private static var dataURL: URL {
+    /// The URL for the JSON file that stores the proj data
+    private static var dataUrl: URL {
         .cachesDirectory.appending(path: "NavigationData.json")
     }
     
     /// Singleton object
     static let shared = {
-        if let model = try? NavModel(contentsOf: dataURL) {
+        if let model = try? NavModel(contentsOf: dataUrl) {
             model
         } else {
             NavModel()
@@ -34,7 +32,7 @@ final class NavModel: Codable {
     }()
     
     /// Initialize a `NavModel` that enables programmatic control of leading columns’
-    /// visibility, selected recipe category, and navigation state based on recipe data
+    /// visibility, selected nav category, and navigation state based on proj data
     init(
         columnVisibility: NavigationSplitViewVisibility = .automatic,
         selectedCategory: NavCategory? = nil,
@@ -62,27 +60,27 @@ final class NavModel: Codable {
     
     func clearNavCache() {
         do {
-            try FileManager.default.removeItem(at: Self.dataURL)
+            try FileManager.default.removeItem(at: Self.dataUrl)
         } catch {
             print(error)
         }
     }
     
-    /// Loads the navigation data for the navigation model from a previously saved state
+    /// Loads the navigation data for the nav model from a previously saved state
     func load() throws {
-        let model = try NavModel(contentsOf: Self.dataURL)
+        let model = try NavModel(contentsOf: Self.dataUrl)
         
         selectedCategory = model.selectedCategory
         projPath = model.projPath
         columnVisibility = model.columnVisibility
     }
     
-    /// Saves the JSON data for the navigation model at its current state
+    /// Saves the JSON data for the nav model at its current state
     func save() throws {
-        try jsonData?.write(to: Self.dataURL)
+        try jsonData?.write(to: Self.dataUrl)
     }
     
-    /// The selected recipe; otherwise returns `nil`
+    /// Selected projects
     var selectedProj: Set<Proj> {
         get {
             Set(projPath)
@@ -91,7 +89,7 @@ final class NavModel: Codable {
         }
     }
     
-    /// The JSON data used to encode and decode the navigation model at its current state
+    /// The JSON data used to encode and decode the nav model at its current state
     private var jsonData: Data? {
         get {
             try? Self.encoder.encode(self)

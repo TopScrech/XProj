@@ -1,5 +1,3 @@
-// Populates the nav bar with the "Recipe of the Day" and experience buttons
-
 import SwiftUI
 
 struct ExperienceToolbarViewModifier: ViewModifier {

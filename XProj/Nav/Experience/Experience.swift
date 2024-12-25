@@ -11,7 +11,6 @@ enum Experience: Int, Identifiable, CaseIterable, Codable {
         rawValue
     }
     
-    /// The image name of the navigation experience.
     var imageName: String {
         switch self {
         case .stack: "list.bullet.rectangle.portrait"
@@ -20,7 +19,6 @@ enum Experience: Int, Identifiable, CaseIterable, Codable {
         }
     }
     
-    /// The localized name of the navigation experience.
     var localizedName: LocalizedStringKey {
         switch self {
         case .stack: "Stack"
@@ -29,17 +27,16 @@ enum Experience: Int, Identifiable, CaseIterable, Codable {
         }
     }
     
-    /// The localized descriptioon of the navigation experience.
     var localizedDescription: LocalizedStringKey {
         switch self {
         case .stack:
-            "Presents a stack of views over a root view."
+            "Presents a stack of views over a root view"
             
         case .twoColumn:
-            "Presents views in two columns: sidebar and detail."
+            "Presents views in two columns: sidebar and detail"
             
         case .threeColumn:
-            "Presents views in three columns: sidebar, content, and detail."
+            "Presents views in three columns: sidebar, content, and detail"
         }
     }
 }
