@@ -35,7 +35,7 @@ extension Proj {
     }
 }
 
-struct Root: Decodable {
+fileprivate struct Root: Decodable {
     let version: Int
     let pins: [Pin]
     
@@ -63,12 +63,12 @@ struct Root: Decodable {
     }
 }
 
-struct Pin: Decodable {
+fileprivate struct Pin: Decodable {
     let identity: String
     let location: String
 }
 
-struct PinV1: Decodable {
+fileprivate struct PinV1: Decodable {
     let package: String
     let repositoryURL: String
 }
