@@ -124,11 +124,8 @@ struct Proj: Identifiable, Hashable, Decodable {
                 if let rep = package.repositoryURL,
                    let name = URL(string: rep)?.lastPathComponent {
                     return Package(
-                        id: rep,
                         name: name,
-                        repositoryUrl: rep,
-                        requirementKind: nil,
-                        requirementParam: nil
+                        repositoryUrl: rep
                         //                        requirementKind: package.requirement?.keys.first,
                         //                        requirementParam: package.requirement?.values.first as? String
                     )

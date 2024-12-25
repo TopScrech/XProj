@@ -21,7 +21,6 @@ extension Proj {
             
             return decoded.pins.map {
                 Package(
-                    id: $0.location,
                     name: $0.identity,
                     repositoryUrl: $0.location,
                     requirementKind: nil,

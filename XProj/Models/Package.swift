@@ -1,7 +1,9 @@
 import Foundation
 
 struct Package: Identifiable, Hashable, Decodable {
-    var id: String
+    var id: String {
+        repositoryUrl
+    }
     
     /// The name of the Swift package
     let name: String
@@ -16,13 +18,11 @@ struct Package: Identifiable, Hashable, Decodable {
     let requirementParam: String?
     
     init(
-        id: String,
         name: String,
         repositoryUrl: String,
         requirementKind: String? = nil,
         requirementParam: String? = nil
     ) {
-        self.id = id
         self.name = name
         self.repositoryUrl = repositoryUrl
         self.requirementKind = requirementKind
