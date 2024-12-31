@@ -73,11 +73,39 @@ final class DerivedDataVM {
         getFolders()
     }
     
+    func deleteFile(_ name: String) {
+        guard let url = derivedDataUrl?.appendingPathComponent(name) else {
+            return
+        }
+        
+        let fm = FileManager.default
+        
+        guard fm.fileExists(atPath: url.path()) else {
+            print("File or folder does not exist: \(url)")
+            return
+        }
+        
+        do {
+            try fm.removeItem(at: url)
+            print("Successfully deleted: \(url)")
+            
+            guard let index = folders.firstIndex(where: {
+                $0.name == name
+            }) else {
+                return
+            }
+            
+            folders.remove(at: index)
+        } catch {
+            print("Failed to delete: \(url), error: \(error.localizedDescription)")
+        }
+    }
+    
     func getFolders() {
         folders = []
         
         guard let url = restoreAccessToFolder(udKey) else {
-            print("Unable to restore access to the folder. Please select a folder.")
+            print("Unable to restore access to the folder. Please select a folder")
             return
         }
         
@@ -118,20 +146,12 @@ final class DerivedDataVM {
         print("Time elapsed for processing Derived Data: \(String(format: "%.3f", timeElapsed)) seconds")
     }
     
-    private func processFolder(_ proj: String, at path: String) -> DerivedDataFolder? {
-        let path = path + "/" + proj
+    private func processFolder(_ name: String, at path: String) -> DerivedDataFolder? {
+        let path = path + "/" + name
         let url = URL(fileURLWithPath: path)
         
         do {
             let size = try fm.allocatedSizeOfDirectory(url)
-            
-            let name: String
-            
-            if proj.contains("-") {
-                name = proj.split(separator: "-").dropLast().joined(separator: "-")
-            } else {
-                name = proj
-            }
             
             return DerivedDataFolder(
                 name: name,

@@ -8,6 +8,14 @@ struct DerivedDataFolder: Identifiable, Equatable {
     let name: String
     let size: Int64
     
+    var formattedName: String {
+        if name.contains("-") {
+            name.split(separator: "-").dropLast().joined(separator: "-")
+        } else {
+            name
+        }
+    }
+    
     var formattedSize: String {
         formatBytes(size)
     }

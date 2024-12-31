@@ -26,6 +26,7 @@ struct DerivedDataList: View {
                 DerivedDataCard(folder)
             }
         }
+        .environment(vm)
         .searchable(text: $vm.searchPrompt)
         .refreshableTask {
             DispatchQueue.global(qos: .background).async {
