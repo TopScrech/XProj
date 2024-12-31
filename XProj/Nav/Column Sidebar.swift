@@ -11,6 +11,18 @@ struct ColumnSidebar: View {
         
 #warning("Categories with platforms")
 #warning("Category with PublishedProjectsList")
+        
+        //        iOS
+        //        macOS
+        //        watchOS
+        //        tvOS
+        //        visionOS
+        //        Widgets
+        //        iMessage
+        //        Tests
+        //        App Store
+        //        SmartScan
+        
         List(selection: $nav.selectedCategory) {
             Section {
                 let type = NavCategory.allItems
@@ -30,6 +42,18 @@ struct ColumnSidebar: View {
                     }
                 }
             }
+            
+            //            Section {
+            //                let projects = vm.projects.filter {
+            //                    $0.targets.contains(where: { $0.type == .iMessage })
+            //                }
+            //
+            //                ForEach(projects) { proj in
+            //                    NavigationLink(value: type) {
+            //                        Label("iMessage", systemImage: "message.badge")
+            //                    }
+            //                }
+            //            }
             
             Section {
                 let type = NavCategory.packageDependencies
