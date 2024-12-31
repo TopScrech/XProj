@@ -6,14 +6,6 @@ struct DerivedDataList: View {
     var body: some View {
 #warning("Show Derived Data of not existing projects")
         List {
-            Button("Picker") {
-                vm.showPicker()
-            }
-            
-            Button("Clear") {
-                vm.deleteAllFiles()
-            }
-            
             if !vm.filteredFolders.isEmpty {
                 Section {
                     HStack {
@@ -38,6 +30,15 @@ struct DerivedDataList: View {
         .refreshableTask {
             DispatchQueue.global(qos: .background).async {
                 vm.getFolders()
+            }
+        }
+        .toolbar {
+            Button("Change folder") {
+                vm.showPicker()
+            }
+            
+            Button("Clear") {
+                vm.deleteAllFiles()
             }
         }
     }
