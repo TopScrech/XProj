@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ColumnSidebar: View {
     @Environment(NavModel.self) private var nav
+    @Environment(DataModel.self) private var vm
     
     private let categories = NavCategory.projTypes
     
@@ -22,8 +23,10 @@ struct ColumnSidebar: View {
             
             Section {
                 ForEach(categories) { type in
-                    NavigationLink(value: type) {
-                        Label(type.localizedName, systemImage: type.icon)
+                    if !vm.projects(in: type).isEmpty {
+                        NavigationLink(value: type) {
+                            Label(type.localizedName, systemImage: type.icon)
+                        }
                     }
                 }
             }
@@ -44,8 +47,9 @@ struct ColumnSidebar: View {
                 }
             }
         }
-        .frame(minWidth: 250)
         .navigationTitle("Categories")
+        .frame(minWidth: 250)
+        .padding(.vertical)
     }
 }
 
