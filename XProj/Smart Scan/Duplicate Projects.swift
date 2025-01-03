@@ -1,11 +1,11 @@
 import ScrechKit
 
 struct DuplicateProjects: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
-    private let duplicates: [[Project]]
+    private let duplicates: [[Proj]]
     
-    init(_ duplicates: [[Project]] = []) {
+    init(_ duplicates: [[Proj]] = []) {
         self.duplicates = duplicates
     }
     
@@ -18,5 +18,5 @@ struct DuplicateProjects: View {
 
 #Preview {
     DuplicateProjects()
-        .environment(ProjListVM())
+        .environment(DataModel.shared)
 }

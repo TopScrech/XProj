@@ -1,14 +1,17 @@
+// A data model for a recipe and its metadata, including its related projects
+
 import SwiftUI
 import XcodeProjKit
 
-struct Project: Identifiable {
-    let id = UUID()
-    let name, path: String
-    let type: ProjType
+struct Proj: Identifiable, Hashable, Decodable {
+    var id: String
+    
+    var name: String
+    var path: String
+    let type: NavCategory
     let openedAt: Date
     let modifiedAt: Date?
     let createdAt: Date?
-    let attributes: [FileAttributeKey: Any]
     
     var swiftToolsVersion: String? = nil
     var packages: [Package] = []
@@ -16,28 +19,28 @@ struct Project: Identifiable {
     var platforms: [String] = []
     
     init(
+        id: String,
         name: String,
         path: String,
-        type: ProjType,
+        type: NavCategory,
         openedAt: Date,
         modifiedAt: Date?,
-        createdAt: Date?,
-        attributes: [FileAttributeKey : Any]
+        createdAt: Date?
     ) {
+        self.id = id
         self.name = name
         self.path = path
         self.type = type
         self.openedAt = openedAt
         self.modifiedAt = modifiedAt
         self.createdAt = createdAt
-        self.attributes = attributes
         
         self.swiftToolsVersion = fetchSwiftToolsVersion()
-        self.packages = parseSwiftPackages()
-        self.targets = fetchTargets()
-        self.platforms = fetchUniquePlatforms()
+        self.packages          = parseSwiftPackages()
+        self.targets           = fetchTargets()
+        self.platforms         = fetchUniquePlatforms()
     }
-    
+        
     var icon: String {
         switch type {
         case .proj:       "hammer.fill"
@@ -58,17 +61,38 @@ struct Project: Identifiable {
         }
     }
     
-    func fetchUniquePlatforms() -> [String] {
-        let allPlatforms = targets.flatMap {
-            $0.deploymentTargets.keys
-        }
-        
-        let uniquePlatforms = Array(Set(allPlatforms))
-        
-        return uniquePlatforms
+    private func fetchUniquePlatforms() -> [String] {
+        targets
+            .flatMap(\.deploymentTargets)
+            .map {
+                $0.components(separatedBy: " ").first ?? $0
+            }
+            .reduce(into: []) { result, platform in
+                if !result.contains(platform) {
+                    result.append(platform)
+                }
+            }
     }
     
-    func parseSwiftPackages() -> [Package] {
+    var hasImessage: Bool {
+        targets.contains {
+            $0.type == .iMessage
+        }
+    }
+    
+    var hasWidgets: Bool {
+        targets.contains {
+            $0.type == .widgets
+        }
+    }
+    
+    var hasTests: Bool {
+        targets.contains {
+            $0.type == .uiTests || $0.type == .unitTests
+        }
+    }
+    
+    private func parseSwiftPackages() -> [Package] {
         switch type {
         case .proj:
             parsePackagesInProj()
@@ -86,7 +110,7 @@ struct Project: Identifiable {
         }
     }
     
-    func parsePackagesInProj() -> [Package] {
+    private func parsePackagesInProj() -> [Package] {
         guard let url = fetchProjectFilePath(path) else {
             return []
         }
@@ -96,23 +120,27 @@ struct Project: Identifiable {
             let project = xcodeProj.project
             let packages = project.packageReferences
             
-            let result = packages.compactMap { package in
+            return packages.compactMap { package in
                 if let rep = package.repositoryURL,
                    let name = URL(string: rep)?.lastPathComponent {
                     return Package(
                         name: name,
-                        repositoryUrl: rep,
-                        requirementKind: package.requirement?.keys.first ?? "",
-                        requirementParam: package.requirement?.values.first as? String ?? ""
+                        repositoryUrl: rep
+                        //                        requirementKind: package.requirement?.keys.first,
+                        //                        requirementParam: package.requirement?.values.first as? String
                     )
                 }
                 
                 return nil
             }
-            
-            return result
         } catch {
             return []
         }
+    }
+}
+
+extension Proj {
+    static var mock: Proj {
+        DataModel.shared.projects[0]
     }
 }

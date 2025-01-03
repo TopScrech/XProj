@@ -1,15 +1,15 @@
 import SwiftUI
 
 struct ProjList: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
-    private let projects: [Project]
+    private let projects: [Proj]
     
-    init(_ projects: [Project]) {
+    init(_ projects: [Proj]) {
         self.projects = projects
     }
     
-    @State private var selectedProjects: Set<Project> = []
+    @State private var selectedProjects: Set<Proj> = []
     
     var body: some View {
         @Bindable var vm = vm
@@ -50,5 +50,5 @@ struct ProjList: View {
 
 #Preview {
     ProjList([previewProj1, previewProj2])
-        .environment(ProjListVM())
+        .environment(DataModel.shared)
 }

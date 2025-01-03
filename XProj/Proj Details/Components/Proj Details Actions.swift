@@ -1,12 +1,12 @@
 import ScrechKit
 
 struct ProjDetailsActions: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     @Environment(\.openURL) private var openUrl
     
-    private let proj: Project
+    private let proj: Proj
     
-    init(_ proj: Project) {
+    init(_ proj: Proj) {
         self.proj = proj
     }
     
@@ -30,7 +30,7 @@ struct ProjDetailsActions: View {
     }
 }
 
-#Preview {
-    ProjDetailsActions(previewProj1)
-        .environment(ProjListVM())
-}
+//#Preview {
+//    ProjDetailsActions(previewProj1)
+//        .environment(DataModel.shared)
+//}

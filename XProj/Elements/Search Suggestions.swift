@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct SearchSuggestions: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
-    private var suggestedProjects: [Project] {
+    private var suggestedProjects: [Proj] {
         guard !vm.searchPrompt.isEmpty else {
             return vm.lastOpenedProjects
         }
@@ -15,22 +15,12 @@ struct SearchSuggestions: View {
     
     var body: some View {
         ForEach(suggestedProjects) { proj in
-            Button {
-                vm.searchPrompt = proj.name
-            } label: {
-                HStack {
-                    Text(proj.name)
-                    
-                    Spacer()
-                    
-                    Text(proj.openedAt, format: .dateTime)
-                }
-            }
+            SearchSuggestion(proj)
         }
     }
 }
 
 #Preview {
     SearchSuggestions()
-        .environment(ProjListVM())
+        .environment(DataModel.shared)
 }

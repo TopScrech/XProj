@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct ProjListToolbar: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
     var body: some View {
-        Button("Refresh") {
-            vm.getFolders()
-        }
+//        Button("Refresh") {
+//            vm.getFolders()
+//        }
         
 #if DEBUG
         Menu("Functions") {

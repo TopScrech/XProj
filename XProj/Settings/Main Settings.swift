@@ -1,7 +1,8 @@
 import ScrechKit
 
 struct MainSettings: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(NavModel.self) private var nav
+    @Environment(DataModel.self) private var vm
     
     var body: some View {
         ScrollView {
@@ -13,7 +14,14 @@ struct MainSettings: View {
                 Button("Examples") {
                     downloadExamples()
                 }
+                
+                ExperienceButton()
             }
+#if DEBUG
+            Button("Clear nav") {
+                nav.clearNavCache()
+            }
+#endif
         }
         //        .listStyle(.plain)
         .padding()
@@ -44,5 +52,6 @@ struct MainSettings: View {
 
 #Preview {
     SettingsView()
-        .environment(ProjListVM())
+        .environment(NavModel.shared)
+        .environment(DataModel.shared)
 }

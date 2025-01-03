@@ -2,11 +2,13 @@ import ScrechKit
 
 @Observable
 final class DerivedDataVM {
-    var folders: [DerivedDataFolder] = []
+    private(set) var folders: [DerivedDataFolder] = []
     var searchPrompt = ""
     
     private let udKey = "derived_data_bookmark"
     private let fm = FileManager.default
+    
+    private var derivedDataUrl: URL?
     
     var totalSize: String {
         let sizes = folders
@@ -42,15 +44,72 @@ final class DerivedDataVM {
         }
     }
     
-    func getFolders() {
-        guard let url = FolderAccessManager.shared.restoreAccessToFolder(udKey) else {
-            print("Unable to restore access to the folder. Please select a folder.")
+    func deleteAllFiles() {
+        guard let url = derivedDataUrl else {
             return
         }
         
-        defer {
-            url.stopAccessingSecurityScopedResource()
+        let fileManager = FileManager.default
+        
+        guard fileManager.fileExists(atPath: url.path()) else {
+            print("Folder does not exist: \(url)")
+            return
         }
+        
+        do {
+            let contents = try fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: [])
+            
+            for fileURL in contents {
+                do {
+                    try fileManager.removeItem(at: fileURL)
+                } catch {
+                    print("Failed to delete file: \(fileURL.path), error: \(error.localizedDescription)")
+                }
+            }
+        } catch {
+            print("Failed to fetch contents of directory: \(url), error: \(error.localizedDescription)")
+        }
+        
+        getFolders()
+    }
+    
+    func deleteFile(_ name: String) {
+        guard let url = derivedDataUrl?.appendingPathComponent(name) else {
+            return
+        }
+        
+        let fm = FileManager.default
+        
+        guard fm.fileExists(atPath: url.path()) else {
+            print("File or folder does not exist: \(url)")
+            return
+        }
+        
+        do {
+            try fm.removeItem(at: url)
+            print("Successfully deleted: \(url)")
+            
+            guard let index = folders.firstIndex(where: {
+                $0.name == name
+            }) else {
+                return
+            }
+            
+            folders.remove(at: index)
+        } catch {
+            print("Failed to delete: \(url), error: \(error.localizedDescription)")
+        }
+    }
+    
+    func getFolders() {
+        folders = []
+        
+        guard let url = restoreAccessToFolder(udKey) else {
+            print("Unable to restore access to the folder. Please select a folder")
+            return
+        }
+        
+        derivedDataUrl = url
         
         do {
             try processPath(url.path)
@@ -67,8 +126,6 @@ final class DerivedDataVM {
         
         let foundFolders = try fm.contentsOfDirectory(atPath: path)
         
-        var fetchedFolders: [DerivedDataFolder] = []
-        
         for folder in foundFolders {
             group.enter()
             
@@ -78,41 +135,27 @@ final class DerivedDataVM {
                 }
                 
                 if let processedFolder = self.processFolder(folder, at: path) {
-                    fetchedFolders.append(processedFolder)
+                    self.folders.append(processedFolder)
                 }
             }
         }
         
         group.wait()
         
-        folders = fetchedFolders
-        
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        print("Time elapsed for processing path: \(String(format: "%.3f", timeElapsed)) seconds")
+        print("Time elapsed for processing Derived Data: \(String(format: "%.3f", timeElapsed)) seconds")
     }
     
-    private func processFolder(_ proj: String, at path: String) -> DerivedDataFolder? {
-        let path = path + "/" + proj
+    private func processFolder(_ name: String, at path: String) -> DerivedDataFolder? {
+        let path = path + "/" + name
         let url = URL(fileURLWithPath: path)
         
-        if proj == ".git" || proj == ".build" || proj == "Not Xcode" {
-            return nil
-        }
-        
         do {
-            let sizeAttribute = try fm.allocatedSizeOfDirectory(url)
-            
-            let name: String
-            
-            if proj.contains("-") {
-                name = proj.split(separator: "-").dropLast().joined(separator: "-")
-            } else {
-                name = proj
-            }
+            let size = try fm.allocatedSizeOfDirectory(url)
             
             return DerivedDataFolder(
                 name: name,
-                size: sizeAttribute
+                size: size
             )
         } catch {
             print("error processing project at path: \(path)")

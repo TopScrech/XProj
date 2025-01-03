@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct DerivedDataCard: View {
+    @Environment(DerivedDataVM.self) private var vm
+    
     private let folder: DerivedDataFolder
     
     init(_ folder: DerivedDataFolder) {
@@ -9,12 +11,17 @@ struct DerivedDataCard: View {
     
     var body: some View {
         HStack {
-            Text(folder.name)
+            Text(folder.formattedName)
             
             Spacer()
             
             Text(folder.formattedSize)
                 .secondary()
+        }
+        .contextMenu {
+            Button("Delete", role: .destructive) {
+                vm.deleteFile(folder.name)
+            }
         }
     }
 }

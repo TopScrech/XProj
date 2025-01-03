@@ -23,25 +23,33 @@ struct ProjDetailsTarget: View {
                 
                 if let bundle = target.bundleId {
                     Text(bundle)
-                        .secondary()
+                        .foregroundStyle(.tertiary)
                 }
             }
             
             Spacer()
             
             HStack {
-                let platforms = target.deploymentTargets.sorted(by: <)
-                
-                ForEach(platforms, id: \.key) { key, value in
-                    if !value.isEmpty {
-                        HStack(spacing: 0) {
-                            Image(systemName: icon(key))
-                            
-                            Text(value)
-                                .footnote()
-                                .foregroundStyle(.tertiary)
-                        }
+                ForEach(target.deploymentTargets, id: \.self) { platform in
+                    HStack(spacing: 0) {
+                        Image(systemName: icon(platform))
+                        
+                        Text(platform.split(separator: " ").last ?? "")
+                            .footnote()
+                            .foregroundStyle(.tertiary)
                     }
+                }
+                
+                if target.type == .widgets {
+                    Image(systemName: "widget.large")
+                }
+                
+                if target.type == .unitTests || target.type == .uiTests {
+                    Image(systemName: "testtube.2")
+                }
+                
+                if target.type == .iMessage {
+                    Image(systemName: "message.badge")
                 }
             }
         }

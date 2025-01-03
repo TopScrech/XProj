@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct MBProjCard: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
-    private let proj: Project
+    private let proj: Proj
     
-    init(_ proj: Project) {
+    init(_ proj: Proj) {
         self.proj = proj
     }
     
@@ -29,5 +29,5 @@ struct MBProjCard: View {
 
 #Preview {
     MBProjCard(previewProj1)
-        .environment(ProjListVM())
+        .environment(DataModel.shared)
 }

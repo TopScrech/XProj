@@ -1,6 +1,6 @@
 import Foundation
 
-extension Project {
+extension Proj {
     /// Fetches and returns Swift package dependencies as an array of `Package` structs
     ///
     /// - Returns: An array of `Package` structs with the name and repository URL
@@ -34,7 +34,7 @@ extension Project {
     }
 }
 
-struct Root: Decodable {
+fileprivate struct Root: Decodable {
     let version: Int
     let pins: [Pin]
     
@@ -62,12 +62,12 @@ struct Root: Decodable {
     }
 }
 
-struct Pin: Decodable {
+fileprivate struct Pin: Decodable {
     let identity: String
     let location: String
 }
 
-struct PinV1: Decodable {
+fileprivate struct PinV1: Decodable {
     let package: String
     let repositoryURL: String
 }

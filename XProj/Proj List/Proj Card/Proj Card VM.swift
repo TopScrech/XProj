@@ -2,7 +2,7 @@ import Foundation
 
 //@Observable
 //final class ProjCardVM {
-extension ProjListVM {
+extension DataModel {
     func findXcodeprojFile(_ folderPath: String) -> (found: Bool, filePath: String?) {
         let fileManager = FileManager.default
         

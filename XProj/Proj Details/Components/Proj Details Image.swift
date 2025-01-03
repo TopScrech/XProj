@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct ProjDetailsImage: View {
-    private let proj: Project
+    private let proj: Proj
     
-    init(_ proj: Project) {
+    init(_ proj: Proj) {
         self.proj = proj
     }
     

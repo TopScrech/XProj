@@ -1,6 +1,6 @@
 import Foundation
 
-extension Project {
+extension Proj {
     /// Fetches and returns the Swift tools version from `Package.swift` located in the given folder path.
     ///
     /// - Parameter folderPath: The path to the folder containing `Package.swift`.

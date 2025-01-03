@@ -20,10 +20,7 @@
 		F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3341E2C2BDE358900E85F27 /* XProj App.swift */; };
 		F3341E2F2BDE358900E85F27 /* Proj List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3341E2E2BDE358900E85F27 /* Proj List.swift */; };
 		F3341E312BDE358A00E85F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3341E302BDE358A00E85F27 /* Assets.xcassets */; };
-		F3341E3C2BDE3C8B00E85F27 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3341E3B2BDE3C8B00E85F27 /* Project.swift */; };
 		F3341E3F2BDEAB4D00E85F27 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3341E3E2BDEAB4D00E85F27 /* ScrechKit */; };
-		F3341E412BDEB71F00E85F27 /* Proj List VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3341E402BDEB71F00E85F27 /* Proj List VM.swift */; };
-		F350D4262D156BAE000EEA57 /* Project Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F350D4252D156BAE000EEA57 /* Project Hashable.swift */; };
 		F3522DC62C2A29C000660101 /* Derived Data List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DC52C2A29C000660101 /* Derived Data List.swift */; };
 		F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCA2C2A2A5600660101 /* Derived Data VM.swift */; };
 		F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCC2C2AA32C00660101 /* File Manager.swift */; };
@@ -38,7 +35,6 @@
 		F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BA2D10CE9A007F7858 /* Formatters.swift */; };
 		F37831BF2D10D8DE007F7858 /* Packages in Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BE2D10D8DE007F7858 /* Packages in Package.swift */; };
 		F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C02D10E1CF007F7858 /* App Store App.swift */; };
-		F37831C32D10F99A007F7858 /* Publiches Projects List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C22D10F99A007F7858 /* Publiches Projects List.swift */; };
 		F37831C52D11A4F4007F7858 /* Proj Details Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C42D11A4F4007F7858 /* Proj Details Target.swift */; };
 		F37831C72D11A590007F7858 /* Proj Details Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C62D11A590007F7858 /* Proj Details Package.swift */; };
 		F37831C92D11A69B007F7858 /* Proj Details Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C82D11A69B007F7858 /* Proj Details Dates.swift */; };
@@ -59,25 +55,40 @@
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
 		F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Proj Card.swift */; };
-		F38B5E562BFD76F300CB9917 /* Home View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E552BFD76F300CB9917 /* Home View.swift */; };
 		F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* Search Suggestions.swift */; };
-		F3B389BA2D0EC9810082C2F3 /* Sidebar View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389B92D0EC9810082C2F3 /* Sidebar View.swift */; };
+		F3929A672D1BA52D00FB06E6 /* Search Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3929A662D1BA52D00FB06E6 /* Search Suggestion.swift */; };
 		F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */; };
 		F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */; };
-		F3B389C12D0F92500082C2F3 /* Proj Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C02D0F92500082C2F3 /* Proj Type.swift */; };
+		F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C02D0F92500082C2F3 /* Nav Category.swift */; };
 		F3B389C32D0F93500082C2F3 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C22D0F93500082C2F3 /* Package.swift */; };
 		F3B389C52D0F9AE80082C2F3 /* Swift Tools Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */; };
 		F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C62D0F9B340082C2F3 /* Proj Icon.swift */; };
-		F3B389C92D0FA57E0082C2F3 /* Only Proj List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C82D0FA57E0082C2F3 /* Only Proj List.swift */; };
-		F3B389CB2D0FA5880082C2F3 /* Only Package List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CA2D0FA5880082C2F3 /* Only Package List.swift */; };
 		F3B389CD2D0FAC770082C2F3 /* Derived Data Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CC2D0FAC770082C2F3 /* Derived Data Folder.swift */; };
 		F3B389CF2D1027890082C2F3 /* Derived Data Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CE2D1027890082C2F3 /* Derived Data Card.swift */; };
-		F3B389D12D102D610082C2F3 /* Only Playgrounds List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D02D102D610082C2F3 /* Only Playgrounds List.swift */; };
 		F3B389D32D102F5E0082C2F3 /* Package Dep List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */; };
 		F3B389D62D1032A40082C2F3 /* Package Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D52D1032A40082C2F3 /* Package Dependency.swift */; };
 		F3D1E75F2C9B40B4000C81FF /* Main Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */; };
+		F3DAD6752D161EAA0012BA9D /* Proj.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6712D161EAA0012BA9D /* Proj.swift */; };
+		F3DAD6772D161EAA0012BA9D /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66F2D161EAA0012BA9D /* Experience.swift */; };
+		F3DAD6782D161EAA0012BA9D /* 2 Column Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6652D161EAA0012BA9D /* 2 Column Container.swift */; };
+		F3DAD67A2D161EAA0012BA9D /* Data Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66C2D161EAA0012BA9D /* Data Model.swift */; };
+		F3DAD67B2D161EAA0012BA9D /* Nav Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */; };
+		F3DAD67C2D161EAA0012BA9D /* 3 Column Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6662D161EAA0012BA9D /* 3 Column Container.swift */; };
+		F3DAD67E2D161EAA0012BA9D /* Nav Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6632D161EAA0012BA9D /* Nav Container.swift */; };
+		F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6642D161EAA0012BA9D /* Stack Container.swift */; };
+		F3DAD68A2D161ECC0012BA9D /* Proj Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */; };
+		F3DAD68C2D161ECC0012BA9D /* Experience Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6812D161ECC0012BA9D /* Experience Button.swift */; };
+		F3DAD68D2D161ECC0012BA9D /* Experience Picker Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6832D161ECC0012BA9D /* Experience Picker Row.swift */; };
+		F3DAD68E2D161ECC0012BA9D /* Experience Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6822D161ECC0012BA9D /* Experience Picker.swift */; };
+		F3DAD6912D161ECC0012BA9D /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */; };
+		F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */; };
 		F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */; };
 		F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */; };
+		F3ED776F2D1772F8000977AC /* Proj List VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED776E2D1772F8000977AC /* Proj List VM.swift */; };
+		F3FC8A582D1AFDC300A7CCBC /* 2 Column Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A572D1AFDC300A7CCBC /* 2 Column Detail.swift */; };
+		F3FC8A5A2D1AFEC700A7CCBC /* 3 Column Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A592D1AFEC700A7CCBC /* 3 Column Detail.swift */; };
+		F3FC8A5C2D1AFF2A00A7CCBC /* 3 Column Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A5B2D1AFF2A00A7CCBC /* 3 Column Content.swift */; };
+		F3FC8A5E2D1AFFD500A7CCBC /* Column Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A5D2D1AFFD500A7CCBC /* Column Sidebar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,9 +109,6 @@
 		F3341E2E2BDE358900E85F27 /* Proj List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List.swift"; sourceTree = "<group>"; };
 		F3341E302BDE358A00E85F27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3341E352BDE358A00E85F27 /* XProj.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XProj.entitlements; sourceTree = "<group>"; };
-		F3341E3B2BDE3C8B00E85F27 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		F3341E402BDEB71F00E85F27 /* Proj List VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List VM.swift"; sourceTree = "<group>"; };
-		F350D4252D156BAE000EEA57 /* Project Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project Hashable.swift"; sourceTree = "<group>"; };
 		F3522DC52C2A29C000660101 /* Derived Data List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data List.swift"; sourceTree = "<group>"; };
 		F3522DCA2C2A2A5600660101 /* Derived Data VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data VM.swift"; sourceTree = "<group>"; };
 		F3522DCC2C2AA32C00660101 /* File Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File Manager.swift"; sourceTree = "<group>"; };
@@ -115,7 +123,6 @@
 		F37831BA2D10CE9A007F7858 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		F37831BE2D10D8DE007F7858 /* Packages in Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Packages in Package.swift"; sourceTree = "<group>"; };
 		F37831C02D10E1CF007F7858 /* App Store App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Store App.swift"; sourceTree = "<group>"; };
-		F37831C22D10F99A007F7858 /* Publiches Projects List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publiches Projects List.swift"; sourceTree = "<group>"; };
 		F37831C42D11A4F4007F7858 /* Proj Details Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Target.swift"; sourceTree = "<group>"; };
 		F37831C62D11A590007F7858 /* Proj Details Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Package.swift"; sourceTree = "<group>"; };
 		F37831C82D11A69B007F7858 /* Proj Details Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Dates.swift"; sourceTree = "<group>"; };
@@ -137,25 +144,40 @@
 		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
 		F38B5E512BFD6F6100CB9917 /* Proj Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card.swift"; sourceTree = "<group>"; };
-		F38B5E552BFD76F300CB9917 /* Home View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home View.swift"; sourceTree = "<group>"; };
 		F38B5E572BFE134400CB9917 /* Search Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestions.swift"; sourceTree = "<group>"; };
-		F3B389B92D0EC9810082C2F3 /* Sidebar View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sidebar View.swift"; sourceTree = "<group>"; };
+		F3929A662D1BA52D00FB06E6 /* Search Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestion.swift"; sourceTree = "<group>"; };
 		F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details.swift"; sourceTree = "<group>"; };
 		F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card Image.swift"; sourceTree = "<group>"; };
-		F3B389C02D0F92500082C2F3 /* Proj Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Type.swift"; sourceTree = "<group>"; };
+		F3B389C02D0F92500082C2F3 /* Nav Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Category.swift"; sourceTree = "<group>"; };
 		F3B389C22D0F93500082C2F3 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift Tools Version.swift"; sourceTree = "<group>"; };
 		F3B389C62D0F9B340082C2F3 /* Proj Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Icon.swift"; sourceTree = "<group>"; };
-		F3B389C82D0FA57E0082C2F3 /* Only Proj List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Only Proj List.swift"; sourceTree = "<group>"; };
-		F3B389CA2D0FA5880082C2F3 /* Only Package List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Only Package List.swift"; sourceTree = "<group>"; };
 		F3B389CC2D0FAC770082C2F3 /* Derived Data Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data Folder.swift"; sourceTree = "<group>"; };
 		F3B389CE2D1027890082C2F3 /* Derived Data Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data Card.swift"; sourceTree = "<group>"; };
-		F3B389D02D102D610082C2F3 /* Only Playgrounds List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Only Playgrounds List.swift"; sourceTree = "<group>"; };
 		F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep List.swift"; sourceTree = "<group>"; };
 		F3B389D52D1032A40082C2F3 /* Package Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dependency.swift"; sourceTree = "<group>"; };
 		F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main Settings.swift"; sourceTree = "<group>"; };
+		F3DAD6632D161EAA0012BA9D /* Nav Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Container.swift"; sourceTree = "<group>"; };
+		F3DAD6642D161EAA0012BA9D /* Stack Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stack Container.swift"; sourceTree = "<group>"; };
+		F3DAD6652D161EAA0012BA9D /* 2 Column Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2 Column Container.swift"; sourceTree = "<group>"; };
+		F3DAD6662D161EAA0012BA9D /* 3 Column Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3 Column Container.swift"; sourceTree = "<group>"; };
+		F3DAD66C2D161EAA0012BA9D /* Data Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Model.swift"; sourceTree = "<group>"; };
+		F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Model.swift"; sourceTree = "<group>"; };
+		F3DAD66F2D161EAA0012BA9D /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
+		F3DAD6712D161EAA0012BA9D /* Proj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proj.swift; sourceTree = "<group>"; };
+		F3DAD6812D161ECC0012BA9D /* Experience Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Experience Button.swift"; sourceTree = "<group>"; };
+		F3DAD6822D161ECC0012BA9D /* Experience Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Experience Picker.swift"; sourceTree = "<group>"; };
+		F3DAD6832D161ECC0012BA9D /* Experience Picker Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Experience Picker Row.swift"; sourceTree = "<group>"; };
+		F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
+		F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Grid.swift"; sourceTree = "<group>"; };
+		F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Grid Item.swift"; sourceTree = "<group>"; };
 		F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List Toolbar.swift"; sourceTree = "<group>"; };
 		F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Projects.swift"; sourceTree = "<group>"; };
+		F3ED776E2D1772F8000977AC /* Proj List VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List VM.swift"; sourceTree = "<group>"; };
+		F3FC8A572D1AFDC300A7CCBC /* 2 Column Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2 Column Detail.swift"; sourceTree = "<group>"; };
+		F3FC8A592D1AFEC700A7CCBC /* 3 Column Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3 Column Detail.swift"; sourceTree = "<group>"; };
+		F3FC8A5B2D1AFF2A00A7CCBC /* 3 Column Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3 Column Content.swift"; sourceTree = "<group>"; };
+		F3FC8A5D2D1AFFD500A7CCBC /* Column Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Column Sidebar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,13 +265,16 @@
 				F3341E352BDE358A00E85F27 /* XProj.entitlements */,
 				F313BE1C2C871E13005C8B60 /* Examples.zip */,
 				F37831DE2D12EA34007F7858 /* Preview Projects.swift */,
+				F3DAD66C2D161EAA0012BA9D /* Data Model.swift */,
+				F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */,
+				F3DAD6852D161ECC0012BA9D /* RecipeDetail.swift */,
 				F37831D92D12E028007F7858 /* funcs */,
 				F37831CA2D11A75F007F7858 /* Proj List */,
 				F3B389BD2D0ECB090082C2F3 /* Proj Details */,
 				F37D1BF42CDA258B00D8817D /* Smart Scan */,
 				F3B389D42D102F620082C2F3 /* Dependencies */,
 				F38B5E592BFE141300CB9917 /* Elements */,
-				F38B5E502BFD6F2700CB9917 /* Model */,
+				F38B5E502BFD6F2700CB9917 /* Models */,
 				F3522DC92C2A29D200660101 /* Derived Data */,
 				F38B5E4F2BFD6F1D00CB9917 /* Settings */,
 				F371A5522C2DC08D006BDF0D /* Menu Bar Extra */,
@@ -260,10 +285,8 @@
 		F350D40A2D1551ED000EEA57 /* Proj */ = {
 			isa = PBXGroup;
 			children = (
-				F3341E3B2BDE3C8B00E85F27 /* Project.swift */,
-				F350D4252D156BAE000EEA57 /* Project Hashable.swift */,
+				F3DAD6712D161EAA0012BA9D /* Proj.swift */,
 				F3B389C62D0F9B340082C2F3 /* Proj Icon.swift */,
-				F3B389C02D0F92500082C2F3 /* Proj Type.swift */,
 				F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */,
 			);
 			path = Proj;
@@ -303,7 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				F3341E2E2BDE358900E85F27 /* Proj List.swift */,
-				F3341E402BDEB71F00E85F27 /* Proj List VM.swift */,
+				F3ED776E2D1772F8000977AC /* Proj List VM.swift */,
 				F387AC312BFEC6C600EC1DC5 /* Analyser.swift */,
 				F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */,
 				F37831CD2D11C649007F7858 /* Proj Card */,
@@ -366,7 +389,7 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		F38B5E502BFD6F2700CB9917 /* Model */ = {
+		F38B5E502BFD6F2700CB9917 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				F350D40A2D1551ED000EEA57 /* Proj */,
@@ -376,13 +399,14 @@
 				F3B389C22D0F93500082C2F3 /* Package.swift */,
 				F37831BE2D10D8DE007F7858 /* Packages in Package.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F38B5E592BFE141300CB9917 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
 				F38B5E572BFE134400CB9917 /* Search Suggestions.swift */,
+				F3929A662D1BA52D00FB06E6 /* Search Suggestion.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -407,17 +431,50 @@
 			path = Dependencies;
 			sourceTree = "<group>";
 		};
+		F3DAD6892D161ECC0012BA9D /* Experience */ = {
+			isa = PBXGroup;
+			children = (
+				F3DAD6822D161ECC0012BA9D /* Experience Picker.swift */,
+				F3DAD6832D161ECC0012BA9D /* Experience Picker Row.swift */,
+				F3DAD6812D161ECC0012BA9D /* Experience Button.swift */,
+				F3DAD66F2D161EAA0012BA9D /* Experience.swift */,
+			);
+			path = Experience;
+			sourceTree = "<group>";
+		};
 		F3DB25452C2C4E8B00A0C066 /* Nav */ = {
 			isa = PBXGroup;
 			children = (
-				F38B5E552BFD76F300CB9917 /* Home View.swift */,
-				F3B389B92D0EC9810082C2F3 /* Sidebar View.swift */,
-				F3B389C82D0FA57E0082C2F3 /* Only Proj List.swift */,
-				F37831C22D10F99A007F7858 /* Publiches Projects List.swift */,
-				F3B389CA2D0FA5880082C2F3 /* Only Package List.swift */,
-				F3B389D02D102D610082C2F3 /* Only Playgrounds List.swift */,
+				F3DAD6632D161EAA0012BA9D /* Nav Container.swift */,
+				F3DAD6642D161EAA0012BA9D /* Stack Container.swift */,
+				F3FC8A5D2D1AFFD500A7CCBC /* Column Sidebar.swift */,
+				F3B389C02D0F92500082C2F3 /* Nav Category.swift */,
+				F3FC8A562D1AFD0F00A7CCBC /* 2 Column */,
+				F3FC8A552D1AFD0300A7CCBC /* 3 Column */,
+				F3DAD6892D161ECC0012BA9D /* Experience */,
 			);
 			path = Nav;
+			sourceTree = "<group>";
+		};
+		F3FC8A552D1AFD0300A7CCBC /* 3 Column */ = {
+			isa = PBXGroup;
+			children = (
+				F3DAD6662D161EAA0012BA9D /* 3 Column Container.swift */,
+				F3FC8A5B2D1AFF2A00A7CCBC /* 3 Column Content.swift */,
+				F3FC8A592D1AFEC700A7CCBC /* 3 Column Detail.swift */,
+			);
+			path = "3 Column";
+			sourceTree = "<group>";
+		};
+		F3FC8A562D1AFD0F00A7CCBC /* 2 Column */ = {
+			isa = PBXGroup;
+			children = (
+				F3DAD6652D161EAA0012BA9D /* 2 Column Container.swift */,
+				F3FC8A572D1AFDC300A7CCBC /* 2 Column Detail.swift */,
+				F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */,
+				F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */,
+			);
+			path = "2 Column";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -576,47 +633,58 @@
 				F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */,
 				F3B389CD2D0FAC770082C2F3 /* Derived Data Folder.swift in Sources */,
 				F3341E2F2BDE358900E85F27 /* Proj List.swift in Sources */,
+				F3DAD6752D161EAA0012BA9D /* Proj.swift in Sources */,
+				F3DAD6772D161EAA0012BA9D /* Experience.swift in Sources */,
+				F3DAD6782D161EAA0012BA9D /* 2 Column Container.swift in Sources */,
+				F3DAD67A2D161EAA0012BA9D /* Data Model.swift in Sources */,
+				F3DAD68A2D161ECC0012BA9D /* Proj Grid.swift in Sources */,
+				F3FC8A582D1AFDC300A7CCBC /* 2 Column Detail.swift in Sources */,
+				F3DAD68C2D161ECC0012BA9D /* Experience Button.swift in Sources */,
+				F3DAD68D2D161ECC0012BA9D /* Experience Picker Row.swift in Sources */,
+				F3DAD68E2D161ECC0012BA9D /* Experience Picker.swift in Sources */,
+				F3FC8A5A2D1AFEC700A7CCBC /* 3 Column Detail.swift in Sources */,
+				F3DAD6912D161ECC0012BA9D /* RecipeDetail.swift in Sources */,
+				F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */,
+				F3DAD67B2D161EAA0012BA9D /* Nav Model.swift in Sources */,
+				F3DAD67C2D161EAA0012BA9D /* 3 Column Container.swift in Sources */,
+				F3DAD67E2D161EAA0012BA9D /* Nav Container.swift in Sources */,
+				F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */,
 				F371A51B2C2D8D58006BDF0D /* MB Proj List.swift in Sources */,
 				F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */,
 				F3B389C32D0F93500082C2F3 /* Package.swift in Sources */,
 				F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */,
-				F3341E412BDEB71F00E85F27 /* Proj List VM.swift in Sources */,
 				F37831C72D11A590007F7858 /* Proj Details Package.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
-				F3B389C12D0F92500082C2F3 /* Proj Type.swift in Sources */,
+				F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */,
 				F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */,
 				F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,
-				F3B389D12D102D610082C2F3 /* Only Playgrounds List.swift in Sources */,
 				F37D1BFA2CDA272600D8817D /* Duplicate Section.swift in Sources */,
 				F371A51D2C2D8D94006BDF0D /* MB Proj Card.swift in Sources */,
 				F31EF9492D1038CE000F95A7 /* Package Dep Details.swift in Sources */,
 				F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */,
 				F37831D32D11D221007F7858 /* Proj Details Targets.swift in Sources */,
 				F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */,
-				F3B389BA2D0EC9810082C2F3 /* Sidebar View.swift in Sources */,
 				F37831D52D11D292007F7858 /* Proj Details Dependencies.swift in Sources */,
 				F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */,
+				F3ED776F2D1772F8000977AC /* Proj List VM.swift in Sources */,
 				F3522DCF2C2AA51800660101 /* Derived Data Entry.swift in Sources */,
+				F3FC8A5E2D1AFFD500A7CCBC /* Column Sidebar.swift in Sources */,
 				F37831D12D11D177007F7858 /* Proj Details Actions.swift in Sources */,
-				F3B389C92D0FA57E0082C2F3 /* Only Proj List.swift in Sources */,
 				F37831C52D11A4F4007F7858 /* Proj Details Target.swift in Sources */,
 				F3B389D62D1032A40082C2F3 /* Package Dependency.swift in Sources */,
-				F38B5E562BFD76F300CB9917 /* Home View.swift in Sources */,
 				F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */,
-				F37831C32D10F99A007F7858 /* Publiches Projects List.swift in Sources */,
 				F31EF9472D103896000F95A7 /* Package Dep Card.swift in Sources */,
-				F3341E3C2BDE3C8B00E85F27 /* Project.swift in Sources */,
 				F371A5192C2D84BA006BDF0D /* Proj Card VM.swift in Sources */,
-				F350D4262D156BAE000EEA57 /* Project Hashable.swift in Sources */,
 				F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */,
 				F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */,
-				F3B389CB2D0FA5880082C2F3 /* Only Package List.swift in Sources */,
 				F37831CF2D11D11B007F7858 /* Proj Details Image.swift in Sources */,
 				F37831CC2D11AF86007F7858 /* icon.swift in Sources */,
 				F3B389C52D0F9AE80082C2F3 /* Swift Tools Version.swift in Sources */,
 				F37831DB2D12E0E6007F7858 /* Save bookmark.swift in Sources */,
 				F37831B02D109282007F7858 /* Targets.swift in Sources */,
+				F3929A672D1BA52D00FB06E6 /* Search Suggestion.swift in Sources */,
+				F3FC8A5C2D1AFF2A00A7CCBC /* 3 Column Content.swift in Sources */,
 				F3B389D32D102F5E0082C2F3 /* Package Dep List.swift in Sources */,
 				F3B389CF2D1027890082C2F3 /* Derived Data Card.swift in Sources */,
 				F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */,

@@ -4,9 +4,9 @@ struct PackageDependency: Identifiable {
     let id = UUID()
     
     let package: Package
-    let projects: [Project]
+    let projects: [Proj]
     
-    var sortedProjects: [Project] {
+    var sortedProjects: [Proj] {
         projects.sorted {
             $0.openedAt > $1.openedAt
         }

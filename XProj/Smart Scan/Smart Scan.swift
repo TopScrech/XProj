@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SmartScan: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
     var body: some View {
         Text("Smart Scan")
@@ -25,5 +25,5 @@ struct SmartScan: View {
 
 #Preview {
     SmartScan()
-        .environment(ProjListVM())
+        .environment(DataModel.shared)
 }

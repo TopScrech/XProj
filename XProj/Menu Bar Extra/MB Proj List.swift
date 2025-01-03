@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MBProjList: View {
-    @Environment(ProjListVM.self) private var vm
+    @Environment(DataModel.self) private var vm
     
     @FocusState private var focusState
     
@@ -44,13 +44,13 @@ struct MBProjList: View {
         .task {
             focusState = true
         }
-        .refreshableTask {
-            vm.getFolders()
-        }
+//        .refreshableTask {
+//            vm.getFolders()
+//        }
     }
 }
 
 #Preview {
     MBProjList()
-        .environment(ProjListVM())
+        .environment(DataModel.shared)
 }

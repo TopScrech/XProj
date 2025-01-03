@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct ProjDetailsDates: View {
-    private let proj: Project
+    private let proj: Proj
     
-    init(_ proj: Project) {
+    init(_ proj: Proj) {
         self.proj = proj
     }
     
@@ -38,6 +38,6 @@ struct ProjDetailsDates: View {
     }
 }
 
-#Preview {
-    ProjDetailsDates(previewProj1)
-}
+//#Preview {
+//    ProjDetailsDates(previewProj1)
+//}
