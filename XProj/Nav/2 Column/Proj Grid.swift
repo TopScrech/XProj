@@ -22,7 +22,6 @@ struct ProjGrid: View {
             .navigationTitle(category.localizedName)
             .navigationDestination(for: Proj.self) { proj in
                 ProjDetails(proj)
-                    .experienceToolbar()
                 
                 //                RecipeDetail(proj) { relatedProj in
                 //                    Button {

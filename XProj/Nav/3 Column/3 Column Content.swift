@@ -19,7 +19,6 @@ struct ThreeColumnContent: View {
                 }
                 .frame(minWidth: 600)
                 .navigationTitle(category.localizedName)
-                .experienceToolbar()
                 
             case .derivedData:
                 DerivedDataList()
@@ -37,7 +36,6 @@ struct ThreeColumnContent: View {
                 }
                 .frame(minWidth: 600)
                 .navigationTitle(category.localizedName)
-                .experienceToolbar()
             }
         } else {
             Text("Choose a category")

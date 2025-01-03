@@ -1,4 +1,4 @@
-// An button that presents the nav experience picker
+// An button that presents the nav mode picker
 
 import SwiftUI
 
@@ -6,12 +6,10 @@ struct ExperienceButton: View {
     @Environment(NavModel.self) private var navModel
     
     var body: some View {
-        Button {
+        Button("Navigation mode") {
             navModel.showExperiencePicker = true
-        } label: {
-            Label("Experience", systemImage: "wand.and.stars")
-                .help("Choose your navigation experience")
         }
+        .help("Choose your navigation mdoe")
     }
 }
 

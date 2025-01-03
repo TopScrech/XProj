@@ -54,7 +54,7 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
         case .workspace:           "Workspaces"
         case .derivedData:         "Derived Data"
         case .packageDependencies: "Package Dependencies"
-        case .allItems:            "All Items"
+        case .allItems:            "All"
         }
     }
 }

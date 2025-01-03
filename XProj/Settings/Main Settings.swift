@@ -14,6 +14,8 @@ struct MainSettings: View {
                 Button("Examples") {
                     downloadExamples()
                 }
+                
+                ExperienceButton()
             }
 #if DEBUG
             Button("Clear nav") {

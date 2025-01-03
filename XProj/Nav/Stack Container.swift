@@ -24,10 +24,8 @@ struct StackContainer: View {
                 }
             }
             .navigationTitle("Categories")
-            .experienceToolbar()
             .navigationDestination(for: Proj.self) { proj in
                 ProjDetails(proj)
-                    .experienceToolbar()
                 
                 //                RecipeDetail(proj) { relatedProj in
                 //                    Button {

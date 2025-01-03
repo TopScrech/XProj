@@ -13,7 +13,6 @@ struct TwoColumnDetail: View {
                 ProjGrid()
             }
         }
-        .experienceToolbar()
     }
 }
 
