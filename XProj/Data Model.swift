@@ -46,7 +46,9 @@ final class DataModel {
         }
         
         return sortedProjects.filter {
-            $0.name.lowercased().contains(searchPrompt.lowercased())
+            $0.name
+                .lowercased()
+                .contains(searchPrompt.lowercased())
         }
     }
     
@@ -72,7 +74,7 @@ final class DataModel {
         }
     }
     
-    /// The projects for a given category, sorted by name
+    /// Projects for a given category, sorted by name
     func projects(in type: NavCategory?) -> [Proj] {
         projects.filter {
             $0.type == type
