@@ -15,7 +15,7 @@ struct MainSettings: View {
                     downloadExamples()
                 }
                 
-                ExperienceButton()
+                NavModeButton()
             }
 #if DEBUG
             Button("Clear nav") {

@@ -2,7 +2,7 @@
 
 import SwiftUI
 
-struct ExperienceButton: View {
+struct NavModeButton: View {
     @Environment(NavModel.self) private var navModel
     
     var body: some View {
@@ -14,6 +14,6 @@ struct ExperienceButton: View {
 }
 
 #Preview() {
-    ExperienceButton()
+    NavModeButton()
         .environment(NavModel.shared)
 }
