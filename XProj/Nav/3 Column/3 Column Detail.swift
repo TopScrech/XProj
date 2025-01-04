@@ -10,16 +10,6 @@ struct ThreeColumnDetail: View {
         } else {
             Text("Multiple projects selected")
         }
-        
-        //                RecipeDetail(selectedProj) { relatedRecipe in
-        //                    Button {
-        //                        nav.selectedCategory = relatedRecipe.type
-        //                        nav.selectedProj = Set([relatedRecipe])
-        //                    } label: {
-        //                        RecipeTile(relatedRecipe)
-        //                    }
-        //                    .buttonStyle(.plain)
-        //                }
     }
 }
 

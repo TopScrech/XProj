@@ -26,15 +26,6 @@ struct StackContainer: View {
             .navigationTitle("Categories")
             .navigationDestination(for: Proj.self) { proj in
                 ProjDetails(proj)
-                
-                //                RecipeDetail(proj) { relatedProj in
-                //                    Button {
-                //                        nav.projPath.append(relatedProj)
-                //                    } label: {
-                //                        RecipeTile(relatedProj)
-                //                    }
-                //                    .buttonStyle(.plain)
-                //                }
             }
         }
     }

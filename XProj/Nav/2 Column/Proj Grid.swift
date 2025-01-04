@@ -22,15 +22,6 @@ struct ProjGrid: View {
             .navigationTitle(category.localizedName)
             .navigationDestination(for: Proj.self) { proj in
                 ProjDetails(proj)
-                
-                //                RecipeDetail(proj) { relatedProj in
-                //                    Button {
-                //                        navModel.projPath.append(relatedProj)
-                //                    } label: {
-                //                        RecipeTile(relatedProj)
-                //                    }
-                //                    .buttonStyle(.plain)
-                //                }
             }
         } else {
             Text("Choose a category")
