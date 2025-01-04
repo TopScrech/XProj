@@ -2,9 +2,18 @@ import ScrechKit
 
 struct SettingsView: View {
     var body: some View {
-        TabView {
-            Tab("Settings", systemImage: "gear") {
+        if #available(macOS 15, *) {
+            TabView {
+                Tab("Settings", systemImage: "gear") {
+                    MainSettings()
+                }
+            }
+        } else {
+            TabView {
                 MainSettings()
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }
             }
         }
     }
