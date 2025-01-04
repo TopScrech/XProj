@@ -17,6 +17,7 @@ struct ProjGridItem: View {
                 .frame(maxWidth: 240, maxHeight: 240)
             
             Text(proj.name)
+                .multilineTextAlignment(.center)
                 .lineLimit(2, reservesSpace: true)
         }
         .tint(.primary)

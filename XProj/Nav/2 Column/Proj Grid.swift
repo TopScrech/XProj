@@ -8,20 +8,48 @@ struct ProjGrid: View {
     
     var body: some View {
         if let category = navModel.selectedCategory {
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(dataModel.projects(in: category)) { proj in
-                        NavigationLink(value: proj) {
-                            ProjGridItem(proj)
+            switch category {
+            case .allItems:
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(dataModel.projects) { proj in
+                            NavigationLink(value: proj) {
+                                ProjGridItem(proj)
+                            }
+                            .buttonStyle(.plain)
                         }
-                        .buttonStyle(.plain)
                     }
+                    .padding()
                 }
-                .padding()
-            }
-            .navigationTitle(category.localizedName)
-            .navigationDestination(for: Proj.self) { proj in
-                ProjDetails(proj)
+                .navigationTitle(category.localizedName)
+                .navigationDestination(for: Proj.self) { proj in
+                    ProjDetails(proj)
+                }
+                
+            case .derivedData:
+#warning("Make a grid view")
+                DerivedDataList()
+                
+            case .packageDependencies:
+#warning("Make a grid view")
+                PackageDepList()
+                
+            default:
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(dataModel.projects(in: category)) { proj in
+                            NavigationLink(value: proj) {
+                                ProjGridItem(proj)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding()
+                }
+                .navigationTitle(category.localizedName)
+                .navigationDestination(for: Proj.self) { proj in
+                    ProjDetails(proj)
+                }
             }
         } else {
             Text("Choose a category")
