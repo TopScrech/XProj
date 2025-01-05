@@ -3,7 +3,7 @@ import SwiftUI
 struct NavContainer: View {
     @Environment(NavModel.self) private var nav
     
-    @AppStorage("experience") private var experience: Experience?
+    @AppStorage("experience") private var experience: NavMode?
     
     var body: some View {
         @Bindable var nav = nav
@@ -20,7 +20,7 @@ struct NavContainer: View {
                 ThreeColumnContainer()
                 
             case nil:
-                ExperienceButton()
+                NavModeButton()
                     .padding()
                     .onAppear {
                         nav.showExperiencePicker = true
@@ -28,7 +28,7 @@ struct NavContainer: View {
             }
         }
         .sheet($nav.showExperiencePicker) {
-            ExperiencePicker($experience)
+            NavModePicker($experience)
         }
         .task {
             try? nav.load()

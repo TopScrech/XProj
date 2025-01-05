@@ -1,15 +1,13 @@
-// A nav experience picker row that displays all experiences
-
 import SwiftUI
 
-struct ExperiencePickerItem: View {
+struct NavModePickerItem: View {
     @Environment(\.dismiss) private var dismiss
     
-    @Binding private var selection: Experience?
+    @Binding private var selection: NavMode?
     
-    private var experience: Experience
+    private var experience: NavMode
     
-    init(_ selection: Binding<Experience?>, for experience: Experience) {
+    init(_ selection: Binding<NavMode?>, for experience: NavMode) {
         _selection = selection
         self.experience = experience
     }
@@ -26,8 +24,8 @@ struct ExperiencePickerItem: View {
 }
 
 private struct Label: View {
-    @Binding var selection: Experience?
-    var experience: Experience
+    @Binding var selection: NavMode?
+    var experience: NavMode
     
     @State private var isHovering = false
     
@@ -79,10 +77,10 @@ private struct Label: View {
 
 #Preview() {
     @Previewable @State
-    var selection: Experience?
+    var selection: NavMode?
     
-    ForEach(Experience.allCases) {
-        ExperiencePickerItem(
+    ForEach(NavMode.allCases) {
+        NavModePickerItem(
             $selection,
             for: $0
         )

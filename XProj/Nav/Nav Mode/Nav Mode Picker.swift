@@ -1,13 +1,13 @@
-// Nav experience picker used to select the nav architecture for the app
+// Nav mode picker
 
 import SwiftUI
 
-struct ExperiencePicker: View {
+struct NavModePicker: View {
     @Environment(\.dismiss) private var dismiss
     
-    @Binding private var experience: Experience?
+    @Binding private var experience: NavMode?
     
-    init(_ experience: Binding<Experience?>) {
+    init(_ experience: Binding<NavMode?>) {
         _experience = experience
     }
     
@@ -36,8 +36,8 @@ struct ExperiencePicker: View {
                 Spacer()
                 
                 LazyVGrid(columns: columns) {
-                    ForEach(Experience.allCases) { exp in
-                        ExperiencePickerItem($experience, for: exp)
+                    ForEach(NavMode.allCases) { exp in
+                        NavModePickerItem($experience, for: exp)
                     }
                 }
                 
@@ -59,7 +59,7 @@ struct ExperiencePicker: View {
 
 #Preview() {
     @Previewable @State
-    var experience: Experience? = .stack
+    var experience: NavMode? = .stack
     
-    ExperiencePicker($experience)
+    NavModePicker($experience)
 }

@@ -1,8 +1,6 @@
-// An enumeration of nav experiences used to define the app architecture
-
 import SwiftUI
 
-enum Experience: Int, Identifiable, CaseIterable, Codable {
+enum NavMode: Int, Identifiable, CaseIterable, Codable {
     case stack,
          twoColumn,
          threeColumn
