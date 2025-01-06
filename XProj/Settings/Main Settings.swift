@@ -23,9 +23,6 @@ struct MainSettings: View {
             }
 #endif
         }
-        //        .listStyle(.plain)
-        .padding()
-        //        .frame(width: 300, height: 300)
     }
     
     private func downloadExamples() {

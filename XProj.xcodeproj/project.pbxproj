@@ -25,6 +25,7 @@
 		F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCA2C2A2A5600660101 /* Derived Data VM.swift */; };
 		F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCC2C2AA32C00660101 /* File Manager.swift */; };
 		F3522DCF2C2AA51800660101 /* Derived Data Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCE2C2AA51800660101 /* Derived Data Entry.swift */; };
+		F358F02B2D2C19A200BCC07B /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = F358F02A2D2C19A200BCC07B /* LaunchAtLogin */; };
 		F371A5192C2D84BA006BDF0D /* Proj Card VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A5182C2D84BA006BDF0D /* Proj Card VM.swift */; };
 		F371A51B2C2D8D58006BDF0D /* MB Proj List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A51A2C2D8D58006BDF0D /* MB Proj List.swift */; };
 		F371A51D2C2D8D94006BDF0D /* MB Proj Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A51C2C2D8D94006BDF0D /* MB Proj Card.swift */; };
@@ -192,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F358F02B2D2C19A200BCC07B /* LaunchAtLogin in Frameworks */,
 				F37831B72D1095EC007F7858 /* XcodeProjKit in Frameworks */,
 				F3341E3F2BDEAB4D00E85F27 /* ScrechKit in Frameworks */,
 			);
@@ -512,6 +514,7 @@
 			packageProductDependencies = (
 				F3341E3E2BDEAB4D00E85F27 /* ScrechKit */,
 				F37831B62D1095EC007F7858 /* XcodeProjKit */,
+				F358F02A2D2C19A200BCC07B /* LaunchAtLogin */,
 			);
 			productName = XProj;
 			productReference = F3341E292BDE358900E85F27 /* XProj.app */;
@@ -566,6 +569,7 @@
 			packageReferences = (
 				F3341E3D2BDEAB4D00E85F27 /* XCRemoteSwiftPackageReference "ScrechKit" */,
 				F37831B52D1095EC007F7858 /* XCRemoteSwiftPackageReference "XcodeProjKit" */,
+				F358F0292D2C19A200BCC07B /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F3341E2A2BDE358900E85F27 /* Products */;
@@ -1053,6 +1057,14 @@
 				kind = branch;
 			};
 		};
+		F358F0292D2C19A200BCC07B /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TopScrech/LaunchAtLogin";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		F37831B52D1095EC007F7858 /* XCRemoteSwiftPackageReference "XcodeProjKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/TopScrech/XcodeProjKit";
@@ -1068,6 +1080,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F3341E3D2BDEAB4D00E85F27 /* XCRemoteSwiftPackageReference "ScrechKit" */;
 			productName = ScrechKit;
+		};
+		F358F02A2D2C19A200BCC07B /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F358F0292D2C19A200BCC07B /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
 		};
 		F37831B62D1095EC007F7858 /* XcodeProjKit */ = {
 			isa = XCSwiftPackageProductDependency;
