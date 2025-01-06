@@ -1,21 +1,34 @@
 import ScrechKit
+import LaunchAtLogin
 
 struct SettingsView: View {
     var body: some View {
-        if #available(macOS 15, *) {
-            TabView {
-                Tab("Settings", systemImage: "gear") {
+        Group {
+            if #available(macOS 15, *) {
+                TabView {
+                    Tab("Settings", systemImage: "gear") {
+                        MainSettings()
+                    }
+                    
+                    Tab("Other", systemImage: "hammer") {
+                        LaunchAtLogin.Toggle()
+                    }
+                }
+            } else {
+                TabView {
                     MainSettings()
+                        .tabItem {
+                            Label("Settings", systemImage: "gear")
+                        }
+                    
+                    LaunchAtLogin.Toggle()
+                        .tabItem {
+                            Label("Other", systemImage: "hammer")
+                        }
                 }
             }
-        } else {
-            TabView {
-                MainSettings()
-                    .tabItem {
-                        Label("Settings", systemImage: "gear")
-                    }
-            }
         }
+        .frame(width: 300, height: 300)
     }
 }
 
