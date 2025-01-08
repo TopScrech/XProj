@@ -35,14 +35,6 @@ struct ProjDetailsActions: View {
                     openUrl(url)
                 }
                 .frame(maxWidth: 100)
-                
-//                Button("Remote") {
-//                }
-//                .contextMenu {
-//                    Button("Test") {
-//                        
-//                    }
-//                }
             }
         }
         .padding(.vertical, 5)
