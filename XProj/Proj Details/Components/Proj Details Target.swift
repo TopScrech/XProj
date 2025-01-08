@@ -15,6 +15,7 @@ struct ProjDetailsTarget: View {
                         .resizable()
                         .frame(width: 32, height: 32)
                 }
+                .help(url.path)
             }
             
             VStack(alignment: .leading) {

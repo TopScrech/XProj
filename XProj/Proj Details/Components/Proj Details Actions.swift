@@ -16,15 +16,18 @@ struct ProjDetailsActions: View {
                 Button("App Store") {
                     openUrl(url)
                 }
+                .help(url.path)
             }
             
             Button("Xcode") {
                 vm.openProj(proj)
             }
+            .help(proj.path)
             
             Button("Finder") {
                 openInFinder(rootedAt: proj.path)
             }
+            .help(proj.path)
             
             if let path = proj.fetchRemoteRepositoryURL(), let url = URL(string: path) {
                 Menu {
@@ -35,6 +38,7 @@ struct ProjDetailsActions: View {
                     openUrl(url)
                 }
                 .frame(maxWidth: 100)
+                .help(url.path)
             }
         }
         .padding(.vertical, 5)
