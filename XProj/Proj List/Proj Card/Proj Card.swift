@@ -41,6 +41,14 @@ struct ProjCard: View {
                     }) {
                         Image(systemName: "person.badge.key")
                     }
+                    
+                    if proj.targets.contains(where: {
+                        $0.appStoreApp?.url != nil
+                    }) {
+                        Image(.appStore)
+                            .resizable()
+                            .frame(width: 16, height: 16)
+                    }
                 }
                 
 #warning("projectsFolder")
