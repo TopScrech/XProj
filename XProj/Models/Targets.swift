@@ -48,6 +48,7 @@ enum TargetType: String, Identifiable, Codable, Hashable, CaseIterable {
 }
 
 extension Proj {
+#warning("Check release configuration")
     //    func isDebugConfiguration(_ buildSettings: [String: Any]?) -> Bool {
     //        guard let buildSettings else {
     //            return false
