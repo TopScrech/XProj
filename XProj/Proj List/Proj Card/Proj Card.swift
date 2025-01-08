@@ -86,6 +86,22 @@ struct ProjCard: View {
             Button("Open in Finder") {
                 openInFinder(rootedAt: proj.path)
             }
+            
+            Section {
+                if let path = proj.fetchRemoteRepositoryURL(), let url = URL(string: path) {
+                    Menu {
+                        Button("Open") {
+                            openUrl(url)
+                        }
+                        .help(url.description)
+                        
+                        ShareLink(item: url)
+                            .help(url.description)
+                    } label: {
+                        Text("Remote")
+                    }
+                }
+            }
         }
     }
 }

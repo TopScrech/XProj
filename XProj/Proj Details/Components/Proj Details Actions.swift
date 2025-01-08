@@ -16,7 +16,7 @@ struct ProjDetailsActions: View {
                 Button("App Store") {
                     openUrl(url)
                 }
-                .help(url.path)
+                .help(url.description)
             }
             
             Button("Xcode") {
@@ -38,7 +38,7 @@ struct ProjDetailsActions: View {
                     openUrl(url)
                 }
                 .frame(maxWidth: 100)
-                .help(url.path)
+                .help(url.description)
             }
         }
         .padding(.vertical, 5)
