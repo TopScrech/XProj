@@ -92,6 +92,30 @@ struct Proj: Identifiable, Hashable, Decodable {
         }
     }
     
+    func fetchRemoteRepositoryURL() -> String? {
+        let gitFolderPath = (path as NSString).appendingPathComponent(".git/config")
+        let configURL = URL(fileURLWithPath: gitFolderPath)
+        
+        guard let configContents = try? String(contentsOf: configURL) else {
+            return nil
+        }
+        
+        let lines = configContents.split(separator: "\n")
+        var isInRemoteOriginSection = false
+        
+        for line in lines {
+            if line.trimmingCharacters(in: .whitespacesAndNewlines) == "[remote \"origin\"]" {
+                isInRemoteOriginSection = true
+            } else if isInRemoteOriginSection, line.trimmingCharacters(in: .whitespacesAndNewlines).hasPrefix("url =") {
+                return line.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: "url =", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+            } else if line.hasPrefix("[") {
+                isInRemoteOriginSection = false
+            }
+        }
+        
+        return nil
+    }
+    
     private func parseSwiftPackages() -> [Package] {
         switch type {
         case .proj:

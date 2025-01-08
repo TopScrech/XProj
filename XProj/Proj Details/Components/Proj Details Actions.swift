@@ -25,6 +25,25 @@ struct ProjDetailsActions: View {
             Button("Finder") {
                 openInFinder(rootedAt: proj.path)
             }
+            
+            if let path = proj.fetchRemoteRepositoryURL(), let url = URL(string: path) {
+                Menu {
+                    ShareLink(item: url)
+                } label: {
+                    Text("Remote")
+                } primaryAction: {
+                    openUrl(url)
+                }
+                .frame(maxWidth: 100)
+                
+//                Button("Remote") {
+//                }
+//                .contextMenu {
+//                    Button("Test") {
+//                        
+//                    }
+//                }
+            }
         }
         .padding(.vertical, 5)
     }
