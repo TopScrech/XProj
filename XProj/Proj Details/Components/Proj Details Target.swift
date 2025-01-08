@@ -18,8 +18,15 @@ struct ProjDetailsTarget: View {
             }
             
             VStack(alignment: .leading) {
-                Text(target.name)
-                    .title3()
+                HStack(spacing: 0) {
+                    Text(target.name)
+                        .title3()
+                    
+                    if let version = target.version, let build = target.build {
+                        Text(" v\(version) (\(build))")
+                            .secondary()
+                    }
+                }
                 
                 if let bundle = target.bundleId {
                     Text(bundle)
@@ -56,6 +63,18 @@ struct ProjDetailsTarget: View {
     }
 }
 
-//#Preview {
-//    ProjDetailsTarget()
-//}
+#Preview {
+    ProjDetailsTarget(
+        Target(
+            id: "id",
+            name: "Preview",
+            bundleId: "dev.topscrech.XProj",
+            type: .app,
+            deploymentTargets: ["iOS 17.0"],
+            appStoreApp: nil,
+            version: "4.16",
+            build: "0"
+        )
+    )
+    .padding()
+}
