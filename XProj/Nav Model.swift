@@ -132,6 +132,7 @@ final class NavModel: Codable {
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        
         try container.encodeIfPresent(selectedCategory, forKey: .selectedCategory)
         try container.encode(projPath.map(\.id), forKey: .recipePathIds)
         try container.encode(columnVisibility, forKey: .columnVisibility)
