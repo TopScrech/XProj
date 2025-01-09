@@ -1,5 +1,3 @@
-// The content view for the nav stack view experience
-
 import SwiftUI
 
 struct StackContainer: View {
