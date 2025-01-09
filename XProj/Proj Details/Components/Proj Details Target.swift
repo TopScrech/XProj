@@ -61,6 +61,15 @@ struct ProjDetailsTarget: View {
                 }
             }
         }
+        .contextMenu {
+            if let url = target.appStoreApp?.url {
+                Link("App Store", destination: url)
+                    .help(url)
+                
+                ShareLink(item: url)
+                    .help(url)
+            }
+        }
     }
 }
 
