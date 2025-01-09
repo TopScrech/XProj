@@ -40,7 +40,7 @@ struct Proj: Identifiable, Hashable, Decodable {
         self.targets           = fetchTargets()
         self.platforms         = fetchUniquePlatforms()
     }
-        
+    
     var icon: String {
         switch type {
         case .proj:       "hammer.fill"
