@@ -70,6 +70,10 @@ struct ProjCard: View {
             //                .secondary()
         }
         .padding(.vertical, 5)
+        .onDrag {
+            let fileURL = URL(fileURLWithPath: proj.path)
+            return NSItemProvider(object: fileURL as NSURL)
+        }
         .contextMenu {
             if let url = proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url {
                 Section {
