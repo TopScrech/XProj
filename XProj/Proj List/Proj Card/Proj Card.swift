@@ -82,10 +82,12 @@ struct ProjCard: View {
             Button("Open in Xcode") {
                 vm.openProj(proj)
             }
+            .help(proj.path)
             
             Button("Open in Finder") {
                 openInFinder(rootedAt: proj.path)
             }
+            .help(proj.path)
             
             Section {
                 if let path = proj.fetchRemoteRepositoryURL(), let url = URL(string: path) {
