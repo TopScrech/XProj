@@ -9,7 +9,7 @@ struct NavModeButton: View {
         Button("Navigation mode") {
             navModel.showExperiencePicker = true
         }
-        .help("Choose your navigation mdoe")
+        .help("Choose your navigation mode")
     }
 }
 

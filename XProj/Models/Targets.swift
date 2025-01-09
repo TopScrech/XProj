@@ -9,6 +9,8 @@ struct Target: Identifiable, Hashable, Decodable {
     let deploymentTargets: [String]
     let type: TargetType?
     var appStoreApp: AppStoreApp?
+    let version: String?
+    let build: String?
     
     init(
         id: String,
@@ -16,7 +18,9 @@ struct Target: Identifiable, Hashable, Decodable {
         bundleId: String?,
         type: TargetType? = nil,
         deploymentTargets: [String],
-        appStoreApp: AppStoreApp?
+        appStoreApp: AppStoreApp?,
+        version: String?,
+        build: String?
     ) {
         self.id = id
         self.name = name
@@ -24,6 +28,8 @@ struct Target: Identifiable, Hashable, Decodable {
         self.type = type
         self.deploymentTargets = deploymentTargets
         self.appStoreApp = appStoreApp
+        self.version = version
+        self.build = build
     }
 }
 
@@ -42,6 +48,7 @@ enum TargetType: String, Identifiable, Codable, Hashable, CaseIterable {
 }
 
 extension Proj {
+#warning("Check release configuration")
     //    func isDebugConfiguration(_ buildSettings: [String: Any]?) -> Bool {
     //        guard let buildSettings else {
     //            return false
@@ -75,6 +82,10 @@ extension Proj {
                     let targetName = target.name
                     let buildSettings = buildConfig.buildSettings
                     let bundleId = buildSettings?["PRODUCT_BUNDLE_IDENTIFIER"] as? String
+                    
+                    let version = buildSettings?["MARKETING_VERSION"] as? String
+                    let build = buildSettings?["CURRENT_PROJECT_VERSION"] as? String
+                    
                     let id = target.ref
                     
                     guard !seenRefs.contains(target.ref) else {
@@ -101,7 +112,9 @@ extension Proj {
                         bundleId: bundleId,
                         type: type.type,
                         deploymentTargets: type.versions,
-                        appStoreApp: appStoreApp
+                        appStoreApp: appStoreApp,
+                        version: version,
+                        build: build
                     )
                 }
             }

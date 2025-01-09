@@ -16,14 +16,29 @@ struct ProjDetailsActions: View {
                 Button("App Store") {
                     openUrl(url)
                 }
+                .help(url)
             }
             
             Button("Xcode") {
                 vm.openProj(proj)
             }
+            .help(proj.path)
             
             Button("Finder") {
                 openInFinder(rootedAt: proj.path)
+            }
+            .help(proj.path)
+            
+            if let path = proj.fetchRemoteRepositoryURL(), let url = URL(string: path) {
+                Menu {
+                    ShareLink(item: url)
+                } label: {
+                    Text("Remote")
+                } primaryAction: {
+                    openUrl(url)
+                }
+                .frame(maxWidth: 100)
+                .help(url)
             }
         }
         .padding(.vertical, 5)

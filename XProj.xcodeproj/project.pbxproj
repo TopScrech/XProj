@@ -10,6 +10,8 @@
 		F313BE1D2C871E13005C8B60 /* Examples.zip in Resources */ = {isa = PBXBuildFile; fileRef = F313BE1C2C871E13005C8B60 /* Examples.zip */; };
 		F31EF9472D103896000F95A7 /* Package Dep Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9462D103896000F95A7 /* Package Dep Card.swift */; };
 		F31EF9492D1038CE000F95A7 /* Package Dep Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9482D1038CE000F95A7 /* Package Dep Details.swift */; };
+		F32A1E022D2FB7B6008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
+		F32A1E032D2FB7BD008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
 		F33081762C9057F700605E43 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F33081752C9057F700605E43 /* WidgetKit.framework */; };
 		F33081782C9057F700605E43 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F33081772C9057F700605E43 /* SwiftUI.framework */; };
 		F330817B2C9057F700605E43 /* XProj Widgets Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F330817A2C9057F700605E43 /* XProj Widgets Bundle.swift */; };
@@ -37,7 +39,7 @@
 		F37831BF2D10D8DE007F7858 /* Packages in Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BE2D10D8DE007F7858 /* Packages in Package.swift */; };
 		F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C02D10E1CF007F7858 /* App Store App.swift */; };
 		F37831C52D11A4F4007F7858 /* Proj Details Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C42D11A4F4007F7858 /* Proj Details Target.swift */; };
-		F37831C72D11A590007F7858 /* Proj Details Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C62D11A590007F7858 /* Proj Details Package.swift */; };
+		F37831C72D11A590007F7858 /* Proj Details Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C62D11A590007F7858 /* Proj Details Dependency.swift */; };
 		F37831C92D11A69B007F7858 /* Proj Details Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C82D11A69B007F7858 /* Proj Details Dates.swift */; };
 		F37831CC2D11AF86007F7858 /* icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831CB2D11AF86007F7858 /* icon.swift */; };
 		F37831CF2D11D11B007F7858 /* Proj Details Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831CE2D11D11B007F7858 /* Proj Details Image.swift */; };
@@ -95,6 +97,7 @@
 		F313BE1C2C871E13005C8B60 /* Examples.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Examples.zip; sourceTree = "<group>"; };
 		F31EF9462D103896000F95A7 /* Package Dep Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep Card.swift"; sourceTree = "<group>"; };
 		F31EF9482D1038CE000F95A7 /* Package Dep Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep Details.swift"; sourceTree = "<group>"; };
+		F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F33081732C9057F700605E43 /* Widgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F33081752C9057F700605E43 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F33081772C9057F700605E43 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -124,7 +127,7 @@
 		F37831BE2D10D8DE007F7858 /* Packages in Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Packages in Package.swift"; sourceTree = "<group>"; };
 		F37831C02D10E1CF007F7858 /* App Store App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Store App.swift"; sourceTree = "<group>"; };
 		F37831C42D11A4F4007F7858 /* Proj Details Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Target.swift"; sourceTree = "<group>"; };
-		F37831C62D11A590007F7858 /* Proj Details Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Package.swift"; sourceTree = "<group>"; };
+		F37831C62D11A590007F7858 /* Proj Details Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Dependency.swift"; sourceTree = "<group>"; };
 		F37831C82D11A69B007F7858 /* Proj Details Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Dates.swift"; sourceTree = "<group>"; };
 		F37831CB2D11AF86007F7858 /* icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = icon.swift; sourceTree = "<group>"; };
 		F37831CE2D11D11B007F7858 /* Proj Details Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Image.swift"; sourceTree = "<group>"; };
@@ -135,7 +138,7 @@
 		F37831DA2D12E0E6007F7858 /* Save bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Save bookmark.swift"; sourceTree = "<group>"; };
 		F37831DC2D12E57D007F7858 /* Restore access to folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restore access to folder.swift"; sourceTree = "<group>"; };
 		F37831DE2D12EA34007F7858 /* Preview Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview Projects.swift"; sourceTree = "<group>"; };
-		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F37B90722BFE9E1600597624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F37D1BEC2CDA231F00D8817D /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		F37D1BEE2CDA234700D8817D /* Simple Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Simple Entry.swift"; sourceTree = "<group>"; };
 		F37D1BF02CDA235D00D8817D /* Entry View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry View.swift"; sourceTree = "<group>"; };
@@ -259,11 +262,12 @@
 			isa = PBXGroup;
 			children = (
 				F3341E2C2BDE358900E85F27 /* XProj App.swift */,
-				F3DB25452C2C4E8B00A0C066 /* Nav */,
 				F37B90722BFE9E1600597624 /* Info.plist */,
 				F3341E302BDE358A00E85F27 /* Assets.xcassets */,
+				F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */,
 				F3341E352BDE358A00E85F27 /* XProj.entitlements */,
 				F313BE1C2C871E13005C8B60 /* Examples.zip */,
+				F3DB25452C2C4E8B00A0C066 /* Nav */,
 				F37831DE2D12EA34007F7858 /* Preview Projects.swift */,
 				F3DAD66C2D161EAA0012BA9D /* Data Model.swift */,
 				F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */,
@@ -346,12 +350,12 @@
 		F37831D62D11D3B4007F7858 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */,
-				F37831D22D11D221007F7858 /* Proj Details Targets.swift */,
 				F37831CE2D11D11B007F7858 /* Proj Details Image.swift */,
 				F37831D02D11D177007F7858 /* Proj Details Actions.swift */,
 				F37831C82D11A69B007F7858 /* Proj Details Dates.swift */,
-				F37831C62D11A590007F7858 /* Proj Details Package.swift */,
+				F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */,
+				F37831C62D11A590007F7858 /* Proj Details Dependency.swift */,
+				F37831D22D11D221007F7858 /* Proj Details Targets.swift */,
 				F37831C42D11A4F4007F7858 /* Proj Details Target.swift */,
 			);
 			path = Components;
@@ -564,6 +568,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = F3341E202BDE358900E85F27;
 			packageReferences = (
@@ -588,6 +593,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32A1E032D2FB7BD008AEB2F /* Localizable.xcstrings in Resources */,
 				F33081832C9057F700605E43 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,6 +604,7 @@
 			files = (
 				F313BE1D2C871E13005C8B60 /* Examples.zip in Resources */,
 				F3341E312BDE358A00E85F27 /* Assets.xcassets in Resources */,
+				F32A1E022D2FB7B6008AEB2F /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,7 +660,7 @@
 				F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */,
 				F3B389C32D0F93500082C2F3 /* Package.swift in Sources */,
 				F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */,
-				F37831C72D11A590007F7858 /* Proj Details Package.swift in Sources */,
+				F37831C72D11A590007F7858 /* Proj Details Dependency.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
 				F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */,
 				F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */,
@@ -727,7 +734,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.XProj-Widgets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = NO;
@@ -760,7 +767,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.XProj-Widgets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = NO;
@@ -836,6 +843,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -893,6 +901,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
@@ -920,7 +929,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.topscrech.XProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -952,7 +961,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.topscrech.XProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -1,0 +1,228 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+      "shouldTranslate" : false
+    },
+    " v%@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : " v%1$@ (%2$@)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : " v%1$@ (%2$@)"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "(%lld duplicates)" : {
+
+    },
+    "%@: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@: %2$@"
+          }
+        }
+      }
+    },
+    "%lld duplicates" : {
+
+    },
+    "%lld Projects" : {
+
+    },
+    "All" : {
+
+    },
+    "App Store" : {
+      "shouldTranslate" : false
+    },
+    "Categories" : {
+
+    },
+    "Change folder" : {
+
+    },
+    "Change projects folder" : {
+
+    },
+    "Choose a category" : {
+
+    },
+    "Choose your navigation experience" : {
+
+    },
+    "Choose your navigation mode" : {
+
+    },
+    "Clear" : {
+
+    },
+    "Clear nav" : {
+
+    },
+    "countFilesInFoldersMultiThread" : {
+
+    },
+    "countFilesRecursively" : {
+
+    },
+    "Created: " : {
+
+    },
+    "Delete" : {
+
+    },
+    "Derived Data" : {
+      "shouldTranslate" : false
+    },
+    "Dismiss" : {
+
+    },
+    "Examples" : {
+
+    },
+    "Finder" : {
+      "shouldTranslate" : false
+    },
+    "Functions" : {
+
+    },
+    "Last opened: " : {
+
+    },
+    "listFilesInFoldersSingleThread" : {
+
+    },
+    "Modified: " : {
+
+    },
+    "Multiple projects selected" : {
+
+    },
+    "Navigation mode" : {
+
+    },
+    "Open" : {
+
+    },
+    "Open in Finder" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть в Finder"
+          }
+        }
+      }
+    },
+    "Open in Xcode" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть в Xcode"
+          }
+        }
+      }
+    },
+    "Other" : {
+
+    },
+    "Package Dependencies" : {
+
+    },
+    "Package dependencies: %lld" : {
+
+    },
+    "Packages" : {
+
+    },
+    "Playgrounds" : {
+      "shouldTranslate" : false
+    },
+    "Presents a stack of views over a root view" : {
+
+    },
+    "Presents views in three columns: sidebar, content, and detail" : {
+
+    },
+    "Presents views in two columns: sidebar and detail" : {
+
+    },
+    "Projects" : {
+
+    },
+    "Projects using %@" : {
+
+    },
+    "Projects: %lld • Swift Packages: %lld • Vapor: %lld • Playgrounds: %lld • Workspaces: %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Projects: %1$lld • Swift Packages: %2$lld • Vapor: %3$lld • Playgrounds: %4$lld • Workspaces: %5$lld"
+          }
+        }
+      }
+    },
+    "Remote" : {
+
+    },
+    "Save to Downloads" : {
+
+    },
+    "Search" : {
+
+    },
+    "Settings" : {
+
+    },
+    "Smart Scan" : {
+
+    },
+    "Sort by Author" : {
+
+    },
+    "Stack" : {
+
+    },
+    "Swift tools: " : {
+
+    },
+    "Targets: %lld" : {
+      "shouldTranslate" : false
+    },
+    "Three columns" : {
+
+    },
+    "Total:" : {
+
+    },
+    "Two columns" : {
+
+    },
+    "Vapor" : {
+      "shouldTranslate" : false
+    },
+    "Workspaces" : {
+
+    },
+    "Xcode" : {
+      "shouldTranslate" : false
+    },
+    "You might need to restart the app" : {
+
+    }
+  },
+  "version" : "1.0"
+}

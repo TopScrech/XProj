@@ -11,7 +11,7 @@ struct ProjDetailsDependencies: View {
         if !packages.isEmpty {
             Section {
                 ForEach(packages) { package in
-                    ProjDetailsPackage(package)
+                    ProjDetailsDependency(package)
                 }
             } header: {
                 Text("Package dependencies: \(packages.count)")

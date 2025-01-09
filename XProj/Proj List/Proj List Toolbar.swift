@@ -4,15 +4,15 @@ struct ProjListToolbar: View {
     @Environment(DataModel.self) private var vm
     
     var body: some View {
-//        Button("Refresh") {
-//            vm.getFolders()
-//        }
+        //        Button("Refresh") {
+        //            vm.getFolders()
+        //        }
         
 #if DEBUG
         Menu("Functions") {
             Button("listFilesInFoldersSingleThread") {
                 let test = vm.listFilesInFoldersSingleThread(
-                    folderPaths: vm.projects.map(\.path)
+                    vm.projects.map(\.path)
                 )
                 
                 print(test)
@@ -20,7 +20,7 @@ struct ProjListToolbar: View {
             
             Button("countFilesInFoldersMultiThread") {
                 vm.countFilesInFoldersMultiThread(
-                    folderPaths: vm.projects.map(\.path)
+                    vm.projects.map(\.path)
                 ) { _ in
                     
                 }
@@ -45,7 +45,9 @@ struct ProjListToolbar: View {
             }
             
             Button("countFilesInFoldersMultiThread") {
-                vm.countFilesInFoldersMultiThread(folderPaths: vm.projects.map(\.path)) { _ in
+                vm.countFilesInFoldersMultiThread(
+                    vm.projects.map(\.path)
+                ) { _ in
                     
                 }
             }

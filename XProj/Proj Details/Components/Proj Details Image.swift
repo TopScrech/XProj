@@ -18,6 +18,30 @@ struct ProjDetailsImage: View {
                     let fileURL = URL(fileURLWithPath: path)
                     return NSItemProvider(object: fileURL as NSURL)
                 }
+                .contextMenu {
+                    Button("Save to Downloads") {
+                        saveToDownloads(path)
+                    }
+                    
+                    ShareLink(item: URL(fileURLWithPath: path))
+                }
+        }
+    }
+    
+    private func saveToDownloads(_ path: String) {
+        let downloadsUrl = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
+        
+        guard let downloadsUrl else {
+            return
+        }
+        
+        let fileName = URL(fileURLWithPath: path).lastPathComponent
+        let destinationUrl = downloadsUrl.appendingPathComponent(fileName)
+        
+        do {
+            try FileManager.default.copyItem(at: URL(fileURLWithPath: path), to: destinationUrl)
+        } catch {
+            print("Error saving file to Downloads: \(error.localizedDescription)")
         }
     }
 }

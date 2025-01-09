@@ -28,8 +28,9 @@ struct PackageDepCard: View {
         .contextMenu {
             if let url = URL(string: package.package.repositoryUrl) {
                 Link(destination: url) {
-                    Label("Open in Browser", systemImage: "link")
+                    Label("Remote", systemImage: "link")
                 }
+                .help(url)
             }
         }
     }

@@ -41,6 +41,14 @@ struct ProjCard: View {
                     }) {
                         Image(systemName: "person.badge.key")
                     }
+                    
+                    if proj.targets.contains(where: {
+                        $0.appStoreApp?.url != nil
+                    }) {
+                        Image(.appStore)
+                            .resizable()
+                            .frame(width: 16, height: 16)
+                    }
                 }
                 
 #warning("projectsFolder")
@@ -62,21 +70,44 @@ struct ProjCard: View {
             //                .secondary()
         }
         .padding(.vertical, 5)
+        .onDrag {
+            let fileURL = URL(fileURLWithPath: proj.path)
+            return NSItemProvider(object: fileURL as NSURL)
+        }
         .contextMenu {
             if let url = proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url {
                 Section {
                     Button("App Store") {
                         openUrl(url)
                     }
+                    .help(url)
                 }
             }
             
             Button("Open in Xcode") {
                 vm.openProj(proj)
             }
+            .help(proj.path)
             
             Button("Open in Finder") {
                 openInFinder(rootedAt: proj.path)
+            }
+            .help(proj.path)
+            
+            Section {
+                if let path = proj.fetchRemoteRepositoryURL(), let url = URL(string: path) {
+                    Menu {
+                        Button("Open") {
+                            openUrl(url)
+                        }
+                        .help(url)
+                        
+                        ShareLink(item: url)
+                            .help(url)
+                    } label: {
+                        Text("Remote")
+                    }
+                }
             }
         }
     }

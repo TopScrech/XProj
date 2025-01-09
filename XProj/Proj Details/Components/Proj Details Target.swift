@@ -15,11 +15,19 @@ struct ProjDetailsTarget: View {
                         .resizable()
                         .frame(width: 32, height: 32)
                 }
+                .help(url)
             }
             
             VStack(alignment: .leading) {
-                Text(target.name)
-                    .title3()
+                HStack(spacing: 0) {
+                    Text(target.name)
+                        .title3()
+                    
+                    if let version = target.version, let build = target.build {
+                        Text(" v\(version) (\(build))")
+                            .secondary()
+                    }
+                }
                 
                 if let bundle = target.bundleId {
                     Text(bundle)
@@ -53,9 +61,30 @@ struct ProjDetailsTarget: View {
                 }
             }
         }
+        .contextMenu {
+            if let url = target.appStoreApp?.url {
+                Link("App Store", destination: url)
+                    .help(url)
+                
+                ShareLink(item: url)
+                    .help(url)
+            }
+        }
     }
 }
 
-//#Preview {
-//    ProjDetailsTarget()
-//}
+#Preview {
+    ProjDetailsTarget(
+        Target(
+            id: "id",
+            name: "Preview",
+            bundleId: "dev.topscrech.XProj",
+            type: .app,
+            deploymentTargets: ["iOS 17.0"],
+            appStoreApp: nil,
+            version: "4.16",
+            build: "0"
+        )
+    )
+    .padding()
+}

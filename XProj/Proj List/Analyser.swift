@@ -1,7 +1,7 @@
 import Foundation
 
 extension DataModel {
-    func listFilesInFoldersSingleThread(folderPaths: [String]) -> [String: [String]?] {
+    func listFilesInFoldersSingleThread(_ folderPaths: [String]) -> [String: [String]?] {
         let startTime = CFAbsoluteTimeGetCurrent()
         
         var folderContents = [String: [String]?]()
@@ -23,7 +23,7 @@ extension DataModel {
         return folderContents
     }
     
-    func countFilesInFoldersSingleThread(folderPaths: [String]) -> [String: Int?] {
+    func countFilesInFoldersSingleThread(_ folderPaths: [String]) -> [String: Int?] {
         let startTime = CFAbsoluteTimeGetCurrent()
         
         var folderFileCounts = [String: Int?]()
@@ -107,7 +107,7 @@ extension DataModel {
         return allFiles
     }
     
-    func countFilesInFoldersMultiThread(folderPaths: [String], completion: @escaping ([String: Int?]) -> Void) {
+    func countFilesInFoldersMultiThread(_ folderPaths: [String], completion: @escaping ([String: Int?]) -> Void) {
         let startTime = CFAbsoluteTimeGetCurrent()
         
         var folderFileCounts = [String: Int?]()
