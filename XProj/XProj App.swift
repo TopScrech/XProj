@@ -23,13 +23,13 @@ struct XProjApp: App {
         }
         
 #warning("MenuBarExtra")
-        //        MenuBarExtra("Project List", systemImage: "hammer") {
-        //            NavigationStack {
-        //                MBProjList()
-        //            }
-        //            .environment(nav)
-        //            .environment(dataModel)
-        //        }
-        //        .menuBarExtraStyle(.window)
+        MenuBarExtra("Project List", systemImage: "hammer") {
+            NavigationStack {
+                MBProjList()
+            }
+            .environment(nav)
+            .environment(dataModel)
+        }
+        .menuBarExtraStyle(.window)
     }
 }
