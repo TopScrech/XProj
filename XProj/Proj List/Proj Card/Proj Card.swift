@@ -93,10 +93,10 @@ struct ProjCard: View {
                         Button("Open") {
                             openUrl(url)
                         }
-                        .help(url.description)
+                        .help(url)
                         
                         ShareLink(item: url)
-                            .help(url.description)
+                            .help(url)
                     } label: {
                         Text("Remote")
                     }

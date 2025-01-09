@@ -8,30 +8,40 @@ struct ProjDetailsDependency: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(package.name)
-            
-            if let author = package.author {
-                Text(author)
-                    .footnote()
-                    .secondary()
+        HStack {
+            VStack(alignment: .leading) {
+                Text(package.name)
+                
+                if let author = package.author {
+                    Text(author)
+                        .footnote()
+                        .secondary()
+                }
+                
+                if let requirement = package.requirementKind, let param = package.requirementParam {
+                    Text("\(requirement): \(param)")
+                        .footnote()
+                        .foregroundStyle(.tertiary)
+                }
             }
             
-            if let requirement = package.requirementKind, let param = package.requirementParam {
-                Text("\(requirement): \(param)")
-                    .footnote()
-                    .foregroundStyle(.tertiary)
+            Spacer()
+            
+            if let url = URL(string: package.repositoryUrl) {
+                Link("GitHub", destination: url)
+                    .help(url)
             }
         }
         .padding(.vertical, 2)
         .contextMenu {
             if let url = URL(string: package.repositoryUrl) {
-                Link("Open in browser", destination: url)
+                Link("GitHub", destination: url)
+                    .help(url)
             }
         }
     }
 }
 
 //#Preview {
-//    ProjDetailsPackage()
+//    ProjDetailsDependency()
 //}
