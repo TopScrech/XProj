@@ -23,9 +23,11 @@ struct ProjDetailsTarget: View {
                     Text(target.name)
                         .title3()
                     
-                    if let version = target.version, let build = target.build {
-                        Text(" v\(version) (\(build))")
-                            .secondary()
+                    if target.type != .unitTests && target.type != .uiTests {
+                        if let version = target.version, let build = target.build {
+                            Text(" v\(version) (\(build))")
+                                .secondary()
+                        }
                     }
                 }
                 
