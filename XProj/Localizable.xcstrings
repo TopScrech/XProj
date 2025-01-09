@@ -44,7 +44,7 @@
 
     },
     "App Store" : {
-
+      "shouldTranslate" : false
     },
     "Categories" : {
 
@@ -83,7 +83,7 @@
 
     },
     "Derived Data" : {
-
+      "shouldTranslate" : false
     },
     "Dismiss" : {
 
@@ -92,7 +92,7 @@
 
     },
     "Finder" : {
-
+      "shouldTranslate" : false
     },
     "Functions" : {
 
@@ -116,10 +116,24 @@
 
     },
     "Open in Finder" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть в Finder"
+          }
+        }
+      }
     },
     "Open in Xcode" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть в Xcode"
+          }
+        }
+      }
     },
     "Other" : {
 
@@ -134,7 +148,7 @@
 
     },
     "Playgrounds" : {
-
+      "shouldTranslate" : false
     },
     "Presents a stack of views over a root view" : {
 
@@ -186,7 +200,7 @@
 
     },
     "Targets: %lld" : {
-
+      "shouldTranslate" : false
     },
     "Three columns" : {
 
@@ -198,7 +212,7 @@
 
     },
     "Vapor" : {
-
+      "shouldTranslate" : false
     },
     "Workspaces" : {
 
