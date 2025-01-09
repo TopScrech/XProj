@@ -22,6 +22,8 @@ struct ProjDetailsImage: View {
                     Button("Save to Downloads") {
                         saveToDownloads(path)
                     }
+                    
+                    ShareLink(item: URL(fileURLWithPath: path))
                 }
         }
     }
