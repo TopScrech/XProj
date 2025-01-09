@@ -21,9 +21,6 @@
       },
       "shouldTranslate" : false
     },
-    "(%lld duplicates)" : {
-
-    },
     "%@: %@" : {
       "localizations" : {
         "en" : {
@@ -35,9 +32,6 @@
       }
     },
     "%lld duplicates" : {
-
-    },
-    "%lld Projects" : {
 
     },
     "All" : {

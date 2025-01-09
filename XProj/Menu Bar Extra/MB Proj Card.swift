@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 struct MBProjCard: View {
     @Environment(DataModel.self) private var vm
@@ -18,10 +18,8 @@ struct MBProjCard: View {
             
             Spacer()
             
-            Button {
+            SFButton("play") {
                 vm.openProj(proj)
-            } label: {
-                Image(systemName: "play")
             }
         }
     }
