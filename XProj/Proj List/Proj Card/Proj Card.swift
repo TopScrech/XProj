@@ -76,6 +76,7 @@ struct ProjCard: View {
                     Button("App Store") {
                         openUrl(url)
                     }
+                    .help(url)
                 }
             }
             
