@@ -28,7 +28,7 @@ struct PackageDepCard: View {
         .contextMenu {
             if let url = URL(string: package.package.repositoryUrl) {
                 Link(destination: url) {
-                    Label("GitHub", systemImage: "link")
+                    Label("Remote", systemImage: "link")
                 }
                 .help(url)
             }

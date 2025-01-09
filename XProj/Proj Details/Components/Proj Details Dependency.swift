@@ -28,14 +28,16 @@ struct ProjDetailsDependency: View {
             Spacer()
             
             if let url = URL(string: package.repositoryUrl) {
-                Link("GitHub", destination: url)
-                    .help(url)
+                Link(destination: url) {
+                    Image(systemName: "link")
+                }
+                .help(url)
             }
         }
         .padding(.vertical, 2)
         .contextMenu {
             if let url = URL(string: package.repositoryUrl) {
-                Link("GitHub", destination: url)
+                Link("Remote", destination: url)
                     .help(url)
             }
         }
