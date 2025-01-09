@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 struct MBProjList: View {
     @Environment(DataModel.self) private var vm
@@ -10,33 +10,29 @@ struct MBProjList: View {
         
         VStack {
             HStack {
-                Text("\(vm.filteredProjects.count) Projects")
-                
-                let count = vm.findDuplicates().reduce(0) {
-                    $0 + $1.count
-                }
-                
-                Text("(\(count) duplicates)")
-                    .foregroundStyle(.tertiary)
-            }
-            
-            TextField("Search", text: $vm.searchPrompt)
-                .focused($focusState)
-                .textFieldStyle(.plain)
-                .onSubmit {
-                    guard let proj = vm.filteredProjects.first else {
-                        print("No project found")
-                        return
+                TextField("Search", text: $vm.searchPrompt)
+                    .focused($focusState)
+                    .textFieldStyle(.plain)
+                    .onSubmit {
+                        guard let proj = vm.filteredProjects.first else {
+                            print("No project found")
+                            return
+                        }
+                        
+                        vm.openProj(proj)
                     }
-                    
-                    vm.openProj(proj)
+                
+                SFButton("document.on.clipboard") {
+                    if let clipboard = NSPasteboard.general.string(forType: .string) {
+                        vm.searchPrompt = clipboard
+                    }
                 }
+            }
             
             ScrollView {
                 ForEach(vm.filteredProjects) { proj in
                     MBProjCard(proj)
                 }
-                .animation(.default, value: vm.filteredProjects)
             }
         }
         .padding()
