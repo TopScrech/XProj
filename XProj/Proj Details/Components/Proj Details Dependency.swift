@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProjDetailsPackage: View {
+struct ProjDetailsDependency: View {
     private let package: Package
     
     init(_ package: Package) {

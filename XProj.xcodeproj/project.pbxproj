@@ -37,7 +37,7 @@
 		F37831BF2D10D8DE007F7858 /* Packages in Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BE2D10D8DE007F7858 /* Packages in Package.swift */; };
 		F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C02D10E1CF007F7858 /* App Store App.swift */; };
 		F37831C52D11A4F4007F7858 /* Proj Details Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C42D11A4F4007F7858 /* Proj Details Target.swift */; };
-		F37831C72D11A590007F7858 /* Proj Details Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C62D11A590007F7858 /* Proj Details Package.swift */; };
+		F37831C72D11A590007F7858 /* Proj Details Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C62D11A590007F7858 /* Proj Details Dependency.swift */; };
 		F37831C92D11A69B007F7858 /* Proj Details Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C82D11A69B007F7858 /* Proj Details Dates.swift */; };
 		F37831CC2D11AF86007F7858 /* icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831CB2D11AF86007F7858 /* icon.swift */; };
 		F37831CF2D11D11B007F7858 /* Proj Details Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831CE2D11D11B007F7858 /* Proj Details Image.swift */; };
@@ -124,7 +124,7 @@
 		F37831BE2D10D8DE007F7858 /* Packages in Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Packages in Package.swift"; sourceTree = "<group>"; };
 		F37831C02D10E1CF007F7858 /* App Store App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Store App.swift"; sourceTree = "<group>"; };
 		F37831C42D11A4F4007F7858 /* Proj Details Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Target.swift"; sourceTree = "<group>"; };
-		F37831C62D11A590007F7858 /* Proj Details Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Package.swift"; sourceTree = "<group>"; };
+		F37831C62D11A590007F7858 /* Proj Details Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Dependency.swift"; sourceTree = "<group>"; };
 		F37831C82D11A69B007F7858 /* Proj Details Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Dates.swift"; sourceTree = "<group>"; };
 		F37831CB2D11AF86007F7858 /* icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = icon.swift; sourceTree = "<group>"; };
 		F37831CE2D11D11B007F7858 /* Proj Details Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Image.swift"; sourceTree = "<group>"; };
@@ -346,12 +346,12 @@
 		F37831D62D11D3B4007F7858 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */,
-				F37831D22D11D221007F7858 /* Proj Details Targets.swift */,
 				F37831CE2D11D11B007F7858 /* Proj Details Image.swift */,
 				F37831D02D11D177007F7858 /* Proj Details Actions.swift */,
 				F37831C82D11A69B007F7858 /* Proj Details Dates.swift */,
-				F37831C62D11A590007F7858 /* Proj Details Package.swift */,
+				F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */,
+				F37831C62D11A590007F7858 /* Proj Details Dependency.swift */,
+				F37831D22D11D221007F7858 /* Proj Details Targets.swift */,
 				F37831C42D11A4F4007F7858 /* Proj Details Target.swift */,
 			);
 			path = Components;
@@ -653,7 +653,7 @@
 				F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */,
 				F3B389C32D0F93500082C2F3 /* Package.swift in Sources */,
 				F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */,
-				F37831C72D11A590007F7858 /* Proj Details Package.swift in Sources */,
+				F37831C72D11A590007F7858 /* Proj Details Dependency.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
 				F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */,
 				F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */,
