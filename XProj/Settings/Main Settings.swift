@@ -26,7 +26,7 @@ struct MainSettings: View {
     }
     
     private func downloadExamples() {
-        guard let sourceURL = Bundle.main.url(forResource: "Examples", withExtension: "zip") else {
+        guard let sourceUrl = Bundle.main.url(forResource: "Examples", withExtension: "zip") else {
             print("Examples.zip not found in the main bundle")
             return
         }
@@ -39,7 +39,7 @@ struct MainSettings: View {
         let destinationUrl = downloadsUrl.appendingPathComponent("Examples.zip")
         
         do {
-            try FileManager.default.copyItem(at: sourceURL, to: destinationUrl)
+            try FileManager.default.copyItem(at: sourceUrl, to: destinationUrl)
             print("Examples.zip successfully downloaded to the Downloads folder")
         } catch {
             print("Error downloading Examples.zip: \(error.localizedDescription)")
