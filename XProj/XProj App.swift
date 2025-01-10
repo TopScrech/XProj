@@ -1,4 +1,5 @@
 import ScrechKit
+import SettingsKit
 
 @main
 struct XProjApp: App {
@@ -17,12 +18,21 @@ struct XProjApp: App {
         .commands {
             SidebarCommands()
         }
-        
-        Settings {
-            SettingsView()
-                .environment(nav)
-                .environment(dataModel)
-                .environment(derivedData)
+        .settings(design: .sidebar) {
+            SettingsTab(.new(title: "General", image: Image(systemName: "gear")), id: "general") {
+                SettingsSubtab(.noSelection, id: "no-selection") {
+                    GeneralSettings()
+                        .environment(nav)
+                        .environment(dataModel)
+                        .environment(derivedData)
+                }
+            }
+            
+            SettingsTab(.new(title: "Layout", image: Image(systemName: "paintbrush")), id: "layout") {
+                SettingsSubtab(.noSelection, id: "no-selection") {
+                    LayoutSettings()
+                }
+            }
         }
         
         MenuBarExtra("Project List", systemImage: "hammer") {

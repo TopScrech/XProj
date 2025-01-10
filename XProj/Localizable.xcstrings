@@ -103,6 +103,9 @@
     "Launch at login" : {
 
     },
+    "Layout Settings" : {
+
+    },
     "listFilesInFoldersSingleThread" : {
 
     },
@@ -194,9 +197,6 @@
 
     },
     "Search" : {
-
-    },
-    "Select a group" : {
 
     },
     "Selected folders" : {

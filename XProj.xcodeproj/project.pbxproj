@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F30B96662D3111AB0015944D /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30B96652D3111AB0015944D /* Settings View.swift */; };
-		F30B96682D3113430015944D /* Sidebar Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30B96672D3113430015944D /* Sidebar Link.swift */; };
+		F30B96742D312E7A0015944D /* SettingsKit in Frameworks */ = {isa = PBXBuildFile; productRef = F30B96732D312E7A0015944D /* SettingsKit */; };
 		F313BE1D2C871E13005C8B60 /* Examples.zip in Resources */ = {isa = PBXBuildFile; fileRef = F313BE1C2C871E13005C8B60 /* Examples.zip */; };
 		F31EF9472D103896000F95A7 /* Package Dep Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9462D103896000F95A7 /* Package Dep Card.swift */; };
 		F31EF9492D1038CE000F95A7 /* Package Dep Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9482D1038CE000F95A7 /* Package Dep Details.swift */; };
+		F323EC922D31382800973FA0 /* Layout Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC912D31382800973FA0 /* Layout Settings.swift */; };
 		F32A1E022D2FB7B6008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
 		F32A1E032D2FB7BD008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
 		F32A1E052D30FD1C008AEB2F /* Bottom Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A1E042D30FD1C008AEB2F /* Bottom Bar.swift */; };
@@ -96,11 +96,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F30B96652D3111AB0015944D /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
-		F30B96672D3113430015944D /* Sidebar Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sidebar Link.swift"; sourceTree = "<group>"; };
 		F313BE1C2C871E13005C8B60 /* Examples.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Examples.zip; sourceTree = "<group>"; };
 		F31EF9462D103896000F95A7 /* Package Dep Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep Card.swift"; sourceTree = "<group>"; };
 		F31EF9482D1038CE000F95A7 /* Package Dep Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep Details.swift"; sourceTree = "<group>"; };
+		F323EC912D31382800973FA0 /* Layout Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layout Settings.swift"; sourceTree = "<group>"; };
 		F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F32A1E042D30FD1C008AEB2F /* Bottom Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bottom Bar.swift"; sourceTree = "<group>"; };
 		F33081732C9057F700605E43 /* Widgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30B96742D312E7A0015944D /* SettingsKit in Frameworks */,
 				F358F02B2D2C19A200BCC07B /* LaunchAtLogin in Frameworks */,
 				F37831B72D1095EC007F7858 /* XcodeProjKit in Frameworks */,
 				F3341E3F2BDEAB4D00E85F27 /* ScrechKit in Frameworks */,
@@ -391,9 +391,8 @@
 		F38B5E4F2BFD6F1D00CB9917 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				F30B96652D3111AB0015944D /* Settings View.swift */,
-				F30B96672D3113430015944D /* Sidebar Link.swift */,
 				F3D1E75E2C9B40B4000C81FF /* General Settings.swift */,
+				F323EC912D31382800973FA0 /* Layout Settings.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -525,6 +524,7 @@
 				F3341E3E2BDEAB4D00E85F27 /* ScrechKit */,
 				F37831B62D1095EC007F7858 /* XcodeProjKit */,
 				F358F02A2D2C19A200BCC07B /* LaunchAtLogin */,
+				F30B96732D312E7A0015944D /* SettingsKit */,
 			);
 			productName = XProj;
 			productReference = F3341E292BDE358900E85F27 /* XProj.app */;
@@ -581,6 +581,7 @@
 				F3341E3D2BDEAB4D00E85F27 /* XCRemoteSwiftPackageReference "ScrechKit" */,
 				F37831B52D1095EC007F7858 /* XCRemoteSwiftPackageReference "XcodeProjKit" */,
 				F358F0292D2C19A200BCC07B /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				F30B96722D312E7A0015944D /* XCRemoteSwiftPackageReference "SettingsKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F3341E2A2BDE358900E85F27 /* Products */;
@@ -651,6 +652,7 @@
 				F3DAD6772D161EAA0012BA9D /* Nav Mode.swift in Sources */,
 				F3DAD6782D161EAA0012BA9D /* 2 Column Container.swift in Sources */,
 				F3DAD67A2D161EAA0012BA9D /* Data Model.swift in Sources */,
+				F323EC922D31382800973FA0 /* Layout Settings.swift in Sources */,
 				F3DAD68A2D161ECC0012BA9D /* Proj Grid.swift in Sources */,
 				F3FC8A582D1AFDC300A7CCBC /* 2 Column Detail.swift in Sources */,
 				F3DAD68C2D161ECC0012BA9D /* Nav Mode Button.swift in Sources */,
@@ -660,7 +662,6 @@
 				F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */,
 				F3DAD67B2D161EAA0012BA9D /* Nav Model.swift in Sources */,
 				F3DAD67C2D161EAA0012BA9D /* 3 Column Container.swift in Sources */,
-				F30B96662D3111AB0015944D /* Settings View.swift in Sources */,
 				F3DAD67E2D161EAA0012BA9D /* Nav Container.swift in Sources */,
 				F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */,
 				F371A51B2C2D8D58006BDF0D /* MB Proj List.swift in Sources */,
@@ -670,7 +671,6 @@
 				F37831C72D11A590007F7858 /* Proj Details Dependency.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
 				F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */,
-				F30B96682D3113430015944D /* Sidebar Link.swift in Sources */,
 				F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */,
 				F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,
@@ -1068,6 +1068,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F30B96722D312E7A0015944D /* XCRemoteSwiftPackageReference "SettingsKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TopScrech/SettingsKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		F3341E3D2BDEAB4D00E85F27 /* XCRemoteSwiftPackageReference "ScrechKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/TopScrech/ScrechKit";
@@ -1095,6 +1103,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F30B96732D312E7A0015944D /* SettingsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F30B96722D312E7A0015944D /* XCRemoteSwiftPackageReference "SettingsKit" */;
+			productName = SettingsKit;
+		};
 		F3341E3E2BDEAB4D00E85F27 /* ScrechKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F3341E3D2BDEAB4D00E85F27 /* XCRemoteSwiftPackageReference "ScrechKit" */;
