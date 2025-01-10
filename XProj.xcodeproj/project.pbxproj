@@ -12,6 +12,7 @@
 		F31EF9492D1038CE000F95A7 /* Package Dep Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9482D1038CE000F95A7 /* Package Dep Details.swift */; };
 		F32A1E022D2FB7B6008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
 		F32A1E032D2FB7BD008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
+		F32A1E052D30FD1C008AEB2F /* Bottom Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A1E042D30FD1C008AEB2F /* Bottom Bar.swift */; };
 		F33081762C9057F700605E43 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F33081752C9057F700605E43 /* WidgetKit.framework */; };
 		F33081782C9057F700605E43 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F33081772C9057F700605E43 /* SwiftUI.framework */; };
 		F330817B2C9057F700605E43 /* XProj Widgets Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F330817A2C9057F700605E43 /* XProj Widgets Bundle.swift */; };
@@ -98,6 +99,7 @@
 		F31EF9462D103896000F95A7 /* Package Dep Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep Card.swift"; sourceTree = "<group>"; };
 		F31EF9482D1038CE000F95A7 /* Package Dep Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep Details.swift"; sourceTree = "<group>"; };
 		F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F32A1E042D30FD1C008AEB2F /* Bottom Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bottom Bar.swift"; sourceTree = "<group>"; };
 		F33081732C9057F700605E43 /* Widgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F33081752C9057F700605E43 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F33081772C9057F700605E43 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				F3341E2E2BDE358900E85F27 /* Proj List.swift */,
+				F32A1E042D30FD1C008AEB2F /* Bottom Bar.swift */,
 				F3ED776E2D1772F8000977AC /* Proj List VM.swift */,
 				F387AC312BFEC6C600EC1DC5 /* Analyser.swift */,
 				F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */,
@@ -697,6 +700,7 @@
 				F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */,
 				F3522DC62C2A29C000660101 /* Derived Data List.swift in Sources */,
 				F37831C92D11A69B007F7858 /* Proj Details Dates.swift in Sources */,
+				F32A1E052D30FD1C008AEB2F /* Bottom Bar.swift in Sources */,
 				F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */,
 				F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */,
 				F37831DF2D12EA34007F7858 /* Preview Projects.swift in Sources */,

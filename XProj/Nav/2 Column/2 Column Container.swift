@@ -10,7 +10,11 @@ struct TwoColumnContainer: View {
         ) {
             ColumnSidebar()
         } detail: {
-            TwoColumnDetail()
+            VStack {
+                TwoColumnDetail()
+                
+                BottomBar()
+            }
         }
     }
 }

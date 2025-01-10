@@ -10,16 +10,20 @@ struct StackContainer: View {
         @Bindable var nav = nav
         
         NavigationStack(path: $nav.projPath) {
-            List(categories) { category in
-                Section {
-                    ForEach(dataModel.projects(in: category)) { proj in
-                        NavigationLink(value: proj) {
-                            ProjCard(proj)
+            VStack {
+                List(categories) { category in
+                    Section {
+                        ForEach(dataModel.projects(in: category)) { proj in
+                            NavigationLink(value: proj) {
+                                ProjCard(proj)
+                            }
                         }
+                    } header: {
+                        Text(category.localizedName)
                     }
-                } header: {
-                    Text(category.localizedName)
                 }
+                
+                BottomBar()
             }
             .navigationTitle("Categories")
             .navigationDestination(for: Proj.self) { proj in

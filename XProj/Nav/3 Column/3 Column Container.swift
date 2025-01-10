@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ThreeColumnContainer: View {
     @Environment(NavModel.self) private var nav
-    @Environment(DataModel.self) private var dataModel
+    @Environment(DataModel.self) private var vm
     
     var body: some View {
         @Bindable var nav = nav
@@ -10,16 +10,20 @@ struct ThreeColumnContainer: View {
         NavigationSplitView(columnVisibility: $nav.columnVisibility) {
             ColumnSidebar()
         } content: {
-            ThreeColumnContent()
+            VStack {
+                ThreeColumnContent()
+                
+                BottomBar()
+            }
         } detail: {
             ThreeColumnDetail()
         }
         .toolbar {
             Button("Open") {
                 if let proj = nav.selectedProj.first {
-                    dataModel.openProj(proj)
+                    vm.openProj(proj)
                 } else {
-                    dataModel.openProjects(nav.selectedProj)
+                    vm.openProjects(nav.selectedProj)
                 }
             }
             .keyboardShortcut(.init("O", modifiers: .command))
@@ -28,9 +32,9 @@ struct ThreeColumnContainer: View {
             
             Button("Open") {
                 if let proj = nav.selectedProj.first {
-                    dataModel.openProj(proj)
+                    vm.openProj(proj)
                 } else {
-                    dataModel.openProjects(nav.selectedProj)
+                    vm.openProjects(nav.selectedProj)
                 }
             }
             .keyboardShortcut(.defaultAction)

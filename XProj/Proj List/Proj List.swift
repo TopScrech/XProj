@@ -21,20 +21,6 @@ struct ProjList: View {
         .searchSuggestions {
             SearchSuggestions()
         }
-        .safeAreaInset(edge: .bottom) {
-            Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount) • Workspaces: \(vm.workspaceCount)")
-                .secondary()
-                .padding(.vertical, 8)
-                .opacity(0)
-        }
-        .overlay(alignment: .bottom) {
-            Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount) • Workspaces: \(vm.workspaceCount)")
-                .secondary()
-                .padding(.vertical, 8)
-                .padding(.horizontal)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(.ultraThinMaterial)
-        }
         .toolbar {
             Button("Open") {
                 vm.openProjects(selectedProjects)
