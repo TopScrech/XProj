@@ -1,6 +1,8 @@
 import ScrechKit
 
 struct ProjDetails: View {
+    @EnvironmentObject private var store: ValueStorage
+    
     private let proj: Proj
     
     init(_ proj: Proj) {
@@ -31,9 +33,13 @@ struct ProjDetails: View {
             
             ProjDetailsActions(proj)
             
-            ProjDetailsTargets(proj.targets)
+            if store.showProjTargets {
+                ProjDetailsTargets(proj.targets)
+            }
             
-            ProjDetailsDependencies(proj.packages)
+            if store.showProjPackageDependencies {
+                ProjDetailsDependencies(proj.packages)
+            }
         }
         .scrollIndicators(.never)
     }
@@ -42,4 +48,5 @@ struct ProjDetails: View {
 //#Preview {
 //    ProjDetails(previewProj1)
 //        .environment(DataModel.shared)
+//        .environmentObject(ValueStorage())
 //}

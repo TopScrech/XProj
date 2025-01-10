@@ -40,6 +40,9 @@
     "App Store" : {
       "shouldTranslate" : false
     },
+    "App store link" : {
+
+    },
     "Categories" : {
 
     },
@@ -100,12 +103,6 @@
     "Last opened: " : {
 
     },
-    "Launch at login" : {
-
-    },
-    "Layout Settings" : {
-
-    },
     "listFilesInFoldersSingleThread" : {
 
     },
@@ -144,6 +141,9 @@
     "Other" : {
 
     },
+    "Package dependencies" : {
+
+    },
     "Package Dependencies" : {
 
     },
@@ -163,6 +163,9 @@
 
     },
     "Presents views in two columns: sidebar and detail" : {
+
+    },
+    "Project details" : {
 
     },
     "Project List" : {
@@ -212,6 +215,12 @@
 
     },
     "Swift tools: " : {
+
+    },
+    "Target version" : {
+
+    },
+    "Targets" : {
 
     },
     "Targets: %lld" : {

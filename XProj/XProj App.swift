@@ -3,6 +3,7 @@ import SettingsKit
 
 @main
 struct XProjApp: App {
+    @StateObject private var store = ValueStorage()
     private var nav: NavModel = .shared
     private var dataModel: DataModel = .shared
     private var derivedData = DerivedDataVM()
@@ -13,6 +14,7 @@ struct XProjApp: App {
                 .environment(nav)
                 .environment(dataModel)
                 .environment(derivedData)
+                .environmentObject(store)
                 .frame(minWidth: 800, minHeight: 600)
         }
         .commands {
@@ -31,6 +33,7 @@ struct XProjApp: App {
             SettingsTab(.new(title: "Layout", image: Image(systemName: "paintbrush")), id: "layout") {
                 SettingsSubtab(.noSelection, id: "no-selection") {
                     LayoutSettings()
+                        .environmentObject(store)
                 }
             }
         }
