@@ -22,7 +22,6 @@ struct XProjApp: App {
                 .environment(dataModel)
         }
         
-#warning("MenuBarExtra")
         MenuBarExtra("Project List", systemImage: "hammer") {
             NavigationStack {
                 MBProjList()
