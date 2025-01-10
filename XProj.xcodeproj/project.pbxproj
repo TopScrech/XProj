@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F30B96662D3111AB0015944D /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30B96652D3111AB0015944D /* Settings View.swift */; };
+		F30B96682D3113430015944D /* Sidebar Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30B96672D3113430015944D /* Sidebar Link.swift */; };
 		F313BE1D2C871E13005C8B60 /* Examples.zip in Resources */ = {isa = PBXBuildFile; fileRef = F313BE1C2C871E13005C8B60 /* Examples.zip */; };
 		F31EF9472D103896000F95A7 /* Package Dep Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9462D103896000F95A7 /* Package Dep Card.swift */; };
 		F31EF9492D1038CE000F95A7 /* Package Dep Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9482D1038CE000F95A7 /* Package Dep Details.swift */; };
@@ -70,7 +72,7 @@
 		F3B389CF2D1027890082C2F3 /* Derived Data Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CE2D1027890082C2F3 /* Derived Data Card.swift */; };
 		F3B389D32D102F5E0082C2F3 /* Package Dep List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */; };
 		F3B389D62D1032A40082C2F3 /* Package Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D52D1032A40082C2F3 /* Package Dependency.swift */; };
-		F3D1E75F2C9B40B4000C81FF /* Main Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */; };
+		F3D1E75F2C9B40B4000C81FF /* General Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* General Settings.swift */; };
 		F3DAD6752D161EAA0012BA9D /* Proj.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6712D161EAA0012BA9D /* Proj.swift */; };
 		F3DAD6772D161EAA0012BA9D /* Nav Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66F2D161EAA0012BA9D /* Nav Mode.swift */; };
 		F3DAD6782D161EAA0012BA9D /* 2 Column Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6652D161EAA0012BA9D /* 2 Column Container.swift */; };
@@ -94,6 +96,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F30B96652D3111AB0015944D /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
+		F30B96672D3113430015944D /* Sidebar Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sidebar Link.swift"; sourceTree = "<group>"; };
 		F313BE1C2C871E13005C8B60 /* Examples.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Examples.zip; sourceTree = "<group>"; };
 		F31EF9462D103896000F95A7 /* Package Dep Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep Card.swift"; sourceTree = "<group>"; };
 		F31EF9482D1038CE000F95A7 /* Package Dep Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep Details.swift"; sourceTree = "<group>"; };
@@ -159,7 +163,7 @@
 		F3B389CE2D1027890082C2F3 /* Derived Data Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data Card.swift"; sourceTree = "<group>"; };
 		F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep List.swift"; sourceTree = "<group>"; };
 		F3B389D52D1032A40082C2F3 /* Package Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dependency.swift"; sourceTree = "<group>"; };
-		F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main Settings.swift"; sourceTree = "<group>"; };
+		F3D1E75E2C9B40B4000C81FF /* General Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "General Settings.swift"; sourceTree = "<group>"; };
 		F3DAD6632D161EAA0012BA9D /* Nav Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Container.swift"; sourceTree = "<group>"; };
 		F3DAD6642D161EAA0012BA9D /* Stack Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stack Container.swift"; sourceTree = "<group>"; };
 		F3DAD6652D161EAA0012BA9D /* 2 Column Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2 Column Container.swift"; sourceTree = "<group>"; };
@@ -387,7 +391,9 @@
 		F38B5E4F2BFD6F1D00CB9917 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */,
+				F30B96652D3111AB0015944D /* Settings View.swift */,
+				F30B96672D3113430015944D /* Sidebar Link.swift */,
+				F3D1E75E2C9B40B4000C81FF /* General Settings.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -637,7 +643,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F37831BF2D10D8DE007F7858 /* Packages in Package.swift in Sources */,
-				F3D1E75F2C9B40B4000C81FF /* Main Settings.swift in Sources */,
+				F3D1E75F2C9B40B4000C81FF /* General Settings.swift in Sources */,
 				F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */,
 				F3B389CD2D0FAC770082C2F3 /* Derived Data Folder.swift in Sources */,
 				F3341E2F2BDE358900E85F27 /* Proj List.swift in Sources */,
@@ -654,6 +660,7 @@
 				F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */,
 				F3DAD67B2D161EAA0012BA9D /* Nav Model.swift in Sources */,
 				F3DAD67C2D161EAA0012BA9D /* 3 Column Container.swift in Sources */,
+				F30B96662D3111AB0015944D /* Settings View.swift in Sources */,
 				F3DAD67E2D161EAA0012BA9D /* Nav Container.swift in Sources */,
 				F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */,
 				F371A51B2C2D8D58006BDF0D /* MB Proj List.swift in Sources */,
@@ -663,6 +670,7 @@
 				F37831C72D11A590007F7858 /* Proj Details Dependency.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
 				F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */,
+				F30B96682D3113430015944D /* Sidebar Link.swift in Sources */,
 				F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */,
 				F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,

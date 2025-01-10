@@ -1,7 +1,7 @@
 import ScrechKit
 import LaunchAtLogin
 
-struct SettingsView: View {
+struct GeneralSettings: View {
     @Environment(NavModel.self) private var nav
     @Environment(DataModel.self) private var vm
     @Environment(DerivedDataVM.self) private var ddvm
@@ -133,7 +133,7 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
+    GeneralSettings()
         .environment(NavModel.shared)
         .environment(DataModel.shared)
         .environment(DerivedDataVM())
