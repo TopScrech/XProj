@@ -57,7 +57,6 @@
 		F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF52CDA259E00D8817D /* Smart Scan.swift */; };
 		F37D1BFA2CDA272600D8817D /* Duplicate Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF92CDA272600D8817D /* Duplicate Section.swift */; };
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
-		F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Proj Card.swift */; };
 		F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* Search Suggestions.swift */; };
 		F3929A672D1BA52D00FB06E6 /* Search Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3929A662D1BA52D00FB06E6 /* Search Suggestion.swift */; };
@@ -147,7 +146,6 @@
 		F37D1BF52CDA259E00D8817D /* Smart Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Smart Scan.swift"; sourceTree = "<group>"; };
 		F37D1BF92CDA272600D8817D /* Duplicate Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Section.swift"; sourceTree = "<group>"; };
 		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
-		F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
 		F38B5E512BFD6F6100CB9917 /* Proj Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card.swift"; sourceTree = "<group>"; };
 		F38B5E572BFE134400CB9917 /* Search Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestions.swift"; sourceTree = "<group>"; };
 		F3929A662D1BA52D00FB06E6 /* Search Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestion.swift"; sourceTree = "<group>"; };
@@ -389,7 +387,6 @@
 		F38B5E4F2BFD6F1D00CB9917 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				F38B5E4D2BFD6E1F00CB9917 /* Settings View.swift */,
 				F3D1E75E2C9B40B4000C81FF /* Main Settings.swift */,
 			);
 			path = Settings;
@@ -440,9 +437,9 @@
 		F3DAD6892D161ECC0012BA9D /* Nav Mode */ = {
 			isa = PBXGroup;
 			children = (
+				F3DAD6812D161ECC0012BA9D /* Nav Mode Button.swift */,
 				F3DAD6822D161ECC0012BA9D /* Nav Mode Picker.swift */,
 				F3DAD6832D161ECC0012BA9D /* Nav Mode Picker Row.swift */,
-				F3DAD6812D161ECC0012BA9D /* Nav Mode Button.swift */,
 				F3DAD66F2D161EAA0012BA9D /* Nav Mode.swift */,
 			);
 			path = "Nav Mode";
@@ -701,7 +698,6 @@
 				F3522DC62C2A29C000660101 /* Derived Data List.swift in Sources */,
 				F37831C92D11A69B007F7858 /* Proj Details Dates.swift in Sources */,
 				F32A1E052D30FD1C008AEB2F /* Bottom Bar.swift in Sources */,
-				F38B5E4E2BFD6E1F00CB9917 /* Settings View.swift in Sources */,
 				F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */,
 				F37831DF2D12EA34007F7858 /* Preview Projects.swift in Sources */,
 				F37831B92D10A19E007F7858 /* Fetch project file path.swift in Sources */,

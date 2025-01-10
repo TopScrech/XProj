@@ -58,7 +58,10 @@
     "Clear" : {
 
     },
-    "Clear nav" : {
+    "Clear navigation path" : {
+
+    },
+    "Click" : {
 
     },
     "countFilesInFoldersMultiThread" : {
@@ -70,6 +73,9 @@
     "Created: " : {
 
     },
+    "Debug" : {
+
+    },
     "Delete" : {
 
     },
@@ -77,9 +83,6 @@
       "shouldTranslate" : false
     },
     "Dismiss" : {
-
-    },
-    "Example projects" : {
 
     },
     "Examples" : {
@@ -172,7 +175,13 @@
         }
       }
     },
+    "questionmark" : {
+
+    },
     "Remote" : {
+
+    },
+    "Save example projects for testing" : {
 
     },
     "Save to Downloads" : {
@@ -182,9 +191,6 @@
 
     },
     "Selected folders" : {
-
-    },
-    "Settings" : {
 
     },
     "Smart Scan" : {

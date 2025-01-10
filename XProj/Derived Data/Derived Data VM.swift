@@ -10,6 +10,12 @@ final class DerivedDataVM {
     
     private(set) var derivedDataUrl: URL?
     
+    init() {
+        DispatchQueue.global(qos: .background).async {
+            self.getFolders()
+        }
+    }
+    
     var totalSize: String {
         let sizes = folders
             .map(\.size)

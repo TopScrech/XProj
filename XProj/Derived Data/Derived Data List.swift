@@ -30,11 +30,6 @@ struct DerivedDataList: View {
         }
         .environment(vm)
         .searchable(text: $vm.searchPrompt)
-        .refreshableTask {
-            DispatchQueue.global(qos: .background).async {
-                vm.getFolders()
-            }
-        }
         .toolbar {
             Button("Change folder") {
                 vm.showPicker()

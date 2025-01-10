@@ -1,56 +1,102 @@
 import ScrechKit
+import LaunchAtLogin
 
-struct MainSettings: View {
+struct SettingsView: View {
     @Environment(NavModel.self) private var nav
     @Environment(DataModel.self) private var vm
     @Environment(DerivedDataVM.self) private var ddvm
     
     var body: some View {
-        List {
-            Section("Selected folders") {
-                Button {
-                    vm.showPicker()
+        ScrollView {
+            VStack(alignment: .leading) {
+                GroupBox {
+                    Button {
+                        vm.showPicker()
+                    } label: {
+                        HStack {
+                            Text("Projects")
+                            
+                            Spacer()
+                            
+                            Text(vm.projectsFolder)
+                                .secondary()
+                                .lineLimit(1)
+                        }
+                    }
+                    .padding(.top, 5)
+                    
+                    Button {
+                        ddvm.showPicker()
+                    } label: {
+                        HStack {
+                            Text("Derived Data")
+                            
+                            Spacer()
+                            
+                            Text(ddvm.derivedDataUrl?.description ?? "Not selected")
+                                .secondary()
+                                .lineLimit(1)
+                        }
+                    }
+                    .padding(.bottom, 5)
                 } label: {
+                    Text("Selected folders")
+                        .headline()
+                }
+                .buttonStyle(.plain)
+                
+                GroupBox {
+                    LaunchAtLogin.Toggle()
+                        .toggleStyle(.switch)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(5)
+                }
+                
+                GroupBox {
                     HStack {
-                        Text("Projects")
+                        Text("Save example projects for testing")
                         
                         Spacer()
                         
-                        Text(vm.projectsFolder)
-                            .secondary()
-                            .lineLimit(1)
+                        SFButton("square.and.arrow.down") {
+                            downloadExamples()
+                        }
                     }
+                    .padding(5)
                 }
                 
-                Button {
-                    ddvm.showPicker()
-                } label: {
+                GroupBox {
                     HStack {
-                        Text("Derived Data")
+                        Text("Navigation mode")
                         
                         Spacer()
                         
-                        Text(ddvm.derivedDataUrl?.description ?? "Not selected")
-                            .secondary()
-                            .lineLimit(1)
+                        NavModeButton()
                     }
-                }
-            }
-            .buttonStyle(.plain)
-            
-            GroupBox {
-                Button("Example projects") {
-                    downloadExamples()
+                    .padding(5)
                 }
                 
-                NavModeButton()
-            }
 #if DEBUG
-            Button("Clear nav") {
-                nav.clearNavCache()
-            }
+                GroupBox {
+                    HStack {
+                        Text("Clear navigation path")
+                        
+                        Spacer()
+                        
+                        Button("Click") {
+                            nav.clearNavCache()
+                        }
+                    }
+                    .padding(5)
+                } label: {
+                    Text("Debug")
+                        .headline()
+                }
 #endif
+            }
         }
+        .frame(width: 400)
+        .padding()
     }
     
     private func downloadExamples() {
