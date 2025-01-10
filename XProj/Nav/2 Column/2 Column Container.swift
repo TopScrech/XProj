@@ -5,6 +5,7 @@ struct TwoColumnContainer: View {
     
     var body: some View {
         @Bindable var nav = nav
+        
         NavigationSplitView(
             columnVisibility: $nav.columnVisibility
         ) {
@@ -15,6 +16,9 @@ struct TwoColumnContainer: View {
                 
                 BottomBar()
             }
+        }
+        .toolbar {
+            OpenButtons()
         }
     }
 }

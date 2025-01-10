@@ -29,6 +29,9 @@ struct StackContainer: View {
             .navigationDestination(for: Proj.self) { proj in
                 ProjDetails(proj)
             }
+            .toolbar {
+                OpenButtons()
+            }
         }
     }
 }

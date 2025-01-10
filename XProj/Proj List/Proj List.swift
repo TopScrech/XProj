@@ -22,16 +22,6 @@ struct ProjList: View {
         .searchSuggestions {
             SearchSuggestions()
         }
-        .toolbar {
-            Button("Open") {
-                vm.openProjects(selectedProjects)
-            }
-            .opacity(0)
-            .keyboardShortcut(.defaultAction)
-            .disabled(selectedProjects.isEmpty)
-            
-            ProjListToolbar()
-        }
     }
 }
 

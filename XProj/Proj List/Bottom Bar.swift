@@ -6,6 +6,7 @@ struct BottomBar: View {
     var body: some View {
         Text("Projects: \(vm.projectCount) • Swift Packages: \(vm.packageCount) • Vapor: \(vm.vaporCount) • Playgrounds: \(vm.playgroundCount) • Workspaces: \(vm.workspaceCount)")
             .secondary()
+            .lineLimit(2)
             .padding(.bottom, 5)
             .padding(.horizontal)
             .frame(maxWidth: .infinity, alignment: .leading)
