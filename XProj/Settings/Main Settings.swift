@@ -10,42 +10,54 @@ struct SettingsView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 16) {
                 GroupBox {
-                    Button {
-                        vm.showPicker()
-                    } label: {
-                        HStack {
-                            Text("Projects")
-                            
-                            Spacer()
-                            
-                            Text(vm.projectsFolder)
-                                .secondary()
-                                .lineLimit(1)
+                    VStack(spacing: 5) {
+                        Button {
+                            vm.showPicker()
+                        } label: {
+                            HStack {
+                                Text("Projects")
+                                
+                                Spacer()
+                                
+                                Text(vm.projectsFolder.isEmpty ? "Not selected" : vm.projectsFolder)
+                                    .secondary()
+                                    .lineLimit(1)
+                            }
+                        }
+                        
+                        Button {
+                            ddvm.showPicker()
+                        } label: {
+                            HStack {
+                                Text("Derived Data")
+                                
+                                Spacer()
+                                
+                                Text(ddvm.derivedDataUrl?.description ?? "Not selected")
+                                    .secondary()
+                                    .lineLimit(1)
+                            }
                         }
                     }
-                    .padding(.top, 5)
-                    
-                    Button {
-                        ddvm.showPicker()
-                    } label: {
-                        HStack {
-                            Text("Derived Data")
-                            
-                            Spacer()
-                            
-                            Text(ddvm.derivedDataUrl?.description ?? "Not selected")
-                                .secondary()
-                                .lineLimit(1)
-                        }
-                    }
-                    .padding(.bottom, 5)
+                    .padding(5)
                 } label: {
                     Text("Selected folders")
                         .headline()
                 }
                 .buttonStyle(.plain)
+                
+                GroupBox {
+                    HStack {
+                        Text("Navigation mode")
+                        
+                        Spacer()
+                        
+                        NavModeButton()
+                    }
+                    .padding(5)
+                }
                 
                 GroupBox {
                     Toggle(isOn: $lalEnabled) {
@@ -61,17 +73,6 @@ struct SettingsView: View {
                     .onChange(of: lalEnabled) { _, newValue in
                         LaunchAtLogin.isEnabled = newValue
                     }
-                }
-                
-                GroupBox {
-                    HStack {
-                        Text("Navigation mode")
-                        
-                        Spacer()
-                        
-                        NavModeButton()
-                    }
-                    .padding(5)
                 }
                 
                 GroupBox {
