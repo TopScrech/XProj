@@ -5,7 +5,7 @@ struct MainSettings: View {
     @Environment(DataModel.self) private var vm
     
     var body: some View {
-        ScrollView {
+        List {
             GroupBox {
                 Button("Change projects folder") {
                     vm.showPicker()

@@ -11,7 +11,13 @@ struct SettingsView: View {
                     }
                     
                     Tab("Other", systemImage: "hammer") {
-                        LaunchAtLogin.Toggle()
+                        List {
+                            GroupBox {
+                                LaunchAtLogin.Toggle()
+                                    .toggleStyle(.switch)
+                                    .padding(5)
+                            }
+                        }
                     }
                 }
             } else {
