@@ -30,7 +30,7 @@ struct XProjApp: App {
                 }
             }
             
-            SettingsTab(.new(title: "Layout", image: Image(systemName: "paintbrush")), id: "layout") {
+            SettingsTab(.new(title: "Layout", image: Image(systemName: "paintbrush")), id: "layout", color: .yellow) {
                 SettingsSubtab(.noSelection, id: "no-selection") {
                     LayoutSettings()
                         .environmentObject(store)

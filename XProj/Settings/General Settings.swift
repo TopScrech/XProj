@@ -59,18 +59,18 @@ struct GeneralSettings: View {
             }
             
             Section {
-                HStack {
-                    Text("Save example projects for testing")
-                    
-                    Spacer()
-                    
-                    SFButton("square.and.arrow.down") {
-                        downloadExamples()
+                Section {
+                    HStack {
+                        Text("Save example projects for testing")
+                        
+                        Spacer()
+                        
+                        SFButton("square.and.arrow.down") {
+                            downloadExamples()
+                        }
                     }
                 }
-            }
 #if DEBUG
-            Section {
                 HStack {
                     Text("Clear navigation path")
                     
@@ -80,11 +80,11 @@ struct GeneralSettings: View {
                         nav.clearNavCache()
                     }
                 }
+#endif
             } header: {
                 Text("Debug")
                     .headline()
             }
-#endif
         }
     }
     
