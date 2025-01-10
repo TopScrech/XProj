@@ -46,9 +46,6 @@
     "Change folder" : {
 
     },
-    "Change projects folder" : {
-
-    },
     "Choose a category" : {
 
     },
@@ -182,6 +179,9 @@
 
     },
     "Search" : {
+
+    },
+    "Selected folders" : {
 
     },
     "Settings" : {

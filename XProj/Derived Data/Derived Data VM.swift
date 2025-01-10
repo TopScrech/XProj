@@ -8,7 +8,7 @@ final class DerivedDataVM {
     private let udKey = "derived_data_bookmark"
     private let fm = FileManager.default
     
-    private var derivedDataUrl: URL?
+    private(set) var derivedDataUrl: URL?
     
     var totalSize: String {
         let sizes = folders

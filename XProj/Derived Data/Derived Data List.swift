@@ -1,9 +1,11 @@
 import ScrechKit
 
 struct DerivedDataList: View {
-    @State private var vm = DerivedDataVM()
+    @Environment(DerivedDataVM.self) private var vm
     
     var body: some View {
+        @Bindable var vm = vm
+        
 #warning("Show Derived Data of not existing projects")
         List {
             if !vm.filteredFolders.isEmpty {
@@ -47,4 +49,5 @@ struct DerivedDataList: View {
 
 #Preview {
     DerivedDataList()
+        .environment(DerivedDataVM())
 }

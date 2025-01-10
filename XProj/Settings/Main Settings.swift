@@ -3,14 +3,42 @@ import ScrechKit
 struct MainSettings: View {
     @Environment(NavModel.self) private var nav
     @Environment(DataModel.self) private var vm
+    @Environment(DerivedDataVM.self) private var ddvm
     
     var body: some View {
         List {
-            GroupBox {
-                Button("Change projects folder") {
+            Section("Selected folders") {
+                Button {
                     vm.showPicker()
+                } label: {
+                    HStack {
+                        Text("Projects")
+                        
+                        Spacer()
+                        
+                        Text(vm.projectsFolder)
+                            .secondary()
+                            .lineLimit(1)
+                    }
                 }
                 
+                Button {
+                    ddvm.showPicker()
+                } label: {
+                    HStack {
+                        Text("Derived Data")
+                        
+                        Spacer()
+                        
+                        Text(ddvm.derivedDataUrl?.description ?? "Not selected")
+                            .secondary()
+                            .lineLimit(1)
+                    }
+                }
+            }
+            .buttonStyle(.plain)
+            
+            GroupBox {
                 Button("Example projects") {
                     downloadExamples()
                 }
@@ -51,4 +79,5 @@ struct MainSettings: View {
     SettingsView()
         .environment(NavModel.shared)
         .environment(DataModel.shared)
+        .environment(DerivedDataVM())
 }
