@@ -11,7 +11,7 @@ struct MainSettings: View {
                     vm.showPicker()
                 }
                 
-                Button("Examples") {
+                Button("Example projects") {
                     downloadExamples()
                 }
                 
@@ -31,15 +31,15 @@ struct MainSettings: View {
             return
         }
         
-        guard let downloadsURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first else {
+        guard let downloadsUrl = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first else {
             print("Unable to locate the Downloads folder")
             return
         }
         
-        let destinationURL = downloadsURL.appendingPathComponent("Examples.zip")
+        let destinationUrl = downloadsUrl.appendingPathComponent("Examples.zip")
         
         do {
-            try FileManager.default.copyItem(at: sourceURL, to: destinationURL)
+            try FileManager.default.copyItem(at: sourceURL, to: destinationUrl)
             print("Examples.zip successfully downloaded to the Downloads folder")
         } catch {
             print("Error downloading Examples.zip: \(error.localizedDescription)")
