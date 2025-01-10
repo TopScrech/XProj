@@ -6,6 +6,8 @@ struct SettingsView: View {
     @Environment(DataModel.self) private var vm
     @Environment(DerivedDataVM.self) private var ddvm
     
+    @State private var lalEnabled = LaunchAtLogin.isEnabled
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -46,10 +48,30 @@ struct SettingsView: View {
                 .buttonStyle(.plain)
                 
                 GroupBox {
-                    LaunchAtLogin.Toggle()
-                        .toggleStyle(.switch)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(5)
+                    Toggle(isOn: $lalEnabled) {
+                        HStack {
+                            Text("Launch at login")
+                            
+                            Spacer()
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .toggleStyle(.switch)
+                    .padding(5)
+                    .onChange(of: lalEnabled) { _, newValue in
+                        LaunchAtLogin.isEnabled = newValue
+                    }
+                }
+                
+                GroupBox {
+                    HStack {
+                        Text("Navigation mode")
+                        
+                        Spacer()
+                        
+                        NavModeButton()
+                    }
+                    .padding(5)
                 }
                 
                 GroupBox {
@@ -64,18 +86,6 @@ struct SettingsView: View {
                     }
                     .padding(5)
                 }
-                
-                GroupBox {
-                    HStack {
-                        Text("Navigation mode")
-                        
-                        Spacer()
-                        
-                        NavModeButton()
-                    }
-                    .padding(5)
-                }
-                
 #if DEBUG
                 GroupBox {
                     HStack {
