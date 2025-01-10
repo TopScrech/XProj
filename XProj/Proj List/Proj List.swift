@@ -1,5 +1,6 @@
 import SwiftUI
 
+#warning("Unused, move out all stuff")
 struct ProjList: View {
     @Environment(DataModel.self) private var vm
     
