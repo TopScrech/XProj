@@ -5,14 +5,14 @@ import SettingsKit
 struct XProjApp: App {
     @StateObject private var store = ValueStorage()
     private var nav: NavModel = .shared
-    private var dataModel: DataModel = .shared
+    private var vm: DataModel = .shared
     private var derivedData = DerivedDataVM()
     
     var body: some Scene {
         WindowGroup {
             NavContainer()
                 .environment(nav)
-                .environment(dataModel)
+                .environment(vm)
                 .environment(derivedData)
                 .environmentObject(store)
                 .frame(minWidth: 800, minHeight: 600)
@@ -25,7 +25,7 @@ struct XProjApp: App {
                 SettingsSubtab(.noSelection, id: "no-selection") {
                     GeneralSettings()
                         .environment(nav)
-                        .environment(dataModel)
+                        .environment(vm)
                         .environment(derivedData)
                 }
             }
@@ -43,7 +43,7 @@ struct XProjApp: App {
                 MBProjList()
             }
             .environment(nav)
-            .environment(dataModel)
+            .environment(vm)
             .environment(derivedData)
         }
         .menuBarExtraStyle(.window)
