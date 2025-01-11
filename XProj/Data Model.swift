@@ -30,8 +30,8 @@ final class DataModel {
         self.projects = projects
     }
     
-    /// Accesses the project associated with the given unique identifier
-    /// if the identifier is tracked by the data model; otherwise, returns `nil`
+    /// Accesses the project associated with the given unique id
+    /// if the id is tracked by the data model; otherwise, returns `nil`
     subscript(projId: Proj.ID) -> Proj? {
         projectsById[projId]
     }
