@@ -76,7 +76,7 @@ final class DataModel {
     
     /// Projects for a given category, sorted by name
     func projects(in type: NavCategory?) -> [Proj] {
-        projects.filter {
+        filteredProjects.filter {
             $0.type == type
         }
     }

@@ -11,7 +11,7 @@ struct ThreeColumnContent: View {
             switch category {
             case .allItems:
                 List(selection: $nav.selectedProj) {
-                    ForEach(dataModel.projects) { proj in
+                    ForEach(dataModel.filteredProjects) { proj in
                         NavigationLink(value: proj) {
                             ProjCard(proj)
                         }

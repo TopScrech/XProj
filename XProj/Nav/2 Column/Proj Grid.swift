@@ -12,7 +12,7 @@ struct ProjGrid: View {
             case .allItems:
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(dataModel.projects) { proj in
+                        ForEach(dataModel.filteredProjects) { proj in
                             NavigationLink(value: proj) {
                                 ProjGridItem(proj)
                             }
