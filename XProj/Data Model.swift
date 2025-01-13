@@ -43,7 +43,7 @@ final class DataModel {
         }
     }
     
-    func restoreProjPath() -> String? {
+    private func restoreProjPath() -> String? {
         guard let url = restoreAccessToFolder(udKey) else {
             print("Unable to restore access to the folder. Please select a new folder")
             return nil
