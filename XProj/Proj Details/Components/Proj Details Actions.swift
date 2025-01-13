@@ -11,13 +11,17 @@ struct ProjDetailsActions: View {
         self.proj = proj
     }
     
+    private var appStoreUrl: URL? {
+        proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url
+    }
+    
     var body: some View {
         HStack {
-            if store.showProjAppStoreLink, let url = proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url {
+            if store.showProjAppStoreLink, let appStoreUrl {
                 Button("App Store") {
-                    openUrl(url)
+                    openUrl(appStoreUrl)
                 }
-                .help(url)
+                .help(appStoreUrl)
             }
             
             Button("Xcode") {
