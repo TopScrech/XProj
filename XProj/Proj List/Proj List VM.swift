@@ -2,7 +2,6 @@ import Foundation
 
 final class ProjListVM {
     private let fm = FileManager.default
-    var searchPrompt = ""
     var projectsFolder = ""
     private let udKey = "projects_folder_bookmark"
     
