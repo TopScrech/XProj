@@ -1,6 +1,6 @@
 import Foundation
 
-struct AppStoreApp: Identifiable, Decodable, Hashable {
+struct AppStoreApp: Identifiable, Codable, Hashable {
     var id = UUID()
     
     let name: String

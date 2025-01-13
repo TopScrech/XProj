@@ -28,10 +28,7 @@ final class DataModel {
     
     private func loadCachedProjects() {
         if let cachedData = UserDefaults.standard.data(forKey: cacheKey),
-           let cachedCodableProjects = try? JSONDecoder().decode([CodableProj].self, from: cachedData) {
-            let cachedProjects = cachedCodableProjects.map {
-                Proj(from: $0)
-            }
+           let cachedProjects = try? JSONDecoder().decode([Proj].self, from: cachedData) {
             
             main {
                 self.projects = cachedProjects
@@ -76,11 +73,7 @@ final class DataModel {
     }
     
     private func cacheProjects(_ projects: [Proj]) {
-        let codableProjects = projects.map {
-            $0.toCodable()
-        }
-        
-        if let data = try? JSONEncoder().encode(codableProjects) {
+        if let data = try? JSONEncoder().encode(projects) {
             UserDefaults.standard.set(data, forKey: cacheKey)
         }
     }

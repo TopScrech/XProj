@@ -3,7 +3,7 @@
 import SwiftUI
 import XcodeProjKit
 
-struct Proj: Identifiable, Hashable, Decodable {
+struct Proj: Identifiable, Hashable, Codable {
     var id: String
     
     var name: String

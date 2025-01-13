@@ -1,7 +1,7 @@
 import Foundation
 import XcodeProjKit
 
-struct Target: Identifiable, Hashable, Decodable {
+struct Target: Identifiable, Hashable, Codable {
     var id: String
     
     let name: String

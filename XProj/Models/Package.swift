@@ -1,6 +1,6 @@
 import Foundation
 
-struct Package: Identifiable, Hashable, Decodable {
+struct Package: Identifiable, Hashable, Codable {
     var id: String {
         repositoryUrl
     }

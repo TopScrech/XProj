@@ -12,6 +12,10 @@ struct ProjDetails: View {
     
     var body: some View {
         List {
+            Button("Debug") {
+                print(proj)
+            }
+            
             VStack(alignment: .leading) {
                 Text(proj.name)
                     .largeTitle()
