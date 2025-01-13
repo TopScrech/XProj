@@ -1,12 +1,12 @@
 import Foundation
 
 struct AppStoreApp: Identifiable, Codable, Hashable {
-    var id = UUID()
-    
+    let id: String
     let name: String
     let url: URL
     
-    init(_ name: String, url: URL) {
+    init(id: String, name: String, url: URL) {
+        self.id = id
         self.name = name
         self.url = url
     }
@@ -39,7 +39,7 @@ extension Proj {
                 return nil
             }
             
-            return AppStoreApp(matchingResult.trackName, url: trackViewUrl)
+            return AppStoreApp(id: path, name: matchingResult.trackName, url: trackViewUrl)
         } catch {
             print("Error: \(error.localizedDescription)")
             return nil
