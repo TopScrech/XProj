@@ -12,7 +12,10 @@ struct ProjDetailsActions: View {
     }
     
     private var appStoreUrl: URL? {
-        proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url
+        proj.targets.filter {
+            $0.appStoreApp != nil
+        }
+        .first?.appStoreApp?.url
     }
     
     var body: some View {
