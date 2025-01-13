@@ -47,7 +47,7 @@ final class ProjListVM {
         
         let fileType: NavCategory
         
-#warning("Workspaces are not fully supported")
+#warning("Workspaces not fully supported")
         if hasFile(ofType: "xcodeproj", at: projPath) {
             if hasFile(ofType: "xcworkspace", at: projPath) {
                 fileType = .workspace

@@ -19,7 +19,6 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
          vapor,
          workspace,
          playground,
-         
          allItems,
          derivedData,
          packageDependencies

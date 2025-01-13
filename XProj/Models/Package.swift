@@ -22,7 +22,7 @@ struct Package: Identifiable, Hashable, Decodable {
         self.requirementParam = requirementParam
     }
     
-#warning("Requirement kind and param are disabled to fix navigation issues")
+#warning("Requirement kind and param are disabled to fix nav issues")
     
     var author: String? {
         // Attempt to create a URL object from the input string
