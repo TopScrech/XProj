@@ -2,18 +2,19 @@ import SwiftUI
 
 struct StackContainer: View {
     @Environment(NavModel.self) private var nav
-    @Environment(DataModel.self) private var dataModel
+    @Environment(DataModel.self) private var vm
     
     private let categories = NavCategory.allCases
     
     var body: some View {
         @Bindable var nav = nav
+        @Bindable var vm = vm
         
         NavigationStack(path: $nav.projPath) {
             VStack {
                 List(categories) { category in
                     Section {
-                        ForEach(dataModel.projects(in: category)) { proj in
+                        ForEach(vm.projects(in: category)) { proj in
                             NavigationLink(value: proj) {
                                 ProjCard(proj)
                             }
@@ -32,6 +33,10 @@ struct StackContainer: View {
             .toolbar {
                 OpenButtons()
             }
+        }
+        .searchable(text: $vm.searchPrompt)
+        .searchSuggestions {
+            SearchSuggestions()
         }
     }
 }

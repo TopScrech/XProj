@@ -2,9 +2,11 @@ import SwiftUI
 
 struct ThreeColumnContainer: View {
     @Environment(NavModel.self) private var nav
+    @Environment(DataModel.self) private var vm
     
     var body: some View {
         @Bindable var nav = nav
+        @Bindable var vm = vm
         
         NavigationSplitView(columnVisibility: $nav.columnVisibility) {
             ColumnSidebar()
@@ -16,6 +18,10 @@ struct ThreeColumnContainer: View {
             }
         } detail: {
             ThreeColumnDetail()
+        }
+        .searchable(text: $vm.searchPrompt)
+        .searchSuggestions {
+            SearchSuggestions()
         }
         .toolbar {
             OpenButtons()

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ThreeColumnContent: View {
     @Environment(NavModel.self) private var nav
-    @Environment(DataModel.self) private var dataModel
+    @Environment(DataModel.self) private var vm
     
     var body: some View {
         @Bindable var nav = nav
@@ -11,7 +11,7 @@ struct ThreeColumnContent: View {
             switch category {
             case .allItems:
                 List(selection: $nav.selectedProj) {
-                    ForEach(dataModel.filteredProjects) { proj in
+                    ForEach(vm.filteredProjects) { proj in
                         NavigationLink(value: proj) {
                             ProjCard(proj)
                         }
@@ -28,7 +28,7 @@ struct ThreeColumnContent: View {
                 
             default:
                 List(selection: $nav.selectedProj) {
-                    ForEach(dataModel.projects(in: category)) { proj in
+                    ForEach(vm.projects(in: category)) { proj in
                         NavigationLink(value: proj) {
                             ProjCard(proj)
                         }
