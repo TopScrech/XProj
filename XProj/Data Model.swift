@@ -1,33 +1,88 @@
 // An observable data model of projects and miscellaneous groupings
 
-import SwiftUI
+import ScrechKit
 
 @Observable
 final class DataModel {
-    private(set) var projects: [Proj]
+    private(set) var projects: [Proj] = []
     
     private var projectsById: [Proj.ID: Proj] = [:]
     
     var searchPrompt = ""
     var projectsFolder = ""
     private let udKey = "projects_folder_bookmark"
+    private let cacheKey = "projects_cache"
     
-    // The shared singleton data model object
+    // Shared singleton data model object
     static let shared = {
         DataModel()
     }()
     
     init() {
+        loadCachedProjects()
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.refreshProjects()
+        }
+    }
+    
+    private func loadCachedProjects() {
+        if let cachedData = UserDefaults.standard.data(forKey: cacheKey),
+           let cachedCodableProjects = try? JSONDecoder().decode([CodableProj].self, from: cachedData) {
+            let cachedProjects = cachedCodableProjects.map {
+                Proj(from: $0)
+            }
+            
+            main {
+                self.projects = cachedProjects
+                
+                self.projectsById = Dictionary(uniqueKeysWithValues: cachedProjects.map { proj in
+                    (proj.id, proj)
+                })
+            }
+        }
+    }
+    
+    func restoreProjPath() -> String? {
+        guard let url = restoreAccessToFolder(udKey) else {
+            print("Unable to restore access to the folder. Please select a new folder")
+            return nil
+        }
+        
+        return url.path
+    }
+    
+    private func refreshProjects() {
+        guard let folder = restoreProjPath() else {
+            return
+        }
+        
+        projectsFolder = folder
+        
         let vm = ProjListVM()
+        let projects = vm.getFolders(folder)
         
-        let projects = vm.getFolders()
-        projectsFolder = vm.projectsFolder
+        main {
+            self.projects = projects
+            self.projectsFolder = folder
+            
+            self.projectsById = Dictionary(uniqueKeysWithValues: projects.map { proj in
+                (proj.id, proj)
+            })
+            
+            // Cache the fetched projects
+            self.cacheProjects(projects)
+        }
+    }
+    
+    private func cacheProjects(_ projects: [Proj]) {
+        let codableProjects = projects.map {
+            $0.toCodable()
+        }
         
-        projectsById = Dictionary(uniqueKeysWithValues: projects.map { proj in
-            (proj.id, proj)
-        })
-        
-        self.projects = projects
+        if let data = try? JSONEncoder().encode(codableProjects) {
+            UserDefaults.standard.set(data, forKey: cacheKey)
+        }
     }
     
     /// Accesses the project associated with the given unique id

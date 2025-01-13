@@ -1,24 +1,16 @@
 import Foundation
 
 final class ProjListVM {
-    private let fm = FileManager.default
-    var projectsFolder = ""
-    private let udKey = "projects_folder_bookmark"
-    
     var projects: [Proj] = []
     
-    func getFolders() -> [Proj] {
+    private let fm = FileManager.default
+    private let udKey = "projects_folder_bookmark"
+    
+    func getFolders(_ projectsFolder: String) -> [Proj] {
         let startTime = CFAbsoluteTimeGetCurrent()
         
-        guard let url = restoreAccessToFolder(udKey) else {
-            print("Unable to restore access to the folder. Please select a new folder")
-            return []
-        }
-        
-        projectsFolder = url.path
-        
         do {
-            try processPath(url.path)
+            try processPath(projectsFolder)
         } catch {
             print("Error processing path: \(error.localizedDescription)")
         }
