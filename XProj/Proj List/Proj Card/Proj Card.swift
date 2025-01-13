@@ -51,7 +51,6 @@ struct ProjCard: View {
                     }
                 }
                 
-#warning("projectsFolder")
                 let path = proj.path.replacingOccurrences(of: vm.projectsFolder, with: "~")
                 
                 Text(path)
