@@ -123,8 +123,9 @@ final class DataModel {
             }
             
             saveSecurityScopedBookmark(url, forKey: self.udKey) {
-#warning("Refresh")
-                //                self.getFolders()
+                DispatchQueue.global(qos: .userInitiated).async {
+                    self.refreshProjects()
+                }
             }
         }
     }
