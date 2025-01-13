@@ -46,8 +46,8 @@ struct ProjDetailsActions: View {
     }
 }
 
-//#Preview {
-//    ProjDetailsActions(previewProj1)
-//        .environment(DataModel.shared)
-//        .environmentObject(ValueStorage())
-//}
+#Preview {
+    ProjDetailsActions(previewProj1)
+        .environment(DataModel.shared)
+        .environmentObject(ValueStorage())
+}
