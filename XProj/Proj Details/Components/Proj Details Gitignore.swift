@@ -18,8 +18,11 @@ struct ProjDetailsGitignore: View {
                     Text(line)
                 }
             } header: {
-                Text("Git ignore")
-                    .title2()
+                Button("Git ignore") {
+                    openGitignore()
+                }
+                .title2()
+                .buttonStyle(.plain)
             }
         }
     }
@@ -44,5 +47,18 @@ struct ProjDetailsGitignore: View {
             }
         
         return lines
+    }
+    
+    private func openGitignore() {
+        let fileUrl = URL(fileURLWithPath: gitignorePath)
+        
+        let fm = FileManager.default
+        
+        guard fm.fileExists(atPath: gitignorePath) else {
+            print(".gitignore file does not exist at the specified path")
+            return
+        }
+        
+        NSWorkspace.shared.open(fileUrl)
     }
 }
