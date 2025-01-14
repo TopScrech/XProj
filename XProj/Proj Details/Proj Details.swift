@@ -22,15 +22,7 @@ struct ProjDetails: View {
             
             ProjDetailsDates(proj)
             
-            if let version = proj.swiftToolsVersion {
-                VStack {
-                    Text("Swift tools: ")
-                        .foregroundStyle(.secondary) +
-                    
-                    Text(version)
-                }
-                .padding(.vertical, 5)
-            }
+            ProjDetailsSwiftTools(proj.swiftToolsVersion)
             
             ProjDetailsActions(proj)
             

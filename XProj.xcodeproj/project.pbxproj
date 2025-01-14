@@ -60,6 +60,7 @@
 		F37D1BF12CDA235D00D8817D /* Entry View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF02CDA235D00D8817D /* Entry View.swift */; };
 		F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF52CDA259E00D8817D /* Smart Scan.swift */; };
 		F37D1BFA2CDA272600D8817D /* Duplicate Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF92CDA272600D8817D /* Duplicate Section.swift */; };
+		F3874E2C2D36803C000BDCD9 /* Proj Details Swift Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3874E2B2D36803C000BDCD9 /* Proj Details Swift Tools.swift */; };
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Proj Card.swift */; };
 		F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* Search Suggestions.swift */; };
@@ -152,6 +153,7 @@
 		F37D1BF02CDA235D00D8817D /* Entry View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry View.swift"; sourceTree = "<group>"; };
 		F37D1BF52CDA259E00D8817D /* Smart Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Smart Scan.swift"; sourceTree = "<group>"; };
 		F37D1BF92CDA272600D8817D /* Duplicate Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Section.swift"; sourceTree = "<group>"; };
+		F3874E2B2D36803C000BDCD9 /* Proj Details Swift Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Swift Tools.swift"; sourceTree = "<group>"; };
 		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		F38B5E512BFD6F6100CB9917 /* Proj Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card.swift"; sourceTree = "<group>"; };
 		F38B5E572BFE134400CB9917 /* Search Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestions.swift"; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 		F37831D62D11D3B4007F7858 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F3874E2B2D36803C000BDCD9 /* Proj Details Swift Tools.swift */,
 				F37831CE2D11D11B007F7858 /* Proj Details Image.swift */,
 				F37831D02D11D177007F7858 /* Proj Details Actions.swift */,
 				F37831C82D11A69B007F7858 /* Proj Details Dates.swift */,
@@ -676,6 +679,7 @@
 				F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */,
 				F37831C72D11A590007F7858 /* Proj Details Dependency.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
+				F3874E2C2D36803C000BDCD9 /* Proj Details Swift Tools.swift in Sources */,
 				F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */,
 				F3515C212D366DA70078E588 /* Proj Card Platforms.swift in Sources */,
 				F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */,
