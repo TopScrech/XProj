@@ -15,6 +15,8 @@ struct LayoutSettings: View {
                 Toggle("Package dependencies", isOn: $store.showProjPackageDependencies)
                 
                 Toggle("App store link", isOn: $store.showProjAppStoreLink)
+                
+                Toggle("Git ignore", isOn: $store.showGitignore)
             }
             
             //            Section {

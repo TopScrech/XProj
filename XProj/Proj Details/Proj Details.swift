@@ -1,7 +1,6 @@
 import ScrechKit
 
 struct ProjDetails: View {
-    @Environment(NavModel.self) private var vm
     @EnvironmentObject private var store: ValueStorage
     
     private let proj: Proj
@@ -33,6 +32,11 @@ struct ProjDetails: View {
             if store.showProjPackageDependencies {
                 ProjDetailsDependencies(proj.packages)
             }
+            
+            
+            if store.showGitignore {
+                ProjDetailsGitignore(proj.path)
+            }
         }
         .scrollIndicators(.never)
     }
@@ -40,6 +44,5 @@ struct ProjDetails: View {
 
 #Preview {
     ProjDetails(previewProj1)
-        .environment(NavModel.shared)
         .environmentObject(ValueStorage())
 }
