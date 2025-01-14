@@ -7,6 +7,10 @@ struct ProjDetailsGitignore: View {
         self.path = path
     }
     
+    private var gitignorePath: String {
+        (path as NSString).appendingPathComponent(".gitignore")
+    }
+    
     var body: some View {
         if let lines = processGitignore(path) {
             Section {
@@ -21,10 +25,9 @@ struct ProjDetailsGitignore: View {
     }
     
     private func processGitignore(_ path: String) -> [String]? {
-        let gitignorePath = (path as NSString).appendingPathComponent(".gitignore")
-        let fileManager = FileManager.default
+        let fm = FileManager.default
         
-        guard fileManager.fileExists(atPath: gitignorePath) else {
+        guard fm.fileExists(atPath: gitignorePath) else {
             print(".gitignore file does not exist at the specified path")
             return nil
         }
