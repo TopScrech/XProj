@@ -18,8 +18,16 @@ struct ProjDetailsGitignore: View {
                     Text(line)
                 }
             } header: {
-                Button("Git ignore") {
+                Button {
                     openGitignore()
+                } label: {
+                    Text("Git ignore")
+                        .onDrag {
+                            let fileURL = URL(fileURLWithPath: gitignorePath)
+                            return NSItemProvider(object: fileURL as NSURL)
+                        } preview: {
+                            Image(systemName: "text.document")
+                        }
                 }
                 .title2()
                 .buttonStyle(.plain)
