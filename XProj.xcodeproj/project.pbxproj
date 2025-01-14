@@ -14,7 +14,7 @@
 		F323EC922D31382800973FA0 /* Layout Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC912D31382800973FA0 /* Layout Settings.swift */; };
 		F323EC942D315E3A00973FA0 /* Value Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC932D315E3A00973FA0 /* Value Storage.swift */; };
 		F323EC962D31E39A00973FA0 /* Open Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC952D31E39A00973FA0 /* Open Buttons.swift */; };
-		F329E1812D3683E4007BA9D1 /* ProjDetailsGitignore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329E1802D3683E4007BA9D1 /* ProjDetailsGitignore.swift */; };
+		F329E1812D3683E4007BA9D1 /* Proj Details Gitignore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329E1802D3683E4007BA9D1 /* Proj Details Gitignore.swift */; };
 		F32A1E022D2FB7B6008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
 		F32A1E032D2FB7BD008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
 		F32A1E052D30FD1C008AEB2F /* Bottom Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A1E042D30FD1C008AEB2F /* Bottom Bar.swift */; };
@@ -106,7 +106,7 @@
 		F323EC912D31382800973FA0 /* Layout Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layout Settings.swift"; sourceTree = "<group>"; };
 		F323EC932D315E3A00973FA0 /* Value Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value Storage.swift"; sourceTree = "<group>"; };
 		F323EC952D31E39A00973FA0 /* Open Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open Buttons.swift"; sourceTree = "<group>"; };
-		F329E1802D3683E4007BA9D1 /* ProjDetailsGitignore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjDetailsGitignore.swift; sourceTree = "<group>"; };
+		F329E1802D3683E4007BA9D1 /* Proj Details Gitignore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Gitignore.swift"; sourceTree = "<group>"; };
 		F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F32A1E042D30FD1C008AEB2F /* Bottom Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bottom Bar.swift"; sourceTree = "<group>"; };
 		F33081732C9057F700605E43 /* Widgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -371,7 +371,7 @@
 				F37831C62D11A590007F7858 /* Proj Details Dependency.swift */,
 				F37831D22D11D221007F7858 /* Proj Details Targets.swift */,
 				F37831C42D11A4F4007F7858 /* Proj Details Target.swift */,
-				F329E1802D3683E4007BA9D1 /* ProjDetailsGitignore.swift */,
+				F329E1802D3683E4007BA9D1 /* Proj Details Gitignore.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -692,7 +692,7 @@
 				F371A51D2C2D8D94006BDF0D /* MB Proj Card.swift in Sources */,
 				F31EF9492D1038CE000F95A7 /* Package Dep Details.swift in Sources */,
 				F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */,
-				F329E1812D3683E4007BA9D1 /* ProjDetailsGitignore.swift in Sources */,
+				F329E1812D3683E4007BA9D1 /* Proj Details Gitignore.swift in Sources */,
 				F37831D32D11D221007F7858 /* Proj Details Targets.swift in Sources */,
 				F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */,
 				F37831D52D11D292007F7858 /* Proj Details Dependencies.swift in Sources */,
