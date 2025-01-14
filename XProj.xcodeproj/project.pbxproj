@@ -27,6 +27,7 @@
 		F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3341E2C2BDE358900E85F27 /* XProj App.swift */; };
 		F3341E312BDE358A00E85F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3341E302BDE358A00E85F27 /* Assets.xcassets */; };
 		F3341E3F2BDEAB4D00E85F27 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3341E3E2BDEAB4D00E85F27 /* ScrechKit */; };
+		F3515C212D366DA70078E588 /* Proj Card Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3515C202D366DA70078E588 /* Proj Card Platforms.swift */; };
 		F3522DC62C2A29C000660101 /* Derived Data List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DC52C2A29C000660101 /* Derived Data List.swift */; };
 		F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCA2C2A2A5600660101 /* Derived Data VM.swift */; };
 		F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCC2C2AA32C00660101 /* File Manager.swift */; };
@@ -118,6 +119,7 @@
 		F3341E2C2BDE358900E85F27 /* XProj App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XProj App.swift"; sourceTree = "<group>"; };
 		F3341E302BDE358A00E85F27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3341E352BDE358A00E85F27 /* XProj.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XProj.entitlements; sourceTree = "<group>"; };
+		F3515C202D366DA70078E588 /* Proj Card Platforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card Platforms.swift"; sourceTree = "<group>"; };
 		F3522DC52C2A29C000660101 /* Derived Data List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data List.swift"; sourceTree = "<group>"; };
 		F3522DCA2C2A2A5600660101 /* Derived Data VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data VM.swift"; sourceTree = "<group>"; };
 		F3522DCC2C2AA32C00660101 /* File Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File Manager.swift"; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				F38B5E512BFD6F6100CB9917 /* Proj Card.swift */,
 				F371A5182C2D84BA006BDF0D /* Proj Card VM.swift */,
 				F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */,
+				F3515C202D366DA70078E588 /* Proj Card Platforms.swift */,
 			);
 			path = "Proj Card";
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				F37831C72D11A590007F7858 /* Proj Details Dependency.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
 				F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */,
+				F3515C212D366DA70078E588 /* Proj Card Platforms.swift in Sources */,
 				F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */,
 				F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,
