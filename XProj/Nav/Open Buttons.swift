@@ -21,6 +21,8 @@ struct OpenButtons: View {
     }
 }
 
-//#Preview {
-//    OpenButtons()
-//}
+#Preview {
+    OpenButtons()
+        .environment(NavModel.shared)
+        .environment(DataModel.shared)
+}

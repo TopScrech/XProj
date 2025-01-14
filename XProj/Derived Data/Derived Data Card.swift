@@ -26,7 +26,7 @@ struct DerivedDataCard: View {
     }
 }
 
-//#Preview {
-//    DerivedDataCard()
-//        .environment(DerivedDataVM())
-//}
+#Preview {
+    DerivedDataCard(.init(name: "Preview", size: 64))
+        .environment(DerivedDataVM())
+}

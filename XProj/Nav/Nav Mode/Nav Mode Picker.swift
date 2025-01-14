@@ -57,7 +57,7 @@ struct NavModePicker: View {
     }
 }
 
-#Preview() {
+#Preview {
     @Previewable @State
     var experience: NavMode? = .stack
     

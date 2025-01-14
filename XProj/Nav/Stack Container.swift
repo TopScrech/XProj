@@ -41,7 +41,7 @@ struct StackContainer: View {
     }
 }
 
-#Preview() {
+#Preview {
     StackContainer()
         .environment(DataModel.shared)
         .environment(NavModel.shared)

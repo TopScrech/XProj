@@ -12,10 +12,6 @@ struct ProjDetails: View {
     
     var body: some View {
         List {
-            Button("Debug") {
-                print(proj)
-            }
-            
             VStack(alignment: .leading) {
                 Text(proj.name)
                     .largeTitle()
@@ -50,9 +46,8 @@ struct ProjDetails: View {
     }
 }
 
-//#Preview {
-//    ProjDetails(previewProj1)
-//        .environment(NavModel.shared)
-//        .environment(DataModel.shared)
-//        .environmentObject(ValueStorage())
-//}
+#Preview {
+    ProjDetails(previewProj1)
+        .environment(NavModel.shared)
+        .environmentObject(ValueStorage())
+}

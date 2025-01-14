@@ -23,7 +23,7 @@ struct NavModeButton: View {
     }
 }
 
-#Preview() {
+#Preview {
     NavModeButton()
         .environment(NavModel.shared)
 }

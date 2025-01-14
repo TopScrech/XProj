@@ -44,6 +44,6 @@ struct ProjDetailsDependency: View {
     }
 }
 
-//#Preview {
-//    ProjDetailsDependency()
-//}
+#Preview {
+    ProjDetailsDependency(.init(name: "Preview", repositoryUrl: ""))
+}

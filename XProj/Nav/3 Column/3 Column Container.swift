@@ -29,7 +29,7 @@ struct ThreeColumnContainer: View {
     }
 }
 
-#Preview() {
+#Preview {
     ThreeColumnContainer()
         .environment(NavModel(columnVisibility: .all))
         .environment(DataModel.shared)

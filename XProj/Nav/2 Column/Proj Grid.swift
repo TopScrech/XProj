@@ -1,5 +1,3 @@
-// A grid of proj tiles, based on a given category
-
 import SwiftUI
 
 struct ProjGrid: View {
@@ -62,13 +60,13 @@ struct ProjGrid: View {
     ]}
 }
 
-#Preview() {
+#Preview {
     ProjGrid()
         .environment(DataModel.shared)
         .environment(NavModel(selectedCategory: .proj))
 }
 
-#Preview() {
+#Preview {
     ProjGrid()
         .environment(DataModel.shared)
         .environment(NavModel(selectedCategory: nil))
