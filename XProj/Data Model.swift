@@ -95,8 +95,7 @@ final class DataModel {
         
         return sortedProjects.filter {
             $0.name
-                .lowercased()
-                .contains(searchPrompt.lowercased())
+                .localizedStandardContains(searchPrompt)
         }
     }
     

@@ -32,7 +32,7 @@ struct Package: Identifiable, Hashable, Codable {
         }
         
         // Ensure the host is Github
-        guard url.host?.lowercased().contains("github.com") == true else {
+        guard url.host?.localizedStandardContains("github.com") == true else {
             print("URL is not a GitHub repository")
             return nil
         }
