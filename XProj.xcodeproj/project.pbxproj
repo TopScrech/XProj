@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -196,30 +196,24 @@
 /* Begin PBXFrameworksBuildPhase section */
 		F33081702C9057F700605E43 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				F33081782C9057F700605E43 /* SwiftUI.framework in Frameworks */,
 				F33081762C9057F700605E43 /* WidgetKit.framework in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F3341E262BDE358900E85F27 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				F30B96742D312E7A0015944D /* SettingsKit in Frameworks */,
 				F358F02B2D2C19A200BCC07B /* LaunchAtLogin in Frameworks */,
 				F37831B72D1095EC007F7858 /* XcodeProjKit in Frameworks */,
 				F3341E3F2BDEAB4D00E85F27 /* ScrechKit in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F371A51F2C2D97AB006BDF0D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -510,11 +504,7 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = Widgets;
-			packageProductDependencies = (
-			);
 			productName = "XProj WidgetsExtension";
 			productReference = F33081732C9057F700605E43 /* Widgets.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -528,8 +518,6 @@
 				F3341E272BDE358900E85F27 /* Resources */,
 			);
 			buildRules = (
-			);
-			dependencies = (
 			);
 			name = XProj;
 			packageProductDependencies = (
@@ -552,8 +540,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = "Unit Tests";
 			productName = "XProj Tests";
 			productReference = F371A5222C2D97AB006BDF0D /* Unit Tests.xctest */;
@@ -567,7 +553,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					F33081722C9057F700605E43 = {
 						CreatedOnToolsVersion = 16.0;
@@ -595,7 +581,7 @@
 				F358F0292D2C19A200BCC07B /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 				F30B96722D312E7A0015944D /* XCRemoteSwiftPackageReference "SettingsKit" */,
 			);
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = F3341E2A2BDE358900E85F27 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -610,36 +596,29 @@
 /* Begin PBXResourcesBuildPhase section */
 		F33081712C9057F700605E43 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				F32A1E032D2FB7BD008AEB2F /* Localizable.xcstrings in Resources */,
 				F33081832C9057F700605E43 /* Assets.xcassets in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F3341E272BDE358900E85F27 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				F313BE1D2C871E13005C8B60 /* Examples.zip in Resources */,
 				F3341E312BDE358A00E85F27 /* Assets.xcassets in Resources */,
 				F32A1E022D2FB7B6008AEB2F /* Localizable.xcstrings in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F371A5202C2D97AB006BDF0D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F330816F2C9057F700605E43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				F37D1BEF2CDA234700D8817D /* Simple Entry.swift in Sources */,
 				F330817F2C9057F700605E43 /* XProj Widgets.swift in Sources */,
@@ -649,11 +628,9 @@
 				F37D1BED2CDA231F00D8817D /* Provider.swift in Sources */,
 				F330817D2C9057F700605E43 /* XProj Widgets Control.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F3341E252BDE358900E85F27 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				F37831BF2D10D8DE007F7858 /* Packages in Package.swift in Sources */,
 				F3D1E75F2C9B40B4000C81FF /* General Settings.swift in Sources */,
@@ -727,27 +704,23 @@
 				F37831B92D10A19E007F7858 /* Fetch project file path.swift in Sources */,
 				F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F371A51E2C2D97AB006BDF0D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				F371A5252C2D97AB006BDF0D /* XProj Tests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		F33081852C9057F700605E43 /* Debug */ = {
+		F33081852C9057F700605E43 /* Debug configuration for PBXNativeTarget "Widgets" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = 8FQUA2F388;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "XProj Widgets/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "XProj Widgets";
@@ -773,14 +746,13 @@
 			};
 			name = Debug;
 		};
-		F33081862C9057F700605E43 /* Release */ = {
+		F33081862C9057F700605E43 /* Release configuration for PBXNativeTarget "Widgets" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = 8FQUA2F388;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "XProj Widgets/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "XProj Widgets";
@@ -807,7 +779,7 @@
 			};
 			name = Release;
 		};
-		F3341E362BDE358A00E85F27 /* Debug */ = {
+		F3341E362BDE358A00E85F27 /* Debug configuration for PBXProject "XProj" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -844,6 +816,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8FQUA2F388;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -873,7 +846,7 @@
 			};
 			name = Debug;
 		};
-		F3341E372BDE358A00E85F27 /* Release */ = {
+		F3341E372BDE358A00E85F27 /* Release configuration for PBXProject "XProj" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -910,6 +883,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8FQUA2F388;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -931,7 +905,7 @@
 			};
 			name = Release;
 		};
-		F3341E392BDE358A00E85F27 /* Debug */ = {
+		F3341E392BDE358A00E85F27 /* Debug configuration for PBXNativeTarget "XProj" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -942,7 +916,6 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 8FQUA2F388;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -963,7 +936,7 @@
 			};
 			name = Debug;
 		};
-		F3341E3A2BDE358A00E85F27 /* Release */ = {
+		F3341E3A2BDE358A00E85F27 /* Release configuration for PBXNativeTarget "XProj" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -974,7 +947,6 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 8FQUA2F388;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -995,12 +967,11 @@
 			};
 			name = Release;
 		};
-		F371A5272C2D97AB006BDF0D /* Debug */ = {
+		F371A5272C2D97AB006BDF0D /* Debug configuration for PBXNativeTarget "Unit Tests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8FQUA2F388;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -1018,12 +989,11 @@
 			};
 			name = Debug;
 		};
-		F371A5282C2D97AB006BDF0D /* Release */ = {
+		F371A5282C2D97AB006BDF0D /* Release configuration for PBXNativeTarget "Unit Tests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8FQUA2F388;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -1048,37 +1018,33 @@
 		F33081882C9057F700605E43 /* Build configuration list for PBXNativeTarget "Widgets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F33081852C9057F700605E43 /* Debug */,
-				F33081862C9057F700605E43 /* Release */,
+				F33081852C9057F700605E43 /* Debug configuration for PBXNativeTarget "Widgets" */,
+				F33081862C9057F700605E43 /* Release configuration for PBXNativeTarget "Widgets" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		F3341E242BDE358900E85F27 /* Build configuration list for PBXProject "XProj" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F3341E362BDE358A00E85F27 /* Debug */,
-				F3341E372BDE358A00E85F27 /* Release */,
+				F3341E362BDE358A00E85F27 /* Debug configuration for PBXProject "XProj" */,
+				F3341E372BDE358A00E85F27 /* Release configuration for PBXProject "XProj" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		F3341E382BDE358A00E85F27 /* Build configuration list for PBXNativeTarget "XProj" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F3341E392BDE358A00E85F27 /* Debug */,
-				F3341E3A2BDE358A00E85F27 /* Release */,
+				F3341E392BDE358A00E85F27 /* Debug configuration for PBXNativeTarget "XProj" */,
+				F3341E3A2BDE358A00E85F27 /* Release configuration for PBXNativeTarget "XProj" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		F371A5262C2D97AB006BDF0D /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F371A5272C2D97AB006BDF0D /* Debug */,
-				F371A5282C2D97AB006BDF0D /* Release */,
+				F371A5272C2D97AB006BDF0D /* Debug configuration for PBXNativeTarget "Unit Tests" */,
+				F371A5282C2D97AB006BDF0D /* Release configuration for PBXNativeTarget "Unit Tests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
