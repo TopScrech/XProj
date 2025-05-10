@@ -1,9 +1,8 @@
 import ScrechKit
-import SettingsKit
 
 @main
 struct XProjApp: App {
-    @StateObject private var store = ValueStorage()
+    @StateObject private var store = ValueStore()
     private var nav: NavModel = .shared
     private var vm: DataModel = .shared
     private var derivedData = DerivedDataVM()
@@ -20,22 +19,13 @@ struct XProjApp: App {
         .commands {
             SidebarCommands()
         }
-        .settings(design: .sidebar) {
-            SettingsTab(.new(title: "General", image: Image(systemName: "gear")), id: "general") {
-                SettingsSubtab(.noSelection, id: "no-selection") {
-                    GeneralSettings()
-                        .environment(nav)
-                        .environment(vm)
-                        .environment(derivedData)
-                }
-            }
-            
-            SettingsTab(.new(title: "Layout", image: Image(systemName: "paintbrush")), id: "layout", color: .yellow) {
-                SettingsSubtab(.noSelection, id: "no-selection") {
-                    LayoutSettings()
-                        .environmentObject(store)
-                }
-            }
+        
+        Settings {
+            AppSettings()
+                .environment(nav)
+                .environment(vm)
+                .environment(derivedData)
+                .environmentObject(store)
         }
         
         MenuBarExtra("Project List", systemImage: "hammer") {

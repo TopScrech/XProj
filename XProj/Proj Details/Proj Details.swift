@@ -1,7 +1,7 @@
 import ScrechKit
 
 struct ProjDetails: View {
-    @EnvironmentObject private var store: ValueStorage
+    @EnvironmentObject private var store: ValueStore
     
     private let proj: Proj
     
@@ -44,5 +44,5 @@ struct ProjDetails: View {
 
 #Preview {
     ProjDetails(previewProj1)
-        .environmentObject(ValueStorage())
+        .environmentObject(ValueStore())
 }

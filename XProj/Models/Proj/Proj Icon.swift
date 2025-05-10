@@ -48,7 +48,7 @@ extension Proj {
             includingPropertiesForKeys: [.isDirectoryKey],
             options: [.skipsHiddenFiles, .skipsPackageDescendants]
         ) else {
-            print("Error: Unable to enumerate \(assetsUrl.path)")
+            print("Error: Unable to enumerate", assetsUrl.path)
             return nil
         }
         
@@ -90,7 +90,7 @@ extension Proj {
             
             return largestFile?.path
         } catch {
-            print("Error accessing files in \(appIconUrl.path): \(error.localizedDescription)")
+            print("Error accessing files in \(appIconUrl.path):", error.localizedDescription)
             return nil
         }
     }

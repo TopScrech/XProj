@@ -9,10 +9,10 @@ func saveSecurityScopedBookmark(_ url: URL, forKey key: String, result: () -> ()
         )
         
         UserDefaults.standard.set(bookmarkData, forKey: key)
-        print("Bookmark saved successfully for key: \(key)")
+        print("Bookmark saved successfully for key:", key)
         
         result()
     } catch {
-        print("Error saving bookmark for key \(key): \(error)")
+        print("Error saving bookmark for key \(key):", error)
     }
 }

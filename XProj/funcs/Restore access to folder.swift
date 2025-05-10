@@ -2,7 +2,7 @@ import SwiftUI
 
 func restoreAccessToFolder(_ key: String) -> URL? {
     guard let bookmarkData = UserDefaults.standard.data(forKey: key) else {
-        print("No bookmark data found for key: \(key)")
+        print("No bookmark data found for key:", key)
         return nil
     }
     
@@ -22,14 +22,14 @@ func restoreAccessToFolder(_ key: String) -> URL? {
         
         let accessStarted = url.startAccessingSecurityScopedResource()
         
-        if accessStarted {
-            return url
-        } else {
-            print("Failed to start accessing security scoped resource for URL: \(url)")
+        guard accessStarted else {
+            print("Failed to start accessing security scoped resource for URL:", url)
             return nil
         }
+        
+        return url
     } catch {
-        print("Error resolving bookmark data for key \(key): \(error.localizedDescription)")
+        print("Error resolving bookmark data for key \(key):", error.localizedDescription)
         return nil
     }
 }

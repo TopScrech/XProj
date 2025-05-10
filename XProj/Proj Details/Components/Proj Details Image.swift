@@ -41,7 +41,7 @@ struct ProjDetailsImage: View {
         do {
             try FileManager.default.copyItem(at: URL(fileURLWithPath: path), to: destinationUrl)
         } catch {
-            print("Error saving file to Downloads: \(error.localizedDescription)")
+            print("Error saving file to Downloads:", error.localizedDescription)
         }
     }
 }

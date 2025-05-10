@@ -60,11 +60,11 @@ extension Proj {
             }
             
             // If the swift-tools-version line is not found
-            print("Error: 'swift-tools-version' declaration not found in 'Package.swift'.")
+            print("Error: 'swift-tools-version' declaration not found in 'Package.swift'")
             return nil
         } catch {
             // Handle any errors that occur during file reading
-            print("An error occurred while reading 'Package.swift': \(error.localizedDescription)")
+            print("An error occurred while reading 'Package.swift':", error.localizedDescription)
             return nil
         }
     }

@@ -64,9 +64,6 @@
     "Clear navigation path" : {
 
     },
-    "Click" : {
-
-    },
     "countFilesInFoldersMultiThread" : {
 
     },
@@ -95,9 +92,6 @@
       "shouldTranslate" : false
     },
     "Functions" : {
-
-    },
-    "General" : {
 
     },
     "Git ignore" : {

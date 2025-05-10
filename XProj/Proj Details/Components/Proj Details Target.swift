@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ProjDetailsTarget: View {
-    @EnvironmentObject private var store: ValueStorage
+    @EnvironmentObject private var store: ValueStore
     
     private let target: Target
     
@@ -91,5 +91,5 @@ struct ProjDetailsTarget: View {
         )
     )
     .padding()
-    .environmentObject(ValueStorage())
+    .environmentObject(ValueStore())
 }

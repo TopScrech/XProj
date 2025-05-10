@@ -58,7 +58,7 @@ final class DerivedDataVM {
         let fileManager = FileManager.default
         
         guard fileManager.fileExists(atPath: url.path()) else {
-            print("Folder does not exist: \(url)")
+            print("Folder does not exist:", url)
             return
         }
         
@@ -69,11 +69,11 @@ final class DerivedDataVM {
                 do {
                     try fileManager.removeItem(at: fileURL)
                 } catch {
-                    print("Failed to delete file: \(fileURL.path), error: \(error.localizedDescription)")
+                    print("Failed to delete file: \(fileURL.path), error:", error.localizedDescription)
                 }
             }
         } catch {
-            print("Failed to fetch contents of directory: \(url), error: \(error.localizedDescription)")
+            print("Failed to fetch contents of directory: \(url), error:", error.localizedDescription)
         }
         
         getFolders()
@@ -87,13 +87,13 @@ final class DerivedDataVM {
         let fm = FileManager.default
         
         guard fm.fileExists(atPath: url.path()) else {
-            print("File or folder does not exist: \(url)")
+            print("File or folder does not exist:", url)
             return
         }
         
         do {
             try fm.removeItem(at: url)
-            print("Successfully deleted: \(url)")
+            print("Successfully deleted:", url)
             
             guard let index = folders.firstIndex(where: {
                 $0.name == name
@@ -103,7 +103,7 @@ final class DerivedDataVM {
             
             folders.remove(at: index)
         } catch {
-            print("Failed to delete: \(url), error: \(error.localizedDescription)")
+            print("Failed to delete: \(url), error:", error.localizedDescription)
         }
     }
     
@@ -149,7 +149,7 @@ final class DerivedDataVM {
         group.wait()
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        print("Time elapsed for processing Derived Data: \(String(format: "%.3f", timeElapsed)) seconds")
+        print("Time elapsed for processing Derived Data: \(String(format: "%.3f", timeElapsed))s")
     }
     
     private func processFolder(_ name: String, at path: String) -> DerivedDataFolder? {
@@ -164,7 +164,7 @@ final class DerivedDataVM {
                 size: size
             )
         } catch {
-            print("error processing project at path: \(path)")
+            print("error processing project at path:", path)
         }
         
         return nil

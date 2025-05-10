@@ -28,7 +28,7 @@ extension Proj {
                 )
             }
         } catch {
-            print("Error reading 'Package.resolved' at \(packageResolvedUrl): \(error.localizedDescription)")
+            print("Error reading 'Package.resolved' at \(packageResolvedUrl):", error.localizedDescription)
             return []
         }
     }

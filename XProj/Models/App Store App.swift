@@ -41,7 +41,7 @@ extension Proj {
             
             return AppStoreApp(id: path, name: matchingResult.trackName, url: trackViewUrl)
         } catch {
-            print("Error: \(error.localizedDescription)")
+            print("Error:", error.localizedDescription)
             return nil
         }
     }

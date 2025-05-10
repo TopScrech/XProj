@@ -12,11 +12,13 @@ final class ProjListVM {
         do {
             try processPath(projectsFolder)
         } catch {
-            print("Error processing path: \(error.localizedDescription)")
+            print("Error processing path:", error.localizedDescription)
         }
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        print("Time elapsed for processing projects: \(String(format: "%.3f", timeElapsed)) seconds")
+        let timeElapsedString = String(format: "%.3f", timeElapsed)
+        
+        print("Time elapsed for processing projects: \(timeElapsedString)s")
         
         return projects
     }

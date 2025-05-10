@@ -39,7 +39,7 @@ struct ProjListToolbar: View {
                         let timeElapsed = finish.uptimeNanoseconds - start.uptimeNanoseconds
                         let timeElapsedInSeconds = Double(timeElapsed) / 1_000_000_000
                         
-                        print("Time elapsed: \(timeElapsedInSeconds) seconds")
+                        print("Time elapsed: \(timeElapsedInSeconds)s")
                     }
                 }
             }
