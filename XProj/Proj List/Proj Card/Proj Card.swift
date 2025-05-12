@@ -27,7 +27,7 @@ struct ProjCard: View {
                 
                 Text(path)
                     .subheadline()
-                    .foregroundStyle(.tertiary)
+                    .tertiary()
                     .lineLimit(2)
             }
             

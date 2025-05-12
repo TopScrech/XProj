@@ -24,6 +24,7 @@ struct ProjDetailsTarget: View {
                 HStack(spacing: 0) {
                     Text(target.name)
                         .title3()
+                        .lineLimit(2)
                     
                     if store.showProjTargetVersion, target.type != .unitTests && target.type != .uiTests {
                         if let version = target.version, let build = target.build {
@@ -35,7 +36,8 @@ struct ProjDetailsTarget: View {
                 
                 if let bundle = target.bundleId {
                     Text(bundle)
-                        .foregroundStyle(.tertiary)
+                        .tertiary()
+                        .lineLimit(2)
                 }
             }
             
@@ -48,7 +50,7 @@ struct ProjDetailsTarget: View {
                         
                         Text(platform.split(separator: " ").last ?? "")
                             .footnote()
-                            .foregroundStyle(.tertiary)
+                            .tertiary()
                     }
                 }
                 

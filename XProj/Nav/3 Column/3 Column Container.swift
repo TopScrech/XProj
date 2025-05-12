@@ -18,6 +18,7 @@ struct ThreeColumnContainer: View {
             }
         } detail: {
             ThreeColumnDetail()
+                .frame(minWidth: 200)
         }
         .searchable(text: $vm.searchPrompt)
         .searchSuggestions {

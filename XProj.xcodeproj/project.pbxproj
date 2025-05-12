@@ -63,6 +63,7 @@
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Proj Card.swift */; };
 		F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* Search Suggestions.swift */; };
+		F38FB0E52DD2A73100C8A19B /* ScrechKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F3341E3E2BDEAB4D00E85F27 /* ScrechKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F3929A672D1BA52D00FB06E6 /* Search Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3929A662D1BA52D00FB06E6 /* Search Suggestion.swift */; };
 		F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */; };
 		F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */; };
@@ -96,6 +97,18 @@
 		F3FC8A5C2D1AFF2A00A7CCBC /* 3 Column Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A5B2D1AFF2A00A7CCBC /* 3 Column Content.swift */; };
 		F3FC8A5E2D1AFFD500A7CCBC /* Column Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A5D2D1AFFD500A7CCBC /* Column Sidebar.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F38FB0E62DD2A73100C8A19B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "";
+			dstSubfolder = Frameworks;
+			files = (
+				F38FB0E52DD2A73100C8A19B /* ScrechKit in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F313BE1C2C871E13005C8B60 /* Examples.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Examples.zip; sourceTree = "<group>"; };
@@ -359,9 +372,8 @@
 				F37831C82D11A69B007F7858 /* Proj Details Dates.swift */,
 				F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */,
 				F37831C62D11A590007F7858 /* Proj Details Dependency.swift */,
-				F37831D22D11D221007F7858 /* Proj Details Targets.swift */,
-				F37831C42D11A4F4007F7858 /* Proj Details Target.swift */,
 				F329E1802D3683E4007BA9D1 /* Proj Details Gitignore.swift */,
+				F38FB0E72DD2A79200C8A19B /* Targets */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -416,6 +428,15 @@
 				F3929A662D1BA52D00FB06E6 /* Search Suggestion.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		F38FB0E72DD2A79200C8A19B /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				F37831D22D11D221007F7858 /* Proj Details Targets.swift */,
+				F37831C42D11A4F4007F7858 /* Proj Details Target.swift */,
+			);
+			path = Targets;
 			sourceTree = "<group>";
 		};
 		F3B389BD2D0ECB090082C2F3 /* Proj Details */ = {
@@ -511,6 +532,7 @@
 				F3341E252BDE358900E85F27 /* Sources */,
 				F3341E262BDE358900E85F27 /* Frameworks */,
 				F3341E272BDE358900E85F27 /* Resources */,
+				F38FB0E62DD2A73100C8A19B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
