@@ -16,21 +16,20 @@ struct ProjDetailsGitignore: View {
             Section {
                 ForEach(lines, id: \.self) { line in
                     Text(line)
+                        .lineLimit(1)
                 }
             } header: {
-                Button {
+                Button("Git ignore") {
                     openGitignore()
-                } label: {
-                    Text("Git ignore")
-                        .onDrag {
-                            let fileURL = URL(fileURLWithPath: gitignorePath)
-                            return NSItemProvider(object: fileURL as NSURL)
-                        } preview: {
-                            Image(systemName: "text.document")
-                        }
                 }
                 .title2()
                 .buttonStyle(.plain)
+                .onDrag {
+                    let fileURL = URL(fileURLWithPath: gitignorePath)
+                    return NSItemProvider(object: fileURL as NSURL)
+                } preview: {
+                    Image(systemName: "text.document")
+                }
             }
         }
     }
@@ -39,12 +38,12 @@ struct ProjDetailsGitignore: View {
         let fm = FileManager.default
         
         guard fm.fileExists(atPath: gitignorePath) else {
-            print(".gitignore file does not exist at the specified path")
+            print(".gitignore file does not exist at this path")
             return nil
         }
         
         guard let contents = try? String(contentsOfFile: gitignorePath, encoding: .utf8) else {
-            print("Failed to read .gitignore file")
+            print("Failed to read .gitignore")
             return nil
         }
         
@@ -58,12 +57,12 @@ struct ProjDetailsGitignore: View {
     }
     
     private func openGitignore() {
-        let fileUrl = URL(fileURLWithPath: gitignorePath)
-        
         let fm = FileManager.default
         
+        let fileUrl = URL(fileURLWithPath: gitignorePath)
+        
         guard fm.fileExists(atPath: gitignorePath) else {
-            print(".gitignore file does not exist at the specified path")
+            print(".gitignore file does not exist at this path")
             return
         }
         

@@ -49,7 +49,7 @@
 		F37831CF2D11D11B007F7858 /* Proj Details Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831CE2D11D11B007F7858 /* Proj Details Image.swift */; };
 		F37831D12D11D177007F7858 /* Proj Details Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D02D11D177007F7858 /* Proj Details Actions.swift */; };
 		F37831D32D11D221007F7858 /* Proj Details Targets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D22D11D221007F7858 /* Proj Details Targets.swift */; };
-		F37831D52D11D292007F7858 /* Proj Details Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */; };
+		F37831D52D11D292007F7858 /* Proj Details Dependency List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D42D11D292007F7858 /* Proj Details Dependency List.swift */; };
 		F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D72D12DF0E007F7858 /* Open folder picker.swift */; };
 		F37831DB2D12E0E6007F7858 /* Save bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DA2D12E0E6007F7858 /* Save bookmark.swift */; };
 		F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DC2D12E57D007F7858 /* Restore access to folder.swift */; };
@@ -154,7 +154,7 @@
 		F37831CE2D11D11B007F7858 /* Proj Details Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Image.swift"; sourceTree = "<group>"; };
 		F37831D02D11D177007F7858 /* Proj Details Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Actions.swift"; sourceTree = "<group>"; };
 		F37831D22D11D221007F7858 /* Proj Details Targets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Targets.swift"; sourceTree = "<group>"; };
-		F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Dependencies.swift"; sourceTree = "<group>"; };
+		F37831D42D11D292007F7858 /* Proj Details Dependency List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Dependency List.swift"; sourceTree = "<group>"; };
 		F37831D72D12DF0E007F7858 /* Open folder picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open folder picker.swift"; sourceTree = "<group>"; };
 		F37831DA2D12E0E6007F7858 /* Save bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Save bookmark.swift"; sourceTree = "<group>"; };
 		F37831DC2D12E57D007F7858 /* Restore access to folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restore access to folder.swift"; sourceTree = "<group>"; };
@@ -370,7 +370,7 @@
 				F37831CE2D11D11B007F7858 /* Proj Details Image.swift */,
 				F37831D02D11D177007F7858 /* Proj Details Actions.swift */,
 				F37831C82D11A69B007F7858 /* Proj Details Dates.swift */,
-				F37831D42D11D292007F7858 /* Proj Details Dependencies.swift */,
+				F37831D42D11D292007F7858 /* Proj Details Dependency List.swift */,
 				F37831C62D11A590007F7858 /* Proj Details Dependency.swift */,
 				F329E1802D3683E4007BA9D1 /* Proj Details Gitignore.swift */,
 				F38FB0E72DD2A79200C8A19B /* Targets */,
@@ -686,7 +686,7 @@
 				F329E1812D3683E4007BA9D1 /* Proj Details Gitignore.swift in Sources */,
 				F37831D32D11D221007F7858 /* Proj Details Targets.swift in Sources */,
 				F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */,
-				F37831D52D11D292007F7858 /* Proj Details Dependencies.swift in Sources */,
+				F37831D52D11D292007F7858 /* Proj Details Dependency List.swift in Sources */,
 				F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */,
 				F3ED776F2D1772F8000977AC /* Proj List VM.swift in Sources */,
 				F3522DCF2C2AA51800660101 /* Derived Data Entry.swift in Sources */,

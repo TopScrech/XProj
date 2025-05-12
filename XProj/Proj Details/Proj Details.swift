@@ -30,7 +30,7 @@ struct ProjDetails: View {
             }
             
             if store.showProjPackageDependencies {
-                ProjDetailsDependencies(proj.packages)
+                ProjDetailsDependencyList(proj.packages)
             }
             
             
