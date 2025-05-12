@@ -14,7 +14,7 @@ struct AppSettings: View {
                     vm.showPicker()
                 } label: {
                     HStack {
-                        Text("Projects")
+                        Label("Projects", systemImage: "folder")
                         
                         Spacer()
                         
@@ -28,7 +28,7 @@ struct AppSettings: View {
                     ddvm.showPicker()
                 } label: {
                     HStack {
-                        Text("Derived Data")
+                        Label("Derived Data", systemImage: "folder")
                         
                         Spacer()
                         
@@ -69,13 +69,7 @@ struct AppSettings: View {
                 Button {
                     downloadExamples()
                 } label: {
-                    HStack {
-                        Text("Save example projects for testing")
-                        
-                        Spacer()
-                        
-                        Image(systemName: "square.and.arrow.down")
-                    }
+                    Label("Save example projects for testing", systemImage: "square.and.arrow.down")
                 }
 #if DEBUG
                 Button("Clear navigation path") {
@@ -86,6 +80,7 @@ struct AppSettings: View {
         }
         .formStyle(.grouped)
         .buttonStyle(.plain)
+        .scrollIndicators(.never)
     }
     
     private func downloadExamples() {

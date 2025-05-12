@@ -120,7 +120,7 @@ final class DerivedDataVM {
         do {
             try processPath(url.path)
         } catch {
-            print("Error processing path: \(error.localizedDescription)")
+            print("Error processing path:", error.localizedDescription)
         }
     }
     
