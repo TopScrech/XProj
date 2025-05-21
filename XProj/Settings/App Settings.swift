@@ -81,6 +81,7 @@ struct AppSettings: View {
         .formStyle(.grouped)
         .buttonStyle(.plain)
         .scrollIndicators(.never)
+        .frame(width: 500, height: 600)
     }
     
     private func downloadExamples() {
