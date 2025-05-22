@@ -85,7 +85,7 @@ struct AppSettings: View {
                 Button {
                     downloadExamples()
                 } label: {
-                    Label("Save example projects for testing", systemImage: "square.and.arrow.down")
+                    Label("Save example projects to Downloads folder", systemImage: "square.and.arrow.down")
                 }
 #if DEBUG
                 Button("Clear navigation path") {
