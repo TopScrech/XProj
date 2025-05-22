@@ -13,29 +13,45 @@ struct AppSettings: View {
                 Button {
                     vm.showPicker()
                 } label: {
-                    HStack {
-                        Label("Projects", systemImage: "folder")
+//                    HStack {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Label("Projects", systemImage: "folder")
+                            
+                            Text(vm.projectsFolder.isEmpty ? "Not selected" : vm.projectsFolder)
+                                .secondary()
+                                .lineLimit(2)
+                        }
                         
-                        Spacer()
-                        
-                        Text(vm.projectsFolder.isEmpty ? "Not selected" : vm.projectsFolder)
-                            .secondary()
-                            .lineLimit(1)
-                    }
+//                        Spacer()
+//                        
+//                        SFButton("xmark") {
+//                            vm.projectsFolder = ""
+//                            deleteBookmark("derived_data_bookmark")
+//                            vm.projects = []
+//                        }
+//                    }
                 }
                 
                 Button {
                     ddvm.showPicker()
                 } label: {
-                    HStack {
-                        Label("Derived Data", systemImage: "folder")
+//                    HStack {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Label("Derived Data", systemImage: "folder")
+                            
+                            Text(ddvm.derivedDataUrl?.description ?? "Not selected")
+                                .secondary()
+                                .lineLimit(2)
+                        }
                         
-                        Spacer()
-                        
-                        Text(ddvm.derivedDataUrl?.description ?? "Not selected")
-                            .secondary()
-                            .lineLimit(1)
-                    }
+//                        Spacer()
+//                        
+//                        SFButton("xmark") {
+//                            ddvm.derivedDataUrl = nil
+//                            deleteBookmark("derived_data_bookmark")
+//                            ddvm.folders = []
+//                        }
+//                    }
                 }
             }
             

@@ -13,6 +13,17 @@ func saveSecurityScopedBookmark(_ url: URL, forKey key: String, result: () -> ()
         
         result()
     } catch {
-        print("Error saving bookmark for key \(key):", error)
+        print("Error saving bookmark for key", key, error)
+    }
+}
+
+func deleteBookmark(_ key: String) {
+    let defaults = UserDefaults.standard
+    
+    if defaults.object(forKey: key) != nil {
+        defaults.removeObject(forKey: key)
+        print("Bookmark data deleted for key:", key)
+    } else {
+        print("No bookmark data found for key:", key)
     }
 }

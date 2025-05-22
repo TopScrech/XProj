@@ -1,15 +1,14 @@
-// An observable data model of projects and miscellaneous groupings
-
 import ScrechKit
 
 @Observable
 final class DataModel {
-    private(set) var projects: [Proj] = []
+    var projects: [Proj] = []
     
     private var projectsById: [Proj.ID: Proj] = [:]
     
     var searchPrompt = ""
     var projectsFolder = ""
+    
     private let udKey = "projects_folder_bookmark"
     private let cacheKey = "projects_cache"
     

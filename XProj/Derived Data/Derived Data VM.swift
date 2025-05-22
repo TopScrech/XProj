@@ -2,13 +2,12 @@ import ScrechKit
 
 @Observable
 final class DerivedDataVM {
-    private(set) var folders: [DerivedDataFolder] = []
+    var folders: [DerivedDataFolder] = []
     var searchPrompt = ""
+    var derivedDataUrl: URL?
     
     private let udKey = "derived_data_bookmark"
     private let fm = FileManager.default
-    
-    private(set) var derivedDataUrl: URL?
     
     init() {
         DispatchQueue.global(qos: .background).async {

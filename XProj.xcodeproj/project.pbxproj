@@ -25,7 +25,7 @@
 		F33081832C9057F700605E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F33081822C9057F700605E43 /* Assets.xcassets */; };
 		F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3341E2C2BDE358900E85F27 /* XProj App.swift */; };
 		F3341E312BDE358A00E85F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3341E302BDE358A00E85F27 /* Assets.xcassets */; };
-		F3341E3F2BDEAB4D00E85F27 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3341E3E2BDEAB4D00E85F27 /* ScrechKit */; };
+		F34345C82DDEF9AE0033A7DE /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F34345C72DDEF9AE0033A7DE /* ScrechKit */; };
 		F3515C212D366DA70078E588 /* Proj Card Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3515C202D366DA70078E588 /* Proj Card Platforms.swift */; };
 		F3522DC62C2A29C000660101 /* Derived Data List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DC52C2A29C000660101 /* Derived Data List.swift */; };
 		F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCA2C2A2A5600660101 /* Derived Data VM.swift */; };
@@ -63,7 +63,6 @@
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Proj Card.swift */; };
 		F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* Search Suggestions.swift */; };
-		F38FB0E52DD2A73100C8A19B /* ScrechKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F3341E3E2BDEAB4D00E85F27 /* ScrechKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F3929A672D1BA52D00FB06E6 /* Search Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3929A662D1BA52D00FB06E6 /* Search Suggestion.swift */; };
 		F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */; };
 		F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */; };
@@ -104,7 +103,6 @@
 			dstPath = "";
 			dstSubfolder = Frameworks;
 			files = (
-				F38FB0E52DD2A73100C8A19B /* ScrechKit in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 		};
@@ -214,9 +212,9 @@
 		F3341E262BDE358900E85F27 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				F34345C82DDEF9AE0033A7DE /* ScrechKit in Frameworks */,
 				F358F02B2D2C19A200BCC07B /* LaunchAtLogin in Frameworks */,
 				F37831B72D1095EC007F7858 /* XcodeProjKit in Frameworks */,
-				F3341E3F2BDEAB4D00E85F27 /* ScrechKit in Frameworks */,
 			);
 		};
 		F371A51F2C2D97AB006BDF0D /* Frameworks */ = {
@@ -538,9 +536,9 @@
 			);
 			name = XProj;
 			packageProductDependencies = (
-				F3341E3E2BDEAB4D00E85F27 /* ScrechKit */,
 				F37831B62D1095EC007F7858 /* XcodeProjKit */,
 				F358F02A2D2C19A200BCC07B /* LaunchAtLogin */,
+				F34345C72DDEF9AE0033A7DE /* ScrechKit */,
 			);
 			productName = XProj;
 			productReference = F3341E292BDE358900E85F27 /* XProj.app */;
@@ -1091,7 +1089,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F3341E3E2BDEAB4D00E85F27 /* ScrechKit */ = {
+		F34345C72DDEF9AE0033A7DE /* ScrechKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F3341E3D2BDEAB4D00E85F27 /* XCRemoteSwiftPackageReference "ScrechKit" */;
 			productName = ScrechKit;

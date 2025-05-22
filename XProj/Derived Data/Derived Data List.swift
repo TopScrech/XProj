@@ -27,9 +27,10 @@ struct DerivedDataList: View {
             ForEach(vm.filteredFolders) { folder in
                 DerivedDataCard(folder)
             }
+#warning("searchable crashes cause there's already a searchbar")
         }
         .environment(vm)
-        .searchable(text: $vm.searchPrompt)
+        //        .searchable(text: $vm.searchPrompt)
         .toolbar {
             Button("Change folder") {
                 vm.showPicker()

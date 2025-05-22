@@ -1,4 +1,4 @@
-import SwiftUI
+import Foundation
 
 func restoreAccessToFolder(_ key: String) -> URL? {
     guard let bookmarkData = UserDefaults.standard.data(forKey: key) else {
@@ -16,7 +16,7 @@ func restoreAccessToFolder(_ key: String) -> URL? {
         )
         
         if isStale {
-            print("Bookmark data is stale. Need to reselect folder for a new bookmark")
+            print("Bookmark data is stale. Reselect the folder")
             return nil
         }
         
@@ -29,7 +29,7 @@ func restoreAccessToFolder(_ key: String) -> URL? {
         
         return url
     } catch {
-        print("Error resolving bookmark data for key \(key):", error.localizedDescription)
+        print("Error resolving bookmark data for key", key, error.localizedDescription)
         return nil
     }
 }
