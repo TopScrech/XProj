@@ -1,5 +1,3 @@
-// A recipe tile, displaying the recipe's photo and name
-
 import SwiftUI
 
 struct ProjGridItem: View {
@@ -32,6 +30,6 @@ struct ProjGridItem: View {
     }
 }
 
-#Preview() {
+#Preview {
     ProjGridItem(.mock)
 }

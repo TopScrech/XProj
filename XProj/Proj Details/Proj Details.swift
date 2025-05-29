@@ -1,6 +1,8 @@
 import ScrechKit
 
 struct ProjDetails: View {
+    @EnvironmentObject private var store: ValueStore
+    
     private let proj: Proj
     
     init(_ proj: Proj) {
@@ -19,27 +21,28 @@ struct ProjDetails: View {
             
             ProjDetailsDates(proj)
             
-            if let version = proj.swiftToolsVersion {
-                VStack {
-                    Text("Swift tools: ")
-                        .foregroundStyle(.secondary) +
-                    
-                    Text(version)
-                }
-                .padding(.vertical, 5)
-            }
+            ProjDetailsSwiftTools(proj.swiftToolsVersion)
             
             ProjDetailsActions(proj)
             
-            ProjDetailsTargets(proj.targets)
+            if store.showProjTargets {
+                ProjDetailsTargets(proj.targets)
+            }
             
-            ProjDetailsDependencies(proj.packages)
+            if store.showProjPackageDependencies {
+                ProjDetailsDependencyList(proj.packages)
+            }
+            
+            
+            if store.showGitignore {
+                ProjDetailsGitignore(proj.path)
+            }
         }
         .scrollIndicators(.never)
     }
 }
 
-//#Preview {
-//    ProjDetails(previewProj1)
-//        .environment(DataModel.shared)
-//}
+#Preview {
+    ProjDetails(previewProj1)
+        .environmentObject(ValueStore())
+}

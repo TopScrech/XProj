@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ProjDetailsTarget: View {
+    @EnvironmentObject private var store: ValueStore
+    
     private let target: Target
     
     init(_ target: Target) {
@@ -9,7 +11,7 @@ struct ProjDetailsTarget: View {
     
     var body: some View {
         HStack {
-            if let url = target.appStoreApp?.url {
+            if store.showProjAppStoreLink, let url = target.appStoreApp?.url {
                 Link(destination: url) {
                     Image(.appStore)
                         .resizable()
@@ -22,16 +24,20 @@ struct ProjDetailsTarget: View {
                 HStack(spacing: 0) {
                     Text(target.name)
                         .title3()
+                        .lineLimit(2)
                     
-                    if let version = target.version, let build = target.build {
-                        Text(" v\(version) (\(build))")
-                            .secondary()
+                    if store.showProjTargetVersion, target.type != .unitTests && target.type != .uiTests {
+                        if let version = target.version, let build = target.build {
+                            Text(" v\(version) (\(build))")
+                                .secondary()
+                        }
                     }
                 }
                 
                 if let bundle = target.bundleId {
                     Text(bundle)
-                        .foregroundStyle(.tertiary)
+                        .tertiary()
+                        .lineLimit(2)
                 }
             }
             
@@ -44,7 +50,7 @@ struct ProjDetailsTarget: View {
                         
                         Text(platform.split(separator: " ").last ?? "")
                             .footnote()
-                            .foregroundStyle(.tertiary)
+                            .tertiary()
                     }
                 }
                 
@@ -87,4 +93,5 @@ struct ProjDetailsTarget: View {
         )
     )
     .padding()
+    .environmentObject(ValueStore())
 }

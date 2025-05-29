@@ -21,7 +21,7 @@ struct ProjDetailsDependency: View {
                 if let requirement = package.requirementKind, let param = package.requirementParam {
                     Text("\(requirement): \(param)")
                         .footnote()
-                        .foregroundStyle(.tertiary)
+                        .tertiary()
                 }
             }
             
@@ -44,6 +44,6 @@ struct ProjDetailsDependency: View {
     }
 }
 
-//#Preview {
-//    ProjDetailsDependency()
-//}
+#Preview {
+    ProjDetailsDependency(.init(name: "Preview", repositoryUrl: ""))
+}

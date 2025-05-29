@@ -75,7 +75,7 @@ private struct Label: View {
     }
 }
 
-#Preview() {
+#Preview {
     @Previewable @State
     var selection: NavMode?
     

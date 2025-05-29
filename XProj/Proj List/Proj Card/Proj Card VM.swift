@@ -16,7 +16,7 @@ extension DataModel {
                 }
             }
         } catch {
-            print("Failed to read directory contents: \(error.localizedDescription)")
+            print("Failed to read directory contents:", error.localizedDescription)
         }
         
         return (false, nil)
@@ -33,10 +33,10 @@ extension DataModel {
             do {
                 try task.run()
             } catch {
-                print("Failed to launch Xcode: \(error.localizedDescription)")
+                print("Failed to launch Xcode:", error.localizedDescription)
             }
         } else {
-            print("File does not exist at path: \(filePath)")
+            print("File does not exist at path:", filePath)
         }
     }
 }

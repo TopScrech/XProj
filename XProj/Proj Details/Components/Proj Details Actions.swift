@@ -2,6 +2,7 @@ import ScrechKit
 
 struct ProjDetailsActions: View {
     @Environment(DataModel.self) private var vm
+    @EnvironmentObject private var store: ValueStore
     @Environment(\.openURL) private var openUrl
     
     private let proj: Proj
@@ -10,13 +11,20 @@ struct ProjDetailsActions: View {
         self.proj = proj
     }
     
+    private var appStoreUrl: URL? {
+        proj.targets.filter {
+            $0.appStoreApp != nil
+        }
+        .first?.appStoreApp?.url
+    }
+    
     var body: some View {
         HStack {
-            if let url = proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url {
+            if store.showProjAppStoreLink, let appStoreUrl {
                 Button("App Store") {
-                    openUrl(url)
+                    openUrl(appStoreUrl)
                 }
-                .help(url)
+                .help(appStoreUrl)
             }
             
             Button("Xcode") {
@@ -45,7 +53,8 @@ struct ProjDetailsActions: View {
     }
 }
 
-//#Preview {
-//    ProjDetailsActions(previewProj1)
-//        .environment(DataModel.shared)
-//}
+#Preview {
+    ProjDetailsActions(previewProj1)
+        .environment(DataModel.shared)
+        .environmentObject(ValueStore())
+}

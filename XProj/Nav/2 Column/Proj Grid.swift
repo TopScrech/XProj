@@ -1,5 +1,3 @@
-// A grid of proj tiles, based on a given category
-
 import SwiftUI
 
 struct ProjGrid: View {
@@ -12,7 +10,7 @@ struct ProjGrid: View {
             case .allItems:
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(dataModel.projects) { proj in
+                        ForEach(dataModel.filteredProjects) { proj in
                             NavigationLink(value: proj) {
                                 ProjGridItem(proj)
                             }
@@ -62,13 +60,13 @@ struct ProjGrid: View {
     ]}
 }
 
-#Preview() {
+#Preview {
     ProjGrid()
         .environment(DataModel.shared)
         .environment(NavModel(selectedCategory: .proj))
 }
 
-#Preview() {
+#Preview {
     ProjGrid()
         .environment(DataModel.shared)
         .environment(NavModel(selectedCategory: nil))

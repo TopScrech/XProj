@@ -1,31 +1,24 @@
 import Foundation
 
 final class ProjListVM {
-    private let fm = FileManager.default
-    var searchPrompt = ""
-    var projectsFolder = ""
-    private let udKey = "projects_folder_bookmark"
-    
     var projects: [Proj] = []
     
-    func getFolders() -> [Proj] {
+    private let fm = FileManager.default
+    private let udKey = "projects_folder_bookmark"
+    
+    func getFolders(_ projectsFolder: String) -> [Proj] {
         let startTime = CFAbsoluteTimeGetCurrent()
         
-        guard let url = restoreAccessToFolder(udKey) else {
-            print("Unable to restore access to the folder. Please select a new folder")
-            return []
-        }
-        
-        projectsFolder = url.path
-        
         do {
-            try processPath(url.path)
+            try processPath(projectsFolder)
         } catch {
-            print("Error processing path: \(error.localizedDescription)")
+            print("Error processing path:", error.localizedDescription)
         }
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        print("Time elapsed for processing projects: \(String(format: "%.3f", timeElapsed)) seconds")
+        let timeElapsedString = String(format: "%.3f", timeElapsed)
+        
+        print("Time elapsed for processing projects: \(timeElapsedString)s")
         
         return projects
     }
@@ -56,7 +49,7 @@ final class ProjListVM {
         
         let fileType: NavCategory
         
-#warning("Workspaces are not fully supported")
+#warning("Workspaces not fully supported")
         if hasFile(ofType: "xcodeproj", at: projPath) {
             if hasFile(ofType: "xcworkspace", at: projPath) {
                 fileType = .workspace

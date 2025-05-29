@@ -2,45 +2,35 @@ import SwiftUI
 
 struct ThreeColumnContainer: View {
     @Environment(NavModel.self) private var nav
-    @Environment(DataModel.self) private var dataModel
+    @Environment(DataModel.self) private var vm
     
     var body: some View {
         @Bindable var nav = nav
+        @Bindable var vm = vm
         
         NavigationSplitView(columnVisibility: $nav.columnVisibility) {
             ColumnSidebar()
         } content: {
-            ThreeColumnContent()
+            VStack {
+                ThreeColumnContent()
+                
+                BottomBar()
+            }
         } detail: {
             ThreeColumnDetail()
+                .frame(minWidth: 200)
+        }
+        .searchable(text: $vm.searchPrompt)
+        .searchSuggestions {
+            SearchSuggestions()
         }
         .toolbar {
-            Button("Open") {
-                if let proj = nav.selectedProj.first {
-                    dataModel.openProj(proj)
-                } else {
-                    dataModel.openProjects(nav.selectedProj)
-                }
-            }
-            .keyboardShortcut(.init("O", modifiers: .command))
-            .opacity(0)
-            .disabled(nav.selectedProj.count == 0)
-            
-            Button("Open") {
-                if let proj = nav.selectedProj.first {
-                    dataModel.openProj(proj)
-                } else {
-                    dataModel.openProjects(nav.selectedProj)
-                }
-            }
-            .keyboardShortcut(.defaultAction)
-            .opacity(0)
-            .disabled(nav.selectedProj.count == 0)
+            OpenButtons()
         }
     }
 }
 
-#Preview() {
+#Preview {
     ThreeColumnContainer()
         .environment(NavModel(columnVisibility: .all))
         .environment(DataModel.shared)

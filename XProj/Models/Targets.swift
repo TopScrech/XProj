@@ -1,7 +1,7 @@
 import Foundation
 import XcodeProjKit
 
-struct Target: Identifiable, Hashable, Decodable {
+struct Target: Identifiable, Hashable, Codable {
     var id: String
     
     let name: String
@@ -125,59 +125,59 @@ extension Proj {
             return []
         }
     }
+    
+    func determineType(_ name: String, _ buildSettings: [String: Any]?) -> (type: TargetType, versions: [String]) {
+        guard let buildSettings else {
+            return (.other, [])
+        }
+        
+        var type: TargetType = .other
+        var configs: [String] = []
+        
+        if let iOS = buildSettings["IPHONEOS_DEPLOYMENT_TARGET"] as? String {
+            configs.append("iOS \(iOS)")
+            type = .app
+        }
+        
+        if let macOS = buildSettings["MACOSX_DEPLOYMENT_TARGET"] as? String {
+            configs.append("macOS \(macOS)")
+            type = .app
+        }
+        
+        if let tvOS = buildSettings["TVOS_DEPLOYMENT_TARGET"] as? String {
+            configs.append("tvOS \(tvOS)")
+            type = .app
+        }
+        
+        if let watchOS = buildSettings["WATCHOS_DEPLOYMENT_TARGET"] as? String {
+            configs.append("watchOS \(watchOS)")
+            type = .app
+        }
+        
+        if let visionOS = buildSettings["XROS_DEPLOYMENT_TARGET"] as? String {
+            configs.append("visionOS \(visionOS)")
+            type = .app
+        }
+        
+        switch name {
+        case "Widgets Extension":
+            type = .widgets
+            
+        case "iMessage Extension":
+            type = .iMessage
+            
+        case "Unit Tests":
+            type = .unitTests
+            
+        case "UI Tests":
+            type = .uiTests
+            
+        default:
+            break
+        }
+        
+        return (type, configs)
+    }
 }
 
 extension PBXNativeTarget: @retroactive Identifiable {}
-
-func determineType(_ name: String, _ buildSettings: [String: Any]?) -> (type: TargetType, versions: [String]) {
-    guard let buildSettings else {
-        return (.other, [])
-    }
-    
-    var type: TargetType = .other
-    var configs: [String] = []
-    
-    if let iOS = buildSettings["IPHONEOS_DEPLOYMENT_TARGET"] as? String {
-        configs.append("iOS \(iOS)")
-        type = .app
-    }
-    
-    if let macOS = buildSettings["MACOSX_DEPLOYMENT_TARGET"] as? String {
-        configs.append("macOS \(macOS)")
-        type = .app
-    }
-    
-    if let tvOS = buildSettings["TVOS_DEPLOYMENT_TARGET"] as? String {
-        configs.append("tvOS \(tvOS)")
-        type = .app
-    }
-    
-    if let watchOS = buildSettings["WATCHOS_DEPLOYMENT_TARGET"] as? String {
-        configs.append("watchOS \(watchOS)")
-        type = .app
-    }
-    
-    if let visionOS = buildSettings["XROS_DEPLOYMENT_TARGET"] as? String {
-        configs.append("visionOS \(visionOS)")
-        type = .app
-    }
-    
-    switch name {
-    case "Widgets Extension":
-        type = .widgets
-        
-    case "iMessage Extension":
-        type = .iMessage
-        
-    case "Unit Tests":
-        type = .unitTests
-        
-    case "UI Tests":
-        type = .uiTests
-        
-    default:
-        break
-    }
-    
-    return (type, configs)
-}

@@ -1,37 +1,84 @@
-// An observable data model of projects and miscellaneous groupings
-
-import SwiftUI
+import ScrechKit
 
 @Observable
 final class DataModel {
-    private(set) var projects: [Proj]
+    var projects: [Proj] = []
     
     private var projectsById: [Proj.ID: Proj] = [:]
     
     var searchPrompt = ""
     var projectsFolder = ""
-    private let udKey = "projects_folder_bookmark"
     
-    // The shared singleton data model object
+    private let udKey = "projects_folder_bookmark"
+    private let cacheKey = "projects_cache"
+    
+    // Shared singleton data model object
     static let shared = {
         DataModel()
     }()
     
     init() {
-        let vm = ProjListVM()
+        loadCachedProjects()
         
-        let projects = vm.getFolders()
-        projectsFolder = vm.projectsFolder
-        
-        projectsById = Dictionary(uniqueKeysWithValues: projects.map { proj in
-            (proj.id, proj)
-        })
-        
-        self.projects = projects
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.refreshProjects()
+        }
     }
     
-    /// Accesses the project associated with the given unique identifier
-    /// if the identifier is tracked by the data model; otherwise, returns `nil`
+    private func loadCachedProjects() {
+        if let cachedData = UserDefaults.standard.data(forKey: cacheKey),
+           let cachedProjects = try? JSONDecoder().decode([Proj].self, from: cachedData) {
+            
+            main {
+                self.projects = cachedProjects
+                
+                self.projectsById = Dictionary(uniqueKeysWithValues: cachedProjects.map { proj in
+                    (proj.id, proj)
+                })
+            }
+        }
+    }
+    
+    private func restoreProjPath() -> String? {
+        guard let url = restoreAccessToFolder(udKey) else {
+            print("Unable to restore access to the folder. Please select a new folder")
+            return nil
+        }
+        
+        return url.path
+    }
+    
+    private func refreshProjects() {
+        guard let folder = restoreProjPath() else {
+            return
+        }
+        
+        projectsFolder = folder
+        
+        let vm = ProjListVM()
+        let projects = vm.getFolders(folder)
+        
+        main {
+            self.projects = projects
+            self.projectsFolder = folder
+            
+            self.projectsById = Dictionary(uniqueKeysWithValues: projects.map { proj in
+                (proj.id, proj)
+            })
+            
+            // Cache the fetched projects
+            self.cacheProjects(projects)
+        }
+    }
+    
+    private func cacheProjects(_ projects: [Proj]) {
+        if let data = try? JSONEncoder().encode(projects) {
+            UserDefaults.standard.set(data, forKey: cacheKey)
+        }
+    }
+    
+    /// Accesses the project associated with the given unique id
+    /// if the id is tracked by the data model; otherwise, returns `nil`
     subscript(projId: Proj.ID) -> Proj? {
         projectsById[projId]
     }
@@ -47,8 +94,7 @@ final class DataModel {
         
         return sortedProjects.filter {
             $0.name
-                .lowercased()
-                .contains(searchPrompt.lowercased())
+                .localizedStandardContains(searchPrompt)
         }
     }
     
@@ -68,15 +114,16 @@ final class DataModel {
             }
             
             saveSecurityScopedBookmark(url, forKey: self.udKey) {
-#warning("Refresh")
-                //                self.getFolders()
+                DispatchQueue.global(qos: .userInitiated).async {
+                    self.refreshProjects()
+                }
             }
         }
     }
     
     /// Projects for a given category, sorted by name
     func projects(in type: NavCategory?) -> [Proj] {
-        projects.filter {
+        filteredProjects.filter {
             $0.type == type
         }
     }

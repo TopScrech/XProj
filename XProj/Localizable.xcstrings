@@ -21,9 +21,6 @@
       },
       "shouldTranslate" : false
     },
-    "(%lld duplicates)" : {
-
-    },
     "%@: %@" : {
       "localizations" : {
         "en" : {
@@ -37,22 +34,19 @@
     "%lld duplicates" : {
 
     },
-    "%lld Projects" : {
-
-    },
     "All" : {
 
     },
     "App Store" : {
       "shouldTranslate" : false
     },
+    "App store link" : {
+
+    },
     "Categories" : {
 
     },
     "Change folder" : {
-
-    },
-    "Change projects folder" : {
 
     },
     "Choose a category" : {
@@ -67,7 +61,7 @@
     "Clear" : {
 
     },
-    "Clear nav" : {
+    "Clear navigation path" : {
 
     },
     "countFilesInFoldersMultiThread" : {
@@ -77,6 +71,9 @@
 
     },
     "Created: " : {
+
+    },
+    "Debug" : {
 
     },
     "Delete" : {
@@ -95,6 +92,9 @@
       "shouldTranslate" : false
     },
     "Functions" : {
+
+    },
+    "Git ignore" : {
 
     },
     "Last opened: " : {
@@ -138,6 +138,9 @@
     "Other" : {
 
     },
+    "Package dependencies" : {
+
+    },
     "Package Dependencies" : {
 
     },
@@ -159,6 +162,12 @@
     "Presents views in two columns: sidebar and detail" : {
 
     },
+    "Project details" : {
+
+    },
+    "Project List" : {
+
+    },
     "Projects" : {
 
     },
@@ -175,7 +184,13 @@
         }
       }
     },
+    "questionmark" : {
+
+    },
     "Remote" : {
+
+    },
+    "Save example projects to Downloads folder" : {
 
     },
     "Save to Downloads" : {
@@ -184,7 +199,7 @@
     "Search" : {
 
     },
-    "Settings" : {
+    "Selected folders" : {
 
     },
     "Smart Scan" : {
@@ -197,6 +212,12 @@
 
     },
     "Swift tools: " : {
+
+    },
+    "Target version" : {
+
+    },
+    "Targets" : {
 
     },
     "Targets: %lld" : {

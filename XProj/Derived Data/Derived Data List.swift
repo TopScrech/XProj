@@ -1,9 +1,11 @@
 import ScrechKit
 
 struct DerivedDataList: View {
-    @State private var vm = DerivedDataVM()
+    @Environment(DerivedDataVM.self) private var vm
     
     var body: some View {
+        @Bindable var vm = vm
+        
 #warning("Show Derived Data of not existing projects")
         List {
             if !vm.filteredFolders.isEmpty {
@@ -25,14 +27,10 @@ struct DerivedDataList: View {
             ForEach(vm.filteredFolders) { folder in
                 DerivedDataCard(folder)
             }
+#warning("searchable crashes cause there's already a searchbar")
         }
         .environment(vm)
-        .searchable(text: $vm.searchPrompt)
-        .refreshableTask {
-            DispatchQueue.global(qos: .background).async {
-                vm.getFolders()
-            }
-        }
+        //        .searchable(text: $vm.searchPrompt)
         .toolbar {
             Button("Change folder") {
                 vm.showPicker()
@@ -47,4 +45,5 @@ struct DerivedDataList: View {
 
 #Preview {
     DerivedDataList()
+        .environment(DerivedDataVM())
 }

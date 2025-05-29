@@ -1,6 +1,6 @@
 import Foundation
 
-struct Package: Identifiable, Hashable, Decodable {
+struct Package: Identifiable, Hashable, Codable {
     var id: String {
         repositoryUrl
     }
@@ -22,7 +22,7 @@ struct Package: Identifiable, Hashable, Decodable {
         self.requirementParam = requirementParam
     }
     
-#warning("Requirement kind and param are disabled to fix navigation issues")
+#warning("Requirement kind and param are disabled to fix nav issues")
     
     var author: String? {
         // Attempt to create a URL object from the input string
@@ -32,7 +32,7 @@ struct Package: Identifiable, Hashable, Decodable {
         }
         
         // Ensure the host is Github
-        guard url.host?.lowercased().contains("github.com") == true else {
+        guard url.host?.localizedStandardContains("github.com") == true else {
             print("URL is not a GitHub repository")
             return nil
         }

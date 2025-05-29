@@ -2,14 +2,18 @@ import ScrechKit
 
 @main
 struct XProjApp: App {
+    @StateObject private var store = ValueStore()
     private var nav: NavModel = .shared
-    private var dataModel: DataModel = .shared
+    private var vm: DataModel = .shared
+    private var derivedData = DerivedDataVM()
     
     var body: some Scene {
         WindowGroup {
             NavContainer()
                 .environment(nav)
-                .environment(dataModel)
+                .environment(vm)
+                .environment(derivedData)
+                .environmentObject(store)
                 .frame(minWidth: 800, minHeight: 600)
         }
         .commands {
@@ -17,19 +21,21 @@ struct XProjApp: App {
         }
         
         Settings {
-            SettingsView()
+            AppSettings()
                 .environment(nav)
-                .environment(dataModel)
+                .environment(vm)
+                .environment(derivedData)
+                .environmentObject(store)
         }
         
-#warning("MenuBarExtra")
-        //        MenuBarExtra("Project List", systemImage: "hammer") {
-        //            NavigationStack {
-        //                MBProjList()
-        //            }
-        //            .environment(nav)
-        //            .environment(dataModel)
-        //        }
-        //        .menuBarExtraStyle(.window)
+        MenuBarExtra("Project List", systemImage: "hammer") {
+            NavigationStack {
+                MBProjList()
+            }
+            .environment(nav)
+            .environment(vm)
+            .environment(derivedData)
+        }
+        .menuBarExtraStyle(.window)
     }
 }

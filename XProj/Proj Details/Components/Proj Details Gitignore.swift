@@ -1,0 +1,71 @@
+import SwiftUI
+
+struct ProjDetailsGitignore: View {
+    private let path: String
+    
+    init(_ path: String) {
+        self.path = path
+    }
+    
+    private var gitignorePath: String {
+        (path as NSString).appendingPathComponent(".gitignore")
+    }
+    
+    var body: some View {
+        if let lines = processGitignore(path) {
+            Section {
+                ForEach(lines, id: \.self) { line in
+                    Text(line)
+                        .lineLimit(1)
+                }
+            } header: {
+                Button("Git ignore") {
+                    openGitignore()
+                }
+                .title2()
+                .buttonStyle(.plain)
+                .onDrag {
+                    let fileURL = URL(fileURLWithPath: gitignorePath)
+                    return NSItemProvider(object: fileURL as NSURL)
+                } preview: {
+                    Image(systemName: "text.document")
+                }
+            }
+        }
+    }
+    
+    private func processGitignore(_ path: String) -> [String]? {
+        let fm = FileManager.default
+        
+        guard fm.fileExists(atPath: gitignorePath) else {
+            print(".gitignore file does not exist at this path")
+            return nil
+        }
+        
+        guard let contents = try? String(contentsOfFile: gitignorePath, encoding: .utf8) else {
+            print("Failed to read .gitignore")
+            return nil
+        }
+        
+        let lines = contents
+            .components(separatedBy: .newlines)
+            .filter {
+                !$0.trimmingCharacters(in: .whitespaces).isEmpty
+            }
+        
+        return lines
+    }
+    
+    private func openGitignore() {
+        let fm = FileManager.default
+        
+        let fileUrl = URL(fileURLWithPath: gitignorePath)
+        
+        guard fm.fileExists(atPath: gitignorePath) else {
+            print(".gitignore file does not exist at this path")
+            return
+        }
+        
+        NSWorkspace.shared.open(fileUrl)
+    }
+}
