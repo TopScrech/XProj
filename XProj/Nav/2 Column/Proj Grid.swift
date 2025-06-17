@@ -19,7 +19,7 @@ struct ProjGrid: View {
                     }
                     .padding()
                 }
-                .navigationTitle(category.localizedName)
+                .navigationTitle(category.loc)
                 .navigationDestination(for: Proj.self) { proj in
                     ProjDetails(proj)
                 }
@@ -44,7 +44,7 @@ struct ProjGrid: View {
                     }
                     .padding()
                 }
-                .navigationTitle(category.localizedName)
+                .navigationTitle(category.loc)
                 .navigationDestination(for: Proj.self) { proj in
                     ProjDetails(proj)
                 }

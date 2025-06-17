@@ -44,7 +44,7 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
         }
     }
     
-    var localizedName: LocalizedStringKey {
+    var loc: LocalizedStringKey {
         switch self {
         case .package:             "Packages"
         case .playground:          "Playgrounds"

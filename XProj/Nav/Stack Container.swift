@@ -20,7 +20,7 @@ struct StackContainer: View {
                             }
                         }
                     } header: {
-                        Text(category.localizedName)
+                        Text(category.loc)
                     }
                 }
                 

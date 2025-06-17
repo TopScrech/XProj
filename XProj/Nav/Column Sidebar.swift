@@ -28,7 +28,7 @@ struct ColumnSidebar: View {
                 let type = NavCategory.allItems
                 
                 NavigationLink(value: type) {
-                    Label(type.localizedName, systemImage: type.icon)
+                    Label(type.loc, systemImage: type.icon)
                         .bold()
                 }
             }
@@ -37,7 +37,7 @@ struct ColumnSidebar: View {
                 ForEach(categories) { type in
                     if !vm.projects(in: type).isEmpty {
                         NavigationLink(value: type) {
-                            Label(type.localizedName, systemImage: type.icon)
+                            Label(type.loc, systemImage: type.icon)
                         }
                     }
                 }
@@ -59,7 +59,7 @@ struct ColumnSidebar: View {
                 let type = NavCategory.packageDependencies
                 
                 NavigationLink(value: type) {
-                    Label(type.localizedName, systemImage: type.icon)
+                    Label(type.loc, systemImage: type.icon)
                 }
             }
             
@@ -67,7 +67,7 @@ struct ColumnSidebar: View {
                 let type = NavCategory.derivedData
                 
                 NavigationLink(value: type) {
-                    Label(type.localizedName, systemImage: type.icon)
+                    Label(type.loc, systemImage: type.icon)
                 }
             }
         }
