@@ -587,6 +587,7 @@
 				en,
 				Base,
 				ru,
+				nl,
 			);
 			mainGroup = F3341E202BDE358900E85F27;
 			packageReferences = (

@@ -86,16 +86,30 @@
 
     },
     "Examples" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voorbeelden"
+          }
+        }
+      }
     },
     "Finder" : {
       "shouldTranslate" : false
     },
     "Functions" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Functies"
+          }
+        }
+      }
     },
     "Git ignore" : {
-
+      "shouldTranslate" : false
     },
     "Last opened: " : {
 
@@ -148,7 +162,14 @@
 
     },
     "Packages" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packages"
+          }
+        }
+      }
     },
     "Playgrounds" : {
       "shouldTranslate" : false
@@ -169,7 +190,14 @@
 
     },
     "Projects" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projecten"
+          }
+        }
+      }
     },
     "Projects using %@" : {
 
@@ -194,13 +222,27 @@
 
     },
     "Save to Downloads" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opslaan naar Downloads"
+          }
+        }
+      }
     },
     "Search" : {
 
     },
     "Selected folders" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geselecteerde folders"
+          }
+        }
+      }
     },
     "Smart Scan" : {
 
@@ -224,13 +266,34 @@
       "shouldTranslate" : false
     },
     "Three columns" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drie kolommen"
+          }
+        }
+      }
     },
     "Total:" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Totaal:"
+          }
+        }
+      }
     },
     "Two columns" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twee kolommen"
+          }
+        }
+      }
     },
     "Vapor" : {
       "shouldTranslate" : false
