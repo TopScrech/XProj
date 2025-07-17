@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 struct ProjListToolbar: View {
     @Environment(DataModel.self) private var vm
@@ -34,21 +34,13 @@ struct ProjListToolbar: View {
                         print(test)
                     }
                     
-                    DispatchQueue.main.async {
+                    main {
                         let finish = DispatchTime.now()
                         let timeElapsed = finish.uptimeNanoseconds - start.uptimeNanoseconds
                         let timeElapsedInSeconds = Double(timeElapsed) / 1_000_000_000
                         
                         print("Time elapsed: \(timeElapsedInSeconds)s")
                     }
-                }
-            }
-            
-            Button("countFilesInFoldersMultiThread") {
-                vm.countFilesInFoldersMultiThread(
-                    vm.projects.map(\.path)
-                ) { _ in
-                    
                 }
             }
         }

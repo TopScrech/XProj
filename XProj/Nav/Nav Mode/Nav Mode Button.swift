@@ -6,11 +6,11 @@ struct NavModeButton: View {
     @AppStorage("experience") private var experience: NavMode?
     
     private var icon: String {
-        experience?.imageName ?? "questionmark"
+        experience?.icon ?? "questionmark"
     }
     
     private var name: LocalizedStringKey {
-        experience?.localizedName ?? ""
+        experience?.name ?? ""
     }
     
     var body: some View {

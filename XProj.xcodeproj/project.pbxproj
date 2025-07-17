@@ -85,7 +85,7 @@
 		F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6642D161EAA0012BA9D /* Stack Container.swift */; };
 		F3DAD68A2D161ECC0012BA9D /* Proj Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */; };
 		F3DAD68C2D161ECC0012BA9D /* Nav Mode Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6812D161ECC0012BA9D /* Nav Mode Button.swift */; };
-		F3DAD68D2D161ECC0012BA9D /* Nav Mode Picker Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6832D161ECC0012BA9D /* Nav Mode Picker Row.swift */; };
+		F3DAD68D2D161ECC0012BA9D /* Nav Mode Picker Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6832D161ECC0012BA9D /* Nav Mode Picker Item.swift */; };
 		F3DAD68E2D161ECC0012BA9D /* Nav Mode Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6822D161ECC0012BA9D /* Nav Mode Picker.swift */; };
 		F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */; };
 		F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */; };
@@ -189,7 +189,7 @@
 		F3DAD6712D161EAA0012BA9D /* Proj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proj.swift; sourceTree = "<group>"; };
 		F3DAD6812D161ECC0012BA9D /* Nav Mode Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Mode Button.swift"; sourceTree = "<group>"; };
 		F3DAD6822D161ECC0012BA9D /* Nav Mode Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Mode Picker.swift"; sourceTree = "<group>"; };
-		F3DAD6832D161ECC0012BA9D /* Nav Mode Picker Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Mode Picker Row.swift"; sourceTree = "<group>"; };
+		F3DAD6832D161ECC0012BA9D /* Nav Mode Picker Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Mode Picker Item.swift"; sourceTree = "<group>"; };
 		F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Grid.swift"; sourceTree = "<group>"; };
 		F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Grid Item.swift"; sourceTree = "<group>"; };
 		F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List Toolbar.swift"; sourceTree = "<group>"; };
@@ -462,7 +462,7 @@
 			children = (
 				F3DAD6812D161ECC0012BA9D /* Nav Mode Button.swift */,
 				F3DAD6822D161ECC0012BA9D /* Nav Mode Picker.swift */,
-				F3DAD6832D161ECC0012BA9D /* Nav Mode Picker Row.swift */,
+				F3DAD6832D161ECC0012BA9D /* Nav Mode Picker Item.swift */,
 				F3DAD66F2D161EAA0012BA9D /* Nav Mode.swift */,
 			);
 			path = "Nav Mode";
@@ -587,6 +587,7 @@
 				en,
 				Base,
 				ru,
+				nl,
 			);
 			mainGroup = F3341E202BDE358900E85F27;
 			packageReferences = (
@@ -657,7 +658,7 @@
 				F3DAD68A2D161ECC0012BA9D /* Proj Grid.swift in Sources */,
 				F3FC8A582D1AFDC300A7CCBC /* 2 Column Detail.swift in Sources */,
 				F3DAD68C2D161ECC0012BA9D /* Nav Mode Button.swift in Sources */,
-				F3DAD68D2D161ECC0012BA9D /* Nav Mode Picker Row.swift in Sources */,
+				F3DAD68D2D161ECC0012BA9D /* Nav Mode Picker Item.swift in Sources */,
 				F3DAD68E2D161ECC0012BA9D /* Nav Mode Picker.swift in Sources */,
 				F3FC8A5A2D1AFEC700A7CCBC /* 3 Column Detail.swift in Sources */,
 				F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */,
@@ -846,7 +847,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -908,7 +909,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;

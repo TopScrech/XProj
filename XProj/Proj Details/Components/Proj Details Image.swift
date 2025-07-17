@@ -15,12 +15,14 @@ struct ProjDetailsImage: View {
                 .frame(width: 100, height: 100)
                 .clipShape(.rect(cornerRadius: 16))
                 .onDrag {
-                    let fileURL = URL(fileURLWithPath: path)
-                    return NSItemProvider(object: fileURL as NSURL)
+                    let fileUrl = URL(fileURLWithPath: path)
+                    return NSItemProvider(object: fileUrl as NSURL)
                 }
                 .contextMenu {
-                    Button("Save to Downloads") {
+                    Button {
                         saveToDownloads(path)
+                    } label: {
+                        Label("Save to Downloads", systemImage: "square.and.arrow.down")
                     }
                     
                     ShareLink(item: URL(fileURLWithPath: path))

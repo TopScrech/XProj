@@ -1,7 +1,10 @@
 import Foundation
 
 extension DataModel {
-    func listFilesInFoldersSingleThread(_ folderPaths: [String]) -> [String: [String]?] {
+    func listFilesInFoldersSingleThread(
+        _ folderPaths: [String]
+    ) -> [String: [String]?] {
+        
         let startTime = CFAbsoluteTimeGetCurrent()
         
         var folderContents = [String: [String]?]()
@@ -17,7 +20,8 @@ extension DataModel {
         }
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        print(String(format: "Single-threaded scanned \(folderContents.count) folders in %.3f seconds", timeElapsed))
+        
+        print(String(format: "Single-threaded scanned", folderContents.count, "folders in %.3f seconds", timeElapsed))
         print("Total files found:", totalFiles)
         
         return folderContents
@@ -39,7 +43,7 @@ extension DataModel {
         }
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        print(String(format: "Single-threaded scanned \(folderFileCounts.count) folders in %.3f seconds", timeElapsed))
+        print(String(format: "Single-threaded scanned", folderFileCounts.count, "folders in %.3f seconds", timeElapsed))
         print("Total files found:", totalFiles)
         
         return folderFileCounts
@@ -53,8 +57,13 @@ extension DataModel {
             
             for item in contents {
                 var isDirectory: ObjCBool = false
-                let fullPath = (folder as NSString).appendingPathComponent(item)
-                let isExisting = FileManager.default.fileExists(atPath: fullPath, isDirectory: &isDirectory)
+                let fullPath = (folder as NSString)
+                    .appendingPathComponent(item)
+                
+                let isExisting = FileManager.default.fileExists(
+                    atPath: fullPath,
+                    isDirectory: &isDirectory
+                )
                 
                 guard isExisting else {
                     return nil
@@ -85,8 +94,14 @@ extension DataModel {
             
             for item in contents {
                 var isDirectory: ObjCBool = false
-                let fullPath = (folder as NSString).appendingPathComponent(item)
-                let isExisting = FileManager.default.fileExists(atPath: fullPath, isDirectory: &isDirectory)
+                
+                let fullPath = (folder as NSString)
+                    .appendingPathComponent(item)
+                
+                let isExisting = FileManager.default.fileExists(
+                    atPath: fullPath,
+                    isDirectory: &isDirectory
+                )
                 
                 guard isExisting else {
                     return nil
@@ -107,7 +122,10 @@ extension DataModel {
         return allFiles
     }
     
-    func countFilesInFoldersMultiThread(_ folderPaths: [String], completion: @escaping ([String: Int?]) -> Void) {
+    func countFilesInFoldersMultiThread(
+        _ folderPaths: [String],
+        completion: @escaping ([String: Int?]) -> Void
+    ) {
         let startTime = CFAbsoluteTimeGetCurrent()
         
         var folderFileCounts = [String: Int?]()
@@ -141,7 +159,7 @@ extension DataModel {
         dispatchGroup.notify(queue: .main) {
             let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
             
-            print(String(format: "Multi-threaded scanned \(folderFileCounts.count) folders in %.3f seconds", timeElapsed))
+            print(String(format: "Multi-threaded scanned", folderFileCounts.count, "folders in %.3f seconds", timeElapsed))
             print("Total files found:", totalFiles)
             
             completion(folderFileCounts)

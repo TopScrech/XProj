@@ -9,52 +9,6 @@ struct AppSettings: View {
     
     var body: some View {
         Form {
-            Section("Selected folders") {
-                Button {
-                    vm.showPicker()
-                } label: {
-//                    HStack {
-                        VStack(alignment: .leading, spacing: 5) {
-                            Label("Projects", systemImage: "folder")
-                            
-                            Text(vm.projectsFolder.isEmpty ? "Not selected" : vm.projectsFolder)
-                                .secondary()
-                                .lineLimit(2)
-                        }
-                        
-//                        Spacer()
-//                        
-//                        SFButton("xmark") {
-//                            vm.projectsFolder = ""
-//                            deleteBookmark("derived_data_bookmark")
-//                            vm.projects = []
-//                        }
-//                    }
-                }
-                
-                Button {
-                    ddvm.showPicker()
-                } label: {
-//                    HStack {
-                        VStack(alignment: .leading, spacing: 5) {
-                            Label("Derived Data", systemImage: "folder")
-                            
-                            Text(ddvm.derivedDataUrl?.description ?? "Not selected")
-                                .secondary()
-                                .lineLimit(2)
-                        }
-                        
-//                        Spacer()
-//                        
-//                        SFButton("xmark") {
-//                            ddvm.derivedDataUrl = nil
-//                            deleteBookmark("derived_data_bookmark")
-//                            ddvm.folders = []
-//                        }
-//                    }
-                }
-            }
-            
             Section {
                 HStack {
                     Text("Navigation mode")
@@ -67,18 +21,82 @@ struct AppSettings: View {
                 LaunchAtLogin.Toggle()
             }
             
+            Section("Selected folders") {
+                Button {
+                    vm.showPicker()
+                } label: {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Label("Projects", systemImage: "folder")
+                            
+                            Text(vm.projectsFolder.isEmpty ? "Not selected" : vm.projectsFolder)
+                                .tertiary()
+                                .lineLimit(2)
+                        }
+                        
+                        Spacer()
+                        
+                        if !vm.projectsFolder.isEmpty {
+                            SFButton("xmark") {
+                                vm.projectsFolder = ""
+                                deleteBookmark("derived_data_bookmark")
+                                vm.projects = []
+                            }
+                            .foregroundStyle(.red)
+                        }
+                    }
+                    .animation(.default, value: vm.projectsFolder)
+                }
+                
+                Button {
+                    ddvm.showPicker()
+                } label: {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Label("Derived Data", systemImage: "folder")
+                            
+                            Text(ddvm.derivedDataUrl?.description ?? "Not selected")
+                                .tertiary()
+                                .lineLimit(2)
+                        }
+                        
+                        Spacer()
+                        
+                        if ddvm.derivedDataUrl?.description != nil {
+                            SFButton("xmark") {
+                                ddvm.derivedDataUrl = nil
+                                deleteBookmark("derived_data_bookmark")
+                                ddvm.folders = []
+                            }
+                            .foregroundStyle(.red)
+                        }
+                    }
+                    .animation(.default, value: ddvm.derivedDataUrl)
+                }
+            }
+            
             Section("Project details") {
-                Toggle("Targets", isOn: $store.showProjTargets)
+                Toggle(isOn: $store.showProjTargets) {
+                    Label("Targets", systemImage: "macbook.and.iphone")
+                }
                 
-                Toggle("Target version", isOn: $store.showProjTargetVersion)
-                    .disabled(!store.showProjTargets)
-                    .foregroundStyle(store.showProjTargets ? .primary : .secondary)
+                if store.showProjTargets {
+                    Toggle(isOn: $store.showProjTargetVersion) {
+                        Label("Target version", systemImage: "info")
+                    }
+                }
                 
-                Toggle("Package dependencies", isOn: $store.showProjPackageDependencies)
+                Toggle(isOn: $store.showProjPackageDependencies) {
+                    Label("Package dependencies", systemImage: "shippingbox")
+                }
                 
-                Toggle("App store link", isOn: $store.showProjAppStoreLink)
+                Toggle(isOn: $store.showProjAppStoreLink) {
+                    Label("App Store link", systemImage: "link")
+                }
                 
-                Toggle("Git ignore", isOn: $store.showGitignore)
+                Toggle(isOn: $store.showGitignore) {
+                    Label("Git ignore", systemImage: "app.connected.to.app.below.fill")
+                }
             }
             
             Section("Debug") {
@@ -88,8 +106,11 @@ struct AppSettings: View {
                     Label("Save example projects to Downloads folder", systemImage: "square.and.arrow.down")
                 }
 #if DEBUG
-                Button("Clear navigation path") {
+                Button {
                     nav.clearNavCache()
+                } label: {
+                    Label("Clear navigation path", systemImage: "xmark")
+                        .foregroundStyle(.red)
                 }
 #endif
             }
@@ -98,15 +119,20 @@ struct AppSettings: View {
         .buttonStyle(.plain)
         .scrollIndicators(.never)
         .frame(width: 500, height: 600)
+        .animation(.default, value: store.showProjTargets)
     }
     
     private func downloadExamples() {
-        guard let sourceUrl = Bundle.main.url(forResource: "Examples", withExtension: "zip") else {
+        guard
+            let sourceUrl = Bundle.main.url(forResource: "Examples", withExtension: "zip")
+        else {
             print("Examples.zip not found in the main bundle")
             return
         }
         
-        guard let downloadsUrl = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first else {
+        guard
+            let downloadsUrl = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
+        else {
             print("Unable to locate the Downloads folder")
             return
         }

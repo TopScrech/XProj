@@ -18,7 +18,7 @@ struct ThreeColumnContent: View {
                     }
                 }
                 .frame(minWidth: 600)
-                .navigationTitle(category.localizedName)
+                .navigationTitle(category.loc)
                 
             case .derivedData:
                 DerivedDataList()
@@ -35,7 +35,7 @@ struct ThreeColumnContent: View {
                     }
                 }
                 .frame(minWidth: 600)
-                .navigationTitle(category.localizedName)
+                .navigationTitle(category.loc)
             }
         } else {
             Text("Choose a category")

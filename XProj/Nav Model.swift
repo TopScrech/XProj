@@ -102,7 +102,7 @@ final class NavModel: Codable {
             }
             
             selectedCategory = model.selectedCategory
-            projPath = model.projPath
+            projPath         = model.projPath
             columnVisibility = model.columnVisibility
         }
     }
