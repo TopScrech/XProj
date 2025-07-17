@@ -45,26 +45,26 @@
             "plural" : {
               "few" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld duplicates"
+                  "state" : "translated",
+                  "value" : "%lld дупликата"
                 }
               },
               "many" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld duplicates"
+                  "state" : "translated",
+                  "value" : "%lld дупликатов"
                 }
               },
               "one" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld duplicates"
+                  "state" : "translated",
+                  "value" : "%lld дупликат"
                 }
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "new",
-                  "value" : "%lld duplicates"
+                  "state" : "translated",
+                  "value" : "%lld дупликата"
                 }
               }
             }
@@ -73,7 +73,14 @@
       }
     },
     "All" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Все"
+          }
+        }
+      }
     },
     "App Store" : {
       "shouldTranslate" : false
@@ -84,6 +91,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "App Store link"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ссылка на App Store"
           }
         }
       }
@@ -111,6 +124,12 @@
             "state" : "translated",
             "value" : "Folder wijzigen"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изменить папку"
+          }
         }
       }
     },
@@ -130,9 +149,6 @@
         }
       }
     },
-    "Choose your navigation experience" : {
-
-    },
     "Choose your navigation mode" : {
       "localizations" : {
         "nl" : {
@@ -140,14 +156,34 @@
             "state" : "translated",
             "value" : "Kies uw navigatiemodus"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите режим навигации"
+          }
         }
       }
     },
     "Clear" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сбросить"
+          }
+        }
+      }
     },
     "Clear navigation path" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сбросить путь навигации"
+          }
+        }
+      }
     },
     "countFilesInFoldersMultiThread" : {
 
@@ -207,7 +243,14 @@
       "shouldTranslate" : false
     },
     "Dismiss" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закрыть"
+          }
+        }
+      }
     },
     "Examples" : {
       "localizations" : {
@@ -282,6 +325,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Meerdere projecten geselecteerd"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбрано несколько проектов"
           }
         }
       }
@@ -360,12 +409,24 @@
             "state" : "translated",
             "value" : "Package dependencies"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Package dependencies"
+          }
         }
       }
     },
     "Package Dependencies" : {
       "localizations" : {
         "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Package Dependencies"
+          }
+        },
+        "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Package Dependencies"
@@ -380,6 +441,12 @@
             "state" : "translated",
             "value" : "Package dependencies: %lld"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Package dependencies: %lld"
+          }
         }
       }
     },
@@ -390,44 +457,17 @@
             "state" : "translated",
             "value" : "Packages"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packages"
+          }
         }
       }
     },
     "Playgrounds" : {
       "shouldTranslate" : false
-    },
-    "Presents a stack of views over a root view" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Обычная навигация"
-          }
-        }
-      }
-    },
-    "Presents views in three columns: sidebar, content, and detail" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Боковая панель, контент и детали"
-          }
-        }
-      }
-    },
-    "Presents views in two columns: sidebar and detail" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Боковая панель и детали"
-          }
-        }
-      }
     },
     "Project details" : {
       "localizations" : {
@@ -435,6 +475,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Projectdetails"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Информация о проекте"
           }
         }
       }
@@ -472,7 +518,14 @@
       }
     },
     "Projects using %@" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проекты использующие %@"
+          }
+        }
+      }
     },
     "Projects: %lld • Swift Packages: %lld • Vapor: %lld • Playgrounds: %lld • Workspaces: %lld" : {
       "localizations" : {
@@ -502,6 +555,12 @@
     "Remote" : {
       "localizations" : {
         "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remote"
+          }
+        },
+        "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Remote"
@@ -612,6 +671,12 @@
             "state" : "translated",
             "value" : "Stapel"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Стопка"
+          }
         }
       }
     },
@@ -638,6 +703,12 @@
             "state" : "translated",
             "value" : "Target version"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Версия Target’a"
+          }
         }
       }
     },
@@ -647,6 +718,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Targets"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Target"
           }
         }
       }

@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 struct ProjListToolbar: View {
     @Environment(DataModel.self) private var vm
@@ -10,7 +10,7 @@ struct ProjListToolbar: View {
         
 #if DEBUG
         Menu("Functions") {
-            Button(String("listFilesInFoldersSingleThread")) {
+            Button("listFilesInFoldersSingleThread") {
                 let test = vm.listFilesInFoldersSingleThread(
                     vm.projects.map(\.path)
                 )
@@ -18,7 +18,7 @@ struct ProjListToolbar: View {
                 print(test)
             }
             
-            Button(String("countFilesInFoldersMultiThread")) {
+            Button("countFilesInFoldersMultiThread") {
                 vm.countFilesInFoldersMultiThread(
                     vm.projects.map(\.path)
                 ) { _ in
@@ -26,7 +26,7 @@ struct ProjListToolbar: View {
                 }
             }
             
-            Button(String("countFilesRecursively")) {
+            Button("countFilesRecursively") {
                 DispatchQueue.global().async {
                     let start = DispatchTime.now()
                     
@@ -34,21 +34,13 @@ struct ProjListToolbar: View {
                         print(test)
                     }
                     
-                    DispatchQueue.main.async {
+                    main {
                         let finish = DispatchTime.now()
                         let timeElapsed = finish.uptimeNanoseconds - start.uptimeNanoseconds
                         let timeElapsedInSeconds = Double(timeElapsed) / 1_000_000_000
                         
                         print("Time elapsed: \(timeElapsedInSeconds)s")
                     }
-                }
-            }
-            
-            Button(String("countFilesInFoldersMultiThread")) {
-                vm.countFilesInFoldersMultiThread(
-                    vm.projects.map(\.path)
-                ) { _ in
-                    
                 }
             }
         }

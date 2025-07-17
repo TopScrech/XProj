@@ -17,7 +17,7 @@ struct NavModePicker: View {
         NavigationStack {
             VStack {
                 VStack(spacing: 0) {
-                    Text("Choose your navigation experience")
+                    Text("Choose your navigation mode")
                         .bold()
                         .largeTitle()
                         .lineLimit(2, reservesSpace: true)

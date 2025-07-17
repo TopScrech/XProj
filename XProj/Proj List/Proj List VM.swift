@@ -1,7 +1,7 @@
 import Foundation
 
 final class ProjListVM {
-    var projects: [Proj] = []
+    private(set) var projects: [Proj] = []
     
     private let fm = FileManager.default
     private let udKey = "projects_folder_bookmark"
@@ -31,7 +31,10 @@ final class ProjListVM {
         }
     }
     
-    private func processProj(_ proj: String, at path: String) throws {
+    private func processProj(
+        _ proj: String,
+        at path: String
+    ) throws {
         var name = proj
         
         let projPath = path + "/" + name
@@ -96,7 +99,10 @@ final class ProjListVM {
         )
     }
     
-    private func hasFile(ofType type: String, at path: String) -> Bool {
+    private func hasFile(
+        ofType type: String,
+        at path: String
+    ) -> Bool {
         do {
             let contents = try fm.contentsOfDirectory(atPath: path)
             
@@ -119,16 +125,18 @@ final class ProjListVM {
     }
     
     private func hasVapor( _ path: String) -> Bool {
+        let vaporUrl = "https://github.com/vapor/vapor.git"
         let resolvedPath = path + "/Package.resolved"
         
         guard fm.fileExists(atPath: resolvedPath) else {
             return false
         }
         
-        let vaporUrl = "https://github.com/vapor/vapor.git"
-        
         do {
-            let fileContents = try String(contentsOfFile: resolvedPath, encoding: .utf8)
+            let fileContents = try String(
+                contentsOfFile: resolvedPath,
+                encoding: .utf8
+            )
             
             let containsVapor = fileContents.contains(vaporUrl)
             
