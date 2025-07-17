@@ -40,6 +40,24 @@
     },
     "%lld duplicates" : {
       "localizations" : {
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld duplicaat"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld duplicaten"
+                }
+              }
+            }
+          }
+        },
         "ru" : {
           "variations" : {
             "plural" : {
@@ -74,6 +92,12 @@
     },
     "All" : {
       "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -167,6 +191,12 @@
     },
     "Clear" : {
       "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wissen"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -177,6 +207,12 @@
     },
     "Clear navigation path" : {
       "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Navigatiepad wissen"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -244,6 +280,12 @@
     },
     "Dismiss" : {
       "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sluiten"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -519,6 +561,12 @@
     },
     "Projects using %@" : {
       "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projecten die %@ gebruiken"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
