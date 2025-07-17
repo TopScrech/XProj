@@ -1,5 +1,3 @@
-// Nav mode picker
-
 import SwiftUI
 
 struct NavModePicker: View {
@@ -11,15 +9,13 @@ struct NavModePicker: View {
         _experience = experience
     }
     
-    private var columns: [GridItem] {[
+    private let columns = [
         GridItem(.adaptive(minimum: 250))
-    ]}
+    ]
     
     var body: some View {
         NavigationStack {
             VStack {
-                Spacer()
-                
                 VStack(spacing: 0) {
                     Text("Choose your navigation experience")
                         .bold()
@@ -33,15 +29,11 @@ struct NavModePicker: View {
                 }
                 .padding()
                 
-                Spacer()
-                
                 LazyVGrid(columns: columns) {
                     ForEach(NavMode.allCases) { exp in
                         NavModePickerItem($experience, for: exp)
                     }
                 }
-                
-                Spacer()
             }
             .scenePadding()
         }

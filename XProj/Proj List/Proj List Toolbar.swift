@@ -10,7 +10,7 @@ struct ProjListToolbar: View {
         
 #if DEBUG
         Menu("Functions") {
-            Button("listFilesInFoldersSingleThread") {
+            Button(String("listFilesInFoldersSingleThread")) {
                 let test = vm.listFilesInFoldersSingleThread(
                     vm.projects.map(\.path)
                 )
@@ -18,7 +18,7 @@ struct ProjListToolbar: View {
                 print(test)
             }
             
-            Button("countFilesInFoldersMultiThread") {
+            Button(String("countFilesInFoldersMultiThread")) {
                 vm.countFilesInFoldersMultiThread(
                     vm.projects.map(\.path)
                 ) { _ in
@@ -26,7 +26,7 @@ struct ProjListToolbar: View {
                 }
             }
             
-            Button("countFilesRecursively") {
+            Button(String("countFilesRecursively")) {
                 DispatchQueue.global().async {
                     let start = DispatchTime.now()
                     
@@ -44,7 +44,7 @@ struct ProjListToolbar: View {
                 }
             }
             
-            Button("countFilesInFoldersMultiThread") {
+            Button(String("countFilesInFoldersMultiThread")) {
                 vm.countFilesInFoldersMultiThread(
                     vm.projects.map(\.path)
                 ) { _ in

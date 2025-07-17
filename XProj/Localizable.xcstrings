@@ -28,11 +28,49 @@
             "state" : "new",
             "value" : "%1$@: %2$@"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@: %2$@"
+          }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "%lld duplicates" : {
-
+      "localizations" : {
+        "ru" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%lld duplicates"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%lld duplicates"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%lld duplicates"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld duplicates"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     "All" : {
 
@@ -40,23 +78,70 @@
     "App Store" : {
       "shouldTranslate" : false
     },
-    "App store link" : {
-
+    "App Store link" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Store link"
+          }
+        }
+      }
     },
     "Categories" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Categorieën"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Категории"
+          }
+        }
+      }
     },
     "Change folder" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Folder wijzigen"
+          }
+        }
+      }
     },
     "Choose a category" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kies een categorie"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите категорию"
+          }
+        }
+      }
     },
     "Choose your navigation experience" : {
 
     },
     "Choose your navigation mode" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kies uw navigatiemodus"
+          }
+        }
+      }
     },
     "Clear" : {
 
@@ -71,13 +156,52 @@
 
     },
     "Created: " : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aangemaakt:"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Создан: "
+          }
+        }
+      }
     },
     "Debug" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Debug"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отладка"
+          }
+        }
+      }
     },
     "Delete" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwijderen"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить"
+          }
+        }
+      }
     },
     "Derived Data" : {
       "shouldTranslate" : false
@@ -91,6 +215,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Voorbeelden"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Примеры"
           }
         }
       }
@@ -112,25 +242,90 @@
       "shouldTranslate" : false
     },
     "Last opened: " : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laatst geopend: "
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Последнее открытие: "
+          }
+        }
+      }
     },
     "listFilesInFoldersSingleThread" : {
 
     },
     "Modified: " : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gewijzigd:"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Последнее изменение: "
+          }
+        }
+      }
     },
     "Multiple projects selected" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meerdere projecten geselecteerd"
+          }
+        }
+      }
     },
     "Navigation mode" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Navigatiemodus"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Режим навигации"
+          }
+        }
+      }
     },
     "Open" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть"
+          }
+        }
+      }
     },
     "Open in Finder" : {
       "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open in Finder"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -141,6 +336,12 @@
     },
     "Open in Xcode" : {
       "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open in Xcode"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -153,13 +354,34 @@
 
     },
     "Package dependencies" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Package dependencies"
+          }
+        }
+      }
     },
     "Package Dependencies" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Package Dependencies"
+          }
+        }
+      }
     },
     "Package dependencies: %lld" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Package dependencies: %lld"
+          }
+        }
+      }
     },
     "Packages" : {
       "localizations" : {
@@ -175,19 +397,63 @@
       "shouldTranslate" : false
     },
     "Presents a stack of views over a root view" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обычная навигация"
+          }
+        }
+      }
     },
     "Presents views in three columns: sidebar, content, and detail" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Боковая панель, контент и детали"
+          }
+        }
+      }
     },
     "Presents views in two columns: sidebar and detail" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Боковая панель и детали"
+          }
+        }
+      }
     },
     "Project details" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projectdetails"
+          }
+        }
+      }
     },
     "Project List" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projectlijst"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Список проектов"
+          }
+        }
+      }
     },
     "Projects" : {
       "localizations" : {
@@ -195,6 +461,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Projecten"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проекты"
           }
         }
       }
@@ -209,6 +481,18 @@
             "state" : "new",
             "value" : "Projects: %1$lld • Swift Packages: %2$lld • Vapor: %3$lld • Playgrounds: %4$lld • Workspaces: %5$lld"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projecten: %1$lld • Swift Packages: %2$lld • Vapor: %3$lld • Playgrounds: %4$lld • Workspaces: %5$lld"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проекты: %1$lld • Swift Packages: %2$lld • Vapor: %3$lld • Playgrounds: %4$lld • Workspaces: %5$lld"
+          }
         }
       }
     },
@@ -216,10 +500,30 @@
 
     },
     "Remote" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remote"
+          }
+        }
+      }
     },
     "Save example projects to Downloads folder" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voorbeeldprojecten opslaan in de Downloads folder"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранить примеры проектов в папку «Загрузки»"
+          }
+        }
+      }
     },
     "Save to Downloads" : {
       "localizations" : {
@@ -228,11 +532,30 @@
             "state" : "translated",
             "value" : "Opslaan naar Downloads"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранить в Загрузки"
+          }
         }
       }
     },
     "Search" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zoeken"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поиск"
+          }
+        }
+      }
     },
     "Selected folders" : {
       "localizations" : {
@@ -241,26 +564,92 @@
             "state" : "translated",
             "value" : "Geselecteerde folders"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбранные папки"
+          }
         }
       }
     },
     "Smart Scan" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smart Scan"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smart Scan"
+          }
+        }
+      }
     },
     "Sort by Author" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sorteer op auteur"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сортировать по автору"
+          }
+        }
+      }
     },
     "Stack" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stapel"
+          }
+        }
+      }
     },
     "Swift tools: " : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swift tools:"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swift tools: "
+          }
+        }
+      }
     },
     "Target version" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Target version"
+          }
+        }
+      }
     },
     "Targets" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Targets"
+          }
+        }
+      }
     },
     "Targets: %lld" : {
       "shouldTranslate" : false
@@ -272,6 +661,12 @@
             "state" : "translated",
             "value" : "Drie kolommen"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Три колонки"
+          }
         }
       }
     },
@@ -281,6 +676,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Totaal:"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всего:"
           }
         }
       }
@@ -292,6 +693,12 @@
             "state" : "translated",
             "value" : "Twee kolommen"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Две колонки"
+          }
         }
       }
     },
@@ -299,13 +706,39 @@
       "shouldTranslate" : false
     },
     "Workspaces" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Workspaces"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Workspaces"
+          }
+        }
+      }
     },
     "Xcode" : {
       "shouldTranslate" : false
     },
     "You might need to restart the app" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mogelijk moet u de app opnieuw opstarten"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Возможно, вам придется перезапустить приложение"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

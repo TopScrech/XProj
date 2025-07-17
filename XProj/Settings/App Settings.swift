@@ -91,7 +91,7 @@ struct AppSettings: View {
                 }
                 
                 Toggle(isOn: $store.showProjAppStoreLink) {
-                    Label("App store link", systemImage: "link")
+                    Label("App Store link", systemImage: "link")
                 }
                 
                 Toggle(isOn: $store.showGitignore) {

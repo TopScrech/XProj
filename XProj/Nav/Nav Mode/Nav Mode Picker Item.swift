@@ -31,24 +31,18 @@ private struct Label: View {
     
     var body: some View {
         HStack(spacing: 20) {
-            Image(systemName: experience.imageName)
+            Image(systemName: experience.icon)
                 .title()
                 .foregroundStyle(shapeStyle(Color.accentColor))
             
             VStack(alignment: .leading) {
-                Text(experience.localizedName)
+                Text(experience.name)
                     .bold()
-                    .foregroundStyle(shapeStyle(Color.primary))
-                
-                Text(experience.localizedDescription)
-                    .callout()
-                    .lineLimit(3, reservesSpace: true)
-                    .multilineTextAlignment(.leading)
-                    .foregroundStyle(shapeStyle(Color.secondary))
+                    .foregroundStyle(shapeStyle(.primary))
             }
         }
+        .frame(width: 200, height: 50)
         .shadow(radius: selection == experience ? 4 : 0)
-        .padding()
         .background {
             RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .fill(selection == experience ?
