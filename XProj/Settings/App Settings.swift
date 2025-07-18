@@ -100,18 +100,14 @@ struct AppSettings: View {
             }
             
             Section("Debug") {
-                Button {
+                Button("Save example projects to Downloads folder", systemImage: "square.and.arrow.down") {
                     downloadExamples()
-                } label: {
-                    Label("Save example projects to Downloads folder", systemImage: "square.and.arrow.down")
                 }
 #if DEBUG
-                Button {
+                Button("Clear navigation path", systemImage: "xmark") {
                     nav.clearNavCache()
-                } label: {
-                    Label("Clear navigation path", systemImage: "xmark")
-                        .foregroundStyle(.red)
                 }
+                .foregroundStyle(.red)
 #endif
             }
         }

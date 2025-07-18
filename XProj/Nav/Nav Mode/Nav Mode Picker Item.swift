@@ -47,7 +47,7 @@ private struct Label: View {
             RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .fill(selection == experience ?
                       AnyShapeStyle(Color.accentColor) :
-                        AnyShapeStyle(BackgroundStyle()))
+                        AnyShapeStyle(.background))
             
             RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .stroke(isHovering ? Color.accentColor : .clear)

@@ -48,26 +48,20 @@ struct ProjCard: View {
         .contextMenu {
             if let url = proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url {
                 Section {
-                    Button {
+                    Button("App Store", systemImage: "apple.logo") {
                         openUrl(url)
-                    } label: {
-                        Label("App Store", systemImage: "apple.logo")
                     }
                     .help(url)
                 }
             }
             
-            Button {
+            Button("Open in Xcode", systemImage: "hammer") {
                 vm.openProj(proj)
-            } label: {
-                Label("Open in Xcode", systemImage: "hammer")
             }
             .help(proj.path)
             
-            Button {
+            Button("Open in Finder", systemImage: "finder") {
                 openInFinder(rootedAt: proj.path)
-            } label: {
-                Label("Open in Finder", systemImage: "finder")
             }
             .help(proj.path)
             
