@@ -33,7 +33,6 @@ struct ProjDetails: View {
                 ProjDetailsDependencyList(proj.packages)
             }
             
-            
             if store.showGitignore {
                 ProjDetailsGitignore(proj.path)
             }

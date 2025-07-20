@@ -76,8 +76,12 @@ final class NavModel: Codable {
     }
     
     /// Saves the JSON data for the nav model at its current state
-    func save() throws {
-        try jsonData?.write(to: Self.dataUrl)
+    func save() {
+        do {
+            try jsonData?.write(to: Self.dataUrl)
+        } catch {
+            print(error)
+        }
     }
     
     /// Selected projects

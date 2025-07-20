@@ -34,18 +34,10 @@ struct NavContainer: View {
             try? nav.load()
         }
         .onChange(of: nav.selectedCategory) {
-            save()
+            nav.save()
         }
         .onChange(of: nav.selectedProj) {
-            save()
-        }
-    }
-    
-    private func save() {
-        do {
-            try nav.save()
-        } catch {
-            print(error)
+            nav.save()
         }
     }
 }
