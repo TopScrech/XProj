@@ -168,6 +168,7 @@
 		F38B5E512BFD6F6100CB9917 /* Proj Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card.swift"; sourceTree = "<group>"; };
 		F38B5E572BFE134400CB9917 /* Search Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestions.swift"; sourceTree = "<group>"; };
 		F3929A662D1BA52D00FB06E6 /* Search Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestion.swift"; sourceTree = "<group>"; };
+		F3AE99E42E2F894100D70249 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details.swift"; sourceTree = "<group>"; };
 		F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card Image.swift"; sourceTree = "<group>"; };
 		F3B389C02D0F92500082C2F3 /* Nav Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Category.swift"; sourceTree = "<group>"; };
@@ -253,6 +254,7 @@
 		F3341E202BDE358900E85F27 = {
 			isa = PBXGroup;
 			children = (
+				F3AE99E42E2F894100D70249 /* README.md */,
 				F3341E2B2BDE358900E85F27 /* XProj */,
 				F33081892C90580500605E43 /* XProj Widgets */,
 				F371A5232C2D97AB006BDF0D /* XProj Tests */,
