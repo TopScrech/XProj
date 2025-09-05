@@ -122,14 +122,14 @@ struct AppSettings: View {
         guard
             let sourceUrl = Bundle.main.url(forResource: "Examples", withExtension: "zip")
         else {
-            print("Examples.zip not found in the main bundle")
+            print("Examples.zip not found")
             return
         }
         
         guard
             let downloadsUrl = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
         else {
-            print("Unable to locate the Downloads folder")
+            print("Downloads folder not located")
             return
         }
         
@@ -137,9 +137,9 @@ struct AppSettings: View {
         
         do {
             try FileManager.default.copyItem(at: sourceUrl, to: destinationUrl)
-            print("Examples.zip successfully downloaded to the Downloads folder")
+            print("Examples.zip successfully copied to the Downloads folder")
         } catch {
-            print("Error downloading Examples.zip:", error.localizedDescription)
+            print("Error copying Examples.zip:", error.localizedDescription)
         }
     }
 }
