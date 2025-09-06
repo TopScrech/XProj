@@ -53,9 +53,10 @@ extension DataModel {
             let contents = try FileManager.default.contentsOfDirectory(atPath: folder)
             
             for item in contents {
-                var isDirectory: ObjCBool = false
                 let fullPath = (folder as NSString)
                     .appendingPathComponent(item)
+                
+                var isDirectory: ObjCBool = false
                 
                 let isExisting = FileManager.default.fileExists(
                     atPath: fullPath,
@@ -90,10 +91,10 @@ extension DataModel {
             let contents = try FileManager.default.contentsOfDirectory(atPath: folder)
             
             for item in contents {
-                var isDirectory: ObjCBool = false
-                
                 let fullPath = (folder as NSString)
                     .appendingPathComponent(item)
+                
+                var isDirectory: ObjCBool = false
                 
                 let isExisting = FileManager.default.fileExists(
                     atPath: fullPath,

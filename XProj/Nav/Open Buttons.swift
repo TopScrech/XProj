@@ -5,19 +5,21 @@ struct OpenButtons: View {
     @Environment(DataModel.self) private var vm
     
     var body: some View {
-        Group {
+        if #available(macOS 15, *) {
             Button("Open") {
                 vm.openProjects(nav.selectedProj)
             }
             .keyboardShortcut("O")
-            
+            .toolbarItemHidden()
+            .disabled(nav.selectedProj.count == 0)
+        } else {
             Button("Open") {
                 vm.openProjects(nav.selectedProj)
             }
-            .keyboardShortcut(.defaultAction)
+            .keyboardShortcut("O")
+            .opacity(0)
+            .disabled(nav.selectedProj.count == 0)
         }
-        .opacity(0)
-        .disabled(nav.selectedProj.count == 0)
     }
 }
 
