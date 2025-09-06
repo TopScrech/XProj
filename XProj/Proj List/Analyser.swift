@@ -1,10 +1,7 @@
 import Foundation
 
 extension DataModel {
-    func listFilesInFoldersSingleThread(
-        _ folderPaths: [String]
-    ) -> [String: [String]?] {
-        
+    func listFilesInFoldersSingleThread(_ folderPaths: [String]) -> [String: [String]?] {
         let startTime = CFAbsoluteTimeGetCurrent()
         
         var folderContents = [String: [String]?]()
