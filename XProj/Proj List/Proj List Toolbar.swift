@@ -39,7 +39,7 @@ struct ProjListToolbar: View {
                     let timeElapsedInSeconds = Double(timeElapsed) / 1_000_000_000
                     
                     await MainActor.run {
-                        print("Time elapsed: \(timeElapsedInSeconds)s")
+                        print("Time elapsed (s):", timeElapsedInSeconds)
                     }
                 }
             }

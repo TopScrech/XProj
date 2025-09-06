@@ -31,10 +31,7 @@ final class ProjListVM {
         }
     }
     
-    private func processProj(
-        _ proj: String,
-        at path: String
-    ) throws {
+    private func processProj(_ proj: String, at path: String) throws {
         var name = proj
         
         let projPath = path + "/" + name
@@ -99,10 +96,7 @@ final class ProjListVM {
         )
     }
     
-    private func hasFile(
-        ofType type: String,
-        at path: String
-    ) -> Bool {
+    private func hasFile(ofType type: String, at path: String) -> Bool {
         do {
             let contents = try fm.contentsOfDirectory(atPath: path)
             
