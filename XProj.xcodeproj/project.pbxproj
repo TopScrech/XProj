@@ -345,8 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				F3ED776E2D1772F8000977AC /* Proj List VM.swift */,
-				F387AC312BFEC6C600EC1DC5 /* Analyser.swift */,
 				F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */,
+				F387AC312BFEC6C600EC1DC5 /* Analyser.swift */,
 				F37831CD2D11C649007F7858 /* Proj Card */,
 			);
 			path = "Proj List";
