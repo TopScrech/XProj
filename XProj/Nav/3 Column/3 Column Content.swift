@@ -24,7 +24,7 @@ struct ThreeColumnContent: View {
                 DerivedDataList()
                 
             case .packageDependencies:
-                PackageDepList()
+                DependencyList()
                 
             default:
                 List(selection: $nav.selectedProj) {

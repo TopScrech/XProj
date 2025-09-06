@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F313BE1D2C871E13005C8B60 /* Examples.zip in Resources */ = {isa = PBXBuildFile; fileRef = F313BE1C2C871E13005C8B60 /* Examples.zip */; };
-		F31EF9472D103896000F95A7 /* Package Dep Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9462D103896000F95A7 /* Package Dep Card.swift */; };
-		F31EF9492D1038CE000F95A7 /* Package Dep Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9482D1038CE000F95A7 /* Package Dep Details.swift */; };
+		F31EF9472D103896000F95A7 /* DependencyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9462D103896000F95A7 /* DependencyCard.swift */; };
+		F31EF9492D1038CE000F95A7 /* DependencyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9482D1038CE000F95A7 /* DependencyDetails.swift */; };
 		F323EC942D315E3A00973FA0 /* Value Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC932D315E3A00973FA0 /* Value Store.swift */; };
 		F323EC962D31E39A00973FA0 /* Open Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC952D31E39A00973FA0 /* Open Buttons.swift */; };
 		F329E1812D3683E4007BA9D1 /* Proj Details Gitignore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329E1802D3683E4007BA9D1 /* Proj Details Gitignore.swift */; };
@@ -27,10 +27,10 @@
 		F3341E312BDE358A00E85F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3341E302BDE358A00E85F27 /* Assets.xcassets */; };
 		F34345C82DDEF9AE0033A7DE /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F34345C72DDEF9AE0033A7DE /* ScrechKit */; };
 		F3515C212D366DA70078E588 /* Proj Card Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3515C202D366DA70078E588 /* Proj Card Platforms.swift */; };
-		F3522DC62C2A29C000660101 /* Derived Data List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DC52C2A29C000660101 /* Derived Data List.swift */; };
-		F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCA2C2A2A5600660101 /* Derived Data VM.swift */; };
-		F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCC2C2AA32C00660101 /* File Manager.swift */; };
-		F3522DCF2C2AA51800660101 /* Derived Data Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCE2C2AA51800660101 /* Derived Data Entry.swift */; };
+		F3522DC62C2A29C000660101 /* DerivedDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DC52C2A29C000660101 /* DerivedDataList.swift */; };
+		F3522DCB2C2A2A5600660101 /* DerivedDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCA2C2A2A5600660101 /* DerivedDataVM.swift */; };
+		F3522DCD2C2AA32C00660101 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCC2C2AA32C00660101 /* FileManager.swift */; };
+		F3522DCF2C2AA51800660101 /* DerivedDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCE2C2AA51800660101 /* DerivedDataEntry.swift */; };
 		F358F02B2D2C19A200BCC07B /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = F358F02A2D2C19A200BCC07B /* LaunchAtLogin */; };
 		F371A5192C2D84BA006BDF0D /* Proj Card VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A5182C2D84BA006BDF0D /* Proj Card VM.swift */; };
 		F371A51B2C2D8D58006BDF0D /* MB Proj List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A51A2C2D8D58006BDF0D /* MB Proj List.swift */; };
@@ -53,7 +53,7 @@
 		F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D72D12DF0E007F7858 /* Open folder picker.swift */; };
 		F37831DB2D12E0E6007F7858 /* Save bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DA2D12E0E6007F7858 /* Save bookmark.swift */; };
 		F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DC2D12E57D007F7858 /* Restore access to folder.swift */; };
-		F37831DF2D12EA34007F7858 /* Preview Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DE2D12EA34007F7858 /* Preview Projects.swift */; };
+		F37831DF2D12EA34007F7858 /* PreviewProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DE2D12EA34007F7858 /* PreviewProjects.swift */; };
 		F37D1BED2CDA231F00D8817D /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEC2CDA231F00D8817D /* Provider.swift */; };
 		F37D1BEF2CDA234700D8817D /* Simple Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEE2CDA234700D8817D /* Simple Entry.swift */; };
 		F37D1BF12CDA235D00D8817D /* Entry View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF02CDA235D00D8817D /* Entry View.swift */; };
@@ -62,24 +62,24 @@
 		F3874E2C2D36803C000BDCD9 /* Proj Details Swift Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3874E2B2D36803C000BDCD9 /* Proj Details Swift Tools.swift */; };
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Proj Card.swift */; };
-		F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* Search Suggestions.swift */; };
-		F3929A672D1BA52D00FB06E6 /* Search Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3929A662D1BA52D00FB06E6 /* Search Suggestion.swift */; };
+		F38B5E582BFE134400CB9917 /* SearchSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* SearchSuggestions.swift */; };
+		F3929A672D1BA52D00FB06E6 /* SearchSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3929A662D1BA52D00FB06E6 /* SearchSuggestion.swift */; };
 		F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */; };
 		F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */; };
 		F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C02D0F92500082C2F3 /* Nav Category.swift */; };
 		F3B389C32D0F93500082C2F3 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C22D0F93500082C2F3 /* Package.swift */; };
 		F3B389C52D0F9AE80082C2F3 /* Swift Tools Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */; };
 		F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C62D0F9B340082C2F3 /* Proj Icon.swift */; };
-		F3B389CD2D0FAC770082C2F3 /* Derived Data Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CC2D0FAC770082C2F3 /* Derived Data Folder.swift */; };
-		F3B389CF2D1027890082C2F3 /* Derived Data Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CE2D1027890082C2F3 /* Derived Data Card.swift */; };
-		F3B389D32D102F5E0082C2F3 /* Package Dep List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */; };
-		F3B389D62D1032A40082C2F3 /* Package Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D52D1032A40082C2F3 /* Package Dependency.swift */; };
-		F3D1E75F2C9B40B4000C81FF /* App Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* App Settings.swift */; };
+		F3B389CD2D0FAC770082C2F3 /* DerivedDataFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CC2D0FAC770082C2F3 /* DerivedDataFolder.swift */; };
+		F3B389CF2D1027890082C2F3 /* DerivedDataCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CE2D1027890082C2F3 /* DerivedDataCard.swift */; };
+		F3B389D32D102F5E0082C2F3 /* DependencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D22D102F5E0082C2F3 /* DependencyList.swift */; };
+		F3B389D62D1032A40082C2F3 /* PackageDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D52D1032A40082C2F3 /* PackageDependency.swift */; };
+		F3D1E75F2C9B40B4000C81FF /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* AppSettings.swift */; };
 		F3DAD6752D161EAA0012BA9D /* Proj.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6712D161EAA0012BA9D /* Proj.swift */; };
 		F3DAD6772D161EAA0012BA9D /* Nav Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66F2D161EAA0012BA9D /* Nav Mode.swift */; };
 		F3DAD6782D161EAA0012BA9D /* 2 Column Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6652D161EAA0012BA9D /* 2 Column Container.swift */; };
-		F3DAD67A2D161EAA0012BA9D /* Data Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66C2D161EAA0012BA9D /* Data Model.swift */; };
-		F3DAD67B2D161EAA0012BA9D /* Nav Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */; };
+		F3DAD67A2D161EAA0012BA9D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66C2D161EAA0012BA9D /* DataModel.swift */; };
+		F3DAD67B2D161EAA0012BA9D /* NavModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66D2D161EAA0012BA9D /* NavModel.swift */; };
 		F3DAD67C2D161EAA0012BA9D /* 3 Column Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6662D161EAA0012BA9D /* 3 Column Container.swift */; };
 		F3DAD67E2D161EAA0012BA9D /* Nav Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6632D161EAA0012BA9D /* Nav Container.swift */; };
 		F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6642D161EAA0012BA9D /* Stack Container.swift */; };
@@ -110,8 +110,8 @@
 
 /* Begin PBXFileReference section */
 		F313BE1C2C871E13005C8B60 /* Examples.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Examples.zip; sourceTree = "<group>"; };
-		F31EF9462D103896000F95A7 /* Package Dep Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep Card.swift"; sourceTree = "<group>"; };
-		F31EF9482D1038CE000F95A7 /* Package Dep Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep Details.swift"; sourceTree = "<group>"; };
+		F31EF9462D103896000F95A7 /* DependencyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyCard.swift; sourceTree = "<group>"; };
+		F31EF9482D1038CE000F95A7 /* DependencyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyDetails.swift; sourceTree = "<group>"; };
 		F323EC932D315E3A00973FA0 /* Value Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value Store.swift"; sourceTree = "<group>"; };
 		F323EC952D31E39A00973FA0 /* Open Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open Buttons.swift"; sourceTree = "<group>"; };
 		F329E1802D3683E4007BA9D1 /* Proj Details Gitignore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Gitignore.swift"; sourceTree = "<group>"; };
@@ -131,10 +131,10 @@
 		F3341E302BDE358A00E85F27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3341E352BDE358A00E85F27 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		F3515C202D366DA70078E588 /* Proj Card Platforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card Platforms.swift"; sourceTree = "<group>"; };
-		F3522DC52C2A29C000660101 /* Derived Data List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data List.swift"; sourceTree = "<group>"; };
-		F3522DCA2C2A2A5600660101 /* Derived Data VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data VM.swift"; sourceTree = "<group>"; };
-		F3522DCC2C2AA32C00660101 /* File Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File Manager.swift"; sourceTree = "<group>"; };
-		F3522DCE2C2AA51800660101 /* Derived Data Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data Entry.swift"; sourceTree = "<group>"; };
+		F3522DC52C2A29C000660101 /* DerivedDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DerivedDataList.swift; sourceTree = "<group>"; };
+		F3522DCA2C2A2A5600660101 /* DerivedDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DerivedDataVM.swift; sourceTree = "<group>"; };
+		F3522DCC2C2AA32C00660101 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		F3522DCE2C2AA51800660101 /* DerivedDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DerivedDataEntry.swift; sourceTree = "<group>"; };
 		F371A5182C2D84BA006BDF0D /* Proj Card VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card VM.swift"; sourceTree = "<group>"; };
 		F371A51A2C2D8D58006BDF0D /* MB Proj List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MB Proj List.swift"; sourceTree = "<group>"; };
 		F371A51C2C2D8D94006BDF0D /* MB Proj Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MB Proj Card.swift"; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 		F37831D72D12DF0E007F7858 /* Open folder picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open folder picker.swift"; sourceTree = "<group>"; };
 		F37831DA2D12E0E6007F7858 /* Save bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Save bookmark.swift"; sourceTree = "<group>"; };
 		F37831DC2D12E57D007F7858 /* Restore access to folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restore access to folder.swift"; sourceTree = "<group>"; };
-		F37831DE2D12EA34007F7858 /* Preview Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview Projects.swift"; sourceTree = "<group>"; };
+		F37831DE2D12EA34007F7858 /* PreviewProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProjects.swift; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = macOS.plist; sourceTree = "<group>"; };
 		F37D1BEC2CDA231F00D8817D /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		F37D1BEE2CDA234700D8817D /* Simple Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Simple Entry.swift"; sourceTree = "<group>"; };
@@ -166,8 +166,8 @@
 		F3874E2B2D36803C000BDCD9 /* Proj Details Swift Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Swift Tools.swift"; sourceTree = "<group>"; };
 		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		F38B5E512BFD6F6100CB9917 /* Proj Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card.swift"; sourceTree = "<group>"; };
-		F38B5E572BFE134400CB9917 /* Search Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestions.swift"; sourceTree = "<group>"; };
-		F3929A662D1BA52D00FB06E6 /* Search Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Suggestion.swift"; sourceTree = "<group>"; };
+		F38B5E572BFE134400CB9917 /* SearchSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestions.swift; sourceTree = "<group>"; };
+		F3929A662D1BA52D00FB06E6 /* SearchSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestion.swift; sourceTree = "<group>"; };
 		F3AE99E42E2F894100D70249 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details.swift"; sourceTree = "<group>"; };
 		F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card Image.swift"; sourceTree = "<group>"; };
@@ -175,17 +175,17 @@
 		F3B389C22D0F93500082C2F3 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift Tools Version.swift"; sourceTree = "<group>"; };
 		F3B389C62D0F9B340082C2F3 /* Proj Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Icon.swift"; sourceTree = "<group>"; };
-		F3B389CC2D0FAC770082C2F3 /* Derived Data Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data Folder.swift"; sourceTree = "<group>"; };
-		F3B389CE2D1027890082C2F3 /* Derived Data Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Derived Data Card.swift"; sourceTree = "<group>"; };
-		F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dep List.swift"; sourceTree = "<group>"; };
-		F3B389D52D1032A40082C2F3 /* Package Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package Dependency.swift"; sourceTree = "<group>"; };
-		F3D1E75E2C9B40B4000C81FF /* App Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Settings.swift"; sourceTree = "<group>"; };
+		F3B389CC2D0FAC770082C2F3 /* DerivedDataFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DerivedDataFolder.swift; sourceTree = "<group>"; };
+		F3B389CE2D1027890082C2F3 /* DerivedDataCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DerivedDataCard.swift; sourceTree = "<group>"; };
+		F3B389D22D102F5E0082C2F3 /* DependencyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyList.swift; sourceTree = "<group>"; };
+		F3B389D52D1032A40082C2F3 /* PackageDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDependency.swift; sourceTree = "<group>"; };
+		F3D1E75E2C9B40B4000C81FF /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		F3DAD6632D161EAA0012BA9D /* Nav Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Container.swift"; sourceTree = "<group>"; };
 		F3DAD6642D161EAA0012BA9D /* Stack Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stack Container.swift"; sourceTree = "<group>"; };
 		F3DAD6652D161EAA0012BA9D /* 2 Column Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2 Column Container.swift"; sourceTree = "<group>"; };
 		F3DAD6662D161EAA0012BA9D /* 3 Column Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3 Column Container.swift"; sourceTree = "<group>"; };
-		F3DAD66C2D161EAA0012BA9D /* Data Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Model.swift"; sourceTree = "<group>"; };
-		F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Model.swift"; sourceTree = "<group>"; };
+		F3DAD66C2D161EAA0012BA9D /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		F3DAD66D2D161EAA0012BA9D /* NavModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavModel.swift; sourceTree = "<group>"; };
 		F3DAD66F2D161EAA0012BA9D /* Nav Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Mode.swift"; sourceTree = "<group>"; };
 		F3DAD6712D161EAA0012BA9D /* Proj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proj.swift; sourceTree = "<group>"; };
 		F3DAD6812D161ECC0012BA9D /* Nav Mode Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Mode Button.swift"; sourceTree = "<group>"; };
@@ -284,9 +284,9 @@
 				F3341E302BDE358A00E85F27 /* Assets.xcassets */,
 				F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */,
 				F313BE1C2C871E13005C8B60 /* Examples.zip */,
-				F37831DE2D12EA34007F7858 /* Preview Projects.swift */,
-				F3DAD66C2D161EAA0012BA9D /* Data Model.swift */,
-				F3DAD66D2D161EAA0012BA9D /* Nav Model.swift */,
+				F37831DE2D12EA34007F7858 /* PreviewProjects.swift */,
+				F3DAD66C2D161EAA0012BA9D /* DataModel.swift */,
+				F3DAD66D2D161EAA0012BA9D /* NavModel.swift */,
 				F37831D92D12E028007F7858 /* funcs */,
 				F37831CA2D11A75F007F7858 /* Proj List */,
 				F3B389BD2D0ECB090082C2F3 /* Proj Details */,
@@ -314,12 +314,12 @@
 		F3522DC92C2A29D200660101 /* Derived Data */ = {
 			isa = PBXGroup;
 			children = (
-				F3522DC52C2A29C000660101 /* Derived Data List.swift */,
-				F3B389CE2D1027890082C2F3 /* Derived Data Card.swift */,
-				F3522DCA2C2A2A5600660101 /* Derived Data VM.swift */,
-				F3B389CC2D0FAC770082C2F3 /* Derived Data Folder.swift */,
-				F3522DCE2C2AA51800660101 /* Derived Data Entry.swift */,
-				F3522DCC2C2AA32C00660101 /* File Manager.swift */,
+				F3522DC52C2A29C000660101 /* DerivedDataList.swift */,
+				F3B389CE2D1027890082C2F3 /* DerivedDataCard.swift */,
+				F3522DCA2C2A2A5600660101 /* DerivedDataVM.swift */,
+				F3B389CC2D0FAC770082C2F3 /* DerivedDataFolder.swift */,
+				F3522DCE2C2AA51800660101 /* DerivedDataEntry.swift */,
+				F3522DCC2C2AA32C00660101 /* FileManager.swift */,
 			);
 			path = "Derived Data";
 			sourceTree = "<group>";
@@ -403,7 +403,7 @@
 		F38B5E4F2BFD6F1D00CB9917 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				F3D1E75E2C9B40B4000C81FF /* App Settings.swift */,
+				F3D1E75E2C9B40B4000C81FF /* AppSettings.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -424,8 +424,8 @@
 		F38B5E592BFE141300CB9917 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				F38B5E572BFE134400CB9917 /* Search Suggestions.swift */,
-				F3929A662D1BA52D00FB06E6 /* Search Suggestion.swift */,
+				F38B5E572BFE134400CB9917 /* SearchSuggestions.swift */,
+				F3929A662D1BA52D00FB06E6 /* SearchSuggestion.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -451,10 +451,10 @@
 		F3B389D42D102F620082C2F3 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				F3B389D22D102F5E0082C2F3 /* Package Dep List.swift */,
-				F31EF9462D103896000F95A7 /* Package Dep Card.swift */,
-				F31EF9482D1038CE000F95A7 /* Package Dep Details.swift */,
-				F3B389D52D1032A40082C2F3 /* Package Dependency.swift */,
+				F3B389D22D102F5E0082C2F3 /* DependencyList.swift */,
+				F31EF9462D103896000F95A7 /* DependencyCard.swift */,
+				F31EF9482D1038CE000F95A7 /* DependencyDetails.swift */,
+				F3B389D52D1032A40082C2F3 /* PackageDependency.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -649,14 +649,14 @@
 			isa = PBXSourcesBuildPhase;
 			files = (
 				F37831BF2D10D8DE007F7858 /* Packages in Package.swift in Sources */,
-				F3D1E75F2C9B40B4000C81FF /* App Settings.swift in Sources */,
-				F3522DCB2C2A2A5600660101 /* Derived Data VM.swift in Sources */,
-				F3B389CD2D0FAC770082C2F3 /* Derived Data Folder.swift in Sources */,
+				F3D1E75F2C9B40B4000C81FF /* AppSettings.swift in Sources */,
+				F3522DCB2C2A2A5600660101 /* DerivedDataVM.swift in Sources */,
+				F3B389CD2D0FAC770082C2F3 /* DerivedDataFolder.swift in Sources */,
 				F3DAD6752D161EAA0012BA9D /* Proj.swift in Sources */,
 				F3DAD6772D161EAA0012BA9D /* Nav Mode.swift in Sources */,
 				F323EC962D31E39A00973FA0 /* Open Buttons.swift in Sources */,
 				F3DAD6782D161EAA0012BA9D /* 2 Column Container.swift in Sources */,
-				F3DAD67A2D161EAA0012BA9D /* Data Model.swift in Sources */,
+				F3DAD67A2D161EAA0012BA9D /* DataModel.swift in Sources */,
 				F3DAD68A2D161ECC0012BA9D /* Proj Grid.swift in Sources */,
 				F3FC8A582D1AFDC300A7CCBC /* 2 Column Detail.swift in Sources */,
 				F3DAD68C2D161ECC0012BA9D /* Nav Mode Button.swift in Sources */,
@@ -664,7 +664,7 @@
 				F3DAD68E2D161ECC0012BA9D /* Nav Mode Picker.swift in Sources */,
 				F3FC8A5A2D1AFEC700A7CCBC /* 3 Column Detail.swift in Sources */,
 				F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */,
-				F3DAD67B2D161EAA0012BA9D /* Nav Model.swift in Sources */,
+				F3DAD67B2D161EAA0012BA9D /* NavModel.swift in Sources */,
 				F3DAD67C2D161EAA0012BA9D /* 3 Column Container.swift in Sources */,
 				F3DAD67E2D161EAA0012BA9D /* Nav Container.swift in Sources */,
 				F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */,
@@ -682,22 +682,22 @@
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,
 				F37D1BFA2CDA272600D8817D /* Duplicate Section.swift in Sources */,
 				F371A51D2C2D8D94006BDF0D /* MB Proj Card.swift in Sources */,
-				F31EF9492D1038CE000F95A7 /* Package Dep Details.swift in Sources */,
+				F31EF9492D1038CE000F95A7 /* DependencyDetails.swift in Sources */,
 				F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */,
 				F329E1812D3683E4007BA9D1 /* Proj Details Gitignore.swift in Sources */,
 				F37831D32D11D221007F7858 /* Proj Details Targets.swift in Sources */,
-				F3522DCD2C2AA32C00660101 /* File Manager.swift in Sources */,
+				F3522DCD2C2AA32C00660101 /* FileManager.swift in Sources */,
 				F37831D52D11D292007F7858 /* Proj Details Dependency List.swift in Sources */,
-				F38B5E582BFE134400CB9917 /* Search Suggestions.swift in Sources */,
+				F38B5E582BFE134400CB9917 /* SearchSuggestions.swift in Sources */,
 				F3ED776F2D1772F8000977AC /* Proj List VM.swift in Sources */,
-				F3522DCF2C2AA51800660101 /* Derived Data Entry.swift in Sources */,
+				F3522DCF2C2AA51800660101 /* DerivedDataEntry.swift in Sources */,
 				F3FC8A5E2D1AFFD500A7CCBC /* Column Sidebar.swift in Sources */,
 				F37831D12D11D177007F7858 /* Proj Details Actions.swift in Sources */,
 				F323EC942D315E3A00973FA0 /* Value Store.swift in Sources */,
 				F37831C52D11A4F4007F7858 /* Proj Details Target.swift in Sources */,
-				F3B389D62D1032A40082C2F3 /* Package Dependency.swift in Sources */,
+				F3B389D62D1032A40082C2F3 /* PackageDependency.swift in Sources */,
 				F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */,
-				F31EF9472D103896000F95A7 /* Package Dep Card.swift in Sources */,
+				F31EF9472D103896000F95A7 /* DependencyCard.swift in Sources */,
 				F371A5192C2D84BA006BDF0D /* Proj Card VM.swift in Sources */,
 				F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */,
 				F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */,
@@ -706,16 +706,16 @@
 				F3B389C52D0F9AE80082C2F3 /* Swift Tools Version.swift in Sources */,
 				F37831DB2D12E0E6007F7858 /* Save bookmark.swift in Sources */,
 				F37831B02D109282007F7858 /* Targets.swift in Sources */,
-				F3929A672D1BA52D00FB06E6 /* Search Suggestion.swift in Sources */,
+				F3929A672D1BA52D00FB06E6 /* SearchSuggestion.swift in Sources */,
 				F3FC8A5C2D1AFF2A00A7CCBC /* 3 Column Content.swift in Sources */,
-				F3B389D32D102F5E0082C2F3 /* Package Dep List.swift in Sources */,
-				F3B389CF2D1027890082C2F3 /* Derived Data Card.swift in Sources */,
+				F3B389D32D102F5E0082C2F3 /* DependencyList.swift in Sources */,
+				F3B389CF2D1027890082C2F3 /* DerivedDataCard.swift in Sources */,
 				F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */,
-				F3522DC62C2A29C000660101 /* Derived Data List.swift in Sources */,
+				F3522DC62C2A29C000660101 /* DerivedDataList.swift in Sources */,
 				F37831C92D11A69B007F7858 /* Proj Details Dates.swift in Sources */,
 				F32A1E052D30FD1C008AEB2F /* Bottom Bar.swift in Sources */,
 				F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */,
-				F37831DF2D12EA34007F7858 /* Preview Projects.swift in Sources */,
+				F37831DF2D12EA34007F7858 /* PreviewProjects.swift in Sources */,
 				F37831B92D10A19E007F7858 /* Fetch project file path.swift in Sources */,
 				F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */,
 			);

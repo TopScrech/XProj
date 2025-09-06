@@ -1,22 +1,21 @@
 import SwiftUI
 
-struct PackageDepList: View {
+struct DependencyList: View {
     @Environment(DataModel.self) private var vm
-    
-    @AppStorage("sort_package_dependencies_by_author") private var sortByAuthor = true
+    @EnvironmentObject private var store: ValueStore
     
     var body: some View {
         List {
             Section {
-                Toggle("Sort by Author", isOn: $sortByAuthor)
+                Toggle("Sort by Author", isOn: $store.sortByAuthor)
             }
             
-            if sortByAuthor {
+            if store.sortByAuthor {
                 ForEach(dependenciesGroupedByAuthor, id: \.author) { group in
                     Section {
                         // Author's packages
                         ForEach(group.dependencies) { package in
-                            PackageDepCard(package)
+                            DependencyCard(package)
                         }
                     } header: {
                         HStack {
@@ -33,7 +32,7 @@ struct PackageDepList: View {
                 }
             } else {
                 ForEach(dependencies) { package in
-                    PackageDepCard(package)
+                    DependencyCard(package)
                 }
             }
         }
@@ -93,6 +92,7 @@ struct PackageDepList: View {
 }
 
 #Preview {
-    PackageDepList()
+    DependencyList()
         .environment(DataModel.shared)
+        .environmentObject(ValueStore())
 }

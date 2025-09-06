@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct PackageDepCard: View {
+struct DependencyCard: View {
     private let package: PackageDependency
     
     init(_ package: PackageDependency) {
@@ -9,7 +9,7 @@ struct PackageDepCard: View {
     
     var body: some View {
         NavigationLink {
-            PackageDepDetails(package)
+            DependencyDetails(package)
         } label: {
             VStack(alignment: .leading, spacing: 4) {
                 HStack {
@@ -37,5 +37,5 @@ struct PackageDepCard: View {
 }
 
 //#Preview {
-//    PackageDepCard()
+//    DependencyCard()
 //}

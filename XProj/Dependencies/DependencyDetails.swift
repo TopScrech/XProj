@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct PackageDepDetails: View {
+struct DependencyDetails: View {
     private let dependency: PackageDependency
     
     init(_ dependency: PackageDependency) {
@@ -35,5 +35,5 @@ struct PackageDepDetails: View {
 }
 
 //#Preview {
-//    PackageDepDetails()
+//    DependencyDetails()
 //}

@@ -21,6 +21,7 @@ extension FileManager {
         
         // The error handler simply signals errors to outside code
         var errorDidOccur: Error?
+        
         let errorHandler: (URL, Error) -> Bool = { _, error in
             errorDidOccur = error
             return false
