@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProjDetailsDependencyList: View {
+struct ProjDependencyList: View {
     private let packages: [Package]
     
     init(_ packages: [Package]) {
@@ -10,8 +10,8 @@ struct ProjDetailsDependencyList: View {
     var body: some View {
         if !packages.isEmpty {
             Section {
-                ForEach(packages) { package in
-                    ProjDetailsDependency(package)
+                ForEach(packages) {
+                    ProjDependency($0)
                 }
             } header: {
                 Text("Package dependencies: \(packages.count)")
@@ -22,5 +22,5 @@ struct ProjDetailsDependencyList: View {
 }
 
 #Preview {
-    ProjDetailsDependencyList([])
+    ProjDependencyList([])
 }

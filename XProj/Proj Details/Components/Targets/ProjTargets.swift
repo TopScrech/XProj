@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProjDetailsTargets: View {
+struct ProjTargets: View {
     private let targets: [Target]
     
     init(_ targets: [Target]) {
@@ -10,8 +10,8 @@ struct ProjDetailsTargets: View {
     var body: some View {
         if !targets.isEmpty {
             Section {
-                ForEach(targets) { target in
-                    ProjDetailsTarget(target)
+                ForEach(targets) {
+                    ProjTarget($0)
                 }
             } header: {
                 Text("Targets: \(targets.count)")
@@ -22,5 +22,5 @@ struct ProjDetailsTargets: View {
 }
 
 #Preview {
-    ProjDetailsTargets([])
+    ProjTargets([])
 }

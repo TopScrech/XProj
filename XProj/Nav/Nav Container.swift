@@ -22,11 +22,11 @@ struct NavContainer: View {
                 NavModeButton()
                     .padding()
                     .onAppear {
-                        nav.showExperiencePicker = true
+                        nav.showNavModePicker = true
                     }
             }
         }
-        .sheet($nav.showExperiencePicker) {
+        .sheet($nav.showNavModePicker) {
             NavModePicker($store.navMode)
         }
         .task {

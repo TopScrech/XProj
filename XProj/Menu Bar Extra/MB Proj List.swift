@@ -33,8 +33,8 @@ struct MBProjList: View {
             
             ScrollView {
                 LazyVStack {
-                    ForEach(vm.filteredProjects.prefix(20)) { proj in
-                        MBProjCard(proj)
+                    ForEach(vm.filteredProjects.prefix(20)) {
+                        MBProjCard($0)
                     }
                 }
             }

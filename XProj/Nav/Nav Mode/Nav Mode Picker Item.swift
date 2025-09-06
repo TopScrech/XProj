@@ -5,19 +5,19 @@ struct NavModePickerItem: View {
     
     @Binding private var selection: NavMode?
     
-    private var experience: NavMode
+    private var navMode: NavMode
     
-    init(_ selection: Binding<NavMode?>, for experience: NavMode) {
+    init(_ selection: Binding<NavMode?>, navMode: NavMode) {
         _selection = selection
-        self.experience = experience
+        self.navMode = navMode
     }
     
     var body: some View {
         Button {
-            selection = experience
+            selection = navMode
             dismiss()
         } label: {
-            Label(selection: $selection, experience: experience)
+            Label(selection: $selection, navMode: navMode)
         }
         .buttonStyle(.plain)
     }
@@ -25,27 +25,27 @@ struct NavModePickerItem: View {
 
 private struct Label: View {
     @Binding var selection: NavMode?
-    var experience: NavMode
+    var navMode: NavMode
     
     @State private var isHovering = false
     
     var body: some View {
         HStack(spacing: 20) {
-            Image(systemName: experience.icon)
+            Image(systemName: navMode.icon)
                 .title()
                 .foregroundStyle(shapeStyle(Color.accentColor))
             
             VStack(alignment: .leading) {
-                Text(experience.name)
+                Text(navMode.name)
                     .bold()
                     .foregroundStyle(shapeStyle(.primary))
             }
         }
         .frame(width: 200, height: 50)
-        .shadow(radius: selection == experience ? 4 : 0)
+        .shadow(radius: selection == navMode ? 4 : 0)
         .background {
             RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .fill(selection == experience ?
+                .fill(selection == navMode ?
                       AnyShapeStyle(Color.accentColor) :
                         AnyShapeStyle(.background))
             
@@ -61,7 +61,7 @@ private struct Label: View {
     }
     
     private func shapeStyle<S: ShapeStyle>(_ style: S) -> some ShapeStyle {
-        if selection == experience {
+        if selection == navMode {
             AnyShapeStyle(.background)
         } else {
             AnyShapeStyle(style)
@@ -70,13 +70,9 @@ private struct Label: View {
 }
 
 #Preview {
-    @Previewable @State
-    var selection: NavMode?
+    @Previewable @State var selection: NavMode?
     
     ForEach(NavMode.allCases) {
-        NavModePickerItem(
-            $selection,
-            for: $0
-        )
+        NavModePickerItem($selection, navMode: $0)
     }
 }

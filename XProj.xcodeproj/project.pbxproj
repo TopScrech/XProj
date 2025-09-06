@@ -12,7 +12,7 @@
 		F31EF9492D1038CE000F95A7 /* DependencyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9482D1038CE000F95A7 /* DependencyDetails.swift */; };
 		F323EC942D315E3A00973FA0 /* Value Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC932D315E3A00973FA0 /* Value Store.swift */; };
 		F323EC962D31E39A00973FA0 /* Open Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC952D31E39A00973FA0 /* Open Buttons.swift */; };
-		F329E1812D3683E4007BA9D1 /* Proj Details Gitignore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329E1802D3683E4007BA9D1 /* Proj Details Gitignore.swift */; };
+		F329E1812D3683E4007BA9D1 /* ProjGitignore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329E1802D3683E4007BA9D1 /* ProjGitignore.swift */; };
 		F32A1E022D2FB7B6008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
 		F32A1E032D2FB7BD008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
 		F32A1E052D30FD1C008AEB2F /* Bottom Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A1E042D30FD1C008AEB2F /* Bottom Bar.swift */; };
@@ -42,14 +42,14 @@
 		F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BA2D10CE9A007F7858 /* Formatters.swift */; };
 		F37831BF2D10D8DE007F7858 /* Packages in Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BE2D10D8DE007F7858 /* Packages in Package.swift */; };
 		F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C02D10E1CF007F7858 /* App Store App.swift */; };
-		F37831C52D11A4F4007F7858 /* Proj Details Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C42D11A4F4007F7858 /* Proj Details Target.swift */; };
-		F37831C72D11A590007F7858 /* Proj Details Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C62D11A590007F7858 /* Proj Details Dependency.swift */; };
-		F37831C92D11A69B007F7858 /* Proj Details Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C82D11A69B007F7858 /* Proj Details Dates.swift */; };
+		F37831C52D11A4F4007F7858 /* ProjTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C42D11A4F4007F7858 /* ProjTarget.swift */; };
+		F37831C72D11A590007F7858 /* ProjDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C62D11A590007F7858 /* ProjDependency.swift */; };
+		F37831C92D11A69B007F7858 /* ProjDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C82D11A69B007F7858 /* ProjDates.swift */; };
 		F37831CC2D11AF86007F7858 /* icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831CB2D11AF86007F7858 /* icon.swift */; };
-		F37831CF2D11D11B007F7858 /* Proj Details Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831CE2D11D11B007F7858 /* Proj Details Image.swift */; };
-		F37831D12D11D177007F7858 /* Proj Details Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D02D11D177007F7858 /* Proj Details Actions.swift */; };
-		F37831D32D11D221007F7858 /* Proj Details Targets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D22D11D221007F7858 /* Proj Details Targets.swift */; };
-		F37831D52D11D292007F7858 /* Proj Details Dependency List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D42D11D292007F7858 /* Proj Details Dependency List.swift */; };
+		F37831CF2D11D11B007F7858 /* ProjImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831CE2D11D11B007F7858 /* ProjImage.swift */; };
+		F37831D12D11D177007F7858 /* ProjActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D02D11D177007F7858 /* ProjActions.swift */; };
+		F37831D32D11D221007F7858 /* ProjTargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D22D11D221007F7858 /* ProjTargets.swift */; };
+		F37831D52D11D292007F7858 /* ProjDependencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D42D11D292007F7858 /* ProjDependencyList.swift */; };
 		F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D72D12DF0E007F7858 /* Open folder picker.swift */; };
 		F37831DB2D12E0E6007F7858 /* Save bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DA2D12E0E6007F7858 /* Save bookmark.swift */; };
 		F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DC2D12E57D007F7858 /* Restore access to folder.swift */; };
@@ -59,7 +59,7 @@
 		F37D1BF12CDA235D00D8817D /* Entry View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF02CDA235D00D8817D /* Entry View.swift */; };
 		F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF52CDA259E00D8817D /* Smart Scan.swift */; };
 		F37D1BFA2CDA272600D8817D /* Duplicate Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF92CDA272600D8817D /* Duplicate Section.swift */; };
-		F3874E2C2D36803C000BDCD9 /* Proj Details Swift Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3874E2B2D36803C000BDCD9 /* Proj Details Swift Tools.swift */; };
+		F3874E2C2D36803C000BDCD9 /* ProjSwiftTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3874E2B2D36803C000BDCD9 /* ProjSwiftTools.swift */; };
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
 		F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Proj Card.swift */; };
 		F38B5E582BFE134400CB9917 /* SearchSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* SearchSuggestions.swift */; };
@@ -114,7 +114,7 @@
 		F31EF9482D1038CE000F95A7 /* DependencyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyDetails.swift; sourceTree = "<group>"; };
 		F323EC932D315E3A00973FA0 /* Value Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value Store.swift"; sourceTree = "<group>"; };
 		F323EC952D31E39A00973FA0 /* Open Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open Buttons.swift"; sourceTree = "<group>"; };
-		F329E1802D3683E4007BA9D1 /* Proj Details Gitignore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Gitignore.swift"; sourceTree = "<group>"; };
+		F329E1802D3683E4007BA9D1 /* ProjGitignore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjGitignore.swift; sourceTree = "<group>"; };
 		F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F32A1E042D30FD1C008AEB2F /* Bottom Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bottom Bar.swift"; sourceTree = "<group>"; };
 		F33081732C9057F700605E43 /* Widgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,14 +145,14 @@
 		F37831BA2D10CE9A007F7858 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		F37831BE2D10D8DE007F7858 /* Packages in Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Packages in Package.swift"; sourceTree = "<group>"; };
 		F37831C02D10E1CF007F7858 /* App Store App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Store App.swift"; sourceTree = "<group>"; };
-		F37831C42D11A4F4007F7858 /* Proj Details Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Target.swift"; sourceTree = "<group>"; };
-		F37831C62D11A590007F7858 /* Proj Details Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Dependency.swift"; sourceTree = "<group>"; };
-		F37831C82D11A69B007F7858 /* Proj Details Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Dates.swift"; sourceTree = "<group>"; };
+		F37831C42D11A4F4007F7858 /* ProjTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjTarget.swift; sourceTree = "<group>"; };
+		F37831C62D11A590007F7858 /* ProjDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjDependency.swift; sourceTree = "<group>"; };
+		F37831C82D11A69B007F7858 /* ProjDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjDates.swift; sourceTree = "<group>"; };
 		F37831CB2D11AF86007F7858 /* icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = icon.swift; sourceTree = "<group>"; };
-		F37831CE2D11D11B007F7858 /* Proj Details Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Image.swift"; sourceTree = "<group>"; };
-		F37831D02D11D177007F7858 /* Proj Details Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Actions.swift"; sourceTree = "<group>"; };
-		F37831D22D11D221007F7858 /* Proj Details Targets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Targets.swift"; sourceTree = "<group>"; };
-		F37831D42D11D292007F7858 /* Proj Details Dependency List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Dependency List.swift"; sourceTree = "<group>"; };
+		F37831CE2D11D11B007F7858 /* ProjImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjImage.swift; sourceTree = "<group>"; };
+		F37831D02D11D177007F7858 /* ProjActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjActions.swift; sourceTree = "<group>"; };
+		F37831D22D11D221007F7858 /* ProjTargets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjTargets.swift; sourceTree = "<group>"; };
+		F37831D42D11D292007F7858 /* ProjDependencyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjDependencyList.swift; sourceTree = "<group>"; };
 		F37831D72D12DF0E007F7858 /* Open folder picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open folder picker.swift"; sourceTree = "<group>"; };
 		F37831DA2D12E0E6007F7858 /* Save bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Save bookmark.swift"; sourceTree = "<group>"; };
 		F37831DC2D12E57D007F7858 /* Restore access to folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restore access to folder.swift"; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		F37D1BF02CDA235D00D8817D /* Entry View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry View.swift"; sourceTree = "<group>"; };
 		F37D1BF52CDA259E00D8817D /* Smart Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Smart Scan.swift"; sourceTree = "<group>"; };
 		F37D1BF92CDA272600D8817D /* Duplicate Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Section.swift"; sourceTree = "<group>"; };
-		F3874E2B2D36803C000BDCD9 /* Proj Details Swift Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details Swift Tools.swift"; sourceTree = "<group>"; };
+		F3874E2B2D36803C000BDCD9 /* ProjSwiftTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjSwiftTools.swift; sourceTree = "<group>"; };
 		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		F38B5E512BFD6F6100CB9917 /* Proj Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card.swift"; sourceTree = "<group>"; };
 		F38B5E572BFE134400CB9917 /* SearchSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestions.swift; sourceTree = "<group>"; };
@@ -366,13 +366,12 @@
 		F37831D62D11D3B4007F7858 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				F3874E2B2D36803C000BDCD9 /* Proj Details Swift Tools.swift */,
-				F37831CE2D11D11B007F7858 /* Proj Details Image.swift */,
-				F37831D02D11D177007F7858 /* Proj Details Actions.swift */,
-				F37831C82D11A69B007F7858 /* Proj Details Dates.swift */,
-				F37831D42D11D292007F7858 /* Proj Details Dependency List.swift */,
-				F37831C62D11A590007F7858 /* Proj Details Dependency.swift */,
-				F329E1802D3683E4007BA9D1 /* Proj Details Gitignore.swift */,
+				F3874E2B2D36803C000BDCD9 /* ProjSwiftTools.swift */,
+				F37831CE2D11D11B007F7858 /* ProjImage.swift */,
+				F37831D02D11D177007F7858 /* ProjActions.swift */,
+				F37831C82D11A69B007F7858 /* ProjDates.swift */,
+				F329E1802D3683E4007BA9D1 /* ProjGitignore.swift */,
+				F3E98C3E2E6D00530019439F /* Dependencies */,
 				F38FB0E72DD2A79200C8A19B /* Targets */,
 			);
 			path = Components;
@@ -433,8 +432,8 @@
 		F38FB0E72DD2A79200C8A19B /* Targets */ = {
 			isa = PBXGroup;
 			children = (
-				F37831D22D11D221007F7858 /* Proj Details Targets.swift */,
-				F37831C42D11A4F4007F7858 /* Proj Details Target.swift */,
+				F37831D22D11D221007F7858 /* ProjTargets.swift */,
+				F37831C42D11A4F4007F7858 /* ProjTarget.swift */,
 			);
 			path = Targets;
 			sourceTree = "<group>";
@@ -484,6 +483,15 @@
 				F3DAD6892D161ECC0012BA9D /* Nav Mode */,
 			);
 			path = Nav;
+			sourceTree = "<group>";
+		};
+		F3E98C3E2E6D00530019439F /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				F37831D42D11D292007F7858 /* ProjDependencyList.swift */,
+				F37831C62D11A590007F7858 /* ProjDependency.swift */,
+			);
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		F3FC8A552D1AFD0300A7CCBC /* 3 Column */ = {
@@ -672,9 +680,9 @@
 				F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */,
 				F3B389C32D0F93500082C2F3 /* Package.swift in Sources */,
 				F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */,
-				F37831C72D11A590007F7858 /* Proj Details Dependency.swift in Sources */,
+				F37831C72D11A590007F7858 /* ProjDependency.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
-				F3874E2C2D36803C000BDCD9 /* Proj Details Swift Tools.swift in Sources */,
+				F3874E2C2D36803C000BDCD9 /* ProjSwiftTools.swift in Sources */,
 				F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */,
 				F3515C212D366DA70078E588 /* Proj Card Platforms.swift in Sources */,
 				F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */,
@@ -684,24 +692,24 @@
 				F371A51D2C2D8D94006BDF0D /* MB Proj Card.swift in Sources */,
 				F31EF9492D1038CE000F95A7 /* DependencyDetails.swift in Sources */,
 				F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */,
-				F329E1812D3683E4007BA9D1 /* Proj Details Gitignore.swift in Sources */,
-				F37831D32D11D221007F7858 /* Proj Details Targets.swift in Sources */,
+				F329E1812D3683E4007BA9D1 /* ProjGitignore.swift in Sources */,
+				F37831D32D11D221007F7858 /* ProjTargets.swift in Sources */,
 				F3522DCD2C2AA32C00660101 /* FileManager.swift in Sources */,
-				F37831D52D11D292007F7858 /* Proj Details Dependency List.swift in Sources */,
+				F37831D52D11D292007F7858 /* ProjDependencyList.swift in Sources */,
 				F38B5E582BFE134400CB9917 /* SearchSuggestions.swift in Sources */,
 				F3ED776F2D1772F8000977AC /* Proj List VM.swift in Sources */,
 				F3522DCF2C2AA51800660101 /* DerivedDataEntry.swift in Sources */,
 				F3FC8A5E2D1AFFD500A7CCBC /* Column Sidebar.swift in Sources */,
-				F37831D12D11D177007F7858 /* Proj Details Actions.swift in Sources */,
+				F37831D12D11D177007F7858 /* ProjActions.swift in Sources */,
 				F323EC942D315E3A00973FA0 /* Value Store.swift in Sources */,
-				F37831C52D11A4F4007F7858 /* Proj Details Target.swift in Sources */,
+				F37831C52D11A4F4007F7858 /* ProjTarget.swift in Sources */,
 				F3B389D62D1032A40082C2F3 /* PackageDependency.swift in Sources */,
 				F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */,
 				F31EF9472D103896000F95A7 /* DependencyCard.swift in Sources */,
 				F371A5192C2D84BA006BDF0D /* Proj Card VM.swift in Sources */,
 				F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */,
 				F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */,
-				F37831CF2D11D11B007F7858 /* Proj Details Image.swift in Sources */,
+				F37831CF2D11D11B007F7858 /* ProjImage.swift in Sources */,
 				F37831CC2D11AF86007F7858 /* icon.swift in Sources */,
 				F3B389C52D0F9AE80082C2F3 /* Swift Tools Version.swift in Sources */,
 				F37831DB2D12E0E6007F7858 /* Save bookmark.swift in Sources */,
@@ -712,7 +720,7 @@
 				F3B389CF2D1027890082C2F3 /* DerivedDataCard.swift in Sources */,
 				F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */,
 				F3522DC62C2A29C000660101 /* DerivedDataList.swift in Sources */,
-				F37831C92D11A69B007F7858 /* Proj Details Dates.swift in Sources */,
+				F37831C92D11A69B007F7858 /* ProjDates.swift in Sources */,
 				F32A1E052D30FD1C008AEB2F /* Bottom Bar.swift in Sources */,
 				F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */,
 				F37831DF2D12EA34007F7858 /* PreviewProjects.swift in Sources */,

@@ -14,8 +14,8 @@ struct SearchSuggestions: View {
     }
     
     var body: some View {
-        ForEach(suggestedProjects) { proj in
-            SearchSuggestion(proj)
+        ForEach(suggestedProjects) {
+            SearchSuggestion($0)
         }
     }
 }

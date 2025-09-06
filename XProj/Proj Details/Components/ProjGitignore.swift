@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProjDetailsGitignore: View {
+struct ProjGitignore: View {
     private let path: String
     
     init(_ path: String) {

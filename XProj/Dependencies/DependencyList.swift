@@ -31,8 +31,8 @@ struct DependencyList: View {
                     }
                 }
             } else {
-                ForEach(dependencies) { package in
-                    DependencyCard(package)
+                ForEach(dependencies) {
+                    DependencyCard($0)
                 }
             }
         }

@@ -12,7 +12,7 @@ final class NavModel: Codable {
     
     /// Leading columns' visibility states
     var columnVisibility: NavigationSplitViewVisibility
-    var showExperiencePicker = false
+    var showNavModePicker = false
     
     private static let decoder = JSONDecoder()
     private static let encoder = JSONEncoder()

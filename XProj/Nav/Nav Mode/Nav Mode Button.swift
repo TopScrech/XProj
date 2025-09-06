@@ -14,7 +14,7 @@ struct NavModeButton: View {
     
     var body: some View {
         Button(name, systemImage: icon) {
-            navModel.showExperiencePicker = true
+            navModel.showNavModePicker = true
         }
         .help("Choose your navigation mode")
     }

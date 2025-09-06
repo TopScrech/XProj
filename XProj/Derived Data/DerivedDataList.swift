@@ -24,8 +24,8 @@ struct DerivedDataList: View {
                 }
             }
             
-            ForEach(vm.filteredFolders) { folder in
-                DerivedDataCard(folder)
+            ForEach(vm.filteredFolders) {
+                DerivedDataCard($0)
             }
 #warning("searchable crashes cause there's already a searchbar")
         }

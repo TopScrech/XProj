@@ -7,5 +7,5 @@ final class ValueStore: ObservableObject {
     @AppStorage("show_proj_app_store_link")       var showProjAppStoreLink = true
     @AppStorage("show_gitignore")                 var showGitignore = true
     @AppStorage("sort_dependencies_by_author")    var sortByAuthor = true
-    @AppStorage("experience")                     var navMode: NavMode?
+    @AppStorage("nav_mode")                       var navMode: NavMode?
 }

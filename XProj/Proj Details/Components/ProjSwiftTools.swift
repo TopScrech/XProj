@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProjDetailsSwiftTools: View {
+struct ProjSwiftTools: View {
     private let swiftToolsVersion: String?
     
     init(_ swiftToolsVersion: String?) {
@@ -21,5 +21,5 @@ struct ProjDetailsSwiftTools: View {
 }
 
 #Preview {
-    ProjDetailsSwiftTools("6.0")
+    ProjSwiftTools("6.0")
 }

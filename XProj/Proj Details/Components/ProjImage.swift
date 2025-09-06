@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProjDetailsImage: View {
+struct ProjImage: View {
     private let proj: Proj
     
     init(_ proj: Proj) {
