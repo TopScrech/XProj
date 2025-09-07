@@ -14,6 +14,8 @@ struct ProjCodeLines: View {
         Section {
             if vm.totalLines > 0 {
                 Text(vm.totalLines)
+            } else {
+                Text("-")
             }
         } header: {
             Text("Code lines")
