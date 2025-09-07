@@ -25,6 +25,8 @@ struct ProjDetails: View {
             
             ProjActions(proj)
             
+            ProjCodeLines(proj)
+            
             if store.showProjTargets {
                 ProjTargets(proj.targets)
             }

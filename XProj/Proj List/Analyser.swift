@@ -8,7 +8,7 @@ extension DataModel {
         var totalFiles = 0
         
         for folder in folderPaths {
-            if let files = await listFilesRecursively(folder) {
+            if let files = await DataModel.listFilesRecursively(folder) {
                 folderContents[folder] = files
                 totalFiles += files.count
             } else {
@@ -84,7 +84,7 @@ extension DataModel {
 }
 
 extension DataModel {
-    func listFilesRecursively(_ folder: String) async -> [String]? {
+    static func listFilesRecursively(_ folder: String) async -> [String]? {
         var allFiles = [String]()
         
         do {

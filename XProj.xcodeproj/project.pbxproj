@@ -92,6 +92,8 @@
 		F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */; };
 		F3E98C402E6D02250019439F /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E98C3F2E6D02250019439F /* Icon.xcassets */; };
 		F3E98C412E6D02D20019439F /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E98C3F2E6D02250019439F /* Icon.xcassets */; };
+		F3E98C432E6D6C4C0019439F /* ProjCodeLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E98C422E6D6C4C0019439F /* ProjCodeLines.swift */; };
+		F3E98C462E6D723C0019439F /* LineCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E98C452E6D723C0019439F /* LineCounter.swift */; };
 		F3ED776F2D1772F8000977AC /* Proj List VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED776E2D1772F8000977AC /* Proj List VM.swift */; };
 		F3FC8A582D1AFDC300A7CCBC /* 2 Column Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A572D1AFDC300A7CCBC /* 2 Column Detail.swift */; };
 		F3FC8A5A2D1AFEC700A7CCBC /* 3 Column Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A592D1AFEC700A7CCBC /* 3 Column Detail.swift */; };
@@ -198,6 +200,8 @@
 		F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List Toolbar.swift"; sourceTree = "<group>"; };
 		F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Projects.swift"; sourceTree = "<group>"; };
 		F3E98C3F2E6D02250019439F /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
+		F3E98C422E6D6C4C0019439F /* ProjCodeLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCodeLines.swift; sourceTree = "<group>"; };
+		F3E98C452E6D723C0019439F /* LineCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCounter.swift; sourceTree = "<group>"; };
 		F3ED776E2D1772F8000977AC /* Proj List VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List VM.swift"; sourceTree = "<group>"; };
 		F3FC8A572D1AFDC300A7CCBC /* 2 Column Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2 Column Detail.swift"; sourceTree = "<group>"; };
 		F3FC8A592D1AFEC700A7CCBC /* 3 Column Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3 Column Detail.swift"; sourceTree = "<group>"; };
@@ -375,6 +379,7 @@
 				F37831D02D11D177007F7858 /* ProjActions.swift */,
 				F37831C82D11A69B007F7858 /* ProjDates.swift */,
 				F329E1802D3683E4007BA9D1 /* ProjGitignore.swift */,
+				F3E98C442E6D72170019439F /* Code Lines */,
 				F3E98C3E2E6D00530019439F /* Dependencies */,
 				F38FB0E72DD2A79200C8A19B /* Targets */,
 			);
@@ -496,6 +501,15 @@
 				F37831C62D11A590007F7858 /* ProjDependency.swift */,
 			);
 			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		F3E98C442E6D72170019439F /* Code Lines */ = {
+			isa = PBXGroup;
+			children = (
+				F3E98C422E6D6C4C0019439F /* ProjCodeLines.swift */,
+				F3E98C452E6D723C0019439F /* LineCounter.swift */,
+			);
+			path = "Code Lines";
 			sourceTree = "<group>";
 		};
 		F3FC8A552D1AFD0300A7CCBC /* 3 Column */ = {
@@ -666,6 +680,7 @@
 				F3D1E75F2C9B40B4000C81FF /* AppSettings.swift in Sources */,
 				F3522DCB2C2A2A5600660101 /* DerivedDataVM.swift in Sources */,
 				F3B389CD2D0FAC770082C2F3 /* DerivedDataFolder.swift in Sources */,
+				F3E98C462E6D723C0019439F /* LineCounter.swift in Sources */,
 				F3DAD6752D161EAA0012BA9D /* Proj.swift in Sources */,
 				F3DAD6772D161EAA0012BA9D /* Nav Mode.swift in Sources */,
 				F323EC962D31E39A00973FA0 /* Open Buttons.swift in Sources */,
@@ -688,6 +703,7 @@
 				F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */,
 				F37831C72D11A590007F7858 /* ProjDependency.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
+				F3E98C432E6D6C4C0019439F /* ProjCodeLines.swift in Sources */,
 				F3874E2C2D36803C000BDCD9 /* ProjSwiftTools.swift in Sources */,
 				F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */,
 				F3515C212D366DA70078E588 /* Proj Card Platforms.swift in Sources */,
