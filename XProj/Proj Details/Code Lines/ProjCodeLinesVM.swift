@@ -44,7 +44,7 @@ final class ProjCodeLinesVM {
         
         let allowed = Set(
             codeLineCountingExtensions
-                .split { $0 == "," || $0.isWhitespace }   // split on commas and spaces
+                .split { $0 == "," || $0.isWhitespace } // split on commas and spaces
                 .map { $0.lowercased() }
         )
         
