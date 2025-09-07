@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct PackageDepDetails: View {
+struct DependencyDetails: View {
     private let dependency: PackageDependency
     
     init(_ dependency: PackageDependency) {
@@ -26,8 +26,8 @@ struct PackageDepDetails: View {
             }
             
             Section("Projects using \(dependency.name)") {
-                ForEach(dependency.sortedProjects) { proj in
-                    ProjCard(proj)
+                ForEach(dependency.sortedProjects) {
+                    ProjCard($0)
                 }
             }
         }
@@ -35,5 +35,5 @@ struct PackageDepDetails: View {
 }
 
 //#Preview {
-//    PackageDepDetails()
+//    DependencyDetails()
 //}

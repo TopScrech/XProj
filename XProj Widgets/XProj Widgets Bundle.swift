@@ -5,6 +5,9 @@ import WidgetKit
 struct XProjWidgetsBundle: WidgetBundle {
     var body: some Widget {
         XProjWidgets()
-        XProjWidgetsControl()
+        
+        if #available(macOS 26, *) {
+            XProjWidgetsControl()
+        }
     }
 }

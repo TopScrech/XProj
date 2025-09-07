@@ -2,6 +2,7 @@ import SwiftUI
 import WidgetKit
 import AppIntents
 
+@available(macOS 26, *)
 struct XProjWidgetsControl: ControlWidget {
     static let kind = "dev.topscrech.Bisquit-host.XProj Widgets"
     
@@ -23,6 +24,7 @@ struct XProjWidgetsControl: ControlWidget {
     }
 }
 
+@available(macOS 26, *)
 extension XProjWidgetsControl {
     struct Value {
         var isRunning: Bool
@@ -41,6 +43,7 @@ extension XProjWidgetsControl {
     }
 }
 
+@available(macOS 26, *)
 struct TimerConfiguration: ControlConfigurationIntent {
     static let title: LocalizedStringResource = "Timer Name Configuration"
     

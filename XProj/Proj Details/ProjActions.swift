@@ -1,6 +1,6 @@
 import ScrechKit
 
-struct ProjDetailsActions: View {
+struct ProjActions: View {
     @Environment(DataModel.self) private var vm
     @EnvironmentObject private var store: ValueStore
     @Environment(\.openURL) private var openUrl
@@ -54,7 +54,7 @@ struct ProjDetailsActions: View {
 }
 
 #Preview {
-    ProjDetailsActions(previewProj1)
+    ProjActions(previewProj1)
         .environment(DataModel.shared)
         .environmentObject(ValueStore())
 }

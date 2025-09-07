@@ -33,20 +33,6 @@ struct Target: Identifiable, Hashable, Codable {
     }
 }
 
-enum TargetType: String, Identifiable, Codable, Hashable, CaseIterable {
-    //    case iOS, tvOS, watchOS, macOS, visionOS, widgets, iMessage
-    var id: String {
-        rawValue
-    }
-    
-    case app,
-         widgets,
-         iMessage,
-         unitTests,
-         uiTests,
-         other
-}
-
 extension Proj {
 #warning("Check release configuration")
     //    func isDebugConfiguration(_ buildSettings: [String: Any]?) -> Bool {
@@ -70,10 +56,9 @@ extension Proj {
         }
         
         do {
-            let xcodeProj = try XcodeProj(url: url)
-            let targets = xcodeProj.project.targets
+            let targets = try XcodeProj(url: url).project.targets
             
-            let targetObjects: [Target] = targets.flatMap { target in
+            let targetObjects = targets.flatMap { target in
                 let buildConfigs = target.buildConfigurationList?.buildConfigurations ?? []
                 
                 var seenRefs = Set<String>()
@@ -126,7 +111,11 @@ extension Proj {
         }
     }
     
-    func determineType(_ name: String, _ buildSettings: [String: Any]?) -> (type: TargetType, versions: [String]) {
+    func determineType(
+        _ name: String,
+        _ buildSettings: [String: Any]?
+    ) -> (type: TargetType, versions: [String]) {
+        
         guard let buildSettings else {
             return (.other, [])
         }
@@ -160,20 +149,11 @@ extension Proj {
         }
         
         switch name {
-        case "Widgets Extension":
-            type = .widgets
-            
-        case "iMessage Extension":
-            type = .iMessage
-            
-        case "Unit Tests":
-            type = .unitTests
-            
-        case "UI Tests":
-            type = .uiTests
-            
-        default:
-            break
+        case "Widgets Extension":  type = .widgets
+        case "iMessage Extension": type = .iMessage
+        case "Unit Tests":         type = .unitTests
+        case "UI Tests":           type = .uiTests
+        default:                   break
         }
         
         return (type, configs)

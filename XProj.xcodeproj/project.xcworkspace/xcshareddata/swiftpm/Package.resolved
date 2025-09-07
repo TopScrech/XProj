@@ -1,6 +1,15 @@
 {
-  "originHash" : "0582286506d26b6faf4943633c278535efb423e556451c1a7782b5be5f996f5c",
+  "originHash" : "1196c0218e63eaf514995bc4ba0105b45cf8fc544414f8f5c905005f92f3bbf7",
   "pins" : [
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher",
+      "state" : {
+        "revision" : "2015fda791daa72c8058619545a593bf8c1dd59f",
+        "version" : "8.5.0"
+      }
+    },
     {
       "identity" : "launchatlogin",
       "kind" : "remoteSourceControl",
@@ -16,7 +25,7 @@
       "location" : "https://github.com/TopScrech/ScrechKit",
       "state" : {
         "branch" : "main",
-        "revision" : "ab825871ce1732681425385c9288817379c3f824"
+        "revision" : "731132bddb22c13cdbd752bb1ff539554e7de666"
       }
     },
     {

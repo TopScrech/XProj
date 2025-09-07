@@ -2,22 +2,19 @@ import SwiftUI
 
 struct NavModeButton: View {
     @Environment(NavModel.self) private var navModel
-    
-    @AppStorage("experience") private var experience: NavMode?
+    @EnvironmentObject private var store: ValueStore
     
     private var icon: String {
-        experience?.icon ?? "questionmark"
+        store.navMode?.icon ?? "questionmark"
     }
     
     private var name: LocalizedStringKey {
-        experience?.name ?? ""
+        store.navMode?.name ?? ""
     }
     
     var body: some View {
-        Button {
-            navModel.showExperiencePicker = true
-        } label: {
-            Label(name, systemImage: icon)
+        Button(name, systemImage: icon) {
+            navModel.showNavModePicker = true
         }
         .help("Choose your navigation mode")
     }
@@ -26,4 +23,5 @@ struct NavModeButton: View {
 #Preview {
     NavModeButton()
         .environment(NavModel.shared)
+        .environmentObject(ValueStore())
 }

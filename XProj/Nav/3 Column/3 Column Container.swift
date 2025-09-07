@@ -26,6 +26,9 @@ struct ThreeColumnContainer: View {
         }
         .toolbar {
             OpenButtons()
+#if DEBUG
+            ProjListToolbar()
+#endif
         }
     }
 }

@@ -34,7 +34,7 @@ struct ProjGrid: View {
                 
             case .packageDependencies:
 #warning("Make a grid view")
-                PackageDepList()
+                DependencyList()
                 
             default:
                 ScrollView {

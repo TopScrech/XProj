@@ -2,14 +2,13 @@ import SwiftUI
 
 struct NavContainer: View {
     @Environment(NavModel.self) private var nav
-    
-    @AppStorage("experience") private var experience: NavMode?
+    @EnvironmentObject private var store: ValueStore
     
     var body: some View {
         @Bindable var nav = nav
         
         Group {
-            switch experience {
+            switch store.navMode {
             case .stack?:
                 StackContainer()
                 
@@ -23,29 +22,21 @@ struct NavContainer: View {
                 NavModeButton()
                     .padding()
                     .onAppear {
-                        nav.showExperiencePicker = true
+                        nav.showNavModePicker = true
                     }
             }
         }
-        .sheet($nav.showExperiencePicker) {
-            NavModePicker($experience)
+        .sheet($nav.showNavModePicker) {
+            NavModePicker($store.navMode)
         }
         .task {
             try? nav.load()
         }
         .onChange(of: nav.selectedCategory) {
-            save()
+            nav.save()
         }
         .onChange(of: nav.selectedProj) {
-            save()
-        }
-    }
-    
-    private func save() {
-        do {
-            try nav.save()
-        } catch {
-            print(error)
+            nav.save()
         }
     }
 }
@@ -53,4 +44,5 @@ struct NavContainer: View {
 #Preview {
     NavContainer()
         .environment(NavModel.shared)
+        .environmentObject(ValueStore())
 }

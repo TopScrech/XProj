@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProjDetailsImage: View {
+struct ProjImage: View {
     private let proj: Proj
     
     init(_ proj: Proj) {
@@ -19,10 +19,8 @@ struct ProjDetailsImage: View {
                     return NSItemProvider(object: fileUrl as NSURL)
                 }
                 .contextMenu {
-                    Button {
+                    Button("Save to Downloads", systemImage: "square.and.arrow.down") {
                         saveToDownloads(path)
-                    } label: {
-                        Label("Save to Downloads", systemImage: "square.and.arrow.down")
                     }
                     
                     ShareLink(item: URL(fileURLWithPath: path))

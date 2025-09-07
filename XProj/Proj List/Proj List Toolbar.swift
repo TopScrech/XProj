@@ -11,35 +11,35 @@ struct ProjListToolbar: View {
 #if DEBUG
         Menu("Functions") {
             Button("listFilesInFoldersSingleThread") {
-                let test = vm.listFilesInFoldersSingleThread(
-                    vm.projects.map(\.path)
-                )
-                
-                print(test)
+                Task {
+                    let _ = await vm.listFilesInFoldersSingleThread(
+                        vm.projects.map(\.path)
+                    )
+                }
             }
             
             Button("countFilesInFoldersMultiThread") {
-                vm.countFilesInFoldersMultiThread(
-                    vm.projects.map(\.path)
-                ) { _ in
-                    
+                Task {
+                    await vm.countFilesInFoldersMultiThread(
+                        vm.projects.map(\.path)
+                    )
                 }
             }
             
             Button("countFilesRecursively") {
-                DispatchQueue.global().async {
+                Task {
                     let start = DispatchTime.now()
                     
-                    if let test = vm.countFilesRecursively("/Users/topscrech/Projects") {
-                        print(test)
+                    if let count = await vm.countFilesRecursively("/Users/topscrech/Projects") {
+                        print(count)
                     }
                     
-                    main {
-                        let finish = DispatchTime.now()
-                        let timeElapsed = finish.uptimeNanoseconds - start.uptimeNanoseconds
-                        let timeElapsedInSeconds = Double(timeElapsed) / 1_000_000_000
-                        
-                        print("Time elapsed: \(timeElapsedInSeconds)s")
+                    let finish = DispatchTime.now()
+                    let timeElapsed = finish.uptimeNanoseconds - start.uptimeNanoseconds
+                    let timeElapsedInSeconds = Double(timeElapsed) / 1_000_000_000
+                    
+                    await MainActor.run {
+                        print("Time elapsed (s):", timeElapsedInSeconds)
                     }
                 }
             }

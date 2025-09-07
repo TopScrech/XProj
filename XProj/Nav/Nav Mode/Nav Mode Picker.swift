@@ -3,10 +3,10 @@ import SwiftUI
 struct NavModePicker: View {
     @Environment(\.dismiss) private var dismiss
     
-    @Binding private var experience: NavMode?
+    @Binding private var navMode: NavMode?
     
-    init(_ experience: Binding<NavMode?>) {
-        _experience = experience
+    init(_ navMode: Binding<NavMode?>) {
+        _navMode = navMode
     }
     
     private let columns = [
@@ -30,8 +30,8 @@ struct NavModePicker: View {
                 .padding()
                 
                 LazyVGrid(columns: columns) {
-                    ForEach(NavMode.allCases) { exp in
-                        NavModePickerItem($experience, for: exp)
+                    ForEach(NavMode.allCases) {
+                        NavModePickerItem($navMode, navMode: $0)
                     }
                 }
             }
@@ -45,13 +45,12 @@ struct NavModePicker: View {
             }
         }
         .frame(width: 600, height: 350)
-        .interactiveDismissDisabled(experience == nil)
+        .interactiveDismissDisabled(navMode == nil)
     }
 }
 
 #Preview {
-    @Previewable @State
-    var experience: NavMode? = .stack
+    @Previewable @State var navMode: NavMode? = .stack
     
-    NavModePicker($experience)
+    NavModePicker($navMode)
 }

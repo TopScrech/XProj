@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProjDetailsTarget: View {
+struct ProjTarget: View {
     @EnvironmentObject private var store: ValueStore
     
     private let target: Target
@@ -80,7 +80,7 @@ struct ProjDetailsTarget: View {
 }
 
 #Preview {
-    ProjDetailsTarget(
+    ProjTarget(
         Target(
             id: "id",
             name: "Preview",

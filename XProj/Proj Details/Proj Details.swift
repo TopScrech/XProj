@@ -15,27 +15,30 @@ struct ProjDetails: View {
                 Text(proj.name)
                     .largeTitle()
                 
-                ProjDetailsImage(proj)
+                ProjImage(proj)
             }
             .padding(.bottom, 10)
             
-            ProjDetailsDates(proj)
+            ProjDates(proj)
             
-            ProjDetailsSwiftTools(proj.swiftToolsVersion)
+            ProjSwiftTools(proj.swiftToolsVersion)
             
-            ProjDetailsActions(proj)
+            ProjActions(proj)
+            
+            if store.showProjCodeLines {
+                ProjCodeLines(proj)
+            }
             
             if store.showProjTargets {
-                ProjDetailsTargets(proj.targets)
+                ProjTargets(proj.targets)
             }
             
             if store.showProjPackageDependencies {
-                ProjDetailsDependencyList(proj.packages)
+                ProjDependencyList(proj.packages)
             }
             
-            
             if store.showGitignore {
-                ProjDetailsGitignore(proj.path)
+                ProjGitignore(proj.path)
             }
         }
         .scrollIndicators(.never)
