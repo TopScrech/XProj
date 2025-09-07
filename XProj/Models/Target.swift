@@ -149,20 +149,11 @@ extension Proj {
         }
         
         switch name {
-        case "Widgets Extension":
-            type = .widgets
-            
-        case "iMessage Extension":
-            type = .iMessage
-            
-        case "Unit Tests":
-            type = .unitTests
-            
-        case "UI Tests":
-            type = .uiTests
-            
-        default:
-            break
+        case "Widgets Extension":  type = .widgets
+        case "iMessage Extension": type = .iMessage
+        case "Unit Tests":         type = .unitTests
+        case "UI Tests":           type = .uiTests
+        default:                   break
         }
         
         return (type, configs)
