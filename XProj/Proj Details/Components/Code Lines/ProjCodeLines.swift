@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ProjCodeLines: View {
+    private var vm = ProjCodeLinesVM()
     @EnvironmentObject private var store: ValueStore
     
     private let proj: Proj
@@ -9,79 +10,22 @@ struct ProjCodeLines: View {
         self.proj = proj
     }
     
-    @State private var totalLines = 0
-    @State private var isCounting = false
-    
     var body: some View {
         Section {
-            if totalLines > 0 {
-                Text(totalLines)
+            if vm.totalLines > 0 {
+                Text(vm.totalLines)
             }
         } header: {
             Text("Code lines")
                 .title2()
         }
         .task {
-            await countLines()
+            await vm.countLines(store.codeLineCountingExtensions, proj: proj)
         }
         .onChange(of: proj) {
             Task {
-                await countLines()
+                await vm.countLines(store.codeLineCountingExtensions, proj: proj)
             }
-        }
-    }
-    
-    private func countLines() async {
-        guard !isCounting else {
-            return
-        }
-        
-        totalLines = 0
-        isCounting = true
-        
-        let allowed = Set(
-            store.codeLineCountingExtensions
-                .split { $0 == "," || $0.isWhitespace }   // split on commas and spaces
-                .map { $0.lowercased() }
-        )
-        
-        let fileStrings = await DataModel.listFilesRecursively(proj.path)
-        var files: [URL] = [] // fallback if no files
-        
-        guard let fileStrings else {
-            return
-        }
-        
-        files = fileStrings.map {
-            URL(fileURLWithPath: $0)
-        }
-        
-        // 2) Filter by extension & count in parallel
-        let total = await withTaskGroup(of: Int.self) { group -> Int in
-            for file in files {
-                let ext = file.pathExtension.lowercased()
-                
-                guard allowed.contains(ext) else {
-                    continue
-                }
-                
-                group.addTask(priority: .utility) {
-                    (try? LineCounter.fastLineCount(file)) ?? 0
-                }
-            }
-            
-            var sum = 0
-            
-            for await partial in group {
-                sum &+= partial
-            }
-            
-            return sum
-        }
-        
-        await MainActor.run {
-            self.totalLines = total
-            self.isCounting = false
         }
     }
 }
