@@ -1,19 +1,13 @@
 import SwiftUI
 
 struct ProjCodeLines: View {
+    @EnvironmentObject private var store: ValueStore
+    
     private let proj: Proj
     
     init(_ proj: Proj) {
         self.proj = proj
     }
-    
-    private let countedExtensions = [
-        "swift","h","m","mm","c","cpp","cc","hpp",
-        "metal","sh","py","rb","go","rs","java","kt","kts",
-        "scala","php","cs","ts","tsx","js","jsx",
-        "json","yaml","yml","xml","html","css",
-        "md","sql","ini","toml","gradle","cmake"
-    ]
     
     @State private var totalLines = 0
     @State private var isCounting = false
@@ -45,11 +39,13 @@ struct ProjCodeLines: View {
         totalLines = 0
         isCounting = true
         
-        let allowed = Set(countedExtensions.map {
-            $0.lowercased()
-        })
+        let allowed = Set(
+            store.codeLineCountingExtensions
+                .split { $0 == "," || $0.isWhitespace }   // split on commas and spaces
+                .map { $0.lowercased() }
+        )
         
-        let fileStrings: [String]? = await DataModel.listFilesRecursively(proj.path)
+        let fileStrings = await DataModel.listFilesRecursively(proj.path)
         var files: [URL] = [] // fallback if no files
         
         guard let fileStrings else {
@@ -92,4 +88,5 @@ struct ProjCodeLines: View {
 
 #Preview {
     ProjCodeLines(previewProj1)
+        .environmentObject(ValueStore())
 }
