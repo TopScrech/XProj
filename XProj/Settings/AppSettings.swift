@@ -94,6 +94,10 @@ struct AppSettings: View {
                     Label("App Store link", systemImage: "link")
                 }
                 
+                Toggle(isOn: $store.showProjCodeLines) {
+                    Label("Code line count", systemImage: "list.number")
+                }
+                
                 Toggle(isOn: $store.showGitignore) {
                     Label("Git ignore", systemImage: "app.connected.to.app.below.fill")
                 }
