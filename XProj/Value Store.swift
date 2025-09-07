@@ -12,7 +12,7 @@ final class ValueStore: ObservableObject {
     @AppStorage("show_proj_app_store_link")       var showProjAppStoreLink = true
     @AppStorage("show_proj_code_lines")           var showProjCodeLines = true
     @AppStorage("show_gitignore")                 var showGitignore = true
-    @AppStorage("code_line_counting_extensions")  var codeLineCountingExtensions = "swift, h, metal, py, cs, ts, js, json, xml, html, css, md"
     
-    let defaultCodeLineCountingExtensions = "swift"
+    @AppStorage("code_line_counting_extensions")
+    var codeLineCountingExtensions = "swift, h, metal, py, cs, ts, js, json, xml, html, css, md"
 }
