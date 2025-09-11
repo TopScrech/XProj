@@ -4,6 +4,8 @@ struct ProjCodeLines: View {
     private var vm = ProjCodeLinesVM()
     @EnvironmentObject private var store: ValueStore
     
+    @Environment(\.openWindow) private var openWindow
+    
     private let proj: Proj
     
     init(_ proj: Proj) {
@@ -13,7 +15,15 @@ struct ProjCodeLines: View {
     var body: some View {
         Section {
             if vm.totalLines > 0 {
-                Text(vm.totalLines)
+                HStack {
+                    Text(vm.totalLines)
+                    
+                    Spacer()
+                    
+                    Button("Details...") {
+                        openWindow(id: "code_lines", value: proj.path)
+                    }
+                }
             } else {
                 Text("-")
             }
