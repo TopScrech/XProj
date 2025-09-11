@@ -1,5 +1,5 @@
 {
-  "originHash" : "1196c0218e63eaf514995bc4ba0105b45cf8fc544414f8f5c905005f92f3bbf7",
+  "originHash" : "9289fa05573e9b9ae643460e0e50a87b49ebddd04c52f63dcf781b54f8ad37c7",
   "pins" : [
     {
       "identity" : "kingfisher",
@@ -25,7 +25,7 @@
       "location" : "https://github.com/TopScrech/ScrechKit",
       "state" : {
         "branch" : "main",
-        "revision" : "731132bddb22c13cdbd752bb1ff539554e7de666"
+        "revision" : "c551fdb49de6625903e9d11b13e7e89eaf8a8bf3"
       }
     },
     {

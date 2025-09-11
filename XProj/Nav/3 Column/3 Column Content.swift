@@ -26,6 +26,17 @@ struct ThreeColumnContent: View {
             case .packageDependencies:
                 DependencyList()
                 
+            case .appStore:
+                List(selection: $nav.selectedProj) {
+                    ForEach(vm.publishedProjects) { proj in
+                        NavigationLink(value: proj) {
+                            ProjCard(proj)
+                        }
+                    }
+                }
+                .frame(minWidth: 600)
+                .navigationTitle(category.loc)
+                
             default:
                 List(selection: $nav.selectedProj) {
                     ForEach(vm.projects(in: category)) { proj in

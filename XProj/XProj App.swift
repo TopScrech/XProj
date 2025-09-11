@@ -20,6 +20,13 @@ struct XProjApp: App {
             SidebarCommands()
         }
         
+        WindowGroup(id: "code_lines", for: String.self) { $path in
+            NavigationStack {
+                CodeLinesList($path)
+            }
+            .environmentObject(store)
+        }
+        
         Settings {
             AppSettings()
                 .environment(nav)

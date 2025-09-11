@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		F313BE1D2C871E13005C8B60 /* Examples.zip in Resources */ = {isa = PBXBuildFile; fileRef = F313BE1C2C871E13005C8B60 /* Examples.zip */; };
+		F31AC0DF2E73714B003C4A84 /* AppSettingsDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31AC0DE2E73714B003C4A84 /* AppSettingsDebug.swift */; };
+		F31AC0E12E73751B003C4A84 /* CodeLinesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31AC0E02E73751A003C4A84 /* CodeLinesList.swift */; };
+		F31AC0E32E737588003C4A84 /* CodeLinesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31AC0E22E737588003C4A84 /* CodeLinesVM.swift */; };
+		F31AC0E52E7375C8003C4A84 /* FileLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31AC0E42E7375C8003C4A84 /* FileLines.swift */; };
 		F31EF9472D103896000F95A7 /* DependencyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9462D103896000F95A7 /* DependencyCard.swift */; };
 		F31EF9492D1038CE000F95A7 /* DependencyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9482D1038CE000F95A7 /* DependencyDetails.swift */; };
 		F323EC942D315E3A00973FA0 /* Value Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC932D315E3A00973FA0 /* Value Store.swift */; };
@@ -74,6 +78,8 @@
 		F3B389CF2D1027890082C2F3 /* DerivedDataCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389CE2D1027890082C2F3 /* DerivedDataCard.swift */; };
 		F3B389D32D102F5E0082C2F3 /* DependencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D22D102F5E0082C2F3 /* DependencyList.swift */; };
 		F3B389D62D1032A40082C2F3 /* PackageDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389D52D1032A40082C2F3 /* PackageDependency.swift */; };
+		F3B75CD62E72A4B50096E65E /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = F3B75CD52E72A4B50096E65E /* AppIcon.icon */; };
+		F3B75CD72E72A4B50096E65E /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = F3B75CD52E72A4B50096E65E /* AppIcon.icon */; };
 		F3D1E75F2C9B40B4000C81FF /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* AppSettings.swift */; };
 		F3DAD6752D161EAA0012BA9D /* Proj.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6712D161EAA0012BA9D /* Proj.swift */; };
 		F3DAD6772D161EAA0012BA9D /* Nav Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66F2D161EAA0012BA9D /* Nav Mode.swift */; };
@@ -90,8 +96,6 @@
 		F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */; };
 		F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */; };
 		F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */; };
-		F3E98C402E6D02250019439F /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E98C3F2E6D02250019439F /* Icon.xcassets */; };
-		F3E98C412E6D02D20019439F /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E98C3F2E6D02250019439F /* Icon.xcassets */; };
 		F3E98C432E6D6C4C0019439F /* ProjCodeLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E98C422E6D6C4C0019439F /* ProjCodeLines.swift */; };
 		F3E98C462E6D723C0019439F /* ProjCodeLinesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E98C452E6D723C0019439F /* ProjCodeLinesVM.swift */; };
 		F3E98C492E6DC2490019439F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F3E98C482E6DC2490019439F /* Kingfisher */; };
@@ -118,6 +122,10 @@
 
 /* Begin PBXFileReference section */
 		F313BE1C2C871E13005C8B60 /* Examples.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Examples.zip; sourceTree = "<group>"; };
+		F31AC0DE2E73714B003C4A84 /* AppSettingsDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsDebug.swift; sourceTree = "<group>"; };
+		F31AC0E02E73751A003C4A84 /* CodeLinesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLinesList.swift; sourceTree = "<group>"; };
+		F31AC0E22E737588003C4A84 /* CodeLinesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLinesVM.swift; sourceTree = "<group>"; };
+		F31AC0E42E7375C8003C4A84 /* FileLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLines.swift; sourceTree = "<group>"; };
 		F31EF9462D103896000F95A7 /* DependencyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyCard.swift; sourceTree = "<group>"; };
 		F31EF9482D1038CE000F95A7 /* DependencyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyDetails.swift; sourceTree = "<group>"; };
 		F323EC932D315E3A00973FA0 /* Value Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value Store.swift"; sourceTree = "<group>"; };
@@ -187,6 +195,7 @@
 		F3B389CE2D1027890082C2F3 /* DerivedDataCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DerivedDataCard.swift; sourceTree = "<group>"; };
 		F3B389D22D102F5E0082C2F3 /* DependencyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyList.swift; sourceTree = "<group>"; };
 		F3B389D52D1032A40082C2F3 /* PackageDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDependency.swift; sourceTree = "<group>"; };
+		F3B75CD52E72A4B50096E65E /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		F3D1E75E2C9B40B4000C81FF /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		F3DAD6632D161EAA0012BA9D /* Nav Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Container.swift"; sourceTree = "<group>"; };
 		F3DAD6642D161EAA0012BA9D /* Stack Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stack Container.swift"; sourceTree = "<group>"; };
@@ -203,7 +212,6 @@
 		F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Grid Item.swift"; sourceTree = "<group>"; };
 		F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List Toolbar.swift"; sourceTree = "<group>"; };
 		F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Projects.swift"; sourceTree = "<group>"; };
-		F3E98C3F2E6D02250019439F /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
 		F3E98C422E6D6C4C0019439F /* ProjCodeLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCodeLines.swift; sourceTree = "<group>"; };
 		F3E98C452E6D723C0019439F /* ProjCodeLinesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCodeLinesVM.swift; sourceTree = "<group>"; };
 		F3E98C4A2E6DECAF0019439F /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
@@ -297,7 +305,7 @@
 				F37B90722BFE9E1600597624 /* macOS.plist */,
 				F3341E352BDE358A00E85F27 /* macOS.entitlements */,
 				F3341E302BDE358A00E85F27 /* Assets.xcassets */,
-				F3E98C3F2E6D02250019439F /* Icon.xcassets */,
+				F3B75CD52E72A4B50096E65E /* AppIcon.icon */,
 				F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */,
 				F313BE1C2C871E13005C8B60 /* Examples.zip */,
 				F37831DE2D12EA34007F7858 /* PreviewProjects.swift */,
@@ -407,6 +415,7 @@
 				F3D1E75E2C9B40B4000C81FF /* AppSettings.swift */,
 				F3E98C4C2E6DECF70019439F /* AppSettingsSelectedFolders.swift */,
 				F3E98C4E2E6DED6D0019439F /* AppSettingsProjDetails.swift */,
+				F31AC0DE2E73714B003C4A84 /* AppSettingsDebug.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -511,6 +520,9 @@
 			children = (
 				F3E98C422E6D6C4C0019439F /* ProjCodeLines.swift */,
 				F3E98C452E6D723C0019439F /* ProjCodeLinesVM.swift */,
+				F31AC0E02E73751A003C4A84 /* CodeLinesList.swift */,
+				F31AC0E22E737588003C4A84 /* CodeLinesVM.swift */,
+				F31AC0E42E7375C8003C4A84 /* FileLines.swift */,
 			);
 			path = "Code Lines";
 			sourceTree = "<group>";
@@ -644,7 +656,7 @@
 		F33081712C9057F700605E43 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
-				F3E98C412E6D02D20019439F /* Icon.xcassets in Resources */,
+				F3B75CD72E72A4B50096E65E /* AppIcon.icon in Resources */,
 				F32A1E032D2FB7BD008AEB2F /* Localizable.xcstrings in Resources */,
 				F33081832C9057F700605E43 /* Assets.xcassets in Resources */,
 			);
@@ -654,8 +666,8 @@
 			files = (
 				F313BE1D2C871E13005C8B60 /* Examples.zip in Resources */,
 				F3341E312BDE358A00E85F27 /* Assets.xcassets in Resources */,
-				F3E98C402E6D02250019439F /* Icon.xcassets in Resources */,
 				F32A1E022D2FB7B6008AEB2F /* Localizable.xcstrings in Resources */,
+				F3B75CD62E72A4B50096E65E /* AppIcon.icon in Resources */,
 			);
 		};
 		F371A5202C2D97AB006BDF0D /* Resources */ = {
@@ -735,10 +747,12 @@
 				F3B389D62D1032A40082C2F3 /* PackageDependency.swift in Sources */,
 				F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */,
 				F31EF9472D103896000F95A7 /* DependencyCard.swift in Sources */,
+				F31AC0E52E7375C8003C4A84 /* FileLines.swift in Sources */,
 				F371A5192C2D84BA006BDF0D /* Proj Card VM.swift in Sources */,
 				F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */,
 				F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */,
 				F37831CF2D11D11B007F7858 /* ProjImage.swift in Sources */,
+				F31AC0DF2E73714B003C4A84 /* AppSettingsDebug.swift in Sources */,
 				F37831CC2D11AF86007F7858 /* icon.swift in Sources */,
 				F3B389C52D0F9AE80082C2F3 /* Swift Tools Version.swift in Sources */,
 				F37831DB2D12E0E6007F7858 /* Save bookmark.swift in Sources */,
@@ -748,11 +762,13 @@
 				F3B389D32D102F5E0082C2F3 /* DependencyList.swift in Sources */,
 				F3B389CF2D1027890082C2F3 /* DerivedDataCard.swift in Sources */,
 				F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */,
+				F31AC0E32E737588003C4A84 /* CodeLinesVM.swift in Sources */,
 				F3522DC62C2A29C000660101 /* DerivedDataList.swift in Sources */,
 				F37831C92D11A69B007F7858 /* ProjDates.swift in Sources */,
 				F32A1E052D30FD1C008AEB2F /* Bottom Bar.swift in Sources */,
 				F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */,
 				F37831DF2D12EA34007F7858 /* PreviewProjects.swift in Sources */,
+				F31AC0E12E73751B003C4A84 /* CodeLinesList.swift in Sources */,
 				F3E98C4F2E6DED6D0019439F /* AppSettingsProjDetails.swift in Sources */,
 				F37831B92D10A19E007F7858 /* Fetch project file path.swift in Sources */,
 				F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */,
@@ -887,7 +903,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.0.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -950,7 +966,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.0.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;

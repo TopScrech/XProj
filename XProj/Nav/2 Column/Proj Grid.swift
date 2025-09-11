@@ -36,6 +36,23 @@ struct ProjGrid: View {
 #warning("Make a grid view")
                 DependencyList()
                 
+            case .appStore:
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(dataModel.publishedProjects) { proj in
+                            NavigationLink(value: proj) {
+                                ProjGridItem(proj)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding()
+                }
+                .navigationTitle(category.loc)
+                .navigationDestination(for: Proj.self) { proj in
+                    ProjDetails(proj)
+                }
+                
             default:
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 20) {

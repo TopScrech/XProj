@@ -32,7 +32,6 @@ final class ProjCodeLinesVM {
         // 0) Try cache first (30-day TTL)
         if let cached = loadCachedLines(proj.name) {
             self.totalLines = cached
-            return
         }
         
         guard !isCounting else {
