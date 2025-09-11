@@ -21,7 +21,8 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
          playground,
          allItems,
          derivedData,
-         packageDependencies
+         packageDependencies,
+         appStore
     
     static var projTypes: [NavCategory] {[
         .proj,
@@ -40,12 +41,14 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
         case .vapor:               "drop.fill"
         case .playground:          "swift"
         case .derivedData:         "folder.badge.gearshape"
+        case .appStore:            "app"
         default: ""
         }
     }
     
     var loc: LocalizedStringKey {
         switch self {
+        case .allItems:            "All"
         case .package:             "Packages"
         case .playground:          "Playgrounds"
         case .proj:                "Projects"
@@ -53,7 +56,7 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
         case .workspace:           "Workspaces"
         case .derivedData:         "Derived Data"
         case .packageDependencies: "Package Dependencies"
-        case .allItems:            "All"
+        case .appStore:            "App Store"
         }
     }
 }

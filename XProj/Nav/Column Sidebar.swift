@@ -41,6 +41,10 @@ struct ColumnSidebar: View {
                         }
                     }
                 }
+                
+                NavigationLink(value: NavCategory.appStore) {
+                    Label(NavCategory.appStore.loc, systemImage: NavCategory.appStore.icon)
+                }
             }
             
             //            Section {
@@ -81,3 +85,4 @@ struct ColumnSidebar: View {
     ColumnSidebar()
         .environment(NavModel.shared)
 }
+

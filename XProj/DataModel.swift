@@ -25,6 +25,14 @@ final class DataModel {
         }
     }
     
+    var publishedProjects: [Proj] {
+        projects.filter {
+            $0.targets.contains {
+                $0.appStoreApp != nil
+            }
+        }
+    }
+    
     private func loadCachedProjects() {
         if let cachedData = UserDefaults.standard.data(forKey: cacheKey),
            let cachedProjects = try? JSONDecoder().decode([Proj].self, from: cachedData) {

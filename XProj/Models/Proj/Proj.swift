@@ -147,12 +147,9 @@ struct Proj: Identifiable, Hashable, Codable {
             return packages.compactMap { package in
                 if let rep = package.repositoryURL,
                    let name = URL(string: rep)?.lastPathComponent {
-                    return Package(
-                        name: name,
-                        repositoryUrl: rep
+                    return Package(name: name, repositoryUrl: rep)
                         //                        requirementKind: package.requirement?.keys.first,
                         //                        requirementParam: package.requirement?.values.first as? String
-                    )
                 }
                 
                 return nil
