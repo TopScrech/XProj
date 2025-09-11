@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F313BE1D2C871E13005C8B60 /* Examples.zip in Resources */ = {isa = PBXBuildFile; fileRef = F313BE1C2C871E13005C8B60 /* Examples.zip */; };
+		F31AC0DF2E73714B003C4A84 /* AppSettingsDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31AC0DE2E73714B003C4A84 /* AppSettingsDebug.swift */; };
 		F31EF9472D103896000F95A7 /* DependencyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9462D103896000F95A7 /* DependencyCard.swift */; };
 		F31EF9492D1038CE000F95A7 /* DependencyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9482D1038CE000F95A7 /* DependencyDetails.swift */; };
 		F323EC942D315E3A00973FA0 /* Value Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC932D315E3A00973FA0 /* Value Store.swift */; };
@@ -118,6 +119,7 @@
 
 /* Begin PBXFileReference section */
 		F313BE1C2C871E13005C8B60 /* Examples.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Examples.zip; sourceTree = "<group>"; };
+		F31AC0DE2E73714B003C4A84 /* AppSettingsDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsDebug.swift; sourceTree = "<group>"; };
 		F31EF9462D103896000F95A7 /* DependencyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyCard.swift; sourceTree = "<group>"; };
 		F31EF9482D1038CE000F95A7 /* DependencyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyDetails.swift; sourceTree = "<group>"; };
 		F323EC932D315E3A00973FA0 /* Value Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value Store.swift"; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 				F3D1E75E2C9B40B4000C81FF /* AppSettings.swift */,
 				F3E98C4C2E6DECF70019439F /* AppSettingsSelectedFolders.swift */,
 				F3E98C4E2E6DED6D0019439F /* AppSettingsProjDetails.swift */,
+				F31AC0DE2E73714B003C4A84 /* AppSettingsDebug.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -739,6 +742,7 @@
 				F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */,
 				F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */,
 				F37831CF2D11D11B007F7858 /* ProjImage.swift in Sources */,
+				F31AC0DF2E73714B003C4A84 /* AppSettingsDebug.swift in Sources */,
 				F37831CC2D11AF86007F7858 /* icon.swift in Sources */,
 				F3B389C52D0F9AE80082C2F3 /* Swift Tools Version.swift in Sources */,
 				F37831DB2D12E0E6007F7858 /* Save bookmark.swift in Sources */,
