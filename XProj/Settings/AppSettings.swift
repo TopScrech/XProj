@@ -19,19 +19,18 @@ struct AppSettings: View {
             }
             
             AppSettingsSelectedFolders()
-                        
+            
             AppSettingsProjDetails()
             
             Section("Debug") {
-                Button("Save example projects to Downloads folder", systemImage: "square.and.arrow.down") {
+                Button("Save example projects to Downloads", systemImage: "square.and.arrow.down") {
                     downloadExamples()
                 }
-#if DEBUG
+                
                 Button("Clear navigation path", systemImage: "xmark") {
                     nav.clearNavCache()
                 }
                 .foregroundStyle(.red)
-#endif
             }
         }
         .formStyle(.grouped)
