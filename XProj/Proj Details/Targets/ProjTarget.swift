@@ -15,7 +15,7 @@ struct ProjTarget: View {
                 Link(destination: url) {
                     Image(.appStore)
                         .resizable()
-                        .frame(width: 32, height: 32)
+                        .frame(32)
                 }
                 .help(url)
             }

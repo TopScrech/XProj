@@ -38,7 +38,7 @@ struct ProjCardImage: View {
                     .foregroundStyle(proj.iconColor.gradient)
             }
         }
-        .frame(width: 45, height: 45)
+        .frame(45)
     }
     
     private func findIconComposerFile(at projectPath: String) -> NSImage? {
