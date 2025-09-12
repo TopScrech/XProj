@@ -12,7 +12,7 @@ struct ProjImage: View {
            let nsImage = NSImage(contentsOf: URL(fileURLWithPath: path)) {
             Image(nsImage: nsImage)
                 .resizable()
-                .frame(width: 100, height: 100)
+                .frame(100)
                 .clipShape(.rect(cornerRadius: 16))
                 .onDrag {
                     let fileUrl = URL(fileURLWithPath: path)

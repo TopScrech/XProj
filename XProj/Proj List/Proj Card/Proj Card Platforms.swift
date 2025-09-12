@@ -35,7 +35,7 @@ struct ProjCardPlatforms: View {
         }) {
             Image(.appStore)
                 .resizable()
-                .frame(width: 16, height: 16)
+                .frame(16)
         }
     }
 }

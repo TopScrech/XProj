@@ -1,4 +1,5 @@
 import SwiftUI
+import Kingfisher
 
 struct ProjCardImage: View {
     private let proj: Proj
@@ -12,6 +13,11 @@ struct ProjCardImage: View {
             if let path = proj.projIcon(),
                let nsImage = NSImage(contentsOf: URL(fileURLWithPath: path)) {
                 Image(nsImage: nsImage)
+                    .resizable()
+                    .clipShape(.rect(cornerRadius: 5))
+                
+            } else if let appStoreTarget = proj.targets.first(where: { $0.appStoreApp != nil }) {
+                KFImage(appStoreTarget.appStoreApp?.artworkUrl512)
                     .resizable()
                     .clipShape(.rect(cornerRadius: 5))
                 
@@ -33,7 +39,7 @@ struct ProjCardImage: View {
                     .foregroundStyle(proj.iconColor.gradient)
             }
         }
-        .frame(width: 45, height: 45)
+        .frame(45)
     }
 }
 
