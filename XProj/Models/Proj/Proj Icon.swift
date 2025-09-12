@@ -18,7 +18,7 @@ extension Proj {
         
         return nil
     }
-    
+        
     private func assetsEnumerator(at path: String) -> FileManager.DirectoryEnumerator? {
         let fm = FileManager.default
         let projectUrl = URL(fileURLWithPath: path)
