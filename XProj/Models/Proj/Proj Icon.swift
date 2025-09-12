@@ -29,7 +29,7 @@ extension Proj {
             fm.fileExists(atPath: projectUrl.path, isDirectory: &isDir),
             isDir.boolValue
         else {
-            print("Error: The path '\(projectUrl.path)' does not exist or is not a directory")
+            print("Error: The path doesn't exist or is not a directory:", projectUrl.path)
             return nil
         }
         
