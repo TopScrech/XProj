@@ -35,10 +35,8 @@ struct ProjGitignore: View {
     }
     
     private func processGitignore(_ path: String) -> [String]? {
-        let fm = FileManager.default
-        
-        guard fm.fileExists(atPath: gitignorePath) else {
-            print(".gitignore file does not exist at this path")
+        guard FileManager.default.fileExists(atPath: gitignorePath) else {
+            print(".gitignore file does not exist at this path:", gitignorePath)
             return nil
         }
         
@@ -57,12 +55,10 @@ struct ProjGitignore: View {
     }
     
     private func openGitignore() {
-        let fm = FileManager.default
-        
         let fileUrl = URL(fileURLWithPath: gitignorePath)
         
-        guard fm.fileExists(atPath: gitignorePath) else {
-            print(".gitignore file does not exist at this path")
+        guard FileManager.default.fileExists(atPath: gitignorePath) else {
+            print(".gitignore file does not exist at this path:", gitignorePath)
             return
         }
         
