@@ -23,6 +23,9 @@ struct ProjCodeLines: View {
                     Button("Details...") {
                         openWindow(id: "code_lines", value: proj.path)
                     }
+                    .footnote()
+                    .secondary()
+                    .buttonStyle(.plain)
                 }
             } else {
                 Text("-")
@@ -32,13 +35,17 @@ struct ProjCodeLines: View {
                 .title2()
         }
         .task {
-            await vm.countLines(store.codeLineCountingExtensions, proj: proj)
+            await countLines()
         }
         .onChange(of: proj) {
             Task {
-                await vm.countLines(store.codeLineCountingExtensions, proj: proj)
+                await countLines()
             }
         }
+    }
+    
+    private func countLines() async {
+        await vm.countLines(store.codeLineCountingExtensions, proj: proj)
     }
 }
 
