@@ -11,7 +11,9 @@ extension DataModel {
             
             for item in contents {
                 if item.hasSuffix(".xcodeproj") {
-                    let filePath = (folderPath as NSString).appendingPathComponent(item)
+                    let filePath = (folderPath as NSString)
+                        .appendingPathComponent(item)
+                    
                     return (true, filePath)
                 }
             }
