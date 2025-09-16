@@ -124,7 +124,6 @@ extension DataModel {
         let startTime = CFAbsoluteTimeGetCurrent()
         
         var folderFileCounts = [String: Int?]()
-        let lock = NSLock()
         var totalFiles = 0
         
         await withTaskGroup(of: (String, Int?).self) { group in
@@ -137,10 +136,8 @@ extension DataModel {
             
             for await (folder, count) in group {
                 if let count {
-                    lock.lock()
                     folderFileCounts[folder] = count
                     totalFiles += count
-                    lock.unlock()
                 } else {
                     folderFileCounts[folder] = nil
                 }
@@ -149,7 +146,7 @@ extension DataModel {
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
         
-        print(String(format: "Multi-threaded scanned", folderFileCounts.count, "folders in %.3f seconds", timeElapsed))
+        print(String(format: "Multi-threaded scanned %d folders in %.3f seconds", folderFileCounts.count, timeElapsed))
         print("Total files found:", totalFiles)
         
         return folderFileCounts
