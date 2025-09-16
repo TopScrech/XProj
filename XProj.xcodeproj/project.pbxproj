@@ -61,8 +61,8 @@
 		F37D1BED2CDA231F00D8817D /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEC2CDA231F00D8817D /* Provider.swift */; };
 		F37D1BEF2CDA234700D8817D /* Simple Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEE2CDA234700D8817D /* Simple Entry.swift */; };
 		F37D1BF12CDA235D00D8817D /* Entry View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF02CDA235D00D8817D /* Entry View.swift */; };
-		F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF52CDA259E00D8817D /* Smart Scan.swift */; };
-		F37D1BFA2CDA272600D8817D /* Duplicate Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF92CDA272600D8817D /* Duplicate Section.swift */; };
+		F37D1BF62CDA259E00D8817D /* SmartScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF52CDA259E00D8817D /* SmartScan.swift */; };
+		F37D1BFA2CDA272600D8817D /* DuplicateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF92CDA272600D8817D /* DuplicateSection.swift */; };
 		F3874E2C2D36803C000BDCD9 /* ProjSwiftTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3874E2B2D36803C000BDCD9 /* ProjSwiftTools.swift */; };
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
 		F38B5E522BFD6F6100CB9917 /* ProjCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* ProjCard.swift */; };
@@ -95,7 +95,7 @@
 		F3DAD68E2D161ECC0012BA9D /* Nav Mode Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6822D161ECC0012BA9D /* Nav Mode Picker.swift */; };
 		F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */; };
 		F3E7ECA02C687BAD008CD17B /* ProjListToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* ProjListToolbar.swift */; };
-		F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */; };
+		F3E7ECA22C687C5D008CD17B /* DuplicateProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7ECA12C687C5D008CD17B /* DuplicateProjects.swift */; };
 		F3E98C432E6D6C4C0019439F /* ProjCodeLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E98C422E6D6C4C0019439F /* ProjCodeLines.swift */; };
 		F3E98C462E6D723C0019439F /* ProjCodeLinesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E98C452E6D723C0019439F /* ProjCodeLinesVM.swift */; };
 		F3E98C492E6DC2490019439F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F3E98C482E6DC2490019439F /* Kingfisher */; };
@@ -177,8 +177,8 @@
 		F37D1BEC2CDA231F00D8817D /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		F37D1BEE2CDA234700D8817D /* Simple Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Simple Entry.swift"; sourceTree = "<group>"; };
 		F37D1BF02CDA235D00D8817D /* Entry View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry View.swift"; sourceTree = "<group>"; };
-		F37D1BF52CDA259E00D8817D /* Smart Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Smart Scan.swift"; sourceTree = "<group>"; };
-		F37D1BF92CDA272600D8817D /* Duplicate Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Section.swift"; sourceTree = "<group>"; };
+		F37D1BF52CDA259E00D8817D /* SmartScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartScan.swift; sourceTree = "<group>"; };
+		F37D1BF92CDA272600D8817D /* DuplicateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateSection.swift; sourceTree = "<group>"; };
 		F3874E2B2D36803C000BDCD9 /* ProjSwiftTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjSwiftTools.swift; sourceTree = "<group>"; };
 		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
 		F38B5E512BFD6F6100CB9917 /* ProjCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCard.swift; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 		F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Grid.swift"; sourceTree = "<group>"; };
 		F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Grid Item.swift"; sourceTree = "<group>"; };
 		F3E7EC9F2C687BAD008CD17B /* ProjListToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjListToolbar.swift; sourceTree = "<group>"; };
-		F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Projects.swift"; sourceTree = "<group>"; };
+		F3E7ECA12C687C5D008CD17B /* DuplicateProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateProjects.swift; sourceTree = "<group>"; };
 		F3E98C422E6D6C4C0019439F /* ProjCodeLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCodeLines.swift; sourceTree = "<group>"; };
 		F3E98C452E6D723C0019439F /* ProjCodeLinesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCodeLinesVM.swift; sourceTree = "<group>"; };
 		F3E98C4A2E6DECAF0019439F /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
@@ -402,9 +402,9 @@
 		F37D1BF42CDA258B00D8817D /* Smart Scan */ = {
 			isa = PBXGroup;
 			children = (
-				F37D1BF52CDA259E00D8817D /* Smart Scan.swift */,
-				F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */,
-				F37D1BF92CDA272600D8817D /* Duplicate Section.swift */,
+				F37D1BF52CDA259E00D8817D /* SmartScan.swift */,
+				F3E7ECA12C687C5D008CD17B /* DuplicateProjects.swift */,
+				F37D1BF92CDA272600D8817D /* DuplicateSection.swift */,
 			);
 			path = "Smart Scan";
 			sourceTree = "<group>";
@@ -716,7 +716,7 @@
 				F3DAD67E2D161EAA0012BA9D /* Nav Container.swift in Sources */,
 				F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */,
 				F371A51B2C2D8D58006BDF0D /* MBProjList.swift in Sources */,
-				F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */,
+				F37D1BF62CDA259E00D8817D /* SmartScan.swift in Sources */,
 				F3B389C32D0F93500082C2F3 /* Package.swift in Sources */,
 				F37831C12D10E1CF007F7858 /* AppStoreApp.swift in Sources */,
 				F37831C72D11A590007F7858 /* ProjDependency.swift in Sources */,
@@ -728,7 +728,7 @@
 				F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */,
 				F38B5E522BFD6F6100CB9917 /* ProjCard.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,
-				F37D1BFA2CDA272600D8817D /* Duplicate Section.swift in Sources */,
+				F37D1BFA2CDA272600D8817D /* DuplicateSection.swift in Sources */,
 				F371A51D2C2D8D94006BDF0D /* MBProjCard.swift in Sources */,
 				F31EF9492D1038CE000F95A7 /* DependencyDetails.swift in Sources */,
 				F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */,
@@ -761,7 +761,7 @@
 				F3FC8A5C2D1AFF2A00A7CCBC /* 3 Column Content.swift in Sources */,
 				F3B389D32D102F5E0082C2F3 /* DependencyList.swift in Sources */,
 				F3B389CF2D1027890082C2F3 /* DerivedDataCard.swift in Sources */,
-				F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */,
+				F3E7ECA22C687C5D008CD17B /* DuplicateProjects.swift in Sources */,
 				F31AC0E32E737588003C4A84 /* CodeLinesVM.swift in Sources */,
 				F3522DC62C2A29C000660101 /* DerivedDataList.swift in Sources */,
 				F37831C92D11A69B007F7858 /* ProjDates.swift in Sources */,
