@@ -1,6 +1,6 @@
 import Foundation
 
-func fetchProjectFilePath(_ path: String) -> URL? {
+func fetchProjFilePath(_ path: String) -> URL? {
     let fileManager = FileManager.default
     let folderURL = URL(fileURLWithPath: path)
     
