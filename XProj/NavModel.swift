@@ -2,7 +2,6 @@ import SwiftUI
 
 @Observable
 final class NavModel: Codable {
-    /// Selected nav category
     var selectedCategory: NavCategory?
     
     /// Homogenous nav state
