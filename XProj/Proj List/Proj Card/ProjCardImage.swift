@@ -14,12 +14,12 @@ struct ProjCardImage: View {
                let nsImage = NSImage(contentsOf: URL(fileURLWithPath: path)) {
                 Image(nsImage: nsImage)
                     .resizable()
-                    .clipShape(.rect(cornerRadius: 5))
+                    .clipShape(.rect(cornerRadius: 10))
                 
             } else if let appStoreTarget = proj.targets.first(where: { $0.appStoreApp != nil }) {
                 KFImage(appStoreTarget.appStoreApp?.artworkUrl512)
                     .resizable()
-                    .clipShape(.rect(cornerRadius: 5))
+                    .clipShape(.rect(cornerRadius: 10))
                 
             } else if proj.type == .proj {
                 Image(.projIcon)
