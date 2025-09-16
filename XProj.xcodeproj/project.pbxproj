@@ -42,10 +42,10 @@
 		F371A5252C2D97AB006BDF0D /* XProj Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A5242C2D97AB006BDF0D /* XProj Tests.swift */; };
 		F37831B02D109282007F7858 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831AF2D109282007F7858 /* Target.swift */; };
 		F37831B72D1095EC007F7858 /* XcodeProjKit in Frameworks */ = {isa = PBXBuildFile; productRef = F37831B62D1095EC007F7858 /* XcodeProjKit */; };
-		F37831B92D10A19E007F7858 /* Fetch proj file path.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831B82D10A19E007F7858 /* Fetch proj file path.swift */; };
+		F37831B92D10A19E007F7858 /* fetchProjFilePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831B82D10A19E007F7858 /* fetchProjFilePath.swift */; };
 		F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BA2D10CE9A007F7858 /* Formatters.swift */; };
 		F37831BF2D10D8DE007F7858 /* Packages in Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BE2D10D8DE007F7858 /* Packages in Package.swift */; };
-		F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C02D10E1CF007F7858 /* App Store App.swift */; };
+		F37831C12D10E1CF007F7858 /* AppStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C02D10E1CF007F7858 /* AppStoreApp.swift */; };
 		F37831C52D11A4F4007F7858 /* ProjTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C42D11A4F4007F7858 /* ProjTarget.swift */; };
 		F37831C72D11A590007F7858 /* ProjDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C62D11A590007F7858 /* ProjDependency.swift */; };
 		F37831C92D11A69B007F7858 /* ProjDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C82D11A69B007F7858 /* ProjDates.swift */; };
@@ -157,10 +157,10 @@
 		F371A5222C2D97AB006BDF0D /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F371A5242C2D97AB006BDF0D /* XProj Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XProj Tests.swift"; sourceTree = "<group>"; };
 		F37831AF2D109282007F7858 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
-		F37831B82D10A19E007F7858 /* Fetch proj file path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fetch proj file path.swift"; sourceTree = "<group>"; };
+		F37831B82D10A19E007F7858 /* fetchProjFilePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetchProjFilePath.swift; sourceTree = "<group>"; };
 		F37831BA2D10CE9A007F7858 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		F37831BE2D10D8DE007F7858 /* Packages in Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Packages in Package.swift"; sourceTree = "<group>"; };
-		F37831C02D10E1CF007F7858 /* App Store App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Store App.swift"; sourceTree = "<group>"; };
+		F37831C02D10E1CF007F7858 /* AppStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreApp.swift; sourceTree = "<group>"; };
 		F37831C42D11A4F4007F7858 /* ProjTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjTarget.swift; sourceTree = "<group>"; };
 		F37831C62D11A590007F7858 /* ProjDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjDependency.swift; sourceTree = "<group>"; };
 		F37831C82D11A69B007F7858 /* ProjDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjDates.swift; sourceTree = "<group>"; };
@@ -424,10 +424,10 @@
 			isa = PBXGroup;
 			children = (
 				F350D40A2D1551ED000EEA57 /* Proj */,
-				F37831C02D10E1CF007F7858 /* App Store App.swift */,
+				F37831C02D10E1CF007F7858 /* AppStoreApp.swift */,
 				F37831AF2D109282007F7858 /* Target.swift */,
 				F3E98C4A2E6DECAF0019439F /* TargetType.swift */,
-				F37831B82D10A19E007F7858 /* Fetch proj file path.swift */,
+				F37831B82D10A19E007F7858 /* fetchProjFilePath.swift */,
 				F3B389C22D0F93500082C2F3 /* Package.swift */,
 				F37831BE2D10D8DE007F7858 /* Packages in Package.swift */,
 			);
@@ -718,7 +718,7 @@
 				F371A51B2C2D8D58006BDF0D /* MBProjList.swift in Sources */,
 				F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */,
 				F3B389C32D0F93500082C2F3 /* Package.swift in Sources */,
-				F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */,
+				F37831C12D10E1CF007F7858 /* AppStoreApp.swift in Sources */,
 				F37831C72D11A590007F7858 /* ProjDependency.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
 				F3E98C432E6D6C4C0019439F /* ProjCodeLines.swift in Sources */,
@@ -770,7 +770,7 @@
 				F37831DF2D12EA34007F7858 /* PreviewProp.swift in Sources */,
 				F31AC0E12E73751B003C4A84 /* CodeLinesList.swift in Sources */,
 				F3E98C4F2E6DED6D0019439F /* AppSettingsProjDetails.swift in Sources */,
-				F37831B92D10A19E007F7858 /* Fetch proj file path.swift in Sources */,
+				F37831B92D10A19E007F7858 /* fetchProjFilePath.swift in Sources */,
 				F3E7ECA02C687BAD008CD17B /* ProjListToolbar.swift in Sources */,
 			);
 		};

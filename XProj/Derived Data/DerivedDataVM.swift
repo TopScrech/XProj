@@ -54,25 +54,29 @@ final class DerivedDataVM {
             return
         }
         
-        let fileManager = FileManager.default
+        let fm = FileManager.default
         
-        guard fileManager.fileExists(atPath: url.path()) else {
+        guard fm.fileExists(atPath: url.path()) else {
             print("Folder does not exist:", url)
             return
         }
         
         do {
-            let contents = try fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: [])
+            let contents = try fm.contentsOfDirectory(
+                at: url,
+                includingPropertiesForKeys: nil,
+                options: []
+            )
             
             for fileURL in contents {
                 do {
-                    try fileManager.removeItem(at: fileURL)
+                    try fm.removeItem(at: fileURL)
                 } catch {
-                    print("Failed to delete file: \(fileURL.path), error:", error.localizedDescription)
+                    print("Failed to delete \(fileURL.path), error:", error.localizedDescription)
                 }
             }
         } catch {
-            print("Failed to fetch contents of directory: \(url), error:", error.localizedDescription)
+            print("Failed to fetch dir contents: \(url), error:", error.localizedDescription)
         }
         
         getFolders()
