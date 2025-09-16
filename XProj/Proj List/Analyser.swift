@@ -120,9 +120,7 @@ extension DataModel {
         return allFiles
     }
     
-    func countFilesInFoldersMultiThread(
-        _ folderPaths: [String]
-    ) async -> [String: Int?] {
+    func countFilesInFoldersMultiThread(_ folderPaths: [String]) async -> [String: Int?] {
         let startTime = CFAbsoluteTimeGetCurrent()
         
         var folderFileCounts = [String: Int?]()
