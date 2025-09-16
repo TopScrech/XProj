@@ -300,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				F3341E2C2BDE358900E85F27 /* XProj App.swift */,
-				F323EC932D315E3A00973FA0 /* Value Store.swift */,
 				F3DB25452C2C4E8B00A0C066 /* Nav */,
 				F37B90722BFE9E1600597624 /* macOS.plist */,
 				F3341E352BDE358A00E85F27 /* macOS.entitlements */,
@@ -308,10 +307,9 @@
 				F3B75CD52E72A4B50096E65E /* AppIcon.icon */,
 				F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */,
 				F313BE1C2C871E13005C8B60 /* Examples.zip */,
-				F37831DE2D12EA34007F7858 /* PreviewProp.swift */,
 				F3DAD66C2D161EAA0012BA9D /* DataModel.swift */,
 				F3DAD66D2D161EAA0012BA9D /* NavModel.swift */,
-				F37831D92D12E028007F7858 /* funcs */,
+				F37831D92D12E028007F7858 /* Utils */,
 				F37831CA2D11A75F007F7858 /* Proj List */,
 				F3B389BD2D0ECB090082C2F3 /* Proj Details */,
 				F37D1BF42CDA258B00D8817D /* Smart Scan */,
@@ -387,16 +385,18 @@
 			path = "Proj Card";
 			sourceTree = "<group>";
 		};
-		F37831D92D12E028007F7858 /* funcs */ = {
+		F37831D92D12E028007F7858 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F323EC932D315E3A00973FA0 /* Value Store.swift */,
+				F37831DE2D12EA34007F7858 /* PreviewProp.swift */,
 				F37831DA2D12E0E6007F7858 /* Save bookmark.swift */,
 				F37831CB2D11AF86007F7858 /* icon.swift */,
 				F37831DC2D12E57D007F7858 /* Restore access to folder.swift */,
 				F37831D72D12DF0E007F7858 /* Open folder picker.swift */,
 				F37831BA2D10CE9A007F7858 /* Formatters.swift */,
 			);
-			path = funcs;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		F37D1BF42CDA258B00D8817D /* Smart Scan */ = {
