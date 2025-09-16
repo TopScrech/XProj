@@ -26,6 +26,6 @@ struct MBProjCard: View {
 }
 
 #Preview {
-    MBProjCard(previewProj1)
+    MBProjCard(PreviewProp.previewProj1)
         .environment(DataModel.shared)
 }

@@ -1,5 +1,3 @@
-// Nav model used to persist and restore the nav state
-
 import SwiftUI
 
 @Observable

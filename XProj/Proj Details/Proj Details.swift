@@ -46,6 +46,6 @@ struct ProjDetails: View {
 }
 
 #Preview {
-    ProjDetails(previewProj1)
+    ProjDetails(PreviewProp.previewProj1)
         .environmentObject(ValueStore())
 }

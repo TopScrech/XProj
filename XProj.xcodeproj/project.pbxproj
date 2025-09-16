@@ -57,7 +57,7 @@
 		F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D72D12DF0E007F7858 /* Open folder picker.swift */; };
 		F37831DB2D12E0E6007F7858 /* Save bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DA2D12E0E6007F7858 /* Save bookmark.swift */; };
 		F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DC2D12E57D007F7858 /* Restore access to folder.swift */; };
-		F37831DF2D12EA34007F7858 /* PreviewProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DE2D12EA34007F7858 /* PreviewProjects.swift */; };
+		F37831DF2D12EA34007F7858 /* PreviewProp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DE2D12EA34007F7858 /* PreviewProp.swift */; };
 		F37D1BED2CDA231F00D8817D /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEC2CDA231F00D8817D /* Provider.swift */; };
 		F37D1BEF2CDA234700D8817D /* Simple Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEE2CDA234700D8817D /* Simple Entry.swift */; };
 		F37D1BF12CDA235D00D8817D /* Entry View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF02CDA235D00D8817D /* Entry View.swift */; };
@@ -172,7 +172,7 @@
 		F37831D72D12DF0E007F7858 /* Open folder picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open folder picker.swift"; sourceTree = "<group>"; };
 		F37831DA2D12E0E6007F7858 /* Save bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Save bookmark.swift"; sourceTree = "<group>"; };
 		F37831DC2D12E57D007F7858 /* Restore access to folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restore access to folder.swift"; sourceTree = "<group>"; };
-		F37831DE2D12EA34007F7858 /* PreviewProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProjects.swift; sourceTree = "<group>"; };
+		F37831DE2D12EA34007F7858 /* PreviewProp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProp.swift; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = macOS.plist; sourceTree = "<group>"; };
 		F37D1BEC2CDA231F00D8817D /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		F37D1BEE2CDA234700D8817D /* Simple Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Simple Entry.swift"; sourceTree = "<group>"; };
@@ -308,7 +308,7 @@
 				F3B75CD52E72A4B50096E65E /* AppIcon.icon */,
 				F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */,
 				F313BE1C2C871E13005C8B60 /* Examples.zip */,
-				F37831DE2D12EA34007F7858 /* PreviewProjects.swift */,
+				F37831DE2D12EA34007F7858 /* PreviewProp.swift */,
 				F3DAD66C2D161EAA0012BA9D /* DataModel.swift */,
 				F3DAD66D2D161EAA0012BA9D /* NavModel.swift */,
 				F37831D92D12E028007F7858 /* funcs */,
@@ -767,7 +767,7 @@
 				F37831C92D11A69B007F7858 /* ProjDates.swift in Sources */,
 				F32A1E052D30FD1C008AEB2F /* Bottom Bar.swift in Sources */,
 				F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */,
-				F37831DF2D12EA34007F7858 /* PreviewProjects.swift in Sources */,
+				F37831DF2D12EA34007F7858 /* PreviewProp.swift in Sources */,
 				F31AC0E12E73751B003C4A84 /* CodeLinesList.swift in Sources */,
 				F3E98C4F2E6DED6D0019439F /* AppSettingsProjDetails.swift in Sources */,
 				F37831B92D10A19E007F7858 /* Fetch proj file path.swift in Sources */,

@@ -44,5 +44,5 @@ struct ProjCardImage: View {
 }
 
 #Preview {
-    ProjCardImage(previewProj1)
+    ProjCardImage(PreviewProp.previewProj1)
 }

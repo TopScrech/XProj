@@ -50,6 +50,6 @@ struct ProjCodeLines: View {
 }
 
 #Preview {
-    ProjCodeLines(previewProj1)
+    ProjCodeLines(PreviewProp.previewProj1)
         .environmentObject(ValueStore())
 }
