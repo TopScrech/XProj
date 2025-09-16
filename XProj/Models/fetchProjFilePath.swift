@@ -4,7 +4,7 @@ func fetchProjFilePath(_ path: String) -> URL? {
     let fm = FileManager.default
     let folderURL = URL(fileURLWithPath: path)
     
-    // Find the .xcodeproj file in the folder
+    // Find .xcodeproj in the dir
     guard
         let xcodeProjURL = try? fm.contentsOfDirectory(
             at: folderURL,
@@ -16,7 +16,7 @@ func fetchProjFilePath(_ path: String) -> URL? {
         return nil
     }
     
-    // Check if the .xcodeproj file exists
+    // Check if .xcodeproj exists
     guard fm.fileExists(atPath: xcodeProjURL.path) else {
         print("projectFileNotFound")
         return nil
