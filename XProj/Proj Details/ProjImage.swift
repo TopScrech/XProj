@@ -19,9 +19,12 @@ struct ProjImage: View {
                     return NSItemProvider(object: fileUrl as NSURL)
                 }
                 .contextMenu {
+                    Button("Open in Finder", systemImage: "finder") {
+                        openInFinder(path)
+                    }
+                    
                     Button("Copy", systemImage: "document.on.document") {
                         copyToPasteboard(path)
-                        
                     }
                     
                     Button("Save to Downloads", systemImage: "square.and.arrow.down") {
@@ -31,6 +34,10 @@ struct ProjImage: View {
                     ShareLink(item: URL(fileURLWithPath: path))
                 }
         }
+    }
+    
+    private func openInFinder(_ path: String) {
+        NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: path)])
     }
     
     private func copyToPasteboard(_ path: String) {
