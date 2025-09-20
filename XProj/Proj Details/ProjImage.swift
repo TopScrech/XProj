@@ -19,6 +19,11 @@ struct ProjImage: View {
                     return NSItemProvider(object: fileUrl as NSURL)
                 }
                 .contextMenu {
+                    Button("Copy", systemImage: "document.on.document") {
+                        copyToPasteboard(path)
+                        
+                    }
+                    
                     Button("Save to Downloads", systemImage: "square.and.arrow.down") {
                         saveToDownloads(path)
                     }
@@ -26,6 +31,12 @@ struct ProjImage: View {
                     ShareLink(item: URL(fileURLWithPath: path))
                 }
         }
+    }
+    
+    private func copyToPasteboard(_ path: String) {
+        let pasteboard = NSPasteboard.general
+        pasteboard.clearContents()
+        pasteboard.writeObjects([NSURL(fileURLWithPath: path)])
     }
     
     private func saveToDownloads(_ path: String) {
