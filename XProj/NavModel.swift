@@ -1,10 +1,7 @@
-// Nav model used to persist and restore the nav state
-
 import SwiftUI
 
 @Observable
 final class NavModel: Codable {
-    /// Selected nav category
     var selectedCategory: NavCategory?
     
     /// Homogenous nav state

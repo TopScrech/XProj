@@ -9,9 +9,9 @@ extension Proj {
         let folderUrl = URL(fileURLWithPath: path, isDirectory: true)
         let packageResolvedUrl = folderUrl.appendingPathComponent("Package.resolved")
         
-        let fileManager = FileManager.default
+        let fm = FileManager.default
         
-        guard fileManager.fileExists(atPath: packageResolvedUrl.path) else {
+        guard fm.fileExists(atPath: packageResolvedUrl.path) else {
             return []
         }
         

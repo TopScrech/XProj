@@ -16,6 +16,7 @@
 		F31EF9492D1038CE000F95A7 /* DependencyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9482D1038CE000F95A7 /* DependencyDetails.swift */; };
 		F323EC942D315E3A00973FA0 /* Value Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC932D315E3A00973FA0 /* Value Store.swift */; };
 		F323EC962D31E39A00973FA0 /* Open Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC952D31E39A00973FA0 /* Open Buttons.swift */; };
+		F328BB502E7FDE0C0012F003 /* ProjImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328BB4F2E7FDE0C0012F003 /* ProjImage.swift */; };
 		F329E1812D3683E4007BA9D1 /* ProjGitignore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329E1802D3683E4007BA9D1 /* ProjGitignore.swift */; };
 		F32A1E022D2FB7B6008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
 		F32A1E032D2FB7BD008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
@@ -30,46 +31,45 @@
 		F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3341E2C2BDE358900E85F27 /* XProj App.swift */; };
 		F3341E312BDE358A00E85F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3341E302BDE358A00E85F27 /* Assets.xcassets */; };
 		F34345C82DDEF9AE0033A7DE /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F34345C72DDEF9AE0033A7DE /* ScrechKit */; };
-		F3515C212D366DA70078E588 /* Proj Card Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3515C202D366DA70078E588 /* Proj Card Platforms.swift */; };
+		F3515C212D366DA70078E588 /* ProjCardPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3515C202D366DA70078E588 /* ProjCardPlatforms.swift */; };
 		F3522DC62C2A29C000660101 /* DerivedDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DC52C2A29C000660101 /* DerivedDataList.swift */; };
 		F3522DCB2C2A2A5600660101 /* DerivedDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCA2C2A2A5600660101 /* DerivedDataVM.swift */; };
 		F3522DCD2C2AA32C00660101 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCC2C2AA32C00660101 /* FileManager.swift */; };
 		F3522DCF2C2AA51800660101 /* DerivedDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3522DCE2C2AA51800660101 /* DerivedDataEntry.swift */; };
 		F358F02B2D2C19A200BCC07B /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = F358F02A2D2C19A200BCC07B /* LaunchAtLogin */; };
-		F371A5192C2D84BA006BDF0D /* Proj Card VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A5182C2D84BA006BDF0D /* Proj Card VM.swift */; };
-		F371A51B2C2D8D58006BDF0D /* MB Proj List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A51A2C2D8D58006BDF0D /* MB Proj List.swift */; };
-		F371A51D2C2D8D94006BDF0D /* MB Proj Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A51C2C2D8D94006BDF0D /* MB Proj Card.swift */; };
+		F371A5192C2D84BA006BDF0D /* ProjCardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A5182C2D84BA006BDF0D /* ProjCardVM.swift */; };
+		F371A51B2C2D8D58006BDF0D /* MBProjList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A51A2C2D8D58006BDF0D /* MBProjList.swift */; };
+		F371A51D2C2D8D94006BDF0D /* MBProjCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A51C2C2D8D94006BDF0D /* MBProjCard.swift */; };
 		F371A5252C2D97AB006BDF0D /* XProj Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A5242C2D97AB006BDF0D /* XProj Tests.swift */; };
 		F37831B02D109282007F7858 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831AF2D109282007F7858 /* Target.swift */; };
 		F37831B72D1095EC007F7858 /* XcodeProjKit in Frameworks */ = {isa = PBXBuildFile; productRef = F37831B62D1095EC007F7858 /* XcodeProjKit */; };
-		F37831B92D10A19E007F7858 /* Fetch project file path.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831B82D10A19E007F7858 /* Fetch project file path.swift */; };
+		F37831B92D10A19E007F7858 /* fetchProjFilePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831B82D10A19E007F7858 /* fetchProjFilePath.swift */; };
 		F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BA2D10CE9A007F7858 /* Formatters.swift */; };
 		F37831BF2D10D8DE007F7858 /* Packages in Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831BE2D10D8DE007F7858 /* Packages in Package.swift */; };
-		F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C02D10E1CF007F7858 /* App Store App.swift */; };
+		F37831C12D10E1CF007F7858 /* AppStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C02D10E1CF007F7858 /* AppStoreApp.swift */; };
 		F37831C52D11A4F4007F7858 /* ProjTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C42D11A4F4007F7858 /* ProjTarget.swift */; };
 		F37831C72D11A590007F7858 /* ProjDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C62D11A590007F7858 /* ProjDependency.swift */; };
 		F37831C92D11A69B007F7858 /* ProjDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831C82D11A69B007F7858 /* ProjDates.swift */; };
 		F37831CC2D11AF86007F7858 /* icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831CB2D11AF86007F7858 /* icon.swift */; };
-		F37831CF2D11D11B007F7858 /* ProjImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831CE2D11D11B007F7858 /* ProjImage.swift */; };
 		F37831D12D11D177007F7858 /* ProjActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D02D11D177007F7858 /* ProjActions.swift */; };
 		F37831D32D11D221007F7858 /* ProjTargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D22D11D221007F7858 /* ProjTargets.swift */; };
 		F37831D52D11D292007F7858 /* ProjDependencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D42D11D292007F7858 /* ProjDependencyList.swift */; };
 		F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831D72D12DF0E007F7858 /* Open folder picker.swift */; };
 		F37831DB2D12E0E6007F7858 /* Save bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DA2D12E0E6007F7858 /* Save bookmark.swift */; };
 		F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DC2D12E57D007F7858 /* Restore access to folder.swift */; };
-		F37831DF2D12EA34007F7858 /* PreviewProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DE2D12EA34007F7858 /* PreviewProjects.swift */; };
+		F37831DF2D12EA34007F7858 /* PreviewProp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37831DE2D12EA34007F7858 /* PreviewProp.swift */; };
 		F37D1BED2CDA231F00D8817D /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEC2CDA231F00D8817D /* Provider.swift */; };
 		F37D1BEF2CDA234700D8817D /* Simple Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BEE2CDA234700D8817D /* Simple Entry.swift */; };
 		F37D1BF12CDA235D00D8817D /* Entry View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF02CDA235D00D8817D /* Entry View.swift */; };
-		F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF52CDA259E00D8817D /* Smart Scan.swift */; };
-		F37D1BFA2CDA272600D8817D /* Duplicate Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF92CDA272600D8817D /* Duplicate Section.swift */; };
+		F37D1BF62CDA259E00D8817D /* SmartScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF52CDA259E00D8817D /* SmartScan.swift */; };
+		F37D1BFA2CDA272600D8817D /* DuplicateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D1BF92CDA272600D8817D /* DuplicateSection.swift */; };
 		F3874E2C2D36803C000BDCD9 /* ProjSwiftTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3874E2B2D36803C000BDCD9 /* ProjSwiftTools.swift */; };
 		F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F387AC312BFEC6C600EC1DC5 /* Analyser.swift */; };
-		F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* Proj Card.swift */; };
+		F38B5E522BFD6F6100CB9917 /* ProjCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E512BFD6F6100CB9917 /* ProjCard.swift */; };
 		F38B5E582BFE134400CB9917 /* SearchSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B5E572BFE134400CB9917 /* SearchSuggestions.swift */; };
 		F3929A672D1BA52D00FB06E6 /* SearchSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3929A662D1BA52D00FB06E6 /* SearchSuggestion.swift */; };
-		F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */; };
-		F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */; };
+		F3B389BC2D0ECAFD0082C2F3 /* ProjDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BB2D0ECAFD0082C2F3 /* ProjDetails.swift */; };
+		F3B389BF2D0F6C370082C2F3 /* ProjCardImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BE2D0F6C370082C2F3 /* ProjCardImage.swift */; };
 		F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C02D0F92500082C2F3 /* Nav Category.swift */; };
 		F3B389C32D0F93500082C2F3 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C22D0F93500082C2F3 /* Package.swift */; };
 		F3B389C52D0F9AE80082C2F3 /* Swift Tools Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */; };
@@ -94,15 +94,15 @@
 		F3DAD68D2D161ECC0012BA9D /* Nav Mode Picker Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6832D161ECC0012BA9D /* Nav Mode Picker Item.swift */; };
 		F3DAD68E2D161ECC0012BA9D /* Nav Mode Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6822D161ECC0012BA9D /* Nav Mode Picker.swift */; };
 		F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */; };
-		F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */; };
-		F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */; };
+		F3E7ECA02C687BAD008CD17B /* ProjListToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* ProjListToolbar.swift */; };
+		F3E7ECA22C687C5D008CD17B /* DuplicateProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7ECA12C687C5D008CD17B /* DuplicateProjects.swift */; };
 		F3E98C432E6D6C4C0019439F /* ProjCodeLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E98C422E6D6C4C0019439F /* ProjCodeLines.swift */; };
 		F3E98C462E6D723C0019439F /* ProjCodeLinesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E98C452E6D723C0019439F /* ProjCodeLinesVM.swift */; };
 		F3E98C492E6DC2490019439F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F3E98C482E6DC2490019439F /* Kingfisher */; };
 		F3E98C4B2E6DECAF0019439F /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E98C4A2E6DECAF0019439F /* TargetType.swift */; };
 		F3E98C4D2E6DECF70019439F /* AppSettingsSelectedFolders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E98C4C2E6DECF70019439F /* AppSettingsSelectedFolders.swift */; };
 		F3E98C4F2E6DED6D0019439F /* AppSettingsProjDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E98C4E2E6DED6D0019439F /* AppSettingsProjDetails.swift */; };
-		F3ED776F2D1772F8000977AC /* Proj List VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED776E2D1772F8000977AC /* Proj List VM.swift */; };
+		F3ED776F2D1772F8000977AC /* ProjListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED776E2D1772F8000977AC /* ProjListVM.swift */; };
 		F3FC8A582D1AFDC300A7CCBC /* 2 Column Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A572D1AFDC300A7CCBC /* 2 Column Detail.swift */; };
 		F3FC8A5A2D1AFEC700A7CCBC /* 3 Column Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A592D1AFEC700A7CCBC /* 3 Column Detail.swift */; };
 		F3FC8A5C2D1AFF2A00A7CCBC /* 3 Column Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A5B2D1AFF2A00A7CCBC /* 3 Column Content.swift */; };
@@ -130,6 +130,7 @@
 		F31EF9482D1038CE000F95A7 /* DependencyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyDetails.swift; sourceTree = "<group>"; };
 		F323EC932D315E3A00973FA0 /* Value Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value Store.swift"; sourceTree = "<group>"; };
 		F323EC952D31E39A00973FA0 /* Open Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open Buttons.swift"; sourceTree = "<group>"; };
+		F328BB4F2E7FDE0C0012F003 /* ProjImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjImage.swift; sourceTree = "<group>"; };
 		F329E1802D3683E4007BA9D1 /* ProjGitignore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjGitignore.swift; sourceTree = "<group>"; };
 		F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F32A1E042D30FD1C008AEB2F /* Bottom Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bottom Bar.swift"; sourceTree = "<group>"; };
@@ -146,47 +147,46 @@
 		F3341E2C2BDE358900E85F27 /* XProj App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XProj App.swift"; sourceTree = "<group>"; };
 		F3341E302BDE358A00E85F27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3341E352BDE358A00E85F27 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		F3515C202D366DA70078E588 /* Proj Card Platforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card Platforms.swift"; sourceTree = "<group>"; };
+		F3515C202D366DA70078E588 /* ProjCardPlatforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCardPlatforms.swift; sourceTree = "<group>"; };
 		F3522DC52C2A29C000660101 /* DerivedDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DerivedDataList.swift; sourceTree = "<group>"; };
 		F3522DCA2C2A2A5600660101 /* DerivedDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DerivedDataVM.swift; sourceTree = "<group>"; };
 		F3522DCC2C2AA32C00660101 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		F3522DCE2C2AA51800660101 /* DerivedDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DerivedDataEntry.swift; sourceTree = "<group>"; };
-		F371A5182C2D84BA006BDF0D /* Proj Card VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card VM.swift"; sourceTree = "<group>"; };
-		F371A51A2C2D8D58006BDF0D /* MB Proj List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MB Proj List.swift"; sourceTree = "<group>"; };
-		F371A51C2C2D8D94006BDF0D /* MB Proj Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MB Proj Card.swift"; sourceTree = "<group>"; };
+		F371A5182C2D84BA006BDF0D /* ProjCardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCardVM.swift; sourceTree = "<group>"; };
+		F371A51A2C2D8D58006BDF0D /* MBProjList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBProjList.swift; sourceTree = "<group>"; };
+		F371A51C2C2D8D94006BDF0D /* MBProjCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBProjCard.swift; sourceTree = "<group>"; };
 		F371A5222C2D97AB006BDF0D /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F371A5242C2D97AB006BDF0D /* XProj Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XProj Tests.swift"; sourceTree = "<group>"; };
 		F37831AF2D109282007F7858 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
-		F37831B82D10A19E007F7858 /* Fetch project file path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fetch project file path.swift"; sourceTree = "<group>"; };
+		F37831B82D10A19E007F7858 /* fetchProjFilePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetchProjFilePath.swift; sourceTree = "<group>"; };
 		F37831BA2D10CE9A007F7858 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		F37831BE2D10D8DE007F7858 /* Packages in Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Packages in Package.swift"; sourceTree = "<group>"; };
-		F37831C02D10E1CF007F7858 /* App Store App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Store App.swift"; sourceTree = "<group>"; };
+		F37831C02D10E1CF007F7858 /* AppStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreApp.swift; sourceTree = "<group>"; };
 		F37831C42D11A4F4007F7858 /* ProjTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjTarget.swift; sourceTree = "<group>"; };
 		F37831C62D11A590007F7858 /* ProjDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjDependency.swift; sourceTree = "<group>"; };
 		F37831C82D11A69B007F7858 /* ProjDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjDates.swift; sourceTree = "<group>"; };
 		F37831CB2D11AF86007F7858 /* icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = icon.swift; sourceTree = "<group>"; };
-		F37831CE2D11D11B007F7858 /* ProjImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjImage.swift; sourceTree = "<group>"; };
 		F37831D02D11D177007F7858 /* ProjActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjActions.swift; sourceTree = "<group>"; };
 		F37831D22D11D221007F7858 /* ProjTargets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjTargets.swift; sourceTree = "<group>"; };
 		F37831D42D11D292007F7858 /* ProjDependencyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjDependencyList.swift; sourceTree = "<group>"; };
 		F37831D72D12DF0E007F7858 /* Open folder picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open folder picker.swift"; sourceTree = "<group>"; };
 		F37831DA2D12E0E6007F7858 /* Save bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Save bookmark.swift"; sourceTree = "<group>"; };
 		F37831DC2D12E57D007F7858 /* Restore access to folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restore access to folder.swift"; sourceTree = "<group>"; };
-		F37831DE2D12EA34007F7858 /* PreviewProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProjects.swift; sourceTree = "<group>"; };
+		F37831DE2D12EA34007F7858 /* PreviewProp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProp.swift; sourceTree = "<group>"; };
 		F37B90722BFE9E1600597624 /* macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = macOS.plist; sourceTree = "<group>"; };
 		F37D1BEC2CDA231F00D8817D /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		F37D1BEE2CDA234700D8817D /* Simple Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Simple Entry.swift"; sourceTree = "<group>"; };
 		F37D1BF02CDA235D00D8817D /* Entry View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry View.swift"; sourceTree = "<group>"; };
-		F37D1BF52CDA259E00D8817D /* Smart Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Smart Scan.swift"; sourceTree = "<group>"; };
-		F37D1BF92CDA272600D8817D /* Duplicate Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Section.swift"; sourceTree = "<group>"; };
+		F37D1BF52CDA259E00D8817D /* SmartScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartScan.swift; sourceTree = "<group>"; };
+		F37D1BF92CDA272600D8817D /* DuplicateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateSection.swift; sourceTree = "<group>"; };
 		F3874E2B2D36803C000BDCD9 /* ProjSwiftTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjSwiftTools.swift; sourceTree = "<group>"; };
 		F387AC312BFEC6C600EC1DC5 /* Analyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyser.swift; sourceTree = "<group>"; };
-		F38B5E512BFD6F6100CB9917 /* Proj Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card.swift"; sourceTree = "<group>"; };
+		F38B5E512BFD6F6100CB9917 /* ProjCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCard.swift; sourceTree = "<group>"; };
 		F38B5E572BFE134400CB9917 /* SearchSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestions.swift; sourceTree = "<group>"; };
 		F3929A662D1BA52D00FB06E6 /* SearchSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestion.swift; sourceTree = "<group>"; };
 		F3AE99E42E2F894100D70249 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Details.swift"; sourceTree = "<group>"; };
-		F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Card Image.swift"; sourceTree = "<group>"; };
+		F3B389BB2D0ECAFD0082C2F3 /* ProjDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjDetails.swift; sourceTree = "<group>"; };
+		F3B389BE2D0F6C370082C2F3 /* ProjCardImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCardImage.swift; sourceTree = "<group>"; };
 		F3B389C02D0F92500082C2F3 /* Nav Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Category.swift"; sourceTree = "<group>"; };
 		F3B389C22D0F93500082C2F3 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F3B389C42D0F9AE80082C2F3 /* Swift Tools Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift Tools Version.swift"; sourceTree = "<group>"; };
@@ -210,14 +210,14 @@
 		F3DAD6832D161ECC0012BA9D /* Nav Mode Picker Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Mode Picker Item.swift"; sourceTree = "<group>"; };
 		F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Grid.swift"; sourceTree = "<group>"; };
 		F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Grid Item.swift"; sourceTree = "<group>"; };
-		F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List Toolbar.swift"; sourceTree = "<group>"; };
-		F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duplicate Projects.swift"; sourceTree = "<group>"; };
+		F3E7EC9F2C687BAD008CD17B /* ProjListToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjListToolbar.swift; sourceTree = "<group>"; };
+		F3E7ECA12C687C5D008CD17B /* DuplicateProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateProjects.swift; sourceTree = "<group>"; };
 		F3E98C422E6D6C4C0019439F /* ProjCodeLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCodeLines.swift; sourceTree = "<group>"; };
 		F3E98C452E6D723C0019439F /* ProjCodeLinesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCodeLinesVM.swift; sourceTree = "<group>"; };
 		F3E98C4A2E6DECAF0019439F /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		F3E98C4C2E6DECF70019439F /* AppSettingsSelectedFolders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsSelectedFolders.swift; sourceTree = "<group>"; };
 		F3E98C4E2E6DED6D0019439F /* AppSettingsProjDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsProjDetails.swift; sourceTree = "<group>"; };
-		F3ED776E2D1772F8000977AC /* Proj List VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj List VM.swift"; sourceTree = "<group>"; };
+		F3ED776E2D1772F8000977AC /* ProjListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjListVM.swift; sourceTree = "<group>"; };
 		F3FC8A572D1AFDC300A7CCBC /* 2 Column Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2 Column Detail.swift"; sourceTree = "<group>"; };
 		F3FC8A592D1AFEC700A7CCBC /* 3 Column Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3 Column Detail.swift"; sourceTree = "<group>"; };
 		F3FC8A5B2D1AFF2A00A7CCBC /* 3 Column Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3 Column Content.swift"; sourceTree = "<group>"; };
@@ -300,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				F3341E2C2BDE358900E85F27 /* XProj App.swift */,
-				F323EC932D315E3A00973FA0 /* Value Store.swift */,
 				F3DB25452C2C4E8B00A0C066 /* Nav */,
 				F37B90722BFE9E1600597624 /* macOS.plist */,
 				F3341E352BDE358A00E85F27 /* macOS.entitlements */,
@@ -308,10 +307,9 @@
 				F3B75CD52E72A4B50096E65E /* AppIcon.icon */,
 				F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */,
 				F313BE1C2C871E13005C8B60 /* Examples.zip */,
-				F37831DE2D12EA34007F7858 /* PreviewProjects.swift */,
 				F3DAD66C2D161EAA0012BA9D /* DataModel.swift */,
 				F3DAD66D2D161EAA0012BA9D /* NavModel.swift */,
-				F37831D92D12E028007F7858 /* funcs */,
+				F37831D92D12E028007F7858 /* Utils */,
 				F37831CA2D11A75F007F7858 /* Proj List */,
 				F3B389BD2D0ECB090082C2F3 /* Proj Details */,
 				F37D1BF42CDA258B00D8817D /* Smart Scan */,
@@ -359,8 +357,8 @@
 		F371A5522C2DC08D006BDF0D /* Menu Bar Extra */ = {
 			isa = PBXGroup;
 			children = (
-				F371A51A2C2D8D58006BDF0D /* MB Proj List.swift */,
-				F371A51C2C2D8D94006BDF0D /* MB Proj Card.swift */,
+				F371A51A2C2D8D58006BDF0D /* MBProjList.swift */,
+				F371A51C2C2D8D94006BDF0D /* MBProjCard.swift */,
 			);
 			path = "Menu Bar Extra";
 			sourceTree = "<group>";
@@ -368,8 +366,8 @@
 		F37831CA2D11A75F007F7858 /* Proj List */ = {
 			isa = PBXGroup;
 			children = (
-				F3ED776E2D1772F8000977AC /* Proj List VM.swift */,
-				F3E7EC9F2C687BAD008CD17B /* Proj List Toolbar.swift */,
+				F3ED776E2D1772F8000977AC /* ProjListVM.swift */,
+				F3E7EC9F2C687BAD008CD17B /* ProjListToolbar.swift */,
 				F387AC312BFEC6C600EC1DC5 /* Analyser.swift */,
 				F37831CD2D11C649007F7858 /* Proj Card */,
 			);
@@ -379,32 +377,34 @@
 		F37831CD2D11C649007F7858 /* Proj Card */ = {
 			isa = PBXGroup;
 			children = (
-				F38B5E512BFD6F6100CB9917 /* Proj Card.swift */,
-				F371A5182C2D84BA006BDF0D /* Proj Card VM.swift */,
-				F3B389BE2D0F6C370082C2F3 /* Proj Card Image.swift */,
-				F3515C202D366DA70078E588 /* Proj Card Platforms.swift */,
+				F38B5E512BFD6F6100CB9917 /* ProjCard.swift */,
+				F371A5182C2D84BA006BDF0D /* ProjCardVM.swift */,
+				F3B389BE2D0F6C370082C2F3 /* ProjCardImage.swift */,
+				F3515C202D366DA70078E588 /* ProjCardPlatforms.swift */,
 			);
 			path = "Proj Card";
 			sourceTree = "<group>";
 		};
-		F37831D92D12E028007F7858 /* funcs */ = {
+		F37831D92D12E028007F7858 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F323EC932D315E3A00973FA0 /* Value Store.swift */,
+				F37831DE2D12EA34007F7858 /* PreviewProp.swift */,
 				F37831DA2D12E0E6007F7858 /* Save bookmark.swift */,
 				F37831CB2D11AF86007F7858 /* icon.swift */,
 				F37831DC2D12E57D007F7858 /* Restore access to folder.swift */,
 				F37831D72D12DF0E007F7858 /* Open folder picker.swift */,
 				F37831BA2D10CE9A007F7858 /* Formatters.swift */,
 			);
-			path = funcs;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		F37D1BF42CDA258B00D8817D /* Smart Scan */ = {
 			isa = PBXGroup;
 			children = (
-				F37D1BF52CDA259E00D8817D /* Smart Scan.swift */,
-				F3E7ECA12C687C5D008CD17B /* Duplicate Projects.swift */,
-				F37D1BF92CDA272600D8817D /* Duplicate Section.swift */,
+				F37D1BF52CDA259E00D8817D /* SmartScan.swift */,
+				F3E7ECA12C687C5D008CD17B /* DuplicateProjects.swift */,
+				F37D1BF92CDA272600D8817D /* DuplicateSection.swift */,
 			);
 			path = "Smart Scan";
 			sourceTree = "<group>";
@@ -424,10 +424,10 @@
 			isa = PBXGroup;
 			children = (
 				F350D40A2D1551ED000EEA57 /* Proj */,
-				F37831C02D10E1CF007F7858 /* App Store App.swift */,
+				F37831C02D10E1CF007F7858 /* AppStoreApp.swift */,
 				F37831AF2D109282007F7858 /* Target.swift */,
 				F3E98C4A2E6DECAF0019439F /* TargetType.swift */,
-				F37831B82D10A19E007F7858 /* Fetch project file path.swift */,
+				F37831B82D10A19E007F7858 /* fetchProjFilePath.swift */,
 				F3B389C22D0F93500082C2F3 /* Package.swift */,
 				F37831BE2D10D8DE007F7858 /* Packages in Package.swift */,
 			);
@@ -455,9 +455,9 @@
 		F3B389BD2D0ECB090082C2F3 /* Proj Details */ = {
 			isa = PBXGroup;
 			children = (
-				F3B389BB2D0ECAFD0082C2F3 /* Proj Details.swift */,
+				F3B389BB2D0ECAFD0082C2F3 /* ProjDetails.swift */,
 				F3874E2B2D36803C000BDCD9 /* ProjSwiftTools.swift */,
-				F37831CE2D11D11B007F7858 /* ProjImage.swift */,
+				F328BB4F2E7FDE0C0012F003 /* ProjImage.swift */,
 				F37831D02D11D177007F7858 /* ProjActions.swift */,
 				F37831C82D11A69B007F7858 /* ProjDates.swift */,
 				F329E1802D3683E4007BA9D1 /* ProjGitignore.swift */,
@@ -703,6 +703,7 @@
 				F323EC962D31E39A00973FA0 /* Open Buttons.swift in Sources */,
 				F3DAD6782D161EAA0012BA9D /* 2 Column Container.swift in Sources */,
 				F3DAD67A2D161EAA0012BA9D /* DataModel.swift in Sources */,
+				F328BB502E7FDE0C0012F003 /* ProjImage.swift in Sources */,
 				F3DAD68A2D161ECC0012BA9D /* Proj Grid.swift in Sources */,
 				F3FC8A582D1AFDC300A7CCBC /* 2 Column Detail.swift in Sources */,
 				F3DAD68C2D161ECC0012BA9D /* Nav Mode Button.swift in Sources */,
@@ -715,21 +716,21 @@
 				F3DAD67C2D161EAA0012BA9D /* 3 Column Container.swift in Sources */,
 				F3DAD67E2D161EAA0012BA9D /* Nav Container.swift in Sources */,
 				F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */,
-				F371A51B2C2D8D58006BDF0D /* MB Proj List.swift in Sources */,
-				F37D1BF62CDA259E00D8817D /* Smart Scan.swift in Sources */,
+				F371A51B2C2D8D58006BDF0D /* MBProjList.swift in Sources */,
+				F37D1BF62CDA259E00D8817D /* SmartScan.swift in Sources */,
 				F3B389C32D0F93500082C2F3 /* Package.swift in Sources */,
-				F37831C12D10E1CF007F7858 /* App Store App.swift in Sources */,
+				F37831C12D10E1CF007F7858 /* AppStoreApp.swift in Sources */,
 				F37831C72D11A590007F7858 /* ProjDependency.swift in Sources */,
 				F3B389C72D0F9B340082C2F3 /* Proj Icon.swift in Sources */,
 				F3E98C432E6D6C4C0019439F /* ProjCodeLines.swift in Sources */,
 				F3874E2C2D36803C000BDCD9 /* ProjSwiftTools.swift in Sources */,
 				F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */,
-				F3515C212D366DA70078E588 /* Proj Card Platforms.swift in Sources */,
+				F3515C212D366DA70078E588 /* ProjCardPlatforms.swift in Sources */,
 				F37831BB2D10CE9A007F7858 /* Formatters.swift in Sources */,
-				F38B5E522BFD6F6100CB9917 /* Proj Card.swift in Sources */,
+				F38B5E522BFD6F6100CB9917 /* ProjCard.swift in Sources */,
 				F3341E2D2BDE358900E85F27 /* XProj App.swift in Sources */,
-				F37D1BFA2CDA272600D8817D /* Duplicate Section.swift in Sources */,
-				F371A51D2C2D8D94006BDF0D /* MB Proj Card.swift in Sources */,
+				F37D1BFA2CDA272600D8817D /* DuplicateSection.swift in Sources */,
+				F371A51D2C2D8D94006BDF0D /* MBProjCard.swift in Sources */,
 				F31EF9492D1038CE000F95A7 /* DependencyDetails.swift in Sources */,
 				F37831DD2D12E57D007F7858 /* Restore access to folder.swift in Sources */,
 				F329E1812D3683E4007BA9D1 /* ProjGitignore.swift in Sources */,
@@ -737,7 +738,7 @@
 				F3522DCD2C2AA32C00660101 /* FileManager.swift in Sources */,
 				F37831D52D11D292007F7858 /* ProjDependencyList.swift in Sources */,
 				F38B5E582BFE134400CB9917 /* SearchSuggestions.swift in Sources */,
-				F3ED776F2D1772F8000977AC /* Proj List VM.swift in Sources */,
+				F3ED776F2D1772F8000977AC /* ProjListVM.swift in Sources */,
 				F3522DCF2C2AA51800660101 /* DerivedDataEntry.swift in Sources */,
 				F3E98C4B2E6DECAF0019439F /* TargetType.swift in Sources */,
 				F3FC8A5E2D1AFFD500A7CCBC /* Column Sidebar.swift in Sources */,
@@ -745,13 +746,12 @@
 				F323EC942D315E3A00973FA0 /* Value Store.swift in Sources */,
 				F37831C52D11A4F4007F7858 /* ProjTarget.swift in Sources */,
 				F3B389D62D1032A40082C2F3 /* PackageDependency.swift in Sources */,
-				F3B389BC2D0ECAFD0082C2F3 /* Proj Details.swift in Sources */,
+				F3B389BC2D0ECAFD0082C2F3 /* ProjDetails.swift in Sources */,
 				F31EF9472D103896000F95A7 /* DependencyCard.swift in Sources */,
 				F31AC0E52E7375C8003C4A84 /* FileLines.swift in Sources */,
-				F371A5192C2D84BA006BDF0D /* Proj Card VM.swift in Sources */,
+				F371A5192C2D84BA006BDF0D /* ProjCardVM.swift in Sources */,
 				F387AC322BFEC6C600EC1DC5 /* Analyser.swift in Sources */,
-				F3B389BF2D0F6C370082C2F3 /* Proj Card Image.swift in Sources */,
-				F37831CF2D11D11B007F7858 /* ProjImage.swift in Sources */,
+				F3B389BF2D0F6C370082C2F3 /* ProjCardImage.swift in Sources */,
 				F31AC0DF2E73714B003C4A84 /* AppSettingsDebug.swift in Sources */,
 				F37831CC2D11AF86007F7858 /* icon.swift in Sources */,
 				F3B389C52D0F9AE80082C2F3 /* Swift Tools Version.swift in Sources */,
@@ -761,17 +761,17 @@
 				F3FC8A5C2D1AFF2A00A7CCBC /* 3 Column Content.swift in Sources */,
 				F3B389D32D102F5E0082C2F3 /* DependencyList.swift in Sources */,
 				F3B389CF2D1027890082C2F3 /* DerivedDataCard.swift in Sources */,
-				F3E7ECA22C687C5D008CD17B /* Duplicate Projects.swift in Sources */,
+				F3E7ECA22C687C5D008CD17B /* DuplicateProjects.swift in Sources */,
 				F31AC0E32E737588003C4A84 /* CodeLinesVM.swift in Sources */,
 				F3522DC62C2A29C000660101 /* DerivedDataList.swift in Sources */,
 				F37831C92D11A69B007F7858 /* ProjDates.swift in Sources */,
 				F32A1E052D30FD1C008AEB2F /* Bottom Bar.swift in Sources */,
 				F37831D82D12DF0E007F7858 /* Open folder picker.swift in Sources */,
-				F37831DF2D12EA34007F7858 /* PreviewProjects.swift in Sources */,
+				F37831DF2D12EA34007F7858 /* PreviewProp.swift in Sources */,
 				F31AC0E12E73751B003C4A84 /* CodeLinesList.swift in Sources */,
 				F3E98C4F2E6DED6D0019439F /* AppSettingsProjDetails.swift in Sources */,
-				F37831B92D10A19E007F7858 /* Fetch project file path.swift in Sources */,
-				F3E7ECA02C687BAD008CD17B /* Proj List Toolbar.swift in Sources */,
+				F37831B92D10A19E007F7858 /* fetchProjFilePath.swift in Sources */,
+				F3E7ECA02C687BAD008CD17B /* ProjListToolbar.swift in Sources */,
 			);
 		};
 		F371A51E2C2D97AB006BDF0D /* Sources */ = {
@@ -903,7 +903,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 26.0;
+				MARKETING_VERSION = 26.0.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -966,7 +966,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 26.0;
+				MARKETING_VERSION = 26.0.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;

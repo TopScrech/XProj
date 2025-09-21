@@ -86,9 +86,8 @@ struct ProjCard: View {
 
 #Preview {
     List {
-        ProjCard(previewProj1)
-        
-        ProjCard(previewProj2)
+        ProjCard(PreviewProp.previewProj1)
+        ProjCard(PreviewProp.previewProj2)
     }
     .environment(DataModel.shared)
 }

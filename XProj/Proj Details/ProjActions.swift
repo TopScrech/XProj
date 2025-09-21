@@ -54,7 +54,7 @@ struct ProjActions: View {
 }
 
 #Preview {
-    ProjActions(previewProj1)
+    ProjActions(PreviewProp.previewProj1)
         .environment(DataModel.shared)
         .environmentObject(ValueStore())
 }

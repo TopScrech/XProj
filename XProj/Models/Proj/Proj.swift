@@ -135,7 +135,7 @@ struct Proj: Identifiable, Hashable, Codable {
     }
     
     private func parsePackagesInProj() -> [Package] {
-        guard let url = fetchProjectFilePath(path) else {
+        guard let url = fetchProjFilePath(path) else {
             return []
         }
         

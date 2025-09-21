@@ -50,7 +50,7 @@ extension Proj {
     func fetchTargets() -> [Target] {
         guard
             type == .proj,
-            let url = fetchProjectFilePath(path)
+            let url = fetchProjFilePath(path)
         else {
             return []
         }

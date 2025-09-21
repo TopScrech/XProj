@@ -39,5 +39,5 @@ struct ProjDates: View {
 }
 
 #Preview {
-    ProjDates(previewProj1)
+    ProjDates(PreviewProp.previewProj1)
 }

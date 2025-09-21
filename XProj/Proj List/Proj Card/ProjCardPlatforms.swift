@@ -41,5 +41,5 @@ struct ProjCardPlatforms: View {
 }
 
 #Preview {
-    ProjCardPlatforms(previewProj1)
+    ProjCardPlatforms(PreviewProp.previewProj1)
 }

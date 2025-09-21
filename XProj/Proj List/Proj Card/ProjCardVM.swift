@@ -4,14 +4,16 @@ import Foundation
 //final class ProjCardVM {
 extension DataModel {
     func findXcodeprojFile(_ folderPath: String) -> (found: Bool, filePath: String?) {
-        let fileManager = FileManager.default
+        let fm = FileManager.default
         
         do {
-            let contents = try fileManager.contentsOfDirectory(atPath: folderPath)
+            let contents = try fm.contentsOfDirectory(atPath: folderPath)
             
             for item in contents {
                 if item.hasSuffix(".xcodeproj") {
-                    let filePath = (folderPath as NSString).appendingPathComponent(item)
+                    let filePath = (folderPath as NSString)
+                        .appendingPathComponent(item)
+                    
                     return (true, filePath)
                 }
             }
