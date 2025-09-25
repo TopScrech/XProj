@@ -25,6 +25,7 @@ struct OpenButtons: View {
 
 #Preview {
     OpenButtons()
+        .darkSchemePreferred()
         .environment(NavModel.shared)
         .environment(DataModel.shared)
 }

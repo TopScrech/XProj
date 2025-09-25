@@ -42,4 +42,5 @@ struct ProjCardPlatforms: View {
 
 #Preview {
     ProjCardPlatforms(PreviewProp.previewProj1)
+        .darkSchemePreferred()
 }

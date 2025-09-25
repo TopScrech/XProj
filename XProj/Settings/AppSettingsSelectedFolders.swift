@@ -63,6 +63,7 @@ struct AppSettingsSelectedFolders: View {
 
 #Preview {
     AppSettingsSelectedFolders()
+        .darkSchemePreferred()
         .environment(DataModel())
         .environment(DerivedDataVM())
 }

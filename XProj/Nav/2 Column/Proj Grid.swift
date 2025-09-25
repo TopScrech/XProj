@@ -79,12 +79,14 @@ struct ProjGrid: View {
 
 #Preview {
     ProjGrid()
+        .darkSchemePreferred()
         .environment(DataModel.shared)
         .environment(NavModel(selectedCategory: .proj))
 }
 
 #Preview {
     ProjGrid()
+        .darkSchemePreferred()
         .environment(DataModel.shared)
         .environment(NavModel(selectedCategory: nil))
 }

@@ -18,5 +18,6 @@ struct DuplicateProjects: View {
 
 #Preview {
     DuplicateProjects()
+        .darkSchemePreferred()
         .environment(DataModel.shared)
 }

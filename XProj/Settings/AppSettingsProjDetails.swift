@@ -41,5 +41,6 @@ struct AppSettingsProjDetails: View {
 
 #Preview {
     AppSettingsProjDetails()
+        .darkSchemePreferred()
         .environmentObject(ValueStore())
 }

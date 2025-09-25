@@ -91,4 +91,5 @@ struct ProjImage: View {
 
 #Preview {
     ProjCardImage(PreviewProp.previewProj1)
+        .darkSchemePreferred()
 }

@@ -40,4 +40,5 @@ struct ProjDates: View {
 
 #Preview {
     ProjDates(PreviewProp.previewProj1)
+        .darkSchemePreferred()
 }

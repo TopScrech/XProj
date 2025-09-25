@@ -48,4 +48,5 @@ struct ProjDependency: View {
     ProjDependency(
         Package(name: "Preview", repositoryUrl: "")
     )
+    .darkSchemePreferred()
 }

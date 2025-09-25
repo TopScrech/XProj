@@ -72,5 +72,6 @@ struct CodeLinesList: View {
 
 #Preview {
     CodeLinesList(.constant("Preview/Preview"))
+        .darkSchemePreferred()
         .environmentObject(ValueStore())
 }

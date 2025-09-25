@@ -22,4 +22,5 @@ struct ProjSwiftTools: View {
 
 #Preview {
     ProjSwiftTools("6.0")
+        .darkSchemePreferred()
 }

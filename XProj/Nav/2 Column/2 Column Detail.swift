@@ -18,5 +18,6 @@ struct TwoColumnDetail: View {
 
 #Preview {
     TwoColumnDetail()
+        .darkSchemePreferred()
         .environment(NavModel.shared)
 }

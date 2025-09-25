@@ -94,4 +94,5 @@ struct ProjTarget: View {
     )
     .padding()
     .environmentObject(ValueStore())
+    .darkSchemePreferred()
 }

@@ -93,6 +93,7 @@ struct DependencyList: View {
 
 #Preview {
     DependencyList()
+        .darkSchemePreferred()
         .environment(DataModel.shared)
         .environmentObject(ValueStore())
 }

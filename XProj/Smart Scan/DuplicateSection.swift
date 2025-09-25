@@ -18,4 +18,5 @@ struct DuplicateSection: View {
 
 #Preview {
     DuplicateSection([])
+        .darkSchemePreferred()
 }

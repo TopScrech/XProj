@@ -43,6 +43,7 @@ struct NavContainer: View {
 
 #Preview {
     NavContainer()
+        .darkSchemePreferred()
         .environment(NavModel.shared)
         .environmentObject(ValueStore())
 }

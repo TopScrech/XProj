@@ -94,5 +94,6 @@ struct MBProjList: View {
 
 #Preview {
     MBProjList()
+        .darkSchemePreferred()
         .environment(DataModel.shared)
 }

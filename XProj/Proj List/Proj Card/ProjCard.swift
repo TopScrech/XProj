@@ -89,5 +89,6 @@ struct ProjCard: View {
         ProjCard(PreviewProp.previewProj1)
         ProjCard(PreviewProp.previewProj2)
     }
+    .darkSchemePreferred()
     .environment(DataModel.shared)
 }

@@ -35,6 +35,7 @@ struct ThreeColumnContainer: View {
 
 #Preview {
     ThreeColumnContainer()
-        .environment(NavModel(columnVisibility: .all))
+        .darkSchemePreferred()
         .environment(DataModel.shared)
+        .environment(NavModel(columnVisibility: .all))
 }

@@ -27,5 +27,6 @@ struct MBProjCard: View {
 
 #Preview {
     MBProjCard(PreviewProp.previewProj1)
+        .darkSchemePreferred()
         .environment(DataModel.shared)
 }

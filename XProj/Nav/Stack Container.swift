@@ -43,6 +43,7 @@ struct StackContainer: View {
 
 #Preview {
     StackContainer()
+        .darkSchemePreferred()
         .environment(DataModel.shared)
         .environment(NavModel.shared)
 }
