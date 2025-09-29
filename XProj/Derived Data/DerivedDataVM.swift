@@ -38,12 +38,12 @@ final class DerivedDataVM {
     }
     
     func showPicker() {
-        openFolderPicker { url in
+        BookmarkManager.openFolderPicker { url in
             guard let url else {
                 return
             }
             
-            saveSecurityScopedBookmark(url, forKey: self.udKey) {
+            BookmarkManager.saveSecurityScopedBookmark(url, forKey: self.udKey) {
                 self.getFolders()
             }
         }
@@ -54,15 +54,13 @@ final class DerivedDataVM {
             return
         }
         
-        let fm = FileManager.default
-        
-        guard fm.fileExists(atPath: url.path()) else {
+        guard FileManager.default.fileExists(atPath: url.path()) else {
             print("Folder does not exist:", url)
             return
         }
         
         do {
-            let contents = try fm.contentsOfDirectory(
+            let contents = try FileManager.default.contentsOfDirectory(
                 at: url,
                 includingPropertiesForKeys: nil,
                 options: []
@@ -70,7 +68,7 @@ final class DerivedDataVM {
             
             for fileURL in contents {
                 do {
-                    try fm.removeItem(at: fileURL)
+                    try FileManager.default.removeItem(at: fileURL)
                 } catch {
                     print("Failed to delete \(fileURL.path), error:", error.localizedDescription)
                 }
@@ -113,7 +111,7 @@ final class DerivedDataVM {
     func getFolders() {
         folders = []
         
-        guard let url = restoreAccessToFolder(udKey) else {
+        guard let url = BookmarkManager.restoreAccessToFolder(udKey) else {
             print("Unable to restore access to the folder. Please select a folder")
             return
         }

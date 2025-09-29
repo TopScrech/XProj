@@ -1,6 +1,6 @@
 import Testing
 
-struct XProjTests {
+struct UnitTests {
     @Test func testExample() async throws {
         let array = [0, 1, 1, 2, 3, 3, 3, 4, 5, 5]
         

@@ -33,7 +33,7 @@ struct ProjCard: View {
             
             Spacer()
             
-            Text(formattedDate(proj.openedAt))
+            Text(DateFormatters.formattedDate(proj.openedAt))
                 .secondary()
             
             //            Text(proj.attributes[.size] as? String ?? "")

@@ -14,8 +14,8 @@ struct DependencyList: View {
                 ForEach(dependenciesGroupedByAuthor, id: \.author) { group in
                     Section {
                         // Author's packages
-                        ForEach(group.dependencies) { package in
-                            DependencyCard(package)
+                        ForEach(group.dependencies) {
+                            DependencyCard($0)
                         }
                     } header: {
                         HStack {
