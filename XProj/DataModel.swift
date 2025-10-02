@@ -143,18 +143,11 @@ final class DataModel {
     //    }
     
     var swiftToolsVersions: String {
-        var versions = Set<String>()
-        
-        for proj in projects {
-            if let version = proj.swiftToolsVersion {
-                versions.insert(version)
-            }
-        }
-        
-        let sortedArray = versions.sorted()
+        let sortedArray = projects.compactMap {
+            $0.swiftToolsVersion
+        }.sorted()
         
         let joinedString = sortedArray.joined(separator: ", ")
-        
         return joinedString + ","
     }
     

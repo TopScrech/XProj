@@ -70,11 +70,13 @@ final class DerivedDataVM {
                 do {
                     try FileManager.default.removeItem(at: fileURL)
                 } catch {
-                    print("Failed to delete \(fileURL.path), error:", error.localizedDescription)
+                    print("Failed to delete", fileURL.path)
+                    print(error.localizedDescription)
                 }
             }
         } catch {
-            print("Failed to fetch dir contents: \(url), error:", error.localizedDescription)
+            print("Failed to fetch dir contents", url)
+            print(error.localizedDescription)
         }
         
         getFolders()
@@ -150,7 +152,9 @@ final class DerivedDataVM {
         group.wait()
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        print("Time elapsed for processing Derived Data: \(String(format: "%.3f", timeElapsed))s")
+        let timeElapsedString = String(format: "%.3f", timeElapsed)
+        
+        print("Time elapsed for processing Derived Data: \(timeElapsedString)s")
     }
     
     private func processFolder(_ name: String, at path: String) -> DerivedDataFolder? {
@@ -159,11 +163,7 @@ final class DerivedDataVM {
         
         do {
             let size = try fm.allocatedSizeOfDirectory(url)
-            
-            return DerivedDataFolder(
-                name: name,
-                size: size
-            )
+            return DerivedDataFolder(name: name, size: size)
         } catch {
             print("error processing project at path:", path)
         }

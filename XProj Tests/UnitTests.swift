@@ -10,7 +10,6 @@ struct UnitTests {
     
     func findDuplicates(_ array: [Int]) -> [[Int]] {
         var countDict: [Int: Int] = [:]
-        var duplicates: [[Int]] = []
         
         // Count occurrences of each number
         for num in array {
@@ -20,6 +19,8 @@ struct UnitTests {
                 countDict[num] = 1
             }
         }
+        
+        var duplicates: [[Int]] = []
         
         // Gather numbers with count > 1 into duplicates array
         for (num, count) in countDict {
