@@ -15,12 +15,12 @@
 		F31EF9472D103896000F95A7 /* DependencyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9462D103896000F95A7 /* DependencyCard.swift */; };
 		F31EF9492D1038CE000F95A7 /* DependencyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31EF9482D1038CE000F95A7 /* DependencyDetails.swift */; };
 		F323EC942D315E3A00973FA0 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC932D315E3A00973FA0 /* ValueStore.swift */; };
-		F323EC962D31E39A00973FA0 /* Open Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC952D31E39A00973FA0 /* Open Buttons.swift */; };
+		F323EC962D31E39A00973FA0 /* OpenButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323EC952D31E39A00973FA0 /* OpenButtons.swift */; };
 		F328BB502E7FDE0C0012F003 /* ProjImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328BB4F2E7FDE0C0012F003 /* ProjImage.swift */; };
 		F329E1812D3683E4007BA9D1 /* ProjGitignore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329E1802D3683E4007BA9D1 /* ProjGitignore.swift */; };
 		F32A1E022D2FB7B6008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
 		F32A1E032D2FB7BD008AEB2F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */; };
-		F32A1E052D30FD1C008AEB2F /* Bottom Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A1E042D30FD1C008AEB2F /* Bottom Bar.swift */; };
+		F32A1E052D30FD1C008AEB2F /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A1E042D30FD1C008AEB2F /* BottomBar.swift */; };
 		F33081762C9057F700605E43 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F33081752C9057F700605E43 /* WidgetKit.framework */; };
 		F33081782C9057F700605E43 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F33081772C9057F700605E43 /* SwiftUI.framework */; };
 		F330817B2C9057F700605E43 /* XProjWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F330817A2C9057F700605E43 /* XProjWidgetsBundle.swift */; };
@@ -68,7 +68,7 @@
 		F3929A672D1BA52D00FB06E6 /* SearchSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3929A662D1BA52D00FB06E6 /* SearchSuggestion.swift */; };
 		F3B389BC2D0ECAFD0082C2F3 /* ProjDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BB2D0ECAFD0082C2F3 /* ProjDetails.swift */; };
 		F3B389BF2D0F6C370082C2F3 /* ProjCardImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389BE2D0F6C370082C2F3 /* ProjCardImage.swift */; };
-		F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C02D0F92500082C2F3 /* Nav Category.swift */; };
+		F3B389C12D0F92500082C2F3 /* NavCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C02D0F92500082C2F3 /* NavCategory.swift */; };
 		F3B389C32D0F93500082C2F3 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C22D0F93500082C2F3 /* Package.swift */; };
 		F3B389C52D0F9AE80082C2F3 /* SwiftToolsVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C42D0F9AE80082C2F3 /* SwiftToolsVersion.swift */; };
 		F3B389C72D0F9B340082C2F3 /* ProjIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B389C62D0F9B340082C2F3 /* ProjIcon.swift */; };
@@ -80,18 +80,18 @@
 		F3B75CD72E72A4B50096E65E /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = F3B75CD52E72A4B50096E65E /* AppIcon.icon */; };
 		F3D1E75F2C9B40B4000C81FF /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1E75E2C9B40B4000C81FF /* AppSettings.swift */; };
 		F3DAD6752D161EAA0012BA9D /* Proj.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6712D161EAA0012BA9D /* Proj.swift */; };
-		F3DAD6772D161EAA0012BA9D /* Nav Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66F2D161EAA0012BA9D /* Nav Mode.swift */; };
+		F3DAD6772D161EAA0012BA9D /* NavMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66F2D161EAA0012BA9D /* NavMode.swift */; };
 		F3DAD6782D161EAA0012BA9D /* 2 Column Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6652D161EAA0012BA9D /* 2 Column Container.swift */; };
 		F3DAD67A2D161EAA0012BA9D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66C2D161EAA0012BA9D /* DataModel.swift */; };
 		F3DAD67B2D161EAA0012BA9D /* NavModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD66D2D161EAA0012BA9D /* NavModel.swift */; };
 		F3DAD67C2D161EAA0012BA9D /* 3 Column Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6662D161EAA0012BA9D /* 3 Column Container.swift */; };
-		F3DAD67E2D161EAA0012BA9D /* Nav Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6632D161EAA0012BA9D /* Nav Container.swift */; };
-		F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6642D161EAA0012BA9D /* Stack Container.swift */; };
-		F3DAD68A2D161ECC0012BA9D /* Proj Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */; };
-		F3DAD68C2D161ECC0012BA9D /* Nav Mode Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6812D161ECC0012BA9D /* Nav Mode Button.swift */; };
-		F3DAD68D2D161ECC0012BA9D /* Nav Mode Picker Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6832D161ECC0012BA9D /* Nav Mode Picker Item.swift */; };
-		F3DAD68E2D161ECC0012BA9D /* Nav Mode Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6822D161ECC0012BA9D /* Nav Mode Picker.swift */; };
-		F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */; };
+		F3DAD67E2D161EAA0012BA9D /* NavContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6632D161EAA0012BA9D /* NavContainer.swift */; };
+		F3DAD67F2D161EAA0012BA9D /* StackContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6642D161EAA0012BA9D /* StackContainer.swift */; };
+		F3DAD68A2D161ECC0012BA9D /* ProjGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6862D161ECC0012BA9D /* ProjGrid.swift */; };
+		F3DAD68C2D161ECC0012BA9D /* NavModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6812D161ECC0012BA9D /* NavModeButton.swift */; };
+		F3DAD68D2D161ECC0012BA9D /* NavModePickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6832D161ECC0012BA9D /* NavModePickerItem.swift */; };
+		F3DAD68E2D161ECC0012BA9D /* NavModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6822D161ECC0012BA9D /* NavModePicker.swift */; };
+		F3DAD6922D161ECC0012BA9D /* ProjGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD6882D161ECC0012BA9D /* ProjGridItem.swift */; };
 		F3E7ECA02C687BAD008CD17B /* ProjListToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7EC9F2C687BAD008CD17B /* ProjListToolbar.swift */; };
 		F3E7ECA22C687C5D008CD17B /* DuplicateProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7ECA12C687C5D008CD17B /* DuplicateProjects.swift */; };
 		F3E98C432E6D6C4C0019439F /* ProjCodeLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E98C422E6D6C4C0019439F /* ProjCodeLines.swift */; };
@@ -104,7 +104,7 @@
 		F3FC8A582D1AFDC300A7CCBC /* 2 Column Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A572D1AFDC300A7CCBC /* 2 Column Detail.swift */; };
 		F3FC8A5A2D1AFEC700A7CCBC /* 3 Column Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A592D1AFEC700A7CCBC /* 3 Column Detail.swift */; };
 		F3FC8A5C2D1AFF2A00A7CCBC /* 3 Column Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A5B2D1AFF2A00A7CCBC /* 3 Column Content.swift */; };
-		F3FC8A5E2D1AFFD500A7CCBC /* Column Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A5D2D1AFFD500A7CCBC /* Column Sidebar.swift */; };
+		F3FC8A5E2D1AFFD500A7CCBC /* ColumnSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8A5D2D1AFFD500A7CCBC /* ColumnSidebar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -127,11 +127,11 @@
 		F31EF9462D103896000F95A7 /* DependencyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyCard.swift; sourceTree = "<group>"; };
 		F31EF9482D1038CE000F95A7 /* DependencyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyDetails.swift; sourceTree = "<group>"; };
 		F323EC932D315E3A00973FA0 /* ValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStore.swift; sourceTree = "<group>"; };
-		F323EC952D31E39A00973FA0 /* Open Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open Buttons.swift"; sourceTree = "<group>"; };
+		F323EC952D31E39A00973FA0 /* OpenButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenButtons.swift; sourceTree = "<group>"; };
 		F328BB4F2E7FDE0C0012F003 /* ProjImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjImage.swift; sourceTree = "<group>"; };
 		F329E1802D3683E4007BA9D1 /* ProjGitignore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjGitignore.swift; sourceTree = "<group>"; };
 		F32A1E012D2FB7B6008AEB2F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		F32A1E042D30FD1C008AEB2F /* Bottom Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bottom Bar.swift"; sourceTree = "<group>"; };
+		F32A1E042D30FD1C008AEB2F /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		F33081732C9057F700605E43 /* Widgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F33081752C9057F700605E43 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F33081772C9057F700605E43 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -183,7 +183,7 @@
 		F3AE99E42E2F894100D70249 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F3B389BB2D0ECAFD0082C2F3 /* ProjDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjDetails.swift; sourceTree = "<group>"; };
 		F3B389BE2D0F6C370082C2F3 /* ProjCardImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCardImage.swift; sourceTree = "<group>"; };
-		F3B389C02D0F92500082C2F3 /* Nav Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Category.swift"; sourceTree = "<group>"; };
+		F3B389C02D0F92500082C2F3 /* NavCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavCategory.swift; sourceTree = "<group>"; };
 		F3B389C22D0F93500082C2F3 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F3B389C42D0F9AE80082C2F3 /* SwiftToolsVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToolsVersion.swift; sourceTree = "<group>"; };
 		F3B389C62D0F9B340082C2F3 /* ProjIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjIcon.swift; sourceTree = "<group>"; };
@@ -193,19 +193,19 @@
 		F3B389D52D1032A40082C2F3 /* PackageDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDependency.swift; sourceTree = "<group>"; };
 		F3B75CD52E72A4B50096E65E /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		F3D1E75E2C9B40B4000C81FF /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
-		F3DAD6632D161EAA0012BA9D /* Nav Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Container.swift"; sourceTree = "<group>"; };
-		F3DAD6642D161EAA0012BA9D /* Stack Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stack Container.swift"; sourceTree = "<group>"; };
+		F3DAD6632D161EAA0012BA9D /* NavContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavContainer.swift; sourceTree = "<group>"; };
+		F3DAD6642D161EAA0012BA9D /* StackContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackContainer.swift; sourceTree = "<group>"; };
 		F3DAD6652D161EAA0012BA9D /* 2 Column Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2 Column Container.swift"; sourceTree = "<group>"; };
 		F3DAD6662D161EAA0012BA9D /* 3 Column Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3 Column Container.swift"; sourceTree = "<group>"; };
 		F3DAD66C2D161EAA0012BA9D /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		F3DAD66D2D161EAA0012BA9D /* NavModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavModel.swift; sourceTree = "<group>"; };
-		F3DAD66F2D161EAA0012BA9D /* Nav Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Mode.swift"; sourceTree = "<group>"; };
+		F3DAD66F2D161EAA0012BA9D /* NavMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavMode.swift; sourceTree = "<group>"; };
 		F3DAD6712D161EAA0012BA9D /* Proj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proj.swift; sourceTree = "<group>"; };
-		F3DAD6812D161ECC0012BA9D /* Nav Mode Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Mode Button.swift"; sourceTree = "<group>"; };
-		F3DAD6822D161ECC0012BA9D /* Nav Mode Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Mode Picker.swift"; sourceTree = "<group>"; };
-		F3DAD6832D161ECC0012BA9D /* Nav Mode Picker Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav Mode Picker Item.swift"; sourceTree = "<group>"; };
-		F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Grid.swift"; sourceTree = "<group>"; };
-		F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proj Grid Item.swift"; sourceTree = "<group>"; };
+		F3DAD6812D161ECC0012BA9D /* NavModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavModeButton.swift; sourceTree = "<group>"; };
+		F3DAD6822D161ECC0012BA9D /* NavModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavModePicker.swift; sourceTree = "<group>"; };
+		F3DAD6832D161ECC0012BA9D /* NavModePickerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavModePickerItem.swift; sourceTree = "<group>"; };
+		F3DAD6862D161ECC0012BA9D /* ProjGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjGrid.swift; sourceTree = "<group>"; };
+		F3DAD6882D161ECC0012BA9D /* ProjGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjGridItem.swift; sourceTree = "<group>"; };
 		F3E7EC9F2C687BAD008CD17B /* ProjListToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjListToolbar.swift; sourceTree = "<group>"; };
 		F3E7ECA12C687C5D008CD17B /* DuplicateProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateProjects.swift; sourceTree = "<group>"; };
 		F3E98C422E6D6C4C0019439F /* ProjCodeLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjCodeLines.swift; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 		F3FC8A572D1AFDC300A7CCBC /* 2 Column Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2 Column Detail.swift"; sourceTree = "<group>"; };
 		F3FC8A592D1AFEC700A7CCBC /* 3 Column Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3 Column Detail.swift"; sourceTree = "<group>"; };
 		F3FC8A5B2D1AFF2A00A7CCBC /* 3 Column Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3 Column Content.swift"; sourceTree = "<group>"; };
-		F3FC8A5D2D1AFFD500A7CCBC /* Column Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Column Sidebar.swift"; sourceTree = "<group>"; };
+		F3FC8A5D2D1AFFD500A7CCBC /* ColumnSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnSidebar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,10 +476,10 @@
 		F3DAD6892D161ECC0012BA9D /* Nav Mode */ = {
 			isa = PBXGroup;
 			children = (
-				F3DAD6812D161ECC0012BA9D /* Nav Mode Button.swift */,
-				F3DAD6822D161ECC0012BA9D /* Nav Mode Picker.swift */,
-				F3DAD6832D161ECC0012BA9D /* Nav Mode Picker Item.swift */,
-				F3DAD66F2D161EAA0012BA9D /* Nav Mode.swift */,
+				F3DAD6812D161ECC0012BA9D /* NavModeButton.swift */,
+				F3DAD6822D161ECC0012BA9D /* NavModePicker.swift */,
+				F3DAD6832D161ECC0012BA9D /* NavModePickerItem.swift */,
+				F3DAD66F2D161EAA0012BA9D /* NavMode.swift */,
 			);
 			path = "Nav Mode";
 			sourceTree = "<group>";
@@ -487,12 +487,12 @@
 		F3DB25452C2C4E8B00A0C066 /* Nav */ = {
 			isa = PBXGroup;
 			children = (
-				F3DAD6632D161EAA0012BA9D /* Nav Container.swift */,
-				F3DAD6642D161EAA0012BA9D /* Stack Container.swift */,
-				F3FC8A5D2D1AFFD500A7CCBC /* Column Sidebar.swift */,
-				F3B389C02D0F92500082C2F3 /* Nav Category.swift */,
-				F323EC952D31E39A00973FA0 /* Open Buttons.swift */,
-				F32A1E042D30FD1C008AEB2F /* Bottom Bar.swift */,
+				F3DAD6632D161EAA0012BA9D /* NavContainer.swift */,
+				F3DAD6642D161EAA0012BA9D /* StackContainer.swift */,
+				F3FC8A5D2D1AFFD500A7CCBC /* ColumnSidebar.swift */,
+				F3B389C02D0F92500082C2F3 /* NavCategory.swift */,
+				F323EC952D31E39A00973FA0 /* OpenButtons.swift */,
+				F32A1E042D30FD1C008AEB2F /* BottomBar.swift */,
 				F3FC8A562D1AFD0F00A7CCBC /* 2 Column */,
 				F3FC8A552D1AFD0300A7CCBC /* 3 Column */,
 				F3DAD6892D161ECC0012BA9D /* Nav Mode */,
@@ -536,8 +536,8 @@
 			children = (
 				F3DAD6652D161EAA0012BA9D /* 2 Column Container.swift */,
 				F3FC8A572D1AFDC300A7CCBC /* 2 Column Detail.swift */,
-				F3DAD6862D161ECC0012BA9D /* Proj Grid.swift */,
-				F3DAD6882D161ECC0012BA9D /* Proj Grid Item.swift */,
+				F3DAD6862D161ECC0012BA9D /* ProjGrid.swift */,
+				F3DAD6882D161ECC0012BA9D /* ProjGridItem.swift */,
 			);
 			path = "2 Column";
 			sourceTree = "<group>";
@@ -693,23 +693,23 @@
 				F3B389CD2D0FAC770082C2F3 /* DerivedDataFolder.swift in Sources */,
 				F3E98C462E6D723C0019439F /* ProjCodeLinesVM.swift in Sources */,
 				F3DAD6752D161EAA0012BA9D /* Proj.swift in Sources */,
-				F3DAD6772D161EAA0012BA9D /* Nav Mode.swift in Sources */,
-				F323EC962D31E39A00973FA0 /* Open Buttons.swift in Sources */,
+				F3DAD6772D161EAA0012BA9D /* NavMode.swift in Sources */,
+				F323EC962D31E39A00973FA0 /* OpenButtons.swift in Sources */,
 				F3DAD6782D161EAA0012BA9D /* 2 Column Container.swift in Sources */,
 				F3DAD67A2D161EAA0012BA9D /* DataModel.swift in Sources */,
 				F328BB502E7FDE0C0012F003 /* ProjImage.swift in Sources */,
-				F3DAD68A2D161ECC0012BA9D /* Proj Grid.swift in Sources */,
+				F3DAD68A2D161ECC0012BA9D /* ProjGrid.swift in Sources */,
 				F3FC8A582D1AFDC300A7CCBC /* 2 Column Detail.swift in Sources */,
-				F3DAD68C2D161ECC0012BA9D /* Nav Mode Button.swift in Sources */,
-				F3DAD68D2D161ECC0012BA9D /* Nav Mode Picker Item.swift in Sources */,
-				F3DAD68E2D161ECC0012BA9D /* Nav Mode Picker.swift in Sources */,
+				F3DAD68C2D161ECC0012BA9D /* NavModeButton.swift in Sources */,
+				F3DAD68D2D161ECC0012BA9D /* NavModePickerItem.swift in Sources */,
+				F3DAD68E2D161ECC0012BA9D /* NavModePicker.swift in Sources */,
 				F3FC8A5A2D1AFEC700A7CCBC /* 3 Column Detail.swift in Sources */,
 				F3E98C4D2E6DECF70019439F /* AppSettingsSelectedFolders.swift in Sources */,
-				F3DAD6922D161ECC0012BA9D /* Proj Grid Item.swift in Sources */,
+				F3DAD6922D161ECC0012BA9D /* ProjGridItem.swift in Sources */,
 				F3DAD67B2D161EAA0012BA9D /* NavModel.swift in Sources */,
 				F3DAD67C2D161EAA0012BA9D /* 3 Column Container.swift in Sources */,
-				F3DAD67E2D161EAA0012BA9D /* Nav Container.swift in Sources */,
-				F3DAD67F2D161EAA0012BA9D /* Stack Container.swift in Sources */,
+				F3DAD67E2D161EAA0012BA9D /* NavContainer.swift in Sources */,
+				F3DAD67F2D161EAA0012BA9D /* StackContainer.swift in Sources */,
 				F371A51B2C2D8D58006BDF0D /* MBProjList.swift in Sources */,
 				F37D1BF62CDA259E00D8817D /* SmartScan.swift in Sources */,
 				F3B389C32D0F93500082C2F3 /* Package.swift in Sources */,
@@ -718,7 +718,7 @@
 				F3B389C72D0F9B340082C2F3 /* ProjIcon.swift in Sources */,
 				F3E98C432E6D6C4C0019439F /* ProjCodeLines.swift in Sources */,
 				F3874E2C2D36803C000BDCD9 /* ProjSwiftTools.swift in Sources */,
-				F3B389C12D0F92500082C2F3 /* Nav Category.swift in Sources */,
+				F3B389C12D0F92500082C2F3 /* NavCategory.swift in Sources */,
 				F3515C212D366DA70078E588 /* ProjCardPlatforms.swift in Sources */,
 				F37831BB2D10CE9A007F7858 /* DateFormatters.swift in Sources */,
 				F38B5E522BFD6F6100CB9917 /* ProjCard.swift in Sources */,
@@ -734,7 +734,7 @@
 				F3ED776F2D1772F8000977AC /* ProjListVM.swift in Sources */,
 				F3522DCF2C2AA51800660101 /* DerivedDataEntry.swift in Sources */,
 				F3E98C4B2E6DECAF0019439F /* TargetType.swift in Sources */,
-				F3FC8A5E2D1AFFD500A7CCBC /* Column Sidebar.swift in Sources */,
+				F3FC8A5E2D1AFFD500A7CCBC /* ColumnSidebar.swift in Sources */,
 				F37831D12D11D177007F7858 /* ProjActions.swift in Sources */,
 				F323EC942D315E3A00973FA0 /* ValueStore.swift in Sources */,
 				F37831C52D11A4F4007F7858 /* ProjTarget.swift in Sources */,
@@ -758,7 +758,7 @@
 				F31AC0E32E737588003C4A84 /* CodeLineListVM.swift in Sources */,
 				F3522DC62C2A29C000660101 /* DerivedDataList.swift in Sources */,
 				F37831C92D11A69B007F7858 /* ProjDates.swift in Sources */,
-				F32A1E052D30FD1C008AEB2F /* Bottom Bar.swift in Sources */,
+				F32A1E052D30FD1C008AEB2F /* BottomBar.swift in Sources */,
 				F37831DF2D12EA34007F7858 /* PreviewProp.swift in Sources */,
 				F31AC0E12E73751B003C4A84 /* CodeLineList.swift in Sources */,
 				F3E98C4F2E6DED6D0019439F /* AppSettingsProjDetails.swift in Sources */,
