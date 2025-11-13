@@ -1145,10 +1145,10 @@
 		};
 		F37831B52D1095EC007F7858 /* XCRemoteSwiftPackageReference "XcodeProjKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/TopScrech/XcodeProjKit";
+			repositoryURL = "https://github.com/phimage/XcodeProjKit";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
 			};
 		};
 		F3E98C472E6DC2490019439F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
