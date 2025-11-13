@@ -10,8 +10,8 @@ final class DerivedDataVM {
     private let fm = FileManager.default
     
     init() {
-        DispatchQueue.global(qos: .background).async {
-            self.getFolders()
+        Task.detached(priority: .background) {
+            await self.getFolders()
         }
     }
     
@@ -143,8 +143,10 @@ final class DerivedDataVM {
                     group.leave()
                 }
                 
-                if let processedFolder = self.processFolder(folder, at: path) {
-                    self.folders.append(processedFolder)
+                Task { @MainActor in
+                    if let processedFolder = self.processFolder(folder, at: path) {
+                        self.folders.append(processedFolder)
+                    }
                 }
             }
         }
