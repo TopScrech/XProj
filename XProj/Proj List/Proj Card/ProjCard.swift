@@ -23,7 +23,7 @@ struct ProjCard: View {
                     ProjCardPlatforms(proj)
                 }
                 
-                let path = proj.path.replacingOccurrences(of: vm.projectsFolder, with: "~")
+                let path = proj.path.replacing(vm.projectsFolder, with: "~")
                 
                 Text(path)
                     .subheadline()

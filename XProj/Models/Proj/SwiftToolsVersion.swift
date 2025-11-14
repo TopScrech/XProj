@@ -52,7 +52,7 @@ extension Proj {
                     let prefix = "// swift-tools-version:"
                     
                     let versionString = trimmedLine
-                        .replacingOccurrences(of: prefix, with: "")
+                        .replacing(prefix, with: "")
                         .trimmingCharacters(in: .whitespaces)
                     
                     // Optionally, validate the version format (e.g., matches a regex for versions like 5.9)

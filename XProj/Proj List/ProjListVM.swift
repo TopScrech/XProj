@@ -62,7 +62,7 @@ final class ProjListVM {
             
         } else if name.contains(".playground") {
             fileType = .playground
-            name = name.replacingOccurrences(of: ".playground", with: "")
+            name = name.replacing(".playground", with: "")
             
         } else {
             switch typeAttribute {
