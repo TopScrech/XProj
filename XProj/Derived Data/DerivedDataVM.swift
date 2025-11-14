@@ -10,8 +10,8 @@ final class DerivedDataVM {
     private let fm = FileManager.default
     
     init() {
-        DispatchQueue.global(qos: .background).async {
-            self.getFolders()
+        Task.detached(priority: .background) {
+            await self.getFolders()
         }
     }
     
@@ -38,12 +38,12 @@ final class DerivedDataVM {
     }
     
     func showPicker() {
-        openFolderPicker { url in
+        BookmarkManager.openFolderPicker { url in
             guard let url else {
                 return
             }
             
-            saveSecurityScopedBookmark(url, forKey: self.udKey) {
+            BookmarkManager.saveSecurityScopedBookmark(url, forKey: self.udKey) {
                 self.getFolders()
             }
         }
@@ -54,15 +54,13 @@ final class DerivedDataVM {
             return
         }
         
-        let fm = FileManager.default
-        
-        guard fm.fileExists(atPath: url.path()) else {
+        guard FileManager.default.fileExists(atPath: url.path()) else {
             print("Folder does not exist:", url)
             return
         }
         
         do {
-            let contents = try fm.contentsOfDirectory(
+            let contents = try FileManager.default.contentsOfDirectory(
                 at: url,
                 includingPropertiesForKeys: nil,
                 options: []
@@ -70,13 +68,15 @@ final class DerivedDataVM {
             
             for fileURL in contents {
                 do {
-                    try fm.removeItem(at: fileURL)
+                    try FileManager.default.removeItem(at: fileURL)
                 } catch {
-                    print("Failed to delete \(fileURL.path), error:", error.localizedDescription)
+                    print("Failed to delete", fileURL.path)
+                    print(error.localizedDescription)
                 }
             }
         } catch {
-            print("Failed to fetch dir contents: \(url), error:", error.localizedDescription)
+            print("Failed to fetch dir contents", url)
+            print(error.localizedDescription)
         }
         
         getFolders()
@@ -113,7 +113,7 @@ final class DerivedDataVM {
     func getFolders() {
         folders = []
         
-        guard let url = restoreAccessToFolder(udKey) else {
+        guard let url = BookmarkManager.restoreAccessToFolder(udKey) else {
             print("Unable to restore access to the folder. Please select a folder")
             return
         }
@@ -143,8 +143,10 @@ final class DerivedDataVM {
                     group.leave()
                 }
                 
-                if let processedFolder = self.processFolder(folder, at: path) {
-                    self.folders.append(processedFolder)
+                Task { @MainActor in
+                    if let processedFolder = self.processFolder(folder, at: path) {
+                        self.folders.append(processedFolder)
+                    }
                 }
             }
         }
@@ -152,7 +154,9 @@ final class DerivedDataVM {
         group.wait()
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        print("Time elapsed for processing Derived Data: \(String(format: "%.3f", timeElapsed))s")
+        let timeElapsedString = String(format: "%.3f", timeElapsed)
+        
+        print("Time elapsed for processing Derived Data: \(timeElapsedString)s")
     }
     
     private func processFolder(_ name: String, at path: String) -> DerivedDataFolder? {
@@ -161,11 +165,7 @@ final class DerivedDataVM {
         
         do {
             let size = try fm.allocatedSizeOfDirectory(url)
-            
-            return DerivedDataFolder(
-                name: name,
-                size: size
-            )
+            return DerivedDataFolder(name: name, size: size)
         } catch {
             print("error processing project at path:", path)
         }

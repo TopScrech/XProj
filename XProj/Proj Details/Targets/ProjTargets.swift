@@ -23,4 +23,5 @@ struct ProjTargets: View {
 
 #Preview {
     ProjTargets([])
+        .darkSchemePreferred()
 }

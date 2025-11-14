@@ -51,5 +51,6 @@ struct ProjCodeLines: View {
 
 #Preview {
     ProjCodeLines(PreviewProp.previewProj1)
+        .darkSchemePreferred()
         .environmentObject(ValueStore())
 }

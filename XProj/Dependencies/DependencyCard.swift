@@ -38,4 +38,5 @@ struct DependencyCard: View {
 
 //#Preview {
 //    DependencyCard()
+//    .darkSchemePreferred()
 //}

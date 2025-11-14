@@ -55,6 +55,7 @@ struct ProjActions: View {
 
 #Preview {
     ProjActions(PreviewProp.previewProj1)
+        .darkSchemePreferred()
         .environment(DataModel.shared)
         .environmentObject(ValueStore())
 }

@@ -14,8 +14,8 @@ struct ProjGitignore: View {
     var body: some View {
         if let lines = processGitignore(path) {
             Section {
-                ForEach(lines, id: \.self) { line in
-                    Text(line)
+                ForEach(lines, id: \.self) {
+                    Text($0)
                         .lineLimit(1)
                 }
             } header: {

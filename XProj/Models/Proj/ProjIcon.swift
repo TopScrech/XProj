@@ -7,10 +7,11 @@ extension Proj {
             return nil
         }
         
-        for case let fileUrl as URL in enumerator {
-            if fileUrl.lastPathComponent == "Assets.xcassets",
-               (try? fileUrl.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true {
-                if let iconPath = findAppIcon(in: fileUrl) {
+        for case let fileURL as URL in enumerator {
+            if fileURL.lastPathComponent == "Assets.xcassets",
+               (try? fileURL.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true {
+                
+                if let iconPath = findAppIcon(in: fileURL) {
                     return iconPath
                 }
             }
@@ -18,7 +19,7 @@ extension Proj {
         
         return nil
     }
-        
+    
     private func assetsEnumerator(at path: String) -> FileManager.DirectoryEnumerator? {
         let fm = FileManager.default
         let projectUrl = URL(fileURLWithPath: path)
@@ -63,10 +64,8 @@ extension Proj {
     }
     
     private func findLargestOrMatchingFile(in appIconUrl: URL) -> String? {
-        let fm = FileManager.default
-        
         do {
-            let fileURLs = try fm.contentsOfDirectory(
+            let fileURLs = try FileManager.default.contentsOfDirectory(
                 at: appIconUrl,
                 includingPropertiesForKeys: [.fileSizeKey],
                 options: [.skipsHiddenFiles]

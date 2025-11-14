@@ -25,5 +25,6 @@ struct SmartScan: View {
 
 #Preview {
     SmartScan()
+        .darkSchemePreferred()
         .environment(DataModel.shared)
 }

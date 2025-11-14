@@ -46,7 +46,7 @@ struct ProjTarget: View {
             HStack {
                 ForEach(target.deploymentTargets, id: \.self) { platform in
                     HStack(spacing: 0) {
-                        Image(systemName: icon(platform))
+                        Image(systemName: Platform.icon(platform))
                         
                         Text(platform.split(separator: " ").last ?? "")
                             .footnote()
@@ -94,4 +94,5 @@ struct ProjTarget: View {
     )
     .padding()
     .environmentObject(ValueStore())
+    .darkSchemePreferred()
 }

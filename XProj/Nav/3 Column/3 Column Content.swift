@@ -57,6 +57,7 @@ struct ThreeColumnContent: View {
 
 #Preview {
     ThreeColumnContent()
+        .darkSchemePreferred()
         .environment(NavModel.shared)
         .environment(DataModel.shared)
 }

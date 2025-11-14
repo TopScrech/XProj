@@ -50,7 +50,10 @@ extension Proj {
                 if trimmedLine.hasPrefix("// swift-tools-version:") {
                     // Extract the version number by removing the prefix
                     let prefix = "// swift-tools-version:"
-                    let versionString = trimmedLine.replacingOccurrences(of: prefix, with: "").trimmingCharacters(in: .whitespaces)
+                    
+                    let versionString = trimmedLine
+                        .replacing(prefix, with: "")
+                        .trimmingCharacters(in: .whitespaces)
                     
                     // Optionally, validate the version format (e.g., matches a regex for versions like 5.9)
                     // Here, we assume the format is correct

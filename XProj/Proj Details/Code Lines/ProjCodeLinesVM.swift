@@ -69,7 +69,7 @@ final class ProjCodeLinesVM {
                 }
                 
                 group.addTask(priority: .utility) {
-                    (try? self.fastLineCount(file)) ?? 0
+                    await (try? self.fastLineCount(file)) ?? 0
                 }
             }
             

@@ -1,6 +1,6 @@
 import Testing
 
-struct XProjTests {
+struct UnitTests {
     @Test func testExample() async throws {
         let array = [0, 1, 1, 2, 3, 3, 3, 4, 5, 5]
         
@@ -10,7 +10,6 @@ struct XProjTests {
     
     func findDuplicates(_ array: [Int]) -> [[Int]] {
         var countDict: [Int: Int] = [:]
-        var duplicates: [[Int]] = []
         
         // Count occurrences of each number
         for num in array {
@@ -20,6 +19,8 @@ struct XProjTests {
                 countDict[num] = 1
             }
         }
+        
+        var duplicates: [[Int]] = []
         
         // Gather numbers with count > 1 into duplicates array
         for (num, count) in countDict {

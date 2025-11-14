@@ -18,5 +18,6 @@ struct BottomBar: View {
 
 #Preview {
     BottomBar()
+        .darkSchemePreferred()
         .environment(DataModel())
 }

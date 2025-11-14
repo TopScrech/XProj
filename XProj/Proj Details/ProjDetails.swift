@@ -47,5 +47,6 @@ struct ProjDetails: View {
 
 #Preview {
     ProjDetails(PreviewProp.previewProj1)
+        .darkSchemePreferred()
         .environmentObject(ValueStore())
 }

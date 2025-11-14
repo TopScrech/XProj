@@ -13,7 +13,7 @@ struct ProjDates: View {
                 Text("Last opened: ")
                     .secondary()
                 
-                Text(formattedDateAndTime(proj.openedAt))
+                Text(DateFormatters.formattedDateAndTime(proj.openedAt))
             }
             
             if let modifiedAt = proj.modifiedAt {
@@ -21,7 +21,7 @@ struct ProjDates: View {
                     Text("Modified: ")
                         .secondary()
                     
-                    Text(formattedDateAndTime(modifiedAt))
+                    Text(DateFormatters.formattedDateAndTime(modifiedAt))
                 }
             }
             
@@ -30,7 +30,7 @@ struct ProjDates: View {
                     Text("Created: ")
                         .secondary()
                     
-                    Text(formattedDateAndTime(createdAt))
+                    Text(DateFormatters.formattedDateAndTime(createdAt))
                 }
             }
         }
@@ -40,4 +40,5 @@ struct ProjDates: View {
 
 #Preview {
     ProjDates(PreviewProp.previewProj1)
+        .darkSchemePreferred()
 }

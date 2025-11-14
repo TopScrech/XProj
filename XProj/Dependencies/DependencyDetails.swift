@@ -36,4 +36,5 @@ struct DependencyDetails: View {
 
 //#Preview {
 //    DependencyDetails()
+//    .darkSchemePreferred()
 //}

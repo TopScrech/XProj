@@ -48,7 +48,7 @@ final class DataModel {
     }
     
     private func restoreProjPath() -> String? {
-        guard let url = restoreAccessToFolder(udKey) else {
+        guard let url = BookmarkManager.restoreAccessToFolder(udKey) else {
             print("Unable to restore access to the folder. Please select a new folder")
             return nil
         }
@@ -116,12 +116,12 @@ final class DataModel {
     }
     
     func showPicker() {
-        openFolderPicker { url in
+        BookmarkManager.openFolderPicker { url in
             guard let url else {
                 return
             }
             
-            saveSecurityScopedBookmark(url, forKey: self.udKey) {
+            BookmarkManager.saveSecurityScopedBookmark(url, forKey: self.udKey) {
                 DispatchQueue.global(qos: .userInitiated).async {
                     self.refreshProjects()
                 }
@@ -143,18 +143,11 @@ final class DataModel {
     //    }
     
     var swiftToolsVersions: String {
-        var versions = Set<String>()
-        
-        for proj in projects {
-            if let version = proj.swiftToolsVersion {
-                versions.insert(version)
-            }
-        }
-        
-        let sortedArray = versions.sorted()
+        let sortedArray = projects.compactMap {
+            $0.swiftToolsVersion
+        }.sorted()
         
         let joinedString = sortedArray.joined(separator: ", ")
-        
         return joinedString + ","
     }
     

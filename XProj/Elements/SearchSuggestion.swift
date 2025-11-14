@@ -26,5 +26,6 @@ struct SearchSuggestion: View {
 
 #Preview {
     SearchSuggestion(.mock)
+        .darkSchemePreferred()
         .environment(DataModel.shared)
 }

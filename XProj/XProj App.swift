@@ -22,7 +22,7 @@ struct XProjApp: App {
         
         WindowGroup(id: "code_lines", for: String.self) { $path in
             NavigationStack {
-                CodeLinesList($path)
+                CodeLineList($path)
             }
             .environmentObject(store)
         }

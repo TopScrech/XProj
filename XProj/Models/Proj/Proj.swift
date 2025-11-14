@@ -106,8 +106,12 @@ struct Proj: Identifiable, Hashable, Codable {
         for line in lines {
             if line.trimmingCharacters(in: .whitespacesAndNewlines) == "[remote \"origin\"]" {
                 isInRemoteOriginSection = true
+                
             } else if isInRemoteOriginSection, line.trimmingCharacters(in: .whitespacesAndNewlines).hasPrefix("url =") {
-                return line.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: "url =", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+                return line.trimmingCharacters(in: .whitespacesAndNewlines)
+                    .replacing("url =", with: "")
+                    .trimmingCharacters(in: .whitespacesAndNewlines)
+                
             } else if line.hasPrefix("[") {
                 isInRemoteOriginSection = false
             }

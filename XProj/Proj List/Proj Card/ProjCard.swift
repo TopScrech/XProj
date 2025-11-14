@@ -23,7 +23,7 @@ struct ProjCard: View {
                     ProjCardPlatforms(proj)
                 }
                 
-                let path = proj.path.replacingOccurrences(of: vm.projectsFolder, with: "~")
+                let path = proj.path.replacing(vm.projectsFolder, with: "~")
                 
                 Text(path)
                     .subheadline()
@@ -33,7 +33,7 @@ struct ProjCard: View {
             
             Spacer()
             
-            Text(formattedDate(proj.openedAt))
+            Text(DateFormatters.formattedDate(proj.openedAt))
                 .secondary()
             
             //            Text(proj.attributes[.size] as? String ?? "")
@@ -89,5 +89,6 @@ struct ProjCard: View {
         ProjCard(PreviewProp.previewProj1)
         ProjCard(PreviewProp.previewProj2)
     }
+    .darkSchemePreferred()
     .environment(DataModel.shared)
 }

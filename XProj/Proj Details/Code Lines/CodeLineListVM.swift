@@ -1,7 +1,7 @@
 import Foundation
 
 @Observable
-final class CodeLinesVM {
+final class CodeLineListVM {
     var isCounting = false
     var fileLineItems: [FileLines] = []
     

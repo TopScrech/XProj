@@ -23,4 +23,5 @@ struct ProjDependencyList: View {
 
 #Preview {
     ProjDependencyList([])
+        .darkSchemePreferred()
 }

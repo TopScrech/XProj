@@ -28,5 +28,6 @@ struct DerivedDataCard: View {
 
 #Preview {
     DerivedDataCard(.init(name: "Preview", size: 64))
+        .darkSchemePreferred()
         .environment(DerivedDataVM())
 }

@@ -23,7 +23,7 @@ struct AppSettingsSelectedFolders: View {
                     if !vm.projectsFolder.isEmpty {
                         SFButton("xmark") {
                             vm.projectsFolder = ""
-                            deleteBookmark("derived_data_bookmark")
+                            BookmarkManager.deleteBookmark("derived_data_bookmark")
                             vm.projects = []
                         }
                         .foregroundStyle(.red)
@@ -49,7 +49,7 @@ struct AppSettingsSelectedFolders: View {
                     if ddvm.derivedDataUrl?.description != nil {
                         SFButton("xmark") {
                             ddvm.derivedDataUrl = nil
-                            deleteBookmark("derived_data_bookmark")
+                            BookmarkManager.deleteBookmark("derived_data_bookmark")
                             ddvm.folders = []
                         }
                         .foregroundStyle(.red)
@@ -63,6 +63,7 @@ struct AppSettingsSelectedFolders: View {
 
 #Preview {
     AppSettingsSelectedFolders()
+        .darkSchemePreferred()
         .environment(DataModel())
         .environment(DerivedDataVM())
 }

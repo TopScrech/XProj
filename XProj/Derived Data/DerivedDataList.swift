@@ -45,5 +45,6 @@ struct DerivedDataList: View {
 
 #Preview {
     DerivedDataList()
+        .darkSchemePreferred()
         .environment(DerivedDataVM())
 }

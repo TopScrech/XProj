@@ -72,7 +72,10 @@ private struct Label: View {
 #Preview {
     @Previewable @State var selection: NavMode?
     
-    ForEach(NavMode.allCases) {
-        NavModePickerItem($selection, navMode: $0)
+    NavigationStack {
+        ForEach(NavMode.allCases) {
+            NavModePickerItem($selection, navMode: $0)
+        }
     }
+    .darkSchemePreferred()
 }

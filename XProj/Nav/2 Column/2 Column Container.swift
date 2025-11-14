@@ -31,6 +31,7 @@ struct TwoColumnContainer: View {
 
 #Preview {
     TwoColumnContainer()
+        .darkSchemePreferred()
         .environment(NavModel.shared)
         .environment(DataModel.shared)
 }

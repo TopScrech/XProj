@@ -9,7 +9,7 @@ struct ProjCardPlatforms: View {
     
     var body: some View {
         ForEach(proj.platforms, id: \.self) {
-            Image(systemName: icon($0))
+            Image(systemName: Platform.icon($0))
         }
         
         if proj.hasWidgets {
@@ -42,4 +42,5 @@ struct ProjCardPlatforms: View {
 
 #Preview {
     ProjCardPlatforms(PreviewProp.previewProj1)
+        .darkSchemePreferred()
 }

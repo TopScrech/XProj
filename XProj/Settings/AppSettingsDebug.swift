@@ -55,5 +55,6 @@ struct AppSettingsDebug: View {
 
 #Preview {
     AppSettingsDebug()
+        .darkSchemePreferred()
         .environment(NavModel())
 }

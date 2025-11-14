@@ -1,8 +1,8 @@
 import ScrechKit
 import Charts
 
-struct CodeLinesList: View {
-    @State private var vm = CodeLinesVM()
+struct CodeLineList: View {
+    @State private var vm = CodeLineListVM()
     @EnvironmentObject private var store: ValueStore
     
     @Binding var path: String?
@@ -71,6 +71,7 @@ struct CodeLinesList: View {
 }
 
 #Preview {
-    CodeLinesList(.constant("Preview/Preview"))
+    CodeLineList(.constant("Preview/Preview"))
+        .darkSchemePreferred()
         .environmentObject(ValueStore())
 }
