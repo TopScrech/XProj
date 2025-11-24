@@ -10,7 +10,7 @@ struct AppSettingsDebug: View {
                 downloadExamples()
             }
             
-            Button("Clear all saved projects", systemImage: "xmark") {
+            Button("Clear cached projects", systemImage: "xmark") {
                 clearAllCache()
             }
             
