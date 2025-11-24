@@ -4,9 +4,9 @@ struct ProjGrid: View {
     @Environment(NavModel.self) private var navModel
     @Environment(DataModel.self) private var dataModel
     
-    var columns: [GridItem] {[
+    private let columns = [
         GridItem(.adaptive(minimum: 240))
-    ]}
+    ]
     
     var body: some View {
         if let category = navModel.selectedCategory {
