@@ -35,10 +35,10 @@ struct Proj: Identifiable, Hashable, Codable {
         self.modifiedAt = modifiedAt
         self.createdAt = createdAt
         
-        self.swiftToolsVersion = fetchSwiftToolsVersion()
-        self.packages          = parseSwiftPackages()
-        self.targets           = fetchTargets()
-        self.platforms         = fetchUniquePlatforms()
+        //        self.swiftToolsVersion = fetchSwiftToolsVersion()
+        //        self.packages          = parseSwiftPackages()
+        //        self.targets           = fetchTargets()
+        //        self.platforms         = fetchUniquePlatforms()
     }
     
     var icon: String {
