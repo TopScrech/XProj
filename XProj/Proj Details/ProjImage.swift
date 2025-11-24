@@ -16,8 +16,8 @@ struct ProjImage: View {
                     .resizable()
                     .clipShape(.rect(cornerRadius: 10))
                     .onDrag {
-                        let fileUrl = URL(fileURLWithPath: path)
-                        return NSItemProvider(object: fileUrl as NSURL)
+                        let fileURL = URL(fileURLWithPath: path)
+                        return NSItemProvider(object: fileURL as NSURL)
                     }
                     .contextMenu {
                         Button("Open in Finder", systemImage: "finder") {

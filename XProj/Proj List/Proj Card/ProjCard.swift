@@ -2,7 +2,7 @@ import ScrechKit
 
 struct ProjCard: View {
     @Environment(DataModel.self) private var vm
-    @Environment(\.openURL) private var openUrl
+    @Environment(\.openURL) private var openURL
     
     private let proj: Proj
     
@@ -49,7 +49,7 @@ struct ProjCard: View {
             if let url = proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url {
                 Section {
                     Button("App Store", systemImage: "apple.logo") {
-                        openUrl(url)
+                        openURL(url)
                     }
                     .help(url)
                 }
@@ -69,7 +69,7 @@ struct ProjCard: View {
                 if let path = proj.fetchRemoteRepositoryURL(), let url = URL(string: path) {
                     Menu {
                         Button("Open") {
-                            openUrl(url)
+                            openURL(url)
                         }
                         .help(url)
                         

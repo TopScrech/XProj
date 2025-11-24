@@ -55,13 +55,13 @@ struct ProjGitignore: View {
     }
     
     private func openGitignore() {
-        let fileUrl = URL(fileURLWithPath: gitignorePath)
+        let fileURL = URL(fileURLWithPath: gitignorePath)
         
         guard FileManager.default.fileExists(atPath: gitignorePath) else {
             print(".gitignore file does not exist at this path:", gitignorePath)
             return
         }
         
-        NSWorkspace.shared.open(fileUrl)
+        NSWorkspace.shared.open(fileURL)
     }
 }

@@ -15,13 +15,13 @@ final class NavModel: Codable {
     private static let encoder = JSONEncoder()
     
     /// The URL for the JSON file that stores the proj data
-    private static var dataUrl: URL {
+    private static var dataURL: URL {
         .cachesDirectory.appending(path: "NavigationData.json")
     }
     
     /// Singleton object
     static let shared = {
-        if let model = try? NavModel(contentsOf: dataUrl) {
+        if let model = try? NavModel(contentsOf: dataURL) {
             model
         } else {
             NavModel()
@@ -57,7 +57,7 @@ final class NavModel: Codable {
     
     func clearNavCache() {
         do {
-            try FileManager.default.removeItem(at: Self.dataUrl)
+            try FileManager.default.removeItem(at: Self.dataURL)
         } catch {
             print(error)
         }
@@ -65,7 +65,7 @@ final class NavModel: Codable {
     
     /// Loads the navigation data for the nav model from a previously saved state
     func load() throws {
-        let model = try NavModel(contentsOf: Self.dataUrl)
+        let model = try NavModel(contentsOf: Self.dataURL)
         
         selectedCategory = model.selectedCategory
         projPath = model.projPath
@@ -75,7 +75,7 @@ final class NavModel: Codable {
     /// Saves the JSON data for the nav model at its current state
     func save() {
         do {
-            try jsonData?.write(to: Self.dataUrl)
+            try jsonData?.write(to: Self.dataURL)
         } catch {
             print(error)
         }

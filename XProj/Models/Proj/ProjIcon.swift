@@ -21,52 +21,51 @@ extension Proj {
     }
     
     private func assetsEnumerator(at path: String) -> FileManager.DirectoryEnumerator? {
-        let fm = FileManager.default
-        let projectUrl = URL(fileURLWithPath: path)
+        let projectURL = URL(fileURLWithPath: path)
         
         var isDir: ObjCBool = false
         
         guard
-            fm.fileExists(atPath: projectUrl.path, isDirectory: &isDir),
+            FileManager.default.fileExists(atPath: projectURL.path, isDirectory: &isDir),
             isDir.boolValue
         else {
-            print("Error: The path doesn't exist or is not a directory:", projectUrl.path)
+            print("Error: The path doesn't exist or is not a directory:", projectURL.path)
             return nil
         }
         
-        return fm.enumerator(
-            at: projectUrl,
+        return FileManager.default.enumerator(
+            at: projectURL,
             includingPropertiesForKeys: [.isDirectoryKey],
             options: [.skipsHiddenFiles, .skipsPackageDescendants]
         )
     }
     
-    private func findAppIcon(in assetsUrl: URL) -> String? {
+    private func findAppIcon(in assetsURL: URL) -> String? {
         let fm = FileManager.default
         
         guard let appIconEnumerator = fm.enumerator(
-            at: assetsUrl,
+            at: assetsURL,
             includingPropertiesForKeys: [.isDirectoryKey],
             options: [.skipsHiddenFiles, .skipsPackageDescendants]
         ) else {
-            print("Error: Unable to enumerate", assetsUrl.path)
+            print("Error: Unable to enumerate", assetsURL.path)
             return nil
         }
         
-        for case let appIconUrl as URL in appIconEnumerator {
-            if appIconUrl.lastPathComponent == "AppIcon.appiconset",
-               (try? appIconUrl.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true {
-                return findLargestOrMatchingFile(in: appIconUrl)
+        for case let appIconURL as URL in appIconEnumerator {
+            if appIconURL.lastPathComponent == "AppIcon.appiconset",
+               (try? appIconURL.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true {
+                return findLargestOrMatchingFile(in: appIconURL)
             }
         }
         
         return nil
     }
     
-    private func findLargestOrMatchingFile(in appIconUrl: URL) -> String? {
+    private func findLargestOrMatchingFile(in appIconURL: URL) -> String? {
         do {
             let fileURLs = try FileManager.default.contentsOfDirectory(
-                at: appIconUrl,
+                at: appIconURL,
                 includingPropertiesForKeys: [.fileSizeKey],
                 options: [.skipsHiddenFiles]
             )
@@ -89,7 +88,7 @@ extension Proj {
             
             return largestFile?.path
         } catch {
-            print("Error accessing files in \(appIconUrl.path):", error.localizedDescription)
+            print("Error accessing files in", appIconURL.path, error.localizedDescription)
             return nil
         }
     }
