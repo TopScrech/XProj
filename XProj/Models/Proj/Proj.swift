@@ -36,7 +36,7 @@ struct Proj: Identifiable, Hashable, Codable {
         self.createdAt = createdAt
         
         self.swiftToolsVersion = fetchSwiftToolsVersion()
-        //        self.packages          = parseSwiftPackages()
+        self.packages          = parseSwiftPackages()
         //        self.targets           = fetchTargets()
         //        self.platforms         = fetchUniquePlatforms()
     }
@@ -125,10 +125,7 @@ struct Proj: Identifiable, Hashable, Codable {
         case .proj:
             parsePackagesInProj()
             
-        case .package:
-            parsePackagesInPackage()
-            
-        case .vapor:
+        case .package, .vapor:
             parsePackagesInPackage()
             
             //        case .playground:
