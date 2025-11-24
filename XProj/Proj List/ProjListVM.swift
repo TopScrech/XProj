@@ -82,18 +82,18 @@ final class ProjListVM {
         let modifiedAt = attributes[.modificationDate] as? Date
         let createdAt = attributes[.creationDate] as? Date
         
-        projects.append(
-            Proj(
-                id: projPath,
-                name: name,
-                path: projPath,
-                type: fileType,
-                openedAt: openedAt,
-                modifiedAt: modifiedAt,
-                createdAt: createdAt
-                //                attributes: attributes
-            )
+        let proj = Proj(
+            id: projPath,
+            name: name,
+            path: projPath,
+            type: fileType,
+            openedAt: openedAt,
+            modifiedAt: modifiedAt,
+            createdAt: createdAt
+            //                attributes: attributes
         )
+        
+        projects.append(proj)
     }
     
     private func hasFile(ofType type: String, at path: String) -> Bool {
