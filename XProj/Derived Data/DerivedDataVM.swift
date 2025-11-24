@@ -106,7 +106,7 @@ final class DerivedDataVM {
             
             folders.remove(at: index)
         } catch {
-            print("Failed to delete: \(url), error:", error.localizedDescription)
+            print("Failed to delete:", url, ", error:", error.localizedDescription)
         }
     }
     
@@ -156,7 +156,7 @@ final class DerivedDataVM {
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
         let timeElapsedString = String(format: "%.3f", timeElapsed)
         
-        print("Time elapsed for processing Derived Data: \(timeElapsedString)s")
+        print("Seconds for processing Derived Data:", timeElapsedString)
     }
     
     private func processFolder(_ name: String, at path: String) -> DerivedDataFolder? {

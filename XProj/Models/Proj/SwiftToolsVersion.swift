@@ -31,7 +31,7 @@ extension Proj {
         let fileExists = fm.fileExists(atPath: packageSwiftURL.path)
         
         if !fileExists {
-            print("Error: 'Package.swift' does not exist in the folder '\(path)'")
+            print("Error: 'Package.swift' does not exist in the folder", path)
             return nil
         }
         

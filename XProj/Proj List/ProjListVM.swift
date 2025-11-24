@@ -18,7 +18,7 @@ final class ProjListVM {
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
         let timeElapsedString = String(format: "%.3f", timeElapsed)
         
-        print("Time elapsed for processing projects: \(timeElapsedString)s")
+        print("Seconds for processing projects:", timeElapsedString)
         
         return projects
     }
