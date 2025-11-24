@@ -11,7 +11,7 @@ final class DerivedDataVM {
     
     init() {
         Task.detached(priority: .background) {
-            await self.getFolders()
+            self.getFolders()
         }
     }
     
