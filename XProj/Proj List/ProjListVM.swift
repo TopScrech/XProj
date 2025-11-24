@@ -129,11 +129,7 @@ final class ProjListVM {
         }
         
         do {
-            let fileContents = try String(
-                contentsOfFile: resolvedPath,
-                encoding: .utf8
-            )
-            
+            let fileContents = try String(contentsOfFile: resolvedPath, encoding: .utf8)
             let containsVapor = fileContents.contains(vaporURL)
             
             return containsVapor
