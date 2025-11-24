@@ -104,6 +104,8 @@ final class ProjListVM {
                 $0.hasSuffix("." + type)
             }
         } catch {
+            print("contentsOfDirectory failed for path:", path)
+            print("Error:", error.localizedDescription)
             return false
         }
     }
