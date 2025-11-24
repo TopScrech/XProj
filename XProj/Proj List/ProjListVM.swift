@@ -120,7 +120,7 @@ final class ProjListVM {
         }
     }
     
-    private func hasVapor( _ path: String) -> Bool {
+    private func hasVapor(_ path: String) -> Bool {
         let vaporURL = "https://github.com/vapor/vapor.git"
         let resolvedPath = path + "/Package.resolved"
         

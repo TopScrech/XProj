@@ -48,10 +48,7 @@ extension Proj {
     //    }
     
     func fetchTargets() -> [Target] {
-        guard
-            type == .proj,
-            let url = fetchProjFilePath(path)
-        else {
+        guard type == .proj, let url = fetchProjFilePath(path) else {
             return []
         }
         
@@ -111,11 +108,7 @@ extension Proj {
         }
     }
     
-    func determineType(
-        _ name: String,
-        _ buildSettings: [String: Any]?
-    ) -> (type: TargetType, versions: [String]) {
-        
+    func determineType(_ name: String, _ buildSettings: [String: Any]?) -> (type: TargetType, versions: [String]) {
         guard let buildSettings else {
             return (.other, [])
         }
