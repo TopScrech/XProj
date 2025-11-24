@@ -18,7 +18,7 @@ final class ProjListVM {
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
         let timeElapsedString = String(format: "%.3f", timeElapsed)
         
-        print("Time elapsed for processing projects: \(timeElapsedString)s")
+        print("Seconds for processing projects:", timeElapsedString)
         
         return projects
     }
@@ -82,18 +82,18 @@ final class ProjListVM {
         let modifiedAt = attributes[.modificationDate] as? Date
         let createdAt = attributes[.creationDate] as? Date
         
-        projects.append(
-            Proj(
-                id: projPath,
-                name: name,
-                path: projPath,
-                type: fileType,
-                openedAt: openedAt,
-                modifiedAt: modifiedAt,
-                createdAt: createdAt
-                //                attributes: attributes
-            )
+        let proj = Proj(
+            id: projPath,
+            name: name,
+            path: projPath,
+            type: fileType,
+            openedAt: openedAt,
+            modifiedAt: modifiedAt,
+            createdAt: createdAt
+            //                attributes: attributes
         )
+        
+        projects.append(proj)
     }
     
     private func hasFile(ofType type: String, at path: String) -> Bool {
@@ -104,6 +104,8 @@ final class ProjListVM {
                 $0.hasSuffix("." + type)
             }
         } catch {
+            print("contentsOfDirectory failed for path:", path)
+            print("Error:", error.localizedDescription)
             return false
         }
     }
@@ -119,7 +121,7 @@ final class ProjListVM {
     }
     
     private func hasVapor( _ path: String) -> Bool {
-        let vaporUrl = "https://github.com/vapor/vapor.git"
+        let vaporURL = "https://github.com/vapor/vapor.git"
         let resolvedPath = path + "/Package.resolved"
         
         guard fm.fileExists(atPath: resolvedPath) else {
@@ -127,12 +129,8 @@ final class ProjListVM {
         }
         
         do {
-            let fileContents = try String(
-                contentsOfFile: resolvedPath,
-                encoding: .utf8
-            )
-            
-            let containsVapor = fileContents.contains(vaporUrl)
+            let fileContents = try String(contentsOfFile: resolvedPath, encoding: .utf8)
+            let containsVapor = fileContents.contains(vaporURL)
             
             return containsVapor
         } catch {

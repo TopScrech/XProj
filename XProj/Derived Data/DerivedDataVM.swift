@@ -4,7 +4,7 @@ import ScrechKit
 final class DerivedDataVM {
     var folders: [DerivedDataFolder] = []
     var searchPrompt = ""
-    var derivedDataUrl: URL?
+    var derivedDataURL: URL?
     
     private let udKey = "derived_data_bookmark"
     private let fm = FileManager.default
@@ -50,7 +50,7 @@ final class DerivedDataVM {
     }
     
     func deleteAllFiles() {
-        guard let url = derivedDataUrl else {
+        guard let url = derivedDataURL else {
             return
         }
         
@@ -83,7 +83,7 @@ final class DerivedDataVM {
     }
     
     func deleteFile(_ name: String) {
-        guard let url = derivedDataUrl?.appendingPathComponent(name) else {
+        guard let url = derivedDataURL?.appendingPathComponent(name) else {
             return
         }
         
@@ -106,7 +106,7 @@ final class DerivedDataVM {
             
             folders.remove(at: index)
         } catch {
-            print("Failed to delete: \(url), error:", error.localizedDescription)
+            print("Failed to delete:", url, ", error:", error.localizedDescription)
         }
     }
     
@@ -118,7 +118,7 @@ final class DerivedDataVM {
             return
         }
         
-        derivedDataUrl = url
+        derivedDataURL = url
         
         do {
             try processPath(url.path)
@@ -156,7 +156,7 @@ final class DerivedDataVM {
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
         let timeElapsedString = String(format: "%.3f", timeElapsed)
         
-        print("Time elapsed for processing Derived Data: \(timeElapsedString)s")
+        print("Seconds for processing Derived Data:", timeElapsedString)
     }
     
     private func processFolder(_ name: String, at path: String) -> DerivedDataFolder? {

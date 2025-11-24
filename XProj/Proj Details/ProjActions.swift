@@ -3,7 +3,7 @@ import ScrechKit
 struct ProjActions: View {
     @Environment(DataModel.self) private var vm
     @EnvironmentObject private var store: ValueStore
-    @Environment(\.openURL) private var openUrl
+    @Environment(\.openURL) private var openURL
     
     private let proj: Proj
     
@@ -11,7 +11,7 @@ struct ProjActions: View {
         self.proj = proj
     }
     
-    private var appStoreUrl: URL? {
+    private var appStoreURL: URL? {
         proj.targets.filter {
             $0.appStoreApp != nil
         }
@@ -20,11 +20,11 @@ struct ProjActions: View {
     
     var body: some View {
         HStack {
-            if store.showProjAppStoreLink, let appStoreUrl {
+            if store.showProjAppStoreLink, let appStoreURL {
                 Button("App Store") {
-                    openUrl(appStoreUrl)
+                    openURL(appStoreURL)
                 }
-                .help(appStoreUrl)
+                .help(appStoreURL)
             }
             
             Button("Xcode") {
@@ -43,7 +43,7 @@ struct ProjActions: View {
                 } label: {
                     Text("Remote")
                 } primaryAction: {
-                    openUrl(url)
+                    openURL(url)
                 }
                 .frame(maxWidth: 100)
                 .help(url)

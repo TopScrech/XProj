@@ -39,23 +39,23 @@ struct AppSettingsSelectedFolders: View {
                     VStack(alignment: .leading, spacing: 5) {
                         Label("Derived Data", systemImage: "folder")
                         
-                        Text(ddvm.derivedDataUrl?.description ?? "Not selected")
+                        Text(ddvm.derivedDataURL?.description ?? "Not selected")
                             .tertiary()
                             .lineLimit(2)
                     }
                     
                     Spacer()
                     
-                    if ddvm.derivedDataUrl?.description != nil {
+                    if ddvm.derivedDataURL?.description != nil {
                         SFButton("xmark") {
-                            ddvm.derivedDataUrl = nil
+                            ddvm.derivedDataURL = nil
                             BookmarkManager.deleteBookmark("derived_data_bookmark")
                             ddvm.folders = []
                         }
                         .foregroundStyle(.red)
                     }
                 }
-                .animation(.default, value: ddvm.derivedDataUrl)
+                .animation(.default, value: ddvm.derivedDataURL)
             }
         }
     }

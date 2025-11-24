@@ -19,10 +19,7 @@ final class DataModel {
     
     init() {
         loadCachedProjects()
-        
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.refreshProjects()
-        }
+        refreshProjects()
     }
     
     var publishedProjects: [Proj] {
@@ -37,13 +34,11 @@ final class DataModel {
         if let cachedData = UserDefaults.standard.data(forKey: cacheKey),
            let cachedProjects = try? JSONDecoder().decode([Proj].self, from: cachedData) {
             
-            main {
-                self.projects = cachedProjects
-                
-                self.projectsById = Dictionary(uniqueKeysWithValues: cachedProjects.map { proj in
-                    (proj.id, proj)
-                })
-            }
+            self.projects = cachedProjects
+            
+            self.projectsById = Dictionary(uniqueKeysWithValues: cachedProjects.map { proj in
+                (proj.id, proj)
+            })
         }
     }
     
@@ -66,17 +61,15 @@ final class DataModel {
         let vm = ProjListVM()
         let projects = vm.getFolders(folder)
         
-        main {
-            self.projects = projects
-            self.projectsFolder = folder
-            
-            self.projectsById = Dictionary(uniqueKeysWithValues: projects.map { proj in
-                (proj.id, proj)
-            })
-            
-            // Cache the fetched projects
-            self.cacheProjects(projects)
-        }
+        self.projects = projects
+        self.projectsFolder = folder
+        
+        self.projectsById = Dictionary(uniqueKeysWithValues: projects.map { proj in
+            (proj.id, proj)
+        })
+        
+        // Cache the fetched projects
+        self.cacheProjects(projects)
     }
     
     private func cacheProjects(_ projects: [Proj]) {
@@ -195,13 +188,13 @@ final class DataModel {
             }
             
             if let count = nameTypeCountDict[key], count > 1 {
-                let hasDuplicates = duplicates.contains(where: {
+                let hasDuplicates = duplicates.contains {
                     if let test = $0.first, test.name == proj.name && test.type == proj.type {
                         return true
                     }
                     
                     return false
-                })
+                }
                 
                 if !hasDuplicates {
                     duplicates.append(projects.filter {

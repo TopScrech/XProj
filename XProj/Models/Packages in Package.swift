@@ -6,17 +6,15 @@ extension Proj {
     /// - Returns: An array of `Package` structs with the name and repository URL
     func parsePackagesInPackage() -> [Package] {
         // URL for Package.resolved
-        let folderUrl = URL(fileURLWithPath: path, isDirectory: true)
-        let packageResolvedUrl = folderUrl.appendingPathComponent("Package.resolved")
+        let folderURL = URL(fileURLWithPath: path, isDirectory: true)
+        let packageResolvedURL = folderURL.appendingPathComponent("Package.resolved")
         
-        let fm = FileManager.default
-        
-        guard fm.fileExists(atPath: packageResolvedUrl.path) else {
+        guard FileManager.default.fileExists(atPath: packageResolvedURL.path) else {
             return []
         }
         
         do {
-            let data = try Data(contentsOf: packageResolvedUrl)
+            let data = try Data(contentsOf: packageResolvedURL)
             let decoded = try JSONDecoder().decode(Root.self, from: data)
             
             return decoded.pins.map {
@@ -28,7 +26,7 @@ extension Proj {
                 )
             }
         } catch {
-            print("Error reading 'Package.resolved' at \(packageResolvedUrl):", error.localizedDescription)
+            print("Error reading 'Package.resolved' at \(packageResolvedURL):", error.localizedDescription)
             return []
         }
     }
