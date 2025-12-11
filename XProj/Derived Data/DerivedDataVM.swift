@@ -154,7 +154,7 @@ final class DerivedDataVM {
         group.wait()
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        let timeElapsedString = String(format: "%.3f", timeElapsed)
+        let timeElapsedString = timeElapsed.formatted(.fractionDigits(3))
         
         print("Seconds for processing Derived Data:", timeElapsedString)
     }

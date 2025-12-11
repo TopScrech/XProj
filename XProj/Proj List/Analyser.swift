@@ -18,7 +18,7 @@ extension DataModel {
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
         
-        print(String(format: "Single-threaded scanned", folderContents.count, "folders in %.3f seconds", timeElapsed))
+        print("Single-threaded scanned", folderContents.count, "folders in", timeElapsed.formatted(.fractionDigits(3)), "seconds")
         print("Total files found:", totalFiles)
         
         return folderContents
@@ -40,7 +40,7 @@ extension DataModel {
         }
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        print(String(format: "Single-threaded scanned", folderFileCounts.count, "folders in %.3f seconds", timeElapsed))
+        print("Single-threaded scanned", folderFileCounts.count, "folders in", timeElapsed.formatted(.fractionDigits(3)), "seconds")
         print("Total files found:", totalFiles)
         
         return folderFileCounts
@@ -146,7 +146,7 @@ extension DataModel {
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
         
-        print(String(format: "Multi-threaded scanned %d folders in %.3f seconds", folderFileCounts.count, timeElapsed))
+        print("Multi-threaded scanned", folderFileCounts.count, "folders in", timeElapsed.formatted(.fractionDigits(3)), "seconds")
         print("Total files found:", totalFiles)
         
         return folderFileCounts
