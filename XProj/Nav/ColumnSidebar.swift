@@ -10,7 +10,6 @@ struct ColumnSidebar: View {
         @Bindable var nav = nav
         
 #warning("Categories with platforms")
-#warning("Category with PublishedProjectsList")
         
         //        iOS
         //        macOS
