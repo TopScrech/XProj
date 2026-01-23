@@ -29,11 +29,9 @@ struct ProjGrid: View {
                 }
                 
             case .derivedData:
-#warning("Make a grid view")
                 DerivedDataList()
                 
             case .packageDependencies:
-#warning("Make a grid view")
                 DependencyList()
                 
             case .appStore:
