@@ -37,7 +37,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		F383A3522ECF300E00350A0F /* Exceptions for "XProj Widgets" folder in "Widgets" target */ = {
+		F383A3522ECF300E00350A0F /* Exceptions for "Widgets" folder in "Widgets" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Widgets.plist,
@@ -62,17 +62,17 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F383A3452ECF300E00350A0F /* XProj Widgets */ = {
+		F383A3452ECF300E00350A0F /* Widgets */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				F383A3522ECF300E00350A0F /* Exceptions for "XProj Widgets" folder in "Widgets" target */,
+				F383A3522ECF300E00350A0F /* Exceptions for "Widgets" folder in "Widgets" target */,
 			);
-			path = "XProj Widgets";
+			path = Widgets;
 			sourceTree = "<group>";
 		};
-		F383A3502ECF300E00350A0F /* XProj Tests */ = {
+		F383A3502ECF300E00350A0F /* Unit Tests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "XProj Tests";
+			path = "Unit Tests";
 			sourceTree = "<group>";
 		};
 		F383A3B92ECF303B00350A0F /* XProj */ = {
@@ -126,8 +126,8 @@
 				F3AE99E42E2F894100D70249 /* README.md */,
 				F3E15F9E2F23036900124D7D /* AGENTS.md */,
 				F383A3B92ECF303B00350A0F /* XProj */,
-				F383A3452ECF300E00350A0F /* XProj Widgets */,
-				F383A3502ECF300E00350A0F /* XProj Tests */,
+				F383A3452ECF300E00350A0F /* Widgets */,
+				F383A3502ECF300E00350A0F /* Unit Tests */,
 				F33081742C9057F700605E43 /* Frameworks */,
 				F3341E2A2BDE358900E85F27 /* Products */,
 			);
@@ -157,7 +157,7 @@
 			buildRules = (
 			);
 			fileSystemSynchronizedGroups = (
-				F383A3452ECF300E00350A0F /* XProj Widgets */,
+				F383A3452ECF300E00350A0F /* Widgets */,
 			);
 			name = Widgets;
 			productName = "XProj WidgetsExtension";
@@ -200,7 +200,7 @@
 			buildRules = (
 			);
 			fileSystemSynchronizedGroups = (
-				F383A3502ECF300E00350A0F /* XProj Tests */,
+				F383A3502ECF300E00350A0F /* Unit Tests */,
 			);
 			name = "Unit Tests";
 			productName = "XProj Tests";
@@ -301,7 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "XProj Widgets/Widgets.plist";
+				INFOPLIST_FILE = Widgets/Widgets.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "XProj Widgets";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
@@ -333,7 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "XProj Widgets/Widgets.plist";
+				INFOPLIST_FILE = Widgets/Widgets.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "XProj Widgets";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
