@@ -24,7 +24,7 @@ extension Proj {
         let folderExists = fm.fileExists(atPath: folderURL.path, isDirectory: &isDirectory)
         
         if !folderExists || !isDirectory.boolValue {
-            print("Error: The folder path '\(path)' does not exist or isn't a dir")
+            Logger().error("The folder path '\(path)' does not exist or isn't a dir")
             return nil
         }
         
@@ -64,11 +64,11 @@ extension Proj {
             }
             
             // If the swift-tools-version line is not found
-            print("Error: 'swift-tools-version' declaration not found in 'Package.swift'")
+            Logger().error("'swift-tools-version' declaration not found in 'Package.swift'")
             return nil
         } catch {
             // Handle any errors that occur during file reading
-            print("An error occurred while reading 'Package.swift':", error.localizedDescription)
+            Logger().error("Error occurred while reading 'Package.swift': \(error)")
             return nil
         }
     }

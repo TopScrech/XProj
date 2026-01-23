@@ -11,11 +11,11 @@ struct BookmarkManager {
             )
             
             UserDefaults.standard.set(bookmarkData, forKey: key)
-            print("Bookmark saved successfully for key:", key)
+            Logger().info("Bookmark saved successfully for key: \(key)")
             
             result()
         } catch {
-            print("Error saving bookmark for key", key, error)
+            Logger().error("Error saving bookmark for key '\(key)': \(error)")
         }
     }
     
@@ -41,15 +41,15 @@ struct BookmarkManager {
         
         if defaults.object(forKey: key) != nil {
             defaults.removeObject(forKey: key)
-            print("Bookmark data deleted for key:", key)
+            Logger().info("Bookmark data deleted for key: \(key)")
         } else {
-            print("No bookmark data found for key:", key)
+            Logger().error("No bookmark data found for key: \(key)")
         }
     }
     
     static func restoreAccessToFolder(_ key: String) -> URL? {
         guard let bookmarkData = UserDefaults.standard.data(forKey: key) else {
-            print("No bookmark data found for key:", key)
+            Logger().error("No bookmark data found for key: \(key)")
             return nil
         }
         
@@ -70,13 +70,13 @@ struct BookmarkManager {
             let accessStarted = url.startAccessingSecurityScopedResource()
             
             guard accessStarted else {
-                print("Failed to start accessing security scoped resource for URL:", url)
+                Logger().error("Failed to start accessing security scoped resource for URL: \(url)")
                 return nil
             }
             
             return url
         } catch {
-            print("Error resolving bookmark data for key", key, error.localizedDescription)
+            Logger().error("Error resolving bookmark data for key '\(key)': \(error)")
             return nil
         }
     }

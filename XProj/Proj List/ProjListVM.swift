@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 
 final class ProjListVM {
     private(set) var projects: [Proj] = []
@@ -12,11 +13,11 @@ final class ProjListVM {
         do {
             try processPath(projectsFolder)
         } catch {
-            print("Error processing path:", error.localizedDescription)
+            Logger().error("Processign failed: \(error)")
         }
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        print("Seconds for processing projects:", timeElapsed.formatted(.fractionDigits(3)))
+        Logger().info("Seconds for processing projects: \(timeElapsed.formatted(.fractionDigits(3)))")
         
         return projects
     }
@@ -102,8 +103,7 @@ final class ProjListVM {
                 $0.hasSuffix("." + type)
             }
         } catch {
-            print("contentsOfDirectory failed for path:", path)
-            print("Error:", error.localizedDescription)
+            Logger().error("contentsOfDirectory failed at: '\(path)': \(error)")
             return false
         }
     }

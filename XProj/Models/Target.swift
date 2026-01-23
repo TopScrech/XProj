@@ -48,7 +48,7 @@ extension Proj {
     //        return false
     //    }
     
-    func fetchTargets() async -> [Target] {
+    func fetchTargets(includeAppStore: Bool = true) async -> [Target] {
         guard
             type == .proj,
             let url = fetchProjFilePath(path),
@@ -105,7 +105,7 @@ extension Proj {
                     }
                 }
                 
-                let appStoreApp = await fetchAppStoreApp(bundleId)
+                let appStoreApp = includeAppStore ? await fetchAppStoreApp(bundleId) : nil
                 
                 targetObjects.append(Target(
                     id: target.ref,

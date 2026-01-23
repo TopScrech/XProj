@@ -105,7 +105,7 @@ final class DerivedDataVM {
             
             folders.remove(at: index)
         } catch {
-            print("Failed to delete:", url, ", error:", error.localizedDescription)
+            Logger().error("Failed to delete '\(url)': \(error)")
         }
     }
     

@@ -93,10 +93,23 @@ struct Proj: Identifiable, Hashable, Codable {
         }
     }
     
-    mutating func loadTargets() async {
-        let fetchedTargets = await fetchTargets()
+    mutating func loadTargets(includeAppStore: Bool = true) async {
+        let fetchedTargets = await fetchTargets(includeAppStore: includeAppStore)
         targets = fetchedTargets
         platforms = fetchUniquePlatforms(fetchedTargets)
+    }
+
+    mutating func loadPlatforms() async {
+        guard platforms.isEmpty else {
+            return
+        }
+
+        if !targets.isEmpty {
+            platforms = fetchUniquePlatforms(targets)
+            return
+        }
+
+        await loadTargets(includeAppStore: false)
     }
     
     mutating func loadDetails() async {

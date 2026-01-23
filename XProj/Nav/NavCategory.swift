@@ -14,15 +14,7 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
         rawValue
     }
     
-    case proj,
-         package,
-         vapor,
-         workspace,
-         playground,
-         allItems,
-         derivedData,
-         packageDependencies,
-         appStore
+    case proj, package, vapor, workspace, playground, allItems, derivedData, packageDependencies, appStore, iOS, macOS, watchOS, tvOS, visionOS
     
     static var projTypes: [NavCategory] {[
         .proj,
@@ -31,6 +23,25 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
         .workspace,
         .playground
     ]}
+
+    static var projPlatforms: [NavCategory] {[
+        .iOS,
+        .macOS,
+        .watchOS,
+        .tvOS,
+        .visionOS
+    ]}
+
+    var platformName: String? {
+        switch self {
+        case .iOS:      "iOS"
+        case .macOS:    "macOS"
+        case .watchOS:  "watchOS"
+        case .tvOS:     "tvOS"
+        case .visionOS: "visionOS"
+        default:        nil
+        }
+    }
     
     var icon: String {
         switch self {
@@ -42,6 +53,11 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
         case .playground:          "swift"
         case .derivedData:         "folder.badge.gearshape"
         case .appStore:            "app"
+        case .iOS:                 "iphone"
+        case .macOS:               "macbook"
+        case .watchOS:             "applewatch"
+        case .tvOS:                "tv"
+        case .visionOS:            "vision.pro"
         default: ""
         }
     }
@@ -57,6 +73,11 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
         case .derivedData:         "Derived Data"
         case .packageDependencies: "Package Dependencies"
         case .appStore:            "App Store"
+        case .iOS:                 "iOS"
+        case .macOS:               "macOS"
+        case .watchOS:             "watchOS"
+        case .tvOS:                "tvOS"
+        case .visionOS:            "visionOS"
         }
     }
 }
