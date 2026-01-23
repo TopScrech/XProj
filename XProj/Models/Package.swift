@@ -3,31 +3,29 @@ import OSLog
 
 struct Package: Identifiable, Hashable, Codable {
     var id: String {
-        repositoryUrl
+        repositoryURL
     }
     
     let name: String
-    let repositoryUrl: String
+    let repositoryURL: String
     let requirementKind: String?
     let requirementParam: String?
     
     init(
         name: String,
-        repositoryUrl: String,
+        repositoryURL: String,
         requirementKind: String? = nil,
         requirementParam: String? = nil
     ) {
         self.name = name
-        self.repositoryUrl = repositoryUrl
+        self.repositoryURL = repositoryURL
         self.requirementKind = requirementKind
         self.requirementParam = requirementParam
     }
     
-#warning("Requirement kind and param are disabled to fix nav issues")
-    
     var author: String? {
         // Attempt to create a URL object from the input string
-        guard let url = URL(string: repositoryUrl) else {
+        guard let url = URL(string: repositoryURL) else {
             Logger().error("Invalid URL string")
             return nil
         }
@@ -48,8 +46,6 @@ struct Package: Identifiable, Hashable, Codable {
             return nil
         }
         
-        let author = pathComponents[0]
-        
-        return author
+        return pathComponents[0] // author
     }
 }

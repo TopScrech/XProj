@@ -5,19 +5,19 @@ struct CodeLineList: View {
     @State private var vm = CodeLineListVM()
     @EnvironmentObject private var store: ValueStore
     
-    @Binding var path: String?
+    @Binding private var path: String?
     
     init(_ path: Binding<String?>) {
         _path = path
     }
     
-    var sortedItems: [FileLines] {
+    private var sortedItems: [FileLines] {
         vm.fileLineItems.sorted {
             $0.lines > $1.lines
         }
     }
     
-    var top16: [FileLines] {
+    private var top16: [FileLines] {
         Array(sortedItems.prefix(16))
     }
     
@@ -56,7 +56,7 @@ struct CodeLineList: View {
                             
                             Spacer()
                             
-                            Text("\(item.lines)")
+                            Text(item.lines)
                                 .callout()
                                 .monospacedDigit()
                         }

@@ -1,24 +1,24 @@
 import SwiftUI
 
-struct ProjDependency: View {
-    private let package: Package
+struct ProjDependencyCard: View {
+    private let pkg: Package
     
-    init(_ package: Package) {
-        self.package = package
+    init(_ pkg: Package) {
+        self.pkg = pkg
     }
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(package.name)
+                Text(pkg.name)
                 
-                if let author = package.author {
+                if let author = pkg.author {
                     Text(author)
                         .footnote()
                         .secondary()
                 }
                 
-                if let requirement = package.requirementKind, let param = package.requirementParam {
+                if let requirement = pkg.requirementKind, let param = pkg.requirementParam {
                     Text("\(requirement): \(param)")
                         .footnote()
                         .tertiary()
@@ -27,7 +27,7 @@ struct ProjDependency: View {
             
             Spacer()
             
-            if let url = URL(string: package.repositoryUrl) {
+            if let url = URL(string: pkg.repositoryURL) {
                 Link(destination: url) {
                     Image(systemName: "link")
                 }
@@ -36,8 +36,13 @@ struct ProjDependency: View {
         }
         .padding(.vertical, 2)
         .contextMenu {
-            if let url = URL(string: package.repositoryUrl) {
-                Link("Remote", destination: url)
+            if let url = URL(string: pkg.repositoryURL) {
+                Link(destination: url) {
+                    Label("Remove", systemImage: "app.connected.to.app.below.fill")
+                }
+                .help(url)
+                
+                ShareLink(item: url)
                     .help(url)
             }
         }
@@ -45,8 +50,8 @@ struct ProjDependency: View {
 }
 
 #Preview {
-    ProjDependency(
-        Package(name: "Preview", repositoryUrl: "")
+    ProjDependencyCard(
+        Package(name: "Preview", repositoryURL: "")
     )
     .darkSchemePreferred()
 }

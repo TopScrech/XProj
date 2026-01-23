@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 
 struct AppStoreApp: Identifiable, Codable, Hashable {
     let id: String
@@ -59,7 +60,7 @@ extension Proj {
                 artworkUrl512: matchingResult.artworkUrl512
             )
         } catch {
-            print("Error:", error.localizedDescription)
+            Logger().error("Error: \(error)")
             return nil
         }
     }

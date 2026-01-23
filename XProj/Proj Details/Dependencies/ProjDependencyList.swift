@@ -11,7 +11,7 @@ struct ProjDependencyList: View {
         if !packages.isEmpty {
             Section {
                 ForEach(packages) {
-                    ProjDependency($0)
+                    ProjDependencyCard($0)
                 }
             } header: {
                 Text("Package dependencies: \(packages.count)")

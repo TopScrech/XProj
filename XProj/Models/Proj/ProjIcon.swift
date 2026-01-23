@@ -1,9 +1,10 @@
 import Foundation
+import OSLog
 
 extension Proj {
     func projIcon() -> String? {
         guard let enumerator = assetsEnumerator(at: path) else {
-            print("Error: Unable to enumerate the project directory")
+            Logger().error("Unable to enumerate the project directory")
             return nil
         }
         
@@ -22,14 +23,13 @@ extension Proj {
     
     private func assetsEnumerator(at path: String) -> FileManager.DirectoryEnumerator? {
         let projectURL = URL(fileURLWithPath: path)
-        
         var isDir: ObjCBool = false
         
         guard
             FileManager.default.fileExists(atPath: projectURL.path, isDirectory: &isDir),
             isDir.boolValue
         else {
-            print("Error: The path doesn't exist or is not a directory:", projectURL.path)
+            Logger().error("Error: The path doesn't exist or is not a directory: \(projectURL.path)")
             return nil
         }
         
@@ -48,7 +48,7 @@ extension Proj {
             includingPropertiesForKeys: [.isDirectoryKey],
             options: [.skipsHiddenFiles, .skipsPackageDescendants]
         ) else {
-            print("Error: Unable to enumerate", assetsURL.path)
+            Logger().error("Unable to enumerate at \(assetsURL.path)")
             return nil
         }
         
@@ -88,7 +88,7 @@ extension Proj {
             
             return largestFile?.path
         } catch {
-            print("Error accessing files in", appIconURL.path, error.localizedDescription)
+            Logger().error("Error accessing files at '\(appIconURL.path)': \(error)")
             return nil
         }
     }

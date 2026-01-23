@@ -37,9 +37,6 @@ struct Proj: Identifiable, Hashable, Codable {
         self.createdAt = createdAt
         
         self.swiftToolsVersion = fetchSwiftToolsVersion()
-        //        self.packages          = parseSwiftPackages()
-        //        self.targets           = fetchTargets()
-        //        self.platforms         = fetchUniquePlatforms()
     }
     
     /// SF icon
@@ -63,7 +60,7 @@ struct Proj: Identifiable, Hashable, Codable {
         }
     }
     
-    private func fetchUniquePlatforms() -> [String] {
+    func fetchUniquePlatforms(_ targets: [Target]) -> [String] {
         targets
             .flatMap(\.deploymentTargets)
             .map {
@@ -96,6 +93,14 @@ struct Proj: Identifiable, Hashable, Codable {
         }
     }
     
+    mutating func loadDetails() async {
+        packages = parseSwiftPackages()
+        
+        let fetchedTargets = await fetchTargets()
+        targets = fetchedTargets
+        platforms = fetchUniquePlatforms(fetchedTargets)
+    }
+    
     func fetchRemoteRepositoryURL() -> String? {
         let gitFolderPath = (path as NSString).appendingPathComponent(".git/config")
         let configURL = URL(fileURLWithPath: gitFolderPath)
@@ -124,7 +129,7 @@ struct Proj: Identifiable, Hashable, Codable {
         return nil
     }
     
-    private func parseSwiftPackages() -> [Package] {
+    func parseSwiftPackages() -> [Package] {
         switch type {
         case .proj: parsePackagesInProj()
         case .package, .vapor: parsePackagesInPackage()
@@ -134,12 +139,15 @@ struct Proj: Identifiable, Hashable, Codable {
     }
     
     private func parsePackagesInProj() -> [Package] {
-        guard let url = fetchProjFilePath(path) else {
+        guard
+            let url = fetchProjFilePath(path),
+            let sanitizedURL = sanitizedXcodeProjURL(url)
+        else {
             return []
         }
         
         do {
-            let xcodeProj = try XcodeProj(url: url)
+            let xcodeProj = try XcodeProj(url: sanitizedURL)
             let project = xcodeProj.project
             let packages = project.packageReferences
             
@@ -153,7 +161,7 @@ struct Proj: Identifiable, Hashable, Codable {
                 
                 // requirementKind: package.requirement?.keys.first,
                 // requirementParam: package.requirement?.values.first as? String
-                return Package(name: name, repositoryUrl: rep)
+                return Package(name: name, repositoryURL: rep)
             }
         } catch {
             Logger().error("\(error)")

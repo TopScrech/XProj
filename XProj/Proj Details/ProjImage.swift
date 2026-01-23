@@ -1,4 +1,5 @@
 import SwiftUI
+import OSLog
 import Kingfisher
 
 struct ProjImage: View {
@@ -84,7 +85,7 @@ struct ProjImage: View {
         do {
             try FileManager.default.copyItem(at: URL(fileURLWithPath: path), to: destinationURL)
         } catch {
-            print("Error saving file to Downloads:", error.localizedDescription)
+            Logger().error("Error saving file to Downloads: \(error)")
         }
     }
 }

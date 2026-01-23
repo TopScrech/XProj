@@ -26,7 +26,7 @@ struct DependencyCard: View {
             .padding(.vertical, 4)
         }
         .contextMenu {
-            if let url = URL(string: package.package.repositoryUrl) {
+            if let url = URL(string: package.package.repositoryURL) {
                 Link(destination: url) {
                     Label("Remote", systemImage: "link")
                 }

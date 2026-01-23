@@ -89,7 +89,7 @@ final class DerivedDataVM {
         let fm = FileManager.default
         
         guard fm.fileExists(atPath: url.path()) else {
-            print("File or folder does not exist:", url)
+            Logger().error("File or folder does not exist: \(url)")
             return
         }
         
@@ -155,7 +155,7 @@ final class DerivedDataVM {
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
         let timeElapsedString = timeElapsed.formatted(.fractionDigits(3))
         
-        print("Seconds for processing Derived Data:", timeElapsedString)
+        Logger().info("Seconds for processing Derived Data: \(timeElapsedString)")
     }
     
     private func processFolder(_ name: String, at path: String) -> DerivedDataFolder? {
@@ -166,7 +166,7 @@ final class DerivedDataVM {
             let size = try fm.allocatedSizeOfDirectory(url)
             return DerivedDataFolder(name: name, size: size)
         } catch {
-            print("error processing project at path:", path)
+            Logger().error("Can't process project at '\(path)': \(error)")
         }
         
         return nil
