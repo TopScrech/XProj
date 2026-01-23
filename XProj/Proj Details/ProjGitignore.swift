@@ -13,7 +13,7 @@ struct ProjGitignore: View {
     }
     
     var body: some View {
-        if let lines = processGitignore(path) {
+        if let lines = processGitignore() {
             Section {
                 ForEach(lines, id: \.self) {
                     Text($0)
@@ -33,7 +33,7 @@ struct ProjGitignore: View {
         }
     }
     
-    private func processGitignore(_ path: String) -> [String]? {
+    private func processGitignore() -> [String]? {
         guard FileManager.default.fileExists(atPath: gitignorePath) else {
             Logger().info(".gitignore doesn't exist at: \(gitignorePath)")
             return nil
