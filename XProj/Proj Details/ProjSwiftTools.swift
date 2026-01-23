@@ -9,9 +9,9 @@ struct ProjSwiftTools: View {
     
     var body: some View {
         if let swiftToolsVersion {
-            VStack {
+            HStack(spacing: 0) {
                 Text("Swift tools: ")
-                    .foregroundStyle(.secondary) +
+                    .secondary()
                 
                 Text(swiftToolsVersion)
             }

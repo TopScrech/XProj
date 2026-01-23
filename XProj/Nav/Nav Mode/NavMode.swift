@@ -1,9 +1,7 @@
 import SwiftUI
 
 enum NavMode: Int, Identifiable, CaseIterable, Codable {
-    case stack,
-         twoColumn,
-         threeColumn
+    case twoColumn = 1, threeColumn = 2
     
     var id: Int {
         rawValue
@@ -11,7 +9,6 @@ enum NavMode: Int, Identifiable, CaseIterable, Codable {
     
     var name: LocalizedStringKey {
         switch self {
-        case .stack: "Stack"
         case .twoColumn: "Two columns"
         case .threeColumn: "Three columns"
         }
@@ -19,7 +16,6 @@ enum NavMode: Int, Identifiable, CaseIterable, Codable {
     
     var icon: String {
         switch self {
-        case .stack: "list.bullet.rectangle.portrait"
         case .twoColumn: "sidebar.left"
         case .threeColumn: "rectangle.split.3x1"
         }
