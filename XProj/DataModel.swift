@@ -92,62 +92,54 @@ final class DataModel {
             }
         }
         
-        guard didUpdate else {
-            return
-        }
+        guard didUpdate else { return }
         
         updateProjects(updatedProjects)
-        
         cacheProjects(updatedProjects)
     }
-
+    
     func loadPlatformProjectsIfNeeded() async {
         guard !isLoadingPlatformProjects else {
             return
         }
-
+        
         let needsRefresh = projects.contains { proj in
             guard proj.type == .proj else {
                 return false
             }
-
+            
             return proj.platforms.isEmpty
         }
-
-        guard needsRefresh else {
-            return
-        }
-
+        
+        guard needsRefresh else { return }
+        
         isLoadingPlatformProjects = true
-
+        
         defer {
             isLoadingPlatformProjects = false
         }
-
+        
         let currentProjects = projects
         var updatedProjects = currentProjects
         var didUpdate = false
-
+        
         for (index, proj) in currentProjects.enumerated() {
             guard proj.type == .proj, proj.platforms.isEmpty else {
                 continue
             }
-
+            
             var updatedProj = proj
             await updatedProj.loadPlatforms()
-
+            
             if updatedProj.platforms != proj.platforms || updatedProj.targets != proj.targets {
                 updatedProjects[index] = updatedProj
                 didUpdate = true
             }
         }
-
-        guard didUpdate else {
-            return
-        }
-
+        
+        guard didUpdate else { return }
+        
         updateProjects(updatedProjects)
-
         cacheProjects(updatedProjects)
     }
     
@@ -260,13 +252,13 @@ final class DataModel {
         guard let type else {
             return []
         }
-
+        
         if let platform = type.platformName {
             return filteredProjects.filter {
                 $0.platforms.contains(platform)
             }
         }
-
+        
         return filteredProjects.filter {
             $0.type == type
         }
@@ -351,8 +343,7 @@ final class DataModel {
     }
     
     func openProj(_ proj: Proj) {
-        let path = proj.path
-        findProj(path)
+        findProj(proj.path)
     }
     
     func openProjects(_ selected: Set<Proj>) {
