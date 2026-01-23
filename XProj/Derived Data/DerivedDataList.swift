@@ -6,7 +6,7 @@ struct DerivedDataList: View {
     var body: some View {
         @Bindable var vm = vm
         
-#warning("Show Derived Data of not existing projects")
+#warning("Show Derived Data of projects that are not in the project list")
         List {
             if !vm.filteredFolders.isEmpty {
                 Section {
