@@ -1,6 +1,5 @@
 import SwiftUI
 import OSLog
-import Kingfisher
 
 struct ProjImage: View {
     private let proj: Proj
@@ -37,9 +36,7 @@ struct ProjImage: View {
                     }
                 
             } else if let appStoreTarget = proj.targets.first(where: { $0.appStoreApp != nil }) {
-                KFImage(appStoreTarget.appStoreApp?.artworkUrl512)
-                    .resizable()
-                    .clipShape(.rect(cornerRadius: 10))
+                ProjImageKingfisher(appStoreTarget.appStoreApp?.artworkUrl512)
                 
             } else if proj.type == .proj {
                 Image(.projIcon)
