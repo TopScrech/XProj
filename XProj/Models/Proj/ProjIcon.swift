@@ -16,6 +16,12 @@ extension Proj {
                     return iconPath
                 }
             }
+            
+            if fileURL.lastPathComponent == "AppIcon.icon",
+               (try? fileURL.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true,
+               let iconPath = findBestIconFile(in: fileURL) {
+                return iconPath
+            }
         }
         
         return nil
@@ -85,6 +91,78 @@ extension Proj {
             Logger().error("Error accessing files at '\(appIconURL.path)': \(error)")
             return nil
         }
+    }
+
+    private func findBestIconFile(in appIconURL: URL) -> String? {
+        if let bestFromIconJSON = bestIconFromIconJSON(appIconURL) {
+            return bestFromIconJSON
+        }
+        
+        if let bestFromAssets = largestImageFile(in: appIconURL.appendingPathComponent("Assets")) {
+            return bestFromAssets
+        }
+        
+        return largestImageFile(in: appIconURL)
+    }
+
+    private func bestIconFromIconJSON(_ appIconURL: URL) -> String? {
+        let contentsURL = appIconURL.appendingPathComponent("icon.json")
+        
+        guard
+            let data = try? Data(contentsOf: contentsURL),
+            let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+            let groups = json["groups"] as? [[String: Any]]
+        else {
+            return nil
+        }
+        
+        for group in groups {
+            guard let layers = group["layers"] as? [[String: Any]] else {
+                continue
+            }
+            
+            for layer in layers {
+                if let imageName = layer["image-name"] as? String {
+                    let imageURL = appIconURL
+                        .appendingPathComponent("Assets")
+                        .appendingPathComponent(imageName)
+                    
+                    if FileManager.default.fileExists(atPath: imageURL.path) {
+                        return imageURL.path
+                    }
+                }
+            }
+        }
+        
+        return nil
+    }
+
+    private func largestImageFile(in folderURL: URL) -> String? {
+        do {
+            let fileURLs = try FileManager.default.contentsOfDirectory(
+                at: folderURL,
+                includingPropertiesForKeys: [.fileSizeKey],
+                options: [.skipsHiddenFiles]
+            )
+            
+            let largestFile = fileURLs
+                .filter { isImageFile($0) }
+                .max {
+                    let size1 = (try? $0.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0
+                    let size2 = (try? $1.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0
+                    return size1 < size2
+                }
+            
+            return largestFile?.path
+        } catch {
+            Logger().error("Error accessing files at '\(folderURL.path)': \(error)")
+            return nil
+        }
+    }
+    
+    private func isImageFile(_ url: URL) -> Bool {
+        let ext = url.pathExtension.lowercased()
+        return ext == "png" || ext == "jpg" || ext == "jpeg" || ext == "heic" || ext == "tiff"
     }
     
     private func bestAppIconFromContents(_ appIconURL: URL) -> String? {
