@@ -55,28 +55,24 @@ extension Proj {
         for case let appIconURL as URL in appIconEnumerator {
             if appIconURL.lastPathComponent == "AppIcon.appiconset",
                (try? appIconURL.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true {
-                return findLargestOrMatchingFile(in: appIconURL)
+                return findBestAppIconFile(in: appIconURL)
             }
         }
         
         return nil
     }
     
-    private func findLargestOrMatchingFile(in appIconURL: URL) -> String? {
+    private func findBestAppIconFile(in appIconURL: URL) -> String? {
+        if let bestFromContents = bestAppIconFromContents(appIconURL) {
+            return bestFromContents
+        }
+        
         do {
             let fileURLs = try FileManager.default.contentsOfDirectory(
                 at: appIconURL,
                 includingPropertiesForKeys: [.fileSizeKey],
                 options: [.skipsHiddenFiles]
             )
-            
-            // Find the first matching file
-            if let firstMatchingFile = fileURLs.first(where: {
-                $0.pathExtension.lowercased() != "json" &&
-                !$0.lastPathComponent.lowercased().hasPrefix("icon_")
-            }) {
-                return firstMatchingFile.path
-            }
             
             // Find the largest non-JSON file
             let largestFile = fileURLs.filter { $0.pathExtension.lowercased() != "json" }
@@ -91,5 +87,82 @@ extension Proj {
             Logger().error("Error accessing files at '\(appIconURL.path)': \(error)")
             return nil
         }
+    }
+    
+    private func bestAppIconFromContents(_ appIconURL: URL) -> String? {
+        let contentsURL = appIconURL.appendingPathComponent("Contents.json")
+        
+        guard
+            let data = try? Data(contentsOf: contentsURL),
+            let contents = try? JSONDecoder().decode(AppIconContents.self, from: data)
+        else {
+            return nil
+        }
+        
+        let candidates = contents.images.compactMap { image -> (path: String, score: Double)? in
+            guard
+                let fileName = image.filename,
+                !fileName.lowercased().hasPrefix("icon_")
+            else {
+                return nil
+            }
+            
+            let fileURL = appIconURL.appendingPathComponent(fileName)
+            guard FileManager.default.fileExists(atPath: fileURL.path) else {
+                return nil
+            }
+            
+            let pixelSize = image.pixelSize ?? image.derivedPixelSizeFromFilename
+            guard pixelSize > 0 else {
+                return nil
+            }
+            
+            return (fileURL.path, pixelSize)
+        }
+        
+        return candidates.max(by: { $0.score < $1.score })?.path
+    }
+}
+
+private struct AppIconContents: Decodable {
+    let images: [AppIconImage]
+}
+
+private struct AppIconImage: Decodable {
+    let filename: String?
+    let size: String?
+    let scale: String?
+    
+    var pixelSize: Double? {
+        guard
+            let size,
+            let scale
+        else {
+            return nil
+        }
+        
+        let baseSize = size
+            .split(separator: "x")
+            .compactMap { Double($0) }
+            .max() ?? 0
+        let scaleValue = Double(scale.replacingOccurrences(of: "x", with: "")) ?? 1
+        
+        guard baseSize > 0 else {
+            return nil
+        }
+        
+        return baseSize * scaleValue
+    }
+    
+    var derivedPixelSizeFromFilename: Double {
+        guard let filename else {
+            return 0
+        }
+        
+        let digits = filename
+            .split { !$0.isNumber }
+            .compactMap { Double($0) }
+        
+        return digits.max() ?? 0
     }
 }

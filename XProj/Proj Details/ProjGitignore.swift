@@ -1,4 +1,5 @@
 import SwiftUI
+import OSLog
 
 struct ProjGitignore: View {
     private let path: String
@@ -34,12 +35,12 @@ struct ProjGitignore: View {
     
     private func processGitignore(_ path: String) -> [String]? {
         guard FileManager.default.fileExists(atPath: gitignorePath) else {
-            print(".gitignore file does not exist at this path:", gitignorePath)
+            Logger().info(".gitignore doesn't exist at: \(gitignorePath)")
             return nil
         }
         
         guard let contents = try? String(contentsOfFile: gitignorePath, encoding: .utf8) else {
-            print("Failed to read .gitignore")
+            Logger().error("Failed to read .gitignore")
             return nil
         }
         
@@ -54,7 +55,7 @@ struct ProjGitignore: View {
         let fileURL = URL(fileURLWithPath: gitignorePath)
         
         guard FileManager.default.fileExists(atPath: gitignorePath) else {
-            print(".gitignore file does not exist at this path:", gitignorePath)
+            Logger().info(".gitignore doesn't exist at: \(gitignorePath)")
             return
         }
         
