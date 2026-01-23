@@ -17,11 +17,9 @@ extension Proj {
         // Construct the URL to `Package.swift` by appending the file name to the folder URL
         let packageSwiftURL = folderURL.appendingPathComponent("Package.swift")
         
-        let fm = FileManager.default
-        
         // Check if the folder exists and is a directory
         var isDirectory: ObjCBool = false
-        let folderExists = fm.fileExists(atPath: folderURL.path, isDirectory: &isDirectory)
+        let folderExists = FileManager.default.fileExists(atPath: folderURL.path, isDirectory: &isDirectory)
         
         if !folderExists || !isDirectory.boolValue {
             Logger().error("The folder path '\(path)' does not exist or isn't a dir")
@@ -29,10 +27,10 @@ extension Proj {
         }
         
         // Check if `Package.swift` exists
-        let fileExists = fm.fileExists(atPath: packageSwiftURL.path)
+        let fileExists = FileManager.default.fileExists(atPath: packageSwiftURL.path)
         
         if !fileExists {
-            Logger().error("'Package.swift' doesn't exist in the folder: \(path)")
+            Logger().error("'Package.swift' doesn't exist in the dir: \(path)")
             return nil
         }
         

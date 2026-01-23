@@ -29,7 +29,7 @@ extension Proj {
             FileManager.default.fileExists(atPath: projectURL.path, isDirectory: &isDir),
             isDir.boolValue
         else {
-            Logger().error("Error: The path doesn't exist or is not a directory: \(projectURL.path)")
+            Logger().error("Path doesn't exist or isn't a dir: \(projectURL.path)")
             return nil
         }
         
@@ -41,9 +41,7 @@ extension Proj {
     }
     
     private func findAppIcon(in assetsURL: URL) -> String? {
-        let fm = FileManager.default
-        
-        guard let appIconEnumerator = fm.enumerator(
+        guard let appIconEnumerator = FileManager.default.enumerator(
             at: assetsURL,
             includingPropertiesForKeys: [.isDirectoryKey],
             options: [.skipsHiddenFiles, .skipsPackageDescendants]
@@ -76,9 +74,9 @@ extension Proj {
             
             // Find the largest non-JSON file
             let largestFile = fileURLs.filter { $0.pathExtension.lowercased() != "json" }
-                .max { url1, url2 in
-                    let size1 = (try? url1.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0
-                    let size2 = (try? url2.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0
+                .max {
+                    let size1 = (try? $0.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0
+                    let size2 = (try? $1.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0
                     return size1 < size2
                 }
             

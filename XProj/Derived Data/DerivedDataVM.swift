@@ -8,7 +8,6 @@ final class DerivedDataVM {
     var derivedDataURL: URL?
     
     private let udKey = "derived_data_bookmark"
-    private let fm = FileManager.default
     
     init() {
         Task.detached(priority: .background) {
@@ -86,15 +85,13 @@ final class DerivedDataVM {
             return
         }
         
-        let fm = FileManager.default
-        
-        guard fm.fileExists(atPath: url.path()) else {
+        guard FileManager.default.fileExists(atPath: url.path()) else {
             Logger().error("File or folder does not exist: \(url)")
             return
         }
         
         do {
-            try fm.removeItem(at: url)
+            try FileManager.default.removeItem(at: url)
             Logger().info("Successfully deleted: \(url)")
             
             guard let index = folders.firstIndex(where: {
@@ -132,7 +129,7 @@ final class DerivedDataVM {
         let group = DispatchGroup()
         let queue = DispatchQueue.global(qos: .userInitiated)
         
-        let foundFolders = try fm.contentsOfDirectory(atPath: path)
+        let foundFolders = try FileManager.default.contentsOfDirectory(atPath: path)
         
         for folder in foundFolders {
             group.enter()
@@ -163,7 +160,7 @@ final class DerivedDataVM {
         let url = URL(fileURLWithPath: path)
         
         do {
-            let size = try fm.allocatedSizeOfDirectory(url)
+            let size = try FileManager.default.allocatedSizeOfDirectory(url)
             return DerivedDataFolder(name: name, size: size)
         } catch {
             Logger().error("Can't process project at '\(path)': \(error)")

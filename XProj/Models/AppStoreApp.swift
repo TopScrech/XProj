@@ -28,11 +28,12 @@ fileprivate struct AppStoreAppResponseResult: Codable {
 
 extension Proj {
     func fetchAppStoreApp(_ bundleId: String?) async -> AppStoreApp? {
-        guard let bundleId else {
+        guard
+            let bundleId,
+            let url = URL(string: "https://itunes.apple.com/lookup?bundleId=\(bundleId)")
+        else {
             return nil
         }
-        
-        let url = URL(string: "https://itunes.apple.com/lookup?bundleId=\(bundleId)")!
         
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
@@ -60,7 +61,7 @@ extension Proj {
                 artworkUrl512: matchingResult.artworkUrl512
             )
         } catch {
-            Logger().error("Error: \(error)")
+            Logger().error("\(error)")
             return nil
         }
     }
