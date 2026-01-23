@@ -1,11 +1,12 @@
 import Testing
+import OSLog
 
 struct UnitTests {
     @Test func testExample() async throws {
         let array = [0, 1, 1, 2, 3, 3, 3, 4, 5, 5]
         
         let result = findDuplicates(array)
-        print(result)
+        Logger().info("\(result)")
     }
     
     func findDuplicates(_ array: [Int]) -> [[Int]] {

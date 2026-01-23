@@ -1,11 +1,8 @@
 import SwiftUI
+import OSLog
 
 struct BookmarkManager {
-    static func saveSecurityScopedBookmark(
-        _ url: URL,
-        forKey key: String,
-        result: () -> ()
-    ) {
+    static func saveSecurityScopedBookmark(_ url: URL, forKey key: String, result: () -> ()) {
         do {
             let bookmarkData = try url.bookmarkData(
                 options: .withSecurityScope,
@@ -66,7 +63,7 @@ struct BookmarkManager {
             )
             
             if isStale {
-                print("Bookmark data is stale. Reselect the folder")
+                Logger().warning("Bookmark data is stale. Reselect the folder")
                 return nil
             }
             
