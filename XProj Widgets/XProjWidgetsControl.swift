@@ -7,10 +7,7 @@ struct XProjWidgetsControl: ControlWidget {
     static let kind = "dev.topscrech.Bisquit-host.XProj Widgets"
     
     var body: some ControlWidgetConfiguration {
-        AppIntentControlConfiguration(
-            kind: Self.kind,
-            provider: Provider()
-        ) { value in
+        AppIntentControlConfiguration(kind: Self.kind, provider: Provider()) { value in
             ControlWidgetToggle(
                 "Start Timer",
                 isOn: value.isRunning,
@@ -37,7 +34,9 @@ extension XProjWidgetsControl {
         }
         
         func currentValue(configuration: TimerConfiguration) async throws -> Value {
-            let isRunning = true // Check if the timer is running
+            // Check if the timer is running
+            let isRunning = true
+            
             return XProjWidgetsControl.Value(isRunning: isRunning, name: configuration.timerName)
         }
     }
@@ -68,6 +67,6 @@ struct StartTimerIntent: SetValueIntent {
     
     func perform() async throws -> some IntentResult {
         // Start the timer…
-        return .result()
+        .result()
     }
 }
