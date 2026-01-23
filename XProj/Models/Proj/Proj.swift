@@ -93,12 +93,15 @@ struct Proj: Identifiable, Hashable, Codable {
         }
     }
     
-    mutating func loadDetails() async {
-        packages = parseSwiftPackages()
-        
+    mutating func loadTargets() async {
         let fetchedTargets = await fetchTargets()
         targets = fetchedTargets
         platforms = fetchUniquePlatforms(fetchedTargets)
+    }
+    
+    mutating func loadDetails() async {
+        packages = parseSwiftPackages()
+        await loadTargets()
     }
     
     func fetchRemoteRepositoryURL() -> String? {

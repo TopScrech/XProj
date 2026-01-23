@@ -36,6 +36,9 @@ struct ThreeColumnContent: View {
                 }
                 .frame(minWidth: 600)
                 .navigationTitle(category.loc)
+                .task(id: vm.projectsFolder) {
+                    await vm.loadAppStoreProjectsIfNeeded()
+                }
                 
             default:
                 List(selection: $nav.selectedProj) {

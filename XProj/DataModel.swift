@@ -12,6 +12,9 @@ final class DataModel {
     private let udKey = "projects_folder_bookmark"
     private let cacheKey = "projects_cache"
     
+    @ObservationIgnored private var isLoadingAppStoreProjects = false
+    @ObservationIgnored private var didLoadAppStoreProjects = false
+    
     // Shared singleton data model object
     static let shared = {
         DataModel()
@@ -28,6 +31,57 @@ final class DataModel {
                 $0.appStoreApp != nil
             }
         }
+    }
+    
+    func loadAppStoreProjectsIfNeeded() async {
+        guard !didLoadAppStoreProjects else {
+            return
+        }
+        
+        await loadAppStoreProjects()
+    }
+    
+    func loadAppStoreProjects() async {
+        guard !isLoadingAppStoreProjects else {
+            return
+        }
+        
+        isLoadingAppStoreProjects = true
+        
+        defer {
+            isLoadingAppStoreProjects = false
+            didLoadAppStoreProjects = true
+        }
+        
+        let currentProjects = projects
+        var updatedProjects = currentProjects
+        var didUpdate = false
+        
+        for (index, proj) in currentProjects.enumerated() {
+            guard proj.type == .proj, proj.targets.isEmpty else {
+                continue
+            }
+            
+            var updatedProj = proj
+            await updatedProj.loadTargets()
+            
+            if updatedProj.targets != proj.targets {
+                updatedProjects[index] = updatedProj
+                didUpdate = true
+            }
+        }
+        
+        guard didUpdate else {
+            return
+        }
+        
+        projects = updatedProjects
+        
+        projectsById = Dictionary(uniqueKeysWithValues: updatedProjects.map { proj in
+            (proj.id, proj)
+        })
+        
+        cacheProjects(updatedProjects)
     }
     
     private func loadCachedProjects() {
@@ -67,6 +121,9 @@ final class DataModel {
         self.projectsById = Dictionary(uniqueKeysWithValues: projects.map { proj in
             (proj.id, proj)
         })
+        
+        didLoadAppStoreProjects = false
+        isLoadingAppStoreProjects = false
         
         // Cache the fetched projects
         self.cacheProjects(projects)

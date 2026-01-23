@@ -119,7 +119,6 @@ final class ProjListVM {
     }
     
     private func hasVapor(_ path: String) -> Bool {
-        let vaporURL = "https://github.com/vapor/vapor.git"
         let resolvedPath = path + "/Package.resolved"
         
         guard fm.fileExists(atPath: resolvedPath) else {
@@ -128,9 +127,9 @@ final class ProjListVM {
         
         do {
             let fileContents = try String(contentsOfFile: resolvedPath, encoding: .utf8)
-            let containsVapor = fileContents.contains(vaporURL)
+            let vaporURL = "https://github.com/vapor/vapor.git"
             
-            return containsVapor
+            return fileContents.contains(vaporURL)
         } catch {
             return false
         }
@@ -139,13 +138,9 @@ final class ProjListVM {
     private func lastAccessDate(_ path: String) -> Date? {
         path.withCString {
             var statStruct = Darwin.stat()
-            
-            guard stat($0, &statStruct) == 0 else {
-                return nil
-            }
+            guard stat($0, &statStruct) == 0 else { return nil }
             
             let interval = TimeInterval(statStruct.st_atimespec.tv_sec)
-            
             return Date(timeIntervalSince1970: interval)
         }
     }

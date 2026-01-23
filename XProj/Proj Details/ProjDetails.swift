@@ -48,12 +48,27 @@ struct ProjDetails: View {
             proj = sourceProj
         }
         .task(id: sourceProj.id) {
-            if sourceProj.targets.isEmpty && sourceProj.packages.isEmpty && sourceProj.platforms.isEmpty {
+            proj = sourceProj
+            
+            let needsDetails = sourceProj.targets.isEmpty
+                && sourceProj.packages.isEmpty
+                && sourceProj.platforms.isEmpty
+            
+            let needsAppStoreRefresh = sourceProj.targets.contains {
+                $0.bundleId != nil && $0.appStoreApp == nil
+            }
+            
+            if needsDetails {
                 var updatedProj = sourceProj
                 await updatedProj.loadDetails()
                 proj = updatedProj
-            } else {
-                proj = sourceProj
+                return
+            }
+            
+            if needsAppStoreRefresh {
+                var updatedProj = sourceProj
+                await updatedProj.loadTargets()
+                proj = updatedProj
             }
         }
     }

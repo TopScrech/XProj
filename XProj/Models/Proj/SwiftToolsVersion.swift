@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 
 extension Proj {
     /// Fetches and returns the Swift tools version from `Package.swift` located in the given folder path.
@@ -23,7 +24,7 @@ extension Proj {
         let folderExists = fm.fileExists(atPath: folderURL.path, isDirectory: &isDirectory)
         
         if !folderExists || !isDirectory.boolValue {
-            print("Error: The folder path '\(path)' does not exist or is not a directory")
+            print("Error: The folder path '\(path)' does not exist or isn't a dir")
             return nil
         }
         
@@ -31,7 +32,7 @@ extension Proj {
         let fileExists = fm.fileExists(atPath: packageSwiftURL.path)
         
         if !fileExists {
-            print("Error: 'Package.swift' does not exist in the folder", path)
+            Logger().error("'Package.swift' doesn't exist in the folder: \(path)")
             return nil
         }
         

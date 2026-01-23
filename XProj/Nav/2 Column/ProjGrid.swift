@@ -52,6 +52,9 @@ struct ProjGrid: View {
                 .navigationDestination(for: Proj.self) {
                     ProjDetails($0)
                 }
+                .task(id: dataModel.projectsFolder) {
+                    await dataModel.loadAppStoreProjectsIfNeeded()
+                }
                 
             default:
                 ScrollView {
