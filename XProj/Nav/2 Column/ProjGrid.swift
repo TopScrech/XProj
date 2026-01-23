@@ -24,8 +24,8 @@ struct ProjGrid: View {
                     .padding()
                 }
                 .navigationTitle(category.loc)
-                .navigationDestination(for: Proj.self) { proj in
-                    ProjDetails(proj)
+                .navigationDestination(for: Proj.self) {
+                    ProjDetails($0)
                 }
                 
             case .derivedData:
@@ -66,8 +66,8 @@ struct ProjGrid: View {
                     .padding()
                 }
                 .navigationTitle(category.loc)
-                .navigationDestination(for: Proj.self) { proj in
-                    ProjDetails(proj)
+                .navigationDestination(for: Proj.self) {
+                    ProjDetails($0)
                 }
             }
         } else {
