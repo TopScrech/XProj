@@ -1,6 +1,7 @@
 import ScrechKit
 
 struct ProjCard: View {
+    @Environment(NavModel.self) private var navModel
     @Environment(DataModel.self) private var vm
     @Environment(\.openURL) private var openURL
     
@@ -20,7 +21,7 @@ struct ProjCard: View {
                         .title3()
                         .lineLimit(2)
                     
-                    ProjCardPlatforms(proj)
+                    ProjCardPlatforms(proj, showAppStoreIcon: showAppStoreIcon)
                 }
                 
                 let path = proj.path.replacing(vm.projectsFolder, with: "~")
@@ -82,6 +83,10 @@ struct ProjCard: View {
             }
         }
     }
+    
+    private var showAppStoreIcon: Bool {
+        navModel.selectedCategory != .appStore
+    }
 }
 
 #Preview {
@@ -90,5 +95,6 @@ struct ProjCard: View {
         ProjCard(PreviewProp.previewProj2)
     }
     .darkSchemePreferred()
+    .environment(NavModel(selectedCategory: .proj))
     .environment(DataModel.shared)
 }

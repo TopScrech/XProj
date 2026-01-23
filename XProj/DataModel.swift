@@ -34,7 +34,21 @@ final class DataModel {
     }
     
     func loadAppStoreProjectsIfNeeded() async {
-        guard !didLoadAppStoreProjects else {
+        let needsRefresh = projects.contains { proj in
+            guard proj.type == .proj else {
+                return false
+            }
+            
+            if proj.targets.isEmpty {
+                return true
+            }
+            
+            return proj.targets.contains {
+                $0.bundleId != nil && $0.appStoreApp == nil
+            }
+        }
+        
+        guard needsRefresh || !didLoadAppStoreProjects else {
             return
         }
         
@@ -58,7 +72,15 @@ final class DataModel {
         var didUpdate = false
         
         for (index, proj) in currentProjects.enumerated() {
-            guard proj.type == .proj, proj.targets.isEmpty else {
+            guard proj.type == .proj else {
+                continue
+            }
+            
+            let needsTargetRefresh = proj.targets.isEmpty || proj.targets.contains {
+                $0.bundleId != nil && $0.appStoreApp == nil
+            }
+            
+            guard needsTargetRefresh else {
                 continue
             }
             
@@ -173,7 +195,9 @@ final class DataModel {
             
             BookmarkManager.saveSecurityScopedBookmark(url, forKey: self.udKey) {
                 DispatchQueue.global(qos: .userInitiated).async {
-                    self.refreshProjects()
+                    Task { @MainActor in
+                        self.refreshProjects()
+                    }
                 }
             }
         }

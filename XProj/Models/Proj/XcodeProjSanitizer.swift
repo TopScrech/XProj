@@ -43,7 +43,6 @@ private func sanitizeXcodeProjContents(_ contents: String) -> String {
     let productDependencyIds = collectLocalProductDependencyIds(lines, localPackageIds)
     
     var inLocalPackageSection = false
-    var currentObjectId: String?
     var skipCurrentObject = false
     
     for line in lines {
@@ -56,6 +55,7 @@ private func sanitizeXcodeProjContents(_ contents: String) -> String {
             if line.contains("/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */") {
                 skipExceptionSection = false
             }
+            
             continue
         }
         
@@ -68,19 +68,19 @@ private func sanitizeXcodeProjContents(_ contents: String) -> String {
             if line.contains("/* End XCLocalSwiftPackageReference section */") {
                 inLocalPackageSection = false
             }
+            
             continue
         }
         
         if let objectId = objectIdFromLine(line) {
-            currentObjectId = objectId
             skipCurrentObject = productDependencyIds.contains(objectId)
         }
         
         if skipCurrentObject {
             if line.trimmingCharacters(in: .whitespacesAndNewlines) == "};" {
-                currentObjectId = nil
                 skipCurrentObject = false
             }
+            
             continue
         }
         
@@ -93,10 +93,7 @@ private func sanitizeXcodeProjContents(_ contents: String) -> String {
             rootGroupHasChildren = false
             
             output.append(
-                line.replacingOccurrences(
-                    of: "PBXFileSystemSynchronizedRootGroup",
-                    with: "PBXGroup"
-                )
+                line.replacingOccurrences(of: "PBXFileSystemSynchronizedRootGroup", with: "PBXGroup")
             )
             
             continue
@@ -118,6 +115,7 @@ private func sanitizeXcodeProjContents(_ contents: String) -> String {
                 if trimmed == ");" {
                     skipExceptionsBlock = false
                 }
+                
                 continue
             }
             
