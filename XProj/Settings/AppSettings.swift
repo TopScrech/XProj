@@ -17,9 +17,7 @@ struct AppSettings: View {
             }
             
             AppSettingsSelectedFolders()
-            
             AppSettingsProjDetails()
-            
             AppSettingsDebug()
         }
         .formStyle(.grouped)
