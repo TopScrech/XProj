@@ -2,15 +2,11 @@ import SwiftUI
 import WidgetKit
 
 struct XProjWidgets: Widget {
-    let kind = "XProj_Widgets"
+    private let kind = "XProj_Widgets"
     
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(
-            kind: kind,
-            intent: ConfigurationAppIntent.self,
-            provider: Provider()
-        ) { entry in
-            EntryView(entry)
+        AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) {
+            EntryView($0)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
     }

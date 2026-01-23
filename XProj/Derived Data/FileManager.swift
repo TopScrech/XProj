@@ -101,7 +101,7 @@ extension FileManager {
     //                return capacity
     //            }
     //        } catch let error {
-    //            print("FileManager+DirectorySize: Problem while requesting volume capacity:", error)
+    //            Logger().error("FileManager+DirectorySize: Problem while requesting volume capacity: \(error)")
     //
     //            //            log.warning("FileManager+DirectorySize: Problem while requesting volume capacity: \(error)")
     //        }

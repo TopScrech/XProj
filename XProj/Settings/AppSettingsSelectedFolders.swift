@@ -6,9 +6,7 @@ struct AppSettingsSelectedFolders: View {
     
     var body: some View {
         Section("Selected folders") {
-            Button {
-                vm.showPicker()
-            } label: {
+            Button(action: vm.showPicker) {
                 HStack {
                     VStack(alignment: .leading, spacing: 5) {
                         Label("Projects", systemImage: "folder")
@@ -32,9 +30,7 @@ struct AppSettingsSelectedFolders: View {
                 .animation(.default, value: vm.projectsFolder)
             }
             
-            Button {
-                ddvm.showPicker()
-            } label: {
+            Button(action: ddvm.showPicker) {
                 HStack {
                     VStack(alignment: .leading, spacing: 5) {
                         Label("Derived Data", systemImage: "folder")

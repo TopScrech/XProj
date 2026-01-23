@@ -9,9 +9,6 @@ struct NavContainer: View {
         
         Group {
             switch store.navMode {
-            case .stack?:
-                StackContainer()
-                
             case .twoColumn?:
                 TwoColumnContainer()
                 

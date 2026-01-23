@@ -1,4 +1,5 @@
 import ScrechKit
+import OSLog
 
 @Observable
 final class DataModel {
@@ -12,6 +13,11 @@ final class DataModel {
     private let udKey = "projects_folder_bookmark"
     private let cacheKey = "projects_cache"
     
+    @ObservationIgnored private var cachedPublishedProjects: [Proj] = []
+    @ObservationIgnored private var isLoadingAppStoreProjects = false
+    @ObservationIgnored private var didLoadAppStoreProjects = false
+    @ObservationIgnored private var isLoadingPlatformProjects = false
+    
     // Shared singleton data model object
     static let shared = {
         DataModel()
@@ -23,8 +29,129 @@ final class DataModel {
     }
     
     var publishedProjects: [Proj] {
-        projects.filter {
-            $0.targets.contains {
+        cachedPublishedProjects
+    }
+    
+    func loadAppStoreProjectsIfNeeded() async {
+        let needsRefresh = projects.contains { proj in
+            guard proj.type == .proj else {
+                return false
+            }
+            
+            if proj.targets.isEmpty {
+                return true
+            }
+            
+            return proj.targets.contains {
+                $0.bundleId != nil && $0.appStoreApp == nil
+            }
+        }
+        
+        guard needsRefresh || !didLoadAppStoreProjects else {
+            return
+        }
+        
+        await loadAppStoreProjects()
+    }
+    
+    func loadAppStoreProjects() async {
+        guard !isLoadingAppStoreProjects else {
+            return
+        }
+        
+        isLoadingAppStoreProjects = true
+        
+        defer {
+            isLoadingAppStoreProjects = false
+            didLoadAppStoreProjects = true
+        }
+        
+        let currentProjects = projects
+        var updatedProjects = currentProjects
+        var didUpdate = false
+        
+        for (index, proj) in currentProjects.enumerated() {
+            guard proj.type == .proj else {
+                continue
+            }
+            
+            let needsTargetRefresh = proj.targets.isEmpty || proj.targets.contains {
+                $0.bundleId != nil && $0.appStoreApp == nil
+            }
+            
+            guard needsTargetRefresh else {
+                continue
+            }
+            
+            var updatedProj = proj
+            await updatedProj.loadTargets()
+            
+            if updatedProj.targets != proj.targets {
+                updatedProjects[index] = updatedProj
+                didUpdate = true
+            }
+        }
+        
+        guard didUpdate else { return }
+        
+        updateProjects(updatedProjects)
+        cacheProjects(updatedProjects)
+    }
+    
+    func loadPlatformProjectsIfNeeded() async {
+        guard !isLoadingPlatformProjects else {
+            return
+        }
+        
+        let needsRefresh = projects.contains { proj in
+            guard proj.type == .proj else {
+                return false
+            }
+            
+            return proj.platforms.isEmpty
+        }
+        
+        guard needsRefresh else { return }
+        
+        isLoadingPlatformProjects = true
+        
+        defer {
+            isLoadingPlatformProjects = false
+        }
+        
+        let currentProjects = projects
+        var updatedProjects = currentProjects
+        var didUpdate = false
+        
+        for (index, proj) in currentProjects.enumerated() {
+            guard proj.type == .proj, proj.platforms.isEmpty else {
+                continue
+            }
+            
+            var updatedProj = proj
+            await updatedProj.loadPlatforms()
+            
+            if updatedProj.platforms != proj.platforms || updatedProj.targets != proj.targets {
+                updatedProjects[index] = updatedProj
+                didUpdate = true
+            }
+        }
+        
+        guard didUpdate else { return }
+        
+        updateProjects(updatedProjects)
+        cacheProjects(updatedProjects)
+    }
+    
+    private func updateProjects(_ projects: [Proj]) {
+        self.projects = projects
+        
+        self.projectsById = Dictionary(uniqueKeysWithValues: projects.map { proj in
+            (proj.id, proj)
+        })
+        
+        cachedPublishedProjects = projects.filter { proj in
+            proj.targets.contains {
                 $0.appStoreApp != nil
             }
         }
@@ -34,17 +161,13 @@ final class DataModel {
         if let cachedData = UserDefaults.standard.data(forKey: cacheKey),
            let cachedProjects = try? JSONDecoder().decode([Proj].self, from: cachedData) {
             
-            self.projects = cachedProjects
-            
-            self.projectsById = Dictionary(uniqueKeysWithValues: cachedProjects.map { proj in
-                (proj.id, proj)
-            })
+            updateProjects(cachedProjects)
         }
     }
     
     private func restoreProjPath() -> String? {
         guard let url = BookmarkManager.restoreAccessToFolder(udKey) else {
-            print("Unable to restore access to the folder. Please select a new folder")
+            Logger().error("Unable to restore access to the folder. Please select a new folder")
             return nil
         }
         
@@ -59,17 +182,17 @@ final class DataModel {
         projectsFolder = folder
         
         let vm = ProjListVM()
-        let projects = vm.getFolders(folder)
+        let fetchedProjects = vm.getFolders(folder)
         
-        self.projects = projects
+        updateProjects(fetchedProjects)
         self.projectsFolder = folder
         
-        self.projectsById = Dictionary(uniqueKeysWithValues: projects.map { proj in
-            (proj.id, proj)
-        })
+        didLoadAppStoreProjects = false
+        isLoadingAppStoreProjects = false
+        isLoadingPlatformProjects = false
         
         // Cache the fetched projects
-        self.cacheProjects(projects)
+        self.cacheProjects(fetchedProjects)
     }
     
     private func cacheProjects(_ projects: [Proj]) {
@@ -116,7 +239,9 @@ final class DataModel {
             
             BookmarkManager.saveSecurityScopedBookmark(url, forKey: self.udKey) {
                 DispatchQueue.global(qos: .userInitiated).async {
-                    self.refreshProjects()
+                    Task { @MainActor in
+                        self.refreshProjects()
+                    }
                 }
             }
         }
@@ -124,7 +249,17 @@ final class DataModel {
     
     /// Projects for a given category, sorted by name
     func projects(in type: NavCategory?) -> [Proj] {
-        filteredProjects.filter {
+        guard let type else {
+            return []
+        }
+        
+        if let platform = type.platformName {
+            return filteredProjects.filter {
+                $0.platforms.contains(platform)
+            }
+        }
+        
+        return filteredProjects.filter {
             $0.type == type
         }
     }
@@ -208,8 +343,7 @@ final class DataModel {
     }
     
     func openProj(_ proj: Proj) {
-        let path = proj.path
-        findProj(path)
+        findProj(proj.path)
     }
     
     func openProjects(_ selected: Set<Proj>) {

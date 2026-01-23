@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 
 extension DataModel {
     func listFilesInFoldersSingleThread(_ folderPaths: [String]) async -> [String: [String]?] {
@@ -18,8 +19,8 @@ extension DataModel {
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
         
-        print(String(format: "Single-threaded scanned", folderContents.count, "folders in %.3f seconds", timeElapsed))
-        print("Total files found:", totalFiles)
+        Logger().info("Single-threaded scanned \(folderContents.count), folders in \(timeElapsed.formatted(.fractionDigits(3))) seconds")
+        Logger().info("Total files found: \(totalFiles)")
         
         return folderContents
     }
@@ -40,8 +41,8 @@ extension DataModel {
         }
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        print(String(format: "Single-threaded scanned", folderFileCounts.count, "folders in %.3f seconds", timeElapsed))
-        print("Total files found:", totalFiles)
+        Logger().info("Single-threaded scanned \(folderFileCounts.count) folders in \(timeElapsed.formatted(.fractionDigits(3))) seconds")
+        Logger().info("Total files found: \(totalFiles)")
         
         return folderFileCounts
     }
@@ -146,8 +147,8 @@ extension DataModel {
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
         
-        print(String(format: "Multi-threaded scanned %d folders in %.3f seconds", folderFileCounts.count, timeElapsed))
-        print("Total files found:", totalFiles)
+        Logger().info("Multi-threaded scanned \(folderFileCounts.count), folders in \(timeElapsed.formatted(.fractionDigits(3)))s")
+        Logger().info("Total files found: \(totalFiles)")
         
         return folderFileCounts
     }

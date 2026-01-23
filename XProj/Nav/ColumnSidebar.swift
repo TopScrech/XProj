@@ -5,23 +5,10 @@ struct ColumnSidebar: View {
     @Environment(DataModel.self) private var vm
     
     private let categories = NavCategory.projTypes
+    private let platformCategories = NavCategory.projPlatforms
     
     var body: some View {
         @Bindable var nav = nav
-        
-#warning("Categories with platforms")
-#warning("Category with PublishedProjectsList")
-        
-        //        iOS
-        //        macOS
-        //        watchOS
-        //        tvOS
-        //        visionOS
-        //        Widgets
-        //        iMessage
-        //        Tests
-        //        App Store
-        //        SmartScan
         
         List(selection: $nav.selectedCategory) {
             Section {
@@ -41,9 +28,21 @@ struct ColumnSidebar: View {
                         }
                     }
                 }
+            }
+            
+            Section {
+                ForEach(platformCategories) { type in
+                    NavigationLink(value: type) {
+                        Label(type.loc, systemImage: type.icon)
+                    }
+                }
+            }
+            
+            Section {
+                let type = NavCategory.appStore
                 
-                NavigationLink(value: NavCategory.appStore) {
-                    Label(NavCategory.appStore.loc, systemImage: NavCategory.appStore.icon)
+                NavigationLink(value: type) {
+                    Label(type.loc, systemImage: type.icon)
                 }
             }
             
@@ -86,4 +85,3 @@ struct ColumnSidebar: View {
         .darkSchemePreferred()
         .environment(NavModel.shared)
 }
-

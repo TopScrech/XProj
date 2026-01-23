@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 
 extension Proj {
     /// Fetches and returns Swift package dependencies as an array of `Package` structs
@@ -18,15 +19,10 @@ extension Proj {
             let decoded = try JSONDecoder().decode(Root.self, from: data)
             
             return decoded.pins.map {
-                Package(
-                    name: $0.identity,
-                    repositoryUrl: $0.location,
-                    requirementKind: nil,
-                    requirementParam: nil
-                )
+                Package(name: $0.identity, repositoryURL: $0.location)
             }
         } catch {
-            print("Error reading 'Package.resolved' at \(packageResolvedURL):", error.localizedDescription)
+            Logger().error("Can't read 'Package.resolved' at '\(packageResolvedURL)': \(error)")
             return []
         }
     }

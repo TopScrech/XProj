@@ -1,13 +1,12 @@
 import Foundation
+import OSLog
 
 //@Observable
 //final class ProjCardVM {
 extension DataModel {
     func findXcodeprojFile(_ folderPath: String) -> (found: Bool, filePath: String?) {
-        let fm = FileManager.default
-        
         do {
-            let contents = try fm.contentsOfDirectory(atPath: folderPath)
+            let contents = try FileManager.default.contentsOfDirectory(atPath: folderPath)
             
             for item in contents {
                 if item.hasSuffix(".xcodeproj") {
@@ -18,16 +17,14 @@ extension DataModel {
                 }
             }
         } catch {
-            print("Failed to read directory contents:", error.localizedDescription)
+            Logger().error("Failed to read dir contents: \(error)")
         }
         
         return (false, nil)
     }
     
     func launchProj(_ filePath: String) {
-        let fm = FileManager.default
-        
-        if fm.fileExists(atPath: filePath) {
+        if FileManager.default.fileExists(atPath: filePath) {
             let task = Process()
             task.launchPath = "/usr/bin/open"
             task.arguments = [filePath]
@@ -35,10 +32,10 @@ extension DataModel {
             do {
                 try task.run()
             } catch {
-                print("Failed to launch Xcode:", error.localizedDescription)
+                Logger().error("Failed to launch Xcode: \(error)")
             }
         } else {
-            print("File does not exist at path:", filePath)
+            Logger().error("File does not exist at: \(filePath)")
         }
     }
 }

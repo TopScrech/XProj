@@ -3,10 +3,12 @@ import ScrechKit
 struct ProjDetails: View {
     @EnvironmentObject private var store: ValueStore
     
-    private let proj: Proj
+    private let sourceProj: Proj
+    @State private var proj: Proj
     
     init(_ proj: Proj) {
-        self.proj = proj
+        sourceProj = proj
+        _proj = State(initialValue: proj)
     }
     
     var body: some View {
@@ -42,6 +44,33 @@ struct ProjDetails: View {
             }
         }
         .scrollIndicators(.never)
+        .onChange(of: sourceProj.id) { _, _ in
+            proj = sourceProj
+        }
+        .task(id: sourceProj.id) {
+            proj = sourceProj
+            
+            let needsDetails = sourceProj.targets.isEmpty
+                && sourceProj.packages.isEmpty
+                && sourceProj.platforms.isEmpty
+            
+            let needsAppStoreRefresh = sourceProj.targets.contains {
+                $0.bundleId != nil && $0.appStoreApp == nil
+            }
+            
+            if needsDetails {
+                var updatedProj = sourceProj
+                await updatedProj.loadDetails()
+                proj = updatedProj
+                return
+            }
+            
+            if needsAppStoreRefresh {
+                var updatedProj = sourceProj
+                await updatedProj.loadTargets()
+                proj = updatedProj
+            }
+        }
     }
 }
 

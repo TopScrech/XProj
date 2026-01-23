@@ -51,10 +51,7 @@ struct DependencyList: View {
             let package = pairs.first!.package
             let associatedProjects = pairs.map(\.project)
             
-            return PackageDependency(
-                package: package,
-                projects: associatedProjects
-            )
+            return PackageDependency(package: package, projects: associatedProjects)
         }
         
         return packageDependencies.sorted {
@@ -75,11 +72,7 @@ struct DependencyList: View {
                 $0 + $1.useCount
             }
             
-            return(
-                author: author,
-                dependencies: dependencies,
-                totalUsage: totalUsage
-            )
+            return(author: author, dependencies: dependencies, totalUsage: totalUsage)
         }
         
         // Sort by totalUsage

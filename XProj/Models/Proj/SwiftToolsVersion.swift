@@ -1,10 +1,11 @@
 import Foundation
+import OSLog
 
 extension Proj {
     /// Fetches and returns the Swift tools version from `Package.swift` located in the given folder path.
     ///
     /// - Parameter folderPath: The path to the folder containing `Package.swift`.
-    /// - Returns: A `String` representing the Swift tools version (e.g., "5.9") if found, otherwise `nil`.
+    /// - Returns: A `String` representing the Swift tools version (e.g., "5.9") if found, otherwise `nil`
     func fetchSwiftToolsVersion() -> String? {
         guard type == .package || type == .vapor else {
             return nil
@@ -16,22 +17,20 @@ extension Proj {
         // Construct the URL to `Package.swift` by appending the file name to the folder URL
         let packageSwiftURL = folderURL.appendingPathComponent("Package.swift")
         
-        let fm = FileManager.default
-        
         // Check if the folder exists and is a directory
         var isDirectory: ObjCBool = false
-        let folderExists = fm.fileExists(atPath: folderURL.path, isDirectory: &isDirectory)
+        let folderExists = FileManager.default.fileExists(atPath: folderURL.path, isDirectory: &isDirectory)
         
         if !folderExists || !isDirectory.boolValue {
-            print("Error: The folder path '\(path)' does not exist or is not a directory")
+            Logger().error("The folder path '\(path)' does not exist or isn't a dir")
             return nil
         }
         
         // Check if `Package.swift` exists
-        let fileExists = fm.fileExists(atPath: packageSwiftURL.path)
+        let fileExists = FileManager.default.fileExists(atPath: packageSwiftURL.path)
         
         if !fileExists {
-            print("Error: 'Package.swift' does not exist in the folder", path)
+            Logger().error("'Package.swift' doesn't exist in the dir: \(path)")
             return nil
         }
         
@@ -63,11 +62,11 @@ extension Proj {
             }
             
             // If the swift-tools-version line is not found
-            print("Error: 'swift-tools-version' declaration not found in 'Package.swift'")
+            Logger().error("'swift-tools-version' declaration not found in 'Package.swift'")
             return nil
         } catch {
             // Handle any errors that occur during file reading
-            print("An error occurred while reading 'Package.swift':", error.localizedDescription)
+            Logger().error("Error occurred while reading 'Package.swift': \(error)")
             return nil
         }
     }

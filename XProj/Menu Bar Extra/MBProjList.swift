@@ -1,4 +1,5 @@
 import ScrechKit
+import OSLog
 
 struct MBProjList: View {
     @Environment(DataModel.self) private var vm
@@ -15,19 +16,15 @@ struct MBProjList: View {
                     .textFieldStyle(.plain)
                     .onSubmit {
                         guard let proj = vm.filteredProjects.first else {
-                            print("No project found")
+                            Logger().error("No project found")
                             return
                         }
                         
                         vm.openProj(proj)
                     }
                 
-                SFButton("document.on.clipboard") {
-                    if let clipboard = NSPasteboard.general.string(forType: .string) {
-                        vm.searchPrompt = clipboard
-                    }
-                }
-                .buttonStyle(.plain)
+                SFButton("document.on.clipboard", action: paste)
+                    .buttonStyle(.plain)
             }
             .padding(.bottom, 5)
             
@@ -88,6 +85,12 @@ struct MBProjList: View {
         .scrollIndicators(.never)
         .task {
             focusState = true
+        }
+    }
+    
+    private func paste() {
+        if let clipboard = NSPasteboard.general.string(forType: .string) {
+            vm.searchPrompt = clipboard
         }
     }
 }

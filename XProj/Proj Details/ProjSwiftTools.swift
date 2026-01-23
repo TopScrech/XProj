@@ -1,19 +1,19 @@
 import SwiftUI
 
 struct ProjSwiftTools: View {
-    private let swiftToolsVersion: String?
+    private let version: String?
     
-    init(_ swiftToolsVersion: String?) {
-        self.swiftToolsVersion = swiftToolsVersion
+    init(_ version: String?) {
+        self.version = version
     }
     
     var body: some View {
-        if let swiftToolsVersion {
-            VStack {
+        if let version {
+            HStack(spacing: 0) {
                 Text("Swift tools: ")
-                    .foregroundStyle(.secondary) +
+                    .secondary()
                 
-                Text(swiftToolsVersion)
+                Text(version)
             }
             .padding(.vertical, 5)
         }

@@ -1,5 +1,5 @@
 import SwiftUI
-import Kingfisher
+import OSLog
 
 struct ProjImage: View {
     private let proj: Proj
@@ -36,9 +36,7 @@ struct ProjImage: View {
                     }
                 
             } else if let appStoreTarget = proj.targets.first(where: { $0.appStoreApp != nil }) {
-                KFImage(appStoreTarget.appStoreApp?.artworkUrl512)
-                    .resizable()
-                    .clipShape(.rect(cornerRadius: 10))
+                ProjImageKingfisher(appStoreTarget.appStoreApp?.artworkUrl512)
                 
             } else if proj.type == .proj {
                 Image(.projIcon)
@@ -84,7 +82,7 @@ struct ProjImage: View {
         do {
             try FileManager.default.copyItem(at: URL(fileURLWithPath: path), to: destinationURL)
         } catch {
-            print("Error saving file to Downloads:", error.localizedDescription)
+            Logger().error("Error saving file to Downloads: \(error)")
         }
     }
 }

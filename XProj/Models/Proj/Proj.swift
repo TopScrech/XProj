@@ -1,11 +1,11 @@
-// A data model for a recipe and its metadata, including its related projects
-
 import SwiftUI
+import OSLog
 import XcodeProjKit
 
 struct Proj: Identifiable, Hashable, Codable {
     var id: String
     
+    // Meta
     var name: String
     var path: String
     let type: NavCategory
@@ -13,6 +13,7 @@ struct Proj: Identifiable, Hashable, Codable {
     let modifiedAt: Date?
     let createdAt: Date?
     
+    // Proj details
     var swiftToolsVersion: String? = nil
     var packages: [Package] = []
     var targets: [Target] = []
@@ -35,12 +36,10 @@ struct Proj: Identifiable, Hashable, Codable {
         self.modifiedAt = modifiedAt
         self.createdAt = createdAt
         
-        //        self.swiftToolsVersion = fetchSwiftToolsVersion()
-        //        self.packages          = parseSwiftPackages()
-        //        self.targets           = fetchTargets()
-        //        self.platforms         = fetchUniquePlatforms()
+        self.swiftToolsVersion = fetchSwiftToolsVersion()
     }
     
+    /// SF icon
     var icon: String {
         switch type {
         case .proj:       "hammer.fill"
@@ -61,7 +60,7 @@ struct Proj: Identifiable, Hashable, Codable {
         }
     }
     
-    private func fetchUniquePlatforms() -> [String] {
+    func fetchUniquePlatforms(_ targets: [Target]) -> [String] {
         targets
             .flatMap(\.deploymentTargets)
             .map {
@@ -80,16 +79,42 @@ struct Proj: Identifiable, Hashable, Codable {
         }
     }
     
+    /// Inducated whether a project has widget target(s)
     var hasWidgets: Bool {
         targets.contains {
             $0.type == .widgets
         }
     }
     
+    /// Inducated whether a project has test target(s)
     var hasTests: Bool {
         targets.contains {
             $0.type == .uiTests || $0.type == .unitTests
         }
+    }
+    
+    mutating func loadTargets(includeAppStore: Bool = true) async {
+        let fetchedTargets = await fetchTargets(includeAppStore: includeAppStore)
+        targets = fetchedTargets
+        platforms = fetchUniquePlatforms(fetchedTargets)
+    }
+
+    mutating func loadPlatforms() async {
+        guard platforms.isEmpty else {
+            return
+        }
+
+        if !targets.isEmpty {
+            platforms = fetchUniquePlatforms(targets)
+            return
+        }
+
+        await loadTargets(includeAppStore: false)
+    }
+    
+    mutating func loadDetails() async {
+        packages = parseSwiftPackages()
+        await loadTargets()
     }
     
     func fetchRemoteRepositoryURL() -> String? {
@@ -120,45 +145,42 @@ struct Proj: Identifiable, Hashable, Codable {
         return nil
     }
     
-    private func parseSwiftPackages() -> [Package] {
+    func parseSwiftPackages() -> [Package] {
         switch type {
-        case .proj:
-            parsePackagesInProj()
-            
-        case .package:
-            parsePackagesInPackage()
-            
-        case .vapor:
-            parsePackagesInPackage()
-            
+        case .proj: parsePackagesInProj()
+        case .package, .vapor: parsePackagesInPackage()
             //        case .playground:
-            
-        default:
-            []
+        default: []
         }
     }
     
     private func parsePackagesInProj() -> [Package] {
-        guard let url = fetchProjFilePath(path) else {
+        guard
+            let url = fetchProjFilePath(path),
+            let sanitizedURL = sanitizedXcodeProjURL(url)
+        else {
             return []
         }
         
         do {
-            let xcodeProj = try XcodeProj(url: url)
+            let xcodeProj = try XcodeProj(url: sanitizedURL)
             let project = xcodeProj.project
             let packages = project.packageReferences
             
             return packages.compactMap { package in
-                if let rep = package.repositoryURL,
-                   let name = URL(string: rep)?.lastPathComponent {
-                    return Package(name: name, repositoryUrl: rep)
-                        //                        requirementKind: package.requirement?.keys.first,
-                        //                        requirementParam: package.requirement?.values.first as? String
+                guard
+                    let rep = package.repositoryURL,
+                    let name = URL(string: rep)?.lastPathComponent
+                else {
+                    return nil
                 }
                 
-                return nil
+                // requirementKind: package.requirement?.keys.first,
+                // requirementParam: package.requirement?.values.first as? String
+                return Package(name: name, repositoryURL: rep)
             }
         } catch {
+            Logger().error("\(error)")
             return []
         }
     }

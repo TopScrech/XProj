@@ -2,9 +2,11 @@ import SwiftUI
 
 struct ProjCardPlatforms: View {
     private let proj: Proj
+    private let showAppStoreIcon: Bool
     
-    init(_ proj: Proj) {
+    init(_ proj: Proj, showAppStoreIcon: Bool = true) {
         self.proj = proj
+        self.showAppStoreIcon = showAppStoreIcon
     }
     
     var body: some View {
@@ -30,12 +32,14 @@ struct ProjCardPlatforms: View {
             Image(systemName: "person.badge.key")
         }
         
-        if proj.targets.contains(where: {
-            $0.appStoreApp?.url != nil
-        }) {
-            Image(.appStore)
-                .resizable()
-                .frame(16)
+        if showAppStoreIcon {
+            if proj.targets.contains(where: {
+                $0.appStoreApp?.url != nil
+            }) {
+                Image(.appStore)
+                    .resizable()
+                    .frame(16)
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 import SwiftUI
+import OSLog
 import Kingfisher
 
 struct AppSettingsDebug: View {
@@ -6,19 +7,10 @@ struct AppSettingsDebug: View {
     
     var body: some View {
         Section("Debug") {
-            Button("Save example projects to Downloads", systemImage: "square.and.arrow.down") {
-                downloadExamples()
-            }
-            
-            Button("Clear cached projects", systemImage: "xmark") {
-                clearAllCache()
-            }
-            
-            Button("Clear navigation path", systemImage: "xmark") {
-                nav.clearNavCache()
-            }
-            
-            .foregroundStyle(.red)
+            Button("Save example projects to Downloads", systemImage: "square.and.arrow.down", action: downloadExamples)
+            Button("Clear cached projects", systemImage: "xmark", action: clearAllCache)
+            Button("Clear navigation path", systemImage: "xmark", action: nav.clearNavCache)
+                .foregroundStyle(.red)
         }
     }
     
@@ -29,12 +21,12 @@ struct AppSettingsDebug: View {
     
     private func downloadExamples() {
         guard let sourceURL = Bundle.main.url(forResource: "Examples", withExtension: "zip") else {
-            print("Examples.zip not found")
+            Logger().error("Examples.zip not found")
             return
         }
         
         guard let downloadsURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first else {
-            print("Downloads folder not located")
+            Logger().error("Downloads folder not located")
             return
         }
         
@@ -42,9 +34,9 @@ struct AppSettingsDebug: View {
         
         do {
             try FileManager.default.copyItem(at: sourceURL, to: destinationURL)
-            print("Examples.zip successfully copied to the Downloads folder")
+            Logger().info("Examples.zip copied to the Downloads folder")
         } catch {
-            print("Error copying Examples.zip:", error.localizedDescription)
+            Logger().error("Can't copying Examples.zip: \(error)")
         }
     }
 }

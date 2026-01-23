@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 import XcodeProjKit
 
 struct Target: Identifiable, Hashable, Codable {
@@ -47,78 +48,86 @@ extension Proj {
     //        return false
     //    }
     
-    func fetchTargets() -> [Target] {
+    func fetchTargets(includeAppStore: Bool = true) async -> [Target] {
         guard
             type == .proj,
-            let url = fetchProjFilePath(path)
+            let url = fetchProjFilePath(path),
+            let sanitizedURL = sanitizedXcodeProjURL(url)
         else {
             return []
         }
         
         do {
-            let targets = try XcodeProj(url: url).project.targets
+            let targets = try XcodeProj(url: sanitizedURL).project.targets
+            var targetObjects: [Target] = []
+            targetObjects.reserveCapacity(targets.count)
             
-            let targetObjects = targets.flatMap { target in
+            for target in targets {
+                let targetName = target.name
                 let buildConfigs = target.buildConfigurationList?.buildConfigurations ?? []
+                let buildSettingsList = buildConfigs.map { $0.buildSettings ?? [:] }
                 
-                var seenRefs = Set<String>()
+                let bundleId = buildSettingsList.compactMap {
+                    $0["PRODUCT_BUNDLE_IDENTIFIER"] as? String
+                }.first
                 
-                return buildConfigs.compactMap { buildConfig -> Target? in
-                    let targetName = target.name
-                    let buildSettings = buildConfig.buildSettings
-                    let bundleId = buildSettings?["PRODUCT_BUNDLE_IDENTIFIER"] as? String
-                    
-                    let version = buildSettings?["MARKETING_VERSION"] as? String
-                    let build = buildSettings?["CURRENT_PROJECT_VERSION"] as? String
-                    
-                    let id = target.ref
-                    
-                    guard !seenRefs.contains(target.ref) else {
-                        return nil
+                let version = buildSettingsList.compactMap {
+                    $0["MARKETING_VERSION"] as? String
+                }.first
+                
+                let build = buildSettingsList.compactMap {
+                    $0["CURRENT_PROJECT_VERSION"] as? String
+                }.first
+                
+                var deploymentTargets: [String] = []
+                var resolvedType: TargetType = .other
+                
+                if buildSettingsList.isEmpty {
+                    let info = determineType(targetName, [:])
+                    resolvedType = info.type
+                    deploymentTargets = info.versions
+                } else {
+                    for buildSettings in buildSettingsList {
+                        let info = determineType(targetName, buildSettings)
+                        deploymentTargets.append(contentsOf: info.versions)
+                        
+                        if resolvedType == .other {
+                            resolvedType = info.type
+                        } else if info.type != .app && info.type != .other {
+                            resolvedType = info.type
+                        }
                     }
-                    
-                    seenRefs.insert(target.ref)
-                    
-                    let type = determineType(targetName, buildSettings)
-                    
-                    var appStoreApp: AppStoreApp?
-                    let semaphore = DispatchSemaphore(value: 0)
-                    
-                    Task {
-                        appStoreApp = await fetchAppStoreApp(bundleId)
-                        semaphore.signal()
-                    }
-                    
-                    semaphore.wait()
-                    
-                    return Target(
-                        id: id,
-                        name: targetName,
-                        bundleId: bundleId,
-                        type: type.type,
-                        deploymentTargets: type.versions,
-                        appStoreApp: appStoreApp,
-                        version: version,
-                        build: build
-                    )
                 }
+                
+                deploymentTargets = deploymentTargets.reduce(into: []) { result, platform in
+                    if !result.contains(platform) {
+                        result.append(platform)
+                    }
+                }
+                
+                let appStoreApp = includeAppStore ? await fetchAppStoreApp(bundleId) : nil
+                
+                targetObjects.append(Target(
+                    id: target.ref,
+                    name: targetName,
+                    bundleId: bundleId,
+                    type: resolvedType,
+                    deploymentTargets: deploymentTargets,
+                    appStoreApp: appStoreApp,
+                    version: version,
+                    build: build
+                ))
             }
             
             return targetObjects
         } catch {
-            print(error)
+            Logger().error("\(error)")
             return []
         }
     }
     
-    func determineType(
-        _ name: String,
-        _ buildSettings: [String: Any]?
-    ) -> (type: TargetType, versions: [String]) {
-        
-        guard let buildSettings else {
-            return (.other, [])
-        }
+    func determineType(_ name: String, _ buildSettings: [String: Any]?) -> (type: TargetType, versions: [String]) {
+        let buildSettings = buildSettings ?? [:]
         
         var type: TargetType = .other
         var configs: [String] = []

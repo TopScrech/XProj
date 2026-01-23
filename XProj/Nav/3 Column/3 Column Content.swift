@@ -36,7 +36,24 @@ struct ThreeColumnContent: View {
                 }
                 .frame(minWidth: 600)
                 .navigationTitle(category.loc)
-                
+                .task(id: vm.projectsFolder) {
+                    await vm.loadAppStoreProjectsIfNeeded()
+                }
+
+            case .iOS, .macOS, .watchOS, .tvOS, .visionOS:
+                List(selection: $nav.selectedProj) {
+                    ForEach(vm.projects(in: category)) { proj in
+                        NavigationLink(value: proj) {
+                            ProjCard(proj)
+                        }
+                    }
+                }
+                .frame(minWidth: 600)
+                .navigationTitle(category.loc)
+                .task(id: vm.projectsFolder) {
+                    await vm.loadPlatformProjectsIfNeeded()
+                }
+
             default:
                 List(selection: $nav.selectedProj) {
                     ForEach(vm.projects(in: category)) { proj in

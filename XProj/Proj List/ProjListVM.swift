@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 
 final class ProjListVM {
     private(set) var projects: [Proj] = []
@@ -12,13 +13,11 @@ final class ProjListVM {
         do {
             try processPath(projectsFolder)
         } catch {
-            print("Error processing path:", error.localizedDescription)
+            Logger().error("Processign failed: \(error)")
         }
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        let timeElapsedString = String(format: "%.3f", timeElapsed)
-        
-        print("Seconds for processing projects:", timeElapsedString)
+        Logger().info("Seconds for processing projects: \(timeElapsed.formatted(.fractionDigits(3)))")
         
         return projects
     }
@@ -104,8 +103,7 @@ final class ProjListVM {
                 $0.hasSuffix("." + type)
             }
         } catch {
-            print("contentsOfDirectory failed for path:", path)
-            print("Error:", error.localizedDescription)
+            Logger().error("contentsOfDirectory failed at: '\(path)': \(error)")
             return false
         }
     }
@@ -120,8 +118,7 @@ final class ProjListVM {
         }
     }
     
-    private func hasVapor( _ path: String) -> Bool {
-        let vaporURL = "https://github.com/vapor/vapor.git"
+    private func hasVapor(_ path: String) -> Bool {
         let resolvedPath = path + "/Package.resolved"
         
         guard fm.fileExists(atPath: resolvedPath) else {
@@ -130,9 +127,9 @@ final class ProjListVM {
         
         do {
             let fileContents = try String(contentsOfFile: resolvedPath, encoding: .utf8)
-            let containsVapor = fileContents.contains(vaporURL)
+            let vaporURL = "https://github.com/vapor/vapor.git"
             
-            return containsVapor
+            return fileContents.contains(vaporURL)
         } catch {
             return false
         }
@@ -141,13 +138,9 @@ final class ProjListVM {
     private func lastAccessDate(_ path: String) -> Date? {
         path.withCString {
             var statStruct = Darwin.stat()
-            
-            guard stat($0, &statStruct) == 0 else {
-                return nil
-            }
+            guard stat($0, &statStruct) == 0 else { return nil }
             
             let interval = TimeInterval(statStruct.st_atimespec.tv_sec)
-            
             return Date(timeIntervalSince1970: interval)
         }
     }

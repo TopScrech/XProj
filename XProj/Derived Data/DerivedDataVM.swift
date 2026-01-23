@@ -1,4 +1,5 @@
 import ScrechKit
+import OSLog
 
 @Observable
 final class DerivedDataVM {
@@ -7,7 +8,6 @@ final class DerivedDataVM {
     var derivedDataURL: URL?
     
     private let udKey = "derived_data_bookmark"
-    private let fm = FileManager.default
     
     init() {
         Task.detached(priority: .background) {
@@ -55,7 +55,7 @@ final class DerivedDataVM {
         }
         
         guard FileManager.default.fileExists(atPath: url.path()) else {
-            print("Folder does not exist:", url)
+            Logger().error("Folder does not exist: \(url)")
             return
         }
         
@@ -70,13 +70,11 @@ final class DerivedDataVM {
                 do {
                     try FileManager.default.removeItem(at: fileURL)
                 } catch {
-                    print("Failed to delete", fileURL.path)
-                    print(error.localizedDescription)
+                    Logger().error("Failed to delete at 'fileURL.path': \(error)")
                 }
             }
         } catch {
-            print("Failed to fetch dir contents", url)
-            print(error.localizedDescription)
+            Logger().error("Failed to fetch dir contents at '\(url)': \(error)")
         }
         
         getFolders()
@@ -87,16 +85,14 @@ final class DerivedDataVM {
             return
         }
         
-        let fm = FileManager.default
-        
-        guard fm.fileExists(atPath: url.path()) else {
-            print("File or folder does not exist:", url)
+        guard FileManager.default.fileExists(atPath: url.path()) else {
+            Logger().error("File or folder does not exist: \(url)")
             return
         }
         
         do {
-            try fm.removeItem(at: url)
-            print("Successfully deleted:", url)
+            try FileManager.default.removeItem(at: url)
+            Logger().info("Successfully deleted: \(url)")
             
             guard let index = folders.firstIndex(where: {
                 $0.name == name
@@ -106,7 +102,7 @@ final class DerivedDataVM {
             
             folders.remove(at: index)
         } catch {
-            print("Failed to delete:", url, ", error:", error.localizedDescription)
+            Logger().error("Failed to delete '\(url)': \(error)")
         }
     }
     
@@ -114,7 +110,7 @@ final class DerivedDataVM {
         folders = []
         
         guard let url = BookmarkManager.restoreAccessToFolder(udKey) else {
-            print("Unable to restore access to the folder. Please select a folder")
+            Logger().error("Unable to restore access to the folder. Please select a folder")
             return
         }
         
@@ -123,7 +119,7 @@ final class DerivedDataVM {
         do {
             try processPath(url.path)
         } catch {
-            print("Error processing path:", error.localizedDescription)
+            Logger().error("Error processing path: \(error)")
         }
     }
     
@@ -133,7 +129,7 @@ final class DerivedDataVM {
         let group = DispatchGroup()
         let queue = DispatchQueue.global(qos: .userInitiated)
         
-        let foundFolders = try fm.contentsOfDirectory(atPath: path)
+        let foundFolders = try FileManager.default.contentsOfDirectory(atPath: path)
         
         for folder in foundFolders {
             group.enter()
@@ -154,9 +150,9 @@ final class DerivedDataVM {
         group.wait()
         
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-        let timeElapsedString = String(format: "%.3f", timeElapsed)
+        let timeElapsedString = timeElapsed.formatted(.fractionDigits(3))
         
-        print("Seconds for processing Derived Data:", timeElapsedString)
+        Logger().info("Seconds for processing Derived Data: \(timeElapsedString)")
     }
     
     private func processFolder(_ name: String, at path: String) -> DerivedDataFolder? {
@@ -164,10 +160,10 @@ final class DerivedDataVM {
         let url = URL(fileURLWithPath: path)
         
         do {
-            let size = try fm.allocatedSizeOfDirectory(url)
+            let size = try FileManager.default.allocatedSizeOfDirectory(url)
             return DerivedDataFolder(name: name, size: size)
         } catch {
-            print("error processing project at path:", path)
+            Logger().error("Can't process project at '\(path)': \(error)")
         }
         
         return nil
