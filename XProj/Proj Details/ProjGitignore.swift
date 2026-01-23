@@ -19,17 +19,15 @@ struct ProjGitignore: View {
                         .lineLimit(1)
                 }
             } header: {
-                Button("Git ignore") {
-                    openGitignore()
-                }
-                .title2()
-                .buttonStyle(.plain)
-                .onDrag {
-                    let fileURL = URL(fileURLWithPath: gitignorePath)
-                    return NSItemProvider(object: fileURL as NSURL)
-                } preview: {
-                    Image(systemName: "text.document")
-                }
+                Button("Git ignore", action: openGitignore)
+                    .title2()
+                    .buttonStyle(.plain)
+                    .onDrag {
+                        let fileURL = URL(fileURLWithPath: gitignorePath)
+                        return NSItemProvider(object: fileURL as NSURL)
+                    } preview: {
+                        Image(systemName: "text.document")
+                    }
             }
         }
     }
@@ -45,13 +43,11 @@ struct ProjGitignore: View {
             return nil
         }
         
-        let lines = contents
+        return contents
             .components(separatedBy: .newlines)
             .filter {
                 !$0.trimmingCharacters(in: .whitespaces).isEmpty
             }
-        
-        return lines
     }
     
     private func openGitignore() {

@@ -32,13 +32,8 @@ struct DerivedDataList: View {
         .environment(vm)
         //        .searchable(text: $vm.searchPrompt)
         .toolbar {
-            Button("Change folder") {
-                vm.showPicker()
-            }
-            
-            Button("Clear") {
-                vm.deleteAllFiles()
-            }
+            Button("Change folder", action: vm.showPicker)
+            Button("Clear", action: vm.deleteAllFiles)
         }
     }
 }

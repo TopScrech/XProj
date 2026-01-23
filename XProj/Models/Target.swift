@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 import XcodeProjKit
 
 struct Target: Identifiable, Hashable, Codable {
@@ -103,7 +104,7 @@ extension Proj {
             
             return targetObjects
         } catch {
-            print(error)
+            Logger().error("\(error)")
             return []
         }
     }

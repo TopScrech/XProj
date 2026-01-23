@@ -1,4 +1,5 @@
 import SwiftUI
+import OSLog
 
 @Observable
 final class NavModel: Codable {
@@ -59,7 +60,7 @@ final class NavModel: Codable {
         do {
             try FileManager.default.removeItem(at: Self.dataURL)
         } catch {
-            print(error)
+            Logger().error("\(error)")
         }
     }
     
@@ -77,7 +78,7 @@ final class NavModel: Codable {
         do {
             try jsonData?.write(to: Self.dataURL)
         } catch {
-            print(error)
+            Logger().error("\(error)")
         }
     }
     
@@ -111,24 +112,14 @@ final class NavModel: Codable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.selectedCategory = try container.decodeIfPresent(
-            NavCategory.self,
-            forKey: .selectedCategory
-        )
-        
-        let projPathIds = try container.decode(
-            [Proj.ID].self,
-            forKey: .recipePathIds
-        )
+        self.selectedCategory = try container.decodeIfPresent(NavCategory.self, forKey: .selectedCategory)
+        let projPathIds = try container.decode([Proj.ID].self, forKey: .recipePathIds)
         
         self.projPath = projPathIds.compactMap {
             DataModel.shared[$0]
         }
         
-        self.columnVisibility = try container.decode(
-            NavigationSplitViewVisibility.self,
-            forKey: .columnVisibility
-        )
+        self.columnVisibility = try container.decode(NavigationSplitViewVisibility.self, forKey: .columnVisibility)
     }
     
     func encode(to encoder: Encoder) throws {

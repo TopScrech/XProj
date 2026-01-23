@@ -6,19 +6,10 @@ struct AppSettingsDebug: View {
     
     var body: some View {
         Section("Debug") {
-            Button("Save example projects to Downloads", systemImage: "square.and.arrow.down") {
-                downloadExamples()
-            }
-            
-            Button("Clear cached projects", systemImage: "xmark") {
-                clearAllCache()
-            }
-            
-            Button("Clear navigation path", systemImage: "xmark") {
-                nav.clearNavCache()
-            }
-            
-            .foregroundStyle(.red)
+            Button("Save example projects to Downloads", systemImage: "square.and.arrow.down", action: downloadExamples)
+            Button("Clear cached projects", systemImage: "xmark", action: clearAllCache)
+            Button("Clear navigation path", systemImage: "xmark", action: nav.clearNavCache)
+                .foregroundStyle(.red)
         }
     }
     

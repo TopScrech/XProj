@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 
 struct Package: Identifiable, Hashable, Codable {
     var id: String {
@@ -27,13 +28,13 @@ struct Package: Identifiable, Hashable, Codable {
     var author: String? {
         // Attempt to create a URL object from the input string
         guard let url = URL(string: repositoryUrl) else {
-            print("Invalid URL string")
+            Logger().error("Invalid URL string")
             return nil
         }
         
         // Ensure the host is Github
         guard url.host?.localizedStandardContains("github.com") == true else {
-            print("URL is not a GitHub repository")
+            Logger().error("URL is not a GitHub repo")
             return nil
         }
         
@@ -43,7 +44,7 @@ struct Package: Identifiable, Hashable, Codable {
         
         // GitHub repository URLs typically have the format: /author/repo
         guard pathComponents.count >= 2 else {
-            print("URL does not contain enough path components")
+            Logger().error("URL does not contain enough path components")
             return nil
         }
         

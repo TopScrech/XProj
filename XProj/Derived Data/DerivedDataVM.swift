@@ -1,4 +1,5 @@
 import ScrechKit
+import OSLog
 
 @Observable
 final class DerivedDataVM {
@@ -55,7 +56,7 @@ final class DerivedDataVM {
         }
         
         guard FileManager.default.fileExists(atPath: url.path()) else {
-            print("Folder does not exist:", url)
+            Logger().error("Folder does not exist: \(url)")
             return
         }
         
@@ -70,13 +71,11 @@ final class DerivedDataVM {
                 do {
                     try FileManager.default.removeItem(at: fileURL)
                 } catch {
-                    print("Failed to delete", fileURL.path)
-                    print(error.localizedDescription)
+                    Logger().error("Failed to delete at 'fileURL.path': \(error)")
                 }
             }
         } catch {
-            print("Failed to fetch dir contents", url)
-            print(error.localizedDescription)
+            Logger().error("Failed to fetch dir contents at '\(url)': \(error)")
         }
         
         getFolders()
@@ -96,7 +95,7 @@ final class DerivedDataVM {
         
         do {
             try fm.removeItem(at: url)
-            print("Successfully deleted:", url)
+            Logger().info("Successfully deleted: \(url)")
             
             guard let index = folders.firstIndex(where: {
                 $0.name == name
@@ -114,7 +113,7 @@ final class DerivedDataVM {
         folders = []
         
         guard let url = BookmarkManager.restoreAccessToFolder(udKey) else {
-            print("Unable to restore access to the folder. Please select a folder")
+            Logger().error("Unable to restore access to the folder. Please select a folder")
             return
         }
         
@@ -123,7 +122,7 @@ final class DerivedDataVM {
         do {
             try processPath(url.path)
         } catch {
-            print("Error processing path:", error.localizedDescription)
+            Logger().error("Error processing path: \(error)")
         }
     }
     

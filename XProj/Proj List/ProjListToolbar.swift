@@ -1,4 +1,5 @@
 import ScrechKit
+import OSLog
 
 struct ProjListToolbar: View {
     @Environment(DataModel.self) private var vm
@@ -31,7 +32,7 @@ struct ProjListToolbar: View {
                     let start = DispatchTime.now()
                     
                     if let count = await vm.countFilesRecursively("/Users/topscrech/Projects") {
-                        print(count)
+                        Logger().info("\(count)")
                     }
                     
                     let finish = DispatchTime.now()
@@ -39,7 +40,7 @@ struct ProjListToolbar: View {
                     let timeElapsedInSeconds = Double(timeElapsed) / 1_000_000_000
                     
                     await MainActor.run {
-                        print("Time elapsed (s):", timeElapsedInSeconds)
+                        Logger().info("Time elapsed (s): \(timeElapsedInSeconds)")
                     }
                 }
             }
