@@ -14,7 +14,7 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
         rawValue
     }
     
-    case proj, package, vapor, workspace, playground, allItems, derivedData, packageDependencies, appStore, iOS, macOS, watchOS, tvOS, visionOS
+    case proj, package, vapor, workspace, playground, allItems, favorites, derivedData, packageDependencies, appStore, iOS, macOS, watchOS, tvOS, visionOS
     
     static var projTypes: [NavCategory] {[
         .proj,
@@ -53,6 +53,7 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
         case .playground:          "swift"
         case .derivedData:         "folder.badge.gearshape"
         case .appStore:            "app"
+        case .favorites:           "star.fill"
         case .iOS:                 "iphone"
         case .macOS:               "macbook"
         case .watchOS:             "applewatch"
@@ -73,6 +74,7 @@ enum NavCategory: String, Identifiable, Codable, Hashable, CaseIterable {
         case .derivedData:         "Derived Data"
         case .packageDependencies: "Package Dependencies"
         case .appStore:            "App Store"
+        case .favorites:           "Favorites"
         case .iOS:                 "iOS"
         case .macOS:               "macOS"
         case .watchOS:             "watchOS"

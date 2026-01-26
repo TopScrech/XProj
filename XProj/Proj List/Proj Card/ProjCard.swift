@@ -47,6 +47,13 @@ struct ProjCard: View {
             return NSItemProvider(object: fileURL as NSURL)
         }
         .contextMenu {
+            Button(
+                vm.isFavorite(proj) ? "Remove Favorite" : "Add Favorite",
+                systemImage: vm.isFavorite(proj) ? "star.slash" : "star"
+            ) {
+                vm.toggleFavorite(proj)
+            }
+
             if let url = proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url {
                 Section {
                     Button("App Store", systemImage: "apple.logo") {
