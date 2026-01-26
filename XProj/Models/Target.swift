@@ -35,19 +35,6 @@ struct Target: Identifiable, Hashable, Codable {
 }
 
 extension Proj {
-#warning("Check release configuration")
-    //    func isDebugConfiguration(_ buildSettings: [String: Any]?) -> Bool {
-    //        guard let buildSettings else {
-    //            return false
-    //        }
-    //
-    //        if let activeConditions = buildSettings["SWIFT_ACTIVE_COMPILATION_CONDITIONS"] as? String {
-    //            return activeConditions.contains("DEBUG")
-    //        }
-    //
-    //        return false
-    //    }
-    
     func fetchTargets(includeAppStore: Bool = true) async -> [Target] {
         guard
             type == .proj,
@@ -64,8 +51,28 @@ extension Proj {
             
             for target in targets {
                 let targetName = target.name
+                if targetName.localizedCaseInsensitiveContains(".debug") {
+                    continue
+                }
+                
                 let buildConfigs = target.buildConfigurationList?.buildConfigurations ?? []
-                let buildSettingsList = buildConfigs.map { $0.buildSettings ?? [:] }
+                let releaseBuildConfigs = buildConfigs.filter { buildConfig in
+                    if buildConfig.name?.localizedCaseInsensitiveContains(".debug") == true {
+                        return false
+                    }
+                    
+                    if let bundleId = buildConfig.buildSettings?["PRODUCT_BUNDLE_IDENTIFIER"] as? String {
+                        return !bundleId.localizedCaseInsensitiveContains(".debug")
+                    }
+                    
+                    return true
+                }
+                
+                if releaseBuildConfigs.isEmpty {
+                    continue
+                }
+                
+                let buildSettingsList = releaseBuildConfigs.map { $0.buildSettings ?? [:] }
                 
                 let bundleId = buildSettingsList.compactMap {
                     $0["PRODUCT_BUNDLE_IDENTIFIER"] as? String
@@ -91,9 +98,9 @@ extension Proj {
                         let info = determineType(targetName, buildSettings)
                         deploymentTargets.append(contentsOf: info.versions)
                         
-                        if resolvedType == .other {
+                        if resolvedType == TargetType.other {
                             resolvedType = info.type
-                        } else if info.type != .app && info.type != .other {
+                        } else if info.type != TargetType.app && info.type != TargetType.other {
                             resolvedType = info.type
                         }
                     }
