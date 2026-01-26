@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "2600"
+   LastUpgradeVersion = "2620"
+   wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +16,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F33081722C9057F700605E43"
+               BlueprintIdentifier = "F3A603B32F26FF7F008354CC"
                BuildableName = "Widgets.appex"
                BlueprintName = "Widgets"
+               ReferencedContainer = "container:XProj.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F3341E282BDE358900E85F27"
+               BuildableName = "XProj.app"
+               BlueprintName = "XProj"
                ReferencedContainer = "container:XProj.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,6 +57,27 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
+      <RemoteRunnable
+         runnableDebuggingMode = "1"
+         BundleIdentifier = "com.apple.widgetkit.simulator"
+         RemotePath = "/System/Library/CoreServices/WidgetKit Simulator.app/Contents/MacOS/WidgetKit Simulator">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F3A603B32F26FF7F008354CC"
+            BuildableName = "Widgets.appex"
+            BlueprintName = "Widgets"
+            ReferencedContainer = "container:XProj.xcodeproj">
+         </BuildableReference>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F3341E282BDE358900E85F27"
+            BuildableName = "XProj.app"
+            BlueprintName = "XProj"
+            ReferencedContainer = "container:XProj.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"
@@ -68,15 +104,16 @@
       debugDocumentVersioning = "YES"
       askForAppToLaunch = "Yes"
       launchAutomaticallySubstyle = "2">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F33081722C9057F700605E43"
-            BuildableName = "Widgets.appex"
-            BlueprintName = "Widgets"
+            BlueprintIdentifier = "F3341E282BDE358900E85F27"
+            BuildableName = "XProj.app"
+            BlueprintName = "XProj"
             ReferencedContainer = "container:XProj.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
