@@ -28,11 +28,9 @@ struct DerivedDataList: View {
                 DerivedDataCard($0)
                     .tag($0.id)
             }
-#warning("searchable crashes cause there's already a searchbar")
         }
         .environment(vm)
         .onDeleteCommand(perform: deleteSelected)
-        //        .searchable(text: $vm.searchPrompt)
         .toolbar {
             Button("Change folder", action: vm.showPicker)
             Button("Clear", action: vm.deleteAllFiles)
@@ -40,9 +38,7 @@ struct DerivedDataList: View {
     }
     
     private func deleteSelected() {
-        guard !selection.isEmpty else {
-            return
-        }
+        guard !selection.isEmpty else { return }
         
         let selectedNames = selection
         selection.removeAll()

@@ -27,10 +27,11 @@ final class DerivedDataVM {
         let sortedFolders = folders.sorted {
             $0.size > $1.size
         }
+        let prompt = searchPrompt.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        guard searchPrompt.isEmpty else {
+        guard prompt.isEmpty else {
             return sortedFolders.filter {
-                $0.name.contains(searchPrompt)
+                $0.name.localizedStandardContains(prompt)
             }
         }
         
