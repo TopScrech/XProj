@@ -19,7 +19,7 @@ struct DerivedDataCard: View {
                 .secondary()
         }
         .contextMenu {
-            Button("Delete", role: .destructive) {
+            Button("Delete", systemImage: "trash", role: .destructive) {
                 vm.deleteFile(folder.name)
             }
         }
