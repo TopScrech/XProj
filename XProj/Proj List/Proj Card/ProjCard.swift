@@ -47,13 +47,22 @@ struct ProjCard: View {
             return NSItemProvider(object: fileURL as NSURL)
         }
         .contextMenu {
+            let selectedProjects = navModel.selectedProj.contains(proj)
+            ? navModel.selectedProj
+            : Set([proj])
+            let canRemoveFavorites = selectedProjects.allSatisfy(vm.isFavorite)
+            
             Button(
-                vm.isFavorite(proj) ? "Remove Favorite" : "Add Favorite",
-                systemImage: vm.isFavorite(proj) ? "star.slash" : "star"
+                canRemoveFavorites ? "Remove Favorite" : "Add Favorite",
+                systemImage: canRemoveFavorites ? "star.slash" : "star"
             ) {
-                vm.toggleFavorite(proj)
+                if canRemoveFavorites {
+                    vm.removeFavorites(selectedProjects)
+                } else {
+                    vm.addFavorites(selectedProjects)
+                }
             }
-
+            
             if let url = proj.targets.filter({ $0.appStoreApp != nil }).first?.appStoreApp?.url {
                 Section {
                     Button("App Store", systemImage: "apple.logo") {
