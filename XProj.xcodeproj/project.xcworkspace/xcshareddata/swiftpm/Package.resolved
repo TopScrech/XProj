@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher",
       "state" : {
-        "revision" : "e227df15448d2ad1a5d4e4c49722a71c68f9058a",
-        "version" : "8.7.0"
+        "revision" : "c92b84898e34ab46ff0dad86c02a0acbe2d87008",
+        "version" : "8.8.0"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/TopScrech/LaunchAtLogin",
       "state" : {
         "branch" : "main",
-        "revision" : "b6d02bbe76f22ce9c722ec263939edd01ea8f670"
+        "revision" : "de46c95b812441c47eb2754c8bd10fc0ee2afa2e"
       }
     },
     {
