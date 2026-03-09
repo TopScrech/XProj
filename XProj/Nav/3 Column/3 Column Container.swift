@@ -3,10 +3,13 @@ import SwiftUI
 struct ThreeColumnContainer: View {
     @Environment(NavModel.self) private var nav
     @Environment(DataModel.self) private var vm
+    @Environment(DerivedDataVM.self) private var derivedDataVM
     
     var body: some View {
         @Bindable var nav = nav
         @Bindable var vm = vm
+        @Bindable var derivedDataVM = derivedDataVM
+        let searchText = nav.selectedCategory == .derivedData ? $derivedDataVM.searchPrompt : $vm.searchPrompt
         
         NavigationSplitView(columnVisibility: $nav.columnVisibility) {
             ColumnSidebar()
@@ -20,15 +23,24 @@ struct ThreeColumnContainer: View {
             ThreeColumnDetail()
                 .frame(minWidth: 200)
         }
-        .searchable(text: $vm.searchPrompt)
+        .searchable(text: searchText)
         .searchSuggestions {
-            SearchSuggestions()
+            if nav.selectedCategory != .derivedData {
+                SearchSuggestions()
+            }
         }
         .toolbar {
             OpenButtons()
 #if DEBUG
             ProjListToolbar()
 #endif
+        }
+        .onChange(of: nav.selectedCategory) { _, newValue in
+            if newValue == .derivedData {
+                vm.searchPrompt = ""
+            } else {
+                derivedDataVM.searchPrompt = ""
+            }
         }
     }
 }

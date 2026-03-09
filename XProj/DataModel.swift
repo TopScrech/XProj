@@ -12,11 +12,14 @@ final class DataModel {
     
     private let udKey = "projects_folder_bookmark"
     private let cacheKey = "projects_cache"
+    private let favoritesKey = "favorite_project_ids"
     
     @ObservationIgnored private var cachedPublishedProjects: [Proj] = []
     @ObservationIgnored private var isLoadingAppStoreProjects = false
     @ObservationIgnored private var didLoadAppStoreProjects = false
     @ObservationIgnored private var isLoadingPlatformProjects = false
+    
+    var favoriteIds: Set<Proj.ID> = []
     
     // Shared singleton data model object
     static let shared = {
@@ -24,12 +27,49 @@ final class DataModel {
     }()
     
     init() {
+        loadFavorites()
         loadCachedProjects()
         refreshProjects()
     }
     
     var publishedProjects: [Proj] {
         cachedPublishedProjects
+    }
+    
+    var favoriteProjects: [Proj] {
+        filteredProjects.filter { favoriteIds.contains($0.id) }
+    }
+    
+    func isFavorite(_ proj: Proj) -> Bool {
+        favoriteIds.contains(proj.id)
+    }
+    
+    func toggleFavorite(_ proj: Proj) {
+        if favoriteIds.contains(proj.id) {
+            favoriteIds.remove(proj.id)
+        } else {
+            favoriteIds.insert(proj.id)
+        }
+        
+        storeFavorites()
+    }
+    
+    func addFavorites(_ projects: Set<Proj>) {
+        let ids = Set(projects.map(\.id))
+        
+        guard !ids.isEmpty else { return }
+        
+        favoriteIds.formUnion(ids)
+        storeFavorites()
+    }
+    
+    func removeFavorites(_ projects: Set<Proj>) {
+        let ids = Set(projects.map(\.id))
+        
+        guard !ids.isEmpty else { return }
+        
+        favoriteIds.subtract(ids)
+        storeFavorites()
     }
     
     func loadAppStoreProjectsIfNeeded() async {
@@ -155,6 +195,8 @@ final class DataModel {
                 $0.appStoreApp != nil
             }
         }
+        
+        pruneFavorites()
     }
     
     private func loadCachedProjects() {
@@ -163,6 +205,14 @@ final class DataModel {
             
             updateProjects(cachedProjects)
         }
+    }
+    
+    private func loadFavorites() {
+        guard let storedIds = UserDefaults.standard.array(forKey: favoritesKey) as? [Proj.ID] else {
+            return
+        }
+        
+        favoriteIds = Set(storedIds)
     }
     
     private func restoreProjPath() -> String? {
@@ -199,6 +249,22 @@ final class DataModel {
         if let data = try? JSONEncoder().encode(projects) {
             UserDefaults.standard.set(data, forKey: cacheKey)
         }
+    }
+    
+    private func storeFavorites() {
+        UserDefaults.standard.set(Array(favoriteIds), forKey: favoritesKey)
+    }
+    
+    private func pruneFavorites() {
+        let currentIds = Set(projects.map(\.id))
+        let updatedFavorites = favoriteIds.intersection(currentIds)
+        
+        guard updatedFavorites != favoriteIds else {
+            return
+        }
+        
+        favoriteIds = updatedFavorites
+        storeFavorites()
     }
     
     /// Accesses the project associated with the given unique id
@@ -251,6 +317,10 @@ final class DataModel {
     func projects(in type: NavCategory?) -> [Proj] {
         guard let type else {
             return []
+        }
+        
+        if type == .favorites {
+            return favoriteProjects
         }
         
         if let platform = type.platformName {

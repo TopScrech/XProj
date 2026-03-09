@@ -19,6 +19,14 @@ struct ColumnSidebar: View {
                         .bold()
                 }
             }
+
+            Section {
+                let type = NavCategory.favorites
+
+                NavigationLink(value: type) {
+                    Label(type.loc, systemImage: type.icon)
+                }
+            }
             
             Section {
                 ForEach(categories) { type in

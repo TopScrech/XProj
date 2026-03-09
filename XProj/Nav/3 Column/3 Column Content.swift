@@ -19,6 +19,24 @@ struct ThreeColumnContent: View {
                 }
                 .frame(minWidth: 600)
                 .navigationTitle(category.loc)
+
+            case .favorites:
+                if vm.favoriteProjects.isEmpty {
+                    Text("No favorites yet")
+                        .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .navigationTitle(category.loc)
+                } else {
+                    List(selection: $nav.selectedProj) {
+                        ForEach(vm.favoriteProjects) { proj in
+                            NavigationLink(value: proj) {
+                                ProjCard(proj)
+                            }
+                        }
+                    }
+                    .frame(minWidth: 600)
+                    .navigationTitle(category.loc)
+                }
                 
             case .derivedData:
                 DerivedDataList()

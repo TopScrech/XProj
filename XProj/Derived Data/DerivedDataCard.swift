@@ -17,9 +17,18 @@ struct DerivedDataCard: View {
             
             Text(folder.formattedSize)
                 .secondary()
+            
+            Button(role: .destructive) {
+                vm.deleteFile(folder.name)
+            } label: {
+                Image(systemName: "trash")
+                    .footnote()
+            }
+            .buttonStyle(.plain)
+            .help("Delete")
         }
         .contextMenu {
-            Button("Delete", role: .destructive) {
+            Button("Delete", systemImage: "trash", role: .destructive) {
                 vm.deleteFile(folder.name)
             }
         }

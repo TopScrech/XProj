@@ -20,6 +20,14 @@ struct ProjActions: View {
     
     var body: some View {
         HStack {
+            Button(
+                vm.isFavorite(proj) ? "Remove Favorite" : "Add Favorite",
+                systemImage: vm.isFavorite(proj) ? "star.slash" : "star"
+            ) {
+                vm.toggleFavorite(proj)
+            }
+            .help(vm.isFavorite(proj) ? "Remove from favorites" : "Add to favorites")
+
             if store.showProjAppStoreLink, let appStoreURL {
                 Button("App Store") {
                     openURL(appStoreURL)
