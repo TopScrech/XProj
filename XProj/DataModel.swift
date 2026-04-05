@@ -14,10 +14,10 @@ final class DataModel {
     private let cacheKey = "projects_cache"
     private let favoritesKey = "favorite_project_ids"
     
-    @ObservationIgnored private var cachedPublishedProjects: [Proj] = []
     @ObservationIgnored private var isLoadingAppStoreProjects = false
     @ObservationIgnored private var didLoadAppStoreProjects = false
     @ObservationIgnored private var isLoadingPlatformProjects = false
+    @ObservationIgnored private var isLoadingPackageDependencies = false
     
     var favoriteIds: Set<Proj.ID> = []
     
@@ -33,7 +33,11 @@ final class DataModel {
     }
     
     var publishedProjects: [Proj] {
-        cachedPublishedProjects
+        filteredProjects.filter { proj in
+            proj.targets.contains {
+                $0.appStoreApp != nil
+            }
+        }
     }
     
     var favoriteProjects: [Proj] {
@@ -183,18 +187,75 @@ final class DataModel {
         cacheProjects(updatedProjects)
     }
     
+    func loadPackageDependenciesIfNeeded() async {
+        guard !isLoadingPackageDependencies else {
+            return
+        }
+        
+        let needsRefresh = projects.contains { proj in
+            switch proj.type {
+            case .proj, .package, .vapor:
+                proj.packages.isEmpty
+            default:
+                false
+            }
+        }
+        
+        guard needsRefresh else { return }
+        
+        isLoadingPackageDependencies = true
+        
+        defer {
+            isLoadingPackageDependencies = false
+        }
+        
+        let currentProjects = projects
+        var updatedProjects = currentProjects
+        var didUpdate = false
+        
+        for (index, proj) in currentProjects.enumerated() {
+            switch proj.type {
+            case .proj, .package, .vapor:
+                guard proj.packages.isEmpty else {
+                    continue
+                }
+                
+                var updatedProj = proj
+                updatedProj.packages = updatedProj.parseSwiftPackages()
+                
+                if updatedProj.packages != proj.packages {
+                    updatedProjects[index] = updatedProj
+                    didUpdate = true
+                }
+            default:
+                continue
+            }
+        }
+        
+        guard didUpdate else { return }
+        
+        updateProjects(updatedProjects)
+        cacheProjects(updatedProjects)
+    }
+    
+    func updateProject(_ proj: Proj) {
+        guard let index = projects.firstIndex(where: { $0.id == proj.id }) else {
+            return
+        }
+        
+        var updatedProjects = projects
+        updatedProjects[index] = proj
+        
+        updateProjects(updatedProjects)
+        cacheProjects(updatedProjects)
+    }
+    
     private func updateProjects(_ projects: [Proj]) {
         self.projects = projects
         
         self.projectsById = Dictionary(uniqueKeysWithValues: projects.map { proj in
             (proj.id, proj)
         })
-        
-        cachedPublishedProjects = projects.filter { proj in
-            proj.targets.contains {
-                $0.appStoreApp != nil
-            }
-        }
         
         pruneFavorites()
     }

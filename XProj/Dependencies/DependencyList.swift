@@ -36,6 +36,9 @@ struct DependencyList: View {
                 }
             }
         }
+        .task(id: vm.projectsFolder) {
+            await vm.loadPackageDependenciesIfNeeded()
+        }
     }
     
     private var dependencies: [PackageDependency] {
