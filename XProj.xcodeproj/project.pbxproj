@@ -190,6 +190,10 @@
 				Base,
 				ru,
 				nl,
+				uk,
+				de,
+				fr,
+				tr,
 			);
 			mainGroup = F3341E202BDE358900E85F27;
 			packageReferences = (
