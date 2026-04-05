@@ -12,19 +12,17 @@ struct ColumnSidebar: View {
         
         List(selection: $nav.selectedCategory) {
             Section {
-                let type = NavCategory.allItems
+                let all = NavCategory.allItems
                 
-                NavigationLink(value: type) {
-                    Label(type.loc, systemImage: type.icon)
+                NavigationLink(value: all) {
+                    Label(all.loc, systemImage: all.icon)
                         .bold()
                 }
-            }
-
-            Section {
-                let type = NavCategory.favorites
-
-                NavigationLink(value: type) {
-                    Label(type.loc, systemImage: type.icon)
+                
+                let favorites = NavCategory.favorites
+                
+                NavigationLink(value: favorites) {
+                    Label(favorites.loc, systemImage: favorites.icon)
                 }
             }
             
@@ -53,18 +51,6 @@ struct ColumnSidebar: View {
                     Label(type.loc, systemImage: type.icon)
                 }
             }
-            
-            //            Section {
-            //                let projects = vm.projects.filter {
-            //                    $0.targets.contains(where: { $0.type == .iMessage })
-            //                }
-            //
-            //                ForEach(projects) { proj in
-            //                    NavigationLink(value: type) {
-            //                        Label("iMessage", systemImage: "message.badge")
-            //                    }
-            //                }
-            //            }
             
             Section {
                 let type = NavCategory.packageDependencies

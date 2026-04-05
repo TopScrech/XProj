@@ -20,11 +20,10 @@ struct ProjActions: View {
     
     var body: some View {
         HStack {
-            Button(
-                vm.isFavorite(proj) ? "Remove Favorite" : "Add Favorite",
-                systemImage: vm.isFavorite(proj) ? "star.slash" : "star"
-            ) {
+            Button {
                 vm.toggleFavorite(proj)
+            } label: {
+                Image(systemName: vm.isFavorite(proj) ? "star.slash.fill" : "star")
             }
             .help(vm.isFavorite(proj) ? "Remove from favorites" : "Add to favorites")
 

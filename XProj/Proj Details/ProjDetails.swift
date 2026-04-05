@@ -1,6 +1,7 @@
 import ScrechKit
 
 struct ProjDetails: View {
+    @Environment(DataModel.self) private var vm
     @EnvironmentObject private var store: ValueStore
     
     private let sourceProj: Proj
@@ -62,6 +63,7 @@ struct ProjDetails: View {
                 var updatedProj = sourceProj
                 await updatedProj.loadDetails()
                 proj = updatedProj
+                vm.updateProject(updatedProj)
                 return
             }
             
@@ -69,6 +71,7 @@ struct ProjDetails: View {
                 var updatedProj = sourceProj
                 await updatedProj.loadTargets()
                 proj = updatedProj
+                vm.updateProject(updatedProj)
             }
         }
     }

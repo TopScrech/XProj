@@ -2,6 +2,7 @@ import SwiftUI
 
 struct NavContainer: View {
     @Environment(NavModel.self) private var nav
+    @Environment(DataModel.self) private var vm
     @EnvironmentObject private var store: ValueStore
     
     var body: some View {
@@ -28,6 +29,14 @@ struct NavContainer: View {
         }
         .task {
             try? nav.load()
+        }
+        .task(id: vm.projectsFolder) {
+            guard !vm.projectsFolder.isEmpty else {
+                return
+            }
+            
+            await vm.loadAppStoreProjectsIfNeeded()
+            await vm.loadPlatformProjectsIfNeeded()
         }
         .onChange(of: nav.selectedCategory) {
             nav.save()
