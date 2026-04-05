@@ -20,7 +20,7 @@ struct ProjImage: View {
                         return NSItemProvider(object: fileURL as NSURL)
                     }
                     .contextMenu {
-                        Button("Open in Finder", systemImage: "finder") {
+                        Button("Show in Finder", systemImage: "finder") {
                             openInFinder(path)
                         }
                         

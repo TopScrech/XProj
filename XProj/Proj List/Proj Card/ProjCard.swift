@@ -77,7 +77,7 @@ struct ProjCard: View {
             }
             .help(proj.path)
             
-            Button("Open in Finder", systemImage: "finder") {
+            Button("Show in Finder", systemImage: "finder") {
                 openInFinder(rootedAt: proj.path)
             }
             .help(proj.path)
