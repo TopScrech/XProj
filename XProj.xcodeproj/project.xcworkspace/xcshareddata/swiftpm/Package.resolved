@@ -1,5 +1,5 @@
 {
-  "originHash" : "98ea9dc193ac3b153eff99e6ae5f76e62b42c2da235f6a71a189b7bd0cce4495",
+  "originHash" : "3a75007c951e4739ecf7a07c8cb003e03fff0921913996f57dfa66ed60d66e2e",
   "pins" : [
     {
       "identity" : "kingfisher",
@@ -26,6 +26,24 @@
       "state" : {
         "revision" : "b679501c9c06f54585c77ff40445186ea36c6a6c",
         "version" : "1.0.13"
+      }
+    },
+    {
+      "identity" : "swift-update",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TopScrech/swift-update.git",
+      "state" : {
+        "revision" : "a3dedb962391ed50c774e3fc6966098ed5b0d3b0",
+        "version" : "1.1.2"
+      }
+    },
+    {
+      "identity" : "swiftlintplugins",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SimplyDanny/SwiftLintPlugins",
+      "state" : {
+        "revision" : "ef7d692fc6706e8f5628e26bcafaefa445c58a97",
+        "version" : "0.65.1"
       }
     },
     {
